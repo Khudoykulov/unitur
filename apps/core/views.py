@@ -12,6 +12,7 @@ from apps.hotels.models import Hotel
 from apps.guides.models import Article
 from apps.reviews.forms import ReviewCreateForm
 from apps.reviews.models import Review
+from .models import FAQ
 
 
 @method_decorator(ensure_csrf_cookie, name="dispatch")
@@ -83,6 +84,31 @@ class ContactView(TemplateView):
     """Contact page with form and map."""
 
     template_name = "pages/contact.html"
+
+
+class FAQView(TemplateView):
+    """FAQ page with expandable accordion of questions and answers."""
+
+    template_name = "pages/faq.html"
+
+    def get_context_data(self, **kwargs):
+        ctx = super().get_context_data(**kwargs)
+
+        # Get all active FAQs grouped by category
+        faqs = FAQ.objects.filter(is_active=True).order_by("category", "order")
+
+        # Group FAQs by category
+        faq_by_category = {}
+        for faq in faqs:
+            category = faq.get_category_display()
+            if category not in faq_by_category:
+                faq_by_category[category] = []
+            faq_by_category[category].append(faq)
+
+        ctx["faq_by_category"] = faq_by_category
+        ctx["total_faqs"] = faqs.count()
+
+        return ctx
 
 
 class RobotsTxtView(View):

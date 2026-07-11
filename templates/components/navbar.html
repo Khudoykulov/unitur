@@ -101,6 +101,9 @@
             <a href="{% url 'contact' %}" class="flex items-center gap-2 px-3 py-2 rounded-lg text-gray-700 hover:bg-accent hover:text-primary text-sm">
               <i class="ti ti-mail text-secondary"></i> {% trans "Contact" %}
             </a>
+            <a href="{% url 'faq' %}" class="flex items-center gap-2 px-3 py-2 rounded-lg text-gray-700 hover:bg-accent hover:text-primary text-sm">
+              <i class="ti ti-help text-secondary"></i> {% trans "FAQ" %}
+            </a>
           </div>
         </div>
 
@@ -181,6 +184,9 @@
       </a>
       <a href="{% url 'contact' %}" @click="mobileOpen=false" class="flex items-center gap-3 px-3 py-2.5 rounded-xl text-gray-700 hover:bg-accent hover:text-primary font-medium transition-colors">
         <i class="ti ti-mail text-lg text-secondary w-5 text-center"></i>{% trans "Contact" %}
+      </a>
+      <a href="{% url 'faq' %}" @click="mobileOpen=false" class="flex items-center gap-3 px-3 py-2.5 rounded-xl text-gray-700 hover:bg-accent hover:text-primary font-medium transition-colors">
+        <i class="ti ti-help text-lg text-secondary w-5 text-center"></i>{% trans "FAQ" %}
       </a>
 
       {# CTA + language #}

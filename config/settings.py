@@ -122,7 +122,7 @@ if DEBUG and not TESTING:
     ]
 
 # ── Dashboard / Admin security ──────────────────────────────────────────
-ADMIN_URL = config("ADMIN_URL", default="secret-admin-xyz123/")
+ADMIN_URL = config("ADMIN_URL", default="admin/")
 SESSION_COOKIE_HTTPONLY = True
 SESSION_COOKIE_AGE = 3600 * 8  # 8 hours
 

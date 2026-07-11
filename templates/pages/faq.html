@@ -1,0 +1,181 @@
+{% extends "base.html" %}
+{% load i18n static %}
+
+{% block title %}{% trans "Frequently Asked Questions" %} | {{ SITE_NAME }}{% endblock %}
+
+{% block content %}
+<div class="pt-20 lg:pt-28 bg-pattern-subtle-blue">
+  {# Hero Section #}
+  <div class="relative py-24 text-center overflow-hidden bg-pattern-hero">
+    <div class="relative z-10 max-w-3xl mx-auto px-4">
+      <p class="hero-eyebrow text-sm font-semibold uppercase tracking-widest mb-3">{% trans "Help Center" %}</p>
+      <h1 class="text-5xl font-serif font-bold mb-4">{% trans "Frequently Asked Questions" %}</h1>
+      <p class="hero-subtitle max-w-2xl mx-auto text-lg">
+        {% trans "Find answers to common questions about our tours, booking process, and travel services." %}
+      </p>
+    </div>
+  </div>
+
+  {# FAQ Content #}
+  <section class="py-20 bg-white">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+
+      {% if not faq_by_category %}
+        {# Empty State #}
+        <div class="text-center py-16">
+          <div class="w-24 h-24 rounded-full bg-brand-blueLight/30 flex items-center justify-center mx-auto mb-6">
+            <i class="ti ti-help text-primary text-5xl"></i>
+          </div>
+          <h3 class="text-2xl font-serif font-bold text-dark mb-3">{% trans "No FAQs Available Yet" %}</h3>
+          <p class="text-gray-500 mb-6">{% trans "We're working on adding helpful information. Please check back soon!" %}</p>
+          <a href="{% url 'contact' %}" class="inline-block bg-primary hover:bg-primary-dark text-white font-semibold px-6 py-3 rounded-lg transition">
+            {% trans "Contact Us" %}
+          </a>
+        </div>
+      {% else %}
+        {# FAQ Categories #}
+        {% for category, faqs in faq_by_category.items %}
+        <div class="mb-12">
+          <h2 class="text-2xl font-serif font-bold text-dark mb-6 pb-3 border-b-2 border-primary">
+            {{ category }}
+          </h2>
+
+          <div class="space-y-4">
+            {% for faq in faqs %}
+            <div class="faq-item bg-white rounded-xl shadow-soft border border-brand-blueLight/30 overflow-hidden hover:shadow-card transition-all duration-300">
+              <button class="faq-question w-full text-left px-6 py-5 flex items-center justify-between gap-4 focus:outline-none focus:ring-2 focus:ring-primary focus:ring-opacity-50 rounded-xl"
+                      data-faq-id="faq-{{ forloop.parentloop.counter }}-{{ forloop.counter }}">
+                <span class="font-semibold text-dark text-lg pr-4">{{ faq.question }}</span>
+                <div class="faq-icon flex-shrink-0 w-8 h-8 rounded-full bg-primary/10 flex items-center justify-center transition-transform duration-300">
+                  <i class="ti ti-plus text-primary text-xl"></i>
+                </div>
+              </button>
+              <div class="faq-answer hidden px-6 pb-5 pt-2">
+                <div class="text-gray-700 leading-relaxed prose prose-sm max-w-none">
+                  {{ faq.answer|linebreaks }}
+                </div>
+              </div>
+            </div>
+            {% endfor %}
+          </div>
+        </div>
+        {% endfor %}
+      {% endif %}
+
+    </div>
+  </section>
+
+  {# Still Have Questions CTA #}
+  <section class="bg-accent py-16">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <div class="bg-white rounded-2xl shadow-card p-10">
+        <div class="w-16 h-16 rounded-full bg-primary flex items-center justify-center mx-auto mb-4">
+          <i class="ti ti-message-circle text-white text-3xl"></i>
+        </div>
+        <h3 class="text-2xl font-serif font-bold text-dark mb-3">{% trans "Still Have Questions?" %}</h3>
+        <p class="text-gray-600 mb-6">
+          {% trans "Can't find the answer you're looking for? Our friendly team is here to help." %}
+        </p>
+        <div class="flex flex-col sm:flex-row gap-4 justify-center">
+          <a href="{% url 'contact' %}" class="inline-flex items-center justify-center gap-2 bg-primary hover:bg-primary-dark text-white font-semibold px-6 py-3 rounded-lg transition">
+            <i class="ti ti-mail"></i>
+            {% trans "Contact Us" %}
+          </a>
+          {% if SITE_PHONE %}
+          <a href="tel:{{ SITE_PHONE }}" class="inline-flex items-center justify-center gap-2 bg-secondary hover:bg-secondary-dark text-white font-semibold px-6 py-3 rounded-lg transition">
+            <i class="ti ti-phone"></i>
+            {% trans "Call Us" %}
+          </a>
+          {% endif %}
+        </div>
+      </div>
+    </div>
+  </section>
+
+</div>
+
+{# FAQ Accordion JavaScript #}
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  const faqItems = document.querySelectorAll('.faq-item');
+
+  faqItems.forEach(item => {
+    const question = item.querySelector('.faq-question');
+    const answer = item.querySelector('.faq-answer');
+    const icon = item.querySelector('.faq-icon i');
+
+    question.addEventListener('click', function() {
+      const isOpen = !answer.classList.contains('hidden');
+
+      // Close all other FAQs (optional - remove these lines for multiple open FAQs)
+      document.querySelectorAll('.faq-answer').forEach(a => a.classList.add('hidden'));
+      document.querySelectorAll('.faq-icon i').forEach(i => {
+        i.classList.remove('ti-minus', 'rotate-180');
+        i.classList.add('ti-plus');
+      });
+      document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('ring-2', 'ring-primary', 'ring-opacity-30'));
+
+      if (isOpen) {
+        // Close this FAQ
+        answer.classList.add('hidden');
+        icon.classList.remove('ti-minus', 'rotate-180');
+        icon.classList.add('ti-plus');
+        item.classList.remove('ring-2', 'ring-primary', 'ring-opacity-30');
+      } else {
+        // Open this FAQ
+        answer.classList.remove('hidden');
+        icon.classList.remove('ti-plus');
+        icon.classList.add('ti-minus', 'rotate-180');
+        item.classList.add('ring-2', 'ring-primary', 'ring-opacity-30');
+
+        // Smooth scroll to question if it's not in view
+        setTimeout(() => {
+          question.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+        }, 300);
+      }
+    });
+  });
+});
+</script>
+
+<style>
+/* Additional FAQ Styles */
+.faq-item {
+  transition: all 0.3s ease;
+}
+
+.faq-question:hover {
+  background-color: rgba(59, 130, 246, 0.03);
+}
+
+.faq-icon {
+  transition: all 0.3s ease;
+}
+
+.faq-answer {
+  transition: max-height 0.3s ease, opacity 0.3s ease;
+  max-height: 0;
+  opacity: 0;
+}
+
+.faq-answer:not(.hidden) {
+  max-height: 1000px;
+  opacity: 1;
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 640px) {
+  .faq-question {
+    padding: 1rem;
+  }
+
+  .faq-question span {
+    font-size: 1rem;
+  }
+
+  .faq-answer {
+    padding: 0 1rem 1rem;
+  }
+}
+</style>
+{% endblock %}

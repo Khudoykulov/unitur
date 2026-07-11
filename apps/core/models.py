@@ -77,3 +77,108 @@ class HeroSlide(TimeStampedModel, OrderedMixin):
 
     def __str__(self) -> str:
         return f"{self.get_page_display()} — {self.alt or self.image.name}"
+
+
+class SiteSettings(TimeStampedModel):
+    """
+    Global site settings managed from admin panel.
+
+    Includes social media links, contact info, and other site-wide configuration.
+    Only one instance should exist - singleton pattern.
+    """
+
+    # Site Information
+    site_name = models.CharField(_("Site name"), max_length=200, default="UNITUR")
+    site_tagline = models.CharField(_("Tagline"), max_length=500, blank=True)
+    site_logo = models.ImageField(_("Logo"), upload_to="site/", blank=True, null=True)
+    site_favicon = models.ImageField(_("Favicon"), upload_to="site/", blank=True, null=True)
+
+    # Contact Information
+    phone = models.CharField(_("Phone"), max_length=30, blank=True)
+    phone_secondary = models.CharField(_("Secondary phone"), max_length=30, blank=True)
+    email = models.EmailField(_("Email"), blank=True)
+    email_secondary = models.EmailField(_("Secondary email"), blank=True)
+    address = models.TextField(_("Address"), blank=True)
+    working_hours = models.CharField(_("Working hours"), max_length=200, blank=True)
+
+    # Location
+    latitude = models.DecimalField(_("Latitude"), max_digits=9, decimal_places=6, null=True, blank=True)
+    longitude = models.DecimalField(_("Longitude"), max_digits=9, decimal_places=6, null=True, blank=True)
+
+    # Social Media Links
+    facebook_url = models.URLField(_("Facebook URL"), blank=True)
+    instagram_url = models.URLField(_("Instagram URL"), blank=True)
+    telegram_url = models.URLField(_("Telegram URL"), blank=True)
+    youtube_url = models.URLField(_("YouTube URL"), blank=True)
+    twitter_url = models.URLField(_("Twitter URL"), blank=True)
+    linkedin_url = models.URLField(_("LinkedIn URL"), blank=True)
+    whatsapp_number = models.CharField(_("WhatsApp number"), max_length=30, blank=True,
+                                      help_text=_("Format: +998901234567"))
+
+    # SEO & Analytics
+    google_analytics_id = models.CharField(_("Google Analytics ID"), max_length=50, blank=True)
+    facebook_pixel_id = models.CharField(_("Facebook Pixel ID"), max_length=50, blank=True)
+    meta_keywords = models.TextField(_("Meta keywords"), blank=True,
+                                     help_text=_("Comma-separated keywords"))
+
+    # Footer Text
+    footer_text = models.TextField(_("Footer text"), blank=True)
+    copyright_text = models.CharField(_("Copyright text"), max_length=200, blank=True,
+                                      default="© 2024 UNITUR. All rights reserved.")
+
+    class Meta:
+        verbose_name = _("Site settings")
+        verbose_name_plural = _("Site settings")
+
+    def __str__(self) -> str:
+        return "Site Settings"
+
+    def save(self, *args, **kwargs) -> None:
+        # Singleton pattern - only one instance allowed
+        self.pk = 1
+        super().save(*args, **kwargs)
+
+    def delete(self, *args, **kwargs) -> None:
+        # Prevent deletion
+        pass
+
+    @classmethod
+    def load(cls):
+        """Load the singleton instance, create if doesn't exist."""
+        obj, created = cls.objects.get_or_create(pk=1)
+        return obj
+
+
+class FAQ(TimeStampedModel, OrderedMixin):
+    """
+    Frequently Asked Questions.
+
+    Displayed on the FAQ page with expandable accordion interface.
+    """
+
+    CATEGORY_CHOICES = [
+        ("general", _("General")),
+        ("booking", _("Booking & Payment")),
+        ("tours", _("Tours & Travel")),
+        ("visa", _("Visa & Documents")),
+        ("other", _("Other")),
+    ]
+
+    category = models.CharField(
+        _("Category"),
+        max_length=20,
+        choices=CATEGORY_CHOICES,
+        default="general",
+        help_text=_("Group similar questions together")
+    )
+    question = models.CharField(_("Question"), max_length=500)
+    answer = models.TextField(_("Answer"))
+    is_active = models.BooleanField(_("Active"), default=True, db_index=True)
+
+    class Meta(OrderedMixin.Meta):
+        verbose_name = _("FAQ")
+        verbose_name_plural = _("FAQs")
+        ordering = ["category", "order", "-created_at"]
+
+    def __str__(self) -> str:
+        return self.question

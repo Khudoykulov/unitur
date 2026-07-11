@@ -69,6 +69,13 @@ from apps.dashboard.views.users import (
     UserListView,
     UserRoleUpdateView,
 )
+from apps.dashboard.views.settings import (
+    SiteSettingsEditView,
+    FAQListView,
+    FAQCreateView,
+    FAQEditView,
+    FAQDeleteView,
+)
 
 app_name = "dashboard"
 
@@ -148,4 +155,13 @@ urlpatterns = [
     path("users/<int:pk>/edit/", UserEditView.as_view(), name="users_edit"),
     path("users/<int:pk>/role/", UserRoleUpdateView.as_view(), name="users_role"),
     path("users/<int:pk>/delete/", UserDeleteView.as_view(), name="users_delete"),
+
+    # Site Settings
+    path("settings/", SiteSettingsEditView.as_view(), name="settings_edit"),
+
+    # FAQ Management
+    path("faq/", FAQListView.as_view(), name="faq_list"),
+    path("faq/create/", FAQCreateView.as_view(), name="faq_create"),
+    path("faq/<int:pk>/edit/", FAQEditView.as_view(), name="faq_edit"),
+    path("faq/<int:pk>/delete/", FAQDeleteView.as_view(), name="faq_delete"),
 ]

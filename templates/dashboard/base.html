@@ -107,6 +107,14 @@
     </a>
     {% endif %}
 
+    <p class="sidebar-section">{% trans "Settings" %}</p>
+    <a href="{% url 'dashboard:settings_edit' %}" class="sidebar-link {% if 'dashboard/settings' in request.path %}active{% endif %}">
+      <i class="ti ti-settings text-lg"></i> {% trans "Site Settings" %}
+    </a>
+    <a href="{% url 'dashboard:faq_list' %}" class="sidebar-link {% if 'dashboard/faq' in request.path %}active{% endif %}">
+      <i class="ti ti-help text-lg"></i> {% trans "FAQ Management" %}
+    </a>
+
     <p class="sidebar-section">{% trans "Site" %}</p>
     <a href="{% url 'home' %}" target="_blank" class="sidebar-link">
       <i class="ti ti-external-link text-lg"></i> {% trans "View Site" %}

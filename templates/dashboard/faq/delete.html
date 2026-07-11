@@ -1,0 +1,76 @@
+{% extends "dashboard/base.html" %}
+{% load i18n %}
+
+{% block title %}{% trans "Delete FAQ" %}{% endblock %}
+{% block breadcrumb %}
+  <span class="text-gray-400">/</span>
+  <a href="{% url 'dashboard:faq_list' %}" class="text-gray-700 hover:underline">{% trans "FAQ" %}</a>
+  <span class="text-gray-400">/</span>
+  <span class="text-gray-700">{% trans "Delete" %}</span>
+{% endblock %}
+
+{% block content %}
+<div class="max-w-2xl mx-auto">
+
+  <div class="bg-white rounded-xl border border-gray-200 p-8">
+
+    {# Warning Icon #}
+    <div class="w-16 h-16 bg-red-100 rounded-full flex items-center justify-center mx-auto mb-4">
+      <i class="ti ti-alert-triangle text-red-600 text-3xl"></i>
+    </div>
+
+    {# Title #}
+    <h1 class="text-2xl font-bold text-gray-800 text-center mb-2">{% trans "Delete FAQ" %}</h1>
+    <p class="text-gray-600 text-center mb-6">{% trans "Are you sure you want to delete this FAQ?" %}</p>
+
+    {# FAQ Details #}
+    <div class="bg-gray-50 rounded-lg p-4 mb-6 border border-gray-200">
+      <div class="mb-3">
+        <p class="text-xs text-gray-500 uppercase tracking-wide mb-1">{% trans "Question" %}</p>
+        <p class="font-medium text-gray-900">{{ object.question }}</p>
+      </div>
+      <div class="mb-3">
+        <p class="text-xs text-gray-500 uppercase tracking-wide mb-1">{% trans "Answer" %}</p>
+        <p class="text-gray-700 text-sm">{{ object.answer|truncatechars:200 }}</p>
+      </div>
+      <div class="flex items-center gap-4 text-xs text-gray-500">
+        <span>{% trans "Category" %}: <strong>{{ object.get_category_display }}</strong></span>
+        <span>{% trans "Order" %}: <strong>{{ object.order }}</strong></span>
+        <span>{% trans "Status" %}:
+          {% if object.is_active %}
+            <strong class="text-green-600">{% trans "Active" %}</strong>
+          {% else %}
+            <strong class="text-gray-600">{% trans "Inactive" %}</strong>
+          {% endif %}
+        </span>
+      </div>
+    </div>
+
+    {# Warning Message #}
+    <div class="bg-yellow-50 border border-yellow-200 rounded-lg p-4 mb-6">
+      <div class="flex gap-3">
+        <i class="ti ti-alert-circle text-yellow-600 text-xl flex-shrink-0"></i>
+        <div>
+          <p class="text-sm text-yellow-800 font-medium mb-1">{% trans "This action cannot be undone" %}</p>
+          <p class="text-xs text-yellow-700">{% trans "This FAQ will be permanently deleted and will no longer appear on your website." %}</p>
+        </div>
+      </div>
+    </div>
+
+    {# Form #}
+    <form method="post">
+      {% csrf_token %}
+      <div class="flex items-center justify-center gap-3">
+        <a href="{% url 'dashboard:faq_list' %}" class="px-6 py-2.5 border border-gray-300 text-gray-700 rounded-lg hover:bg-gray-50 transition">
+          <i class="ti ti-arrow-left mr-2"></i>{% trans "Cancel" %}
+        </a>
+        <button type="submit" class="px-6 py-2.5 bg-red-600 hover:bg-red-700 text-white rounded-lg transition">
+          <i class="ti ti-trash mr-2"></i>{% trans "Yes, Delete FAQ" %}
+        </button>
+      </div>
+    </form>
+
+  </div>
+
+</div>
+{% endblock %}
