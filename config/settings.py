@@ -155,15 +155,18 @@ WSGI_APPLICATION = "config.wsgi.application"
 # Database — always Postgres via DATABASE_URL, except tests (fast in-memory
 # SQLite, isolated per test run).
 # ---------------------------------------------------------------------------
-if TESTING:
-    DATABASES = {"default": {"ENGINE": "django.db.backends.sqlite3", "NAME": ":memory:"}}
-else:
-    DATABASES = {
-        "default": dj_database_url.config(
-            default=config("DATABASE_URL", default="sqlite:///db.sqlite3"),
-            conn_max_age=600,
-        )
+from decouple import config
+
+DATABASES = {
+    "default": {
+        "ENGINE": "django.db.backends.postgresql",
+        "NAME": config("DATABASE_NAME"),
+        "USER": config("DATABASE_USER"),
+        "PASSWORD": config("DATABASE_PASSWORD"),
+        "HOST": config("DATABASE_HOST"),
+        "PORT": config("DATABASE_PORT"),
     }
+}
 
 # ---------------------------------------------------------------------------
 # Authentication
