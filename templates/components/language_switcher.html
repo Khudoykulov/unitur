@@ -1,0 +1,28 @@
+{% load i18n core_tags %}
+<div class="relative" x-data="{ open: false }" @click.away="open = false">
+  <button @click="open = !open"
+          class="flex items-center gap-1.5 text-sm px-2 py-1 rounded-lg hover:bg-white/10 transition"
+          :class="solid ? 'text-gray-700' : 'text-white'">
+    <span>{{ LANGUAGE_FLAGS|getitem:CURRENT_LANGUAGE|default:"🌐" }}</span>
+    <span class="uppercase font-medium">{{ CURRENT_LANGUAGE }}</span>
+    <i class="ti ti-chevron-down text-xs"></i>
+  </button>
+
+  <div x-show="open" x-transition
+       class="absolute right-0 top-full mt-2 bg-white rounded-xl shadow-xl border border-gray-100 py-2 min-w-[140px] z-50">
+    {% get_available_languages as languages %}
+    {% for lang_code, lang_name in LANGUAGES %}
+    <form action="{% url 'set_language' %}" method="post" class="block">
+      {% csrf_token %}
+      <input type="hidden" name="language" value="{{ lang_code }}">
+      <input type="hidden" name="next" value="{{ request.get_full_path }}">
+      <button type="submit"
+              class="w-full flex items-center gap-2 px-4 py-2 text-sm text-gray-700 hover:bg-accent hover:text-primary transition
+                     {% if lang_code == CURRENT_LANGUAGE %}font-semibold text-primary{% endif %}">
+        <span>{{ LANGUAGE_FLAGS|getitem:lang_code|default:"🌐" }}</span>
+        <span>{{ lang_name }}</span>
+      </button>
+    </form>
+    {% endfor %}
+  </div>
+</div>

@@ -1,0 +1,108 @@
+{% extends "base.html" %}
+{% load i18n static %}
+
+{% block title %}{% trans "Customer Reviews" %} | {{ SITE_NAME }}{% endblock %}
+
+{% block content %}
+<div class="pt-20 lg:pt-28 bg-pattern-subtle-blue">
+  <div class="relative py-16 text-center overflow-hidden bg-pattern-hero">
+    <div class="relative z-10 px-4">
+      <h1 class="text-4xl font-serif font-bold mb-2">{% trans "What Our Travelers Say" %}</h1>
+      <p class="hero-subtitle mt-1">{% trans "Genuine reviews from verified customers worldwide" %}</p>
+    </div>
+  </div>
+
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+    {% if messages %}
+    <div class="mb-6 space-y-2">
+      {% for message in messages %}
+      <div class="rounded-lg px-4 py-3 text-sm {% if message.tags == 'error' %}bg-red-50 text-red-700 border border-red-200{% else %}bg-green-50 text-green-700 border border-green-200{% endif %}">
+        {{ message }}
+      </div>
+      {% endfor %}
+    </div>
+    {% endif %}
+
+    <div class="grid grid-cols-1 lg:grid-cols-[340px_1fr] gap-8 items-start">
+
+      {# Sticky "Write a Review" panel — left column on desktop; below the list on mobile (order-2) so visitors see reviews first. #}
+      <aside id="write-review" class="order-2 lg:order-none scroll-mt-24">
+        <div class="content-card sticky top-24">
+          <h3 class="text-lg font-semibold mb-4 flex items-center gap-2">
+            <i class="ti ti-pencil text-primary"></i> {% trans "Write a Review" %}
+          </h3>
+          <form method="post" action="{% url 'reviews:create' %}" class="space-y-3">
+            {% csrf_token %}
+            {% if form.non_field_errors %}
+            <div class="rounded-lg bg-red-50 border border-red-200 px-3 py-2 text-xs text-red-700">
+              {{ form.non_field_errors }}
+            </div>
+            {% endif %}
+            {% for field in form %}
+            <div>
+              <label for="{{ field.id_for_label }}" class="block text-xs font-medium text-gray-600 mb-1">
+                {{ field.label }}{% if field.field.required %} <span class="text-red-500">*</span>{% endif %}
+              </label>
+              {{ field }}
+              {% if field.help_text %}<p class="text-[0.7rem] text-gray-400 mt-1">{{ field.help_text }}</p>{% endif %}
+              {% for error in field.errors %}
+              <p class="text-xs text-red-600 mt-1">{{ error }}</p>
+              {% endfor %}
+            </div>
+            {% endfor %}
+            <button type="submit" class="btn-accent w-full mt-2">{% trans "Submit Review" %}</button>
+          </form>
+        </div>
+      </aside>
+
+      {# ── Main column: filters + reviews ─────────────────────── #}
+      <div class="order-1 lg:order-none">
+        {# Filters #}
+        <div class="inline-flex flex-wrap items-center gap-3 mb-4 bg-white rounded-xl px-4 py-3 shadow-sm">
+          <a href="?{% if request.GET.rating %}rating={{ request.GET.rating }}{% endif %}"
+             class="px-4 py-2 rounded-full text-sm font-medium transition {% if not current_type %}bg-primary text-white{% else %}bg-white border border-gray-200 text-gray-700{% endif %}">
+            {% trans "All" %}
+          </a>
+          {% for val, label in review_types %}
+          <a href="?type={{ val }}{% if request.GET.rating %}&rating={{ request.GET.rating }}{% endif %}"
+             class="px-4 py-2 rounded-full text-sm font-medium transition {% if current_type == val %}bg-primary text-white{% else %}bg-white border border-gray-200 text-gray-700{% endif %}">
+            {{ label }}
+          </a>
+          {% endfor %}
+        </div>
+
+        {# Rating filter #}
+        <div class="inline-flex flex-wrap gap-2 mb-8 bg-white rounded-xl px-4 py-3 shadow-sm">
+          {% for i in "54321" %}
+          <a href="?{% if current_type %}type={{ current_type }}&{% endif %}rating={{ i }}"
+             class="px-3 py-1.5 rounded-full text-sm border transition {% if current_rating == i %}bg-secondary text-white border-secondary{% else %}bg-white border-gray-200 text-gray-700{% endif %}">
+            {{ i }}★
+          </a>
+          {% endfor %}
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+          {# Inline "Write a Review" prompt — sits right among the review cards #}
+          <a href="#write-review"
+             class="flex flex-col items-center justify-center text-center gap-2 rounded-2xl border-2 border-dashed border-primary/40 bg-primary/5 p-6 hover:bg-primary/10 hover:border-primary/60 transition min-h-[200px]">
+            <span class="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center">
+              <i class="ti ti-pencil-plus text-primary text-2xl"></i>
+            </span>
+            <span class="font-semibold text-brand-ink">{% trans "Share your experience" %}</span>
+            <span class="text-sm text-gray-500">{% trans "Write a review and help other travelers" %}</span>
+            <span class="btn-accent mt-1 text-sm px-4 py-1.5">{% trans "Write a Review" %}</span>
+          </a>
+          {% for review in reviews %}
+            {% include "components/review_card.html" with review=review %}
+          {% empty %}
+          <div class="text-center py-20 text-gray-400 flex items-center justify-center">{% trans "No reviews yet — be the first to write one!" %}</div>
+          {% endfor %}
+        </div>
+
+        {% include "components/pagination.html" %}
+      </div>
+
+    </div>
+  </div>
+</div>
+{% endblock %}

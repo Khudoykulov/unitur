@@ -1,0 +1,2171 @@
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: travel_pro 1.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-07-08 20:31+0000\n"
+"PO-Revision-Date: 2026-07-08 20:31+0000\n"
+"Last-Translator: Travel Pro Team\n"
+"Language-Team: uz\n"
+"Language: uz\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+msgid "Home"
+msgstr "Bosh sahifa"
+
+msgid "Tours"
+msgstr "Turlar"
+
+msgid "Hotels"
+msgstr "Mehmonxonalar"
+
+msgid "Destinations"
+msgstr "Yo'nalishlar"
+
+msgid "Guides"
+msgstr "Qo'llanmalar"
+
+msgid "MICE"
+msgstr "MICE"
+
+msgid "Search"
+msgstr "Qidirish"
+
+msgid "Sign in"
+msgstr "Kirish"
+
+msgid "Sign In"
+msgstr "Kirish"
+
+msgid "Book Now"
+msgstr "Hozir band qiling"
+
+msgid "Domestic Tours"
+msgstr "Ichki Turlar"
+
+msgid "Route"
+msgstr "Marshrut"
+
+msgid "Tap a city to explore it."
+msgstr "Shaharni ko'rish uchun ustiga bosing."
+
+msgid "nights"
+msgstr "kecha"
+
+msgid "Photos"
+msgstr "Suratlar"
+
+msgid "No multi-city tours yet."
+msgstr "Hozircha ko'p shaharli turlar yo'q."
+
+msgid "Browse all tours"
+msgstr "Barcha turlarni ko'rish"
+
+msgid "Multi-city journeys — discover several cities in a single trip"
+msgstr ""
+"Ko'p shaharli sayohatlar — bitta safarda bir nechta shaharni kashf eting"
+
+msgid ""
+"Multi-city tours across Uzbekistan — discover several cities in a single "
+"journey."
+msgstr ""
+"O'zbekiston bo'ylab ko'p shaharli turlar — bitta sayohatda bir nechta "
+"shaharni kashf eting."
+
+msgid "%(count)s multi-city tours"
+msgstr "%(count)s ta ko'p shaharli tur"
+
+msgid "Log in"
+msgstr "Kirish"
+
+msgid "Invalid username or password."
+msgstr "Login yoki parol noto'g'ri."
+
+msgid "Accept"
+msgstr "Qabul qilish"
+
+msgid "Any"
+msgstr "Barchasi"
+
+msgid "Anywhere"
+msgstr "Istalgan joy"
+
+msgid "Close"
+msgstr "Yopish"
+
+msgid "Main page"
+msgstr "Bosh sahifa"
+
+msgid "Guidebook"
+msgstr "Qo'llanma"
+
+msgid "More"
+msgstr "Yana"
+
+msgid "About us"
+msgstr "Biz haqimizda"
+
+msgid "About the Company"
+msgstr "Kompaniya haqida"
+
+msgid "Contact"
+msgstr "Aloqa"
+
+msgid "Working hours"
+msgstr "Ish vaqti"
+
+msgid "Why UNITUR?"
+msgstr "Nega aynan UNITUR?"
+
+msgid "Apply"
+msgstr "Qo'llash"
+
+msgid "Clear"
+msgstr "Tozalash"
+
+msgid "Apply Filters"
+msgstr "Filtrlarni qo'llash"
+
+msgid "Clear all"
+msgstr "Hammasini tozalash"
+
+msgid "Clear filters"
+msgstr "Filtrlarni tozalash"
+
+msgid "Filters"
+msgstr "Filtrlar"
+
+msgid "Details"
+msgstr "Tafsilotlar"
+
+msgid "About"
+msgstr "Haqida"
+
+msgid "All"
+msgstr "Barchasi"
+
+msgid "Featured"
+msgstr "Tanlangan"
+
+msgid "From"
+msgstr "Dan"
+
+msgid "Map"
+msgstr "Xarita"
+
+msgid "Name"
+msgstr "Nomi"
+
+msgid "Slug"
+msgstr "Slug"
+
+msgid "Image"
+msgstr "Rasm"
+
+msgid "Description"
+msgstr "Tavsif"
+
+msgid "Category"
+msgstr "Toifa"
+
+msgid "Status"
+msgstr "Holat"
+
+msgid "Active"
+msgstr "Faol"
+
+msgid "Title"
+msgstr "Sarlavha"
+
+msgid "Price"
+msgstr "Narx"
+
+msgid "Duration"
+msgstr "Davomiyligi"
+
+msgid "Language"
+msgstr "Til"
+
+msgid "Currency"
+msgstr "Valyuta"
+
+msgid "Location"
+msgstr "Joylashuv"
+
+msgid "Contact Us"
+msgstr "Biz bilan bog'laning"
+
+msgid "Email"
+msgstr "Elektron pochta"
+
+msgid "Phone"
+msgstr "Telefon"
+
+msgid "Date"
+msgstr "Sana"
+
+msgid "Type"
+msgstr "Tur"
+
+msgid "User"
+msgstr "Foydalanuvchi"
+
+msgid "Country"
+msgstr "Mamlakat"
+
+msgid "City"
+msgstr "Shahar"
+
+msgid "Tour"
+msgstr "Tur"
+
+msgid "Hotel"
+msgstr "Mehmonxona"
+
+msgid "Website"
+msgstr "Veb-sayt"
+
+msgid "Address"
+msgstr "Manzil"
+
+msgid "Order"
+msgstr "Tartib"
+
+msgid "Caption"
+msgstr "Izoh"
+
+msgid "Rating"
+msgstr "Reyting"
+
+msgid "Published"
+msgstr "Chop etilgan"
+
+msgid "Tags"
+msgstr "Teglar"
+
+msgid "Author"
+msgstr "Muallif"
+
+msgid "Content"
+msgstr "Tarkib"
+
+msgid "Continent"
+msgstr "Qit'a"
+
+msgid "Continents"
+msgstr "Qit'alar"
+
+msgid "Countries"
+msgstr "Mamlakatlar"
+
+msgid "Cities"
+msgstr "Shaharlar"
+
+msgid "Reviews"
+msgstr "Sharhlar"
+
+msgid "Inquiry"
+msgstr "So'rov"
+
+msgid "Inquiries"
+msgstr "So'rovlar"
+
+msgid "Departure"
+msgstr "Ketish"
+
+msgid "Return"
+msgstr "Qaytish"
+
+msgid "Seats"
+msgstr "O'rinlar"
+
+msgid "Book"
+msgstr "Band qilish"
+
+msgid "Full"
+msgstr "To'liq"
+
+msgid "left"
+msgstr "qoldi"
+
+msgid "days"
+msgstr "kun"
+
+msgid "pax"
+msgstr "kishi"
+
+msgid "min read"
+msgstr "daq o'qish"
+
+msgid "min"
+msgstr "daq"
+
+msgid "per person"
+msgstr "kishi boshiga"
+
+msgid "per night from"
+msgstr "kechadan boshlab"
+
+msgid "/ night"
+msgstr "/ kecha"
+
+msgid "persons"
+msgstr "kishi"
+
+msgid "adults"
+msgstr "kattalar"
+
+msgid "children"
+msgstr "bolalar"
+
+msgid "participants"
+msgstr "ishtirokchilar"
+
+msgid "and"
+msgstr "va"
+
+msgid "We use cookies"
+msgstr "Biz cookie-fayllardan foydalanamiz"
+
+msgid ""
+"We use cookies to enhance your browsing experience and analyse traffic. By "
+"clicking 'Accept', you consent to our use of cookies."
+msgstr ""
+"Biz saytdan foydalanish tajribangizni yaxshilash va trafikni tahlil qilish "
+"uchun cookie-fayllardan foydalanamiz. «Qabul qilish» tugmasini bosish orqali"
+" siz cookie-fayllardan foydalanishimizga rozilik bildirasiz."
+
+msgid "Learn more"
+msgstr "Ko'proq bilish"
+
+msgid "Discover the World"
+msgstr "Dunyoni kashf eting"
+
+msgid "With Confidence"
+msgstr "Ishonch bilan"
+
+msgid ""
+"Authentic tours across Uzbekistan and Eurasia. Unmatched service, "
+"unforgettable memories."
+msgstr ""
+"O'zbekiston va Yevrosiyo bo'ylab betakror turlar. Tengsiz xizmat, unutilmas "
+"xotiralar."
+
+msgid "Destination"
+msgstr "Yo'nalish"
+
+msgid "Where to?"
+msgstr "Qayerga?"
+
+msgid "Happy Travelers"
+msgstr "Mamnun sayohatchilar"
+
+msgid "Years Experience"
+msgstr "Yillik tajriba"
+
+msgid "Handpicked for You"
+msgstr "Siz uchun tanlangan"
+
+msgid "Featured Tours"
+msgstr "Tanlangan turlar"
+
+msgid "View All Tours"
+msgstr "Barcha turlarni ko'rish"
+
+msgid "No featured tours yet."
+msgstr "Hozircha tanlangan turlar yo'q."
+
+msgid "Explore the World"
+msgstr "Dunyoni o'rganing"
+
+msgid "Top Destinations"
+msgstr "Eng mashhur yo'nalishlar"
+
+msgid "All Destinations"
+msgstr "Barcha yo'nalishlar"
+
+msgid "Our Promise"
+msgstr "Bizning va'damiz"
+
+msgid "Why Travel Pro?"
+msgstr "Nima uchun Travel Pro?"
+
+msgid "Trusted Agency"
+msgstr "Ishonchli agentlik"
+
+msgid "Licensed and fully insured with 15+ years of excellence."
+msgstr ""
+"15+ yillik mukammallik bilan litsenziyalangan va to'liq sug'urtalangan."
+
+msgid "24/7 Support"
+msgstr "24/7 Qo'llab-quvvatlash"
+
+msgid "Our team is always available to assist you anywhere in the world."
+msgstr ""
+"Bizning jamoamiz dunyo bo'ylab sizga yordam berish uchun har doim tayyor."
+
+msgid "Best Price"
+msgstr "Eng yaxshi narx"
+
+msgid "Price-match guarantee on all our tour packages worldwide."
+msgstr "Barcha tur paketlarimizda narx mosligi kafolati."
+
+msgid "Top Rated"
+msgstr "Yuqori baholangan"
+
+msgid "4.9★ average rating from thousands of verified travelers."
+msgstr "Minglab tasdiqlangan sayohatchilardan 4.9★ o'rtacha reyting."
+
+msgid "Hand-Picked Stays"
+msgstr "Tanlangan turar joylar"
+
+msgid "Featured Hotels"
+msgstr "Tanlangan mehmonxonalar"
+
+msgid "All Hotels"
+msgstr "Barcha mehmonxonalar"
+
+msgid "What Travelers Say"
+msgstr "Sayohatchilar nima deydi"
+
+msgid "Customer Reviews"
+msgstr "Mijozlar sharhlari"
+
+msgid "Read All Reviews"
+msgstr "Barcha sharhlarni o'qish"
+
+msgid "Travel Tips & Inspiration"
+msgstr "Sayohat maslahatlari va ilhom"
+
+msgid "Latest Guides"
+msgstr "So'nggi qo'llanmalar"
+
+msgid "All Articles"
+msgstr "Barcha maqolalar"
+
+msgid "Ready for Your Next Adventure?"
+msgstr "Keyingi sarguzashtingizga tayyormisiz?"
+
+msgid ""
+"Get a personalised itinerary from our travel experts — completely free."
+msgstr "Sayohat mutaxassislarimizdan shaxsiy marshrut oling — mutlaqo bepul."
+
+msgid "Plan My Trip"
+msgstr "Sayohatimni rejalashtirish"
+
+msgid "Browse Tours"
+msgstr "Turlarni ko'rish"
+
+msgid "All Tours"
+msgstr "Barcha turlar"
+
+msgid "All Continents"
+msgstr "Barcha qit'alar"
+
+msgid "Explore our handpicked collection of unforgettable journeys"
+msgstr "Unutilmas sayohatlarning tanlangan to'plamini o'rganing"
+
+msgid "By Category"
+msgstr "Toifa bo'yicha"
+
+msgid "View all tours"
+msgstr "Barcha turlarni ko'rish"
+
+msgid "View all international tours"
+msgstr "Barcha xalqaro turlarni ko'rish"
+
+msgid "All categories"
+msgstr "Barcha toifalar"
+
+msgid "Price Range (USD)"
+msgstr "Narx diapazoni (USD)"
+
+msgid "Min"
+msgstr "Min"
+
+msgid "Max"
+msgstr "Maks"
+
+msgid "Duration (days)"
+msgstr "Davomiyligi (kunlar)"
+
+msgid "Difficulty"
+msgstr "Qiyinlik darajasi"
+
+msgid "{{ count }} tours found"
+msgstr "{{ count }} ta tur topildi"
+
+msgid "Price: Low to High"
+msgstr "Narx: Pastdan yuqoriga"
+
+msgid "Price: High to Low"
+msgstr "Narx: Yuqoridan pastga"
+
+msgid "Newest"
+msgstr "Yangilar"
+
+msgid "Most Popular"
+msgstr "Eng mashhur"
+
+msgid "No tours match your filters."
+msgstr "Filtrlarga mos tur topilmadi."
+
+msgid "Tour Overview"
+msgstr "Tur haqida umumiy ma'lumot"
+
+msgid "What's Included"
+msgstr "Nimalar kiritilgan"
+
+msgid "Not Included"
+msgstr "Kiritilmagan"
+
+msgid "Day-by-Day Itinerary"
+msgstr "Kunlik marshrut"
+
+msgid "Available Departures"
+msgstr "Mavjud jo'nab ketish sanalar"
+
+msgid "Similar Tours"
+msgstr "O'xshash turlar"
+
+msgid "Book This Tour"
+msgstr "Ushbu turni band qilish"
+
+msgid "Send Inquiry"
+msgstr "So'rov yuborish"
+
+msgid "Group size"
+msgstr "Guruh hajmi"
+
+msgid "Share this tour"
+msgstr "Ushbu turni ulashish"
+
+msgid "Book Tour"
+msgstr "Turni band qilish"
+
+msgid "Please correct the errors below."
+msgstr "Quyidagi xatolarni to'g'rilang."
+
+msgid ""
+"Your information is secure and will never be shared with third parties."
+msgstr ""
+"Sizning ma'lumotlaringiz xavfsiz va hech qachon uchinchi shaxslarga "
+"berilmaydi."
+
+msgid "Up to 1 week"
+msgstr "1 haftaga qadar"
+
+msgid "Up to 2 weeks"
+msgstr "2 haftaga qadar"
+
+msgid "Up to 1 month"
+msgstr "1 oyga qadar"
+
+msgid "Find Your Perfect Stay"
+msgstr "Ideal turar joyingizni toping"
+
+msgid "Handpicked hotels from budget to luxury worldwide"
+msgstr ""
+"Dunyo bo'ylab byudjet mehmonxonalardan hashamatli mehmonxonalargacha "
+"tanlangan"
+
+msgid "Filter Hotels"
+msgstr "Mehmonxonalarni filtrlash"
+
+msgid "No hotels match your search."
+msgstr "Qidiruvga mos mehmonxona topilmadi."
+
+msgid "About the Hotel"
+msgstr "Mehmonxona haqida"
+
+msgid "Amenities"
+msgstr "Qulayliklar"
+
+msgid "Room Types"
+msgstr "Xona turlari"
+
+msgid "Capacity"
+msgstr "Sig'im"
+
+msgid "Guest Reviews"
+msgstr "Mehmonlar sharhlari"
+
+msgid "Check Availability"
+msgstr "Bo'sh joylarni tekshirish"
+
+msgid "Check-in"
+msgstr "Kirish"
+
+msgid "Check-out"
+msgstr "Chiqish"
+
+msgid "Explore Destinations"
+msgstr "Yo'nalishlarni o'rganing"
+
+msgid "Discover stunning countries and cities across all continents"
+msgstr "Barcha qit'alardagi ajoyib mamlakatlar va shaharlarni kashf eting"
+
+msgid "Cities to Explore"
+msgstr "O'rganish uchun shaharlar"
+
+msgid "Travel Information"
+msgstr "Sayohat ma'lumotlari"
+
+msgid "Best time to visit"
+msgstr "Eng yaxshi tashrif buyurish vaqti"
+
+msgid "Visa Information"
+msgstr "Viza ma'lumotlari"
+
+msgid "Plan a Trip Here"
+msgstr "Bu yerga sayohat rejalashtiring"
+
+msgid "Top Attractions"
+msgstr "Eng mashhur diqqatga sazovor joylar"
+
+msgid "Entry"
+msgstr "Kirish"
+
+msgid "View on map"
+msgstr "Xaritada ko'rish"
+
+msgid "Hotels in"
+msgstr "Mehmonxonalar:"
+
+msgid "Tours Including"
+msgstr "Turlar qo'shilgan:"
+
+msgid "Timezone"
+msgstr "Vaqt mintaqasi"
+
+msgid "All destinations"
+msgstr "Barcha yo'nalishlar"
+
+msgid "Travel Guides & Tips"
+msgstr "Sayohat qo'llanmalari va maslahatlar"
+
+msgid "Expert advice, destination guides, and travel inspiration"
+msgstr "Ekspert maslahatlari, yo'nalish qo'llanmalari va sayohat ilhomi"
+
+msgid "Read Article"
+msgstr "Maqolani o'qish"
+
+msgid "No articles found."
+msgstr "Maqolalar topilmadi."
+
+msgid "Related Articles"
+msgstr "Bog'liq maqolalar"
+
+msgid "Plan Your Trip"
+msgstr "Sayohatingizni rejalashtiring"
+
+msgid "Ready to experience this destination?"
+msgstr "Ushbu yo'nalishni boshdan kechirmoqchimisiz?"
+
+msgid "MICE & Corporate Travel"
+msgstr "MICE va Korporativ Sayohat"
+
+msgid "Business Travel"
+msgstr "Biznes sayohat"
+
+msgid ""
+"From international conferences to team-building retreats — we handle every "
+"detail."
+msgstr ""
+"Xalqaro konferensiyalardan jamoaviy treninglargacha — biz har bir tafsilotni"
+" boshqaramiz."
+
+msgid "Request a Quote"
+msgstr "Narx so'rash"
+
+msgid "No packages available."
+msgstr "Mavjud paketlar yo'q."
+
+msgid "Need a Custom Corporate Package?"
+msgstr "Maxsus korporativ paket kerakmi?"
+
+msgid "Our MICE specialists will design a bespoke program for your company."
+msgstr ""
+"Bizning MICE mutaxassislarimiz kompaniyangiz uchun maxsus dastur ishlab "
+"chiqadi."
+
+msgid "Talk to a Specialist"
+msgstr "Mutaxassis bilan gaplashish"
+
+msgid "Package Includes"
+msgstr "Paketga kiritilgan"
+
+msgid "Min participants"
+msgstr "Minimal ishtirokchilar"
+
+msgid "Max participants"
+msgstr "Maksimal ishtirokchilar"
+
+msgid "Booking Confirmed!"
+msgstr "Bron tasdiqlandi!"
+
+msgid ""
+"Thank you for booking with Travel Pro. A confirmation email has been sent to"
+msgstr ""
+"Travel Pro orqali bron qilganingiz uchun rahmat. Tasdiqlash xati quyidagi "
+"manzilga yuborildi:"
+
+msgid "Confirmation Number"
+msgstr "Tasdiqlash raqami"
+
+msgid "Customer"
+msgstr "Mijoz"
+
+msgid "Travel date"
+msgstr "Sayohat sanasi"
+
+msgid "Travelers"
+msgstr "Sayohatchilar"
+
+msgid "Browse More Tours"
+msgstr "Ko'proq turlarni ko'rish"
+
+msgid "Back to Home"
+msgstr "Bosh sahifaga qaytish"
+
+msgid "I agree to the Terms & Conditions and Privacy Policy"
+msgstr "Men Shartlar va Maxfiylik siyosatiga roziman"
+
+msgid "Confirm Booking"
+msgstr "Bronni tasdiqlash"
+
+msgid "Tell us about your dream trip and we'll create a custom itinerary."
+msgstr ""
+"Orzu qilgan sayohatingiz haqida bizga aytib bering, biz maxsus marshrut "
+"yarataymiz."
+
+msgid "What Our Travelers Say"
+msgstr "Sayohatchilarimiz nima deydi"
+
+msgid "Genuine reviews from verified customers worldwide"
+msgstr "Dunyo bo'ylab tasdiqlangan mijozlardan haqiqiy sharhlar"
+
+msgid "No reviews found."
+msgstr "Sharhlar topilmadi."
+
+msgid "No reviews yet — be the first to write one!"
+msgstr "Hali sharhlar yo'q — birinchi bo'lib yozing!"
+
+msgid "Share your experience"
+msgstr "Taassurotlaringizni ulashing"
+
+msgid "Write a review and help other travelers"
+msgstr "Sharh yozing va boshqa sayohatchilarga yordam bering"
+
+msgid "About Us"
+msgstr "Biz haqimizda"
+
+msgid "Our Story"
+msgstr "Bizning hikoyamiz"
+
+msgid "About Travel Pro"
+msgstr "Travel Pro haqida"
+
+msgid ""
+"For over 15 years, we've been connecting passionate travelers with "
+"extraordinary destinations across the globe."
+msgstr ""
+"15 yildan ortiq vaqt davomida biz ishtiyoqli sayohatchilarni dunyo bo'ylab "
+"ajoyib yo'nalishlarga bog'lab kelmoqdamiz."
+
+msgid "Our Mission"
+msgstr "Bizning maqsadimiz"
+
+msgid ""
+"To inspire and enable people to experience the world's cultures, landscapes,"
+" and communities through expertly crafted travel experiences — with a "
+"commitment to sustainability, authenticity, and excellence."
+msgstr ""
+"Odamlarga barqarorlik, haqiqiylik va mukammallikka sodiqlik bilan "
+"professional tarzda yaratilgan sayohat tajribalari orqali dunyo "
+"madaniyatlarini, manzaralarini va jamoalarini boshdan kechirish imkonini "
+"berish va ilhom berish."
+
+msgid "Tour Packages"
+msgstr "Tur paketlari"
+
+msgid "Our Values"
+msgstr "Bizning qadriyatlarimiz"
+
+msgid "Sustainability"
+msgstr "Barqarorlik"
+
+msgid ""
+"We partner with eco-conscious operators and promote responsible tourism."
+msgstr ""
+"Biz ekologik ong-li operatorlar bilan hamkorlik qilamiz va mas'uliyatli "
+"turizmni targ'ib qilamiz."
+
+msgid "Authenticity"
+msgstr "Haqiqiylik"
+
+msgid "We create genuine local experiences, not just tourist attractions."
+msgstr ""
+"Biz turistik joylar emas, balki haqiqiy mahalliy tajribalar yaratamiz."
+
+msgid "Excellence"
+msgstr "Mukammallik"
+
+msgid "Every detail is carefully curated to exceed your expectations."
+msgstr ""
+"Har bir tafsilot sizning kutganlaringizdan oshib ketishi uchun sinchkovlik "
+"bilan tanlanadi."
+
+msgid "Ready to Start Your Journey?"
+msgstr "Sayohatingizni boshlashga tayyormisiz?"
+
+msgid "Let our experts create your perfect travel experience."
+msgstr "Mutaxassislarimiz sizning ideal sayohat tajribangizni yaratsin."
+
+msgid "Get in Touch"
+msgstr "Bog'lanish"
+
+msgid "We'd love to hear from you and help plan your perfect trip"
+msgstr ""
+"Sizdan eshitishdan xursand bo'lamiz va ideal sayohatingizni rejalashtirishga"
+" yordam beramiz"
+
+msgid "Send Us a Message"
+msgstr "Bizga xabar yuboring"
+
+msgid "First Name"
+msgstr "Ism"
+
+msgid "Last Name"
+msgstr "Familiya"
+
+msgid "Message"
+msgstr "Xabar"
+
+msgid "Send Message"
+msgstr "Xabar yuborish"
+
+msgid "Contact Information"
+msgstr "Aloqa ma'lumotlari"
+
+msgid "Office Address"
+msgstr "Ofis manzili"
+
+msgid "Social Media"
+msgstr "Ijtimoiy tarmoqlar"
+
+msgid "Welcome Back"
+msgstr "Xush kelibsiz"
+
+msgid "Sign in to manage your bookings and profile"
+msgstr "Bronlaringiz va profilingizni boshqarish uchun kiring"
+
+msgid "Email address"
+msgstr "Elektron pochta manzili"
+
+msgid "Password"
+msgstr "Parol"
+
+msgid "Forgot password?"
+msgstr "Parolni unutdingizmi?"
+
+msgid "Keep me signed in"
+msgstr "Meni tizimda saqlash"
+
+msgid "Don't have an account?"
+msgstr "Hisobingiz yo'qmi?"
+
+msgid "Create one"
+msgstr "Yaratish"
+
+msgid "Your information is secured with SSL encryption."
+msgstr "Sizning ma'lumotlaringiz SSL shifrlash bilan himoyalangan."
+
+msgid "Create Account"
+msgstr "Hisob yaratish"
+
+msgid "Create Your Account"
+msgstr "Hisobingizni yarating"
+
+msgid "Join thousands of travelers exploring the world"
+msgstr ""
+"Dunyo bo'ylab sayohat qiluvchi minglab sayohatchilar safiga qo'shiling"
+
+msgid "At least 8 characters"
+msgstr "Kamida 8 ta belgi"
+
+msgid "Confirm password"
+msgstr "Parolni tasdiqlash"
+
+msgid "Repeat your password"
+msgstr "Parolni takrorlang"
+
+msgid "By registering you agree to our"
+msgstr "Ro'yxatdan o'tish orqali siz bizning"
+
+msgid "Terms"
+msgstr "Shartlar"
+
+msgid "Privacy Policy"
+msgstr "Maxfiylik siyosati"
+
+msgid "Already have an account?"
+msgstr "Hisobingiz bormi?"
+
+msgid "My Profile"
+msgstr "Mening profilim"
+
+msgid "Dashboard"
+msgstr "Boshqaruv paneli"
+
+msgid "My Bookings"
+msgstr "Mening bronlarim"
+
+msgid "Saved Tours"
+msgstr "Saqlangan turlar"
+
+msgid "Sign Out"
+msgstr "Chiqish"
+
+msgid "Ref"
+msgstr "Ref"
+
+msgid "Tour / Hotel"
+msgstr "Tur / Mehmonxona"
+
+msgid "No bookings yet."
+msgstr "Hozircha bronlar yo'q."
+
+msgid "No saved tours yet."
+msgstr "Hozircha saqlangan turlar yo'q."
+
+msgid "Avatar"
+msgstr "Avatar"
+
+msgid "Bio"
+msgstr "Tarjimai hol"
+
+msgid "Date of birth"
+msgstr "Tug'ilgan sana"
+
+msgid "Preferred language"
+msgstr "Afzal til"
+
+msgid "Saved tours"
+msgstr "Saqlangan turlar"
+
+msgid "Newsletter subscribed"
+msgstr "Yangiliklar xatiga obuna"
+
+msgid "User profile"
+msgstr "Foydalanuvchi profili"
+
+msgid "User profiles"
+msgstr "Foydalanuvchi profillari"
+
+msgid "Draft"
+msgstr "Qoralama"
+
+msgid "Submitted"
+msgstr "Yuborilgan"
+
+msgid "Confirmed"
+msgstr "Tasdiqlangan"
+
+msgid "Cancelled"
+msgstr "Bekor qilingan"
+
+msgid "Completed"
+msgstr "Yakunlangan"
+
+msgid "Tour Booking"
+msgstr "Tur bron"
+
+msgid "Hotel Booking"
+msgstr "Mehmonxona bron"
+
+msgid "Corporate / MICE"
+msgstr "Korporativ / MICE"
+
+msgid "Custom Trip"
+msgstr "Maxsus sayohat"
+
+msgid "Referral"
+msgstr "Tavsiya"
+
+msgid "Economy (< $500)"
+msgstr "Tejamkor (< $500)"
+
+msgid "Standard ($500 – $1,500)"
+msgstr "Standart ($500 – $1,500)"
+
+msgid "Premium ($1,500 – $3,000)"
+msgstr "Premium ($1,500 – $3,000)"
+
+msgid "Luxury (> $3,000)"
+msgstr "Hashamatli (> $3,000)"
+
+msgid "Inquiry type"
+msgstr "So'rov turi"
+
+msgid "Tour departure"
+msgstr "Tur jo'nab ketish"
+
+msgid "First name"
+msgstr "Ism"
+
+msgid "Last name"
+msgstr "Familiya"
+
+msgid "Country of origin"
+msgstr "Kelib chiqqan mamlakatи"
+
+msgid "Preferred travel date"
+msgstr "Afzal sayohat sanasi"
+
+msgid "Number of adults"
+msgstr "Kattalar soni"
+
+msgid "Number of children"
+msgstr "Bolalar soni"
+
+msgid "Special requests"
+msgstr "Maxsus so'rovlar"
+
+msgid "Budget range"
+msgstr "Byudjet diapazoni"
+
+msgid "Source"
+msgstr "Manba"
+
+msgid "Assigned to"
+msgstr "Tayinlangan"
+
+msgid "Internal notes"
+msgstr "Ichki eslatmalar"
+
+msgid "Visible to staff only"
+msgstr "Faqat xodimlar uchun ko'rinadi"
+
+msgid "Created from IP"
+msgstr "IP dan yaratilgan"
+
+msgid "Confirmation number"
+msgstr "Tasdiqlash raqami"
+
+msgid "Created at"
+msgstr "Yaratilgan vaqt"
+
+msgid "Updated at"
+msgstr "Yangilangan vaqt"
+
+msgid "SEO title"
+msgstr "SEO sarlavha"
+
+msgid "SEO description"
+msgstr "SEO tavsif"
+
+msgid "Display order"
+msgstr "Ko'rsatish tartibi"
+
+msgid "Flag image"
+msgstr "Bayroq rasmi"
+
+msgid "Cover image"
+msgstr "Muqova rasmi"
+
+msgid "Overview"
+msgstr "Umumiy ko'rinish"
+
+msgid "Visa information"
+msgstr "Viza ma'lumotlari"
+
+msgid "Official language"
+msgstr "Rasmiy til"
+
+msgid "Nature"
+msgstr "Tabiat"
+
+msgid "Culture & Heritage"
+msgstr "Madaniyat va meros"
+
+msgid "Adventure"
+msgstr "Sarguzasht"
+
+msgid "Beach"
+msgstr "Plyaj"
+
+msgid "City Sightseeing"
+msgstr "Shahar ko'rgazmalari"
+
+msgid "Museum"
+msgstr "Muzey"
+
+msgid "Food & Drink"
+msgstr "Ovqat va ichimlik"
+
+msgid "Shopping"
+msgstr "Xarid qilish"
+
+msgid "Entertainment"
+msgstr "Ko'ngil ochar"
+
+msgid "Religious Site"
+msgstr "Diniy joy"
+
+msgid "Entrance fee"
+msgstr "Kirish to'lovi"
+
+msgid "Opening hours"
+msgstr "Ish vaqti"
+
+msgid "Google Maps URL"
+msgstr "Google Maps URL"
+
+msgid "Attraction"
+msgstr "Diqqatga sazovor joy"
+
+msgid "Attractions"
+msgstr "Diqqatga sazovor joylar"
+
+msgid "Population"
+msgstr "Aholi"
+
+msgid "Latitude"
+msgstr "Kenglik"
+
+msgid "Longitude"
+msgstr "Uzunlik"
+
+msgid "Tabler icon name"
+msgstr "Tabler ikonasi nomi"
+
+msgid "Tag"
+msgstr "Teg"
+
+msgid "Guide category"
+msgstr "Qo'llanma toifasi"
+
+msgid "Guide categories"
+msgstr "Qo'llanma toifalari"
+
+msgid "Excerpt"
+msgstr "Qisqa mazmun"
+
+msgid "Reading time (min)"
+msgstr "O'qish vaqti (daq)"
+
+msgid "Views count"
+msgstr "Ko'rishlar soni"
+
+msgid "Published at"
+msgstr "Chop etilgan vaqt"
+
+msgid "Article"
+msgstr "Maqola"
+
+msgid "Articles"
+msgstr "Maqolalar"
+
+msgid "Hotel amenity"
+msgstr "Mehmonxona qulayligi"
+
+msgid "Hotel amenities"
+msgstr "Mehmonxona qulayliklari"
+
+msgid "Budget"
+msgstr "Tejamkor"
+
+msgid "Standard"
+msgstr "Standart"
+
+msgid "Superior"
+msgstr "Superior"
+
+msgid "Boutique"
+msgstr "Butik"
+
+msgid "Resort"
+msgstr "Kurort"
+
+msgid "Hostel"
+msgstr "Hostellik"
+
+msgid "Luxury"
+msgstr "Hashamatli"
+
+msgid "Stars"
+msgstr "Yulduzlar"
+
+msgid "Check-in time"
+msgstr "Kirish vaqti"
+
+msgid "Check-out time"
+msgstr "Chiqish vaqti"
+
+msgid "Price from (per night)"
+msgstr "Narxi (kechasi)"
+
+msgid "Hotel images"
+msgstr "Mehmonxona rasmlari"
+
+msgid "Hotel image"
+msgstr "Mehmonxona rasmi"
+
+msgid "Single"
+msgstr "Bir kishilik"
+
+msgid "Double"
+msgstr "Ikki kishilik"
+
+msgid "Twin"
+msgstr "Twin"
+
+msgid "Triple"
+msgstr "Uch kishilik"
+
+msgid "Suite"
+msgstr "Lyuks"
+
+msgid "Family Room"
+msgstr "Oilaviy xona"
+
+msgid "Deluxe"
+msgstr "Deluxe"
+
+msgid "Presidential Suite"
+msgstr "Prezident lyuksi"
+
+msgid "Room type"
+msgstr "Xona turi"
+
+msgid "Capacity (persons)"
+msgstr "Sig'im (kishi)"
+
+msgid "Price per night"
+msgstr "Kechasi narxi"
+
+msgid "Comma-separated list"
+msgstr "Vergul bilan ajratilgan ro'yxat"
+
+msgid "Available"
+msgstr "Mavjud"
+
+msgid "Hotel room"
+msgstr "Mehmonxona xonasi"
+
+msgid "Hotel rooms"
+msgstr "Mehmonxona xonalari"
+
+msgid "Conference"
+msgstr "Konferensiya"
+
+msgid "Incentive Trip"
+msgstr "Rag'batlantirish safari"
+
+msgid "Exhibition"
+msgstr "Ko'rgazma"
+
+msgid "Team Building"
+msgstr "Jamoa qurish"
+
+msgid "Corporate Retreat"
+msgstr "Korporativ chiqish"
+
+msgid "Product Launch"
+msgstr "Mahsulot taqdimoti"
+
+msgid "Package type"
+msgstr "Paket turi"
+
+msgid "Package includes"
+msgstr "Paketga kiritilgan"
+
+msgid "Price per person (from)"
+msgstr "Kishi boshiga narxi (dan)"
+
+msgid "Featured destinations"
+msgstr "Tanlangan yo'nalishlar"
+
+msgid "Corporate package"
+msgstr "Korporativ paket"
+
+msgid "Corporate packages"
+msgstr "Korporativ paketlar"
+
+msgid "Pending moderation"
+msgstr "Moderatsiya kutilmoqda"
+
+msgid "Approved"
+msgstr "Tasdiqlangan"
+
+msgid "Rejected"
+msgstr "Rad etilgan"
+
+msgid "Tour Review"
+msgstr "Tur sharhi"
+
+msgid "Hotel Review"
+msgstr "Mehmonxona sharhi"
+
+msgid "General Review"
+msgstr "Umumiy sharh"
+
+msgid "Review type"
+msgstr "Sharh turi"
+
+msgid "Registered user"
+msgstr "Ro'yxatdan o'tgan foydalanuvchi"
+
+msgid "Guest name"
+msgstr "Mehmon ismi"
+
+msgid "Guest country"
+msgstr "Mehmon mamlakati"
+
+msgid "Review title"
+msgstr "Sharh sarlavhasi"
+
+msgid "Review body"
+msgstr "Sharh matni"
+
+msgid "Verified purchase"
+msgstr "Tasdiqlangan xarid"
+
+msgid "Set by staff for confirmed bookings"
+msgstr "Tasdiqlangan bronlar uchun xodimlar tomonidan o'rnatiladi"
+
+msgid "Helpful votes"
+msgstr "Foydali ovozlar"
+
+msgid "Review"
+msgstr "Sharh"
+
+msgid "Easy"
+msgstr "Oson"
+
+msgid "Moderate"
+msgstr "O'rtacha"
+
+msgid "Challenging"
+msgstr "Qiyin"
+
+msgid "Min group size"
+msgstr "Minimal guruh hajmi"
+
+msgid "Max group size"
+msgstr "Maksimal guruh hajmi"
+
+msgid "Price per person"
+msgstr "Kishi boshiga narx"
+
+msgid "Discount %"
+msgstr "Chegirma %"
+
+msgid "What's included"
+msgstr "Nimalar kiritilgan"
+
+msgid "What's excluded"
+msgstr "Nimalar kiritilmagan"
+
+msgid "Important notes"
+msgstr "Muhim eslatmalar"
+
+msgid "Tour images"
+msgstr "Tur rasmlari"
+
+msgid "Tour image"
+msgstr "Tur rasmi"
+
+msgid "No meals"
+msgstr "Ovqat yo'q"
+
+msgid "Breakfast"
+msgstr "Nonushta"
+
+msgid "Breakfast & Lunch"
+msgstr "Nonushta va tushlik"
+
+msgid "Breakfast & Dinner"
+msgstr "Nonushta va kechki ovqat"
+
+msgid "All meals"
+msgstr "Barcha ovqatlar"
+
+msgid "Day number"
+msgstr "Kun raqami"
+
+msgid "Meals included"
+msgstr "Ovqatlar kiritilgan"
+
+msgid "Accommodation"
+msgstr "Turar joy"
+
+msgid "Transport"
+msgstr "Transport"
+
+msgid "Tour day"
+msgstr "Tur kuni"
+
+msgid "Tour days"
+msgstr "Tur kunlari"
+
+msgid "Open for booking"
+msgstr "Bron uchun ochiq"
+
+msgid "Closed"
+msgstr "Yopiq"
+
+msgid "Fully booked"
+msgstr "To'liq band"
+
+msgid "Departure date"
+msgstr "Jo'nab ketish sanasi"
+
+msgid "Return date"
+msgstr "Qaytish sanasi"
+
+msgid "Available seats"
+msgstr "Mavjud o'rinlar"
+
+msgid "Booked seats"
+msgstr "Band qilingan o'rinlar"
+
+msgid "Price override"
+msgstr "Narxni o'zgartirish"
+
+msgid "Tour departures"
+msgstr "Tur jo'nab ketish sanalar"
+
+msgid "Icon (Tabler icon name)"
+msgstr "Ikon (Tabler ikonasi nomi)"
+
+msgid "Tour category"
+msgstr "Tur toifasi"
+
+msgid "Tour categories"
+msgstr "Tur toifalari"
+
+msgid "Search tours, destinations…"
+msgstr "Turlar, yo'nalishlarni qidiring…"
+
+msgid "Bookings"
+msgstr "Bandlovlar"
+
+msgid "Accounts"
+msgstr "Akkauntlar"
+
+msgid "Core"
+msgstr "Asosiy"
+
+msgid "Domestic city"
+msgstr "Ichki tur shahri"
+
+msgid "Domestic cities"
+msgstr "Ichki tur shaharlari"
+
+msgid "City image"
+msgstr "Shahar rasmi"
+
+msgid "City images"
+msgstr "Shahar rasmlari"
+
+msgid "Admin login log"
+msgstr "Admin kirish jurnali"
+
+msgid "Admin login logs"
+msgstr "Admin kirish jurnallari"
+
+msgid "Dashboard notification"
+msgstr "Boshqaruv bildirishnomasi"
+
+msgid "Dashboard notifications"
+msgstr "Boshqaruv bildirishnomalari"
+
+msgid "Tour stop"
+msgstr "Tur bekati"
+
+msgid "Tour stops"
+msgstr "Tur bekatlari"
+
+msgid "Information"
+msgstr "Ma'lumot"
+
+msgid "Nights"
+msgstr "Kechalar"
+
+msgid "IP address"
+msgstr "IP manzil"
+
+msgid "Operations"
+msgstr "Operatsiyalar"
+
+msgid "Admin"
+msgstr "Administrator"
+
+msgid "Site"
+msgstr "Sayt"
+
+msgid "View Site"
+msgstr "Saytni ko'rish"
+
+msgid "Superuser"
+msgstr "Super foydalanuvchi"
+
+msgid "Staff"
+msgstr "Xodim"
+
+msgid "Manager"
+msgstr "Menejer"
+
+msgid "Operator"
+msgstr "Operator"
+
+msgid "pending"
+msgstr "kutilmoqda"
+
+msgid "Actions"
+msgstr "Amallar"
+
+msgid "Edit"
+msgstr "Tahrirlash"
+
+msgid "Delete"
+msgstr "O'chirish"
+
+msgid "View"
+msgstr "Ko'rish"
+
+msgid "Save"
+msgstr "Saqlash"
+
+msgid "Cancel"
+msgstr "Bekor qilish"
+
+msgid "Back"
+msgstr "Orqaga"
+
+msgid "Inactive"
+msgstr "Nofaol"
+
+msgid "stops"
+msgstr "bekat"
+
+msgid "Basic Information"
+msgstr "Asosiy ma'lumot"
+
+msgid "Delete this item?"
+msgstr "Bu element o'chirilsinmi?"
+
+msgid "Delete confirmation"
+msgstr "O'chirishni tasdiqlash"
+
+msgid ""
+"Are you sure you want to delete <strong>%(name)s</strong>? This action "
+"cannot be undone."
+msgstr ""
+"<strong>%(name)s</strong> ni o'chirmoqchimisiz? Bu amalni qaytarib "
+"bo'lmaydi."
+
+msgid "Showing %(start)s–%(end)s of %(total)s"
+msgstr "%(total)s tadan %(start)s–%(end)s ko'rsatilmoqda"
+
+msgid "All status"
+msgstr "Barcha holatlar"
+
+msgid "All types"
+msgstr "Barcha turlar"
+
+msgid "Search…"
+msgstr "Qidirish…"
+
+msgid "Search tours…"
+msgstr "Turlarni qidirish…"
+
+msgid "Search hotels…"
+msgstr "Mehmonxonalarni qidirish…"
+
+msgid "Search users…"
+msgstr "Foydalanuvchilarni qidirish…"
+
+msgid "Search countries…"
+msgstr "Davlatlarni qidirish…"
+
+msgid "Search articles…"
+msgstr "Maqolalarni qidirish…"
+
+msgid "Search name, email, #…"
+msgstr "Ism, email, # bo'yicha qidirish…"
+
+msgid "Search title, name…"
+msgstr "Sarlavha, ism bo'yicha qidirish…"
+
+msgid "No tours found."
+msgstr "Turlar topilmadi."
+
+msgid "No hotels found."
+msgstr "Mehmonxonalar topilmadi."
+
+msgid "No countries found."
+msgstr "Davlatlar topilmadi."
+
+msgid "No users found."
+msgstr "Foydalanuvchilar topilmadi."
+
+msgid "No bookings found."
+msgstr "Bandlovlar topilmadi."
+
+msgid "No domestic tours yet. Create one to get started."
+msgstr "Hozircha ichki turlar yo'q. Boshlash uchun bittasini yarating."
+
+msgid "Pending"
+msgstr "Kutilmoqda"
+
+msgid "This Month"
+msgstr "Bu oy"
+
+msgid "Recent Bookings"
+msgstr "So'nggi bandlovlar"
+
+msgid "View all"
+msgstr "Hammasini ko'rish"
+
+msgid "Pending Reviews"
+msgstr "Kutilayotgan sharhlar"
+
+msgid "All caught up!"
+msgstr "Hammasi bajarildi!"
+
+msgid "New Tour"
+msgstr "Yangi tur"
+
+msgid "New Hotel"
+msgstr "Yangi mehmonxona"
+
+msgid "New Article"
+msgstr "Yangi maqola"
+
+msgid "Export CSV"
+msgstr "CSV yuklab olish"
+
+msgid "Back to Tours"
+msgstr "Turlarga qaytish"
+
+msgid "Save Tour"
+msgstr "Turni saqlash"
+
+msgid "Create Tour"
+msgstr "Tur yaratish"
+
+msgid "New Domestic Tour"
+msgstr "Yangi ichki tur"
+
+msgid "Create Domestic Tour"
+msgstr "Ichki tur yaratish"
+
+msgid ""
+"Multi-city domestic tours (2 or more itinerary stops). These appear on the "
+"site's Domestic Tours page."
+msgstr ""
+"Ko'p shaharli ichki turlar (2 yoki undan ortiq bekat). Ular saytdagi Ichki "
+"Turlar sahifasida ko'rinadi."
+
+msgid "Itinerary (Route)"
+msgstr "Marshrut"
+
+msgid ""
+"Add the cities visited, in order. A domestic tour needs at least 2 stops."
+msgstr ""
+"Tashrif buyuriladigan shaharlarni tartib bilan qo'shing. Ichki tur uchun "
+"kamida 2 ta bekat kerak."
+
+msgid "Del"
+msgstr "O'chir"
+
+msgid "Delete this stop"
+msgstr "Bu bekatni o'chirish"
+
+msgid "Remove"
+msgstr "Olib tashlash"
+
+msgid "Add stop"
+msgstr "Bekat qo'shish"
+
+msgid "Add day"
+msgstr "Kun qo'shish"
+
+msgid "Delete this day"
+msgstr "Bu kunni o'chirish"
+
+msgid "Hide from site"
+msgstr "Saytdan yashirish"
+
+msgid "Show on site"
+msgstr "Saytda ko'rsatish"
+
+msgid "'%(name)s' is now visible on the site."
+msgstr "'%(name)s' endi saytda ko'rinadi."
+
+msgid "'%(name)s' is now hidden from the site."
+msgstr "'%(name)s' endi saytdan yashirildi."
+
+msgid "Across Uzbekistan"
+msgstr "O'zbekiston bo'ylab"
+
+msgid "International Tours"
+msgstr "Xalqaro turlar"
+
+msgid "& Expert Tips"
+msgstr "va ekspert maslahatlari"
+
+msgid "Looking for multi-city tours across Uzbekistan?"
+msgstr "O'zbekiston bo'ylab ko'p shaharli turlarni qidiryapsizmi?"
+
+msgid "View Domestic Tours"
+msgstr "Ichki Turlarni ko'rish"
+
+msgid "Looking for international tours?"
+msgstr "Xalqaro turlarni qidiryapsizmi?"
+
+msgid "Tour Categories"
+msgstr "Tur kategoriyalari"
+
+msgid "Categories"
+msgstr "Kategoriyalar"
+
+msgid "Add Category"
+msgstr "Kategoriya qo'shish"
+
+msgid "Save Category"
+msgstr "Kategoriyani saqlash"
+
+msgid "Back to Categories"
+msgstr "Kategoriyalarga qaytish"
+
+msgid "No categories yet."
+msgstr "Hozircha kategoriyalar yo'q."
+
+msgid "Icon"
+msgstr "Belgi"
+
+msgid ""
+"These power the “Category” filter on the public tours page and the Tours "
+"mega-menu."
+msgstr ""
+"Bular ommaviy turlar sahifasidagi “Kategoriya” filtri va Turlar mega-"
+"menyusini boshqaradi."
+
+msgid ""
+"Browse icon names at tabler.io/icons — use the name without the “ti ti-” "
+"prefix."
+msgstr ""
+"Belgi nomlarini tabler.io/icons saytida ko'ring — nomni “ti ti-” prefiksisiz"
+" kiriting."
+
+msgid "Tabler icon name, e.g. compass, building, beach, chef-hat, paw."
+msgstr "Tabler belgi nomi, masalan: compass, building, beach, chef-hat, paw."
+
+msgid "Leave blank to generate from the name."
+msgstr "Nomdan avtomatik yaratish uchun bo'sh qoldiring."
+
+msgid "Category '%(name)s' created."
+msgstr "'%(name)s' kategoriyasi yaratildi."
+
+msgid "Category '%(name)s' updated."
+msgstr "'%(name)s' kategoriyasi yangilandi."
+
+msgid "Category '%(name)s' deleted."
+msgstr "'%(name)s' kategoriyasi o'chirildi."
+
+msgid "Add Continent"
+msgstr "Qit'a qo'shish"
+
+msgid "Save Continent"
+msgstr "Qit'ani saqlash"
+
+msgid "Back to Continents"
+msgstr "Qit'alarga qaytish"
+
+msgid "No continents yet."
+msgstr "Hozircha qit'alar yo'q."
+
+msgid "Continents group countries in the Destinations mega-menu and footer."
+msgstr ""
+"Qit'alar “Yo'nalishlar” mega-menyusi va futerda mamlakatlarni guruhlaydi."
+
+msgid "Continent '%(name)s' created."
+msgstr "'%(name)s' qit'asi yaratildi."
+
+msgid "Continent '%(name)s' updated."
+msgstr "'%(name)s' qit'asi yangilandi."
+
+msgid "Continent '%(name)s' deleted."
+msgstr "'%(name)s' qit'asi o'chirildi."
+
+msgid ""
+"Optionally describe each day of the tour. It appears on the tour page when "
+"provided."
+msgstr ""
+"Ixtiyoriy: turning har bir kunini tasvirlang. Kiritilsa, tur sahifasida "
+"ko'rinadi."
+
+msgid "Domestic tour created."
+msgstr "Ichki tur yaratildi."
+
+msgid "Domestic tour updated."
+msgstr "Ichki tur yangilandi."
+
+msgid "Domestic tour saved."
+msgstr "Ichki tur saqlandi."
+
+msgid "Domestic tour '%(title)s' deleted."
+msgstr "'%(title)s' ichki turi o'chirildi."
+
+msgid "Price/Night"
+msgstr "Narx/kecha"
+
+msgid "Hotel Details"
+msgstr "Mehmonxona ma'lumotlari"
+
+msgid "Save Hotel"
+msgstr "Mehmonxonani saqlash"
+
+msgid "Back to Hotels"
+msgstr "Mehmonxonalarga qaytish"
+
+msgid "Create Hotel"
+msgstr "Mehmonxona yaratish"
+
+msgid "Hotel '%(name)s' created."
+msgstr "'%(name)s' mehmonxonasi yaratildi."
+
+msgid "Hotel '%(name)s' updated."
+msgstr "'%(name)s' mehmonxonasi yangilandi."
+
+msgid "Hotel '%(name)s' deleted."
+msgstr "'%(name)s' mehmonxonasi o'chirildi."
+
+msgid "Add Country"
+msgstr "Davlat qo'shish"
+
+msgid "Country '%(name)s' created."
+msgstr "'%(name)s' davlati yaratildi."
+
+msgid "Country '%(name)s' updated."
+msgstr "'%(name)s' davlati yangilandi."
+
+msgid "Country '%(name)s' deleted."
+msgstr "'%(name)s' davlati o'chirildi."
+
+msgid "Save Article"
+msgstr "Maqolani saqlash"
+
+msgid "Create Article"
+msgstr "Maqola yaratish"
+
+msgid "Article '%(title)s' created."
+msgstr "'%(title)s' maqolasi yaratildi."
+
+msgid "Article '%(title)s' updated."
+msgstr "'%(title)s' maqolasi yangilandi."
+
+msgid "Article '%(title)s' deleted."
+msgstr "'%(title)s' maqolasi o'chirildi."
+
+msgid "Tour '%(title)s' created."
+msgstr "'%(title)s' turi yaratildi."
+
+msgid "Tour '%(title)s' updated."
+msgstr "'%(title)s' turi yangilandi."
+
+msgid "Tour '%(title)s' deleted."
+msgstr "'%(title)s' turi o'chirildi."
+
+msgid "Edit: %(title)s"
+msgstr "Tahrirlash: %(title)s"
+
+msgid "Edit: %(name)s"
+msgstr "Tahrirlash: %(name)s"
+
+msgid "Tour/Hotel"
+msgstr "Tur/Mehmonxona"
+
+msgid "Booking"
+msgstr "Bandlov"
+
+msgid "Booking %(num)s"
+msgstr "Bandlov %(num)s"
+
+msgid "Customer Information"
+msgstr "Mijoz ma'lumotlari"
+
+msgid "Adults"
+msgstr "Kattalar"
+
+msgid "Children"
+msgstr "Bolalar"
+
+msgid "Travel Date"
+msgstr "Sayohat sanasi"
+
+msgid "Special Requests"
+msgstr "Maxsus so'rovlar"
+
+msgid "Internal Notes"
+msgstr "Ichki eslatmalar"
+
+msgid "Save Notes"
+msgstr "Eslatmalarni saqlash"
+
+msgid "Update Status"
+msgstr "Holatni yangilash"
+
+msgid "Email Customer"
+msgstr "Mijozga email yozish"
+
+msgid "Status updated to %(status)s."
+msgstr "Holat %(status)s ga yangilandi."
+
+msgid "Internal notes saved."
+msgstr "Ichki eslatmalar saqlandi."
+
+msgid "Approve"
+msgstr "Tasdiqlash"
+
+msgid "Reject"
+msgstr "Rad etish"
+
+msgid "%(n)s pending"
+msgstr "%(n)s ta kutilmoqda"
+
+msgid "Review approved."
+msgstr "Sharh tasdiqlandi."
+
+msgid "Review rejected."
+msgstr "Sharh rad etildi."
+
+msgid "Review deleted."
+msgstr "Sharh o'chirildi."
+
+msgid "Delete this review permanently? This action cannot be undone."
+msgstr "Bu sharh butunlay o'chirilsinmi? Bu amalni orqaga qaytarib bo'lmaydi."
+
+msgid "Write a Review"
+msgstr "Sharh yozish"
+
+msgid "Submit Review"
+msgstr "Sharhni yuborish"
+
+msgid "Your name"
+msgstr "Ismingiz"
+
+msgid "Tour (optional)"
+msgstr "Tur (ixtiyoriy)"
+
+msgid "Your review"
+msgstr "Sharhingiz"
+
+msgid "Thank you! Your review will appear after moderation."
+msgstr "Rahmat! Sharhingiz moderatsiyadan so'ng ko'rinadi."
+
+msgid "Please correct the errors below and resubmit your review."
+msgstr "Iltimos, quyidagi xatolarni tuzatib, sharhni qayta yuboring."
+
+msgid "Please choose the tour you are reviewing."
+msgstr "Iltimos, sharh yozayotgan turingizni tanlang."
+
+msgid "Please choose the hotel you are reviewing."
+msgstr "Iltimos, sharh yozayotgan mehmonxonangizni tanlang."
+
+msgid "Order Added"
+msgstr "Qo'shilgan tartibda"
+
+msgid "New User"
+msgstr "Yangi foydalanuvchi"
+
+msgid "Create User"
+msgstr "Foydalanuvchi yaratish"
+
+msgid "Current Role"
+msgstr "Joriy rol"
+
+msgid "Change Role"
+msgstr "Rolni o'zgartirish"
+
+msgid "Role"
+msgstr "Rol"
+
+msgid "Joined"
+msgstr "Qo'shilgan"
+
+msgid "Last Login"
+msgstr "Oxirgi kirish"
+
+msgid "Never"
+msgstr "Hech qachon"
+
+msgid "(you)"
+msgstr "(siz)"
+
+msgid "Cannot change own role"
+msgstr "O'z rolingizni o'zgartira olmaysiz"
+
+msgid "You cannot delete your own account"
+msgstr "O'z akkauntingizni o'chira olmaysiz"
+
+msgid "You cannot delete your own account."
+msgstr "O'z akkauntingizni o'chira olmaysiz."
+
+msgid "You cannot change your own role."
+msgstr "O'z rolingizni o'zgartira olmaysiz."
+
+msgid "Delete this user? This cannot be undone."
+msgstr "Bu foydalanuvchi o'chirilsinmi? Buni qaytarib bo'lmaydi."
+
+msgid "Role Permissions"
+msgstr "Rol huquqlari"
+
+msgid "Public site only, no dashboard access"
+msgstr "Faqat ommaviy sayt, boshqaruv paneliga kirish yo'q"
+
+msgid "Dashboard: view bookings & reviews only"
+msgstr "Panel: faqat bandlov va sharhlarni ko'rish"
+
+msgid "Dashboard: full content management"
+msgstr "Panel: to'liq kontent boshqaruvi"
+
+msgid "Full access including user management"
+msgstr "To'liq kirish, jumladan foydalanuvchilarni boshqarish"
+
+msgid "Account Details"
+msgstr "Akkaunt ma'lumotlari"
+
+msgid "The email address is also used as the login username."
+msgstr "Email manzili login sifatida ham ishlatiladi."
+
+msgid "Save Changes"
+msgstr "O'zgarishlarni saqlash"
+
+msgid "Back to Users"
+msgstr "Foydalanuvchilarga qaytish"
+
+msgid "New password"
+msgstr "Yangi parol"
+
+msgid "Leave blank to keep the current password."
+msgstr "Joriy parolni saqlab qolish uchun bo'sh qoldiring."
+
+msgid "Active (can log in)"
+msgstr "Faol (kira oladi)"
+
+msgid "A user with this email already exists."
+msgstr "Bu email bilan foydalanuvchi allaqachon mavjud."
+
+msgid "Another user with this email already exists."
+msgstr "Bu email bilan boshqa foydalanuvchi allaqachon mavjud."
+
+msgid "Unknown role."
+msgstr "Noma'lum rol."
+
+msgid "User %(email)s created with role '%(role)s'."
+msgstr "%(email)s foydalanuvchisi '%(role)s' roli bilan yaratildi."
+
+msgid "User %(email)s updated."
+msgstr "%(email)s foydalanuvchisi yangilandi."
+
+msgid "User %(email)s deleted."
+msgstr "%(email)s foydalanuvchisi o'chirildi."
+
+msgid "Role for %(email)s updated to '%(role)s'."
+msgstr "%(email)s uchun rol '%(role)s' ga yangilandi."
+
+msgid "User — public site only"
+msgstr "Foydalanuvchi — faqat ommaviy sayt"
+
+msgid "Operator — bookings & reviews"
+msgstr "Operator — bandlov va sharhlar"
+
+msgid "Manager — full content management"
+msgstr "Menejer — to'liq kontent boshqaruvi"
+
+msgid "Superuser — full access"
+msgstr "Super foydalanuvchi — to'liq kirish"
+
+msgid "Add City"
+msgstr "Shahar qo'shish"
+
+msgid "Save City"
+msgstr "Shaharni saqlash"
+
+msgid "City '%(name)s' created."
+msgstr "'%(name)s' shahri yaratildi."
+
+msgid "City '%(name)s' updated."
+msgstr "'%(name)s' shahri yangilandi."
+
+msgid "City '%(name)s' deleted."
+msgstr "'%(name)s' shahri o'chirildi."
+
+msgid ""
+"Domestic (Uzbek) cities. These are the stops you can pick when building a "
+"domestic tour route."
+msgstr ""
+"Ichki (O'zbekiston) shaharlari. Ichki tur marshrutini tuzishda shu "
+"shaharlarni bekat sifatida tanlaysiz."
+
+msgid "No cities yet. Add one to build domestic tour routes."
+msgstr ""
+"Hozircha shaharlar yo'q. Ichki tur marshrutlarini tuzish uchun bittasini "
+"qo'shing."
+
+msgid ""
+"The city is added under Uzbekistan and becomes selectable in domestic tour "
+"routes."
+msgstr ""
+"Shahar O'zbekiston ostida qo'shiladi va ichki tur marshrutlarida "
+"tanlanadigan bo'ladi."
+
+msgid "Hero Images"
+msgstr "Fon rasmlari"
+
+msgid "Add Hero Image"
+msgstr "Fon rasmi qo'shish"
+
+msgid "Edit Hero Image"
+msgstr "Fon rasmini tahrirlash"
+
+msgid "Hero image added."
+msgstr "Fon rasmi qo'shildi."
+
+msgid "Hero image updated."
+msgstr "Fon rasmi yangilandi."
+
+msgid "Hero image deleted."
+msgstr "Fon rasmi o'chirildi."
+
+msgid "All pages"
+msgstr "Barcha sahifalar"
+
+msgid "Page"
+msgstr "Sahifa"
+
+msgid "Alt text"
+msgstr "Alt matn"
+
+msgid ""
+"Rotating background images for page heroes. Add several images to the same "
+"page and they cross-fade automatically."
+msgstr ""
+"Sahifa hero qismi uchun almashib turadigan fon rasmlari. Bitta sahifaga bir "
+"nechta rasm qo'shsangiz, ular avtomatik almashadi."
+
+msgid "No hero images yet. Add a few to a page to start the slideshow."
+msgstr ""
+"Hozircha fon rasmlari yo'q. Slayd-shou uchun sahifaga bir nechta rasm "
+"qo'shing."
+
+msgid "Which page's hero slideshow this image belongs to."
+msgstr "Bu rasm qaysi sahifaning hero slayderiga tegishli."

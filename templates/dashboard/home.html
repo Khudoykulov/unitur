@@ -1,0 +1,150 @@
+{% extends "dashboard/base.html" %}
+{% load dashboard_tags i18n %}
+
+{% block title %}{% trans "Overview" %}{% endblock %}
+{% block breadcrumb %}<span class="text-gray-400">/</span> <span class="text-gray-700">{% trans "Overview" %}</span>{% endblock %}
+
+{% block content %}
+<div class="max-w-7xl mx-auto">
+
+  {# ── Stat Cards ── #}
+  <div class="grid grid-cols-2 md:grid-cols-3 xl:grid-cols-6 gap-4 mb-6">
+
+    <div class="bg-white rounded-xl border border-gray-200 p-4">
+      <div class="flex items-center justify-between mb-2">
+        <span class="text-xs text-gray-500 font-medium uppercase tracking-wide">{% trans "Tours" %}</span>
+        <span class="w-8 h-8 rounded-lg bg-emerald-50 flex items-center justify-center">
+          <i class="ti ti-map-2 text-emerald-600"></i>
+        </span>
+      </div>
+      <p class="text-2xl font-bold text-gray-900">{{ total_tours }}</p>
+    </div>
+
+    <div class="bg-white rounded-xl border border-gray-200 p-4">
+      <div class="flex items-center justify-between mb-2">
+        <span class="text-xs text-gray-500 font-medium uppercase tracking-wide">{% trans "Hotels" %}</span>
+        <span class="w-8 h-8 rounded-lg bg-blue-50 flex items-center justify-center">
+          <i class="ti ti-building text-blue-600"></i>
+        </span>
+      </div>
+      <p class="text-2xl font-bold text-gray-900">{{ total_hotels }}</p>
+    </div>
+
+    <div class="bg-white rounded-xl border border-gray-200 p-4">
+      <div class="flex items-center justify-between mb-2">
+        <span class="text-xs text-gray-500 font-medium uppercase tracking-wide">{% trans "Pending" %}</span>
+        <span class="w-8 h-8 rounded-lg bg-yellow-50 flex items-center justify-center">
+          <i class="ti ti-clock text-yellow-600"></i>
+        </span>
+      </div>
+      <p class="text-2xl font-bold text-yellow-600">{{ pending_bookings }}</p>
+    </div>
+
+    <div class="bg-white rounded-xl border border-gray-200 p-4">
+      <div class="flex items-center justify-between mb-2">
+        <span class="text-xs text-gray-500 font-medium uppercase tracking-wide">{% trans "Confirmed" %}</span>
+        <span class="w-8 h-8 rounded-lg bg-green-50 flex items-center justify-center">
+          <i class="ti ti-circle-check text-green-600"></i>
+        </span>
+      </div>
+      <p class="text-2xl font-bold text-green-600">{{ confirmed_bookings }}</p>
+    </div>
+
+    <div class="bg-white rounded-xl border border-gray-200 p-4">
+      <div class="flex items-center justify-between mb-2">
+        <span class="text-xs text-gray-500 font-medium uppercase tracking-wide">{% trans "This Month" %}</span>
+        <span class="w-8 h-8 rounded-lg bg-purple-50 flex items-center justify-center">
+          <i class="ti ti-calendar-event text-purple-600"></i>
+        </span>
+      </div>
+      <p class="text-2xl font-bold text-gray-900">{{ monthly_bookings }}</p>
+    </div>
+
+    <div class="bg-white rounded-xl border border-gray-200 p-4">
+      <div class="flex items-center justify-between mb-2">
+        <span class="text-xs text-gray-500 font-medium uppercase tracking-wide">{% trans "Reviews" %}</span>
+        <span class="w-8 h-8 rounded-lg bg-orange-50 flex items-center justify-center">
+          <i class="ti ti-star text-orange-500"></i>
+        </span>
+      </div>
+      <p class="text-2xl font-bold text-orange-600">{{ pending_reviews }}</p>
+    </div>
+  </div>
+
+  <div class="grid grid-cols-1 xl:grid-cols-3 gap-6">
+
+    {# ── Recent Bookings Table ── #}
+    <div class="xl:col-span-2 bg-white rounded-xl border border-gray-200 overflow-hidden">
+      <div class="flex items-center justify-between px-5 py-4 border-b border-gray-100">
+        <h2 class="font-semibold text-gray-800">{% trans "Recent Bookings" %}</h2>
+        <a href="{% url 'dashboard:bookings_list' %}" class="text-xs text-emerald-600 hover:underline">{% trans "View all" %} →</a>
+      </div>
+      <div class="overflow-x-auto">
+        <table class="w-full text-sm">
+          <thead>
+            <tr class="bg-gray-50 text-left">
+              <th class="px-4 py-3 text-xs text-gray-500 font-semibold uppercase tracking-wide">#</th>
+              <th class="px-4 py-3 text-xs text-gray-500 font-semibold uppercase tracking-wide">{% trans "Customer" %}</th>
+              <th class="px-4 py-3 text-xs text-gray-500 font-semibold uppercase tracking-wide">{% trans "Type" %}</th>
+              <th class="px-4 py-3 text-xs text-gray-500 font-semibold uppercase tracking-wide">{% trans "Status" %}</th>
+              <th class="px-4 py-3 text-xs text-gray-500 font-semibold uppercase tracking-wide">{% trans "Date" %}</th>
+              <th class="px-4 py-3"></th>
+            </tr>
+          </thead>
+          <tbody class="divide-y divide-gray-100">
+            {% for b in recent_bookings %}
+            <tr class="hover:bg-gray-50">
+              <td class="px-4 py-3 font-mono text-xs text-gray-500">{{ b.confirmation_number }}</td>
+              <td class="px-4 py-3 font-medium text-gray-800">{{ b.full_name }}</td>
+              <td class="px-4 py-3 text-gray-600">{{ b.get_inquiry_type_display }}</td>
+              <td class="px-4 py-3">{{ b.status|status_badge }}</td>
+              <td class="px-4 py-3 text-gray-500 text-xs">{{ b.created_at|date:"M j, Y" }}</td>
+              <td class="px-4 py-3">
+                <a href="{% url 'dashboard:booking_detail' b.pk %}" class="text-emerald-600 hover:text-emerald-800 text-xs">{% trans "View" %}</a>
+              </td>
+            </tr>
+            {% empty %}
+            <tr><td colspan="6" class="px-4 py-8 text-center text-gray-400">{% trans "No bookings yet." %}</td></tr>
+            {% endfor %}
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    {# ── Pending Reviews ── #}
+    <div class="bg-white rounded-xl border border-gray-200 overflow-hidden">
+      <div class="flex items-center justify-between px-5 py-4 border-b border-gray-100">
+        <h2 class="font-semibold text-gray-800">{% trans "Pending Reviews" %}</h2>
+        <a href="{% url 'dashboard:reviews_list' %}" class="text-xs text-emerald-600 hover:underline">{% trans "Moderate" %} →</a>
+      </div>
+      <div class="divide-y divide-gray-100">
+        {% for r in pending_review_list %}
+        <div class="px-4 py-3">
+          <p class="font-medium text-gray-800 text-sm truncate">{{ r.title }}</p>
+          <p class="text-xs text-gray-500 mt-0.5">{{ r.reviewer_name }} · {{ r.rating|star_rating }}</p>
+          <p class="text-xs text-gray-400 mt-0.5">{{ r.created_at|date:"M j, Y" }}</p>
+        </div>
+        {% empty %}
+        <div class="px-4 py-8 text-center text-gray-400 text-sm">{% trans "All caught up!" %}</div>
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+
+  {# ── Quick Actions ── #}
+  <div class="mt-6 grid grid-cols-2 sm:grid-cols-4 gap-3">
+    <a href="{% url 'dashboard:tours_create' %}" class="flex items-center gap-2 bg-white border border-gray-200 hover:border-emerald-300 hover:bg-emerald-50 rounded-xl px-4 py-3 text-sm font-medium text-gray-700 hover:text-emerald-700 transition">
+      <i class="ti ti-plus text-emerald-600"></i> {% trans "New Tour" %}
+    </a>
+    <a href="{% url 'dashboard:hotels_create' %}" class="flex items-center gap-2 bg-white border border-gray-200 hover:border-blue-300 hover:bg-blue-50 rounded-xl px-4 py-3 text-sm font-medium text-gray-700 hover:text-blue-700 transition">
+      <i class="ti ti-plus text-blue-600"></i> {% trans "New Hotel" %}
+    </a>
+    <a href="{% url 'dashboard:articles_create' %}" class="flex items-center gap-2 bg-white border border-gray-200 hover:border-purple-300 hover:bg-purple-50 rounded-xl px-4 py-3 text-sm font-medium text-gray-700 hover:text-purple-700 transition">
+      <i class="ti ti-plus text-purple-600"></i> {% trans "New Article" %}
+    </a>
+    <a href="{% url 'dashboard:bookings_export' %}" class="flex items-center gap-2 bg-white border border-gray-200 hover:border-gray-400 hover:bg-gray-50 rounded-xl px-4 py-3 text-sm font-medium text-gray-700 transition">
+      <i class="ti ti-download text-gray-500"></i> {% trans "Export CSV" %}
+    </a>
+  </div>
+</div>
+{% endblock %}

@@ -1,0 +1,86 @@
+{% extends "dashboard/base.html" %}
+{% load dashboard_tags i18n %}
+
+{% block title %}{% trans "Articles" %}{% endblock %}
+{% block breadcrumb %}<span class="text-gray-400">/</span> <span class="text-gray-700">{% trans "Articles" %}</span>{% endblock %}
+
+{% block content %}
+<div class="max-w-7xl mx-auto">
+  <div class="flex items-center justify-between mb-5">
+    <h1 class="text-xl font-bold text-gray-800">{% trans "Articles" %} <span class="text-gray-400 font-normal text-base">({{ page_obj.paginator.count }})</span></h1>
+    <a href="{% url 'dashboard:articles_create' %}" class="inline-flex items-center gap-1.5 bg-purple-600 hover:bg-purple-700 text-white text-sm font-medium px-4 py-2 rounded-lg transition">
+      <i class="ti ti-plus"></i> {% trans "New Article" %}
+    </a>
+  </div>
+
+  <form method="get" class="flex flex-wrap gap-2 mb-5">
+    <input type="text" name="q" value="{{ q }}" placeholder="{% trans 'Search articles…' %}"
+           class="border border-gray-300 rounded-lg px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-purple-300 w-56">
+    <select name="category" class="border border-gray-300 rounded-lg px-3 py-2 text-sm focus:outline-none">
+      <option value="">{% trans "All categories" %}</option>
+      {% for cat in categories %}<option value="{{ cat.slug }}" {% if cat.slug == selected_category %}selected{% endif %}>{{ cat.name }}</option>{% endfor %}
+    </select>
+    <select name="published" class="border border-gray-300 rounded-lg px-3 py-2 text-sm focus:outline-none">
+      <option value="">{% trans "All" %}</option>
+      <option value="1">{% trans "Published" %}</option>
+      <option value="0">{% trans "Draft" %}</option>
+    </select>
+    <button type="submit" class="bg-gray-800 text-white text-sm px-4 py-2 rounded-lg hover:bg-gray-700 transition">{% trans "Filter" %}</button>
+  </form>
+
+  <div class="bg-white rounded-xl border border-gray-200 overflow-hidden">
+    <div class="overflow-x-auto">
+      <table class="w-full text-sm">
+        <thead>
+          <tr class="bg-gray-50 text-left border-b border-gray-200">
+            <th class="px-4 py-3 text-xs text-gray-500 font-semibold uppercase tracking-wide">{% trans "Article" %}</th>
+            <th class="px-4 py-3 text-xs text-gray-500 font-semibold uppercase tracking-wide">{% trans "Category" %}</th>
+            <th class="px-4 py-3 text-xs text-gray-500 font-semibold uppercase tracking-wide">{% trans "Author" %}</th>
+            <th class="px-4 py-3 text-xs text-gray-500 font-semibold uppercase tracking-wide">{% trans "Status" %}</th>
+            <th class="px-4 py-3 text-xs text-gray-500 font-semibold uppercase tracking-wide">{% trans "Date" %}</th>
+            <th class="px-4 py-3 text-xs text-gray-500 font-semibold uppercase tracking-wide">{% trans "Actions" %}</th>
+          </tr>
+        </thead>
+        <tbody class="divide-y divide-gray-100">
+          {% for article in articles %}
+          <tr class="hover:bg-gray-50">
+            <td class="px-4 py-3">
+              <div class="flex items-center gap-3">
+                {% if article.cover_image %}
+                <img src="{{ article.cover_image.url }}" alt="" class="w-10 h-10 rounded-lg object-cover flex-shrink-0">
+                {% else %}
+                <div class="w-10 h-10 rounded-lg bg-gray-100 flex items-center justify-center flex-shrink-0">
+                  <i class="ti ti-article text-gray-400"></i>
+                </div>
+                {% endif %}
+                <p class="font-medium text-gray-800">{{ article.title|truncatechars:45 }}</p>
+              </div>
+            </td>
+            <td class="px-4 py-3 text-gray-600">{{ article.category.name|default:"—" }}</td>
+            <td class="px-4 py-3 text-gray-600">{{ article.author.get_full_name|default:article.author.email|default:"—"|truncatechars:20 }}</td>
+            <td class="px-4 py-3">
+              {% if article.is_published %}<span class="inline-flex items-center px-2 py-0.5 rounded-full text-xs font-medium bg-green-100 text-green-700">{% trans "Published" %}</span>
+              {% else %}<span class="inline-flex items-center px-2 py-0.5 rounded-full text-xs font-medium bg-gray-100 text-gray-600">{% trans "Draft" %}</span>{% endif %}
+            </td>
+            <td class="px-4 py-3 text-gray-500 text-xs">{{ article.created_at|date:"M j, Y" }}</td>
+            <td class="px-4 py-3">
+              <div class="flex items-center gap-2">
+                <a href="{{ article.get_absolute_url }}" target="_blank" class="text-gray-400 hover:text-gray-600" title="{% trans 'View' %}"><i class="ti ti-external-link"></i></a>
+                <a href="{% url 'dashboard:articles_edit' article.pk %}" class="text-purple-500 hover:text-purple-700" title="{% trans 'Edit' %}"><i class="ti ti-pencil"></i></a>
+                <form method="post" action="{% url 'dashboard:articles_delete' article.pk %}" onsubmit="return confirm('{% trans 'Delete this item?' %}')">
+                  {% csrf_token %}
+                  <button type="submit" class="text-red-400 hover:text-red-600" title="{% trans 'Delete' %}"><i class="ti ti-trash"></i></button>
+                </form>
+              </div>
+            </td>
+          </tr>
+          {% empty %}
+          <tr><td colspan="6" class="px-4 py-10 text-center text-gray-400">{% trans "No articles found." %}</td></tr>
+          {% endfor %}
+        </tbody>
+      </table>
+    </div>
+    {% include "dashboard/components/pagination.html" %}
+  </div>
+</div>
+{% endblock %}

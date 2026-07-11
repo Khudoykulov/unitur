@@ -1,0 +1,281 @@
+{% extends "base.html" %}
+{% load i18n static %}
+
+{% block title %}{{ SITE_NAME }} – {{ SITE_TAGLINE }}{% endblock %}
+
+{% block content %}
+
+{# ── Hero — bg-pattern-hero (muted sea-blue + calm yellow, connects with navbar) ── #}
+<section class="relative min-h-screen flex items-center justify-center overflow-hidden bg-pattern-hero">
+  <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-32 text-center">
+    <h1 class="font-serif text-5xl md:text-6xl lg:text-7xl font-bold leading-tight mb-6">
+      {% trans "Discover the World" %}<br>
+      <span class="hero-heading-accent">{% trans "With Confidence" %}</span>
+    </h1>
+    <p class="hero-subtitle text-lg md:text-xl max-w-2xl mx-auto mb-10">
+      {% trans "Authentic tours across Uzbekistan and Eurasia. Unmatched service, unforgettable memories." %}
+    </p>
+
+    {# Quick search — white card #}
+    <div class="bg-white border border-gray-100 shadow-card rounded-2xl p-6 max-w-3xl mx-auto">
+      <form action="{% url 'tours:list' %}" method="get" class="grid grid-cols-1 md:grid-cols-3 gap-3">
+        <div class="text-left">
+          <label class="block text-text-muted text-xs mb-1">{% trans "Destination" %}</label>
+          <select name="destination" class="w-full border border-gray-300 text-gray-800 rounded-lg px-3 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-primary">
+            <option value="">{% trans "Anywhere" %}</option>
+            {% for dest in destinations %}
+            <option value="{{ dest.pk }}">{{ dest.name }}</option>
+            {% endfor %}
+          </select>
+        </div>
+        <div class="text-left">
+          <label class="block text-text-muted text-xs mb-1">{% trans "Duration" %}</label>
+          <select name="max_duration" class="w-full border border-gray-300 text-gray-800 rounded-lg px-3 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-primary">
+            <option value="">{% trans "Any" %}</option>
+            <option value="7">{% trans "Up to 1 week" %}</option>
+            <option value="14">{% trans "Up to 2 weeks" %}</option>
+            <option value="30">{% trans "Up to 1 month" %}</option>
+          </select>
+        </div>
+        <button type="submit" class="btn-primary font-semibold rounded-lg px-4 py-2.5 flex items-center justify-center gap-2 mt-auto">
+          <i class="ti ti-search"></i> {% trans "Search" %}
+        </button>
+      </form>
+    </div>
+  </div>
+
+  {# Scroll indicator #}
+  <div class="absolute bottom-8 left-1/2 -translate-x-1/2 animate-bounce">
+    <div class="w-6 h-10 rounded-full border-2 border-white/50 flex items-start justify-center p-1">
+      <div class="w-1 h-2 bg-white/70 rounded-full"></div>
+    </div>
+  </div>
+</section>
+
+{# Patterned block 1a: Featured Tours (subtle-blue). #}
+<div class="bg-pattern-subtle-blue">
+
+{# ── Featured Tours #}
+<section class="py-20">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="flex flex-col md:flex-row md:items-end justify-between mb-10 gap-4">
+      <div>
+        <p class="text-brand-gold font-semibold text-base uppercase tracking-wide mb-2">{% trans "Handpicked for You" %}</p>
+        <h2 class="text-4xl font-serif font-bold text-brand-ink">{% trans "Featured Tours" %}</h2>
+      </div>
+      <a href="{% url 'tours:list' %}" class="btn-outline flex items-center gap-2 self-start">
+        {% trans "View All Tours" %} <i class="ti ti-arrow-right"></i>
+      </a>
+    </div>
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+      {% for tour in featured_tours %}
+        {% include "components/tour_card.html" with tour=tour %}
+      {% empty %}
+      <p class="col-span-3 text-center text-gray-500 py-12">{% trans "No featured tours yet." %}</p>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+</div>{# /patterned block 1a #}
+
+{# ── Stats strip — brand pattern band (bg-pattern-cta), white figures, gold accent ── #}
+<section class="py-14 bg-pattern-cta">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="grid grid-cols-2 md:grid-cols-4 gap-8 text-center text-white divide-y sm:divide-y-0 md:divide-x divide-white/15">
+      <div class="px-2">
+        <p class="text-4xl md:text-5xl font-bold font-serif">{{ stats.tours_count }}<span class="text-brand-ctaLine">+</span></p>
+        <p class="text-sm text-white/80 mt-2 uppercase tracking-wide">{% trans "Tours" %}</p>
+      </div>
+      <div class="px-2">
+        <p class="text-4xl md:text-5xl font-bold font-serif">{{ stats.countries_count }}<span class="text-brand-ctaLine">+</span></p>
+        <p class="text-sm text-white/80 mt-2 uppercase tracking-wide">{% trans "Countries" %}</p>
+      </div>
+      <div class="px-2">
+        <p class="text-4xl md:text-5xl font-bold font-serif">{{ stats.happy_travelers|floatformat:"-3" }}<span class="text-brand-ctaLine">+</span></p>
+        <p class="text-sm text-white/80 mt-2 uppercase tracking-wide">{% trans "Happy Travelers" %}</p>
+      </div>
+      <div class="px-2">
+        <p class="text-4xl md:text-5xl font-bold font-serif">{{ stats.years_experience }}<span class="text-brand-ctaLine">+</span></p>
+        <p class="text-sm text-white/80 mt-2 uppercase tracking-wide">{% trans "Years Experience" %}</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+{# Patterned block 1b: Top Destinations (subtle-blue). #}
+<div class="bg-pattern-subtle-blue">
+
+{# ── Top Destinations #}
+<section class="py-20">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="text-center mb-12">
+      <p class="text-brand-gold font-semibold text-base uppercase tracking-wide mb-2">{% trans "Explore the World" %}</p>
+      <h2 class="text-4xl font-serif font-bold text-brand-ink">{% trans "Top Destinations" %}</h2>
+    </div>
+    <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+      {% for country in featured_destinations %}
+        {% include "components/destination_card.html" with country=country %}
+      {% endfor %}
+    </div>
+    <div class="text-center mt-10">
+      <a href="{% url 'destinations:list' %}" class="btn-primary px-8 py-3 inline-flex items-center gap-2">
+        {% trans "All Destinations" %} <i class="ti ti-globe"></i>
+      </a>
+    </div>
+  </div>
+</section>
+
+</div>{# /patterned block 1b #}
+
+{# ── Why UNITUR — bg-pattern-tint-blue (pale blue variant for contrast) ── #}
+<section class="py-20 bg-pattern-tint-blue">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="text-center mb-14">
+      <p class="text-brand-gold font-semibold text-base uppercase tracking-wide mb-2">{% trans "Our Promise" %}</p>
+      <h2 class="text-4xl font-serif font-bold text-brand-ink">{% trans "Why UNITUR?" %}</h2>
+    </div>
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+      <div class="bg-white rounded-2xl shadow-soft border border-brand-blueLight/30 p-8 flex flex-col items-center text-center gap-3 hover:shadow-card hover:-translate-y-1 transition-all duration-300">
+        <div class="w-16 h-16 rounded-full bg-brand-blue flex items-center justify-center shadow-sm">
+          <i class="ti ti-shield-check text-white text-2xl"></i>
+        </div>
+        <h3 class="font-semibold text-lg text-brand-ink">{% trans "Trusted Agency" %}</h3>
+        <p class="text-text-muted text-sm leading-relaxed">{% trans "Licensed and fully insured with 15+ years of excellence." %}</p>
+      </div>
+      <div class="bg-white rounded-2xl shadow-soft border border-brand-blueLight/30 p-8 flex flex-col items-center text-center gap-3 hover:shadow-card hover:-translate-y-1 transition-all duration-300">
+        <div class="w-16 h-16 rounded-full bg-brand-blue flex items-center justify-center shadow-sm">
+          <i class="ti ti-headset text-white text-2xl"></i>
+        </div>
+        <h3 class="font-semibold text-lg text-brand-ink">{% trans "24/7 Support" %}</h3>
+        <p class="text-text-muted text-sm leading-relaxed">{% trans "Our team is always available to assist you anywhere in the world." %}</p>
+      </div>
+      <div class="bg-white rounded-2xl shadow-soft border border-brand-blueLight/30 p-8 flex flex-col items-center text-center gap-3 hover:shadow-card hover:-translate-y-1 transition-all duration-300">
+        <div class="w-16 h-16 rounded-full bg-brand-blue flex items-center justify-center shadow-sm">
+          <i class="ti ti-tag text-white text-2xl"></i>
+        </div>
+        <h3 class="font-semibold text-lg text-brand-ink">{% trans "Best Price" %}</h3>
+        <p class="text-text-muted text-sm leading-relaxed">{% trans "Price-match guarantee on all our tour packages worldwide." %}</p>
+      </div>
+      <div class="bg-white rounded-2xl shadow-soft border border-brand-blueLight/30 p-8 flex flex-col items-center text-center gap-3 hover:shadow-card hover:-translate-y-1 transition-all duration-300">
+        <div class="w-16 h-16 rounded-full bg-brand-blue flex items-center justify-center shadow-sm">
+          <i class="ti ti-star text-white text-2xl"></i>
+        </div>
+        <h3 class="font-semibold text-lg text-brand-ink">{% trans "Top Rated" %}</h3>
+        <p class="text-text-muted text-sm leading-relaxed">{% trans "4.9★ average rating from thousands of verified travelers." %}</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+{# Patterned block 2: Featured Hotels + Customer Reviews + Latest Guides in ONE container so the pattern stays continuous (no seam). #}
+<div class="bg-pattern-subtle-blue">
+
+{# ── Featured Hotels #}
+{% if featured_hotels %}
+<section class="py-20">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="flex flex-col md:flex-row md:items-end justify-between mb-10 gap-4">
+      <div>
+        <p class="text-brand-gold font-semibold text-base uppercase tracking-wide mb-2">{% trans "Hand-Picked Stays" %}</p>
+        <h2 class="text-4xl font-serif font-bold text-brand-ink">{% trans "Featured Hotels" %}</h2>
+      </div>
+      <a href="{% url 'hotels:list' %}" class="btn-outline flex items-center gap-2 self-start">{% trans "All Hotels" %} <i class="ti ti-arrow-right"></i></a>
+    </div>
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+      {% for hotel in featured_hotels %}
+        {% include "components/hotel_card.html" with hotel=hotel %}
+      {% endfor %}
+    </div>
+  </div>
+</section>
+{% endif %}
+
+{# ── Customer Reviews + inline "Write a Review" panel #}
+{% if testimonials %}
+<section class="py-20">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="text-center mb-12">
+      <p class="text-brand-gold font-semibold text-base uppercase tracking-wide mb-2">{% trans "What Travelers Say" %}</p>
+      <h2 class="text-4xl font-serif font-bold text-brand-ink">{% trans "Customer Reviews" %}</h2>
+    </div>
+
+    <div class="grid grid-cols-1 lg:grid-cols-[1fr_360px] gap-8 items-start">
+      {# Reviews — DOM-first so on mobile they appear above the form #}
+      <div>
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+          {% for review in testimonials %}
+            {% include "components/review_card.html" with review=review %}
+          {% endfor %}
+        </div>
+        <div class="text-center mt-10">
+          <a href="{% url 'reviews:list' %}" class="btn-outline px-8 py-3">{% trans "Read All Reviews" %}</a>
+        </div>
+      </div>
+
+      {# Write a Review — posts to the same endpoint as /reviews/ #}
+      <aside>
+        <div class="content-card lg:sticky lg:top-24">
+          <h3 class="text-lg font-semibold mb-1 flex items-center gap-2">
+            <i class="ti ti-pencil text-primary"></i> {% trans "Write a Review" %}
+          </h3>
+          <p class="text-sm text-gray-500 mb-4">{% trans "Write a review and help other travelers" %}</p>
+          <form method="post" action="{% url 'reviews:create' %}" class="space-y-3">
+            {% csrf_token %}
+            {% for field in review_form %}
+            <div>
+              <label for="{{ field.id_for_label }}" class="block text-xs font-medium text-gray-600 mb-1">
+                {{ field.label }}{% if field.field.required %} <span class="text-red-500">*</span>{% endif %}
+              </label>
+              {{ field }}
+              {% if field.help_text %}<p class="text-[0.7rem] text-gray-400 mt-1">{{ field.help_text }}</p>{% endif %}
+            </div>
+            {% endfor %}
+            <button type="submit" class="btn-accent w-full mt-2">{% trans "Submit Review" %}</button>
+          </form>
+        </div>
+      </aside>
+    </div>
+  </div>
+</section>
+{% endif %}
+
+{# ── Latest Guides #}
+{% if latest_articles %}
+<section class="py-20">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="flex flex-col md:flex-row md:items-end justify-between mb-10 gap-4">
+      <div>
+        <p class="text-brand-gold font-semibold text-base uppercase tracking-wide mb-2">{% trans "Travel Tips & Inspiration" %}</p>
+        <h2 class="text-4xl font-serif font-bold text-brand-ink">{% trans "Latest Guides" %}</h2>
+      </div>
+      <a href="{% url 'guides:list' %}" class="btn-outline flex items-center gap-2 self-start">{% trans "All Articles" %} <i class="ti ti-arrow-right"></i></a>
+    </div>
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+      {% for article in latest_articles %}
+        {% include "components/article_card.html" with article=article %}
+      {% endfor %}
+    </div>
+  </div>
+</section>
+{% endif %}
+
+</div>{# /patterned block 2 #}
+
+{# ── CTA "Ready for…" — bg-pattern-cta (frame zone, muted sea-blue) ─────── #}
+<section class="py-20 text-white text-center bg-pattern-cta">
+  <div class="max-w-3xl mx-auto px-4">
+    <h2 class="text-4xl font-serif font-bold mb-4">{% trans "Ready for Your Next Adventure?" %}</h2>
+    <p class="text-white/80 text-lg mb-8">{% trans "Get a personalised itinerary from our travel experts — completely free." %}</p>
+    <div class="flex flex-col sm:flex-row gap-4 justify-center">
+      <a href="{% url 'bookings:inquiry' %}" class="btn-frame-accent px-8 py-4 text-lg">
+        {% trans "Plan My Trip" %}
+      </a>
+      <a href="{% url 'tours:list' %}" class="btn-frame-outline px-8 py-4 text-lg">
+        {% trans "Browse Tours" %}
+      </a>
+    </div>
+  </div>
+</section>
+
+{% endblock %}

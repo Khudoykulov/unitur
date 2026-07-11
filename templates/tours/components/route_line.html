@@ -1,0 +1,23 @@
+{% load i18n %}
+{% comment %}
+Multi-city route timeline. Expects `stops` (ordered TourStop list). Each stop is
+a numbered card linking to that city's own page. CSS-only (no JS), responsive:
+horizontal on desktop, vertical on mobile.
+{% endcomment %}
+<div class="route-timeline">
+  {% for stop in stops %}
+  <a class="route-stop" href="{{ stop.city.get_absolute_url }}" title="{{ stop.city.name }}">
+    <span class="route-stop-num">{{ forloop.counter }}</span>
+    {% if stop.city.cover_image %}
+    <span class="route-stop-thumb">
+      <img src="{{ stop.city.cover_image.url }}" alt="{{ stop.city.name }}" loading="lazy">
+    </span>
+    {% endif %}
+    <span class="route-stop-body">
+      <span class="route-stop-label">{{ stop.city.name }}</span>
+      <span class="route-stop-nights"><i class="ti ti-moon"></i> {{ stop.nights }} {% trans "nights" %}</span>
+    </span>
+  </a>
+  {% if not forloop.last %}<span class="route-line-conn" aria-hidden="true"></span>{% endif %}
+  {% endfor %}
+</div>

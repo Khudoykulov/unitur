@@ -1,0 +1,144 @@
+/* =============================================================================
+   UNITUR — APPROVED brand color & pattern system (final spec)
+   Loaded AFTER custom.css so button/colour overrides win.
+
+   Palette zones:
+     • Site-wide      → blue + yellow (hero, sections, buttons, links, cards)
+     • Frame zone     → muted sea-blue + calm yellow, RESERVED for exactly three
+                        places: navbar, "Ready for…" CTA banner, footer.
+   Pattern PNGs (static/img/patterns/*) are used AS-IS — never recreated.
+   ============================================================================= */
+
+:root {
+  --c-blue: #4497CB; --c-blue-dark: #2B7BAD; --c-blue-light: #B4D2E8; --c-blue-pale: #E4F0F9;
+  --c-yellow: #FFB81C; --c-yellow-dark: #D89A0E; --c-yellow-pale: #FFF6E0;
+  --c-ink: #1D2939; --c-text-muted: #667085;
+  --c-cta-bg: #3E6C8F; --c-cta-line: #ECB456;
+}
+
+/* ── Pattern backgrounds ──────────────────────────────────────────────────── */
+.bg-pattern-subtle-blue,
+.bg-pattern-tint-blue,
+.bg-pattern-subtle-yellow,
+.bg-pattern-frame,
+.bg-pattern-cta,
+.bg-pattern-hero {
+  background-repeat: repeat;
+  background-size: 110px 286px;
+}
+@media (max-width: 768px) {
+  .bg-pattern-subtle-blue,
+  .bg-pattern-tint-blue,
+  .bg-pattern-subtle-yellow,
+  .bg-pattern-frame,
+  .bg-pattern-cta,
+  .bg-pattern-hero { background-size: 88px 229px; }
+}
+
+.bg-pattern-subtle-blue   { background-image: url("/static/img/patterns/pattern-subtle-blue.png"); background-color: #FFFFFF; }
+.bg-pattern-tint-blue     { background-image: url("/static/img/patterns/pattern-tint-blue.png"); background-color: #E4F0F9; }
+.bg-pattern-subtle-yellow { background-image: url("/static/img/patterns/pattern-subtle-yellow.png"); background-color: #FFFFFF; }
+
+/* Navbar & Footer — SOFT/MUTED pattern strength so text stays crisp */
+.bg-pattern-frame {
+  background-image:
+    linear-gradient(rgba(62,108,143,0.78), rgba(62,108,143,0.78)),
+    url("/static/img/patterns/pattern-footer-cta.png");
+  background-color: #3E6C8F;
+}
+
+/* CTA banner — slightly more visible pattern than navbar/footer (less text density) */
+.bg-pattern-cta {
+  background-image:
+    linear-gradient(rgba(40,65,90,0.35), rgba(40,65,90,0.35)),
+    url("/static/img/patterns/pattern-footer-cta.png");
+  background-color: #3E6C8F;
+}
+
+/* Hero — same muted palette as navbar/CTA/footer, overlay tuned for large heading text */
+.bg-pattern-hero {
+  background-image:
+    linear-gradient(rgba(62,108,143,0.51), rgba(62,108,143,0.51)),
+    url("/static/img/patterns/pattern-footer-cta.png");
+  background-color: #3E6C8F;
+}
+.bg-pattern-hero h1,
+.bg-pattern-hero .hero-heading-white {
+  color: #FFFFFF;
+  text-shadow: 0 2px 6px rgba(20,35,50,0.35);
+}
+.bg-pattern-hero .hero-heading-accent {
+  color: #ECB456; /* calm yellow accent line, e.g. "With Confidence" */
+  text-shadow: 0 2px 6px rgba(20,35,50,0.35);
+}
+.bg-pattern-hero .hero-eyebrow { color: #ECB456; }
+/* Lightened from #DCE8F2 (~4.35:1) to #EAF3FB (~4.6:1, WCAG AA) and given a
+   subtle shadow so it stays legible over the patterned hero backdrop. */
+.bg-pattern-hero .hero-subtitle {
+  color: #EAF3FB;
+  text-shadow: 0 1px 4px rgba(20, 35, 50, 0.35);
+}
+
+/* ── Button system (site-wide, brand colors) ─────────────────────────────── */
+.btn-primary  { background-color: var(--c-blue); color: #fff; border-color: transparent; }
+.btn-primary:hover { background-color: var(--c-blue-dark); color: #fff; }
+
+.btn-accent {
+  display: inline-flex; align-items: center; justify-content: center;
+  background-color: var(--c-yellow); color: #fff; font-weight: 600;
+  border-radius: 0.5rem; padding: 0.625rem 1.25rem; text-decoration: none;
+  border: 2px solid transparent; transition: background-color 0.2s, transform 0.1s;
+}
+.btn-accent:hover { background-color: var(--c-yellow-dark); color: #fff; }
+
+/* Inside the frame zones (navbar / CTA / footer) buttons use the calm yellow
+   so they match the muted backdrop rather than the bright site-wide yellow. */
+.btn-frame-accent {
+  display: inline-flex; align-items: center; justify-content: center;
+  background-color: var(--c-cta-line); color: #fff; font-weight: 600;
+  border-radius: 0.5rem; padding: 0.625rem 1.25rem; text-decoration: none;
+  border: 2px solid transparent; transition: background-color 0.2s, transform 0.1s;
+}
+.btn-frame-accent:hover { background-color: var(--c-yellow-dark); color: #fff; }
+
+.btn-frame-outline {
+  display: inline-flex; align-items: center; justify-content: center;
+  background-color: transparent; color: #fff; font-weight: 600;
+  border-radius: 0.5rem; padding: 0.625rem 1.25rem; text-decoration: none;
+  border: 2px solid #fff; transition: background-color 0.2s, color 0.2s;
+}
+.btn-frame-outline:hover { background-color: #fff; color: var(--c-cta-bg); }
+
+/* ── Content isolation on pattern backgrounds ─────────────────────────────── */
+/*
+ * Content sections that sit on the leaf pattern must have a solid background.
+ * Add this class to any section wrapper that needs isolation from the pattern.
+ */
+.content-card {
+  background: #FFFFFF;
+  border-radius: 16px;
+  padding: 24px;
+  box-shadow: 0 2px 12px rgba(68, 151, 203, 0.07);
+  margin-bottom: 24px;
+}
+@media (min-width: 640px) {
+  .content-card { padding: 32px; }
+}
+
+/*
+ * Section headings that appear directly on the pattern (not inside a white card)
+ * should have a stronger color so they stay readable.
+ */
+.section-heading-on-pattern {
+  color: #1D2939;
+  font-weight: 700;
+  text-shadow: 0 1px 0 rgba(255, 255, 255, 0.8);
+}
+
+/*
+ * Meta text (duration, group size, secondary price text) that appears on the
+ * pattern must never be light gray — use a darker tone.
+ */
+.meta-on-pattern {
+  color: #344054;
+}

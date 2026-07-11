@@ -1,0 +1,133 @@
+{% extends "base.html" %}
+{% load i18n %}
+
+{% block title %}{{ city.name }}, {{ city.country.name }} | {{ SITE_NAME }}{% endblock %}
+
+{% block content %}
+<div class="pt-20 lg:pt-28 bg-pattern-subtle-blue">
+  <div class="relative min-h-[320px] h-[50vh] md:min-h-[520px] md:h-[60vh] md:max-h-[700px] overflow-hidden">
+    {% if city.cover_image %}
+    <img src="{{ city.cover_image.url }}" alt="{{ city.name }}" class="w-full h-full object-cover">
+    {% else %}
+    <div class="w-full h-full bg-gradient-to-br from-primary to-primary/50"></div>
+    {% endif %}
+    <div class="absolute inset-0 bg-gradient-to-b from-[rgba(30,45,65,0.05)] to-[rgba(30,45,65,0.55)]"></div>
+    <div class="absolute bottom-6 left-6 sm:bottom-8 sm:left-10 right-6">
+      <h1 class="text-white font-serif text-4xl md:text-5xl lg:text-6xl font-bold drop-shadow-[0_2px_8px_rgba(0,0,0,0.3)]">{{ city.name }}</h1>
+      <p class="text-white/80 text-lg mt-1 drop-shadow-[0_1px_4px_rgba(0,0,0,0.25)]">{{ city.country.name }}</p>
+    </div>
+  </div>
+
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+    {% if city.overview %}
+    <div class="content-card prose prose-lg max-w-3xl">{{ city.overview|linebreaks }}</div>
+    {% endif %}
+
+    {# ── Photo gallery — layout adapts to the number of images ── #}
+    {% if city.images.exists %}
+    {% with total=city.images.count %}
+    <section class="mb-14">
+      <h2 class="font-serif text-2xl font-bold text-dark mb-6">{% trans "Photos" %}</h2>
+
+      {% if total == 1 %}
+        {# Single image — full width #}
+        <div class="grid grid-cols-1">
+          {% for img in city.images.all %}{% include "destinations/components/gallery_item.html" with img=img city=city ratio="aspect-video" %}{% endfor %}
+        </div>
+      {% elif total <= 3 %}
+        {# 2–3 images — equal columns #}
+        <div class="grid grid-cols-1 {% if total == 2 %}sm:grid-cols-2{% else %}sm:grid-cols-3{% endif %} gap-3">
+          {% for img in city.images.all %}{% include "destinations/components/gallery_item.html" with img=img city=city ratio="aspect-[4/3]" %}{% endfor %}
+        </div>
+      {% else %}
+        {# 4+ images — 1 large feature + smaller tiles mosaic #}
+        <div class="grid grid-cols-2 md:grid-cols-4 auto-rows-[9rem] md:auto-rows-[11rem] gap-3">
+          {% for img in city.images.all %}{% include "destinations/components/gallery_item.html" with img=img city=city mosaic=True feature=forloop.first %}{% endfor %}
+        </div>
+      {% endif %}
+    </section>
+    {% endwith %}
+
+    {# ── Lightbox (vanilla JS, no library) ── #}
+    <div id="city-lightbox" class="fixed inset-0 z-50 hidden bg-black/90 backdrop-blur-sm p-4 sm:p-8">
+      <button type="button" data-lb-close
+              class="absolute top-4 right-4 text-white/80 hover:text-white text-3xl leading-none" aria-label="{% trans 'Close' %}">&times;</button>
+      <div class="h-full w-full flex flex-col items-center justify-center gap-4">
+        <img data-lb-img src="" alt="" class="max-h-[75vh] max-w-full rounded-xl shadow-2xl object-contain">
+        <div class="max-w-2xl text-center text-white">
+          <p data-lb-caption class="font-serif text-lg font-semibold"></p>
+          <p data-lb-desc class="text-sm text-white/80 mt-1"></p>
+        </div>
+      </div>
+    </div>
+    <script>
+    (function () {
+      var lb = document.getElementById("city-lightbox");
+      if (!lb) return;
+      var img = lb.querySelector("[data-lb-img]"),
+          cap = lb.querySelector("[data-lb-caption]"),
+          desc = lb.querySelector("[data-lb-desc]");
+      function open(el) {
+        img.src = el.getAttribute("data-src");
+        img.alt = el.getAttribute("data-caption") || "";
+        cap.textContent = el.getAttribute("data-caption") || "";
+        desc.textContent = el.getAttribute("data-description") || "";
+        cap.style.display = cap.textContent ? "" : "none";
+        desc.style.display = desc.textContent ? "" : "none";
+        lb.classList.remove("hidden");
+        document.body.style.overflow = "hidden";
+      }
+      function close() { lb.classList.add("hidden"); document.body.style.overflow = ""; }
+      document.querySelectorAll(".gallery-item").forEach(function (el) {
+        el.addEventListener("click", function () { open(el); });
+      });
+      lb.addEventListener("click", function (e) {
+        if (e.target === lb || e.target.hasAttribute("data-lb-close")) close();
+      });
+      document.addEventListener("keydown", function (e) { if (e.key === "Escape") close(); });
+    })();
+    </script>
+    {% endif %}
+
+    {# Attractions #}
+    {% if attractions %}
+    <section class="mb-12">
+      <h2 class="font-serif text-2xl font-bold text-dark mb-6">{% trans "Top Attractions" %}</h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+        {% for attr in attractions %}
+        <div class="bg-white rounded-xl shadow-sm p-4 flex gap-4 hover:shadow-md transition">
+          {% if attr.image %}
+          <img src="{{ attr.image.url }}" alt="{{ attr.name }}" class="w-20 h-20 object-cover rounded-lg flex-shrink-0">
+          {% endif %}
+          <div>
+            <span class="text-xs text-secondary font-semibold uppercase">{{ attr.get_category_display }}</span>
+            <h3 class="font-semibold text-dark text-sm mb-1">{{ attr.name }}</h3>
+            {% if attr.entrance_fee %}<p class="text-xs text-gray-500">{% trans "Entry" %}: {{ attr.entrance_fee }}</p>{% endif %}
+            {% if attr.opening_hours %}<p class="text-xs text-gray-500">{{ attr.opening_hours }}</p>{% endif %}
+            {% if attr.google_maps_url %}
+            <a href="{{ attr.google_maps_url }}" target="_blank" rel="noopener" class="text-xs text-primary hover:underline flex items-center gap-1 mt-1">
+              <i class="ti ti-map-pin text-xs"></i>{% trans "View on map" %}
+            </a>
+            {% endif %}
+          </div>
+        </div>
+        {% endfor %}
+      </div>
+    </section>
+    {% endif %}
+
+    {# Hotels #}
+    {% if hotels %}
+    <section class="mb-12">
+      <h2 class="font-serif text-2xl font-bold text-dark mb-6">{% trans "Hotels in" %} {{ city.name }}</h2>
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+        {% for hotel in hotels %}
+          {% include "components/hotel_card.html" with hotel=hotel %}
+        {% endfor %}
+      </div>
+    </section>
+    {% endif %}
+
+  </div>
+</div>
+{% endblock %}

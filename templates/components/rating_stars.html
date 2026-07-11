@@ -1,0 +1,17 @@
+{% comment %}
+Usage: {% include "components/rating_stars.html" with rating=5 %}
+rating: integer or float 1-5
+{% endcomment %}
+<div class="flex items-center gap-0.5">
+  {% for i in "12345" %}
+    {% with i_int=forloop.counter %}
+      {% if i_int <= rating %}
+        <i class="ti ti-star-filled text-secondary text-sm"></i>
+      {% elif i_int <= rating|add:"0.5" %}
+        <i class="ti ti-star-half-filled text-secondary text-sm"></i>
+      {% else %}
+        <i class="ti ti-star text-gray-300 text-sm"></i>
+      {% endif %}
+    {% endwith %}
+  {% endfor %}
+</div>

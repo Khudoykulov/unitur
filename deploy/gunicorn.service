@@ -1,0 +1,25 @@
+[Unit]
+Description=Unitur – Gunicorn WSGI daemon
+After=network.target postgresql.service redis.service
+Requires=postgresql.service redis.service
+
+[Service]
+Type=notify
+User=unitur
+Group=unitur
+RuntimeDirectory=unitur
+WorkingDirectory=/var/www/unitur
+Environment="DJANGO_SETTINGS_MODULE=config.settings"
+EnvironmentFile=/var/www/unitur/.env
+ExecStart=/var/www/unitur/.venv/bin/gunicorn \
+    --config /var/www/unitur/gunicorn.conf.py \
+    config.wsgi:application
+ExecReload=/bin/kill -s HUP $MAINPID
+KillMode=mixed
+TimeoutStopSec=5
+PrivateTmp=true
+Restart=on-failure
+RestartSec=5
+
+[Install]
+WantedBy=multi-user.target

@@ -1,0 +1,23 @@
+[Unit]
+Description=Unitur – Celery Beat Scheduler
+After=network.target redis.service
+Requires=redis.service
+
+[Service]
+Type=simple
+User=unitur
+Group=unitur
+WorkingDirectory=/var/www/unitur
+Environment="DJANGO_SETTINGS_MODULE=config.settings"
+EnvironmentFile=/var/www/unitur/.env
+ExecStart=/var/www/unitur/.venv/bin/celery \
+    -A config.celery beat \
+    --pidfile=/run/unitur/celery_beat.pid \
+    --logfile=/var/log/unitur/celery_beat.log \
+    --loglevel=WARNING \
+    --scheduler django_celery_beat.schedulers:DatabaseScheduler
+Restart=on-failure
+RestartSec=10
+
+[Install]
+WantedBy=multi-user.target

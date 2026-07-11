@@ -1,0 +1,20 @@
+{{ SITE_NAME }} – Booking Confirmed
+=====================================
+
+Dear {{ inquiry.first_name }},
+
+Thank you for booking with {{ SITE_NAME }}!
+
+CONFIRMATION NUMBER: {{ inquiry.confirmation_number }}
+
+Booking Details:
+{% if inquiry.tour %}- Tour: {{ inquiry.tour.title }}{% endif %}
+{% if inquiry.travel_date %}- Travel Date: {{ inquiry.travel_date|date:"F d, Y" }}{% endif %}
+- Travelers: {{ inquiry.num_adults }} adults{% if inquiry.num_children %}, {{ inquiry.num_children }} children{% endif %}
+- Contact: {{ inquiry.email }}
+
+A member of our team will contact you within 24 hours.
+
+Questions? Email: burkhanov1c@gmail.com
+
+© {{ SITE_NAME }}

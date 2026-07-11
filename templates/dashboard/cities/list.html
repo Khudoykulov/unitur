@@ -1,0 +1,81 @@
+{% extends "dashboard/base.html" %}
+{% load dashboard_tags i18n %}
+
+{% block title %}{% trans "Cities" %}{% endblock %}
+{% block breadcrumb %}<span class="text-gray-400">/</span> <span class="text-gray-700">{% trans "Cities" %}</span>{% endblock %}
+
+{% block content %}
+<div class="max-w-7xl mx-auto">
+  <div class="flex items-center justify-between mb-5">
+    <h1 class="text-xl font-bold text-gray-800">{% trans "Cities" %} <span class="text-gray-400 font-normal text-base">({{ page_obj.paginator.count }})</span></h1>
+    <a href="{% url 'dashboard:cities_create' %}" class="inline-flex items-center gap-1.5 bg-emerald-700 hover:bg-emerald-800 text-white text-sm font-medium px-4 py-2 rounded-lg transition">
+      <i class="ti ti-plus"></i> {% trans "Add City" %}
+    </a>
+  </div>
+
+  <p class="text-sm text-gray-500 mb-5">{% trans "Domestic (Uzbek) cities. These are the stops you can pick when building a domestic tour route." %}</p>
+
+  <form method="get" class="flex gap-2 mb-5">
+    <input type="text" name="q" value="{{ q }}" placeholder="{% trans 'Search…' %}"
+           class="border border-gray-300 rounded-lg px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-emerald-300 w-56">
+    <button type="submit" class="bg-gray-800 text-white text-sm px-4 py-2 rounded-lg hover:bg-gray-700 transition">{% trans "Filter" %}</button>
+    {% if q %}<a href="{% url 'dashboard:cities_list' %}" class="bg-gray-100 text-gray-600 text-sm px-4 py-2 rounded-lg hover:bg-gray-200 transition">{% trans "Clear" %}</a>{% endif %}
+  </form>
+
+  <div class="bg-white rounded-xl border border-gray-200 overflow-hidden">
+    <div class="overflow-x-auto">
+      <table class="w-full text-sm">
+        <thead>
+          <tr class="bg-gray-50 text-left border-b border-gray-200">
+            <th class="px-4 py-3 text-xs text-gray-500 font-semibold uppercase tracking-wide">{% trans "City" %}</th>
+            <th class="px-4 py-3 text-xs text-gray-500 font-semibold uppercase tracking-wide">{% trans "Status" %}</th>
+            <th class="px-4 py-3 text-xs text-gray-500 font-semibold uppercase tracking-wide">{% trans "Actions" %}</th>
+          </tr>
+        </thead>
+        <tbody class="divide-y divide-gray-100">
+          {% for city in cities %}
+          <tr class="hover:bg-gray-50">
+            <td class="px-4 py-3">
+              <div class="flex items-center gap-3">
+                {% if city.cover_image %}
+                <img src="{{ city.cover_image.url }}" alt="" class="w-10 h-7 rounded object-cover flex-shrink-0">
+                {% else %}
+                <div class="w-10 h-7 rounded bg-gray-100 flex items-center justify-center flex-shrink-0">
+                  <i class="ti ti-building-monument text-gray-400 text-xs"></i>
+                </div>
+                {% endif %}
+                <p class="font-medium text-gray-800">{{ city.name }}</p>
+              </div>
+            </td>
+            <td class="px-4 py-3">
+              {% if city.is_active %}<span class="inline-flex items-center px-2 py-0.5 rounded-full text-xs font-medium bg-green-100 text-green-700">{% trans "Active" %}</span>
+              {% else %}<span class="inline-flex items-center px-2 py-0.5 rounded-full text-xs font-medium bg-gray-100 text-gray-600">{% trans "Inactive" %}</span>{% endif %}
+            </td>
+            <td class="px-4 py-3">
+              <div class="flex items-center gap-2">
+                <a href="{% url 'dashboard:cities_edit' city.pk %}" class="text-blue-500 hover:text-blue-700" title="{% trans 'Edit' %}"><i class="ti ti-pencil"></i></a>
+                <form method="post" action="{% url 'dashboard:toggle_active' 'city' city.pk %}">
+                  {% csrf_token %}
+                  {% if city.is_active %}
+                  <button type="submit" class="text-gray-400 hover:text-amber-600" title="{% trans 'Hide from site' %}"><i class="ti ti-eye-off"></i></button>
+                  {% else %}
+                  <button type="submit" class="text-gray-400 hover:text-green-600" title="{% trans 'Show on site' %}"><i class="ti ti-eye"></i></button>
+                  {% endif %}
+                </form>
+                <form method="post" action="{% url 'dashboard:cities_delete' city.pk %}" onsubmit="return confirm('{% trans 'Delete this item?' %}')">
+                  {% csrf_token %}
+                  <button type="submit" class="text-red-400 hover:text-red-600" title="{% trans 'Delete' %}"><i class="ti ti-trash"></i></button>
+                </form>
+              </div>
+            </td>
+          </tr>
+          {% empty %}
+          <tr><td colspan="3" class="px-4 py-10 text-center text-gray-400">{% trans "No cities yet. Add one to build domestic tour routes." %}</td></tr>
+          {% endfor %}
+        </tbody>
+      </table>
+    </div>
+    {% include "dashboard/components/pagination.html" %}
+  </div>
+</div>
+{% endblock %}

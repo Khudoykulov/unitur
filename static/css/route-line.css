@@ -1,0 +1,185 @@
+/* Multi-city route timeline for "Ichki Turlar" tour detail pages.
+   Numbered city cards linked to each city page; CSS-only, responsive. */
+.route-timeline {
+  display: flex;
+  align-items: stretch;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 0;
+  padding: 8px 0;
+}
+.route-stop {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 10px;
+  padding: 18px 16px;
+  min-width: 138px;
+  max-width: 190px;
+  background: #fff;
+  border: 1px solid var(--c-blue-pale, #e4f0f9);
+  border-radius: 16px;
+  text-decoration: none;
+  box-shadow: 0 2px 10px rgba(68, 151, 203, 0.06);
+  transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+}
+.route-stop:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 26px rgba(68, 151, 203, 0.18);
+  border-color: var(--c-blue, #4497cb);
+}
+.route-stop-num {
+  width: 34px;
+  height: 34px;
+  flex-shrink: 0;
+  border-radius: 50%;
+  background: var(--c-blue, #4497cb);
+  color: #fff;
+  font-weight: 700;
+  font-size: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 0 0 4px #fff, 0 0 0 5px var(--c-blue-light, #b4d2e8);
+}
+.route-stop:hover .route-stop-num {
+  background: var(--c-yellow, #ffb81c);
+  box-shadow: 0 0 0 4px #fff, 0 0 0 5px var(--c-yellow, #ffb81c);
+}
+.route-stop-thumb {
+  width: 100%;
+  height: 74px;
+  border-radius: 10px;
+  overflow: hidden;
+  flex-shrink: 0;
+}
+.route-stop-thumb img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.route-stop-body {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+.route-stop-label {
+  font-weight: 600;
+  color: var(--c-ink, #1d2939);
+  font-size: 15px;
+  line-height: 1.2;
+}
+.route-stop-nights {
+  font-size: 12px;
+  color: var(--c-text-muted, #475467);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+}
+/* Dashed gradient connector between stops */
+.route-line-conn {
+  align-self: center;
+  flex: 0 0 34px;
+  height: 3px;
+  margin: 0 2px;
+  border-radius: 3px;
+  background: repeating-linear-gradient(
+    90deg,
+    var(--c-blue-light, #b4d2e8) 0 8px,
+    transparent 8px 15px
+  );
+}
+@media (max-width: 768px) {
+  .route-timeline {
+    flex-direction: column;
+    align-items: center;
+  }
+  .route-stop {
+    width: 100%;
+    max-width: 340px;
+    flex-direction: row;
+    align-items: center;
+    text-align: left;
+    gap: 14px;
+  }
+  .route-stop-thumb {
+    width: 66px;
+    height: 66px;
+  }
+  .route-stop-nights {
+    justify-content: flex-start;
+  }
+  .route-line-conn {
+    width: 3px;
+    height: 26px;
+    flex: 0 0 26px;
+    background: repeating-linear-gradient(
+      180deg,
+      var(--c-blue-light, #b4d2e8) 0 8px,
+      transparent 8px 15px
+    );
+  }
+}
+
+.city-detail-panel {
+  margin-top: 24px;
+  border-radius: 16px;
+  overflow: hidden;
+  background: white;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
+  animation: panelFadeIn 0.35s ease;
+}
+.city-detail-panel[hidden] {
+  display: none;
+}
+@keyframes panelFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+.city-detail-panel .city-gallery {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 4px;
+}
+.city-detail-panel .city-gallery img {
+  width: 100%;
+  height: 160px;
+  object-fit: cover;
+}
+.city-detail-panel .city-info {
+  padding: 24px;
+}
+.city-detail-panel .city-info h3 {
+  font-family: serif;
+  font-size: 24px;
+  color: var(--c-ink, #1d2939);
+  margin-bottom: 8px;
+}
+.city-detail-panel .city-attractions {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin-top: 16px;
+}
+.city-detail-panel .attraction-chip {
+  background: var(--c-blue-pale, #e4f0f9);
+  color: var(--c-blue, #4497cb);
+  padding: 6px 14px;
+  border-radius: 20px;
+  font-size: 13px;
+  font-weight: 500;
+}
+.city-detail-panel .city-loading {
+  padding: 40px;
+  text-align: center;
+  color: var(--c-text-muted, #667085);
+}

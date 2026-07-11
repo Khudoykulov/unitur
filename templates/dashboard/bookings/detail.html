@@ -1,0 +1,107 @@
+{% extends "dashboard/base.html" %}
+{% load dashboard_tags i18n %}
+
+{% block title %}{% blocktrans with num=booking.confirmation_number %}Booking {{ num }}{% endblocktrans %}{% endblock %}
+{% block breadcrumb %}
+  <span class="text-gray-400">/</span>
+  <a href="{% url 'dashboard:bookings_list' %}" class="text-gray-600 hover:text-gray-800">{% trans "Bookings" %}</a>
+  <span class="text-gray-400">/</span>
+  <span class="text-gray-700">{{ booking.confirmation_number }}</span>
+{% endblock %}
+
+{% block content %}
+<div class="max-w-4xl mx-auto">
+  <div class="flex items-center justify-between mb-5">
+    <h1 class="text-xl font-bold text-gray-800">
+      {% trans "Booking" %} <span class="font-mono text-emerald-700">{{ booking.confirmation_number }}</span>
+    </h1>
+    <a href="{% url 'dashboard:bookings_list' %}" class="text-sm text-gray-500 hover:text-gray-700 flex items-center gap-1">
+      <i class="ti ti-arrow-left"></i> {% trans "Back" %}
+    </a>
+  </div>
+
+  <div class="grid grid-cols-1 lg:grid-cols-3 gap-5">
+
+    {# ── Main details ── #}
+    <div class="lg:col-span-2 space-y-4">
+
+      {# Customer Info #}
+      <div class="bg-white rounded-xl border border-gray-200 p-5">
+        <h3 class="font-semibold text-gray-800 mb-4 pb-2 border-b border-gray-100">{% trans "Customer Information" %}</h3>
+        <dl class="grid grid-cols-2 gap-3 text-sm">
+          <div><dt class="text-gray-500">{% trans "Name" %}</dt><dd class="font-medium text-gray-800">{{ booking.full_name }}</dd></div>
+          <div><dt class="text-gray-500">{% trans "Email" %}</dt><dd class="text-gray-800">{{ booking.email }}</dd></div>
+          <div><dt class="text-gray-500">{% trans "Phone" %}</dt><dd class="text-gray-800">{{ booking.phone|default:"—" }}</dd></div>
+          <div><dt class="text-gray-500">{% trans "Country" %}</dt><dd class="text-gray-800">{{ booking.country_of_origin|default:"—" }}</dd></div>
+          <div><dt class="text-gray-500">{% trans "Adults" %}</dt><dd class="text-gray-800">{{ booking.num_adults }}</dd></div>
+          <div><dt class="text-gray-500">{% trans "Children" %}</dt><dd class="text-gray-800">{{ booking.num_children }}</dd></div>
+          <div><dt class="text-gray-500">{% trans "Travel Date" %}</dt><dd class="text-gray-800">{{ booking.travel_date|default:"—" }}</dd></div>
+          <div><dt class="text-gray-500">{% trans "Budget" %}</dt><dd class="text-gray-800">{{ booking.get_budget_range_display|default:"—" }}</dd></div>
+          <div><dt class="text-gray-500">{% trans "Source" %}</dt><dd class="text-gray-800">{{ booking.get_source_display }}</dd></div>
+          <div><dt class="text-gray-500">{% trans "Submitted" %}</dt><dd class="text-gray-800">{{ booking.created_at|date:"M j, Y H:i" }}</dd></div>
+        </dl>
+        {% if booking.tour %}
+        <div class="mt-4 pt-3 border-t border-gray-100">
+          <p class="text-gray-500 text-sm mb-1">{% trans "Tour" %}</p>
+          <a href="{{ booking.tour.get_absolute_url }}" target="_blank" class="text-emerald-600 hover:underline text-sm font-medium">{{ booking.tour.title }}</a>
+        </div>
+        {% endif %}
+        {% if booking.hotel %}
+        <div class="mt-4 pt-3 border-t border-gray-100">
+          <p class="text-gray-500 text-sm mb-1">{% trans "Hotel" %}</p>
+          <a href="{{ booking.hotel.get_absolute_url }}" target="_blank" class="text-emerald-600 hover:underline text-sm font-medium">{{ booking.hotel.name }}</a>
+        </div>
+        {% endif %}
+        {% if booking.special_requests %}
+        <div class="mt-4 pt-3 border-t border-gray-100">
+          <p class="text-gray-500 text-sm mb-1">{% trans "Special Requests" %}</p>
+          <p class="text-gray-700 text-sm">{{ booking.special_requests }}</p>
+        </div>
+        {% endif %}
+      </div>
+
+      {# Internal Notes #}
+      <div class="bg-white rounded-xl border border-gray-200 p-5">
+        <h3 class="font-semibold text-gray-800 mb-3">{% trans "Internal Notes" %}</h3>
+        <form method="post">
+          {% csrf_token %}
+          <input type="hidden" name="action" value="notes">
+          <textarea name="notes" rows="4"
+                    class="w-full border border-gray-300 rounded-lg px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-emerald-300 resize-none">{{ booking.notes }}</textarea>
+          <button type="submit" class="mt-2 bg-gray-700 hover:bg-gray-800 text-white text-sm px-4 py-2 rounded-lg transition">
+            <i class="ti ti-device-floppy mr-1"></i> {% trans "Save Notes" %}
+          </button>
+        </form>
+      </div>
+    </div>
+
+    {# ── Status Panel ── #}
+    <div class="space-y-4">
+      <div class="bg-white rounded-xl border border-gray-200 p-5">
+        <h3 class="font-semibold text-gray-800 mb-3">{% trans "Status" %}</h3>
+        <div class="mb-3">{{ booking.status|status_badge }}</div>
+        <form method="post">
+          {% csrf_token %}
+          <input type="hidden" name="action" value="status">
+          <select name="status" class="w-full border border-gray-300 rounded-lg px-3 py-2 text-sm mb-3 focus:outline-none focus:ring-2 focus:ring-emerald-300">
+            {% for val, label in booking.STATUS_CHOICES %}
+            <option value="{{ val }}" {% if val == booking.status %}selected{% endif %}>{{ label }}</option>
+            {% endfor %}
+          </select>
+          <button type="submit" class="w-full bg-emerald-700 hover:bg-emerald-800 text-white text-sm font-medium py-2 rounded-lg transition">
+            {% trans "Update Status" %}
+          </button>
+        </form>
+      </div>
+
+      <div class="bg-white rounded-xl border border-gray-200 p-5">
+        <h3 class="font-semibold text-gray-800 mb-3">{% trans "Actions" %}</h3>
+        <a href="mailto:{{ booking.email }}?subject=Your UNITUR Booking {{ booking.confirmation_number }}"
+           class="flex items-center gap-2 w-full text-sm text-gray-700 bg-gray-50 hover:bg-gray-100 border border-gray-200 rounded-lg px-4 py-2.5 transition">
+          <i class="ti ti-mail text-gray-500"></i> {% trans "Email Customer" %}
+        </a>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}

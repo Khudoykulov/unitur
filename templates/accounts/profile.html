@@ -1,0 +1,104 @@
+{% extends "base.html" %}
+{% load i18n %}
+
+{% block title %}{% trans "My Profile" %} | {{ SITE_NAME }}{% endblock %}
+
+{% block content %}
+<div class="pt-20 lg:pt-28 min-h-screen bg-accent">
+  <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+    <div class="flex flex-col lg:flex-row gap-8">
+
+      {# Sidebar #}
+      <aside class="lg:w-64 flex-shrink-0">
+        <div class="bg-white rounded-2xl shadow-sm p-6 text-center mb-4">
+          <div class="w-20 h-20 rounded-full bg-primary/20 flex items-center justify-center text-primary text-3xl font-bold mx-auto mb-3">
+            {{ user.first_name|first|upper|default:user.email|first|upper }}
+          </div>
+          <p class="font-semibold text-dark">{{ user.get_full_name|default:user.username }}</p>
+          <p class="text-gray-400 text-sm">{{ user.email }}</p>
+        </div>
+        <nav class="bg-white rounded-2xl shadow-sm overflow-hidden">
+          <a href="{% url 'accounts:profile' %}" class="flex items-center gap-3 px-5 py-3 text-sm font-medium text-primary bg-accent border-l-4 border-primary">
+            <i class="ti ti-layout-dashboard"></i> {% trans "Dashboard" %}
+          </a>
+          <a href="#bookings" class="flex items-center gap-3 px-5 py-3 text-sm text-gray-600 hover:bg-accent hover:text-primary transition">
+            <i class="ti ti-ticket"></i> {% trans "My Bookings" %}
+          </a>
+          <a href="#saved" class="flex items-center gap-3 px-5 py-3 text-sm text-gray-600 hover:bg-accent hover:text-primary transition">
+            <i class="ti ti-heart"></i> {% trans "Saved Tours" %}
+          </a>
+          <a href="{% url 'account_logout' %}" class="flex items-center gap-3 px-5 py-3 text-sm text-red-500 hover:bg-red-50 transition">
+            <i class="ti ti-logout"></i> {% trans "Sign Out" %}
+          </a>
+        </nav>
+      </aside>
+
+      {# Content #}
+      <div class="flex-1">
+
+        {# Bookings #}
+        <div id="bookings" class="bg-white rounded-2xl shadow-sm p-6 mb-6">
+          <h2 class="font-serif text-xl font-bold text-dark mb-5">{% trans "My Bookings" %}</h2>
+          {% if inquiries %}
+          <div class="overflow-x-auto">
+            <table class="w-full text-sm">
+              <thead class="bg-accent text-gray-500 text-xs uppercase">
+                <tr>
+                  <th class="px-4 py-2 text-left">{% trans "Ref" %}</th>
+                  <th class="px-4 py-2 text-left">{% trans "Type" %}</th>
+                  <th class="px-4 py-2 text-left">{% trans "Tour / Hotel" %}</th>
+                  <th class="px-4 py-2 text-left">{% trans "Status" %}</th>
+                  <th class="px-4 py-2 text-left">{% trans "Date" %}</th>
+                </tr>
+              </thead>
+              <tbody class="divide-y divide-gray-100">
+                {% for inq in inquiries %}
+                <tr class="hover:bg-accent/50">
+                  <td class="px-4 py-3 font-mono font-semibold text-primary">{{ inq.confirmation_number }}</td>
+                  <td class="px-4 py-3">{{ inq.get_inquiry_type_display }}</td>
+                  <td class="px-4 py-3">{{ inq.tour.title|default:inq.hotel.name|default:"—" }}</td>
+                  <td class="px-4 py-3">
+                    <span class="px-2 py-0.5 rounded-full text-xs font-medium
+                                 {% if inq.status == 'confirmed' %}bg-green-100 text-green-700
+                                 {% elif inq.status == 'cancelled' %}bg-red-100 text-red-700
+                                 {% elif inq.status == 'completed' %}bg-purple-100 text-purple-700
+                                 {% else %}bg-blue-100 text-blue-700{% endif %}">
+                      {{ inq.get_status_display }}
+                    </span>
+                  </td>
+                  <td class="px-4 py-3 text-gray-500">{{ inq.created_at|date:"M d, Y" }}</td>
+                </tr>
+                {% endfor %}
+              </tbody>
+            </table>
+          </div>
+          {% else %}
+          <div class="text-center py-12 text-gray-400">
+            <i class="ti ti-ticket-off text-4xl mb-3 block"></i>
+            <p>{% trans "No bookings yet." %}</p>
+            <a href="{% url 'tours:list' %}" class="btn-primary mt-4 inline-block px-6 py-2 text-sm">{% trans "Browse Tours" %}</a>
+          </div>
+          {% endif %}
+        </div>
+
+        {# Saved tours #}
+        <div id="saved" class="bg-white rounded-2xl shadow-sm p-6">
+          <h2 class="font-serif text-xl font-bold text-dark mb-5">{% trans "Saved Tours" %}</h2>
+          {% if saved_tours %}
+          <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
+            {% for tour in saved_tours %}
+              {% include "components/tour_card.html" with tour=tour %}
+            {% endfor %}
+          </div>
+          {% else %}
+          <div class="text-center py-12 text-gray-400">
+            <i class="ti ti-heart-off text-4xl mb-3 block"></i>
+            <p>{% trans "No saved tours yet." %}</p>
+          </div>
+          {% endif %}
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}

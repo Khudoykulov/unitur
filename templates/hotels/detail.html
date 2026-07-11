@@ -1,0 +1,161 @@
+{% extends "base.html" %}
+{% load i18n %}
+
+{% block title %}{{ hotel.seo_title|default:hotel.name }} | {{ SITE_NAME }}{% endblock %}
+
+{% block content %}
+<div class="pt-20 lg:pt-28 bg-pattern-subtle-blue">
+  {# Hero #}
+  <div class="relative min-h-[320px] h-[50vh] md:min-h-[520px] md:h-[60vh] md:max-h-[700px] overflow-hidden">
+    {% if hotel.cover_image %}
+    <img src="{{ hotel.cover_image.url }}" alt="{{ hotel.name }}" class="w-full h-full object-cover">
+    {% endif %}
+    <div class="absolute inset-0 bg-gradient-to-b from-[rgba(30,45,65,0.05)] to-[rgba(30,45,65,0.55)]"></div>
+    <div class="absolute bottom-6 left-6 sm:bottom-8 sm:left-10 right-6">
+      <p class="text-secondary text-sm mb-1 drop-shadow">{{ hotel.star_display }}</p>
+      <h1 class="text-white font-serif text-4xl md:text-5xl lg:text-6xl font-bold drop-shadow-[0_2px_8px_rgba(0,0,0,0.3)]">{{ hotel.name }}</h1>
+      <p class="text-white/80 flex items-center gap-1 mt-1 drop-shadow-[0_1px_4px_rgba(0,0,0,0.25)]"><i class="ti ti-map-pin"></i>{{ hotel.city.name }}, {{ hotel.city.country.name }}</p>
+    </div>
+  </div>
+
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+    <div class="grid grid-cols-1 lg:grid-cols-3 gap-10">
+      <div class="lg:col-span-2">
+
+        {# Gallery #}
+        {% if gallery %}
+        <div x-data="{ active: null }" class="grid grid-cols-3 gap-2 mb-10">
+          {% for img in gallery %}
+          <div @click="active='{{ img.image.url }}'" class="cursor-pointer rounded-xl overflow-hidden aspect-video hover:opacity-90 transition">
+            <img src="{{ img.image.url }}" loading="lazy" class="w-full h-full object-cover">
+          </div>
+          {% endfor %}
+          <div x-show="active" @click="active=null" class="fixed inset-0 bg-black/90 z-50 flex items-center justify-center p-4">
+            <img :src="active" class="max-h-full max-w-full rounded-xl" @click.stop>
+          </div>
+        </div>
+        {% endif %}
+
+        {# Description #}
+        {% if hotel.description %}
+        <div class="content-card prose prose-lg max-w-none">
+          <h2 class="font-serif text-2xl font-bold text-dark mb-4">{% trans "About the Hotel" %}</h2>
+          {{ hotel.description|linebreaks }}
+        </div>
+        {% endif %}
+
+        {# Amenities #}
+        {% if hotel.amenities.exists %}
+        <div class="mb-10">
+          <h2 class="font-serif text-xl font-bold text-dark mb-4">{% trans "Amenities" %}</h2>
+          <div class="grid grid-cols-2 sm:grid-cols-3 gap-3">
+            {% for amenity in hotel.amenities.all %}
+            <div class="flex items-center gap-2 text-sm text-gray-700 bg-accent rounded-lg px-3 py-2">
+              <i class="ti ti-{{ amenity.icon }} text-secondary"></i>
+              {{ amenity.name }}
+            </div>
+            {% endfor %}
+          </div>
+        </div>
+        {% endif %}
+
+        {# Room types #}
+        {% if rooms %}
+        <div class="mb-10">
+          <h2 class="font-serif text-xl font-bold text-dark mb-4">{% trans "Room Types" %}</h2>
+          <div class="space-y-3">
+            {% for room in rooms %}
+            <div class="bg-white border border-gray-200 rounded-xl p-4 flex gap-4">
+              {% if room.image %}
+              <img src="{{ room.image.url }}" class="w-24 h-20 rounded-lg object-cover flex-shrink-0">
+              {% endif %}
+              <div class="flex-1">
+                <h3 class="font-semibold">{{ room.get_room_type_display }}</h3>
+                <p class="text-xs text-gray-500 mb-1">{% trans "Capacity" %}: {{ room.capacity }} {% trans "persons" %}</p>
+                {% if room.description %}<p class="text-sm text-gray-600">{{ room.description }}</p>{% endif %}
+              </div>
+              <div class="text-right">
+                <p class="text-xl font-bold text-primary">${{ room.price_per_night|floatformat:0 }}</p>
+                <p class="text-xs text-gray-400">{% trans "/ night" %}</p>
+              </div>
+            </div>
+            {% endfor %}
+          </div>
+        </div>
+        {% endif %}
+
+        {# Map #}
+        {% if hotel.latitude and hotel.longitude %}
+        <div class="mb-10">
+          <h2 class="font-serif text-xl font-bold text-dark mb-4">{% trans "Location" %}</h2>
+          <div id="hotel-map" class="h-64 rounded-xl overflow-hidden border"></div>
+        </div>
+        {% endif %}
+
+        {# Reviews #}
+        {% if approved_reviews %}
+        <div>
+          <h2 class="font-serif text-xl font-bold text-dark mb-4">{% trans "Guest Reviews" %}</h2>
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+            {% for review in approved_reviews %}
+              {% include "components/review_card.html" with review=review %}
+            {% endfor %}
+          </div>
+        </div>
+        {% endif %}
+      </div>
+
+      {# Sidebar #}
+      <aside>
+        <div class="bg-white rounded-2xl shadow-lg p-6 sticky top-24 border border-gray-100">
+          <p class="text-3xl font-bold text-primary mb-1">${{ hotel.price_from|floatformat:0 }}</p>
+          <p class="text-gray-400 text-sm mb-5">{% trans "per night from" %}</p>
+          <a href="{% url 'bookings:inquiry' %}?hotel={{ hotel.pk }}" class="btn-primary w-full text-center py-3.5 block mb-3">
+            {% trans "Check Availability" %}
+          </a>
+          <div class="space-y-3 text-sm text-gray-600 border-t pt-4 mt-4">
+            {% if hotel.check_in_time %}
+            <div class="flex justify-between">
+              <span class="flex items-center gap-1"><i class="ti ti-door-enter text-secondary"></i>{% trans "Check-in" %}</span>
+              <span>{{ hotel.check_in_time|time:"H:i" }}</span>
+            </div>
+            {% endif %}
+            {% if hotel.check_out_time %}
+            <div class="flex justify-between">
+              <span class="flex items-center gap-1"><i class="ti ti-door-exit text-secondary"></i>{% trans "Check-out" %}</span>
+              <span>{{ hotel.check_out_time|time:"H:i" }}</span>
+            </div>
+            {% endif %}
+            {% if hotel.address %}
+            <div class="flex gap-2 pt-2 border-t">
+              <i class="ti ti-map-pin text-secondary mt-0.5 flex-shrink-0"></i>
+              <span class="text-xs">{{ hotel.address }}</span>
+            </div>
+            {% endif %}
+          </div>
+        </div>
+      </aside>
+    </div>
+  </div>
+</div>
+{% endblock %}
+
+{% block extra_head %}
+{% if hotel.latitude and hotel.longitude %}
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
+{% endif %}
+{% endblock %}
+
+{% block extra_js %}
+{% if hotel.latitude and hotel.longitude %}
+<style>#hotel-map { position: relative; z-index: 0; }</style>
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+<script>
+const map = L.map('hotel-map').setView([{{ hotel.latitude }}, {{ hotel.longitude }}], 15);
+L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png').addTo(map);
+L.marker([{{ hotel.latitude }}, {{ hotel.longitude }}]).addTo(map)
+  .bindPopup('<strong>{{ hotel.name }}</strong>');
+setTimeout(function () { map.invalidateSize(); }, 100);
+</script>
+{% endif %}
+{% endblock %}

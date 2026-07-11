@@ -1,0 +1,78 @@
+/* Hidden staff-access modal (revealed via Ctrl+Shift+A). */
+.admin-access-modal {
+  position: fixed;
+  inset: 0;
+  z-index: 10000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.admin-access-modal[hidden] {
+  display: none;
+}
+.admin-access-backdrop {
+  position: absolute;
+  inset: 0;
+  background: rgba(20, 30, 45, 0.6);
+  backdrop-filter: blur(3px);
+}
+.admin-access-form {
+  position: relative;
+  background: white;
+  padding: 40px;
+  border-radius: 16px;
+  width: 340px;
+  max-width: calc(100vw - 32px);
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+}
+.admin-access-form h2 {
+  margin: 0;
+  font-size: 20px;
+  font-weight: 700;
+  color: #1d2939;
+}
+.admin-access-form input {
+  padding: 12px 14px;
+  border: 1px solid #e5e7eb;
+  border-radius: 8px;
+  font-size: 15px;
+}
+.admin-access-form input:focus {
+  outline: none;
+  border-color: #4497cb;
+  box-shadow: 0 0 0 3px rgba(68, 151, 203, 0.15);
+}
+.admin-access-form button[type="submit"] {
+  background: #4497cb;
+  color: white;
+  padding: 12px;
+  border-radius: 8px;
+  font-weight: 600;
+  border: none;
+  cursor: pointer;
+}
+.admin-access-form button[type="submit"]:hover {
+  background: #3a85b5;
+}
+.admin-access-close {
+  position: absolute;
+  top: 12px;
+  right: 16px;
+  background: none;
+  border: none;
+  font-size: 22px;
+  cursor: pointer;
+  color: #98a2b3;
+  line-height: 1;
+}
+.admin-access-error {
+  color: #d92d20;
+  font-size: 13px;
+  margin: 0;
+}
+.admin-access-error[hidden] {
+  display: none;
+}

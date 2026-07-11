@@ -1,0 +1,206 @@
+{% load i18n static %}
+{# ── Navbar — muted frame zone (bg-pattern-frame), white text on every page ── #}
+<nav
+  x-data="{
+    mobileOpen: false,
+    searchOpen: false,
+  }"
+  class="fixed w-full top-0 z-40 bg-pattern-frame shadow-md"
+>
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="flex items-center justify-between h-20 lg:h-28">
+
+      {# Logo — on-dark variant (white "unitur"), sits directly on the frame with no box #}
+      <a href="{% url 'home' %}" class="flex items-center flex-shrink-0">
+        <img src="{% static 'images/logo-unitur-ondark.png' %}" alt="{{ SITE_NAME }}"
+             class="h-16 lg:h-24 w-auto drop-shadow-[0_2px_10px_rgba(0,0,0,0.25)]">
+      </a>
+
+      {# Desktop nav — 5 items: Main · Destinations · Tours · Guidebook · About #}
+      <div class="hidden lg:flex items-center gap-8">
+
+        {# 1. Main page #}
+        <a href="{% url 'home' %}" class="nav-link text-white">{% trans "Main page" %}</a>
+
+        {# 2. Destinations mega-menu #}
+        <div class="relative" x-data="{ open: false }" @mouseenter="open=true" @mouseleave="open=false">
+          <a href="{% url 'destinations:list' %}" class="nav-link flex items-center gap-1 text-white">
+            {% trans "Destinations" %} <i class="ti ti-chevron-down text-base"></i>
+          </a>
+          <div x-show="open" x-transition class="absolute left-0 top-full mt-2 w-72 bg-white rounded-xl shadow-xl border border-gray-100 p-4 z-50">
+            {% for continent in nav_continents %}
+            <div class="mb-3">
+              <p class="text-xs font-semibold text-gray-500 uppercase tracking-wide mb-1">{{ continent.name }}</p>
+              <div class="flex flex-wrap gap-1">
+                {% for country in continent.countries.all|slice:":5" %}
+                <a href="{{ country.get_absolute_url }}"
+                   class="text-xs px-2 py-1 rounded-full bg-accent text-gray-700 hover:bg-primary hover:text-white transition">
+                  {{ country.name }}
+                </a>
+                {% endfor %}
+              </div>
+            </div>
+            {% endfor %}
+            <div class="border-t pt-3">
+              <a href="{% url 'destinations:list' %}" class="text-primary font-medium text-sm hover:underline">{% trans "All destinations" %} →</a>
+            </div>
+          </div>
+        </div>
+
+        {# 3. Tours mega-menu — the label links straight to Domestic Tours (the #}
+        {#    site's focus); dropdown leads with the domestic group, international #}
+        {#    categories follow as the secondary group. #}
+        <div class="relative" x-data="{ open: false }" @mouseenter="open=true" @mouseleave="open=false">
+          <a href="{% url 'ichki-turlar-list' %}" class="nav-link flex items-center gap-1 text-white">
+            {% trans "Tours" %} <i class="ti ti-chevron-down text-base"></i>
+          </a>
+          <div x-show="open" x-transition:enter="transition ease-out duration-150"
+               x-transition:enter-start="opacity-0 translate-y-1" x-transition:enter-end="opacity-100 translate-y-0"
+               class="absolute left-0 top-full mt-2 w-64 bg-white rounded-xl shadow-xl border border-gray-100 p-4 z-50">
+
+            {# Group 1 — Across Uzbekistan #}
+            <p class="text-xs font-semibold text-gray-500 uppercase tracking-wide mb-2">{% trans "Across Uzbekistan" %}</p>
+            <a href="{% url 'ichki-turlar-list' %}"
+               class="flex items-center gap-2 px-3 py-2 rounded-lg text-gray-700 hover:bg-accent hover:text-primary text-sm font-medium">
+              <i class="ti ti-route text-secondary"></i> {% trans "Domestic Tours" %}
+            </a>
+            <a href="{% url 'hotels:list' %}"
+               class="flex items-center gap-2 px-3 py-2 rounded-lg text-gray-700 hover:bg-accent hover:text-primary text-sm">
+              <i class="ti ti-building text-secondary"></i> {% trans "Hotels" %}
+            </a>
+
+            {# Group 2 — International categories #}
+            <div class="border-t mt-3 pt-3">
+              <p class="text-xs font-semibold text-gray-500 uppercase tracking-wide mb-2">{% trans "International Tours" %}</p>
+              {% for cat in nav_tour_categories %}
+              <a href="{% url 'tours:list' %}?category={{ cat.slug }}"
+                 class="flex items-center gap-2 px-3 py-2 rounded-lg text-gray-700 hover:bg-accent hover:text-primary text-sm">
+                <i class="ti ti-{{ cat.icon }} text-secondary"></i> {{ cat.name }}
+              </a>
+              {% endfor %}
+            </div>
+
+            <div class="border-t mt-3 pt-3">
+              <a href="{% url 'tours:list' %}" class="text-primary font-medium text-sm hover:underline">{% trans "View all international tours" %} →</a>
+            </div>
+          </div>
+        </div>
+
+        {# 4. Guidebook #}
+        <a href="{% url 'guides:list' %}" class="nav-link text-white">{% trans "Guidebook" %}</a>
+
+        {# 5. About us — dropdown: Company + Contact #}
+        <div class="relative" x-data="{ open: false }" @mouseenter="open=true" @mouseleave="open=false">
+          <button class="nav-link flex items-center gap-1 text-white">
+            {% trans "About us" %} <i class="ti ti-chevron-down text-base"></i>
+          </button>
+          <div x-show="open" x-transition class="absolute right-0 top-full mt-2 w-48 bg-white rounded-xl shadow-xl border border-gray-100 p-2 z-50">
+            <a href="{% url 'about' %}" class="flex items-center gap-2 px-3 py-2 rounded-lg text-gray-700 hover:bg-accent hover:text-primary text-sm">
+              <i class="ti ti-building-community text-secondary"></i> {% trans "About the Company" %}
+            </a>
+            <a href="{% url 'contact' %}" class="flex items-center gap-2 px-3 py-2 rounded-lg text-gray-700 hover:bg-accent hover:text-primary text-sm">
+              <i class="ti ti-mail text-secondary"></i> {% trans "Contact" %}
+            </a>
+          </div>
+        </div>
+
+        {# Search trigger #}
+        <button @click="searchOpen = !searchOpen" class="p-2 rounded-full text-white hover:bg-white/20 transition">
+          <i class="ti ti-search text-lg"></i>
+        </button>
+
+        {# Language switcher #}
+        {% include "components/language_switcher.html" %}
+
+        {# No public sign-in: visitors book as guests; staff use the hidden Ctrl+Shift+A modal (base.html). #}
+        <a href="{% url 'bookings:inquiry' %}" class="btn-frame-accent text-base font-semibold px-6 py-2.5">{% trans "Book Now" %}</a>
+      </div>
+
+      {# Mobile menu button #}
+      <button @click="mobileOpen = !mobileOpen" class="lg:hidden p-2 text-white">
+        <i x-show="!mobileOpen" class="ti ti-menu-2 text-2xl"></i>
+        <i x-show="mobileOpen" class="ti ti-x text-2xl"></i>
+      </button>
+    </div>
+  </div>
+
+  {# ── Mobile menu ── #}
+  {# Backdrop — dim + blur the page, tap to close #}
+  <div x-show="mobileOpen" x-transition.opacity @click="mobileOpen=false" x-cloak
+       class="lg:hidden fixed inset-x-0 top-20 bottom-0 z-30 bg-dark/40 backdrop-blur-sm"></div>
+
+  {# Sliding panel #}
+  <div x-show="mobileOpen" x-cloak
+       x-transition:enter="transition ease-out duration-200"
+       x-transition:enter-start="opacity-0 -translate-y-3"
+       x-transition:enter-end="opacity-100 translate-y-0"
+       x-transition:leave="transition ease-in duration-150"
+       x-transition:leave-start="opacity-100 translate-y-0"
+       x-transition:leave-end="opacity-0 -translate-y-3"
+       class="lg:hidden fixed inset-x-0 top-20 z-40 bg-white shadow-2xl rounded-b-2xl border-t border-gray-100 max-h-[calc(100vh-5rem)] overflow-y-auto">
+    <div class="px-4 py-4 space-y-1">
+
+      {# Search #}
+      <form action="{% url 'tours:list' %}" method="get" class="flex gap-2 mb-3">
+        <input type="text" name="q" placeholder="{% trans 'Search tours, destinations…' %}"
+               class="flex-1 border border-gray-300 rounded-xl px-4 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-primary/30 focus:border-primary">
+        <button type="submit" class="btn-primary px-4 rounded-xl" aria-label="{% trans 'Search' %}"><i class="ti ti-search text-lg"></i></button>
+      </form>
+
+      {# Nav items #}
+      <a href="{% url 'home' %}" @click="mobileOpen=false" class="flex items-center gap-3 px-3 py-2.5 rounded-xl text-gray-700 hover:bg-accent hover:text-primary font-medium transition-colors">
+        <i class="ti ti-home text-lg text-secondary w-5 text-center"></i>{% trans "Main page" %}
+      </a>
+      <a href="{% url 'destinations:list' %}" @click="mobileOpen=false" class="flex items-center gap-3 px-3 py-2.5 rounded-xl text-gray-700 hover:bg-accent hover:text-primary font-medium transition-colors">
+        <i class="ti ti-map-2 text-lg text-secondary w-5 text-center"></i>{% trans "Destinations" %}
+      </a>
+      <a href="{% url 'ichki-turlar-list' %}" @click="mobileOpen=false" class="flex items-center gap-3 px-3 py-2.5 rounded-xl text-gray-700 hover:bg-accent hover:text-primary font-medium transition-colors">
+        <i class="ti ti-compass text-lg text-secondary w-5 text-center"></i>{% trans "Tours" %}
+      </a>
+      {# Tours submenu — same two groups as the desktop mega-menu #}
+      <div class="ml-6 pl-3 border-l-2 border-accent space-y-1">
+        <p class="px-3 pt-1 text-[0.65rem] font-semibold text-gray-400 uppercase tracking-wide">{% trans "Across Uzbekistan" %}</p>
+        <a href="{% url 'ichki-turlar-list' %}" @click="mobileOpen=false" class="flex items-center gap-3 px-3 py-2 rounded-xl text-sm text-gray-500 hover:bg-accent hover:text-primary transition-colors">
+          <i class="ti ti-route w-5 text-center"></i>{% trans "Domestic Tours" %}
+        </a>
+        <a href="{% url 'hotels:list' %}" @click="mobileOpen=false" class="flex items-center gap-3 px-3 py-2 rounded-xl text-sm text-gray-500 hover:bg-accent hover:text-primary transition-colors">
+          <i class="ti ti-building w-5 text-center"></i>{% trans "Hotels" %}
+        </a>
+        <p class="px-3 pt-2 text-[0.65rem] font-semibold text-gray-400 uppercase tracking-wide">{% trans "International Tours" %}</p>
+        {% for cat in nav_tour_categories %}
+        <a href="{% url 'tours:list' %}?category={{ cat.slug }}" @click="mobileOpen=false" class="flex items-center gap-3 px-3 py-2 rounded-xl text-sm text-gray-500 hover:bg-accent hover:text-primary transition-colors">
+          <i class="ti ti-{{ cat.icon }} w-5 text-center"></i>{{ cat.name }}
+        </a>
+        {% endfor %}
+      </div>
+      <a href="{% url 'guides:list' %}" @click="mobileOpen=false" class="flex items-center gap-3 px-3 py-2.5 rounded-xl text-gray-700 hover:bg-accent hover:text-primary font-medium transition-colors">
+        <i class="ti ti-book-2 text-lg text-secondary w-5 text-center"></i>{% trans "Guidebook" %}
+      </a>
+      <a href="{% url 'about' %}" @click="mobileOpen=false" class="flex items-center gap-3 px-3 py-2.5 rounded-xl text-gray-700 hover:bg-accent hover:text-primary font-medium transition-colors">
+        <i class="ti ti-building-community text-lg text-secondary w-5 text-center"></i>{% trans "About the Company" %}
+      </a>
+      <a href="{% url 'contact' %}" @click="mobileOpen=false" class="flex items-center gap-3 px-3 py-2.5 rounded-xl text-gray-700 hover:bg-accent hover:text-primary font-medium transition-colors">
+        <i class="ti ti-mail text-lg text-secondary w-5 text-center"></i>{% trans "Contact" %}
+      </a>
+
+      {# CTA + language #}
+      <div class="pt-4 mt-2 border-t border-gray-100 flex items-center gap-3">
+        <a href="{% url 'bookings:inquiry' %}" class="btn-primary flex-1 text-center py-3 text-sm font-semibold">
+          <i class="ti ti-calendar-event mr-1.5"></i>{% trans "Book Now" %}
+        </a>
+        {% include "components/language_switcher.html" with solid=True %}
+      </div>
+    </div>
+  </div>
+
+  {# Search modal #}
+  <div x-show="searchOpen" x-transition class="bg-white border-t shadow-lg py-4">
+    <div class="max-w-2xl mx-auto px-4">
+      <form action="{% url 'tours:list' %}" method="get" class="flex gap-2">
+        <input type="text" name="q" placeholder="{% trans 'Search tours, destinations…' %}"
+               class="flex-1 border border-gray-300 rounded-lg px-4 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-primary">
+        <button type="submit" class="btn-primary px-4 py-2 text-sm">{% trans "Search" %}</button>
+      </form>
+    </div>
+  </div>
+</nav>

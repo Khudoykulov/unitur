@@ -1,0 +1,67 @@
+{% extends "base.html" %}
+{% load i18n static %}
+
+{% block title %}{% trans "Travel Guides" %} | {{ SITE_NAME }}{% endblock %}
+
+{% block content %}
+<div class="pt-20 lg:pt-28 bg-pattern-subtle-blue">
+  {% comment %}
+  ── Page header — branded hero strip (same muted palette as the navbar) so the
+     top of the page flows out of the frame instead of jumping to a flat colour.
+  {% endcomment %}
+  <div class="relative py-16 text-center overflow-hidden bg-pattern-hero">
+    <div class="relative z-10 px-4">
+      <h1 class="text-4xl md:text-5xl font-serif font-bold">{% trans "Travel Guides" %}</h1>
+      <p class="hero-heading-accent text-2xl md:text-3xl font-serif mt-1">{% trans "& Expert Tips" %}</p>
+      <p class="hero-subtitle text-lg mt-3 max-w-2xl mx-auto">{% trans "Expert advice, destination guides, and travel inspiration" %}</p>
+    </div>
+  </div>
+
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+    {# Featured article #}
+    {% if featured_article %}
+    <div class="mb-12">
+      <div class="bg-white rounded-2xl shadow-sm overflow-hidden flex flex-col md:flex-row">
+        {% if featured_article.cover_image %}
+        <div class="md:w-1/2 aspect-video md:aspect-auto overflow-hidden">
+          <img src="{{ featured_article.cover_image.url }}" alt="{{ featured_article.title }}"
+               class="w-full h-full object-cover">
+        </div>
+        {% endif %}
+        <div class="p-8 flex flex-col justify-center md:w-1/2">
+          <span class="text-brand-gold text-base font-semibold uppercase tracking-wide mb-2">{% trans "Featured" %}</span>
+          <h2 class="font-serif text-3xl font-bold text-dark mb-3">{{ featured_article.title }}</h2>
+          <p class="text-gray-600 mb-5">{{ featured_article.excerpt|truncatewords:30 }}</p>
+          <a href="{{ featured_article.get_absolute_url }}" class="btn-primary self-start px-6 py-3">{% trans "Read Article" %}</a>
+        </div>
+      </div>
+    </div>
+    {% endif %}
+
+    {# Category filter #}
+    <div class="flex flex-wrap items-center gap-2 mb-8 bg-white rounded-xl px-4 py-3 shadow-sm">
+      <a href="{% url 'guides:list' %}"
+         class="px-4 py-2 rounded-full text-sm font-medium transition {% if not current_category %}bg-primary text-white{% else %}bg-white border border-gray-200 text-gray-700 hover:border-primary{% endif %}">
+        {% trans "All" %}
+      </a>
+      {% for cat in categories %}
+      <a href="{{ cat.get_absolute_url }}"
+         class="flex items-center gap-1 px-4 py-2 rounded-full text-sm font-medium transition {% if current_category == cat %}bg-primary text-white{% else %}bg-white border border-gray-200 text-gray-700 hover:border-primary{% endif %}">
+        <i class="ti ti-{{ cat.icon }} text-xs"></i> {{ cat.name }}
+      </a>
+      {% endfor %}
+    </div>
+
+    {# Articles grid #}
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+      {% for article in articles %}
+        {% include "components/article_card.html" with article=article %}
+      {% empty %}
+      <div class="col-span-3 text-center py-20 text-gray-400">{% trans "No articles found." %}</div>
+      {% endfor %}
+    </div>
+
+    {% include "components/pagination.html" %}
+  </div>
+</div>
+{% endblock %}

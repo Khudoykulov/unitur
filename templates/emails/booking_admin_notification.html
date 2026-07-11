@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head><meta charset="UTF-8"><title>New Inquiry – {{ inquiry.confirmation_number }}</title></head>
+<body style="font-family:Arial,sans-serif;background:#f4f4f4;padding:20px;">
+  <div style="max-width:600px;margin:0 auto;background:#fff;border-radius:8px;padding:24px;">
+    <h2 style="color:#1B4332;">New {{ inquiry.get_inquiry_type_display }} Inquiry</h2>
+    <p style="background:#FEF3C7;padding:10px;border-radius:6px;font-size:13px;">
+      <strong>Ref: {{ inquiry.confirmation_number }}</strong> | Status: {{ inquiry.get_status_display }}
+    </p>
+    <table style="width:100%;font-size:13px;border-collapse:collapse;">
+      <tr><td style="padding:6px 0;color:#6B7280;width:35%;">Customer</td><td style="padding:6px 0;font-weight:600;">{{ inquiry.full_name }}</td></tr>
+      <tr><td style="padding:6px 0;color:#6B7280;">Phone</td><td><strong>{{ inquiry.phone|default:"—" }}</strong></td></tr>
+      <tr><td style="padding:6px 0;color:#6B7280;">Email</td><td>{{ inquiry.email|default:"—" }}</td></tr>
+      {% if inquiry.tour %}<tr><td style="padding:6px 0;color:#6B7280;">Tour</td><td>{{ inquiry.tour.title }}</td></tr>{% endif %}
+      {% if inquiry.departure %}<tr><td style="padding:6px 0;color:#6B7280;">Departure</td><td>{{ inquiry.departure }}</td></tr>{% endif %}
+      {% if inquiry.hotel %}<tr><td style="padding:6px 0;color:#6B7280;">Hotel</td><td>{{ inquiry.hotel.name }}</td></tr>{% endif %}
+      <tr><td style="padding:6px 0;color:#6B7280;">Source</td><td>{{ inquiry.get_source_display }}</td></tr>
+      <tr><td style="padding:6px 0;color:#6B7280;">Received</td><td>{{ inquiry.created_at }}</td></tr>
+    </table>
+    <a href="{{ admin_url }}" style="display:inline-block;margin-top:16px;background:#1B4332;color:#fff;padding:10px 20px;border-radius:6px;text-decoration:none;font-size:13px;">View in Admin</a>
+  </div>
+</body>
+</html>

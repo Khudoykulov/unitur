@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Booking Confirmed – {{ inquiry.confirmation_number }}</title>
+</head>
+<body style="margin:0;padding:0;background-color:#F8F5F0;font-family:Arial,sans-serif;">
+  <table width="100%" cellpadding="0" cellspacing="0" style="background:#F8F5F0;padding:40px 0;">
+    <tr>
+      <td align="center">
+        <table width="600" cellpadding="0" cellspacing="0" style="background:#ffffff;border-radius:16px;overflow:hidden;box-shadow:0 4px 16px rgba(0,0,0,0.08);">
+
+          {# Header #}
+          <tr>
+            <td style="background:#1B4332;padding:32px;text-align:center;">
+              <h1 style="color:#ffffff;font-family:Georgia,serif;font-size:28px;margin:0;">✈ {{ SITE_NAME }}</h1>
+            </td>
+          </tr>
+
+          {# Success banner #}
+          <tr>
+            <td style="background:#D1FAE5;padding:20px;text-align:center;">
+              <p style="color:#065F46;font-size:18px;font-weight:bold;margin:0;">✓ Booking Confirmed!</p>
+            </td>
+          </tr>
+
+          {# Body #}
+          <tr>
+            <td style="padding:32px;">
+              <p style="color:#2C2C2A;font-size:16px;margin-bottom:8px;">Dear {{ inquiry.first_name }},</p>
+              <p style="color:#6B7280;font-size:14px;line-height:1.6;margin-bottom:24px;">
+                Thank you for booking with {{ SITE_NAME }}. Your booking has been received and is being processed. A member of our team will be in touch within 24 hours to confirm the details.
+              </p>
+
+              {# Reference box #}
+              <table width="100%" cellpadding="0" cellspacing="0" style="background:#F8F5F0;border-radius:12px;padding:20px;margin-bottom:24px;">
+                <tr>
+                  <td>
+                    <p style="color:#6B7280;font-size:11px;text-transform:uppercase;letter-spacing:1px;margin:0 0 4px;">Confirmation Number</p>
+                    <p style="color:#1B4332;font-size:28px;font-weight:bold;font-family:monospace;margin:0;">{{ inquiry.confirmation_number }}</p>
+                  </td>
+                </tr>
+              </table>
+
+              {# Booking details #}
+              <table width="100%" cellpadding="0" cellspacing="0" style="border-top:1px solid #E5E7EB;padding-top:20px;">
+                {% if inquiry.tour %}
+                <tr>
+                  <td style="padding:8px 0;color:#6B7280;font-size:14px;width:40%;">Tour</td>
+                  <td style="padding:8px 0;color:#2C2C2A;font-size:14px;font-weight:600;">{{ inquiry.tour.title }}</td>
+                </tr>
+                {% endif %}
+                {% if inquiry.travel_date %}
+                <tr>
+                  <td style="padding:8px 0;color:#6B7280;font-size:14px;">Travel Date</td>
+                  <td style="padding:8px 0;color:#2C2C2A;font-size:14px;font-weight:600;">{{ inquiry.travel_date|date:"F d, Y" }}</td>
+                </tr>
+                {% endif %}
+                <tr>
+                  <td style="padding:8px 0;color:#6B7280;font-size:14px;">Travelers</td>
+                  <td style="padding:8px 0;color:#2C2C2A;font-size:14px;font-weight:600;">{{ inquiry.num_adults }} adults{% if inquiry.num_children %}, {{ inquiry.num_children }} children{% endif %}</td>
+                </tr>
+                <tr>
+                  <td style="padding:8px 0;color:#6B7280;font-size:14px;">Contact</td>
+                  <td style="padding:8px 0;color:#2C2C2A;font-size:14px;font-weight:600;">{{ inquiry.email }}</td>
+                </tr>
+              </table>
+            </td>
+          </tr>
+
+          {# Footer #}
+          <tr>
+            <td style="background:#F8F5F0;padding:24px;text-align:center;border-top:1px solid #E5E7EB;">
+              <p style="color:#6B7280;font-size:12px;margin:0 0 8px;">Questions? Email us at <a href="mailto:burkhanov1c@gmail.com" style="color:#1B4332;">burkhanov1c@gmail.com</a></p>
+              <p style="color:#9CA3AF;font-size:11px;margin:0;">© {% now "Y" %} {{ SITE_NAME }}. All rights reserved.</p>
+            </td>
+          </tr>
+        </table>
+      </td>
+    </tr>
+  </table>
+</body>
+</html>

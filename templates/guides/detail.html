@@ -1,0 +1,84 @@
+{% extends "base.html" %}
+{% load i18n %}
+
+{% block title %}{{ article.seo_title|default:article.title }} | {{ SITE_NAME }}{% endblock %}
+{% block meta_description %}{{ article.seo_description|default:article.excerpt|truncatechars:160 }}{% endblock %}
+
+{% block content %}
+<div class="pt-20 lg:pt-28 bg-pattern-subtle-blue">
+  {% if article.cover_image %}
+  <div class="min-h-[320px] h-[50vh] md:min-h-[520px] md:h-[60vh] md:max-h-[700px] overflow-hidden">
+    <img src="{{ article.cover_image.url }}" alt="{{ article.title }}" class="w-full h-full object-cover">
+  </div>
+  {% endif %}
+
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+    <div class="flex flex-col lg:flex-row gap-12">
+
+      {# Article content — inside a solid white card so the text floats above the pattern #}
+      <article class="content-card flex-1 max-w-3xl">
+        {% if article.category %}
+        <a href="{{ article.category.get_absolute_url }}" class="text-secondary text-sm font-semibold uppercase tracking-wide mb-3 inline-block hover:underline">
+          {{ article.category.name }}
+        </a>
+        {% endif %}
+        <h1 class="font-serif text-4xl font-bold text-dark mb-4 leading-tight">{{ article.title }}</h1>
+
+        <div class="flex items-center gap-4 text-sm text-gray-500 mb-8 pb-6 border-b border-gray-200">
+          {% if article.author %}<span class="flex items-center gap-1"><i class="ti ti-user"></i>{{ article.author.get_full_name|default:article.author.username }}</span>{% endif %}
+          {% if article.published_at %}<span class="flex items-center gap-1"><i class="ti ti-calendar"></i>{{ article.published_at|date:"M d, Y" }}</span>{% endif %}
+          <span class="flex items-center gap-1"><i class="ti ti-clock"></i>{{ article.reading_time_minutes }} {% trans "min read" %}</span>
+          <span class="flex items-center gap-1"><i class="ti ti-eye"></i>{{ article.views_count }}</span>
+        </div>
+
+        <div class="prose prose-lg max-w-none text-gray-700">
+          {{ article.content|safe }}
+        </div>
+
+        {# Tags #}
+        {% if article.tags.exists %}
+        <div class="mt-8 pt-6 border-t flex flex-wrap gap-2">
+          {% for tag in article.tags.all %}
+          <span class="bg-accent text-gray-600 text-xs px-3 py-1 rounded-full">#{{ tag.name }}</span>
+          {% endfor %}
+        </div>
+        {% endif %}
+      </article>
+
+      {# Sidebar #}
+      <aside class="lg:w-72 flex-shrink-0">
+        <div class="sticky top-24 space-y-6">
+          {# Related articles #}
+          {% if related_articles %}
+          <div class="bg-accent rounded-2xl p-5">
+            <h3 class="font-semibold text-dark mb-4">{% trans "Related Articles" %}</h3>
+            <div class="space-y-3">
+              {% for ra in related_articles %}
+              <a href="{{ ra.get_absolute_url }}" class="flex gap-3 group">
+                {% if ra.cover_image %}
+                <img src="{{ ra.cover_image.url }}" class="w-16 h-12 object-cover rounded-lg flex-shrink-0">
+                {% endif %}
+                <div>
+                  <p class="text-sm font-medium text-dark group-hover:text-primary transition line-clamp-2">{{ ra.title }}</p>
+                  <p class="text-xs text-gray-400 mt-0.5">{{ ra.reading_time_minutes }} {% trans "min" %}</p>
+                </div>
+              </a>
+              {% endfor %}
+            </div>
+          </div>
+          {% endif %}
+
+          {# CTA #}
+          <div class="bg-primary rounded-2xl p-5 text-white">
+            <h3 class="font-serif font-bold text-lg mb-2">{% trans "Plan Your Trip" %}</h3>
+            <p class="text-white/80 text-sm mb-4">{% trans "Ready to experience this destination?" %}</p>
+            <a href="{% url 'tours:list' %}" class="bg-secondary text-white text-sm font-semibold px-4 py-2.5 rounded-lg block text-center hover:bg-secondary-dark transition">
+              {% trans "Browse Tours" %}
+            </a>
+          </div>
+        </div>
+      </aside>
+    </div>
+  </div>
+</div>
+{% endblock %}

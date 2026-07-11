@@ -1,0 +1,83 @@
+{% extends "base.html" %}
+{% load i18n %}
+
+{% block title %}{% trans "Manage Email" %} | {{ SITE_NAME }}{% endblock %}
+
+{% block content %}
+<div class="pt-20 lg:pt-28 min-h-screen bg-pattern-subtle-blue flex items-center justify-center px-4 py-12">
+  <div class="w-full max-w-lg">
+    <div class="text-center mb-8">
+      <h1 class="text-2xl font-serif font-bold text-dark">{% trans "Email Addresses" %}</h1>
+    </div>
+
+    <div class="bg-white rounded-2xl shadow-sm border border-gray-100 p-8">
+
+      {% if emailaddresses %}
+      <h2 class="font-semibold text-dark mb-4">{% trans "Your email addresses" %}</h2>
+      <div class="space-y-3 mb-6">
+        {% for emailaddress in emailaddresses %}
+        <div class="flex items-center justify-between p-3 rounded-lg {% if emailaddress.primary %}bg-primary/5 border border-primary/20{% else %}bg-gray-50 border border-gray-200{% endif %}">
+          <div>
+            <p class="text-sm font-medium text-dark">{{ emailaddress.email }}</p>
+            <div class="flex gap-2 mt-0.5">
+              {% if emailaddress.primary %}
+              <span class="text-xs text-primary font-medium">{% trans "Primary" %}</span>
+              {% endif %}
+              {% if emailaddress.verified %}
+              <span class="text-xs text-green-600">{% trans "Verified" %}</span>
+              {% else %}
+              <span class="text-xs text-amber-600">{% trans "Unverified" %}</span>
+              {% endif %}
+            </div>
+          </div>
+          <div class="flex gap-2">
+            {% if not emailaddress.primary %}
+            <form method="post">
+              {% csrf_token %}
+              <input type="hidden" name="email" value="{{ emailaddress.email }}">
+              <button name="action_primary" type="submit" class="text-xs text-primary hover:underline">{% trans "Make primary" %}</button>
+            </form>
+            <form method="post">
+              {% csrf_token %}
+              <input type="hidden" name="email" value="{{ emailaddress.email }}">
+              <button name="action_remove" type="submit" class="text-xs text-red-500 hover:underline">{% trans "Remove" %}</button>
+            </form>
+            {% endif %}
+            {% if not emailaddress.verified %}
+            <form method="post">
+              {% csrf_token %}
+              <input type="hidden" name="email" value="{{ emailaddress.email }}">
+              <button name="action_send" type="submit" class="text-xs text-primary hover:underline">{% trans "Resend" %}</button>
+            </form>
+            {% endif %}
+          </div>
+        </div>
+        {% endfor %}
+      </div>
+      {% endif %}
+
+      <h2 class="font-semibold text-dark mb-3">{% trans "Add email address" %}</h2>
+      <form method="post" novalidate>
+        {% csrf_token %}
+        <div class="flex gap-2">
+          <input type="email" name="email"
+                 class="flex-1 border border-gray-300 rounded-lg px-4 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-primary/30 focus:border-primary"
+                 placeholder="new@example.com">
+          <button name="action_add" type="submit" class="btn-primary px-4 py-2.5 text-sm">
+            {% trans "Add" %}
+          </button>
+        </div>
+        {% if form.email.errors %}
+        <p class="mt-1 text-xs text-red-600">{{ form.email.errors|join:", " }}</p>
+        {% endif %}
+      </form>
+
+      <div class="mt-6 pt-5 border-t text-center">
+        <a href="{% url 'accounts:profile' %}" class="text-sm text-gray-400 hover:text-primary transition flex items-center justify-center gap-1">
+          <i class="ti ti-arrow-left text-xs"></i>{% trans "Back to Profile" %}
+        </a>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}

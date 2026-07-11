@@ -1,0 +1,115 @@
+{% load i18n static %}
+<footer class="text-white bg-pattern-frame">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10">
+
+      {# Column 1 – About #}
+      <div>
+        <div class="mb-4">
+          <img src="{% static 'images/logo-unitur-ondark.png' %}" alt="{{ SITE_NAME }}"
+               class="h-16 sm:h-20 w-auto drop-shadow-[0_2px_10px_rgba(0,0,0,0.25)]">
+        </div>
+        <p class="text-sm leading-relaxed mb-4">{{ SITE_TAGLINE }}.</p>
+        <div class="flex gap-3">
+          {% if SOCIAL_LINKS.facebook %}
+          <a href="{{ SOCIAL_LINKS.facebook }}" target="_blank" rel="noopener" class="w-9 h-9 rounded-full bg-white/10 flex items-center justify-center hover:bg-brand-ctaLine transition">
+            <i class="ti ti-brand-facebook text-sm"></i>
+          </a>
+          {% endif %}
+          {% if SOCIAL_LINKS.instagram %}
+          <a href="{{ SOCIAL_LINKS.instagram }}" target="_blank" rel="noopener" class="w-9 h-9 rounded-full bg-white/10 flex items-center justify-center hover:bg-brand-ctaLine transition">
+            <i class="ti ti-brand-instagram text-sm"></i>
+          </a>
+          {% endif %}
+          {% if SOCIAL_LINKS.twitter %}
+          <a href="{{ SOCIAL_LINKS.twitter }}" target="_blank" rel="noopener" class="w-9 h-9 rounded-full bg-white/10 flex items-center justify-center hover:bg-brand-ctaLine transition">
+            <i class="ti ti-brand-twitter text-sm"></i>
+          </a>
+          {% endif %}
+          {% if SOCIAL_LINKS.youtube %}
+          <a href="{{ SOCIAL_LINKS.youtube }}" target="_blank" rel="noopener" class="w-9 h-9 rounded-full bg-white/10 flex items-center justify-center hover:bg-brand-ctaLine transition">
+            <i class="ti ti-brand-youtube text-sm"></i>
+          </a>
+          {% endif %}
+          {% if SOCIAL_LINKS.telegram %}
+          <a href="{{ SOCIAL_LINKS.telegram }}" target="_blank" rel="noopener" class="w-9 h-9 rounded-full bg-white/10 flex items-center justify-center hover:bg-brand-ctaLine transition">
+            <i class="ti ti-brand-telegram text-sm"></i>
+          </a>
+          {% endif %}
+        </div>
+      </div>
+
+      {# Column 2 – Tours #}
+      <div>
+        <h4 class="text-white font-semibold mb-4 uppercase tracking-wide text-sm">{% trans "Tours" %}</h4>
+        <ul class="space-y-2 text-sm">
+          {% for cat in nav_tour_categories|slice:":6" %}
+          <li>
+            <a href="{% url 'tours:list' %}?category={{ cat.slug }}" class="hover:text-brand-ctaLine transition flex items-center gap-1">
+              <i class="ti ti-chevron-right text-xs text-brand-ctaLine"></i> {{ cat.name }}
+            </a>
+          </li>
+          {% endfor %}
+          <li>
+            <a href="{% url 'ichki-turlar-list' %}" class="hover:text-brand-ctaLine transition flex items-center gap-1">
+              <i class="ti ti-chevron-right text-xs text-brand-ctaLine"></i> {% trans "Domestic Tours" %}
+            </a>
+          </li>
+        </ul>
+      </div>
+
+      {# Column 3 – Destinations #}
+      <div>
+        <h4 class="text-white font-semibold mb-4 uppercase tracking-wide text-sm">{% trans "Destinations" %}</h4>
+        <ul class="space-y-2 text-sm">
+          {% for continent in nav_continents|slice:":6" %}
+          <li>
+            <a href="{% url 'destinations:list' %}?continent={{ continent.slug }}" class="hover:text-brand-ctaLine transition flex items-center gap-1">
+              <i class="ti ti-chevron-right text-xs text-brand-ctaLine"></i> {{ continent.name }}
+            </a>
+          </li>
+          {% endfor %}
+        </ul>
+      </div>
+
+      {# Column 4 – Contact #}
+      <div>
+        <h4 class="text-white font-semibold mb-4 uppercase tracking-wide text-sm">{% trans "Contact" %}</h4>
+        <ul class="space-y-3 text-sm">
+          {% if SITE_ADDRESS %}
+          <li class="flex gap-2">
+            <i class="ti ti-map-pin text-brand-ctaLine flex-shrink-0 mt-0.5"></i>
+            <span>{{ SITE_ADDRESS }}</span>
+          </li>
+          {% endif %}
+          {% if SITE_PHONE %}
+          <li class="flex gap-2">
+            <i class="ti ti-phone text-brand-ctaLine flex-shrink-0"></i>
+            <a href="tel:{{ SITE_PHONE }}" class="hover:text-brand-ctaLine">{{ SITE_PHONE }}</a>
+          </li>
+          {% endif %}
+          {% if SITE_EMAIL %}
+          <li class="flex gap-2">
+            <i class="ti ti-mail text-brand-ctaLine flex-shrink-0"></i>
+            <a href="mailto:{{ SITE_EMAIL }}" class="hover:text-brand-ctaLine">{{ SITE_EMAIL }}</a>
+          </li>
+          {% endif %}
+        </ul>
+        <div class="mt-5">
+          <a href="{% url 'bookings:inquiry' %}" class="btn-frame-accent text-sm px-5 py-2 inline-block">{% trans "Get a Quote" %}</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="border-t border-white/10">
+    <div class="max-w-7xl mx-auto px-4 py-5 flex flex-col sm:flex-row items-center justify-between gap-3 text-xs text-white/80">
+      <p>© {% now "Y" %} {{ SITE_NAME }}. {% trans "All rights reserved." %}</p>
+      <div class="flex gap-4">
+        <a href="#" class="hover:text-gray-300">{% trans "Privacy Policy" %}</a>
+        <a href="#" class="hover:text-gray-300">{% trans "Terms of Service" %}</a>
+        <a href="/sitemap.xml" class="hover:text-gray-300">{% trans "Sitemap" %}</a>
+      </div>
+    </div>
+  </div>
+</footer>

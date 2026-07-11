@@ -1,0 +1,51 @@
+{% extends "base.html" %}
+{% load i18n %}
+
+{% block title %}{% trans "Booking Confirmed" %} | {{ SITE_NAME }}{% endblock %}
+
+{% block content %}
+<div class="pt-20 lg:pt-28 min-h-screen flex items-center justify-center bg-pattern-subtle-blue">
+  <div class="max-w-lg mx-auto px-4 py-16 text-center">
+    <div class="w-20 h-20 rounded-full bg-green-100 flex items-center justify-center mx-auto mb-6">
+      <i class="ti ti-circle-check text-green-600 text-4xl"></i>
+    </div>
+    <h1 class="text-3xl font-serif font-bold text-dark mb-3">{% trans "Booking Confirmed!" %}</h1>
+    {% if inquiry.email %}
+    <p class="text-gray-500 mb-6">{% trans "Thank you for booking with UNITUR travel agency. A confirmation email has been sent to" %} <strong>{{ inquiry.email }}</strong>.</p>
+    {% else %}
+    <p class="text-gray-500 mb-6">{% trans "Thank you for booking with UNITUR travel agency. Our team will contact you shortly on" %} <strong>{{ inquiry.phone }}</strong>.</p>
+    {% endif %}
+    <div class="bg-white rounded-2xl shadow-sm p-6 mb-6 text-left">
+      <p class="text-xs text-gray-400 uppercase font-semibold mb-1">{% trans "Confirmation Number" %}</p>
+      <p class="text-3xl font-mono font-bold text-primary">{{ inquiry.confirmation_number }}</p>
+      <hr class="my-4">
+      <div class="space-y-2 text-sm">
+        <div class="flex justify-between">
+          <span class="text-gray-500">{% trans "Customer" %}</span>
+          <span class="font-medium">{{ inquiry.full_name }}</span>
+        </div>
+        {% if inquiry.tour %}
+        <div class="flex justify-between">
+          <span class="text-gray-500">{% trans "Tour" %}</span>
+          <span class="font-medium">{{ inquiry.tour.title }}</span>
+        </div>
+        {% endif %}
+        <div class="flex justify-between">
+          <span class="text-gray-500">{% trans "Phone" %}</span>
+          <span class="font-medium">{{ inquiry.phone }}</span>
+        </div>
+        {% if inquiry.email %}
+        <div class="flex justify-between">
+          <span class="text-gray-500">{% trans "Email" %}</span>
+          <span class="font-medium">{{ inquiry.email }}</span>
+        </div>
+        {% endif %}
+      </div>
+    </div>
+    <div class="flex flex-col sm:flex-row gap-3 justify-center">
+      <a href="{% url 'tours:list' %}" class="btn-outline px-6 py-3">{% trans "Browse More Tours" %}</a>
+      <a href="{% url 'home' %}" class="btn-primary px-6 py-3">{% trans "Back to Home" %}</a>
+    </div>
+  </div>
+</div>
+{% endblock %}

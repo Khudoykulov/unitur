@@ -1,0 +1,35 @@
+{% load i18n %}
+{# Usage: {% include "components/review_card.html" with review=review %} #}
+<div class="bg-white rounded-2xl shadow-sm p-6 flex flex-col gap-4">
+  {# Stars #}
+  <div class="flex items-center gap-1">
+    {% with r=review.rating %}
+    {% for i in "12345" %}{% with n=forloop.counter %}{% if n <= r %}<i class="ti ti-star-filled text-secondary text-sm"></i>{% else %}<i class="ti ti-star text-gray-300 text-sm"></i>{% endif %}{% endwith %}{% endfor %}
+    {% endwith %}
+  </div>
+
+  {# Title & body #}
+  <div>
+    <h4 class="font-semibold text-dark text-base mb-1">{{ review.title }}</h4>
+    <p class="text-gray-600 text-sm leading-relaxed line-clamp-4">{{ review.body }}</p>
+  </div>
+
+  {# Footer #}
+  <div class="flex items-center gap-3 mt-auto pt-3 border-t border-gray-100">
+    <div class="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center text-primary font-bold text-sm flex-shrink-0">
+      {{ review.reviewer_name|first|upper }}
+    </div>
+    <div>
+      <p class="text-sm font-medium text-dark">{{ review.reviewer_name }}</p>
+      <p class="text-xs text-gray-400">
+        {% if review.guest_country %}{{ review.guest_country }} · {% endif %}
+        {% if review.travel_date %}{{ review.travel_date|date:"M Y" }}{% endif %}
+      </p>
+    </div>
+    {% if review.is_verified %}
+    <span class="ml-auto flex items-center gap-1 text-xs text-green-600 bg-green-50 px-2 py-0.5 rounded-full">
+      <i class="ti ti-circle-check-filled text-xs"></i> {% trans "Verified" %}
+    </span>
+    {% endif %}
+  </div>
+</div>

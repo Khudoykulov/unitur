@@ -1,0 +1,78 @@
+{% load i18n %}
+{# Usage: {% include "components/tour_card.html" with tour=tour %} #}
+<article class="group bg-white rounded-2xl shadow-sm hover:shadow-xl transition-all duration-300 overflow-hidden flex flex-col">
+
+  {# Image #}
+  <div class="relative overflow-hidden aspect-[4/3]">
+    {% if tour.cover_image %}
+    <img src="{{ tour.cover_image.url }}" alt="{{ tour.title }}"
+         loading="lazy"
+         class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+    {% else %}
+    <div class="w-full h-full bg-gradient-to-br from-primary/20 to-secondary/20 flex items-center justify-center">
+      <i class="ti ti-photo-off text-4xl text-gray-400"></i>
+    </div>
+    {% endif %}
+
+    {# Category badge #}
+    {% if tour.category %}
+    <span class="absolute top-3 left-3 bg-white/90 backdrop-blur-sm text-primary text-xs font-semibold px-3 py-1 rounded-full">
+      {{ tour.category.name }}
+    </span>
+    {% endif %}
+
+    {# Discount badge #}
+    {% if tour.discount_percent %}
+    <span class="absolute top-3 right-3 bg-secondary text-white text-xs font-bold px-2 py-1 rounded-full">
+      -{{ tour.discount_percent }}%
+    </span>
+    {% endif %}
+  </div>
+
+  {# Content #}
+  <div class="p-5 flex flex-col flex-1">
+    <h3 class="font-serif font-semibold text-dark text-lg leading-snug mb-2 line-clamp-2">
+      <a href="{{ tour.get_absolute_url }}" class="hover:text-primary transition">{{ tour.title }}</a>
+    </h3>
+
+    {# Meta row #}
+    <div class="flex flex-wrap gap-3 text-gray-500 text-xs mb-3">
+      <span class="flex items-center gap-1">
+        <i class="ti ti-calendar text-secondary"></i> {{ tour.duration_days }} {% trans "days" %}
+      </span>
+      <span class="flex items-center gap-1">
+        <i class="ti ti-users text-secondary"></i>
+        {% blocktrans with min=tour.group_size_min max=tour.group_size_max %}{{ min }}–{{ max }} pax{% endblocktrans %}
+      </span>
+    </div>
+
+    {# Rating #}
+    {% if tour.average_rating %}
+    <div class="flex items-center gap-1 mb-3">
+      {% with r=tour.average_rating %}
+      {% for i in "12345" %}{% with n=forloop.counter %}{% if n <= r %}<i class="ti ti-star-filled text-secondary text-sm"></i>{% else %}<i class="ti ti-star text-gray-300 text-sm"></i>{% endif %}{% endwith %}{% endfor %}
+      {% endwith %}
+      <span class="text-xs text-gray-500 ml-1">({{ tour.reviews.count }})</span>
+    </div>
+    {% endif %}
+
+    <div class="mt-auto flex items-end justify-between">
+      {# Price #}
+      <div>
+        {% if tour.discount_percent %}
+        <p class="text-xs text-gray-400 line-through">{{ tour.price_per_person }} {{ tour.price_currency }}</p>
+        {% endif %}
+        <p class="text-xl font-bold text-primary">
+          {{ tour.discounted_price|floatformat:0 }} <span class="text-sm font-normal">{{ tour.price_currency }}</span>
+        </p>
+        <p class="text-xs text-gray-400">{% trans "per person" %}</p>
+      </div>
+
+      {# CTA #}
+      <a href="{{ tour.get_absolute_url }}"
+         class="btn-primary text-xs px-4 py-2 flex items-center gap-1">
+        {% trans "View" %} <i class="ti ti-arrow-right"></i>
+      </a>
+    </div>
+  </div>
+</article>

@@ -1,0 +1,250 @@
+"""Dashboard forms."""
+
+from django import forms
+from django.contrib.auth import get_user_model
+from django.contrib.auth.password_validation import validate_password
+from django.forms import inlineformset_factory
+from django.utils.translation import gettext_lazy as _
+
+from apps.core.models import HeroSlide
+from apps.destinations.models import City, Continent, Country
+from apps.tours.models import Tour, TourCategory, TourDay, TourStop
+
+User = get_user_model()
+
+# Domestic ("Ichki Turlar") tours are built from Uzbek cities. Matched by name
+# so the link survives slug/id changes (mirrors apps.ichki_turlar.admin).
+DOMESTIC_COUNTRY = "Uzbek"
+
+ROLE_CHOICES = [
+    ("user", _("User — public site only")),
+    ("operator", _("Operator — bookings & reviews")),
+    ("manager", _("Manager — full content management")),
+    ("superuser", _("Superuser — full access")),
+]
+
+
+class UserCreateForm(forms.Form):
+    """Create a new account from the dashboard and assign a role.
+
+    The site logs in by email, so the email doubles as the username. Role is
+    applied separately (see ``apply_role``) since it maps to flags/groups
+    rather than model fields.
+    """
+
+    email = forms.EmailField(label=_("Email"))
+    first_name = forms.CharField(label=_("First name"), max_length=150, required=False)
+    last_name = forms.CharField(label=_("Last name"), max_length=150, required=False)
+    password = forms.CharField(label=_("Password"), widget=forms.PasswordInput, min_length=8)
+    role = forms.ChoiceField(label=_("Role"), choices=ROLE_CHOICES, initial="user")
+
+    def clean_email(self):
+        email = self.cleaned_data["email"].strip().lower()
+        if User.objects.filter(email__iexact=email).exists() or User.objects.filter(
+            username__iexact=email
+        ).exists():
+            raise forms.ValidationError(_("A user with this email already exists."))
+        return email
+
+    def clean_password(self):
+        password = self.cleaned_data["password"]
+        validate_password(password)
+        return password
+
+    def save(self):
+        data = self.cleaned_data
+        user = User(
+            username=data["email"],
+            email=data["email"],
+            first_name=data["first_name"],
+            last_name=data["last_name"],
+        )
+        user.set_password(data["password"])
+        user.save()
+        return user
+
+
+class UserEditForm(forms.ModelForm):
+    """Edit an existing account's details, role and (optionally) password.
+
+    Email doubles as the login username, so the two are kept in sync. Password
+    is only changed when a new value is supplied.
+    """
+
+    role = forms.ChoiceField(label=_("Role"), choices=ROLE_CHOICES)
+    password = forms.CharField(
+        label=_("New password"),
+        widget=forms.PasswordInput,
+        required=False,
+        min_length=8,
+        help_text=_("Leave blank to keep the current password."),
+    )
+
+    class Meta:
+        model = User
+        fields = ["email", "first_name", "last_name", "is_active"]
+        labels = {
+            "first_name": _("First name"),
+            "last_name": _("Last name"),
+            "is_active": _("Active (can log in)"),
+        }
+
+    def clean_email(self):
+        email = self.cleaned_data["email"].strip().lower()
+        clash = (
+            User.objects.filter(email__iexact=email)
+            | User.objects.filter(username__iexact=email)
+        ).exclude(pk=self.instance.pk)
+        if clash.exists():
+            raise forms.ValidationError(_("Another user with this email already exists."))
+        return email
+
+    def clean_password(self):
+        password = self.cleaned_data.get("password")
+        if password:
+            validate_password(password, self.instance)
+        return password
+
+    def save(self, commit=True):
+        user = super().save(commit=False)
+        user.username = self.cleaned_data["email"]
+        password = self.cleaned_data.get("password")
+        if password:
+            user.set_password(password)
+        if commit:
+            user.save()
+        return user
+
+
+class IchkiTurForm(forms.ModelForm):
+    """Create/edit a domestic multi-city tour ("Ichki Tur").
+
+    The itinerary stops (which make it multi-city) are handled by the
+    ``TourStopFormSet`` alongside this form.
+    """
+
+    class Meta:
+        model = Tour
+        # Difficulty is intentionally omitted: domestic city tours don't need a
+        # difficulty rating (it stays at the model default).
+        fields = [
+            "title", "category", "duration_days",
+            "group_size_min", "group_size_max",
+            "price_per_person", "price_currency", "discount_percent",
+            "cover_image", "overview", "includes", "excludes",
+            "important_notes",
+        ]
+
+
+class TourStopForm(forms.ModelForm):
+    """A single itinerary stop, restricted to domestic (Uzbek) cities."""
+
+    class Meta:
+        model = TourStop
+        fields = ["city", "order", "nights"]
+
+    def __init__(self, *args, **kwargs):
+        super().__init__(*args, **kwargs)
+        # Match on the language-independent English name; under modeltranslation
+        # ``country__name`` would resolve to the active language (e.g. name_uz =
+        # "O'zbekiston") and never contain "Uzbek".
+        self.fields["city"].queryset = City.objects.filter(
+            country__name_en__icontains=DOMESTIC_COUNTRY
+        ).order_by("name")
+
+
+# At least two stops are required — that is what makes a tour "Ichki Turlar".
+TourStopFormSet = inlineformset_factory(
+    Tour,
+    TourStop,
+    form=TourStopForm,
+    extra=2,
+    can_delete=True,
+    min_num=2,
+    validate_min=True,
+)
+
+
+class TourDayForm(forms.ModelForm):
+    """A single day of the day-by-day itinerary (mirrors TourStopForm)."""
+
+    class Meta:
+        model = TourDay
+        fields = [
+            "day_number", "title", "description",
+            "meals_included", "accommodation", "transport", "image",
+        ]
+
+
+# The day-by-day itinerary is optional supplementary content (the tour detail
+# page renders it only when days exist), so no minimum is enforced — unlike
+# stops, requiring a day would block editing existing tours that have none.
+TourDayFormSet = inlineformset_factory(
+    Tour,
+    TourDay,
+    form=TourDayForm,
+    extra=1,
+    can_delete=True,
+)
+
+
+class DomesticCityForm(forms.ModelForm):
+    """Create/edit a domestic (Uzbek) city used to build Ichki Tur routes.
+
+    New cities are always attached to Uzbekistan, so the country isn't shown.
+    """
+
+    class Meta:
+        model = City
+        # is_featured, order and is_active are omitted: featured/order have no
+        # effect for cities (listed alphabetically), and visibility is toggled
+        # from the city list, not this form.
+        fields = ["name", "cover_image", "overview"]
+
+    def save(self, commit=True):
+        city = super().save(commit=False)
+        if city.country_id is None:
+            city.country = Country.objects.filter(
+                name_en__icontains=DOMESTIC_COUNTRY
+            ).first()
+        if commit:
+            city.save()
+        return city
+
+
+class TourCategoryForm(forms.ModelForm):
+    """Create/edit a tour category (the "Category" filter on the tours page)."""
+
+    class Meta:
+        model = TourCategory
+        # ``order`` is omitted — it stays at the model default (creation order);
+        # visibility isn't a concept for categories, so no is_active either.
+        fields = ["name", "slug", "icon", "description", "image"]
+        help_texts = {
+            "slug": _("Leave blank to generate from the name."),
+            "icon": _("Tabler icon name, e.g. compass, building, beach, chef-hat, paw."),
+        }
+
+
+class ContinentForm(forms.ModelForm):
+    """Create/edit a continent (groups countries in the Destinations menu)."""
+
+    class Meta:
+        model = Continent
+        fields = ["name", "slug", "image"]
+        help_texts = {
+            "slug": _("Leave blank to generate from the name."),
+        }
+
+
+class HeroSlideForm(forms.ModelForm):
+    """Upload a rotating hero background image for a page.
+
+    Kept deliberately minimal — just the page and the image. ``alt`` is unused
+    (slides render as CSS background-images, not <img> tags); ``is_active`` and
+    ``order`` stay at their model defaults (active, creation order).
+    """
+
+    class Meta:
+        model = HeroSlide
+        fields = ["page", "image"]

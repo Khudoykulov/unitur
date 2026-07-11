@@ -1,0 +1,2166 @@
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: travel_pro 1.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-07-08 20:31+0000\n"
+"PO-Revision-Date: 2026-07-08 20:31+0000\n"
+"Last-Translator: Travel Pro Team\n"
+"Language-Team: es\n"
+"Language: es\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+msgid "Home"
+msgstr "Inicio"
+
+msgid "Tours"
+msgstr "Tours"
+
+msgid "Hotels"
+msgstr "Hoteles"
+
+msgid "Destinations"
+msgstr "Destinos"
+
+msgid "Guides"
+msgstr "Guías"
+
+msgid "MICE"
+msgstr "MICE"
+
+msgid "Search"
+msgstr "Buscar"
+
+msgid "Sign in"
+msgstr "Iniciar sesión"
+
+msgid "Sign In"
+msgstr "Iniciar sesión"
+
+msgid "Book Now"
+msgstr "Reservar ahora"
+
+msgid "Domestic Tours"
+msgstr "Tours nacionales"
+
+msgid "Route"
+msgstr "Ruta"
+
+msgid "Tap a city to explore it."
+msgstr "Toca una ciudad para explorarla."
+
+msgid "nights"
+msgstr "noches"
+
+msgid "Photos"
+msgstr "Fotos"
+
+msgid "No multi-city tours yet."
+msgstr "Aún no hay tours de varias ciudades."
+
+msgid "Browse all tours"
+msgstr "Ver todos los tours"
+
+msgid "Multi-city journeys — discover several cities in a single trip"
+msgstr "Viajes de varias ciudades — descubre varias ciudades en un solo viaje"
+
+msgid ""
+"Multi-city tours across Uzbekistan — discover several cities in a single "
+"journey."
+msgstr ""
+"Tours de varias ciudades por Uzbekistán — descubre varias ciudades en un "
+"solo viaje."
+
+msgid "%(count)s multi-city tours"
+msgstr "%(count)s tours de varias ciudades"
+
+msgid "Log in"
+msgstr "Iniciar sesión"
+
+msgid "Invalid username or password."
+msgstr "Usuario o contraseña incorrectos."
+
+msgid "Accept"
+msgstr "Aceptar"
+
+msgid "Any"
+msgstr "Cualquiera"
+
+msgid "Anywhere"
+msgstr "A cualquier lugar"
+
+msgid "Close"
+msgstr "Cerrar"
+
+msgid "Main page"
+msgstr "Inicio"
+
+msgid "Guidebook"
+msgstr "Guía"
+
+msgid "More"
+msgstr "Más"
+
+msgid "About us"
+msgstr "Sobre nosotros"
+
+msgid "About the Company"
+msgstr "Sobre la empresa"
+
+msgid "Contact"
+msgstr "Contacto"
+
+msgid "Working hours"
+msgstr "Horario"
+
+msgid "Why UNITUR?"
+msgstr "¿Por qué UNITUR?"
+
+msgid "Apply"
+msgstr "Aplicar"
+
+msgid "Clear"
+msgstr "Limpiar"
+
+msgid "Apply Filters"
+msgstr "Aplicar filtros"
+
+msgid "Clear all"
+msgstr "Borrar todo"
+
+msgid "Clear filters"
+msgstr "Borrar filtros"
+
+msgid "Filters"
+msgstr "Filtros"
+
+msgid "Details"
+msgstr "Detalles"
+
+msgid "About"
+msgstr "Acerca de"
+
+msgid "All"
+msgstr "Todos"
+
+msgid "Featured"
+msgstr "Destacado"
+
+msgid "From"
+msgstr "Desde"
+
+msgid "Map"
+msgstr "Mapa"
+
+msgid "Name"
+msgstr "Nombre"
+
+msgid "Slug"
+msgstr "Slug"
+
+msgid "Image"
+msgstr "Imagen"
+
+msgid "Description"
+msgstr "Descripción"
+
+msgid "Category"
+msgstr "Categoría"
+
+msgid "Status"
+msgstr "Estado"
+
+msgid "Active"
+msgstr "Activo"
+
+msgid "Title"
+msgstr "Título"
+
+msgid "Price"
+msgstr "Precio"
+
+msgid "Duration"
+msgstr "Duración"
+
+msgid "Language"
+msgstr "Idioma"
+
+msgid "Currency"
+msgstr "Moneda"
+
+msgid "Location"
+msgstr "Ubicación"
+
+msgid "Contact Us"
+msgstr "Contáctanos"
+
+msgid "Email"
+msgstr "Correo electrónico"
+
+msgid "Phone"
+msgstr "Teléfono"
+
+msgid "Date"
+msgstr "Fecha"
+
+msgid "Type"
+msgstr "Tipo"
+
+msgid "User"
+msgstr "Usuario"
+
+msgid "Country"
+msgstr "País"
+
+msgid "City"
+msgstr "Ciudad"
+
+msgid "Tour"
+msgstr "Tour"
+
+msgid "Hotel"
+msgstr "Hotel"
+
+msgid "Website"
+msgstr "Sitio web"
+
+msgid "Address"
+msgstr "Dirección"
+
+msgid "Order"
+msgstr "Orden"
+
+msgid "Caption"
+msgstr "Leyenda"
+
+msgid "Rating"
+msgstr "Calificación"
+
+msgid "Published"
+msgstr "Publicado"
+
+msgid "Tags"
+msgstr "Etiquetas"
+
+msgid "Author"
+msgstr "Autor"
+
+msgid "Content"
+msgstr "Contenido"
+
+msgid "Continent"
+msgstr "Continente"
+
+msgid "Continents"
+msgstr "Continentes"
+
+msgid "Countries"
+msgstr "Países"
+
+msgid "Cities"
+msgstr "Ciudades"
+
+msgid "Reviews"
+msgstr "Reseñas"
+
+msgid "Inquiry"
+msgstr "Consulta"
+
+msgid "Inquiries"
+msgstr "Consultas"
+
+msgid "Departure"
+msgstr "Salida"
+
+msgid "Return"
+msgstr "Regreso"
+
+msgid "Seats"
+msgstr "Asientos"
+
+msgid "Book"
+msgstr "Reservar"
+
+msgid "Full"
+msgstr "Completo"
+
+msgid "left"
+msgstr "quedan"
+
+msgid "days"
+msgstr "días"
+
+msgid "pax"
+msgstr "pers."
+
+msgid "min read"
+msgstr "min de lectura"
+
+msgid "min"
+msgstr "min"
+
+msgid "per person"
+msgstr "por persona"
+
+msgid "per night from"
+msgstr "por noche desde"
+
+msgid "/ night"
+msgstr "/ noche"
+
+msgid "persons"
+msgstr "personas"
+
+msgid "adults"
+msgstr "adultos"
+
+msgid "children"
+msgstr "niños"
+
+msgid "participants"
+msgstr "participantes"
+
+msgid "and"
+msgstr "y"
+
+msgid "We use cookies"
+msgstr "Usamos cookies"
+
+msgid ""
+"We use cookies to enhance your browsing experience and analyse traffic. By "
+"clicking 'Accept', you consent to our use of cookies."
+msgstr ""
+"Usamos cookies para mejorar su experiencia de navegación y analizar el "
+"tráfico. Al hacer clic en 'Aceptar', acepta el uso de cookies."
+
+msgid "Learn more"
+msgstr "Más información"
+
+msgid "Discover the World"
+msgstr "Descubre el Mundo"
+
+msgid "With Confidence"
+msgstr "Con Confianza"
+
+msgid ""
+"Authentic tours across Uzbekistan and Eurasia. Unmatched service, "
+"unforgettable memories."
+msgstr ""
+"Tours auténticos por Uzbekistán y Eurasia. Servicio inigualable, recuerdos "
+"inolvidables."
+
+msgid "Destination"
+msgstr "Destino"
+
+msgid "Where to?"
+msgstr "¿A dónde?"
+
+msgid "Happy Travelers"
+msgstr "Viajeros felices"
+
+msgid "Years Experience"
+msgstr "Años de experiencia"
+
+msgid "Handpicked for You"
+msgstr "Seleccionado para ti"
+
+msgid "Featured Tours"
+msgstr "Tours destacados"
+
+msgid "View All Tours"
+msgstr "Ver todos los tours"
+
+msgid "No featured tours yet."
+msgstr "Aún no hay tours destacados."
+
+msgid "Explore the World"
+msgstr "Explora el Mundo"
+
+msgid "Top Destinations"
+msgstr "Destinos principales"
+
+msgid "All Destinations"
+msgstr "Todos los destinos"
+
+msgid "Our Promise"
+msgstr "Nuestra promesa"
+
+msgid "Why Travel Pro?"
+msgstr "¿Por qué Travel Pro?"
+
+msgid "Trusted Agency"
+msgstr "Agencia de confianza"
+
+msgid "Licensed and fully insured with 15+ years of excellence."
+msgstr ""
+"Licenciados y completamente asegurados con más de 15 años de excelencia."
+
+msgid "24/7 Support"
+msgstr "Soporte 24/7"
+
+msgid "Our team is always available to assist you anywhere in the world."
+msgstr ""
+"Nuestro equipo siempre está disponible para ayudarte en cualquier parte del "
+"mundo."
+
+msgid "Best Price"
+msgstr "Mejor precio"
+
+msgid "Price-match guarantee on all our tour packages worldwide."
+msgstr ""
+"Garantía de igualación de precios en todos nuestros paquetes turísticos en "
+"todo el mundo."
+
+msgid "Top Rated"
+msgstr "Mejor valorado"
+
+msgid "4.9★ average rating from thousands of verified travelers."
+msgstr "Calificación promedio de 4.9★ de miles de viajeros verificados."
+
+msgid "Hand-Picked Stays"
+msgstr "Alojamientos seleccionados"
+
+msgid "Featured Hotels"
+msgstr "Hoteles destacados"
+
+msgid "All Hotels"
+msgstr "Todos los hoteles"
+
+msgid "What Travelers Say"
+msgstr "Qué dicen los viajeros"
+
+msgid "Customer Reviews"
+msgstr "Reseñas de clientes"
+
+msgid "Read All Reviews"
+msgstr "Leer todas las reseñas"
+
+msgid "Travel Tips & Inspiration"
+msgstr "Consejos de viaje e inspiración"
+
+msgid "Latest Guides"
+msgstr "Últimas guías"
+
+msgid "All Articles"
+msgstr "Todos los artículos"
+
+msgid "Ready for Your Next Adventure?"
+msgstr "¿Listo para tu próxima aventura?"
+
+msgid ""
+"Get a personalised itinerary from our travel experts — completely free."
+msgstr ""
+"Obtén un itinerario personalizado de nuestros expertos en viajes — "
+"completamente gratis."
+
+msgid "Plan My Trip"
+msgstr "Planificar mi viaje"
+
+msgid "Browse Tours"
+msgstr "Ver tours"
+
+msgid "All Tours"
+msgstr "Todos los tours"
+
+msgid "All Continents"
+msgstr "Todos los continentes"
+
+msgid "Explore our handpicked collection of unforgettable journeys"
+msgstr "Explora nuestra colección seleccionada de viajes inolvidables"
+
+msgid "By Category"
+msgstr "Por categoría"
+
+msgid "View all tours"
+msgstr "Ver todos los tours"
+
+msgid "View all international tours"
+msgstr "Ver todos los tours internacionales"
+
+msgid "All categories"
+msgstr "Todas las categorías"
+
+msgid "Price Range (USD)"
+msgstr "Rango de precios (USD)"
+
+msgid "Min"
+msgstr "Mín"
+
+msgid "Max"
+msgstr "Máx"
+
+msgid "Duration (days)"
+msgstr "Duración (días)"
+
+msgid "Difficulty"
+msgstr "Dificultad"
+
+msgid "{{ count }} tours found"
+msgstr "{{ count }} tours encontrados"
+
+msgid "Price: Low to High"
+msgstr "Precio: de menor a mayor"
+
+msgid "Price: High to Low"
+msgstr "Precio: de mayor a menor"
+
+msgid "Newest"
+msgstr "Más recientes"
+
+msgid "Most Popular"
+msgstr "Más populares"
+
+msgid "No tours match your filters."
+msgstr "Ningún tour coincide con tus filtros."
+
+msgid "Tour Overview"
+msgstr "Descripción general del tour"
+
+msgid "What's Included"
+msgstr "Qué está incluido"
+
+msgid "Not Included"
+msgstr "No incluido"
+
+msgid "Day-by-Day Itinerary"
+msgstr "Itinerario día a día"
+
+msgid "Available Departures"
+msgstr "Salidas disponibles"
+
+msgid "Similar Tours"
+msgstr "Tours similares"
+
+msgid "Book This Tour"
+msgstr "Reservar este tour"
+
+msgid "Send Inquiry"
+msgstr "Enviar consulta"
+
+msgid "Group size"
+msgstr "Tamaño del grupo"
+
+msgid "Share this tour"
+msgstr "Compartir este tour"
+
+msgid "Book Tour"
+msgstr "Reservar tour"
+
+msgid "Please correct the errors below."
+msgstr "Por favor, corrija los errores a continuación."
+
+msgid ""
+"Your information is secure and will never be shared with third parties."
+msgstr "Su información es segura y nunca se compartirá con terceros."
+
+msgid "Up to 1 week"
+msgstr "Hasta 1 semana"
+
+msgid "Up to 2 weeks"
+msgstr "Hasta 2 semanas"
+
+msgid "Up to 1 month"
+msgstr "Hasta 1 mes"
+
+msgid "Find Your Perfect Stay"
+msgstr "Encuentra tu alojamiento perfecto"
+
+msgid "Handpicked hotels from budget to luxury worldwide"
+msgstr "Hoteles seleccionados desde económicos hasta lujosos en todo el mundo"
+
+msgid "Filter Hotels"
+msgstr "Filtrar hoteles"
+
+msgid "No hotels match your search."
+msgstr "Ningún hotel coincide con tu búsqueda."
+
+msgid "About the Hotel"
+msgstr "Acerca del hotel"
+
+msgid "Amenities"
+msgstr "Servicios"
+
+msgid "Room Types"
+msgstr "Tipos de habitación"
+
+msgid "Capacity"
+msgstr "Capacidad"
+
+msgid "Guest Reviews"
+msgstr "Reseñas de huéspedes"
+
+msgid "Check Availability"
+msgstr "Verificar disponibilidad"
+
+msgid "Check-in"
+msgstr "Entrada"
+
+msgid "Check-out"
+msgstr "Salida"
+
+msgid "Explore Destinations"
+msgstr "Explorar destinos"
+
+msgid "Discover stunning countries and cities across all continents"
+msgstr "Descubre países y ciudades impresionantes en todos los continentes"
+
+msgid "Cities to Explore"
+msgstr "Ciudades para explorar"
+
+msgid "Travel Information"
+msgstr "Información de viaje"
+
+msgid "Best time to visit"
+msgstr "Mejor época para visitar"
+
+msgid "Visa Information"
+msgstr "Información de visado"
+
+msgid "Plan a Trip Here"
+msgstr "Planificar un viaje aquí"
+
+msgid "Top Attractions"
+msgstr "Principales atracciones"
+
+msgid "Entry"
+msgstr "Entrada"
+
+msgid "View on map"
+msgstr "Ver en el mapa"
+
+msgid "Hotels in"
+msgstr "Hoteles en"
+
+msgid "Tours Including"
+msgstr "Tours que incluyen"
+
+msgid "Timezone"
+msgstr "Zona horaria"
+
+msgid "All destinations"
+msgstr "Todos los destinos"
+
+msgid "Travel Guides & Tips"
+msgstr "Guías de viaje y consejos"
+
+msgid "Expert advice, destination guides, and travel inspiration"
+msgstr "Consejos de expertos, guías de destinos e inspiración para viajar"
+
+msgid "Read Article"
+msgstr "Leer artículo"
+
+msgid "No articles found."
+msgstr "No se encontraron artículos."
+
+msgid "Related Articles"
+msgstr "Artículos relacionados"
+
+msgid "Plan Your Trip"
+msgstr "Planifica tu viaje"
+
+msgid "Ready to experience this destination?"
+msgstr "¿Listo para experimentar este destino?"
+
+msgid "MICE & Corporate Travel"
+msgstr "MICE y viajes corporativos"
+
+msgid "Business Travel"
+msgstr "Viajes de negocios"
+
+msgid ""
+"From international conferences to team-building retreats — we handle every "
+"detail."
+msgstr ""
+"Desde conferencias internacionales hasta retiros de team building — nos "
+"encargamos de cada detalle."
+
+msgid "Request a Quote"
+msgstr "Solicitar presupuesto"
+
+msgid "No packages available."
+msgstr "No hay paquetes disponibles."
+
+msgid "Need a Custom Corporate Package?"
+msgstr "¿Necesitas un paquete corporativo personalizado?"
+
+msgid "Our MICE specialists will design a bespoke program for your company."
+msgstr ""
+"Nuestros especialistas en MICE diseñarán un programa a medida para su "
+"empresa."
+
+msgid "Talk to a Specialist"
+msgstr "Hablar con un especialista"
+
+msgid "Package Includes"
+msgstr "El paquete incluye"
+
+msgid "Min participants"
+msgstr "Participantes mínimos"
+
+msgid "Max participants"
+msgstr "Participantes máximos"
+
+msgid "Booking Confirmed!"
+msgstr "¡Reserva confirmada!"
+
+msgid ""
+"Thank you for booking with Travel Pro. A confirmation email has been sent to"
+msgstr ""
+"Gracias por reservar con Travel Pro. Se ha enviado un correo de confirmación"
+" a"
+
+msgid "Confirmation Number"
+msgstr "Número de confirmación"
+
+msgid "Customer"
+msgstr "Cliente"
+
+msgid "Travel date"
+msgstr "Fecha de viaje"
+
+msgid "Travelers"
+msgstr "Viajeros"
+
+msgid "Browse More Tours"
+msgstr "Ver más tours"
+
+msgid "Back to Home"
+msgstr "Volver al inicio"
+
+msgid "I agree to the Terms & Conditions and Privacy Policy"
+msgstr "Acepto los Términos y condiciones y la Política de privacidad"
+
+msgid "Confirm Booking"
+msgstr "Confirmar reserva"
+
+msgid "Tell us about your dream trip and we'll create a custom itinerary."
+msgstr ""
+"Cuéntanos sobre tu viaje soñado y crearemos un itinerario personalizado."
+
+msgid "What Our Travelers Say"
+msgstr "Lo que dicen nuestros viajeros"
+
+msgid "Genuine reviews from verified customers worldwide"
+msgstr "Reseñas genuinas de clientes verificados en todo el mundo"
+
+msgid "No reviews found."
+msgstr "No se encontraron reseñas."
+
+msgid "No reviews yet — be the first to write one!"
+msgstr "Aún no hay reseñas — ¡sé el primero!"
+
+msgid "Share your experience"
+msgstr "Comparte tu experiencia"
+
+msgid "Write a review and help other travelers"
+msgstr "Escribe una reseña y ayuda a otros viajeros"
+
+msgid "About Us"
+msgstr "Sobre nosotros"
+
+msgid "Our Story"
+msgstr "Nuestra historia"
+
+msgid "About Travel Pro"
+msgstr "Acerca de Travel Pro"
+
+msgid ""
+"For over 15 years, we've been connecting passionate travelers with "
+"extraordinary destinations across the globe."
+msgstr ""
+"Durante más de 15 años hemos conectado a viajeros apasionados con destinos "
+"extraordinarios en todo el mundo."
+
+msgid "Our Mission"
+msgstr "Nuestra misión"
+
+msgid ""
+"To inspire and enable people to experience the world's cultures, landscapes,"
+" and communities through expertly crafted travel experiences — with a "
+"commitment to sustainability, authenticity, and excellence."
+msgstr ""
+"Inspirar y permitir a las personas experimentar las culturas, paisajes y "
+"comunidades del mundo a través de experiencias de viaje magistralmente "
+"elaboradas — con un compromiso con la sostenibilidad, la autenticidad y la "
+"excelencia."
+
+msgid "Tour Packages"
+msgstr "Paquetes de tours"
+
+msgid "Our Values"
+msgstr "Nuestros valores"
+
+msgid "Sustainability"
+msgstr "Sostenibilidad"
+
+msgid ""
+"We partner with eco-conscious operators and promote responsible tourism."
+msgstr ""
+"Nos asociamos con operadores con conciencia ecológica y promovemos el "
+"turismo responsable."
+
+msgid "Authenticity"
+msgstr "Autenticidad"
+
+msgid "We create genuine local experiences, not just tourist attractions."
+msgstr ""
+"Creamos experiencias locales genuinas, no solo atracciones turísticas."
+
+msgid "Excellence"
+msgstr "Excelencia"
+
+msgid "Every detail is carefully curated to exceed your expectations."
+msgstr ""
+"Cada detalle está cuidadosamente seleccionado para superar sus expectativas."
+
+msgid "Ready to Start Your Journey?"
+msgstr "¿Listo para comenzar tu viaje?"
+
+msgid "Let our experts create your perfect travel experience."
+msgstr "Deja que nuestros expertos creen tu experiencia de viaje perfecta."
+
+msgid "Get in Touch"
+msgstr "Ponerse en contacto"
+
+msgid "We'd love to hear from you and help plan your perfect trip"
+msgstr ""
+"Nos encantaría saber de usted y ayudarle a planificar su viaje perfecto"
+
+msgid "Send Us a Message"
+msgstr "Envíenos un mensaje"
+
+msgid "First Name"
+msgstr "Nombre"
+
+msgid "Last Name"
+msgstr "Apellido"
+
+msgid "Message"
+msgstr "Mensaje"
+
+msgid "Send Message"
+msgstr "Enviar mensaje"
+
+msgid "Contact Information"
+msgstr "Información de contacto"
+
+msgid "Office Address"
+msgstr "Dirección de oficina"
+
+msgid "Social Media"
+msgstr "Redes sociales"
+
+msgid "Welcome Back"
+msgstr "Bienvenido de nuevo"
+
+msgid "Sign in to manage your bookings and profile"
+msgstr "Inicia sesión para gestionar tus reservas y perfil"
+
+msgid "Email address"
+msgstr "Dirección de correo electrónico"
+
+msgid "Password"
+msgstr "Contraseña"
+
+msgid "Forgot password?"
+msgstr "¿Olvidó su contraseña?"
+
+msgid "Keep me signed in"
+msgstr "Mantener sesión iniciada"
+
+msgid "Don't have an account?"
+msgstr "¿No tiene una cuenta?"
+
+msgid "Create one"
+msgstr "Crear una"
+
+msgid "Your information is secured with SSL encryption."
+msgstr "Su información está protegida con cifrado SSL."
+
+msgid "Create Account"
+msgstr "Crear cuenta"
+
+msgid "Create Your Account"
+msgstr "Crea tu cuenta"
+
+msgid "Join thousands of travelers exploring the world"
+msgstr "Únete a miles de viajeros que exploran el mundo"
+
+msgid "At least 8 characters"
+msgstr "Al menos 8 caracteres"
+
+msgid "Confirm password"
+msgstr "Confirmar contraseña"
+
+msgid "Repeat your password"
+msgstr "Repite tu contraseña"
+
+msgid "By registering you agree to our"
+msgstr "Al registrarse acepta nuestros"
+
+msgid "Terms"
+msgstr "Términos"
+
+msgid "Privacy Policy"
+msgstr "Política de privacidad"
+
+msgid "Already have an account?"
+msgstr "¿Ya tiene una cuenta?"
+
+msgid "My Profile"
+msgstr "Mi perfil"
+
+msgid "Dashboard"
+msgstr "Panel de control"
+
+msgid "My Bookings"
+msgstr "Mis reservas"
+
+msgid "Saved Tours"
+msgstr "Tours guardados"
+
+msgid "Sign Out"
+msgstr "Cerrar sesión"
+
+msgid "Ref"
+msgstr "Ref"
+
+msgid "Tour / Hotel"
+msgstr "Tour / Hotel"
+
+msgid "No bookings yet."
+msgstr "Aún no hay reservas."
+
+msgid "No saved tours yet."
+msgstr "Aún no hay tours guardados."
+
+msgid "Avatar"
+msgstr "Avatar"
+
+msgid "Bio"
+msgstr "Biografía"
+
+msgid "Date of birth"
+msgstr "Fecha de nacimiento"
+
+msgid "Preferred language"
+msgstr "Idioma preferido"
+
+msgid "Saved tours"
+msgstr "Tours guardados"
+
+msgid "Newsletter subscribed"
+msgstr "Suscrito al boletín"
+
+msgid "User profile"
+msgstr "Perfil de usuario"
+
+msgid "User profiles"
+msgstr "Perfiles de usuario"
+
+msgid "Draft"
+msgstr "Borrador"
+
+msgid "Submitted"
+msgstr "Enviado"
+
+msgid "Confirmed"
+msgstr "Confirmado"
+
+msgid "Cancelled"
+msgstr "Cancelado"
+
+msgid "Completed"
+msgstr "Completado"
+
+msgid "Tour Booking"
+msgstr "Reserva de tour"
+
+msgid "Hotel Booking"
+msgstr "Reserva de hotel"
+
+msgid "Corporate / MICE"
+msgstr "Corporativo / MICE"
+
+msgid "Custom Trip"
+msgstr "Viaje personalizado"
+
+msgid "Referral"
+msgstr "Referencia"
+
+msgid "Economy (< $500)"
+msgstr "Económico (< $500)"
+
+msgid "Standard ($500 – $1,500)"
+msgstr "Estándar ($500 – $1,500)"
+
+msgid "Premium ($1,500 – $3,000)"
+msgstr "Premium ($1,500 – $3,000)"
+
+msgid "Luxury (> $3,000)"
+msgstr "Lujo (> $3,000)"
+
+msgid "Inquiry type"
+msgstr "Tipo de consulta"
+
+msgid "Tour departure"
+msgstr "Salida del tour"
+
+msgid "First name"
+msgstr "Nombre"
+
+msgid "Last name"
+msgstr "Apellido"
+
+msgid "Country of origin"
+msgstr "País de origen"
+
+msgid "Preferred travel date"
+msgstr "Fecha de viaje preferida"
+
+msgid "Number of adults"
+msgstr "Número de adultos"
+
+msgid "Number of children"
+msgstr "Número de niños"
+
+msgid "Special requests"
+msgstr "Solicitudes especiales"
+
+msgid "Budget range"
+msgstr "Rango de presupuesto"
+
+msgid "Source"
+msgstr "Fuente"
+
+msgid "Assigned to"
+msgstr "Asignado a"
+
+msgid "Internal notes"
+msgstr "Notas internas"
+
+msgid "Visible to staff only"
+msgstr "Visible solo para el personal"
+
+msgid "Created from IP"
+msgstr "Creado desde IP"
+
+msgid "Confirmation number"
+msgstr "Número de confirmación"
+
+msgid "Created at"
+msgstr "Creado el"
+
+msgid "Updated at"
+msgstr "Actualizado el"
+
+msgid "SEO title"
+msgstr "Título SEO"
+
+msgid "SEO description"
+msgstr "Descripción SEO"
+
+msgid "Display order"
+msgstr "Orden de visualización"
+
+msgid "Flag image"
+msgstr "Imagen de bandera"
+
+msgid "Cover image"
+msgstr "Imagen de portada"
+
+msgid "Overview"
+msgstr "Descripción general"
+
+msgid "Visa information"
+msgstr "Información de visado"
+
+msgid "Official language"
+msgstr "Idioma oficial"
+
+msgid "Nature"
+msgstr "Naturaleza"
+
+msgid "Culture & Heritage"
+msgstr "Cultura y patrimonio"
+
+msgid "Adventure"
+msgstr "Aventura"
+
+msgid "Beach"
+msgstr "Playa"
+
+msgid "City Sightseeing"
+msgstr "Turismo urbano"
+
+msgid "Museum"
+msgstr "Museo"
+
+msgid "Food & Drink"
+msgstr "Comida y bebida"
+
+msgid "Shopping"
+msgstr "Compras"
+
+msgid "Entertainment"
+msgstr "Entretenimiento"
+
+msgid "Religious Site"
+msgstr "Lugar religioso"
+
+msgid "Entrance fee"
+msgstr "Precio de entrada"
+
+msgid "Opening hours"
+msgstr "Horario de apertura"
+
+msgid "Google Maps URL"
+msgstr "URL Google Maps"
+
+msgid "Attraction"
+msgstr "Atracción"
+
+msgid "Attractions"
+msgstr "Atracciones"
+
+msgid "Population"
+msgstr "Población"
+
+msgid "Latitude"
+msgstr "Latitud"
+
+msgid "Longitude"
+msgstr "Longitud"
+
+msgid "Tabler icon name"
+msgstr "Nombre icono Tabler"
+
+msgid "Tag"
+msgstr "Etiqueta"
+
+msgid "Guide category"
+msgstr "Categoría de guía"
+
+msgid "Guide categories"
+msgstr "Categorías de guía"
+
+msgid "Excerpt"
+msgstr "Extracto"
+
+msgid "Reading time (min)"
+msgstr "Tiempo de lectura (min)"
+
+msgid "Views count"
+msgstr "Número de vistas"
+
+msgid "Published at"
+msgstr "Publicado el"
+
+msgid "Article"
+msgstr "Artículo"
+
+msgid "Articles"
+msgstr "Artículos"
+
+msgid "Hotel amenity"
+msgstr "Servicio de hotel"
+
+msgid "Hotel amenities"
+msgstr "Servicios de hotel"
+
+msgid "Budget"
+msgstr "Económico"
+
+msgid "Standard"
+msgstr "Estándar"
+
+msgid "Superior"
+msgstr "Superior"
+
+msgid "Boutique"
+msgstr "Boutique"
+
+msgid "Resort"
+msgstr "Resort"
+
+msgid "Hostel"
+msgstr "Hostal"
+
+msgid "Luxury"
+msgstr "Lujo"
+
+msgid "Stars"
+msgstr "Estrellas"
+
+msgid "Check-in time"
+msgstr "Hora de entrada"
+
+msgid "Check-out time"
+msgstr "Hora de salida"
+
+msgid "Price from (per night)"
+msgstr "Precio desde (por noche)"
+
+msgid "Hotel images"
+msgstr "Imágenes del hotel"
+
+msgid "Hotel image"
+msgstr "Imagen del hotel"
+
+msgid "Single"
+msgstr "Individual"
+
+msgid "Double"
+msgstr "Doble"
+
+msgid "Twin"
+msgstr "Twin"
+
+msgid "Triple"
+msgstr "Triple"
+
+msgid "Suite"
+msgstr "Suite"
+
+msgid "Family Room"
+msgstr "Habitación familiar"
+
+msgid "Deluxe"
+msgstr "Deluxe"
+
+msgid "Presidential Suite"
+msgstr "Suite presidencial"
+
+msgid "Room type"
+msgstr "Tipo de habitación"
+
+msgid "Capacity (persons)"
+msgstr "Capacidad (personas)"
+
+msgid "Price per night"
+msgstr "Precio por noche"
+
+msgid "Comma-separated list"
+msgstr "Lista separada por comas"
+
+msgid "Available"
+msgstr "Disponible"
+
+msgid "Hotel room"
+msgstr "Habitación de hotel"
+
+msgid "Hotel rooms"
+msgstr "Habitaciones de hotel"
+
+msgid "Conference"
+msgstr "Conferencia"
+
+msgid "Incentive Trip"
+msgstr "Viaje de incentivo"
+
+msgid "Exhibition"
+msgstr "Exposición"
+
+msgid "Team Building"
+msgstr "Team building"
+
+msgid "Corporate Retreat"
+msgstr "Retiro corporativo"
+
+msgid "Product Launch"
+msgstr "Lanzamiento de producto"
+
+msgid "Package type"
+msgstr "Tipo de paquete"
+
+msgid "Package includes"
+msgstr "El paquete incluye"
+
+msgid "Price per person (from)"
+msgstr "Precio por persona (desde)"
+
+msgid "Featured destinations"
+msgstr "Destinos destacados"
+
+msgid "Corporate package"
+msgstr "Paquete corporativo"
+
+msgid "Corporate packages"
+msgstr "Paquetes corporativos"
+
+msgid "Pending moderation"
+msgstr "Pendiente de moderación"
+
+msgid "Approved"
+msgstr "Aprobado"
+
+msgid "Rejected"
+msgstr "Rechazado"
+
+msgid "Tour Review"
+msgstr "Reseña de tour"
+
+msgid "Hotel Review"
+msgstr "Reseña de hotel"
+
+msgid "General Review"
+msgstr "Reseña general"
+
+msgid "Review type"
+msgstr "Tipo de reseña"
+
+msgid "Registered user"
+msgstr "Usuario registrado"
+
+msgid "Guest name"
+msgstr "Nombre del huésped"
+
+msgid "Guest country"
+msgstr "País del huésped"
+
+msgid "Review title"
+msgstr "Título de la reseña"
+
+msgid "Review body"
+msgstr "Cuerpo de la reseña"
+
+msgid "Verified purchase"
+msgstr "Compra verificada"
+
+msgid "Set by staff for confirmed bookings"
+msgstr "Establecido por el personal para reservas confirmadas"
+
+msgid "Helpful votes"
+msgstr "Votos útiles"
+
+msgid "Review"
+msgstr "Reseña"
+
+msgid "Easy"
+msgstr "Fácil"
+
+msgid "Moderate"
+msgstr "Moderado"
+
+msgid "Challenging"
+msgstr "Desafiante"
+
+msgid "Min group size"
+msgstr "Tamaño mín. de grupo"
+
+msgid "Max group size"
+msgstr "Tamaño máx. de grupo"
+
+msgid "Price per person"
+msgstr "Precio por persona"
+
+msgid "Discount %"
+msgstr "Descuento %"
+
+msgid "What's included"
+msgstr "Qué está incluido"
+
+msgid "What's excluded"
+msgstr "Qué no está incluido"
+
+msgid "Important notes"
+msgstr "Notas importantes"
+
+msgid "Tour images"
+msgstr "Imágenes del tour"
+
+msgid "Tour image"
+msgstr "Imagen del tour"
+
+msgid "No meals"
+msgstr "Sin comidas"
+
+msgid "Breakfast"
+msgstr "Desayuno"
+
+msgid "Breakfast & Lunch"
+msgstr "Desayuno y almuerzo"
+
+msgid "Breakfast & Dinner"
+msgstr "Desayuno y cena"
+
+msgid "All meals"
+msgstr "Todas las comidas"
+
+msgid "Day number"
+msgstr "Número de día"
+
+msgid "Meals included"
+msgstr "Comidas incluidas"
+
+msgid "Accommodation"
+msgstr "Alojamiento"
+
+msgid "Transport"
+msgstr "Transporte"
+
+msgid "Tour day"
+msgstr "Día del tour"
+
+msgid "Tour days"
+msgstr "Días del tour"
+
+msgid "Open for booking"
+msgstr "Abierto para reservas"
+
+msgid "Closed"
+msgstr "Cerrado"
+
+msgid "Fully booked"
+msgstr "Completamente reservado"
+
+msgid "Departure date"
+msgstr "Fecha de salida"
+
+msgid "Return date"
+msgstr "Fecha de regreso"
+
+msgid "Available seats"
+msgstr "Asientos disponibles"
+
+msgid "Booked seats"
+msgstr "Asientos reservados"
+
+msgid "Price override"
+msgstr "Precio personalizado"
+
+msgid "Tour departures"
+msgstr "Salidas del tour"
+
+msgid "Icon (Tabler icon name)"
+msgstr "Icono (nombre Tabler)"
+
+msgid "Tour category"
+msgstr "Categoría de tour"
+
+msgid "Tour categories"
+msgstr "Categorías de tour"
+
+msgid "Search tours, destinations…"
+msgstr "Buscar tours, destinos…"
+
+msgid "Bookings"
+msgstr "Reservas"
+
+msgid "Accounts"
+msgstr "Cuentas"
+
+msgid "Core"
+msgstr "Núcleo"
+
+msgid "Domestic city"
+msgstr "Ciudad nacional"
+
+msgid "Domestic cities"
+msgstr "Ciudades nacionales"
+
+msgid "City image"
+msgstr "Imagen de ciudad"
+
+msgid "City images"
+msgstr "Imágenes de ciudad"
+
+msgid "Admin login log"
+msgstr "Registro de acceso admin"
+
+msgid "Admin login logs"
+msgstr "Registros de acceso admin"
+
+msgid "Dashboard notification"
+msgstr "Notificación del panel"
+
+msgid "Dashboard notifications"
+msgstr "Notificaciones del panel"
+
+msgid "Tour stop"
+msgstr "Parada del tour"
+
+msgid "Tour stops"
+msgstr "Paradas del tour"
+
+msgid "Information"
+msgstr "Información"
+
+msgid "Nights"
+msgstr "Noches"
+
+msgid "IP address"
+msgstr "Dirección IP"
+
+msgid "Operations"
+msgstr "Operaciones"
+
+msgid "Admin"
+msgstr "Administración"
+
+msgid "Site"
+msgstr "Sitio"
+
+msgid "View Site"
+msgstr "Ver sitio"
+
+msgid "Superuser"
+msgstr "Superusuario"
+
+msgid "Staff"
+msgstr "Personal"
+
+msgid "Manager"
+msgstr "Gerente"
+
+msgid "Operator"
+msgstr "Operador"
+
+msgid "pending"
+msgstr "pendiente"
+
+msgid "Actions"
+msgstr "Acciones"
+
+msgid "Edit"
+msgstr "Editar"
+
+msgid "Delete"
+msgstr "Eliminar"
+
+msgid "View"
+msgstr "Ver"
+
+msgid "Save"
+msgstr "Guardar"
+
+msgid "Cancel"
+msgstr "Cancelar"
+
+msgid "Back"
+msgstr "Atrás"
+
+msgid "Inactive"
+msgstr "Inactivo"
+
+msgid "stops"
+msgstr "paradas"
+
+msgid "Basic Information"
+msgstr "Información básica"
+
+msgid "Delete this item?"
+msgstr "¿Eliminar este elemento?"
+
+msgid "Delete confirmation"
+msgstr "Confirmar eliminación"
+
+msgid ""
+"Are you sure you want to delete <strong>%(name)s</strong>? This action "
+"cannot be undone."
+msgstr ""
+"¿Eliminar <strong>%(name)s</strong>? Esta acción no se puede deshacer."
+
+msgid "Showing %(start)s–%(end)s of %(total)s"
+msgstr "Mostrando %(start)s–%(end)s de %(total)s"
+
+msgid "All status"
+msgstr "Todos los estados"
+
+msgid "All types"
+msgstr "Todos los tipos"
+
+msgid "Search…"
+msgstr "Buscar…"
+
+msgid "Search tours…"
+msgstr "Buscar tours…"
+
+msgid "Search hotels…"
+msgstr "Buscar hoteles…"
+
+msgid "Search users…"
+msgstr "Buscar usuarios…"
+
+msgid "Search countries…"
+msgstr "Buscar países…"
+
+msgid "Search articles…"
+msgstr "Buscar artículos…"
+
+msgid "Search name, email, #…"
+msgstr "Buscar nombre, email, #…"
+
+msgid "Search title, name…"
+msgstr "Buscar título, nombre…"
+
+msgid "No tours found."
+msgstr "No se encontraron tours."
+
+msgid "No hotels found."
+msgstr "No se encontraron hoteles."
+
+msgid "No countries found."
+msgstr "No se encontraron países."
+
+msgid "No users found."
+msgstr "No se encontraron usuarios."
+
+msgid "No bookings found."
+msgstr "No se encontraron reservas."
+
+msgid "No domestic tours yet. Create one to get started."
+msgstr "Aún no hay tours nacionales. Crea uno para empezar."
+
+msgid "Pending"
+msgstr "Pendiente"
+
+msgid "This Month"
+msgstr "Este mes"
+
+msgid "Recent Bookings"
+msgstr "Reservas recientes"
+
+msgid "View all"
+msgstr "Ver todo"
+
+msgid "Pending Reviews"
+msgstr "Reseñas pendientes"
+
+msgid "All caught up!"
+msgstr "¡Todo al día!"
+
+msgid "New Tour"
+msgstr "Nuevo tour"
+
+msgid "New Hotel"
+msgstr "Nuevo hotel"
+
+msgid "New Article"
+msgstr "Nuevo artículo"
+
+msgid "Export CSV"
+msgstr "Exportar CSV"
+
+msgid "Back to Tours"
+msgstr "Volver a tours"
+
+msgid "Save Tour"
+msgstr "Guardar tour"
+
+msgid "Create Tour"
+msgstr "Crear tour"
+
+msgid "New Domestic Tour"
+msgstr "Nuevo tour nacional"
+
+msgid "Create Domestic Tour"
+msgstr "Crear tour nacional"
+
+msgid ""
+"Multi-city domestic tours (2 or more itinerary stops). These appear on the "
+"site's Domestic Tours page."
+msgstr ""
+"Tours nacionales de varias ciudades (2 o más paradas). Aparecen en la página"
+" Tours nacionales."
+
+msgid "Itinerary (Route)"
+msgstr "Itinerario (ruta)"
+
+msgid ""
+"Add the cities visited, in order. A domestic tour needs at least 2 stops."
+msgstr ""
+"Añade las ciudades visitadas, en orden. Un tour nacional necesita al menos 2"
+" paradas."
+
+msgid "Del"
+msgstr "Elim."
+
+msgid "Delete this stop"
+msgstr "Eliminar parada"
+
+msgid "Remove"
+msgstr "Quitar"
+
+msgid "Add stop"
+msgstr "Añadir parada"
+
+msgid "Add day"
+msgstr "Añadir día"
+
+msgid "Delete this day"
+msgstr "Eliminar este día"
+
+msgid "Hide from site"
+msgstr "Ocultar del sitio"
+
+msgid "Show on site"
+msgstr "Mostrar en el sitio"
+
+msgid "'%(name)s' is now visible on the site."
+msgstr "«%(name)s» ahora es visible en el sitio."
+
+msgid "'%(name)s' is now hidden from the site."
+msgstr "«%(name)s» ahora está oculto del sitio."
+
+msgid "Across Uzbekistan"
+msgstr "Por Uzbekistán"
+
+msgid "International Tours"
+msgstr "Tours internacionales"
+
+msgid "& Expert Tips"
+msgstr "y consejos de expertos"
+
+msgid "Looking for multi-city tours across Uzbekistan?"
+msgstr "¿Buscas tours de varias ciudades por Uzbekistán?"
+
+msgid "View Domestic Tours"
+msgstr "Ver tours nacionales"
+
+msgid "Looking for international tours?"
+msgstr "¿Buscas tours internacionales?"
+
+msgid "Tour Categories"
+msgstr "Categorías de tours"
+
+msgid "Categories"
+msgstr "Categorías"
+
+msgid "Add Category"
+msgstr "Añadir categoría"
+
+msgid "Save Category"
+msgstr "Guardar categoría"
+
+msgid "Back to Categories"
+msgstr "Volver a categorías"
+
+msgid "No categories yet."
+msgstr "Aún no hay categorías."
+
+msgid "Icon"
+msgstr "Icono"
+
+msgid ""
+"These power the “Category” filter on the public tours page and the Tours "
+"mega-menu."
+msgstr ""
+"Estas alimentan el filtro «Categoría» en la página de tours y el megamenú de"
+" Tours."
+
+msgid ""
+"Browse icon names at tabler.io/icons — use the name without the “ti ti-” "
+"prefix."
+msgstr ""
+"Consulta los nombres de iconos en tabler.io/icons — usa el nombre sin el "
+"prefijo «ti ti-»."
+
+msgid "Tabler icon name, e.g. compass, building, beach, chef-hat, paw."
+msgstr ""
+"Nombre de icono Tabler, p. ej. compass, building, beach, chef-hat, paw."
+
+msgid "Leave blank to generate from the name."
+msgstr "Déjalo en blanco para generarlo del nombre."
+
+msgid "Category '%(name)s' created."
+msgstr "Categoría «%(name)s» creada."
+
+msgid "Category '%(name)s' updated."
+msgstr "Categoría «%(name)s» actualizada."
+
+msgid "Category '%(name)s' deleted."
+msgstr "Categoría «%(name)s» eliminada."
+
+msgid "Add Continent"
+msgstr "Añadir continente"
+
+msgid "Save Continent"
+msgstr "Guardar continente"
+
+msgid "Back to Continents"
+msgstr "Volver a continentes"
+
+msgid "No continents yet."
+msgstr "Aún no hay continentes."
+
+msgid "Continents group countries in the Destinations mega-menu and footer."
+msgstr ""
+"Los continentes agrupan países en el megamenú de Destinos y el pie de "
+"página."
+
+msgid "Continent '%(name)s' created."
+msgstr "Continente «%(name)s» creado."
+
+msgid "Continent '%(name)s' updated."
+msgstr "Continente «%(name)s» actualizado."
+
+msgid "Continent '%(name)s' deleted."
+msgstr "Continente «%(name)s» eliminado."
+
+msgid ""
+"Optionally describe each day of the tour. It appears on the tour page when "
+"provided."
+msgstr ""
+"Opcionalmente describe cada día del tour. Aparece en la página del tour si "
+"se completa."
+
+msgid "Domestic tour created."
+msgstr "Tour nacional creado."
+
+msgid "Domestic tour updated."
+msgstr "Tour nacional actualizado."
+
+msgid "Domestic tour saved."
+msgstr "Tour nacional guardado."
+
+msgid "Domestic tour '%(title)s' deleted."
+msgstr "Tour nacional «%(title)s» eliminado."
+
+msgid "Price/Night"
+msgstr "Precio/noche"
+
+msgid "Hotel Details"
+msgstr "Detalles del hotel"
+
+msgid "Save Hotel"
+msgstr "Guardar hotel"
+
+msgid "Back to Hotels"
+msgstr "Volver a hoteles"
+
+msgid "Create Hotel"
+msgstr "Crear hotel"
+
+msgid "Hotel '%(name)s' created."
+msgstr "Hotel «%(name)s» creado."
+
+msgid "Hotel '%(name)s' updated."
+msgstr "Hotel «%(name)s» actualizado."
+
+msgid "Hotel '%(name)s' deleted."
+msgstr "Hotel «%(name)s» eliminado."
+
+msgid "Add Country"
+msgstr "Añadir país"
+
+msgid "Country '%(name)s' created."
+msgstr "País «%(name)s» creado."
+
+msgid "Country '%(name)s' updated."
+msgstr "País «%(name)s» actualizado."
+
+msgid "Country '%(name)s' deleted."
+msgstr "País «%(name)s» eliminado."
+
+msgid "Save Article"
+msgstr "Guardar artículo"
+
+msgid "Create Article"
+msgstr "Crear artículo"
+
+msgid "Article '%(title)s' created."
+msgstr "Artículo «%(title)s» creado."
+
+msgid "Article '%(title)s' updated."
+msgstr "Artículo «%(title)s» actualizado."
+
+msgid "Article '%(title)s' deleted."
+msgstr "Artículo «%(title)s» eliminado."
+
+msgid "Tour '%(title)s' created."
+msgstr "Tour «%(title)s» creado."
+
+msgid "Tour '%(title)s' updated."
+msgstr "Tour «%(title)s» actualizado."
+
+msgid "Tour '%(title)s' deleted."
+msgstr "Tour «%(title)s» eliminado."
+
+msgid "Edit: %(title)s"
+msgstr "Editar: %(title)s"
+
+msgid "Edit: %(name)s"
+msgstr "Editar: %(name)s"
+
+msgid "Tour/Hotel"
+msgstr "Tour/Hotel"
+
+msgid "Booking"
+msgstr "Reserva"
+
+msgid "Booking %(num)s"
+msgstr "Reserva %(num)s"
+
+msgid "Customer Information"
+msgstr "Información del cliente"
+
+msgid "Adults"
+msgstr "Adultos"
+
+msgid "Children"
+msgstr "Niños"
+
+msgid "Travel Date"
+msgstr "Fecha de viaje"
+
+msgid "Special Requests"
+msgstr "Solicitudes especiales"
+
+msgid "Internal Notes"
+msgstr "Notas internas"
+
+msgid "Save Notes"
+msgstr "Guardar notas"
+
+msgid "Update Status"
+msgstr "Actualizar estado"
+
+msgid "Email Customer"
+msgstr "Enviar email al cliente"
+
+msgid "Status updated to %(status)s."
+msgstr "Estado actualizado a %(status)s."
+
+msgid "Internal notes saved."
+msgstr "Notas internas guardadas."
+
+msgid "Approve"
+msgstr "Aprobar"
+
+msgid "Reject"
+msgstr "Rechazar"
+
+msgid "%(n)s pending"
+msgstr "%(n)s pendientes"
+
+msgid "Review approved."
+msgstr "Reseña aprobada."
+
+msgid "Review rejected."
+msgstr "Reseña rechazada."
+
+msgid "Review deleted."
+msgstr "Reseña eliminada."
+
+msgid "Delete this review permanently? This action cannot be undone."
+msgstr ""
+"¿Eliminar esta reseña permanentemente? Esta acción no se puede deshacer."
+
+msgid "Write a Review"
+msgstr "Escribir una reseña"
+
+msgid "Submit Review"
+msgstr "Enviar reseña"
+
+msgid "Your name"
+msgstr "Tu nombre"
+
+msgid "Tour (optional)"
+msgstr "Tour (opcional)"
+
+msgid "Your review"
+msgstr "Tu reseña"
+
+msgid "Thank you! Your review will appear after moderation."
+msgstr "¡Gracias! Tu reseña aparecerá tras la moderación."
+
+msgid "Please correct the errors below and resubmit your review."
+msgstr "Corrige los errores a continuación y vuelve a enviar tu reseña."
+
+msgid "Please choose the tour you are reviewing."
+msgstr "Elige el tour que estás reseñando."
+
+msgid "Please choose the hotel you are reviewing."
+msgstr "Elige el hotel que estás reseñando."
+
+msgid "Order Added"
+msgstr "Orden de adición"
+
+msgid "New User"
+msgstr "Nuevo usuario"
+
+msgid "Create User"
+msgstr "Crear usuario"
+
+msgid "Current Role"
+msgstr "Rol actual"
+
+msgid "Change Role"
+msgstr "Cambiar rol"
+
+msgid "Role"
+msgstr "Rol"
+
+msgid "Joined"
+msgstr "Registrado"
+
+msgid "Last Login"
+msgstr "Último acceso"
+
+msgid "Never"
+msgstr "Nunca"
+
+msgid "(you)"
+msgstr "(tú)"
+
+msgid "Cannot change own role"
+msgstr "No puedes cambiar tu propio rol"
+
+msgid "You cannot delete your own account"
+msgstr "No puedes eliminar tu propia cuenta"
+
+msgid "You cannot delete your own account."
+msgstr "No puedes eliminar tu propia cuenta."
+
+msgid "You cannot change your own role."
+msgstr "No puedes cambiar tu propio rol."
+
+msgid "Delete this user? This cannot be undone."
+msgstr "¿Eliminar este usuario? No se puede deshacer."
+
+msgid "Role Permissions"
+msgstr "Permisos de roles"
+
+msgid "Public site only, no dashboard access"
+msgstr "Solo sitio público, sin acceso al panel"
+
+msgid "Dashboard: view bookings & reviews only"
+msgstr "Panel: solo ver reservas y reseñas"
+
+msgid "Dashboard: full content management"
+msgstr "Panel: gestión completa de contenido"
+
+msgid "Full access including user management"
+msgstr "Acceso total, incluida la gestión de usuarios"
+
+msgid "Account Details"
+msgstr "Detalles de la cuenta"
+
+msgid "The email address is also used as the login username."
+msgstr "El correo también se usa como nombre de usuario."
+
+msgid "Save Changes"
+msgstr "Guardar cambios"
+
+msgid "Back to Users"
+msgstr "Volver a usuarios"
+
+msgid "New password"
+msgstr "Nueva contraseña"
+
+msgid "Leave blank to keep the current password."
+msgstr "Déjalo en blanco para mantener la contraseña actual."
+
+msgid "Active (can log in)"
+msgstr "Activo (puede iniciar sesión)"
+
+msgid "A user with this email already exists."
+msgstr "Ya existe un usuario con este correo."
+
+msgid "Another user with this email already exists."
+msgstr "Ya existe otro usuario con este correo."
+
+msgid "Unknown role."
+msgstr "Rol desconocido."
+
+msgid "User %(email)s created with role '%(role)s'."
+msgstr "Usuario %(email)s creado con rol «%(role)s»."
+
+msgid "User %(email)s updated."
+msgstr "Usuario %(email)s actualizado."
+
+msgid "User %(email)s deleted."
+msgstr "Usuario %(email)s eliminado."
+
+msgid "Role for %(email)s updated to '%(role)s'."
+msgstr "Rol de %(email)s actualizado a «%(role)s»."
+
+msgid "User — public site only"
+msgstr "Usuario — solo sitio público"
+
+msgid "Operator — bookings & reviews"
+msgstr "Operador — reservas y reseñas"
+
+msgid "Manager — full content management"
+msgstr "Gerente — gestión completa de contenido"
+
+msgid "Superuser — full access"
+msgstr "Superusuario — acceso total"
+
+msgid "Add City"
+msgstr "Añadir ciudad"
+
+msgid "Save City"
+msgstr "Guardar ciudad"
+
+msgid "City '%(name)s' created."
+msgstr "Ciudad «%(name)s» creada."
+
+msgid "City '%(name)s' updated."
+msgstr "Ciudad «%(name)s» actualizada."
+
+msgid "City '%(name)s' deleted."
+msgstr "Ciudad «%(name)s» eliminada."
+
+msgid ""
+"Domestic (Uzbek) cities. These are the stops you can pick when building a "
+"domestic tour route."
+msgstr ""
+"Ciudades nacionales (uzbekas). Son las paradas que puedes elegir al crear "
+"una ruta de tour nacional."
+
+msgid "No cities yet. Add one to build domestic tour routes."
+msgstr "Aún no hay ciudades. Añade una para crear rutas de tours nacionales."
+
+msgid ""
+"The city is added under Uzbekistan and becomes selectable in domestic tour "
+"routes."
+msgstr ""
+"La ciudad se añade bajo Uzbekistán y queda disponible en las rutas de tours "
+"nacionales."
+
+msgid "Hero Images"
+msgstr "Imágenes hero"
+
+msgid "Add Hero Image"
+msgstr "Añadir imagen hero"
+
+msgid "Edit Hero Image"
+msgstr "Editar imagen hero"
+
+msgid "Hero image added."
+msgstr "Imagen hero añadida."
+
+msgid "Hero image updated."
+msgstr "Imagen hero actualizada."
+
+msgid "Hero image deleted."
+msgstr "Imagen hero eliminada."
+
+msgid "All pages"
+msgstr "Todas las páginas"
+
+msgid "Page"
+msgstr "Página"
+
+msgid "Alt text"
+msgstr "Texto alternativo"
+
+msgid ""
+"Rotating background images for page heroes. Add several images to the same "
+"page and they cross-fade automatically."
+msgstr ""
+"Imágenes de fondo rotativas para los hero de las páginas. Añade varias "
+"imágenes a la misma página y se alternarán automáticamente."
+
+msgid "No hero images yet. Add a few to a page to start the slideshow."
+msgstr ""
+"Aún no hay imágenes hero. Añade varias a una página para iniciar el pase de "
+"diapositivas."
+
+msgid "Which page's hero slideshow this image belongs to."
+msgstr "A qué slideshow hero de página pertenece esta imagen."

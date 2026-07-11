@@ -1,0 +1,66 @@
+{% extends "dashboard/base.html" %}
+{% load dashboard_tags i18n %}
+
+{% block title %}{% trans "Tour Categories" %}{% endblock %}
+{% block breadcrumb %}
+  <span class="text-gray-400">/</span>
+  <a href="{% url 'dashboard:tours_list' %}" class="text-gray-600 hover:text-gray-800">{% trans "Tours" %}</a>
+  <span class="text-gray-400">/</span>
+  <span class="text-gray-700">{% trans "Categories" %}</span>
+{% endblock %}
+
+{% block content %}
+<div class="max-w-5xl mx-auto">
+  <div class="flex items-center justify-between mb-5">
+    <h1 class="text-xl font-bold text-gray-800">{% trans "Tour Categories" %} <span class="text-gray-400 font-normal text-base">({{ page_obj.paginator.count }})</span></h1>
+    <a href="{% url 'dashboard:tour_categories_create' %}" class="inline-flex items-center gap-1.5 bg-emerald-700 hover:bg-emerald-800 text-white text-sm font-medium px-4 py-2 rounded-lg transition">
+      <i class="ti ti-plus"></i> {% trans "Add Category" %}
+    </a>
+  </div>
+
+  <p class="text-sm text-gray-500 mb-5">{% trans "These power the “Category” filter on the public tours page and the Tours mega-menu." %}</p>
+
+  <div class="bg-white rounded-xl border border-gray-200 overflow-hidden">
+    <div class="overflow-x-auto">
+      <table class="w-full text-sm">
+        <thead>
+          <tr class="bg-gray-50 text-left border-b border-gray-200">
+            <th class="px-4 py-3 text-xs text-gray-500 font-semibold uppercase tracking-wide">{% trans "Category" %}</th>
+            <th class="px-4 py-3 text-xs text-gray-500 font-semibold uppercase tracking-wide">{% trans "Icon" %}</th>
+            <th class="px-4 py-3 text-xs text-gray-500 font-semibold uppercase tracking-wide">{% trans "Tours" %}</th>
+            <th class="px-4 py-3 text-xs text-gray-500 font-semibold uppercase tracking-wide">{% trans "Actions" %}</th>
+          </tr>
+        </thead>
+        <tbody class="divide-y divide-gray-100">
+          {% for cat in categories %}
+          <tr class="hover:bg-gray-50">
+            <td class="px-4 py-3">
+              <div class="flex items-center gap-3">
+                <span class="w-8 h-8 rounded-lg bg-emerald-50 text-emerald-700 flex items-center justify-center flex-shrink-0">
+                  <i class="ti ti-{{ cat.icon|default:'compass' }}"></i>
+                </span>
+                <p class="font-medium text-gray-800">{{ cat.name }}</p>
+              </div>
+            </td>
+            <td class="px-4 py-3 text-gray-500"><code class="text-xs">{{ cat.icon|default:"—" }}</code></td>
+            <td class="px-4 py-3 text-gray-600">{{ cat.tour_count }}</td>
+            <td class="px-4 py-3">
+              <div class="flex items-center gap-2">
+                <a href="{% url 'dashboard:tour_categories_edit' cat.pk %}" class="text-blue-500 hover:text-blue-700" title="{% trans 'Edit' %}"><i class="ti ti-pencil"></i></a>
+                <form method="post" action="{% url 'dashboard:tour_categories_delete' cat.pk %}" onsubmit="return confirm('{% trans 'Delete this item?' %}')">
+                  {% csrf_token %}
+                  <button type="submit" class="text-red-400 hover:text-red-600" title="{% trans 'Delete' %}"><i class="ti ti-trash"></i></button>
+                </form>
+              </div>
+            </td>
+          </tr>
+          {% empty %}
+          <tr><td colspan="4" class="px-4 py-10 text-center text-gray-400">{% trans "No categories yet." %}</td></tr>
+          {% endfor %}
+        </tbody>
+      </table>
+    </div>
+    {% include "dashboard/components/pagination.html" %}
+  </div>
+</div>
+{% endblock %}

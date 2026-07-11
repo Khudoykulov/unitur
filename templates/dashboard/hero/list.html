@@ -1,0 +1,65 @@
+{% extends "dashboard/base.html" %}
+{% load i18n %}
+
+{% block title %}{% trans "Hero Images" %}{% endblock %}
+{% block breadcrumb %}<span class="text-gray-400">/</span> <span class="text-gray-700">{% trans "Hero Images" %}</span>{% endblock %}
+
+{% block content %}
+<div class="max-w-7xl mx-auto">
+  <div class="flex items-center justify-between mb-5">
+    <h1 class="text-xl font-bold text-gray-800">{% trans "Hero Images" %} <span class="text-gray-400 font-normal text-base">({{ page_obj.paginator.count }})</span></h1>
+    <a href="{% url 'dashboard:hero_create' %}" class="inline-flex items-center gap-1.5 bg-emerald-700 hover:bg-emerald-800 text-white text-sm font-medium px-4 py-2 rounded-lg transition">
+      <i class="ti ti-plus"></i> {% trans "Add Hero Image" %}
+    </a>
+  </div>
+
+  <p class="text-sm text-gray-500 mb-5">{% trans "Rotating background images for page heroes. Add several images to the same page and they cross-fade automatically." %}</p>
+
+  <form method="get" class="flex gap-2 mb-5">
+    <select name="page" class="border border-gray-300 rounded-lg px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-emerald-300">
+      <option value="">{% trans "All pages" %}</option>
+      {% for val, label in page_choices %}<option value="{{ val }}" {% if val == selected_page %}selected{% endif %}>{{ label }}</option>{% endfor %}
+    </select>
+    <button type="submit" class="bg-gray-800 text-white text-sm px-4 py-2 rounded-lg hover:bg-gray-700 transition">{% trans "Filter" %}</button>
+    {% if selected_page %}<a href="{% url 'dashboard:hero_list' %}" class="bg-gray-100 text-gray-600 text-sm px-4 py-2 rounded-lg hover:bg-gray-200 transition">{% trans "Clear" %}</a>{% endif %}
+  </form>
+
+  <div class="bg-white rounded-xl border border-gray-200 overflow-hidden">
+    <div class="overflow-x-auto">
+      <table class="w-full text-sm">
+        <thead>
+          <tr class="bg-gray-50 text-left border-b border-gray-200">
+            <th class="px-4 py-3 text-xs text-gray-500 font-semibold uppercase tracking-wide">{% trans "Image" %}</th>
+            <th class="px-4 py-3 text-xs text-gray-500 font-semibold uppercase tracking-wide">{% trans "Page" %}</th>
+            <th class="px-4 py-3 text-xs text-gray-500 font-semibold uppercase tracking-wide">{% trans "Actions" %}</th>
+          </tr>
+        </thead>
+        <tbody class="divide-y divide-gray-100">
+          {% for slide in slides %}
+          <tr class="hover:bg-gray-50">
+            <td class="px-4 py-3">
+              {% if slide.image %}
+              <img src="{{ slide.image.url }}" alt="{{ slide.alt }}" class="w-24 h-14 rounded-lg object-cover">
+              {% else %}<span class="text-gray-300">—</span>{% endif %}
+            </td>
+            <td class="px-4 py-3 text-gray-700">{{ slide.get_page_display }}</td>
+            <td class="px-4 py-3">
+              <div class="flex items-center gap-2">
+                <a href="{% url 'dashboard:hero_edit' slide.pk %}" class="text-blue-500 hover:text-blue-700" title="{% trans 'Edit' %}"><i class="ti ti-pencil"></i></a>
+                <form method="post" action="{% url 'dashboard:hero_delete' slide.pk %}" onsubmit="return confirm('{% trans 'Delete this item?' %}')">
+                  {% csrf_token %}
+                  <button type="submit" class="text-red-400 hover:text-red-600" title="{% trans 'Delete' %}"><i class="ti ti-trash"></i></button>
+                </form>
+              </div>
+            </td>
+          </tr>
+          {% empty %}
+          <tr><td colspan="3" class="px-4 py-10 text-center text-gray-400">{% trans "No hero images yet. Add a few to a page to start the slideshow." %}</td></tr>
+          {% endfor %}
+        </tbody>
+      </table>
+    </div>
+    {% include "dashboard/components/pagination.html" %}
+  </div>
+</div>
+{% endblock %}

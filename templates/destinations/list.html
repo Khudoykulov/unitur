@@ -1,0 +1,44 @@
+{% extends "base.html" %}
+{% load i18n static %}
+
+{% block title %}{% trans "Destinations" %} | {{ SITE_NAME }}{% endblock %}
+
+{% block content %}
+<div class="pt-20 lg:pt-28 bg-pattern-subtle-blue">
+  <div class="relative py-16 text-center overflow-hidden bg-pattern-hero">
+    <div class="relative z-10 px-4">
+      <h1 class="text-4xl font-serif font-bold mb-2">{% trans "Explore Destinations" %}</h1>
+      <p class="hero-subtitle mt-1">{% trans "Discover stunning countries and cities across all continents" %}</p>
+    </div>
+  </div>
+
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+    {# Continent tabs #}
+    <div x-data="{ tab: 'all' }" class="mb-10">
+      <div class="inline-flex flex-wrap gap-2 mb-8 bg-white rounded-xl px-3 py-2 shadow-sm">
+        <button @click="tab='all'"
+                :class="tab==='all' ? 'bg-primary text-white' : 'bg-white text-gray-700 hover:border-primary border border-gray-200'"
+                class="px-4 py-2 rounded-full text-sm font-medium transition">
+          {% trans "All Continents" %}
+        </button>
+        {% for continent in continents %}
+        <button @click="tab='{{ continent.slug }}'"
+                :class="tab==='{{ continent.slug }}' ? 'bg-primary text-white' : 'bg-white text-gray-700 hover:border-primary border border-gray-200'"
+                class="px-4 py-2 rounded-full text-sm font-medium transition">
+          {{ continent.name }}
+        </button>
+        {% endfor %}
+      </div>
+
+      <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+        {% for country in countries %}
+        <div x-show="tab==='all' || tab==='{{ country.continent.slug }}'"
+             x-transition class="col-span-1">
+          {% include "components/destination_card.html" with country=country %}
+        </div>
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}

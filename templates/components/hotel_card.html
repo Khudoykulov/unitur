@@ -1,0 +1,35 @@
+{% load i18n %}
+{# Usage: {% include "components/hotel_card.html" with hotel=hotel %} #}
+<article class="group bg-white rounded-2xl shadow-sm hover:shadow-xl transition-all duration-300 overflow-hidden">
+  <div class="relative overflow-hidden aspect-[4/3]">
+    {% if hotel.cover_image %}
+    <img src="{{ hotel.cover_image.url }}" alt="{{ hotel.name }}"
+         loading="lazy"
+         class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+    {% else %}
+    <div class="w-full h-full bg-accent flex items-center justify-center">
+      <i class="ti ti-building text-4xl text-gray-400"></i>
+    </div>
+    {% endif %}
+    <span class="absolute top-3 left-3 bg-secondary text-white text-xs font-bold px-2 py-1 rounded-full">
+      {{ hotel.star_display }}
+    </span>
+  </div>
+
+  <div class="p-4">
+    <h3 class="font-semibold text-dark text-base mb-1 line-clamp-1">
+      <a href="{{ hotel.get_absolute_url }}" class="hover:text-primary transition">{{ hotel.name }}</a>
+    </h3>
+    <p class="text-gray-500 text-xs flex items-center gap-1 mb-3">
+      <i class="ti ti-map-pin text-secondary"></i>
+      {{ hotel.city.name }}, {{ hotel.city.country.name }}
+    </p>
+    <div class="flex items-center justify-between">
+      <div>
+        <p class="text-xs text-gray-400">{% trans "From" %}</p>
+        <p class="text-lg font-bold text-primary">${{ hotel.price_from|floatformat:0 }} <span class="text-xs font-normal text-gray-400">/ {% trans "night" %}</span></p>
+      </div>
+      <a href="{{ hotel.get_absolute_url }}" class="btn-outline text-xs px-3 py-2">{% trans "View" %}</a>
+    </div>
+  </div>
+</article>

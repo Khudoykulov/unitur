@@ -1,0 +1,294 @@
+{% extends "dashboard/base.html" %}
+{% load i18n %}
+
+{% block title %}{{ page_title }}{% endblock %}
+{% block breadcrumb %}
+  <span class="text-gray-400">/</span>
+  <a href="{% url 'dashboard:ichki_turlar_list' %}" class="text-gray-600 hover:text-gray-800">{% trans "Domestic Tours" %}</a>
+  <span class="text-gray-400">/</span>
+  <span class="text-gray-700">{{ page_title }}</span>
+{% endblock %}
+
+{% block content %}
+<div class="max-w-4xl mx-auto">
+  <div class="flex items-center justify-between mb-5">
+    <h1 class="text-xl font-bold text-gray-800">{{ page_title }}</h1>
+    <a href="{% url 'dashboard:ichki_turlar_list' %}" class="text-sm text-gray-500 hover:text-gray-700 flex items-center gap-1">
+      <i class="ti ti-arrow-left"></i> {% trans "Back" %}
+    </a>
+  </div>
+
+  <form method="post" enctype="multipart/form-data" class="space-y-6">
+    {% csrf_token %}
+
+    {% if form.errors or stops.non_form_errors %}
+    <div class="bg-red-50 border border-red-200 rounded-lg px-4 py-3 text-sm text-red-700">
+      {% trans "Please correct the errors below." %}
+      {% if stops.non_form_errors %}<div class="mt-1">{{ stops.non_form_errors|join:", " }}</div>{% endif %}
+    </div>
+    {% endif %}
+
+    {# Basic info #}
+    <div class="bg-white rounded-xl border border-gray-200 p-5">
+      <h3 class="font-semibold text-gray-800 mb-4 pb-3 border-b border-gray-100">{% trans "Basic Information" %}</h3>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+        {% for field in form %}
+        <div class="{% if field.name == 'overview' or field.name == 'includes' or field.name == 'excludes' or field.name == 'important_notes' %}md:col-span-2{% endif %}">
+          <label class="block text-sm font-medium text-gray-700 mb-1" for="{{ field.id_for_label }}">
+            {{ field.label }}{% if field.field.required %} <span class="text-red-500">*</span>{% endif %}
+          </label>
+          {{ field }}
+          {% if field.errors %}<p class="text-xs text-red-600 mt-1">{{ field.errors|join:", " }}</p>{% endif %}
+          {% if field.help_text %}<p class="text-xs text-gray-400 mt-1">{{ field.help_text }}</p>{% endif %}
+        </div>
+        {% endfor %}
+      </div>
+    </div>
+
+    {# Itinerary stops #}
+    <div class="bg-white rounded-xl border border-gray-200 p-5">
+      <h3 class="font-semibold text-gray-800 mb-1 pb-3 border-b border-gray-100">{% trans "Itinerary (Route)" %}</h3>
+      <p class="text-xs text-gray-400 mt-2 mb-4">{% trans "Add the cities visited, in order. A domestic tour needs at least 2 stops." %}</p>
+
+      {{ stops.management_form }}
+
+      <div id="stops-body" class="space-y-3">
+        {% for sform in stops %}
+        <div class="stop-row grid grid-cols-12 gap-3 items-end border border-gray-100 rounded-lg p-3 bg-gray-50/50">
+          {% for hidden in sform.hidden_fields %}{{ hidden }}{% endfor %}
+          <div class="col-span-12 sm:col-span-5">
+            <label class="block text-xs font-medium text-gray-600 mb-1">{% trans "City" %}</label>
+            {{ sform.city }}
+            {% if sform.city.errors %}<p class="text-xs text-red-600 mt-1">{{ sform.city.errors|join:", " }}</p>{% endif %}
+          </div>
+          <div class="col-span-5 sm:col-span-3">
+            <label class="block text-xs font-medium text-gray-600 mb-1">{% trans "Order" %}</label>
+            {{ sform.order }}
+          </div>
+          <div class="col-span-5 sm:col-span-3">
+            <label class="block text-xs font-medium text-gray-600 mb-1">{% trans "Nights" %}</label>
+            {{ sform.nights }}
+          </div>
+          <div class="col-span-2 sm:col-span-1 flex items-center justify-center pb-2">
+            {% if sform.instance.pk %}
+              <label class="text-xs text-red-500 flex flex-col items-center gap-1" title="{% trans 'Delete this stop' %}">
+                {{ sform.DELETE }}
+                <span>{% trans "Del" %}</span>
+              </label>
+            {% else %}
+              <button type="button" class="remove-stop text-red-400 hover:text-red-600" title="{% trans 'Remove' %}"><i class="ti ti-x"></i></button>
+            {% endif %}
+          </div>
+        </div>
+        {% endfor %}
+      </div>
+
+      {# Hidden template for new rows #}
+      <template id="empty-stop-form">
+        <div class="stop-row grid grid-cols-12 gap-3 items-end border border-gray-100 rounded-lg p-3 bg-gray-50/50">
+          <div class="col-span-12 sm:col-span-5">
+            <label class="block text-xs font-medium text-gray-600 mb-1">{% trans "City" %}</label>
+            {{ stops.empty_form.city }}
+          </div>
+          <div class="col-span-5 sm:col-span-3">
+            <label class="block text-xs font-medium text-gray-600 mb-1">{% trans "Order" %}</label>
+            {{ stops.empty_form.order }}
+          </div>
+          <div class="col-span-5 sm:col-span-3">
+            <label class="block text-xs font-medium text-gray-600 mb-1">{% trans "Nights" %}</label>
+            {{ stops.empty_form.nights }}
+          </div>
+          <div class="col-span-2 sm:col-span-1 flex items-center justify-center pb-2">
+            <button type="button" class="remove-stop text-red-400 hover:text-red-600" title="{% trans 'Remove' %}"><i class="ti ti-x"></i></button>
+          </div>
+        </div>
+      </template>
+
+      <button type="button" id="add-stop" class="mt-4 inline-flex items-center gap-1.5 text-sm text-emerald-700 hover:text-emerald-800 font-medium">
+        <i class="ti ti-plus"></i> {% trans "Add stop" %}
+      </button>
+    </div>
+
+    {# Day-by-day itinerary #}
+    <div class="bg-white rounded-xl border border-gray-200 p-5">
+      <h3 class="font-semibold text-gray-800 mb-1 pb-3 border-b border-gray-100">{% trans "Day-by-Day Itinerary" %}</h3>
+      <p class="text-xs text-gray-400 mt-2 mb-4">{% trans "Optionally describe each day of the tour. It appears on the tour page when provided." %}</p>
+
+      {{ days.management_form }}
+      {% if days.non_form_errors %}<div class="text-xs text-red-600 mb-3">{{ days.non_form_errors|join:", " }}</div>{% endif %}
+
+      <div id="days-body" class="space-y-3">
+        {% for dform in days %}
+        <div class="day-row grid grid-cols-12 gap-3 border border-gray-100 rounded-lg p-3 bg-gray-50/50">
+          {% for hidden in dform.hidden_fields %}{{ hidden }}{% endfor %}
+          <div class="col-span-4 sm:col-span-2">
+            <label class="block text-xs font-medium text-gray-600 mb-1">{{ dform.day_number.label }}</label>
+            {{ dform.day_number }}
+          </div>
+          <div class="col-span-8 sm:col-span-6">
+            <label class="block text-xs font-medium text-gray-600 mb-1">{{ dform.title.label }}</label>
+            {{ dform.title }}
+          </div>
+          <div class="col-span-12 sm:col-span-4">
+            <label class="block text-xs font-medium text-gray-600 mb-1">{{ dform.meals_included.label }}</label>
+            {{ dform.meals_included }}
+          </div>
+          <div class="col-span-12">
+            <label class="block text-xs font-medium text-gray-600 mb-1">{{ dform.description.label }}</label>
+            {{ dform.description }}
+          </div>
+          <div class="col-span-12 sm:col-span-4">
+            <label class="block text-xs font-medium text-gray-600 mb-1">{{ dform.accommodation.label }}</label>
+            {{ dform.accommodation }}
+          </div>
+          <div class="col-span-12 sm:col-span-4">
+            <label class="block text-xs font-medium text-gray-600 mb-1">{{ dform.transport.label }}</label>
+            {{ dform.transport }}
+          </div>
+          <div class="col-span-12 sm:col-span-4">
+            <label class="block text-xs font-medium text-gray-600 mb-1">{{ dform.image.label }}</label>
+            {{ dform.image }}
+          </div>
+          <div class="col-span-12 flex items-center justify-end pt-1">
+            {% if dform.instance.pk %}
+              <label class="text-xs text-red-500 flex items-center gap-1" title="{% trans 'Delete this day' %}">
+                {{ dform.DELETE }} {% trans "Delete this day" %}
+              </label>
+            {% else %}
+              <button type="button" class="remove-day text-red-400 hover:text-red-600 text-xs flex items-center gap-1" title="{% trans 'Remove' %}">
+                <i class="ti ti-x"></i> {% trans "Remove" %}
+              </button>
+            {% endif %}
+          </div>
+          {% if dform.errors %}<div class="col-span-12 text-xs text-red-600">{{ dform.errors }}</div>{% endif %}
+        </div>
+        {% endfor %}
+      </div>
+
+      {# Hidden template for new day rows #}
+      <template id="empty-day-form">
+        <div class="day-row grid grid-cols-12 gap-3 border border-gray-100 rounded-lg p-3 bg-gray-50/50">
+          <div class="col-span-4 sm:col-span-2">
+            <label class="block text-xs font-medium text-gray-600 mb-1">{{ days.empty_form.day_number.label }}</label>
+            {{ days.empty_form.day_number }}
+          </div>
+          <div class="col-span-8 sm:col-span-6">
+            <label class="block text-xs font-medium text-gray-600 mb-1">{{ days.empty_form.title.label }}</label>
+            {{ days.empty_form.title }}
+          </div>
+          <div class="col-span-12 sm:col-span-4">
+            <label class="block text-xs font-medium text-gray-600 mb-1">{{ days.empty_form.meals_included.label }}</label>
+            {{ days.empty_form.meals_included }}
+          </div>
+          <div class="col-span-12">
+            <label class="block text-xs font-medium text-gray-600 mb-1">{{ days.empty_form.description.label }}</label>
+            {{ days.empty_form.description }}
+          </div>
+          <div class="col-span-12 sm:col-span-4">
+            <label class="block text-xs font-medium text-gray-600 mb-1">{{ days.empty_form.accommodation.label }}</label>
+            {{ days.empty_form.accommodation }}
+          </div>
+          <div class="col-span-12 sm:col-span-4">
+            <label class="block text-xs font-medium text-gray-600 mb-1">{{ days.empty_form.transport.label }}</label>
+            {{ days.empty_form.transport }}
+          </div>
+          <div class="col-span-12 sm:col-span-4">
+            <label class="block text-xs font-medium text-gray-600 mb-1">{{ days.empty_form.image.label }}</label>
+            {{ days.empty_form.image }}
+          </div>
+          <div class="col-span-12 flex items-center justify-end pt-1">
+            <button type="button" class="remove-day text-red-400 hover:text-red-600 text-xs flex items-center gap-1" title="{% trans 'Remove' %}">
+              <i class="ti ti-x"></i> {% trans "Remove" %}
+            </button>
+          </div>
+        </div>
+      </template>
+
+      <button type="button" id="add-day" class="mt-4 inline-flex items-center gap-1.5 text-sm text-emerald-700 hover:text-emerald-800 font-medium">
+        <i class="ti ti-plus"></i> {% trans "Add day" %}
+      </button>
+    </div>
+
+    <div class="flex items-center gap-3 justify-end">
+      <a href="{% url 'dashboard:ichki_turlar_list' %}" class="px-4 py-2 text-sm text-gray-600 bg-gray-100 hover:bg-gray-200 rounded-lg transition">{% trans "Cancel" %}</a>
+      <button type="submit" class="px-6 py-2 bg-emerald-700 hover:bg-emerald-800 text-white text-sm font-medium rounded-lg transition">
+        <i class="ti ti-device-floppy mr-1"></i> {% trans "Save" %}
+      </button>
+    </div>
+  </form>
+</div>
+
+<style>
+  form select, form input[type="text"], form input[type="number"], form input[type="url"],
+  form input[type="email"], form input[type="file"], form textarea {
+    width: 100%;
+    border: 1px solid #D1D5DB;
+    border-radius: 0.5rem;
+    padding: 0.5rem 0.75rem;
+    font-size: 0.875rem;
+    outline: none;
+    transition: border-color 0.15s;
+  }
+  form select:focus, form input:focus, form textarea:focus {
+    border-color: #059669;
+    box-shadow: 0 0 0 2px rgba(5,150,105,0.15);
+  }
+  form input[type="checkbox"] { width: auto; margin-right: 0.25rem; }
+</style>
+
+<script>
+(function () {
+  const totalForms = document.getElementById("id_stops-TOTAL_FORMS");
+  const body = document.getElementById("stops-body");
+  const tpl = document.getElementById("empty-stop-form");
+  const addBtn = document.getElementById("add-stop");
+
+  if (!totalForms || !body || !tpl || !addBtn) return;
+
+  addBtn.addEventListener("click", function () {
+    const index = parseInt(totalForms.value, 10);
+    const html = tpl.innerHTML.replace(/__prefix__/g, index);
+    const wrap = document.createElement("div");
+    wrap.innerHTML = html.trim();
+    const row = wrap.firstChild;
+    body.appendChild(row);
+    totalForms.value = index + 1;
+  });
+
+  // Remove an unsaved row.
+  body.addEventListener("click", function (e) {
+    const btn = e.target.closest(".remove-stop");
+    if (!btn) return;
+    const row = btn.closest(".stop-row");
+    if (row) row.remove();
+  });
+})();
+
+// Day-by-day itinerary formset — same behaviour as stops.
+(function () {
+  const totalForms = document.getElementById("id_days-TOTAL_FORMS");
+  const body = document.getElementById("days-body");
+  const tpl = document.getElementById("empty-day-form");
+  const addBtn = document.getElementById("add-day");
+
+  if (!totalForms || !body || !tpl || !addBtn) return;
+
+  addBtn.addEventListener("click", function () {
+    const index = parseInt(totalForms.value, 10);
+    const html = tpl.innerHTML.replace(/__prefix__/g, index);
+    const wrap = document.createElement("div");
+    wrap.innerHTML = html.trim();
+    const row = wrap.firstChild;
+    body.appendChild(row);
+    totalForms.value = index + 1;
+  });
+
+  body.addEventListener("click", function (e) {
+    const btn = e.target.closest(".remove-day");
+    if (!btn) return;
+    const row = btn.closest(".day-row");
+    if (row) row.remove();
+  });
+})();
+</script>
+{% endblock %}

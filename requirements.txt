@@ -1,0 +1,75 @@
+# ============================================================
+# Unitur — Requirements (single file for dev, test, and production)
+# Python 3.13+  |  Django 5.2.x
+# ============================================================
+
+# Core
+Django==5.2.15  # security: fixes 72 CVEs vs 5.2.2 (LTS patch, backward-compatible)
+python-decouple==3.8
+
+# Database
+psycopg2-binary==2.9.10
+dj-database-url==2.3.0
+
+# Authentication
+django-allauth==65.14.1
+
+# Multilingual
+django-modeltranslation==0.19.12
+django-rosetta==0.10.1
+deep-translator==1.11.4
+
+# Forms & filtering
+django-filter==25.1
+django-crispy-forms==2.4
+crispy-tailwind==1.0.3
+
+# Async tasks
+celery==5.5.2
+redis==5.2.1
+django-celery-results==2.5.1
+django-celery-beat==2.8.1
+kombu==5.5.2
+
+# Media / Images
+cloudinary==1.41.0
+django-cloudinary-storage==0.3.0
+Pillow==12.2.0
+
+# Rich text editor
+django-ckeditor==6.7.1
+
+# Static files
+whitenoise==6.9.0
+
+# Performance & caching
+django-redis==5.4.0
+
+# Security
+django-csp==3.8
+django-ratelimit==4.1.0
+
+# Error tracking
+sentry-sdk==2.25.1
+
+# Admin enhancements
+django-import-export==4.3.7
+
+# Utilities
+polib==1.2.0
+requests==2.33.0
+urllib3==2.7.0
+
+# WSGI server (production)
+gunicorn==23.0.0
+
+# Dev server & debugging
+django-debug-toolbar==5.1.0
+django-extensions==3.2.3
+
+# Testing
+pytest-django==4.10.0
+factory-boy==3.3.3
+
+# Seed data
+Faker==37.1.0

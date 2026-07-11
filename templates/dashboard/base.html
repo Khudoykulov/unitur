@@ -1,0 +1,213 @@
+{% load static dashboard_tags i18n %}
+<!DOCTYPE html>
+<html lang="en" class="h-full">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{% block title %}Dashboard{% endblock %} — UNITUR Admin</title>
+  <link rel="stylesheet" href="{% static 'css/tailwind.css' %}">
+  <link rel="stylesheet" href="{% static 'css/tabler-icons.min.css' %}">
+  <style>
+    :root {
+      --sidebar-bg: #0D1B2A;
+      --sidebar-hover: #1B2F44;
+      --sidebar-active: #1B4332;
+      --sidebar-text: #94A3B8;
+      --sidebar-text-active: #FFFFFF;
+      --topbar-bg: #FFFFFF;
+    }
+    .sidebar-link { display:flex; align-items:center; gap:0.75rem; padding:0.625rem 1rem; border-radius:0.5rem; color:var(--sidebar-text); font-size:0.875rem; transition:all 0.15s; }
+    .sidebar-link:hover { background:var(--sidebar-hover); color:#fff; }
+    .sidebar-link.active { background:var(--sidebar-active); color:var(--sidebar-text-active); font-weight:600; }
+    .sidebar-section { font-size:0.65rem; font-weight:700; text-transform:uppercase; letter-spacing:0.1em; color:#475569; padding:1rem 1rem 0.375rem; }
+  </style>
+  {% block extra_head %}{% endblock %}
+</head>
+<body class="h-full bg-slate-50" x-data="{ sidebarOpen: window.innerWidth >= 1024 }">
+
+{# ── Sidebar ── #}
+<aside
+  :class="sidebarOpen ? 'translate-x-0' : '-translate-x-full'"
+  class="fixed inset-y-0 left-0 z-50 w-64 flex flex-col transition-transform duration-300"
+  style="background:var(--sidebar-bg)">
+
+  {# Logo #}
+  <div class="flex items-center gap-3 px-5 py-5 border-b border-white/10">
+    <img src="{% static 'images/logo-unitur-ondark.png' %}" alt="UNITUR" class="h-11 lg:h-12 w-auto drop-shadow-[0_2px_8px_rgba(0,0,0,0.25)]">
+    <span class="sr-only">UNITUR Admin</span>
+    <button @click="sidebarOpen=false" class="ml-auto lg:hidden text-slate-400 hover:text-white">
+      <i class="ti ti-x text-lg"></i>
+    </button>
+  </div>
+
+  {# Staff badge #}
+  <div class="px-4 py-3 border-b border-white/10">
+    <div class="flex items-center gap-2">
+      <span class="w-8 h-8 rounded-full bg-emerald-700 text-white text-xs font-bold flex items-center justify-center">
+        {{ request.user.first_name|first|upper|default:request.user.email|first|upper }}
+      </span>
+      <div class="overflow-hidden">
+        <p class="text-white text-xs font-semibold truncate">{{ request.user.get_full_name|default:request.user.email }}</p>
+        <p class="text-slate-400 text-xs truncate">{% if request.user.is_superuser %}{% trans "Superuser" %}{% elif request.user.groups.all|first %}{{ request.user.groups.all|first }}{% else %}{% trans "Staff" %}{% endif %}</p>
+      </div>
+    </div>
+  </div>
+
+  {# Navigation #}
+  <nav class="flex-1 overflow-y-auto px-3 py-4 space-y-0.5">
+    <a href="{% url 'dashboard:home' %}" class="sidebar-link {% active_link request 'dashboard:home' %}">
+      <i class="ti ti-dashboard text-lg"></i> {% trans "Overview" %}
+    </a>
+
+    <p class="sidebar-section">{% trans "Content" %}</p>
+    <a href="{% url 'dashboard:tours_list' %}" class="sidebar-link {% if 'dashboard/tours' in request.path %}active{% endif %}">
+      <i class="ti ti-map-2 text-lg"></i> {% trans "Tours" %}
+    </a>
+    <a href="{% url 'dashboard:tour_categories_list' %}" class="sidebar-link pl-9 text-xs {% if 'dashboard/tour-categories' in request.path %}active{% endif %}">
+      <i class="ti ti-tags text-base"></i> {% trans "Categories" %}
+    </a>
+    <a href="{% url 'dashboard:ichki_turlar_list' %}" class="sidebar-link {% if 'dashboard/ichki-turlar' in request.path %}active{% endif %}">
+      <i class="ti ti-route text-lg"></i> {% trans "Domestic Tours" %}
+    </a>
+    <a href="{% url 'dashboard:cities_list' %}" class="sidebar-link {% if 'dashboard/cities' in request.path %}active{% endif %}">
+      <i class="ti ti-building-monument text-lg"></i> {% trans "Cities" %}
+    </a>
+    <a href="{% url 'dashboard:hotels_list' %}" class="sidebar-link {% if 'dashboard/hotels' in request.path %}active{% endif %}">
+      <i class="ti ti-building text-lg"></i> {% trans "Hotels" %}
+    </a>
+    <a href="{% url 'dashboard:destinations_list' %}" class="sidebar-link {% if 'dashboard/destinations' in request.path %}active{% endif %}">
+      <i class="ti ti-world text-lg"></i> {% trans "Destinations" %}
+    </a>
+    <a href="{% url 'dashboard:continents_list' %}" class="sidebar-link pl-9 text-xs {% if 'dashboard/continents' in request.path %}active{% endif %}">
+      <i class="ti ti-map-pins text-base"></i> {% trans "Continents" %}
+    </a>
+    <a href="{% url 'dashboard:articles_list' %}" class="sidebar-link {% if 'dashboard/articles' in request.path %}active{% endif %}">
+      <i class="ti ti-article text-lg"></i> {% trans "Articles" %}
+    </a>
+    <a href="{% url 'dashboard:hero_list' %}" class="sidebar-link {% if 'dashboard/hero' in request.path %}active{% endif %}">
+      <i class="ti ti-photo text-lg"></i> {% trans "Hero Images" %}
+    </a>
+
+    <p class="sidebar-section">{% trans "Operations" %}</p>
+    <a href="{% url 'dashboard:bookings_list' %}" class="sidebar-link {% if 'dashboard/bookings' in request.path %}active{% endif %}">
+      <i class="ti ti-calendar-event text-lg"></i>
+      {% trans "Bookings" %}
+      {% with cnt=pending_booking_count %}{% if cnt %}<span class="ml-auto bg-yellow-500 text-white text-xs px-1.5 py-0.5 rounded-full">{{ cnt }}</span>{% endif %}{% endwith %}
+    </a>
+    <a href="{% url 'dashboard:reviews_list' %}" class="sidebar-link {% if 'dashboard/reviews' in request.path %}active{% endif %}">
+      <i class="ti ti-star text-lg"></i>
+      {% trans "Reviews" %}
+      {% with cnt=pending_review_count %}{% if cnt %}<span class="ml-auto bg-yellow-500 text-white text-xs px-1.5 py-0.5 rounded-full">{{ cnt }}</span>{% endif %}{% endwith %}
+    </a>
+
+    {% if request.user.is_superuser %}
+    <p class="sidebar-section">{% trans "Admin" %}</p>
+    <a href="{% url 'dashboard:users_list' %}" class="sidebar-link {% if 'dashboard/users' in request.path %}active{% endif %}">
+      <i class="ti ti-users text-lg"></i> {% trans "Users" %}
+    </a>
+    {% endif %}
+
+    <p class="sidebar-section">{% trans "Site" %}</p>
+    <a href="{% url 'home' %}" target="_blank" class="sidebar-link">
+      <i class="ti ti-external-link text-lg"></i> {% trans "View Site" %}
+    </a>
+    <a href="{% url 'account_logout' %}" class="sidebar-link text-red-400 hover:text-red-300 hover:bg-red-900/20">
+      <i class="ti ti-logout text-lg"></i> {% trans "Sign Out" %}
+    </a>
+  </nav>
+</aside>
+
+{# ── Mobile overlay ── #}
+<div x-show="sidebarOpen" @click="sidebarOpen=false"
+     class="fixed inset-0 z-40 bg-black/50 lg:hidden" x-transition></div>
+
+{# ── Main wrapper ── #}
+<div :class="sidebarOpen ? 'lg:pl-64' : ''" class="flex flex-col min-h-full transition-all duration-300">
+
+  {# ── Topbar ── #}
+  <header class="sticky top-0 z-30 bg-white border-b border-gray-200 h-14 flex items-center px-4 gap-4">
+    <button @click="sidebarOpen = !sidebarOpen" class="text-gray-500 hover:text-gray-700">
+      <i class="ti ti-menu-2 text-xl"></i>
+    </button>
+
+    {# Breadcrumb #}
+    <nav class="hidden sm:flex items-center gap-1.5 text-sm text-gray-500">
+      <a href="{% url 'dashboard:home' %}" class="hover:text-gray-700">{% trans "Dashboard" %}</a>
+      {% block breadcrumb %}{% endblock %}
+    </nav>
+
+    <div class="ml-auto flex items-center gap-3">
+      {# Language switcher #}
+      <div x-data="{ solid: true }">{% include "components/language_switcher.html" %}</div>
+
+      {# Live stats badge #}
+      <span id="pending-badge" class="hidden items-center gap-1 text-xs bg-yellow-50 text-yellow-700 border border-yellow-200 px-2 py-1 rounded-full">
+        <i class="ti ti-clock text-xs"></i>
+        <span id="pending-count">0</span> {% trans "pending" %}
+      </span>
+
+      {# User menu #}
+      <div class="relative" x-data="{open:false}" @mouseenter="open=true" @mouseleave="open=false">
+        <button class="flex items-center gap-2 text-sm text-gray-700 hover:text-gray-900">
+          <span class="w-7 h-7 rounded-full bg-emerald-700 text-white text-xs font-bold flex items-center justify-center">
+            {{ request.user.first_name|first|upper|default:request.user.email|first|upper }}
+          </span>
+          <span class="hidden sm:block">{{ request.user.get_full_name|default:request.user.email|truncatechars:20 }}</span>
+        </button>
+        <div x-show="open" x-transition
+             class="absolute right-0 mt-1 w-44 bg-white rounded-xl border border-gray-200 shadow-lg py-1 z-50">
+          <a href="{% url 'accounts:profile' %}" class="flex items-center gap-2 px-4 py-2 text-sm text-gray-700 hover:bg-gray-50">
+            <i class="ti ti-user"></i> {% trans "My Profile" %}
+          </a>
+          <div class="border-t my-1"></div>
+          <a href="{% url 'account_logout' %}" class="flex items-center gap-2 px-4 py-2 text-sm text-red-600 hover:bg-red-50">
+            <i class="ti ti-logout"></i> {% trans "Sign Out" %}
+          </a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  {# ── Page content ── #}
+  <main class="flex-1 p-4 sm:p-6">
+
+    {# Django messages #}
+    {% for msg in messages %}
+    <div class="mb-4 flex items-center gap-3 px-4 py-3 rounded-lg text-sm
+      {% if msg.tags == 'success' %}bg-green-50 text-green-800 border border-green-200
+      {% elif msg.tags == 'error' %}bg-red-50 text-red-800 border border-red-200
+      {% elif msg.tags == 'warning' %}bg-yellow-50 text-yellow-800 border border-yellow-200
+      {% else %}bg-blue-50 text-blue-800 border border-blue-200{% endif %}"
+      x-data x-init="setTimeout(()=>$el.remove(),5000)">
+      <i class="ti ti-{% if msg.tags == 'success' %}circle-check{% elif msg.tags == 'error' %}alert-circle{% else %}info-circle{% endif %}"></i>
+      {{ msg }}
+    </div>
+    {% endfor %}
+
+    {% block content %}{% endblock %}
+  </main>
+</div>
+
+<script defer src="{% static 'js/alpine.min.js' %}"></script>
+<script>
+// Poll stats every 60s
+(function poll() {
+  fetch("{% url 'dashboard:stats_api' %}")
+    .then(r => r.json())
+    .then(d => {
+      const total = (d.pending_bookings || 0) + (d.pending_reviews || 0);
+      const badge = document.getElementById("pending-badge");
+      const count = document.getElementById("pending-count");
+      if (badge && count) {
+        count.textContent = total;
+        badge.classList.toggle("hidden", total === 0);
+        badge.classList.toggle("flex", total > 0);
+      }
+    })
+    .catch(() => {});
+  setTimeout(poll, 60000);
+})();
+</script>
+{% block extra_js %}{% endblock %}
+</body>
+</html>

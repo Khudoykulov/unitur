@@ -1,0 +1,68 @@
+{% extends "dashboard/base.html" %}
+{% load dashboard_tags i18n %}
+
+{% block title %}{% trans "Continents" %}{% endblock %}
+{% block breadcrumb %}
+  <span class="text-gray-400">/</span>
+  <a href="{% url 'dashboard:destinations_list' %}" class="text-gray-600 hover:text-gray-800">{% trans "Destinations" %}</a>
+  <span class="text-gray-400">/</span>
+  <span class="text-gray-700">{% trans "Continents" %}</span>
+{% endblock %}
+
+{% block content %}
+<div class="max-w-5xl mx-auto">
+  <div class="flex items-center justify-between mb-5">
+    <h1 class="text-xl font-bold text-gray-800">{% trans "Continents" %} <span class="text-gray-400 font-normal text-base">({{ page_obj.paginator.count }})</span></h1>
+    <a href="{% url 'dashboard:continents_create' %}" class="inline-flex items-center gap-1.5 bg-teal-600 hover:bg-teal-700 text-white text-sm font-medium px-4 py-2 rounded-lg transition">
+      <i class="ti ti-plus"></i> {% trans "Add Continent" %}
+    </a>
+  </div>
+
+  <p class="text-sm text-gray-500 mb-5">{% trans "Continents group countries in the Destinations mega-menu and footer." %}</p>
+
+  <div class="bg-white rounded-xl border border-gray-200 overflow-hidden">
+    <div class="overflow-x-auto">
+      <table class="w-full text-sm">
+        <thead>
+          <tr class="bg-gray-50 text-left border-b border-gray-200">
+            <th class="px-4 py-3 text-xs text-gray-500 font-semibold uppercase tracking-wide">{% trans "Continent" %}</th>
+            <th class="px-4 py-3 text-xs text-gray-500 font-semibold uppercase tracking-wide">{% trans "Countries" %}</th>
+            <th class="px-4 py-3 text-xs text-gray-500 font-semibold uppercase tracking-wide">{% trans "Actions" %}</th>
+          </tr>
+        </thead>
+        <tbody class="divide-y divide-gray-100">
+          {% for continent in continents %}
+          <tr class="hover:bg-gray-50">
+            <td class="px-4 py-3">
+              <div class="flex items-center gap-3">
+                {% if continent.image %}
+                <img src="{{ continent.image.url }}" alt="" class="w-10 h-7 rounded object-cover flex-shrink-0">
+                {% else %}
+                <div class="w-10 h-7 rounded bg-gray-100 flex items-center justify-center flex-shrink-0">
+                  <i class="ti ti-world text-gray-400 text-xs"></i>
+                </div>
+                {% endif %}
+                <p class="font-medium text-gray-800">{{ continent.name }}</p>
+              </div>
+            </td>
+            <td class="px-4 py-3 text-gray-600">{{ continent.country_count }}</td>
+            <td class="px-4 py-3">
+              <div class="flex items-center gap-2">
+                <a href="{% url 'dashboard:continents_edit' continent.pk %}" class="text-teal-500 hover:text-teal-700" title="{% trans 'Edit' %}"><i class="ti ti-pencil"></i></a>
+                <form method="post" action="{% url 'dashboard:continents_delete' continent.pk %}" onsubmit="return confirm('{% trans 'Delete this item?' %}')">
+                  {% csrf_token %}
+                  <button type="submit" class="text-red-400 hover:text-red-600" title="{% trans 'Delete' %}"><i class="ti ti-trash"></i></button>
+                </form>
+              </div>
+            </td>
+          </tr>
+          {% empty %}
+          <tr><td colspan="3" class="px-4 py-10 text-center text-gray-400">{% trans "No continents yet." %}</td></tr>
+          {% endfor %}
+        </tbody>
+      </table>
+    </div>
+    {% include "dashboard/components/pagination.html" %}
+  </div>
+</div>
+{% endblock %}

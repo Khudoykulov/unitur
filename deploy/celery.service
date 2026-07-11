@@ -1,0 +1,34 @@
+[Unit]
+Description=Unitur – Celery Worker
+After=network.target redis.service
+Requires=redis.service
+
+[Service]
+Type=forking
+User=unitur
+Group=unitur
+WorkingDirectory=/var/www/unitur
+Environment="DJANGO_SETTINGS_MODULE=config.settings"
+EnvironmentFile=/var/www/unitur/.env
+ExecStart=/var/www/unitur/.venv/bin/celery \
+    -A config.celery \
+    multi start worker \
+    --pidfile=/run/unitur/celery_worker.pid \
+    --logfile=/var/log/unitur/celery_worker.log \
+    --loglevel=WARNING \
+    --concurrency=2 \
+    -Q celery,default
+ExecStop=/var/www/unitur/.venv/bin/celery \
+    multi stopwait worker \
+    --pidfile=/run/unitur/celery_worker.pid
+ExecReload=/var/www/unitur/.venv/bin/celery \
+    -A config.celery \
+    multi restart worker \
+    --pidfile=/run/unitur/celery_worker.pid \
+    --logfile=/var/log/unitur/celery_worker.log \
+    --loglevel=WARNING
+Restart=on-failure
+RestartSec=10
+
+[Install]
+WantedBy=multi-user.target

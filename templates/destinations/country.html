@@ -1,0 +1,108 @@
+{% extends "base.html" %}
+{% load i18n %}
+
+{% block title %}{{ country.seo_title|default:country.name }} | {{ SITE_NAME }}{% endblock %}
+{% block meta_description %}{{ country.seo_description|default:country.overview|truncatechars:160 }}{% endblock %}
+
+{% block content %}
+<div class="pt-20 lg:pt-28 bg-pattern-subtle-blue">
+  {# Hero #}
+  <div class="relative min-h-[320px] h-[50vh] md:min-h-[520px] md:h-[60vh] md:max-h-[700px] overflow-hidden">
+    {% if country.cover_image %}
+    <img src="{{ country.cover_image.url }}" alt="{{ country.name }}" class="w-full h-full object-cover">
+    {% else %}
+    <div class="w-full h-full bg-gradient-to-br from-primary to-primary/60"></div>
+    {% endif %}
+    <div class="absolute inset-0 bg-gradient-to-b from-[rgba(30,45,65,0.05)] to-[rgba(30,45,65,0.55)]"></div>
+    <div class="absolute bottom-0 left-0 p-6 sm:p-8 max-w-7xl mx-auto w-full">
+      {% include "components/breadcrumb.html" with breadcrumbs=breadcrumbs %}
+      <div class="flex items-center gap-3 mt-2">
+        {% if country.flag_image %}
+        <img src="{{ country.flag_image.url }}" alt="" class="w-10 h-7 object-cover rounded shadow">
+        {% endif %}
+        <h1 class="text-white font-serif text-4xl md:text-5xl lg:text-6xl font-bold drop-shadow-[0_2px_8px_rgba(0,0,0,0.3)]">{{ country.name }}</h1>
+      </div>
+    </div>
+  </div>
+
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+    <div class="grid grid-cols-1 lg:grid-cols-3 gap-10">
+      <div class="lg:col-span-2">
+        {# Overview #}
+        {% if country.overview %}
+        <div class="content-card prose prose-lg max-w-none">
+          <h2 class="font-serif text-2xl font-bold text-dark mb-4">{% trans "About" %} {{ country.name }}</h2>
+          {{ country.overview|linebreaks }}
+        </div>
+        {% endif %}
+
+        {# Cities #}
+        {% if cities %}
+        <div class="mb-10">
+          <h2 class="font-serif text-2xl font-bold text-dark mb-6">{% trans "Cities to Explore" %}</h2>
+          <div class="grid grid-cols-2 md:grid-cols-3 gap-4">
+            {% for city in cities %}
+              {% include "components/city_card.html" with city=city %}
+            {% endfor %}
+          </div>
+        </div>
+        {% endif %}
+
+        {# Tours #}
+        {% if tours %}
+        <div>
+          <h2 class="font-serif text-2xl font-bold text-dark mb-6">{% trans "Tours in" %} {{ country.name }}</h2>
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            {% for tour in tours %}
+              {% include "components/tour_card.html" with tour=tour %}
+            {% endfor %}
+          </div>
+        </div>
+        {% endif %}
+      </div>
+
+      {# Travel Info sidebar #}
+      <aside>
+        <div class="bg-accent rounded-2xl p-6 sticky top-24 space-y-4">
+          <h3 class="font-semibold text-dark text-lg">{% trans "Travel Information" %}</h3>
+          {% if country.currency %}
+          <div class="flex items-center gap-3 text-sm">
+            <i class="ti ti-currency-dollar text-secondary text-lg w-5"></i>
+            <div><p class="text-gray-400 text-xs">{% trans "Currency" %}</p><p class="font-medium">{{ country.currency }}</p></div>
+          </div>
+          {% endif %}
+          {% if country.language %}
+          <div class="flex items-center gap-3 text-sm">
+            <i class="ti ti-language text-secondary text-lg w-5"></i>
+            <div><p class="text-gray-400 text-xs">{% trans "Language" %}</p><p class="font-medium">{{ country.language }}</p></div>
+          </div>
+          {% endif %}
+          {% if country.timezone %}
+          <div class="flex items-center gap-3 text-sm">
+            <i class="ti ti-clock text-secondary text-lg w-5"></i>
+            <div><p class="text-gray-400 text-xs">{% trans "Timezone" %}</p><p class="font-medium">{{ country.timezone }}</p></div>
+          </div>
+          {% endif %}
+          {% if country.best_time_to_visit %}
+          <div class="flex items-start gap-3 text-sm">
+            <i class="ti ti-sun text-secondary text-lg w-5 mt-0.5"></i>
+            <div><p class="text-gray-400 text-xs">{% trans "Best time to visit" %}</p><p class="font-medium">{{ country.best_time_to_visit }}</p></div>
+          </div>
+          {% endif %}
+          {% if country.visa_info %}
+          <div class="border-t pt-4">
+            <h4 class="font-medium text-sm text-dark mb-2 flex items-center gap-1">
+              <i class="ti ti-id text-secondary"></i> {% trans "Visa Information" %}
+            </h4>
+            <p class="text-xs text-gray-600 leading-relaxed">{{ country.visa_info|truncatechars:200 }}</p>
+          </div>
+          {% endif %}
+          <a href="{% url 'bookings:inquiry' %}" class="btn-primary w-full text-center py-3 text-sm block mt-4">
+            {% trans "Plan a Trip Here" %}
+          </a>
+        </div>
+      </aside>
+    </div>
+  </div>
+</div>
+{% endblock %}

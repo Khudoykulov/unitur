@@ -1,0 +1,89 @@
+{% extends "base.html" %}
+{% load i18n static %}
+
+{% block title %}{% trans "Domestic Tours" %} | {{ SITE_NAME }}{% endblock %}
+{% block meta_description %}{% trans "Multi-city tours across Uzbekistan — discover several cities in a single journey." %}{% endblock %}
+
+{% block content %}
+<div class="pt-20 lg:pt-28 bg-pattern-subtle-blue">
+  {# ── Page header — rotating background slideshow (cross-fade) ── #}
+  <div id="ichki-hero" class="relative h-[420px] flex items-center justify-center text-center overflow-hidden">
+    <div class="absolute inset-0">
+      {% if hero_slides %}
+        {% for s in hero_slides %}
+        <div class="ichki-slide {% if forloop.first %}is-active{% endif %}" style="background-image:url('{{ s.image.url }}')"></div>
+        {% endfor %}
+      {% else %}
+        {# Fallback to bundled images until slides are uploaded in the dashboard #}
+        <div class="ichki-slide is-active" style="background-image:url('{% static 'images/hero-ichki-1.jpg' %}')"></div>
+        <div class="ichki-slide" style="background-image:url('{% static 'images/hero-ichki-2.jpg' %}')"></div>
+        <div class="ichki-slide" style="background-image:url('{% static 'images/hero-ichki-3.jpg' %}')"></div>
+        <div class="ichki-slide" style="background-image:url('{% static 'images/hero-ichki-4.jpg' %}')"></div>
+        <div class="ichki-slide" style="background-image:url('{% static 'images/hero-ichki-5.jpg' %}')"></div>
+      {% endif %}
+    </div>
+    {# Dark overlay so the white text stays readable over any image #}
+    <div class="absolute inset-0 bg-gradient-to-b from-black/50 via-black/40 to-black/65"></div>
+    <div class="relative z-10 px-4">
+      <h1 class="text-4xl md:text-5xl font-serif font-bold mb-2 text-white drop-shadow">{% trans "Domestic Tours" %}</h1>
+      <p class="mt-2 text-lg text-white/90 drop-shadow">{% trans "Multi-city journeys — discover several cities in a single trip" %}</p>
+    </div>
+  </div>
+
+  <style>
+    #ichki-hero .ichki-slide {
+      position: absolute; inset: 0;
+      background-size: cover; background-position: center;
+      opacity: 0; transform: scale(1.06);
+      transition: opacity 1.5s ease-in-out, transform 6s ease-in-out;
+      will-change: opacity, transform;
+    }
+    #ichki-hero .ichki-slide.is-active { opacity: 1; transform: scale(1); }
+  </style>
+  <script>
+    (function () {
+      var slides = document.querySelectorAll('#ichki-hero .ichki-slide');
+      if (slides.length < 2) return;
+      var i = 0;
+      setInterval(function () {
+        slides[i].classList.remove('is-active');
+        i = (i + 1) % slides.length;
+        slides[i].classList.add('is-active');
+      }, 5000);
+    })();
+  </script>
+
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+    {# Cross-link back to the international tour listing #}
+    <div class="bg-accent rounded-xl p-4 mb-6 flex items-center justify-between gap-4 flex-wrap">
+      <p class="text-sm text-gray-700">
+        <i class="ti ti-world text-primary mr-1"></i>
+        {% trans "Looking for international tours?" %}
+      </p>
+      <a href="{% url 'tours:list' %}" class="text-primary font-semibold text-sm hover:underline whitespace-nowrap">
+        {% trans "View All Tours" %} →
+      </a>
+    </div>
+
+    <div class="inline-flex bg-white rounded-xl px-4 py-3 shadow-sm mb-6">
+      <p class="text-gray-600 text-sm">
+        {% blocktrans with count=page_obj.paginator.count %}{{ count }} multi-city tours{% endblocktrans %}
+      </p>
+    </div>
+
+    <div class="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-6">
+      {% for tour in tours %}
+        {% include "components/tour_card.html" with tour=tour %}
+      {% empty %}
+      <div class="col-span-3 text-center py-20 text-gray-400">
+        <i class="ti ti-route-off text-5xl mb-4 block"></i>
+        <p class="text-lg">{% trans "No multi-city tours yet." %}</p>
+        <a href="{% url 'tours:list' %}" class="btn-outline mt-4 inline-block">{% trans "Browse all tours" %}</a>
+      </div>
+      {% endfor %}
+    </div>
+
+    {% include "components/pagination.html" %}
+  </div>
+</div>
+{% endblock %}

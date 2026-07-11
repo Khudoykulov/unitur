@@ -1,0 +1,306 @@
+{% extends "base.html" %}
+{% load i18n static %}
+
+{% block title %}{{ tour.seo_title|default:tour.title }} | {{ SITE_NAME }}{% endblock %}
+{% block meta_description %}{{ tour.seo_description|default:tour.overview|truncatechars:160 }}{% endblock %}
+{% block og_title %}{{ tour.title }}{% endblock %}
+{% block og_description %}{{ tour.overview|truncatechars:200 }}{% endblock %}
+{% block og_image %}{% if tour.cover_image %}{{ tour.cover_image.url }}{% endif %}{% endblock %}
+{% block og_type %}product{% endblock %}
+
+{% block content %}
+<div class="pt-20 lg:pt-28 bg-pattern-subtle-blue">
+
+  {# ── Hero image (real tour photo — kept) #}
+  <div class="relative min-h-[320px] h-[50vh] md:min-h-[520px] md:h-[60vh] md:max-h-[700px] overflow-hidden">
+    {% if tour.cover_image %}
+    <img src="{{ tour.cover_image.url }}" alt="{{ tour.title }}"
+         class="w-full h-full object-cover">
+    {% else %}
+    <div class="w-full h-full bg-gradient-to-br from-primary to-primary/50"></div>
+    {% endif %}
+    <div class="absolute inset-0 bg-gradient-to-b from-[rgba(30,45,65,0.05)] to-[rgba(30,45,65,0.55)]"></div>
+    <div class="absolute bottom-0 left-0 right-0 p-6 sm:p-8 max-w-7xl mx-auto">
+      {% include "components/breadcrumb.html" with breadcrumbs=breadcrumbs %}
+      <h1 class="text-white font-serif text-4xl md:text-5xl lg:text-6xl font-bold mt-2 drop-shadow-[0_2px_8px_rgba(0,0,0,0.3)]">{{ tour.title }}</h1>
+      <div class="flex flex-wrap gap-4 mt-3 text-white/80 text-sm">
+        <span><i class="ti ti-calendar mr-1"></i>{{ tour.duration_days }} {% trans "days" %}</span>
+        <span><i class="ti ti-users mr-1"></i>{{ tour.group_size_min }}–{{ tour.group_size_max }} {% trans "pax" %}</span>
+        {% if tour.category %}<span><i class="ti ti-tag mr-1"></i>{{ tour.category.name }}</span>{% endif %}
+      </div>
+    </div>
+  </div>
+
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+    <div class="flex flex-col lg:flex-row gap-10">
+
+      {# ── Main content ──────────────────────────────────────── #}
+      <div class="flex-1 min-w-0">
+
+        {# Image gallery #}
+        {% if tour.images.exists %}
+        <div x-data="{ activeImg: null }" class="mb-10">
+          <div class="grid grid-cols-4 gap-2">
+            {% for img in tour.images.all|slice:":8" %}
+            <div @click="activeImg='{{ img.image.url }}'"
+                 class="cursor-pointer rounded-xl overflow-hidden aspect-square hover:opacity-90 transition">
+              <img src="{{ img.image.url }}" alt="{{ img.caption }}" loading="lazy" class="w-full h-full object-cover">
+            </div>
+            {% endfor %}
+          </div>
+          {# Lightbox #}
+          <div x-show="activeImg" @click="activeImg=null"
+               class="fixed inset-0 bg-black/90 z-50 flex items-center justify-center p-4">
+            <img :src="activeImg" class="max-h-full max-w-full rounded-xl" @click.stop>
+          </div>
+        </div>
+        {% endif %}
+
+        {# Overview #}
+        <div class="prose prose-lg max-w-none mb-6 bg-white rounded-2xl p-6 sm:p-8 shadow-sm">
+          <h2 class="font-serif text-2xl font-bold text-dark mb-4">{% trans "Tour Overview" %}</h2>
+          <p class="text-gray-700 leading-relaxed">{{ tour.overview }}</p>
+        </div>
+
+        {# Includes / Excludes #}
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-10">
+          {% if tour.includes %}
+          <div class="bg-green-50 rounded-2xl p-6">
+            <h3 class="font-semibold text-green-800 text-lg mb-4 flex items-center gap-2">
+              <i class="ti ti-circle-check text-green-600"></i> {% trans "What's Included" %}
+            </h3>
+            <ul class="space-y-2">
+              {% for line in tour.includes.splitlines %}
+              {% if line.strip %}
+              <li class="flex items-start gap-2 text-green-700 text-sm">
+                <i class="ti ti-check mt-0.5 flex-shrink-0"></i> {{ line.strip }}
+              </li>
+              {% endif %}
+              {% endfor %}
+            </ul>
+          </div>
+          {% endif %}
+          {% if tour.excludes %}
+          <div class="bg-red-50 rounded-2xl p-6">
+            <h3 class="font-semibold text-red-800 text-lg mb-4 flex items-center gap-2">
+              <i class="ti ti-circle-x text-red-600"></i> {% trans "Not Included" %}
+            </h3>
+            <ul class="space-y-2">
+              {% for line in tour.excludes.splitlines %}
+              {% if line.strip %}
+              <li class="flex items-start gap-2 text-red-700 text-sm">
+                <i class="ti ti-x mt-0.5 flex-shrink-0"></i> {{ line.strip }}
+              </li>
+              {% endif %}
+              {% endfor %}
+            </ul>
+          </div>
+          {% endif %}
+        </div>
+
+        {# Multi-city route line (Ichki Turlar) — shown only for multi-stop tours #}
+        {% if tour.is_multi_city %}
+        <div class="mb-6 bg-white rounded-2xl p-6 sm:p-8 shadow-sm">
+          <h2 class="font-serif text-2xl font-bold text-dark mb-2">{% trans "Route" %}</h2>
+          <p class="text-gray-500 text-xs mb-4 flex items-center gap-1.5">
+            <i class="ti ti-hand-finger text-primary"></i>{% trans "Tap a city to explore it." %}
+          </p>
+          {% include "tours/components/route_line.html" with stops=tour.stops.all %}
+        </div>
+        {% endif %}
+
+        {# Day-by-day itinerary accordion #}
+        {% if tour.days.exists %}
+        <div class="mb-10 bg-white rounded-2xl p-6 sm:p-8 shadow-sm">
+          <h2 class="font-serif text-2xl font-bold text-dark mb-6">{% trans "Day-by-Day Itinerary" %}</h2>
+          <div class="space-y-3">
+            {% for day in tour.days.all %}
+            <div x-data="{ open: {{ forloop.first|yesno:'true,false' }} }"
+                 class="border border-gray-200 rounded-xl overflow-hidden">
+              <button @click="open = !open"
+                      class="w-full flex items-center justify-between px-6 py-4 text-left hover:bg-accent transition">
+                <div class="flex items-center gap-3">
+                  <span class="w-8 h-8 rounded-full bg-primary text-white text-sm font-bold flex items-center justify-center flex-shrink-0">{{ day.day_number }}</span>
+                  <span class="font-semibold text-dark">{{ day.title }}</span>
+                </div>
+                <i class="ti" :class="open ? 'ti-chevron-up' : 'ti-chevron-down'" class="text-gray-400"></i>
+              </button>
+              <div x-show="open" x-transition class="px-6 pb-5">
+                <p class="text-gray-600 text-sm leading-relaxed mb-3">{{ day.description }}</p>
+                <div class="flex flex-wrap gap-3 text-xs text-gray-500">
+                  {% if day.meals_included != 'none' %}
+                  <span class="flex items-center gap-1 bg-amber-50 text-amber-700 px-2 py-1 rounded-full">
+                    <i class="ti ti-utensils"></i> {{ day.get_meals_included_display }}
+                  </span>
+                  {% endif %}
+                  {% if day.accommodation %}
+                  <span class="flex items-center gap-1 bg-blue-50 text-blue-700 px-2 py-1 rounded-full">
+                    <i class="ti ti-bed"></i> {{ day.accommodation }}
+                  </span>
+                  {% endif %}
+                  {% if day.transport %}
+                  <span class="flex items-center gap-1 bg-purple-50 text-purple-700 px-2 py-1 rounded-full">
+                    <i class="ti ti-bus"></i> {{ day.transport }}
+                  </span>
+                  {% endif %}
+                </div>
+              </div>
+            </div>
+            {% endfor %}
+          </div>
+        </div>
+        {% endif %}
+
+        {# Available Departures #}
+        {% if departures %}
+        <div class="mb-6 bg-white rounded-2xl p-6 shadow-sm">
+          <h2 class="font-serif text-2xl font-bold text-dark mb-6">{% trans "Available Departures" %}</h2>
+          <div class="overflow-x-auto rounded-xl border border-gray-200">
+            <table class="w-full text-sm">
+              <thead class="bg-accent text-gray-600 text-xs uppercase">
+                <tr>
+                  <th class="px-4 py-3 text-left">{% trans "Departure" %}</th>
+                  <th class="px-4 py-3 text-left">{% trans "Return" %}</th>
+                  <th class="px-4 py-3 text-left">{% trans "Seats" %}</th>
+                  <th class="px-4 py-3 text-left">{% trans "Price" %}</th>
+                  <th class="px-4 py-3"></th>
+                </tr>
+              </thead>
+              <tbody class="divide-y divide-gray-100">
+                {% for dep in departures %}
+                <tr class="hover:bg-accent transition">
+                  <td class="px-4 py-3 font-medium">{{ dep.departure_date|date:"M d, Y" }}</td>
+                  <td class="px-4 py-3 text-gray-600">{{ dep.return_date|date:"M d, Y" }}</td>
+                  <td class="px-4 py-3">
+                    <span class="{% if dep.seats_left > 5 %}text-green-600{% elif dep.seats_left > 0 %}text-amber-600{% else %}text-red-600{% endif %} font-medium">
+                      {{ dep.seats_left }} {% trans "left" %}
+                    </span>
+                  </td>
+                  <td class="px-4 py-3 font-bold text-primary">${{ dep.effective_price|floatformat:0 }}</td>
+                  <td class="px-4 py-3">
+                    {% if dep.is_bookable %}
+                    <a href="{% url 'bookings:book' tour.slug %}?departure={{ dep.pk }}" class="btn-primary text-xs px-4 py-2">{% trans "Book" %}</a>
+                    {% else %}
+                    <span class="text-xs text-gray-400">{% trans "Full" %}</span>
+                    {% endif %}
+                  </td>
+                </tr>
+                {% endfor %}
+              </tbody>
+            </table>
+          </div>
+        </div>
+        {% endif %}
+
+        {# Reviews section #}
+        {% if approved_reviews %}
+        <div class="mb-6 bg-white rounded-2xl p-6 sm:p-8 shadow-sm">
+          <div class="flex items-center justify-between mb-6">
+            <h2 class="font-serif text-2xl font-bold text-dark">
+              {% trans "Reviews" %}
+              <span class="text-secondary ml-2">{{ avg_rating }}★</span>
+              <span class="text-gray-400 text-base font-normal">({{ review_count }})</span>
+            </h2>
+          </div>
+
+          {# Rating breakdown #}
+          <div class="bg-accent rounded-xl p-5 mb-6">
+            {% for stars, count in rating_breakdown.items reversed %}
+            <div class="flex items-center gap-3 mb-2">
+              <span class="w-12 text-right text-xs text-gray-500">{{ stars }}★</span>
+              <div class="flex-1 bg-gray-200 rounded-full h-2">
+                {% with total=review_count %}
+                <div class="bg-secondary h-2 rounded-full"
+                     style="width: {% if total %}{% widthratio count total 100 %}{% else %}0{% endif %}%"></div>
+                {% endwith %}
+              </div>
+              <span class="w-6 text-xs text-gray-500">{{ count }}</span>
+            </div>
+            {% endfor %}
+          </div>
+
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+            {% for review in approved_reviews|slice:":4" %}
+              {% include "components/review_card.html" with review=review %}
+            {% endfor %}
+          </div>
+        </div>
+        {% endif %}
+
+        {# Related tours #}
+        {% if related_tours %}
+        <div class="bg-white rounded-2xl p-6 shadow-sm">
+          <h2 class="font-serif text-2xl font-bold text-dark mb-6">{% trans "Similar Tours" %}</h2>
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            {% for t in related_tours|slice:":4" %}
+              {% include "components/tour_card.html" with tour=t %}
+            {% endfor %}
+          </div>
+        </div>
+        {% endif %}
+      </div>
+
+      {# ── Sticky sidebar ────────────────────────────────────── #}
+      <aside class="lg:w-80 flex-shrink-0">
+        <div class="sticky top-24 space-y-4">
+
+          {# Price card #}
+          <div class="bg-white rounded-2xl shadow-lg p-6 border border-gray-100">
+            {% if tour.discount_percent %}
+            <p class="text-sm text-gray-400 line-through mb-1">${{ tour.price_per_person }} {% trans "per person" %}</p>
+            {% endif %}
+            <p class="text-3xl font-bold text-primary">${{ tour.discounted_price|floatformat:0 }}</p>
+            <p class="text-gray-400 text-sm mb-5">{% trans "per person" %}</p>
+
+            <a href="{% url 'bookings:book' tour.slug %}"
+               class="btn-primary w-full text-center py-3.5 text-base font-semibold block mb-3">
+              {% trans "Book This Tour" %}
+            </a>
+            <a href="{% url 'bookings:inquiry' %}?tour={{ tour.pk }}"
+               class="btn-outline w-full text-center py-3 text-sm block">
+              <i class="ti ti-message-circle mr-1"></i>{% trans "Send Inquiry" %}
+            </a>
+
+            {# Quick facts #}
+            <div class="mt-5 pt-5 border-t space-y-3 text-sm text-gray-600">
+              <div class="flex justify-between">
+                <span class="flex items-center gap-1"><i class="ti ti-calendar text-secondary"></i>{% trans "Duration" %}</span>
+                <span class="font-medium">{{ tour.duration_days }} {% trans "days" %}</span>
+              </div>
+              <div class="flex justify-between">
+                <span class="flex items-center gap-1"><i class="ti ti-users text-secondary"></i>{% trans "Group size" %}</span>
+                <span class="font-medium">{{ tour.group_size_min }}–{{ tour.group_size_max }}</span>
+              </div>
+            </div>
+          </div>
+
+          {# Share buttons #}
+          <div class="bg-white rounded-xl p-4 border border-gray-100">
+            <p class="text-sm font-medium text-gray-700 mb-3">{% trans "Share this tour" %}</p>
+            <div class="flex gap-2">
+              <a href="https://www.facebook.com/sharer/sharer.php?u={{ request.build_absolute_uri }}"
+                 target="_blank" rel="noopener"
+                 class="flex-1 bg-blue-600 text-white text-xs py-2 rounded-lg text-center hover:bg-blue-700 transition">
+                <i class="ti ti-brand-facebook"></i> Facebook
+              </a>
+              <a href="https://twitter.com/intent/tweet?url={{ request.build_absolute_uri }}&text={{ tour.title|urlencode }}"
+                 target="_blank" rel="noopener"
+                 class="flex-1 bg-sky-500 text-white text-xs py-2 rounded-lg text-center hover:bg-sky-600 transition">
+                <i class="ti ti-brand-twitter"></i> Twitter
+              </a>
+            </div>
+          </div>
+        </div>
+      </aside>
+    </div>
+  </div>
+</div>
+{% endblock %}
+
+{% block extra_head %}
+{% if tour.is_multi_city %}<link rel="stylesheet" href="{% static 'css/route-line.css' %}">{% endif %}
+{% endblock %}
+
+{% block schema_json %}
+<script type="application/ld+json">{{ schema_json|safe }}</script>
+{% endblock %}

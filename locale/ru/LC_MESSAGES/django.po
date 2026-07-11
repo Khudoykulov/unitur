@@ -1,0 +1,2154 @@
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: travel_pro 1.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-07-08 20:31+0000\n"
+"PO-Revision-Date: 2026-07-08 20:31+0000\n"
+"Last-Translator: Travel Pro Team\n"
+"Language-Team: ru\n"
+"Language: ru\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
+
+msgid "Home"
+msgstr "Главная"
+
+msgid "Tours"
+msgstr "Туры"
+
+msgid "Hotels"
+msgstr "Отели"
+
+msgid "Destinations"
+msgstr "Направления"
+
+msgid "Guides"
+msgstr "Путеводители"
+
+msgid "MICE"
+msgstr "MICE"
+
+msgid "Search"
+msgstr "Поиск"
+
+msgid "Sign in"
+msgstr "Войти"
+
+msgid "Sign In"
+msgstr "Войти"
+
+msgid "Book Now"
+msgstr "Забронировать"
+
+msgid "Domestic Tours"
+msgstr "Внутренние туры"
+
+msgid "Route"
+msgstr "Маршрут"
+
+msgid "Tap a city to explore it."
+msgstr "Нажмите на город, чтобы узнать о нём."
+
+msgid "nights"
+msgstr "ноч."
+
+msgid "Photos"
+msgstr "Фотографии"
+
+msgid "No multi-city tours yet."
+msgstr "Пока нет мультигородских туров."
+
+msgid "Browse all tours"
+msgstr "Все туры"
+
+msgid "Multi-city journeys — discover several cities in a single trip"
+msgstr "Мультигородские путешествия — несколько городов за одну поездку"
+
+msgid ""
+"Multi-city tours across Uzbekistan — discover several cities in a single "
+"journey."
+msgstr ""
+"Мультигородские туры по Узбекистану — несколько городов за одно путешествие."
+
+msgid "%(count)s multi-city tours"
+msgstr "%(count)s мультигородских туров"
+
+msgid "Log in"
+msgstr "Войти"
+
+msgid "Invalid username or password."
+msgstr "Неверный логин или пароль."
+
+msgid "Accept"
+msgstr "Принять"
+
+msgid "Any"
+msgstr "Любой"
+
+msgid "Anywhere"
+msgstr "Куда угодно"
+
+msgid "Close"
+msgstr "Закрыть"
+
+msgid "Main page"
+msgstr "Главная"
+
+msgid "Guidebook"
+msgstr "Путеводитель"
+
+msgid "More"
+msgstr "Ещё"
+
+msgid "About us"
+msgstr "О нас"
+
+msgid "About the Company"
+msgstr "О компании"
+
+msgid "Contact"
+msgstr "Контакты"
+
+msgid "Working hours"
+msgstr "Время работы"
+
+msgid "Why UNITUR?"
+msgstr "Почему UNITUR?"
+
+msgid "Apply"
+msgstr "Применить"
+
+msgid "Clear"
+msgstr "Очистить"
+
+msgid "Apply Filters"
+msgstr "Применить фильтры"
+
+msgid "Clear all"
+msgstr "Сбросить всё"
+
+msgid "Clear filters"
+msgstr "Сбросить фильтры"
+
+msgid "Filters"
+msgstr "Фильтры"
+
+msgid "Details"
+msgstr "Подробнее"
+
+msgid "About"
+msgstr "О нас"
+
+msgid "All"
+msgstr "Все"
+
+msgid "Featured"
+msgstr "Рекомендуемое"
+
+msgid "From"
+msgstr "От"
+
+msgid "Map"
+msgstr "Карта"
+
+msgid "Name"
+msgstr "Название"
+
+msgid "Slug"
+msgstr "Слаг"
+
+msgid "Image"
+msgstr "Изображение"
+
+msgid "Description"
+msgstr "Описание"
+
+msgid "Category"
+msgstr "Категория"
+
+msgid "Status"
+msgstr "Статус"
+
+msgid "Active"
+msgstr "Активный"
+
+msgid "Title"
+msgstr "Заголовок"
+
+msgid "Price"
+msgstr "Цена"
+
+msgid "Duration"
+msgstr "Продолжительность"
+
+msgid "Language"
+msgstr "Язык"
+
+msgid "Currency"
+msgstr "Валюта"
+
+msgid "Location"
+msgstr "Расположение"
+
+msgid "Contact Us"
+msgstr "Связаться с нами"
+
+msgid "Email"
+msgstr "Электронная почта"
+
+msgid "Phone"
+msgstr "Телефон"
+
+msgid "Date"
+msgstr "Дата"
+
+msgid "Type"
+msgstr "Тип"
+
+msgid "User"
+msgstr "Пользователь"
+
+msgid "Country"
+msgstr "Страна"
+
+msgid "City"
+msgstr "Город"
+
+msgid "Tour"
+msgstr "Тур"
+
+msgid "Hotel"
+msgstr "Отель"
+
+msgid "Website"
+msgstr "Веб-сайт"
+
+msgid "Address"
+msgstr "Адрес"
+
+msgid "Order"
+msgstr "Порядок"
+
+msgid "Caption"
+msgstr "Подпись"
+
+msgid "Rating"
+msgstr "Рейтинг"
+
+msgid "Published"
+msgstr "Опубликовано"
+
+msgid "Tags"
+msgstr "Теги"
+
+msgid "Author"
+msgstr "Автор"
+
+msgid "Content"
+msgstr "Содержание"
+
+msgid "Continent"
+msgstr "Континент"
+
+msgid "Continents"
+msgstr "Континенты"
+
+msgid "Countries"
+msgstr "Страны"
+
+msgid "Cities"
+msgstr "Города"
+
+msgid "Reviews"
+msgstr "Отзывы"
+
+msgid "Inquiry"
+msgstr "Запрос"
+
+msgid "Inquiries"
+msgstr "Запросы"
+
+msgid "Departure"
+msgstr "Отправление"
+
+msgid "Return"
+msgstr "Возвращение"
+
+msgid "Seats"
+msgstr "Места"
+
+msgid "Book"
+msgstr "Забронировать"
+
+msgid "Full"
+msgstr "Заполнено"
+
+msgid "left"
+msgstr "осталось"
+
+msgid "days"
+msgstr "дней"
+
+msgid "pax"
+msgstr "чел."
+
+msgid "min read"
+msgstr "мин. чтения"
+
+msgid "min"
+msgstr "мин"
+
+msgid "per person"
+msgstr "за человека"
+
+msgid "per night from"
+msgstr "за ночь от"
+
+msgid "/ night"
+msgstr "/ ночь"
+
+msgid "persons"
+msgstr "человек"
+
+msgid "adults"
+msgstr "взрослых"
+
+msgid "children"
+msgstr "детей"
+
+msgid "participants"
+msgstr "участников"
+
+msgid "and"
+msgstr "и"
+
+msgid "We use cookies"
+msgstr "Мы используем файлы cookie"
+
+msgid ""
+"We use cookies to enhance your browsing experience and analyse traffic. By "
+"clicking 'Accept', you consent to our use of cookies."
+msgstr ""
+"Мы используем файлы cookie для улучшения вашего опыта просмотра и анализа "
+"трафика. Нажимая «Принять», вы соглашаетесь на использование нами файлов "
+"cookie."
+
+msgid "Learn more"
+msgstr "Узнать больше"
+
+msgid "Discover the World"
+msgstr "Откройте мир"
+
+msgid "With Confidence"
+msgstr "С уверенностью"
+
+msgid ""
+"Authentic tours across Uzbekistan and Eurasia. Unmatched service, "
+"unforgettable memories."
+msgstr ""
+"Подлинные туры по Узбекистану и Центральной Азии. Безупречный сервис, "
+"незабываемые впечатления."
+
+msgid "Destination"
+msgstr "Направление"
+
+msgid "Where to?"
+msgstr "Куда?"
+
+msgid "Happy Travelers"
+msgstr "Довольных путешественников"
+
+msgid "Years Experience"
+msgstr "Лет опыта"
+
+msgid "Handpicked for You"
+msgstr "Подобрано для вас"
+
+msgid "Featured Tours"
+msgstr "Рекомендуемые туры"
+
+msgid "View All Tours"
+msgstr "Смотреть все туры"
+
+msgid "No featured tours yet."
+msgstr "Пока нет рекомендуемых туров."
+
+msgid "Explore the World"
+msgstr "Исследуйте мир"
+
+msgid "Top Destinations"
+msgstr "Лучшие направления"
+
+msgid "All Destinations"
+msgstr "Все направления"
+
+msgid "Our Promise"
+msgstr "Наше обещание"
+
+msgid "Why Travel Pro?"
+msgstr "Почему Travel Pro?"
+
+msgid "Trusted Agency"
+msgstr "Надёжное агентство"
+
+msgid "Licensed and fully insured with 15+ years of excellence."
+msgstr ""
+"Лицензированы и полностью застрахованы, 15+ лет превосходного сервиса."
+
+msgid "24/7 Support"
+msgstr "Поддержка 24/7"
+
+msgid "Our team is always available to assist you anywhere in the world."
+msgstr "Наша команда всегда готова помочь вам в любой точке мира."
+
+msgid "Best Price"
+msgstr "Лучшая цена"
+
+msgid "Price-match guarantee on all our tour packages worldwide."
+msgstr ""
+"Гарантия соответствия цен на все наши туристические пакеты по всему миру."
+
+msgid "Top Rated"
+msgstr "Высокий рейтинг"
+
+msgid "4.9★ average rating from thousands of verified travelers."
+msgstr "Средний рейтинг 4.9★ от тысяч проверенных путешественников."
+
+msgid "Hand-Picked Stays"
+msgstr "Избранные места для проживания"
+
+msgid "Featured Hotels"
+msgstr "Рекомендуемые отели"
+
+msgid "All Hotels"
+msgstr "Все отели"
+
+msgid "What Travelers Say"
+msgstr "Что говорят путешественники"
+
+msgid "Customer Reviews"
+msgstr "Отзывы клиентов"
+
+msgid "Read All Reviews"
+msgstr "Читать все отзывы"
+
+msgid "Travel Tips & Inspiration"
+msgstr "Советы путешественникам и вдохновение"
+
+msgid "Latest Guides"
+msgstr "Последние гиды"
+
+msgid "All Articles"
+msgstr "Все статьи"
+
+msgid "Ready for Your Next Adventure?"
+msgstr "Готовы к следующему приключению?"
+
+msgid ""
+"Get a personalised itinerary from our travel experts — completely free."
+msgstr ""
+"Получите персональный маршрут от наших экспертов — совершенно бесплатно."
+
+msgid "Plan My Trip"
+msgstr "Запланировать поездку"
+
+msgid "Browse Tours"
+msgstr "Смотреть туры"
+
+msgid "All Tours"
+msgstr "Все туры"
+
+msgid "All Continents"
+msgstr "Все континенты"
+
+msgid "Explore our handpicked collection of unforgettable journeys"
+msgstr "Изучите нашу тщательно подобранную коллекцию незабываемых путешествий"
+
+msgid "By Category"
+msgstr "По категории"
+
+msgid "View all tours"
+msgstr "Все туры"
+
+msgid "View all international tours"
+msgstr "Все международные туры"
+
+msgid "All categories"
+msgstr "Все категории"
+
+msgid "Price Range (USD)"
+msgstr "Диапазон цен (USD)"
+
+msgid "Min"
+msgstr "Мин"
+
+msgid "Max"
+msgstr "Макс"
+
+msgid "Duration (days)"
+msgstr "Продолжительность (дней)"
+
+msgid "Difficulty"
+msgstr "Сложность"
+
+msgid "{{ count }} tours found"
+msgstr "Найдено {{ count }} туров"
+
+msgid "Price: Low to High"
+msgstr "Цена: по возрастанию"
+
+msgid "Price: High to Low"
+msgstr "Цена: по убыванию"
+
+msgid "Newest"
+msgstr "Новые"
+
+msgid "Most Popular"
+msgstr "Самые популярные"
+
+msgid "No tours match your filters."
+msgstr "Нет туров, соответствующих вашим фильтрам."
+
+msgid "Tour Overview"
+msgstr "Обзор тура"
+
+msgid "What's Included"
+msgstr "Что включено"
+
+msgid "Not Included"
+msgstr "Не включено"
+
+msgid "Day-by-Day Itinerary"
+msgstr "Маршрут по дням"
+
+msgid "Available Departures"
+msgstr "Доступные отправления"
+
+msgid "Similar Tours"
+msgstr "Похожие туры"
+
+msgid "Book This Tour"
+msgstr "Забронировать этот тур"
+
+msgid "Send Inquiry"
+msgstr "Отправить запрос"
+
+msgid "Group size"
+msgstr "Размер группы"
+
+msgid "Share this tour"
+msgstr "Поделиться туром"
+
+msgid "Book Tour"
+msgstr "Забронировать тур"
+
+msgid "Please correct the errors below."
+msgstr "Пожалуйста, исправьте ошибки ниже."
+
+msgid ""
+"Your information is secure and will never be shared with third parties."
+msgstr "Ваши данные в безопасности и никогда не будут переданы третьим лицам."
+
+msgid "Up to 1 week"
+msgstr "До 1 недели"
+
+msgid "Up to 2 weeks"
+msgstr "До 2 недель"
+
+msgid "Up to 1 month"
+msgstr "До 1 месяца"
+
+msgid "Find Your Perfect Stay"
+msgstr "Найдите идеальное жильё"
+
+msgid "Handpicked hotels from budget to luxury worldwide"
+msgstr "Тщательно отобранные отели — от бюджетных до люксовых по всему миру"
+
+msgid "Filter Hotels"
+msgstr "Фильтр отелей"
+
+msgid "No hotels match your search."
+msgstr "Нет отелей, соответствующих вашему запросу."
+
+msgid "About the Hotel"
+msgstr "Об отеле"
+
+msgid "Amenities"
+msgstr "Удобства"
+
+msgid "Room Types"
+msgstr "Типы номеров"
+
+msgid "Capacity"
+msgstr "Вместимость"
+
+msgid "Guest Reviews"
+msgstr "Отзывы гостей"
+
+msgid "Check Availability"
+msgstr "Проверить наличие"
+
+msgid "Check-in"
+msgstr "Заезд"
+
+msgid "Check-out"
+msgstr "Выезд"
+
+msgid "Explore Destinations"
+msgstr "Изучайте направления"
+
+msgid "Discover stunning countries and cities across all continents"
+msgstr "Откройте для себя удивительные страны и города на всех континентах"
+
+msgid "Cities to Explore"
+msgstr "Города для исследования"
+
+msgid "Travel Information"
+msgstr "Туристическая информация"
+
+msgid "Best time to visit"
+msgstr "Лучшее время для посещения"
+
+msgid "Visa Information"
+msgstr "Визовая информация"
+
+msgid "Plan a Trip Here"
+msgstr "Запланировать поездку"
+
+msgid "Top Attractions"
+msgstr "Главные достопримечательности"
+
+msgid "Entry"
+msgstr "Вход"
+
+msgid "View on map"
+msgstr "Посмотреть на карте"
+
+msgid "Hotels in"
+msgstr "Отели в"
+
+msgid "Tours Including"
+msgstr "Туры, включающие"
+
+msgid "Timezone"
+msgstr "Часовой пояс"
+
+msgid "All destinations"
+msgstr "Все направления"
+
+msgid "Travel Guides & Tips"
+msgstr "Путеводители и советы"
+
+msgid "Expert advice, destination guides, and travel inspiration"
+msgstr "Экспертные советы, гиды по направлениям и вдохновение для путешествий"
+
+msgid "Read Article"
+msgstr "Читать статью"
+
+msgid "No articles found."
+msgstr "Статьи не найдены."
+
+msgid "Related Articles"
+msgstr "Похожие статьи"
+
+msgid "Plan Your Trip"
+msgstr "Запланируйте поездку"
+
+msgid "Ready to experience this destination?"
+msgstr "Готовы посетить это направление?"
+
+msgid "MICE & Corporate Travel"
+msgstr "MICE и корпоративные путешествия"
+
+msgid "Business Travel"
+msgstr "Деловые поездки"
+
+msgid ""
+"From international conferences to team-building retreats — we handle every "
+"detail."
+msgstr ""
+"От международных конференций до командообразующих ретритов — мы берём на "
+"себя каждую деталь."
+
+msgid "Request a Quote"
+msgstr "Запросить коммерческое предложение"
+
+msgid "No packages available."
+msgstr "Нет доступных пакетов."
+
+msgid "Need a Custom Corporate Package?"
+msgstr "Нужен индивидуальный корпоративный пакет?"
+
+msgid "Our MICE specialists will design a bespoke program for your company."
+msgstr ""
+"Наши специалисты по MICE разработают индивидуальную программу для вашей "
+"компании."
+
+msgid "Talk to a Specialist"
+msgstr "Поговорить со специалистом"
+
+msgid "Package Includes"
+msgstr "Пакет включает"
+
+msgid "Min participants"
+msgstr "Мин. участников"
+
+msgid "Max participants"
+msgstr "Макс. участников"
+
+msgid "Booking Confirmed!"
+msgstr "Бронирование подтверждено!"
+
+msgid ""
+"Thank you for booking with Travel Pro. A confirmation email has been sent to"
+msgstr ""
+"Спасибо за бронирование в Travel Pro. Письмо с подтверждением отправлено на"
+
+msgid "Confirmation Number"
+msgstr "Номер подтверждения"
+
+msgid "Customer"
+msgstr "Клиент"
+
+msgid "Travel date"
+msgstr "Дата поездки"
+
+msgid "Travelers"
+msgstr "Путешественники"
+
+msgid "Browse More Tours"
+msgstr "Смотреть другие туры"
+
+msgid "Back to Home"
+msgstr "Вернуться на главную"
+
+msgid "I agree to the Terms & Conditions and Privacy Policy"
+msgstr "Я согласен с Условиями и Политикой конфиденциальности"
+
+msgid "Confirm Booking"
+msgstr "Подтвердить бронирование"
+
+msgid "Tell us about your dream trip and we'll create a custom itinerary."
+msgstr ""
+"Расскажите о вашей мечте-путешествии, и мы создадим индивидуальный маршрут."
+
+msgid "What Our Travelers Say"
+msgstr "Что говорят наши путешественники"
+
+msgid "Genuine reviews from verified customers worldwide"
+msgstr "Подлинные отзывы от проверенных клиентов по всему миру"
+
+msgid "No reviews found."
+msgstr "Отзывы не найдены."
+
+msgid "No reviews yet — be the first to write one!"
+msgstr "Отзывов пока нет — станьте первым!"
+
+msgid "Share your experience"
+msgstr "Поделитесь впечатлениями"
+
+msgid "Write a review and help other travelers"
+msgstr "Напишите отзыв и помогите другим путешественникам"
+
+msgid "About Us"
+msgstr "О нас"
+
+msgid "Our Story"
+msgstr "Наша история"
+
+msgid "About Travel Pro"
+msgstr "О Travel Pro"
+
+msgid ""
+"For over 15 years, we've been connecting passionate travelers with "
+"extraordinary destinations across the globe."
+msgstr ""
+"Более 15 лет мы связываем увлечённых путешественников с удивительными "
+"направлениями по всему миру."
+
+msgid "Our Mission"
+msgstr "Наша миссия"
+
+msgid ""
+"To inspire and enable people to experience the world's cultures, landscapes,"
+" and communities through expertly crafted travel experiences — with a "
+"commitment to sustainability, authenticity, and excellence."
+msgstr ""
+"Вдохновлять людей и давать им возможность познавать культуры, природу и "
+"сообщества мира через мастерски созданные путешествия — с обязательством "
+"перед устойчивым развитием, аутентичностью и совершенством."
+
+msgid "Tour Packages"
+msgstr "Туристические пакеты"
+
+msgid "Our Values"
+msgstr "Наши ценности"
+
+msgid "Sustainability"
+msgstr "Устойчивость"
+
+msgid ""
+"We partner with eco-conscious operators and promote responsible tourism."
+msgstr ""
+"Мы сотрудничаем с экологически сознательными операторами и продвигаем "
+"ответственный туризм."
+
+msgid "Authenticity"
+msgstr "Аутентичность"
+
+msgid "We create genuine local experiences, not just tourist attractions."
+msgstr ""
+"Мы создаём настоящий местный опыт, а не просто туристические "
+"достопримечательности."
+
+msgid "Excellence"
+msgstr "Совершенство"
+
+msgid "Every detail is carefully curated to exceed your expectations."
+msgstr "Каждая деталь тщательно продуманна, чтобы превзойти ваши ожидания."
+
+msgid "Ready to Start Your Journey?"
+msgstr "Готовы начать своё путешествие?"
+
+msgid "Let our experts create your perfect travel experience."
+msgstr "Пусть наши эксперты создадут для вас идеальный опыт путешествия."
+
+msgid "Get in Touch"
+msgstr "Связаться"
+
+msgid "We'd love to hear from you and help plan your perfect trip"
+msgstr ""
+"Мы будем рады услышать вас и помочь спланировать идеальное путешествие"
+
+msgid "Send Us a Message"
+msgstr "Отправьте нам сообщение"
+
+msgid "First Name"
+msgstr "Имя"
+
+msgid "Last Name"
+msgstr "Фамилия"
+
+msgid "Message"
+msgstr "Сообщение"
+
+msgid "Send Message"
+msgstr "Отправить сообщение"
+
+msgid "Contact Information"
+msgstr "Контактная информация"
+
+msgid "Office Address"
+msgstr "Адрес офиса"
+
+msgid "Social Media"
+msgstr "Социальные сети"
+
+msgid "Welcome Back"
+msgstr "Добро пожаловать обратно"
+
+msgid "Sign in to manage your bookings and profile"
+msgstr "Войдите, чтобы управлять бронированиями и профилем"
+
+msgid "Email address"
+msgstr "Адрес электронной почты"
+
+msgid "Password"
+msgstr "Пароль"
+
+msgid "Forgot password?"
+msgstr "Забыли пароль?"
+
+msgid "Keep me signed in"
+msgstr "Запомнить меня"
+
+msgid "Don't have an account?"
+msgstr "Нет учётной записи?"
+
+msgid "Create one"
+msgstr "Создать"
+
+msgid "Your information is secured with SSL encryption."
+msgstr "Ваши данные защищены SSL-шифрованием."
+
+msgid "Create Account"
+msgstr "Создать аккаунт"
+
+msgid "Create Your Account"
+msgstr "Создайте свой аккаунт"
+
+msgid "Join thousands of travelers exploring the world"
+msgstr "Присоединяйтесь к тысячам путешественников, исследующих мир"
+
+msgid "At least 8 characters"
+msgstr "Не менее 8 символов"
+
+msgid "Confirm password"
+msgstr "Подтвердите пароль"
+
+msgid "Repeat your password"
+msgstr "Повторите пароль"
+
+msgid "By registering you agree to our"
+msgstr "Регистрируясь, вы соглашаетесь с нашими"
+
+msgid "Terms"
+msgstr "Условиями"
+
+msgid "Privacy Policy"
+msgstr "Политикой конфиденциальности"
+
+msgid "Already have an account?"
+msgstr "Уже есть аккаунт?"
+
+msgid "My Profile"
+msgstr "Мой профиль"
+
+msgid "Dashboard"
+msgstr "Панель управления"
+
+msgid "My Bookings"
+msgstr "Мои бронирования"
+
+msgid "Saved Tours"
+msgstr "Сохранённые туры"
+
+msgid "Sign Out"
+msgstr "Выйти"
+
+msgid "Ref"
+msgstr "Реф"
+
+msgid "Tour / Hotel"
+msgstr "Тур / Отель"
+
+msgid "No bookings yet."
+msgstr "Пока нет бронирований."
+
+msgid "No saved tours yet."
+msgstr "Пока нет сохранённых туров."
+
+msgid "Avatar"
+msgstr "Аватар"
+
+msgid "Bio"
+msgstr "Биография"
+
+msgid "Date of birth"
+msgstr "Дата рождения"
+
+msgid "Preferred language"
+msgstr "Предпочтительный язык"
+
+msgid "Saved tours"
+msgstr "Сохранённые туры"
+
+msgid "Newsletter subscribed"
+msgstr "Подписан на рассылку"
+
+msgid "User profile"
+msgstr "Профиль пользователя"
+
+msgid "User profiles"
+msgstr "Профили пользователей"
+
+msgid "Draft"
+msgstr "Черновик"
+
+msgid "Submitted"
+msgstr "Отправлено"
+
+msgid "Confirmed"
+msgstr "Подтверждено"
+
+msgid "Cancelled"
+msgstr "Отменено"
+
+msgid "Completed"
+msgstr "Завершено"
+
+msgid "Tour Booking"
+msgstr "Бронирование тура"
+
+msgid "Hotel Booking"
+msgstr "Бронирование отеля"
+
+msgid "Corporate / MICE"
+msgstr "Корпоратив / MICE"
+
+msgid "Custom Trip"
+msgstr "Индивидуальная поездка"
+
+msgid "Referral"
+msgstr "Реферал"
+
+msgid "Economy (< $500)"
+msgstr "Эконом (< $500)"
+
+msgid "Standard ($500 – $1,500)"
+msgstr "Стандарт ($500 – $1,500)"
+
+msgid "Premium ($1,500 – $3,000)"
+msgstr "Премиум ($1,500 – $3,000)"
+
+msgid "Luxury (> $3,000)"
+msgstr "Люкс (> $3,000)"
+
+msgid "Inquiry type"
+msgstr "Тип запроса"
+
+msgid "Tour departure"
+msgstr "Отправление тура"
+
+msgid "First name"
+msgstr "Имя"
+
+msgid "Last name"
+msgstr "Фамилия"
+
+msgid "Country of origin"
+msgstr "Страна происхождения"
+
+msgid "Preferred travel date"
+msgstr "Предпочтительная дата поездки"
+
+msgid "Number of adults"
+msgstr "Количество взрослых"
+
+msgid "Number of children"
+msgstr "Количество детей"
+
+msgid "Special requests"
+msgstr "Особые пожелания"
+
+msgid "Budget range"
+msgstr "Диапазон бюджета"
+
+msgid "Source"
+msgstr "Источник"
+
+msgid "Assigned to"
+msgstr "Назначено"
+
+msgid "Internal notes"
+msgstr "Внутренние заметки"
+
+msgid "Visible to staff only"
+msgstr "Видно только персоналу"
+
+msgid "Created from IP"
+msgstr "Создано с IP"
+
+msgid "Confirmation number"
+msgstr "Номер подтверждения"
+
+msgid "Created at"
+msgstr "Создано"
+
+msgid "Updated at"
+msgstr "Обновлено"
+
+msgid "SEO title"
+msgstr "SEO заголовок"
+
+msgid "SEO description"
+msgstr "SEO описание"
+
+msgid "Display order"
+msgstr "Порядок отображения"
+
+msgid "Flag image"
+msgstr "Изображение флага"
+
+msgid "Cover image"
+msgstr "Обложка"
+
+msgid "Overview"
+msgstr "Обзор"
+
+msgid "Visa information"
+msgstr "Визовая информация"
+
+msgid "Official language"
+msgstr "Официальный язык"
+
+msgid "Nature"
+msgstr "Природа"
+
+msgid "Culture & Heritage"
+msgstr "Культура и наследие"
+
+msgid "Adventure"
+msgstr "Приключения"
+
+msgid "Beach"
+msgstr "Пляж"
+
+msgid "City Sightseeing"
+msgstr "Городские достопримечательности"
+
+msgid "Museum"
+msgstr "Музей"
+
+msgid "Food & Drink"
+msgstr "Еда и напитки"
+
+msgid "Shopping"
+msgstr "Шопинг"
+
+msgid "Entertainment"
+msgstr "Развлечения"
+
+msgid "Religious Site"
+msgstr "Религиозное место"
+
+msgid "Entrance fee"
+msgstr "Входная плата"
+
+msgid "Opening hours"
+msgstr "Часы работы"
+
+msgid "Google Maps URL"
+msgstr "URL Google Maps"
+
+msgid "Attraction"
+msgstr "Достопримечательность"
+
+msgid "Attractions"
+msgstr "Достопримечательности"
+
+msgid "Population"
+msgstr "Население"
+
+msgid "Latitude"
+msgstr "Широта"
+
+msgid "Longitude"
+msgstr "Долгота"
+
+msgid "Tabler icon name"
+msgstr "Имя иконки Tabler"
+
+msgid "Tag"
+msgstr "Тег"
+
+msgid "Guide category"
+msgstr "Категория гида"
+
+msgid "Guide categories"
+msgstr "Категории гидов"
+
+msgid "Excerpt"
+msgstr "Краткое содержание"
+
+msgid "Reading time (min)"
+msgstr "Время чтения (мин)"
+
+msgid "Views count"
+msgstr "Количество просмотров"
+
+msgid "Published at"
+msgstr "Опубликовано"
+
+msgid "Article"
+msgstr "Статья"
+
+msgid "Articles"
+msgstr "Статьи"
+
+msgid "Hotel amenity"
+msgstr "Удобство отеля"
+
+msgid "Hotel amenities"
+msgstr "Удобства отеля"
+
+msgid "Budget"
+msgstr "Бюджетный"
+
+msgid "Standard"
+msgstr "Стандартный"
+
+msgid "Superior"
+msgstr "Супериор"
+
+msgid "Boutique"
+msgstr "Бутик"
+
+msgid "Resort"
+msgstr "Курорт"
+
+msgid "Hostel"
+msgstr "Хостел"
+
+msgid "Luxury"
+msgstr "Люкс"
+
+msgid "Stars"
+msgstr "Звёзды"
+
+msgid "Check-in time"
+msgstr "Время заезда"
+
+msgid "Check-out time"
+msgstr "Время выезда"
+
+msgid "Price from (per night)"
+msgstr "Цена от (за ночь)"
+
+msgid "Hotel images"
+msgstr "Фотографии отеля"
+
+msgid "Hotel image"
+msgstr "Фотография отеля"
+
+msgid "Single"
+msgstr "Одноместный"
+
+msgid "Double"
+msgstr "Двухместный"
+
+msgid "Twin"
+msgstr "Твин"
+
+msgid "Triple"
+msgstr "Тройной"
+
+msgid "Suite"
+msgstr "Люкс"
+
+msgid "Family Room"
+msgstr "Семейный номер"
+
+msgid "Deluxe"
+msgstr "Делюкс"
+
+msgid "Presidential Suite"
+msgstr "Президентский люкс"
+
+msgid "Room type"
+msgstr "Тип номера"
+
+msgid "Capacity (persons)"
+msgstr "Вместимость (чел.)"
+
+msgid "Price per night"
+msgstr "Цена за ночь"
+
+msgid "Comma-separated list"
+msgstr "Список через запятую"
+
+msgid "Available"
+msgstr "Доступен"
+
+msgid "Hotel room"
+msgstr "Номер отеля"
+
+msgid "Hotel rooms"
+msgstr "Номера отеля"
+
+msgid "Conference"
+msgstr "Конференция"
+
+msgid "Incentive Trip"
+msgstr "Инсентив-тур"
+
+msgid "Exhibition"
+msgstr "Выставка"
+
+msgid "Team Building"
+msgstr "Тимбилдинг"
+
+msgid "Corporate Retreat"
+msgstr "Корпоративный ретрит"
+
+msgid "Product Launch"
+msgstr "Запуск продукта"
+
+msgid "Package type"
+msgstr "Тип пакета"
+
+msgid "Package includes"
+msgstr "Пакет включает"
+
+msgid "Price per person (from)"
+msgstr "Цена за чел. (от)"
+
+msgid "Featured destinations"
+msgstr "Избранные направления"
+
+msgid "Corporate package"
+msgstr "Корпоративный пакет"
+
+msgid "Corporate packages"
+msgstr "Корпоративные пакеты"
+
+msgid "Pending moderation"
+msgstr "Ожидает модерации"
+
+msgid "Approved"
+msgstr "Одобрено"
+
+msgid "Rejected"
+msgstr "Отклонено"
+
+msgid "Tour Review"
+msgstr "Отзыв о туре"
+
+msgid "Hotel Review"
+msgstr "Отзыв об отеле"
+
+msgid "General Review"
+msgstr "Общий отзыв"
+
+msgid "Review type"
+msgstr "Тип отзыва"
+
+msgid "Registered user"
+msgstr "Зарегистрированный пользователь"
+
+msgid "Guest name"
+msgstr "Имя гостя"
+
+msgid "Guest country"
+msgstr "Страна гостя"
+
+msgid "Review title"
+msgstr "Заголовок отзыва"
+
+msgid "Review body"
+msgstr "Текст отзыва"
+
+msgid "Verified purchase"
+msgstr "Подтверждённая покупка"
+
+msgid "Set by staff for confirmed bookings"
+msgstr "Устанавливается персоналом для подтверждённых бронирований"
+
+msgid "Helpful votes"
+msgstr "Полезные голоса"
+
+msgid "Review"
+msgstr "Отзыв"
+
+msgid "Easy"
+msgstr "Лёгкий"
+
+msgid "Moderate"
+msgstr "Умеренный"
+
+msgid "Challenging"
+msgstr "Сложный"
+
+msgid "Min group size"
+msgstr "Мин. размер группы"
+
+msgid "Max group size"
+msgstr "Макс. размер группы"
+
+msgid "Price per person"
+msgstr "Цена за человека"
+
+msgid "Discount %"
+msgstr "Скидка %"
+
+msgid "What's included"
+msgstr "Что включено"
+
+msgid "What's excluded"
+msgstr "Что не включено"
+
+msgid "Important notes"
+msgstr "Важные примечания"
+
+msgid "Tour images"
+msgstr "Фотографии тура"
+
+msgid "Tour image"
+msgstr "Фотография тура"
+
+msgid "No meals"
+msgstr "Без питания"
+
+msgid "Breakfast"
+msgstr "Завтрак"
+
+msgid "Breakfast & Lunch"
+msgstr "Завтрак и обед"
+
+msgid "Breakfast & Dinner"
+msgstr "Завтрак и ужин"
+
+msgid "All meals"
+msgstr "Полный пансион"
+
+msgid "Day number"
+msgstr "Номер дня"
+
+msgid "Meals included"
+msgstr "Включённое питание"
+
+msgid "Accommodation"
+msgstr "Проживание"
+
+msgid "Transport"
+msgstr "Транспорт"
+
+msgid "Tour day"
+msgstr "День тура"
+
+msgid "Tour days"
+msgstr "Дни тура"
+
+msgid "Open for booking"
+msgstr "Открыто для бронирования"
+
+msgid "Closed"
+msgstr "Закрыто"
+
+msgid "Fully booked"
+msgstr "Полностью забронировано"
+
+msgid "Departure date"
+msgstr "Дата отправления"
+
+msgid "Return date"
+msgstr "Дата возвращения"
+
+msgid "Available seats"
+msgstr "Доступные места"
+
+msgid "Booked seats"
+msgstr "Забронированные места"
+
+msgid "Price override"
+msgstr "Переопределение цены"
+
+msgid "Tour departures"
+msgstr "Отправления тура"
+
+msgid "Icon (Tabler icon name)"
+msgstr "Иконка (имя Tabler)"
+
+msgid "Tour category"
+msgstr "Категория тура"
+
+msgid "Tour categories"
+msgstr "Категории туров"
+
+msgid "Search tours, destinations…"
+msgstr "Поиск туров, направлений…"
+
+msgid "Bookings"
+msgstr "Бронирования"
+
+msgid "Accounts"
+msgstr "Аккаунты"
+
+msgid "Core"
+msgstr "Основное"
+
+msgid "Domestic city"
+msgstr "Город внутреннего тура"
+
+msgid "Domestic cities"
+msgstr "Города внутренних туров"
+
+msgid "City image"
+msgstr "Изображение города"
+
+msgid "City images"
+msgstr "Изображения города"
+
+msgid "Admin login log"
+msgstr "Журнал входа администратора"
+
+msgid "Admin login logs"
+msgstr "Журналы входа администратора"
+
+msgid "Dashboard notification"
+msgstr "Уведомление панели"
+
+msgid "Dashboard notifications"
+msgstr "Уведомления панели"
+
+msgid "Tour stop"
+msgstr "Остановка тура"
+
+msgid "Tour stops"
+msgstr "Остановки тура"
+
+msgid "Information"
+msgstr "Информация"
+
+msgid "Nights"
+msgstr "Ночи"
+
+msgid "IP address"
+msgstr "IP-адрес"
+
+msgid "Operations"
+msgstr "Операции"
+
+msgid "Admin"
+msgstr "Администрирование"
+
+msgid "Site"
+msgstr "Сайт"
+
+msgid "View Site"
+msgstr "Открыть сайт"
+
+msgid "Superuser"
+msgstr "Суперпользователь"
+
+msgid "Staff"
+msgstr "Сотрудник"
+
+msgid "Manager"
+msgstr "Менеджер"
+
+msgid "Operator"
+msgstr "Оператор"
+
+msgid "pending"
+msgstr "в ожидании"
+
+msgid "Actions"
+msgstr "Действия"
+
+msgid "Edit"
+msgstr "Редактировать"
+
+msgid "Delete"
+msgstr "Удалить"
+
+msgid "View"
+msgstr "Просмотр"
+
+msgid "Save"
+msgstr "Сохранить"
+
+msgid "Cancel"
+msgstr "Отмена"
+
+msgid "Back"
+msgstr "Назад"
+
+msgid "Inactive"
+msgstr "Неактивный"
+
+msgid "stops"
+msgstr "остановок"
+
+msgid "Basic Information"
+msgstr "Основная информация"
+
+msgid "Delete this item?"
+msgstr "Удалить этот элемент?"
+
+msgid "Delete confirmation"
+msgstr "Подтверждение удаления"
+
+msgid ""
+"Are you sure you want to delete <strong>%(name)s</strong>? This action "
+"cannot be undone."
+msgstr "Удалить <strong>%(name)s</strong>? Это действие нельзя отменить."
+
+msgid "Showing %(start)s–%(end)s of %(total)s"
+msgstr "Показаны %(start)s–%(end)s из %(total)s"
+
+msgid "All status"
+msgstr "Все статусы"
+
+msgid "All types"
+msgstr "Все типы"
+
+msgid "Search…"
+msgstr "Поиск…"
+
+msgid "Search tours…"
+msgstr "Поиск туров…"
+
+msgid "Search hotels…"
+msgstr "Поиск отелей…"
+
+msgid "Search users…"
+msgstr "Поиск пользователей…"
+
+msgid "Search countries…"
+msgstr "Поиск стран…"
+
+msgid "Search articles…"
+msgstr "Поиск статей…"
+
+msgid "Search name, email, #…"
+msgstr "Поиск по имени, email, №…"
+
+msgid "Search title, name…"
+msgstr "Поиск по заголовку, имени…"
+
+msgid "No tours found."
+msgstr "Туры не найдены."
+
+msgid "No hotels found."
+msgstr "Отели не найдены."
+
+msgid "No countries found."
+msgstr "Страны не найдены."
+
+msgid "No users found."
+msgstr "Пользователи не найдены."
+
+msgid "No bookings found."
+msgstr "Бронирования не найдены."
+
+msgid "No domestic tours yet. Create one to get started."
+msgstr "Пока нет внутренних туров. Создайте первый."
+
+msgid "Pending"
+msgstr "В ожидании"
+
+msgid "This Month"
+msgstr "За месяц"
+
+msgid "Recent Bookings"
+msgstr "Последние бронирования"
+
+msgid "View all"
+msgstr "Все"
+
+msgid "Pending Reviews"
+msgstr "Отзывы на модерации"
+
+msgid "All caught up!"
+msgstr "Всё обработано!"
+
+msgid "New Tour"
+msgstr "Новый тур"
+
+msgid "New Hotel"
+msgstr "Новый отель"
+
+msgid "New Article"
+msgstr "Новая статья"
+
+msgid "Export CSV"
+msgstr "Экспорт CSV"
+
+msgid "Back to Tours"
+msgstr "Назад к турам"
+
+msgid "Save Tour"
+msgstr "Сохранить тур"
+
+msgid "Create Tour"
+msgstr "Создать тур"
+
+msgid "New Domestic Tour"
+msgstr "Новый внутренний тур"
+
+msgid "Create Domestic Tour"
+msgstr "Создать внутренний тур"
+
+msgid ""
+"Multi-city domestic tours (2 or more itinerary stops). These appear on the "
+"site's Domestic Tours page."
+msgstr ""
+"Мультигородские внутренние туры (2+ остановки). Отображаются на странице "
+"«Внутренние туры»."
+
+msgid "Itinerary (Route)"
+msgstr "Маршрут"
+
+msgid ""
+"Add the cities visited, in order. A domestic tour needs at least 2 stops."
+msgstr ""
+"Добавьте посещаемые города по порядку. Для внутреннего тура нужно минимум 2 "
+"остановки."
+
+msgid "Del"
+msgstr "Удал."
+
+msgid "Delete this stop"
+msgstr "Удалить остановку"
+
+msgid "Remove"
+msgstr "Убрать"
+
+msgid "Add stop"
+msgstr "Добавить остановку"
+
+msgid "Add day"
+msgstr "Добавить день"
+
+msgid "Delete this day"
+msgstr "Удалить этот день"
+
+msgid "Hide from site"
+msgstr "Скрыть с сайта"
+
+msgid "Show on site"
+msgstr "Показать на сайте"
+
+msgid "'%(name)s' is now visible on the site."
+msgstr "«%(name)s» теперь виден на сайте."
+
+msgid "'%(name)s' is now hidden from the site."
+msgstr "«%(name)s» теперь скрыт с сайта."
+
+msgid "Across Uzbekistan"
+msgstr "По Узбекистану"
+
+msgid "International Tours"
+msgstr "Международные туры"
+
+msgid "& Expert Tips"
+msgstr "и советы экспертов"
+
+msgid "Looking for multi-city tours across Uzbekistan?"
+msgstr "Ищете мультигородские туры по Узбекистану?"
+
+msgid "View Domestic Tours"
+msgstr "Смотреть внутренние туры"
+
+msgid "Looking for international tours?"
+msgstr "Ищете международные туры?"
+
+msgid "Tour Categories"
+msgstr "Категории туров"
+
+msgid "Categories"
+msgstr "Категории"
+
+msgid "Add Category"
+msgstr "Добавить категорию"
+
+msgid "Save Category"
+msgstr "Сохранить категорию"
+
+msgid "Back to Categories"
+msgstr "Назад к категориям"
+
+msgid "No categories yet."
+msgstr "Пока нет категорий."
+
+msgid "Icon"
+msgstr "Значок"
+
+msgid ""
+"These power the “Category” filter on the public tours page and the Tours "
+"mega-menu."
+msgstr ""
+"Они управляют фильтром «Категория» на странице туров и мега-меню «Туры»."
+
+msgid ""
+"Browse icon names at tabler.io/icons — use the name without the “ti ti-” "
+"prefix."
+msgstr ""
+"Названия значков — на tabler.io/icons; вводите имя без префикса «ti ti-»."
+
+msgid "Tabler icon name, e.g. compass, building, beach, chef-hat, paw."
+msgstr "Имя значка Tabler, напр.: compass, building, beach, chef-hat, paw."
+
+msgid "Leave blank to generate from the name."
+msgstr "Оставьте пустым, чтобы создать из названия."
+
+msgid "Category '%(name)s' created."
+msgstr "Категория «%(name)s» создана."
+
+msgid "Category '%(name)s' updated."
+msgstr "Категория «%(name)s» обновлена."
+
+msgid "Category '%(name)s' deleted."
+msgstr "Категория «%(name)s» удалена."
+
+msgid "Add Continent"
+msgstr "Добавить континент"
+
+msgid "Save Continent"
+msgstr "Сохранить континент"
+
+msgid "Back to Continents"
+msgstr "Назад к континентам"
+
+msgid "No continents yet."
+msgstr "Пока нет континентов."
+
+msgid "Continents group countries in the Destinations mega-menu and footer."
+msgstr "Континенты группируют страны в мега-меню «Направления» и в подвале."
+
+msgid "Continent '%(name)s' created."
+msgstr "Континент «%(name)s» создан."
+
+msgid "Continent '%(name)s' updated."
+msgstr "Континент «%(name)s» обновлён."
+
+msgid "Continent '%(name)s' deleted."
+msgstr "Континент «%(name)s» удалён."
+
+msgid ""
+"Optionally describe each day of the tour. It appears on the tour page when "
+"provided."
+msgstr ""
+"По желанию опишите каждый день тура. Отображается на странице тура, если "
+"заполнено."
+
+msgid "Domestic tour created."
+msgstr "Внутренний тур создан."
+
+msgid "Domestic tour updated."
+msgstr "Внутренний тур обновлён."
+
+msgid "Domestic tour saved."
+msgstr "Внутренний тур сохранён."
+
+msgid "Domestic tour '%(title)s' deleted."
+msgstr "Внутренний тур «%(title)s» удалён."
+
+msgid "Price/Night"
+msgstr "Цена/ночь"
+
+msgid "Hotel Details"
+msgstr "Данные отеля"
+
+msgid "Save Hotel"
+msgstr "Сохранить отель"
+
+msgid "Back to Hotels"
+msgstr "Назад к отелям"
+
+msgid "Create Hotel"
+msgstr "Создать отель"
+
+msgid "Hotel '%(name)s' created."
+msgstr "Отель «%(name)s» создан."
+
+msgid "Hotel '%(name)s' updated."
+msgstr "Отель «%(name)s» обновлён."
+
+msgid "Hotel '%(name)s' deleted."
+msgstr "Отель «%(name)s» удалён."
+
+msgid "Add Country"
+msgstr "Добавить страну"
+
+msgid "Country '%(name)s' created."
+msgstr "Страна «%(name)s» создана."
+
+msgid "Country '%(name)s' updated."
+msgstr "Страна «%(name)s» обновлена."
+
+msgid "Country '%(name)s' deleted."
+msgstr "Страна «%(name)s» удалена."
+
+msgid "Save Article"
+msgstr "Сохранить статью"
+
+msgid "Create Article"
+msgstr "Создать статью"
+
+msgid "Article '%(title)s' created."
+msgstr "Статья «%(title)s» создана."
+
+msgid "Article '%(title)s' updated."
+msgstr "Статья «%(title)s» обновлена."
+
+msgid "Article '%(title)s' deleted."
+msgstr "Статья «%(title)s» удалена."
+
+msgid "Tour '%(title)s' created."
+msgstr "Тур «%(title)s» создан."
+
+msgid "Tour '%(title)s' updated."
+msgstr "Тур «%(title)s» обновлён."
+
+msgid "Tour '%(title)s' deleted."
+msgstr "Тур «%(title)s» удалён."
+
+msgid "Edit: %(title)s"
+msgstr "Редактирование: %(title)s"
+
+msgid "Edit: %(name)s"
+msgstr "Редактирование: %(name)s"
+
+msgid "Tour/Hotel"
+msgstr "Тур/Отель"
+
+msgid "Booking"
+msgstr "Бронирование"
+
+msgid "Booking %(num)s"
+msgstr "Бронирование %(num)s"
+
+msgid "Customer Information"
+msgstr "Информация о клиенте"
+
+msgid "Adults"
+msgstr "Взрослые"
+
+msgid "Children"
+msgstr "Дети"
+
+msgid "Travel Date"
+msgstr "Дата поездки"
+
+msgid "Special Requests"
+msgstr "Особые пожелания"
+
+msgid "Internal Notes"
+msgstr "Внутренние заметки"
+
+msgid "Save Notes"
+msgstr "Сохранить заметки"
+
+msgid "Update Status"
+msgstr "Обновить статус"
+
+msgid "Email Customer"
+msgstr "Написать клиенту"
+
+msgid "Status updated to %(status)s."
+msgstr "Статус изменён на %(status)s."
+
+msgid "Internal notes saved."
+msgstr "Внутренние заметки сохранены."
+
+msgid "Approve"
+msgstr "Одобрить"
+
+msgid "Reject"
+msgstr "Отклонить"
+
+msgid "%(n)s pending"
+msgstr "%(n)s в ожидании"
+
+msgid "Review approved."
+msgstr "Отзыв одобрен."
+
+msgid "Review rejected."
+msgstr "Отзыв отклонён."
+
+msgid "Review deleted."
+msgstr "Отзыв удалён."
+
+msgid "Delete this review permanently? This action cannot be undone."
+msgstr "Удалить этот отзыв навсегда? Это действие нельзя отменить."
+
+msgid "Write a Review"
+msgstr "Написать отзыв"
+
+msgid "Submit Review"
+msgstr "Отправить отзыв"
+
+msgid "Your name"
+msgstr "Ваше имя"
+
+msgid "Tour (optional)"
+msgstr "Тур (необязательно)"
+
+msgid "Your review"
+msgstr "Ваш отзыв"
+
+msgid "Thank you! Your review will appear after moderation."
+msgstr "Спасибо! Ваш отзыв появится после модерации."
+
+msgid "Please correct the errors below and resubmit your review."
+msgstr "Пожалуйста, исправьте ошибки ниже и отправьте отзыв снова."
+
+msgid "Please choose the tour you are reviewing."
+msgstr "Пожалуйста, выберите тур, о котором вы пишете отзыв."
+
+msgid "Please choose the hotel you are reviewing."
+msgstr "Пожалуйста, выберите отель, о котором вы пишете отзыв."
+
+msgid "Order Added"
+msgstr "В порядке добавления"
+
+msgid "New User"
+msgstr "Новый пользователь"
+
+msgid "Create User"
+msgstr "Создать пользователя"
+
+msgid "Current Role"
+msgstr "Текущая роль"
+
+msgid "Change Role"
+msgstr "Изменить роль"
+
+msgid "Role"
+msgstr "Роль"
+
+msgid "Joined"
+msgstr "Зарегистрирован"
+
+msgid "Last Login"
+msgstr "Последний вход"
+
+msgid "Never"
+msgstr "Никогда"
+
+msgid "(you)"
+msgstr "(вы)"
+
+msgid "Cannot change own role"
+msgstr "Нельзя изменить свою роль"
+
+msgid "You cannot delete your own account"
+msgstr "Нельзя удалить свою учётную запись"
+
+msgid "You cannot delete your own account."
+msgstr "Нельзя удалить свою учётную запись."
+
+msgid "You cannot change your own role."
+msgstr "Нельзя изменить свою роль."
+
+msgid "Delete this user? This cannot be undone."
+msgstr "Удалить пользователя? Это нельзя отменить."
+
+msgid "Role Permissions"
+msgstr "Права ролей"
+
+msgid "Public site only, no dashboard access"
+msgstr "Только публичный сайт, без доступа к панели"
+
+msgid "Dashboard: view bookings & reviews only"
+msgstr "Панель: только просмотр бронирований и отзывов"
+
+msgid "Dashboard: full content management"
+msgstr "Панель: полное управление контентом"
+
+msgid "Full access including user management"
+msgstr "Полный доступ, включая управление пользователями"
+
+msgid "Account Details"
+msgstr "Данные учётной записи"
+
+msgid "The email address is also used as the login username."
+msgstr "Адрес email также используется как логин."
+
+msgid "Save Changes"
+msgstr "Сохранить изменения"
+
+msgid "Back to Users"
+msgstr "Назад к пользователям"
+
+msgid "New password"
+msgstr "Новый пароль"
+
+msgid "Leave blank to keep the current password."
+msgstr "Оставьте пустым, чтобы сохранить текущий пароль."
+
+msgid "Active (can log in)"
+msgstr "Активен (может входить)"
+
+msgid "A user with this email already exists."
+msgstr "Пользователь с таким email уже существует."
+
+msgid "Another user with this email already exists."
+msgstr "Другой пользователь с таким email уже существует."
+
+msgid "Unknown role."
+msgstr "Неизвестная роль."
+
+msgid "User %(email)s created with role '%(role)s'."
+msgstr "Пользователь %(email)s создан с ролью «%(role)s»."
+
+msgid "User %(email)s updated."
+msgstr "Пользователь %(email)s обновлён."
+
+msgid "User %(email)s deleted."
+msgstr "Пользователь %(email)s удалён."
+
+msgid "Role for %(email)s updated to '%(role)s'."
+msgstr "Роль для %(email)s изменена на «%(role)s»."
+
+msgid "User — public site only"
+msgstr "Пользователь — только публичный сайт"
+
+msgid "Operator — bookings & reviews"
+msgstr "Оператор — бронирования и отзывы"
+
+msgid "Manager — full content management"
+msgstr "Менеджер — полное управление контентом"
+
+msgid "Superuser — full access"
+msgstr "Суперпользователь — полный доступ"
+
+msgid "Add City"
+msgstr "Добавить город"
+
+msgid "Save City"
+msgstr "Сохранить город"
+
+msgid "City '%(name)s' created."
+msgstr "Город «%(name)s» создан."
+
+msgid "City '%(name)s' updated."
+msgstr "Город «%(name)s» обновлён."
+
+msgid "City '%(name)s' deleted."
+msgstr "Город «%(name)s» удалён."
+
+msgid ""
+"Domestic (Uzbek) cities. These are the stops you can pick when building a "
+"domestic tour route."
+msgstr ""
+"Внутренние (узбекские) города. Их можно выбирать как остановки при "
+"составлении маршрута внутреннего тура."
+
+msgid "No cities yet. Add one to build domestic tour routes."
+msgstr ""
+"Пока нет городов. Добавьте город для составления маршрутов внутренних туров."
+
+msgid ""
+"The city is added under Uzbekistan and becomes selectable in domestic tour "
+"routes."
+msgstr ""
+"Город добавляется в Узбекистан и становится доступным для выбора в маршрутах"
+" внутренних туров."
+
+msgid "Hero Images"
+msgstr "Фоновые изображения"
+
+msgid "Add Hero Image"
+msgstr "Добавить фон"
+
+msgid "Edit Hero Image"
+msgstr "Редактировать фон"
+
+msgid "Hero image added."
+msgstr "Фоновое изображение добавлено."
+
+msgid "Hero image updated."
+msgstr "Фоновое изображение обновлено."
+
+msgid "Hero image deleted."
+msgstr "Фоновое изображение удалено."
+
+msgid "All pages"
+msgstr "Все страницы"
+
+msgid "Page"
+msgstr "Страница"
+
+msgid "Alt text"
+msgstr "Альт-текст"
+
+msgid ""
+"Rotating background images for page heroes. Add several images to the same "
+"page and they cross-fade automatically."
+msgstr ""
+"Сменяющиеся фоновые изображения для hero-блоков страниц. Добавьте несколько "
+"изображений одной странице — они будут плавно чередоваться."
+
+msgid "No hero images yet. Add a few to a page to start the slideshow."
+msgstr ""
+"Пока нет фоновых изображений. Добавьте несколько на страницу, чтобы "
+"запустить слайд-шоу."
+
+msgid "Which page's hero slideshow this image belongs to."
+msgstr "К слайд-шоу какой страницы относится это изображение."

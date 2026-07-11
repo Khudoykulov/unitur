@@ -1,0 +1,26 @@
+{% load i18n %}
+{% comment %}
+One gallery tile. Params:
+  img      — CityImage instance
+  city     — parent city (for alt fallback)
+  ratio    — aspect class for the equal-grid layouts (e.g. "aspect-[4/3]")
+  mosaic   — True in the 4+ mosaic layout (tile fills its grid cell)
+  feature  — True for the first tile in the mosaic (spans 2×2)
+Opens the shared #city-lightbox via its data-* attributes (vanilla JS).
+{% endcomment %}
+<div class="gallery-item group relative cursor-pointer overflow-hidden rounded-xl bg-gray-100 shadow-sm hover:shadow-lg transition-shadow
+            {% if mosaic %}h-full{% if feature %} col-span-2 row-span-2{% endif %}{% else %}{{ ratio }}{% endif %}"
+     data-src="{{ img.image.url }}"
+     data-caption="{{ img.caption }}"
+     data-description="{{ img.description }}">
+  <img src="{{ img.image.url }}" alt="{{ img.caption|default:city.name }}" loading="lazy"
+       class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105">
+  <span class="absolute top-2 right-2 w-8 h-8 rounded-full bg-black/40 text-white/0 group-hover:text-white flex items-center justify-center transition">
+    <i class="ti ti-zoom-in text-sm"></i>
+  </span>
+  {% if img.caption %}
+  <div class="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/70 to-transparent px-3 py-2 opacity-0 group-hover:opacity-100 transition-opacity">
+    <p class="text-white text-sm font-medium line-clamp-1">{{ img.caption }}</p>
+  </div>
+  {% endif %}
+</div>

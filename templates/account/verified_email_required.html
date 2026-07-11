@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+{% load i18n %}
+
+{% block title %}{% trans "Email Verification Required" %} | {{ SITE_NAME }}{% endblock %}
+
+{% block content %}
+<div class="min-h-screen bg-pattern-subtle-blue flex items-center justify-center px-4 py-20">
+  <div class="w-full max-w-sm text-center">
+    <div class="bg-white rounded-2xl shadow-sm border border-gray-100 p-10">
+      <div class="w-16 h-16 bg-amber-100 rounded-full flex items-center justify-center mx-auto mb-5">
+        <i class="ti ti-mail-exclamation text-amber-600 text-2xl"></i>
+      </div>
+      <h1 class="text-xl font-serif font-bold text-dark mb-2">{% trans "Verify Your Email" %}</h1>
+      <p class="text-gray-500 text-sm mb-6">
+        {% trans "Please verify your email address before accessing this page. Check your inbox for a verification link." %}
+      </p>
+      <a href="{% url 'account_email' %}" class="btn-primary w-full py-3 block mb-3">
+        {% trans "Resend Verification Email" %}
+      </a>
+      <a href="{% url 'account_logout' %}" class="text-sm text-gray-400 hover:text-primary transition">
+        {% trans "Sign Out" %}
+      </a>
+    </div>
+  </div>
+</div>
+{% endblock %}

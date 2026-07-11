@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="{{ LANGUAGE_CODE|default:'en' }}" x-data="{ mobileMenuOpen: false, searchOpen: false }" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+  {# ── SEO meta ─────────────────────────────────────────────── #}
+  <title>{% block title %}{% if seo_title %}{{ seo_title }}{% elif page_title %}{{ page_title }} | {{ SITE_NAME }}{% else %}{{ SITE_NAME }} – {{ SITE_TAGLINE }}{% endif %}{% endblock %}</title>
+  <meta name="description" content="{% block meta_description %}{% if seo_description %}{{ seo_description }}{% else %}{{ SITE_TAGLINE }}{% endif %}{% endblock %}">
+  <link rel="canonical" href="{{ request.build_absolute_uri }}">
+
+  {# ── Open Graph ────────────────────────────────────────────── #}
+  <meta property="og:type" content="{% block og_type %}website{% endblock %}">
+  <meta property="og:title" content="{% block og_title %}{{ SITE_NAME }}{% endblock %}">
+  <meta property="og:description" content="{% block og_description %}{{ SITE_TAGLINE }}{% endblock %}">
+  <meta property="og:url" content="{{ request.build_absolute_uri }}">
+  <meta property="og:image" content="{% block og_image %}{% endblock %}">
+  <meta property="og:site_name" content="{{ SITE_NAME }}">
+
+  {# ── Twitter Card ──────────────────────────────────────────── #}
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="{% block twitter_title %}{{ SITE_NAME }}{% endblock %}">
+  <meta name="twitter:description" content="{% block twitter_description %}{{ SITE_TAGLINE }}{% endblock %}">
+  <meta name="twitter:image" content="{% block twitter_image %}{% endblock %}">
+
+  {# ── Fonts (preload with display=swap for speed) ──────────── #}
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@300;400;500;600;700&family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700;9..144,italic@1,600&display=swap" rel="stylesheet">
+
+  {# ── CSS (all local, no CDN blocking) ────────────────────── #}
+  {% load static %}
+  <link rel="stylesheet" href="{% static 'css/tailwind.css' %}">
+  <link rel="stylesheet" href="{% static 'css/tabler-icons.min.css' %}">
+  <link rel="stylesheet" href="{% static 'css/custom.css' %}">
+  <link rel="stylesheet" href="{% static 'css/brand.css' %}">
+  <link rel="stylesheet" href="{% static 'css/admin-access.css' %}">
+  <link rel="stylesheet" href="{% static 'css/transition.css' %}">
+
+  {% block extra_head %}{% endblock %}
+</head>
+
+<body class="font-sans text-gray-800 bg-white antialiased" x-cloak>
+
+  {# ── Page-transition overlay (brand-pattern wipe) ──────────── #}
+  <div id="page-transition-overlay" class="page-transition-overlay">
+    <div class="page-transition-pattern"></div>
+  </div>
+
+  {# ── Navbar ────────────────────────────────────────────────── #}
+  {% include "components/navbar.html" %}
+
+  {# ── Messages ──────────────────────────────────────────────── #}
+  {% if messages %}
+  <div class="fixed top-20 right-4 z-50 space-y-2" id="messages">
+    {% for message in messages %}
+    {% if message.message == 'invalid_staff_login' %}{# internal flag for the hidden staff modal — not a user-facing toast #}{% else %}
+    <div x-data="{ show: true }" x-show="show" x-transition
+         class="flex items-center gap-3 px-4 py-3 rounded-lg shadow-lg
+                {% if message.tags == 'error' %}bg-red-600{% elif message.tags == 'warning' %}bg-amber-500{% else %}bg-primary{% endif %}
+                text-white text-sm max-w-sm">
+      <span>{{ message }}</span>
+      <button @click="show = false" class="ml-auto opacity-70 hover:opacity-100"><i class="ti ti-x"></i></button>
+    </div>
+    {% endif %}
+    {% endfor %}
+  </div>
+  {% endif %}
+
+  {# ── Main content ─────────────────────────────────────────── #}
+  <main>
+    {% block content %}{% endblock %}
+  </main>
+
+  {# ── Footer ────────────────────────────────────────────────── #}
+  {% include "components/footer.html" %}
+
+  {# ── Cookie banner ─────────────────────────────────────────── #}
+  {% include "components/cookie_banner.html" %}
+
+  {# ── Schema.org JSON-LD ────────────────────────────────────── #}
+  {% block schema_json %}{% endblock %}
+
+  {# ── Alpine.js (local copy, no CDN latency) ──────────────── #}
+  <script defer src="{% static 'js/alpine.min.js' %}"></script>
+
+  {# ── Custom JS ─────────────────────────────────────────────── #}
+  <script src="{% static 'js/main.js' %}"></script>
+
+  {# ── Page-transition wipe ──────────────────────────────────── #}
+  <script src="{% static 'js/page-transition.js' %}"></script>
+
+  {# ── Hidden staff-access modal (revealed via Ctrl+Shift+A) ──── #}
+  {% load i18n %}
+  <div id="admin-access-modal" class="admin-access-modal" hidden>
+    <div class="admin-access-backdrop"></div>
+    <form id="admin-access-form" class="admin-access-form" method="post" action="{% url 'accounts:staff-login' %}">
+      {% csrf_token %}
+      <button type="button" class="admin-access-close" aria-label="Close">&times;</button>
+      <h2>Staff Login</h2>
+      <input type="text" name="username" placeholder="Username" autocomplete="off" autocapitalize="off" spellcheck="false" required>
+      <input type="password" name="password" placeholder="Password" autocomplete="off" required>
+      <button type="submit">{% trans "Log in" %}</button>
+      <p class="admin-access-error" hidden>{% trans "Invalid username or password." %}</p>
+    </form>
+  </div>
+  <script src="{% static 'js/admin-access.js' %}"></script>
+  {% if messages %}
+    {% for message in messages %}
+      {% if message.message == 'invalid_staff_login' %}
+      <script>
+        window.addEventListener('DOMContentLoaded', function () {
+          var modal = document.getElementById('admin-access-modal');
+          if (!modal) return;
+          modal.hidden = false;
+          var err = modal.querySelector('.admin-access-error');
+          if (err) err.hidden = false;
+          var username = modal.querySelector('input[name=username]');
+          if (username) username.focus();
+        });
+      </script>
+      {% endif %}
+    {% endfor %}
+  {% endif %}
+
+  {% block extra_js %}{% endblock %}
+</body>
+</html>

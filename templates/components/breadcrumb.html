@@ -1,0 +1,24 @@
+{% load i18n %}
+{# Usage: {% include "components/breadcrumb.html" with breadcrumbs=breadcrumbs %} #}
+{# breadcrumbs: list of dicts {"name": "...", "url": "..."}, last item has url=None #}
+<nav aria-label="Breadcrumb" class="py-3">
+  <ol class="flex flex-wrap items-center gap-1 text-sm text-gray-500" itemscope itemtype="https://schema.org/BreadcrumbList">
+    <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+      <a href="/" itemprop="item" class="hover:text-primary transition"><span itemprop="name">{% trans "Home" %}</span></a>
+      <meta itemprop="position" content="1">
+    </li>
+    {% for crumb in breadcrumbs %}
+    <li class="flex items-center gap-1">
+      <i class="ti ti-chevron-right text-xs"></i>
+      {% if crumb.url %}
+      <span itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+        <a href="{{ crumb.url }}" itemprop="item" class="hover:text-primary transition"><span itemprop="name">{{ crumb.name }}</span></a>
+        <meta itemprop="position" content="{{ forloop.counter|add:1 }}">
+      </span>
+      {% else %}
+      <span class="text-dark font-medium" aria-current="page">{{ crumb.name }}</span>
+      {% endif %}
+    </li>
+    {% endfor %}
+  </ol>
+</nav>

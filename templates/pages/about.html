@@ -1,0 +1,104 @@
+{% extends "base.html" %}
+{% load i18n static %}
+
+{% block title %}{% trans "About Us" %} | {{ SITE_NAME }}{% endblock %}
+
+{% block content %}
+<div class="pt-20 lg:pt-28 bg-pattern-subtle-blue">
+  {# Hero — subtle-blue strip #}
+  <div class="relative py-24 text-center overflow-hidden bg-pattern-hero">
+    <div class="relative z-10 max-w-3xl mx-auto px-4">
+      <p class="hero-eyebrow text-sm font-semibold uppercase tracking-widest mb-3">{% trans "Our Story" %}</p>
+      <h1 class="text-5xl font-serif font-bold mb-4">{% trans "About UNITUR" %}</h1>
+      <p class="hero-subtitle max-w-2xl mx-auto text-lg">
+        {% trans "For over 15 years, we've been connecting passionate travelers with extraordinary destinations across the globe." %}
+      </p>
+    </div>
+  </div>
+
+  {# Mission #}
+  <section class="py-20 bg-white">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <h2 class="text-3xl font-serif font-bold text-dark mb-6">{% trans "Our Mission" %}</h2>
+      <p class="text-gray-700 text-xl leading-relaxed">
+        {% trans "To inspire and enable people to experience the world's cultures, landscapes, and communities through expertly crafted travel experiences — with a commitment to sustainability, authenticity, and excellence." %}
+      </p>
+    </div>
+  </section>
+
+  {# Stats #}
+  <section class="bg-accent py-16">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+        <div>
+          <p class="text-5xl font-serif font-bold text-primary mb-2">50K+</p>
+          <p class="text-gray-500">{% trans "Happy Travelers" %}</p>
+        </div>
+        <div>
+          <p class="text-5xl font-serif font-bold text-primary mb-2">60+</p>
+          <p class="text-gray-500">{% trans "Countries" %}</p>
+        </div>
+        <div>
+          <p class="text-5xl font-serif font-bold text-primary mb-2">300+</p>
+          <p class="text-gray-500">{% trans "Tour Packages" %}</p>
+        </div>
+        <div>
+          <p class="text-5xl font-serif font-bold text-primary mb-2">15+</p>
+          <p class="text-gray-500">{% trans "Years Experience" %}</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  {# Values #}
+  <section class="py-20 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-12">
+        <h2 class="text-3xl font-serif font-bold text-dark">{% trans "Our Values" %}</h2>
+      </div>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        {% for value in values %}
+        <div class="bg-white rounded-2xl shadow-soft border border-brand-blueLight/30 p-8 flex flex-col items-center text-center gap-3 hover:shadow-card hover:-translate-y-1 transition-all duration-300">
+          <div class="w-16 h-16 rounded-full bg-primary flex items-center justify-center shadow-sm">
+            <i class="ti ti-{{ value.icon }} text-white text-2xl"></i>
+          </div>
+          <h3 class="font-semibold text-dark text-xl mb-2">{{ value.title }}</h3>
+          <p class="text-gray-500 text-sm leading-relaxed">{{ value.text }}</p>
+        </div>
+        {% empty %}
+        <div class="bg-white rounded-2xl shadow-soft border border-brand-blueLight/30 p-8 flex flex-col items-center text-center gap-3 hover:shadow-card hover:-translate-y-1 transition-all duration-300">
+          <div class="w-16 h-16 rounded-full bg-primary flex items-center justify-center shadow-sm">
+            <i class="ti ti-leaf text-white text-2xl"></i>
+          </div>
+          <h3 class="font-semibold text-dark text-xl mb-2">{% trans "Sustainability" %}</h3>
+          <p class="text-gray-500 text-sm leading-relaxed">{% trans "We partner with eco-conscious operators and promote responsible tourism." %}</p>
+        </div>
+        <div class="bg-white rounded-2xl shadow-soft border border-brand-blueLight/30 p-8 flex flex-col items-center text-center gap-3 hover:shadow-card hover:-translate-y-1 transition-all duration-300">
+          <div class="w-16 h-16 rounded-full bg-primary flex items-center justify-center shadow-sm">
+            <i class="ti ti-heart text-white text-2xl"></i>
+          </div>
+          <h3 class="font-semibold text-dark text-xl mb-2">{% trans "Authenticity" %}</h3>
+          <p class="text-gray-500 text-sm leading-relaxed">{% trans "We create genuine local experiences, not just tourist attractions." %}</p>
+        </div>
+        <div class="bg-white rounded-2xl shadow-soft border border-brand-blueLight/30 p-8 flex flex-col items-center text-center gap-3 hover:shadow-card hover:-translate-y-1 transition-all duration-300">
+          <div class="w-16 h-16 rounded-full bg-primary flex items-center justify-center shadow-sm">
+            <i class="ti ti-star text-white text-2xl"></i>
+          </div>
+          <h3 class="font-semibold text-dark text-xl mb-2">{% trans "Excellence" %}</h3>
+          <p class="text-gray-500 text-sm leading-relaxed">{% trans "Every detail is carefully curated to exceed your expectations." %}</p>
+        </div>
+        {% endfor %}
+      </div>
+    </div>
+  </section>
+
+  {# CTA #}
+  <section class="bg-primary py-16 text-center text-white">
+    <h2 class="text-3xl font-serif font-bold mb-4">{% trans "Ready to Start Your Journey?" %}</h2>
+    <p class="text-white/80 mb-6">{% trans "Let our experts create your perfect travel experience." %}</p>
+    <a href="{% url 'bookings:inquiry' %}" class="bg-secondary hover:bg-secondary-dark text-white font-semibold px-8 py-3 rounded-lg transition">
+      {% trans "Contact Us" %}
+    </a>
+  </section>
+</div>
+{% endblock %}
