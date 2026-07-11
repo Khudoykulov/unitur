@@ -1,0 +1,148 @@
+===============================================================================
+                    TARJIMALARNI O'ZGARTIRISH QO'LLANMASI
+===============================================================================
+
+🌍 MAVJUD TILLAR:
+├── English (en) - Asl til
+├── O'zbekcha (uz)
+├── Русский (ru)
+├── Italiano (it)
+├── Español (es)
+└── 日本語 (ja)
+
+===============================================================================
+📝 USUL 1: ROSETTA ORQALI (ENG OSON VA TEZKOR)
+===============================================================================
+
+1️⃣ KIRISH:
+   URL: http://localhost:8000/rosetta/
+   Login: admin / superadmin
+
+2️⃣ TILNI TANLASH:
+   • O'zbek tilini tanlang: "Uzbek (uz)"
+   • Yoki boshqa til: Russian (ru), Italian (it), va h.k.
+
+3️⃣ TARJIMANI TOPISH:
+   • Search box'da qidiring: "Book Now"
+   • Yoki listni pastga scroll qiling
+   • Necha % tarjima qilinganini ko'rsatadi
+
+4️⃣ TAHRIRLASH:
+   • English: "Book Now"
+   • Uzbek: "Hozir band qiling" ← Bu yerda o'zgartiring
+   • Yangi: "Buyurtma berish" ← Yangi tarjima
+
+5️⃣ SAQLASH:
+   • "Save and translate next block" tugmasini bosing
+   • Darhol saytda ko'rinadi!
+
+===============================================================================
+📝 USUL 2: FAYL ORQALI (TEXNIK)
+===============================================================================
+
+1️⃣ FAYLNI OCHING:
+   locale/uz/LC_MESSAGES/django.po
+
+2️⃣ TOPISH VA O'ZGARTIRISH:
+
+   ESKI:
+   msgid "Book Now"
+   msgstr "Hozir band qiling"
+
+   YANGI:
+   msgid "Book Now"
+   msgstr "Buyurtma berish"
+
+3️⃣ COMPILE QILISH (MAJBURIY!):
+   Terminal'da ishga tushiring:
+
+   cd C:\Users\Diyorbek\OneDrive\Desktop\real project\unitur\unitur
+   source venv/Scripts/activate
+   python manage.py compilemessages
+
+4️⃣ SERVERNI QAYTA ISHGA TUSHIRISH:
+   Ctrl+C (server to'xtatish)
+   python manage.py runserver 8000
+
+===============================================================================
+🆕 YANGI MATN QO'SHISH (Developer uchun)
+===============================================================================
+
+1️⃣ HTML'DA MATN QO'SHISH:
+
+   {% load i18n %}
+
+   <h1>{% trans "Welcome" %}</h1>
+   <p>{% trans "This is new text" %}</p>
+
+2️⃣ TARJIMA FAYLLARINI YANGILASH:
+
+   python manage.py makemessages -l uz
+   python manage.py makemessages -l ru
+   python manage.py makemessages -a  (Barcha tillar)
+
+3️⃣ ROSETTA'DA TARJIMA QILISH:
+   http://localhost:8000/rosetta/
+   Yangi matnlar "Untranslated" bo'limida
+
+4️⃣ COMPILE:
+   python manage.py compilemessages
+
+===============================================================================
+🔧 KO'P UCHRAYDIGAN XATOLAR
+===============================================================================
+
+❌ XATO 1: Tarjima o'zgarmayapti
+   ✅ Yechim:
+      - python manage.py compilemessages
+      - Serverni qayta ishga tushiring
+      - Browser cache'ni tozalang (Ctrl+Shift+R)
+
+❌ XATO 2: Rosetta ochilmayapti
+   ✅ Yechim:
+      - Superuser sifatida kiring
+      - settings.py'da INSTALLED_APPS'da 'rosetta' bor ekanligini tekshiring
+
+❌ XATO 3: Yangi matn tarjima qilinmayapti
+   ✅ Yechim:
+      - HTML'da {% load i18n %} qo'shganingizni tekshiring
+      - {% trans "Text" %} to'g'ri yozilganligini tekshiring
+      - makemessages ishga tushiring
+
+===============================================================================
+💡 MASLAHATLAR
+===============================================================================
+
+✅ YAXSHI AMALIYOTLAR:
+   1. Rosetta'dan foydalaning - eng oson
+   2. Har bir o'zgarishdan keyin test qiling
+   3. Barcha 6 tilga tarjima qiling
+   4. Qisqa va aniq tarjima qiling
+   5. Kontekstga mos tarjima qiling
+
+✅ TARJIMA QUALITY CHECK:
+   • Grammatika to'g'rimi?
+   • Mazmuni bir xilmi?
+   • Juda uzun emas-mi? (tugma ichiga sig'adimi?)
+   • Professional va rasmiy ohangdami?
+
+===============================================================================
+📊 ROSETTA XUSUSIYATLARI
+===============================================================================
+
+✓ Real-time tarjima
+✓ Progress bar (necha % tarjima qilingan)
+✓ Search va filter
+✓ Untranslated matnlarni ko'rsatish
+✓ Auto-save
+✓ Bir nechta tilni bir vaqtda tahrirlash
+
+===============================================================================
+🔗 FOYDALI HAVOLALAR
+===============================================================================
+
+Rosetta: http://localhost:8000/rosetta/
+Admin: http://localhost:8000/admin/
+Dashboard: http://localhost:8000/dashboard/
+
+===============================================================================

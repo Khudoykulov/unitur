@@ -1,0 +1,76 @@
+/* =============================================================================
+   RESPONSIVE FIX - Katta ekranlar uchun to'g'rilash
+   ============================================================================= */
+
+/* Katta ekranlar uchun content kengroq bo'lsin */
+@media (min-width: 1536px) {
+  /* 2xl breakpoint (1536px va kattaroq) */
+  .max-w-7xl {
+    max-width: 90rem !important; /* 1440px -> 1600px ga ko'taramiz */
+  }
+
+  .max-w-6xl {
+    max-width: 85rem !important;
+  }
+
+  .max-w-5xl {
+    max-width: 80rem !important;
+  }
+}
+
+@media (min-width: 1920px) {
+  /* Full HD va kattaroq ekranlar */
+  .max-w-7xl {
+    max-width: 110rem !important; /* ~1760px */
+  }
+
+  .max-w-6xl {
+    max-width: 100rem !important;
+  }
+}
+
+@media (min-width: 2560px) {
+  /* 2K va 4K ekranlar */
+  .max-w-7xl {
+    max-width: 140rem !important; /* ~2240px */
+  }
+
+  .max-w-6xl {
+    max-width: 130rem !important;
+  }
+
+  /* Container padding'ni ham oshiramiz */
+  .px-4 {
+    padding-left: 2rem !important;
+    padding-right: 2rem !important;
+  }
+
+  .px-6 {
+    padding-left: 3rem !important;
+    padding-right: 3rem !important;
+  }
+}
+
+/* Font o'lchamlarini ham kattalashtir */
+@media (min-width: 1920px) {
+  html {
+    font-size: 18px; /* Base font size 16px -> 18px */
+  }
+}
+
+@media (min-width: 2560px) {
+  html {
+    font-size: 20px; /* 2K/4K uchun */
+  }
+}
+
+/* Hero section katta ekranlarda */
+@media (min-width: 1920px) {
+  .hero-heading {
+    font-size: 4.5rem !important;
+  }
+
+  .hero-subtitle {
+    font-size: 1.5rem !important;
+  }
+}
