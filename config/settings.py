@@ -94,32 +94,9 @@ MIDDLEWARE = [
     "apps.dashboard.middleware.DashboardAccessMiddleware",
 ]
 
-# Dev-only tooling — never active during tests, even if DEBUG=True.
+# Dev-only tooling (debug_toolbar disabled)
 if DEBUG and not TESTING:
-    INSTALLED_APPS += ["debug_toolbar", "django_extensions"]
-    MIDDLEWARE = ["debug_toolbar.middleware.DebugToolbarMiddleware"] + MIDDLEWARE
-    INTERNAL_IPS = ["127.0.0.1", "localhost"]
-    DEBUG_TOOLBAR_CONFIG = {
-        "SHOW_TOOLBAR_CALLBACK": lambda request: DEBUG,
-        "SHOW_COLLAPSED": True,
-    }
-    # Exclude TemplatesPanel — it monkey-patches Template.render() adding ~10
-    # frames per include, which exhausts the stack on complex pages with many
-    # nested templates.
-    DEBUG_TOOLBAR_PANELS = [
-        "debug_toolbar.panels.history.HistoryPanel",
-        "debug_toolbar.panels.versions.VersionsPanel",
-        "debug_toolbar.panels.timer.TimerPanel",
-        "debug_toolbar.panels.settings.SettingsPanel",
-        "debug_toolbar.panels.headers.HeadersPanel",
-        "debug_toolbar.panels.request.RequestPanel",
-        "debug_toolbar.panels.sql.SQLPanel",
-        "debug_toolbar.panels.staticfiles.StaticFilesPanel",
-        "debug_toolbar.panels.cache.CachePanel",
-        "debug_toolbar.panels.signals.SignalsPanel",
-        "debug_toolbar.panels.redirects.RedirectsPanel",
-        "debug_toolbar.panels.profiling.ProfilingPanel",
-    ]
+    INSTALLED_APPS += ["django_extensions"]
 
 # ── Dashboard / Admin security ──────────────────────────────────────────
 ADMIN_URL = config("ADMIN_URL", default="admin/")
