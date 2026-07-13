@@ -292,7 +292,7 @@ else:
             "KEY_PREFIX": "unitur",
         }
     }
-    SESSION_ENGINE = "django.contrib.sessions.backends.cache"
+    SESSION_ENGINE = "django.contrib.sessions.backends.db"
     SESSION_CACHE_ALIAS = "default"
 
 # ---------------------------------------------------------------------------
