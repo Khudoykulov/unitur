@@ -173,7 +173,7 @@ const mapTours = {{ map_tours_json|safe }};
 document.getElementById('tour-map') && (() => {
   const map = L.map('tour-map').setView([20, 0], 2);
   L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-    attribution: '© OpenStreetMap contributors'
+    attribution: '(c) OpenStreetMap contributors'
   }).addTo(map);
   mapTours.forEach(t => {
     L.marker([t.lat, t.lng]).addTo(map)

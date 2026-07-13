@@ -1,5 +1,5 @@
 {% extends "base.html" %}
-{% load i18n %}
+{% load i18n l10n %}
 
 {% block title %}{{ hotel.seo_title|default:hotel.name }} | {{ SITE_NAME }}{% endblock %}
 
@@ -151,10 +151,10 @@
 <style>#hotel-map { position: relative; z-index: 0; }</style>
 <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
 <script>
-const map = L.map('hotel-map').setView([{{ hotel.latitude }}, {{ hotel.longitude }}], 15);
+const map = L.map('hotel-map').setView([{{ hotel.latitude|unlocalize }}, {{ hotel.longitude|unlocalize }}], 15);
 L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png').addTo(map);
-L.marker([{{ hotel.latitude }}, {{ hotel.longitude }}]).addTo(map)
-  .bindPopup('<strong>{{ hotel.name }}</strong>');
+L.marker([{{ hotel.latitude|unlocalize }}, {{ hotel.longitude|unlocalize }}]).addTo(map)
+  .bindPopup('<strong>{{ hotel.name|escapejs }}</strong>');
 setTimeout(function () { map.invalidateSize(); }, 100);
 </script>
 {% endif %}

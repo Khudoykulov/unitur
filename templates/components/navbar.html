@@ -47,41 +47,24 @@
           </div>
         </div>
 
-        {# 3. Tours mega-menu — the label links straight to Domestic Tours (the #}
-        {#    site's focus); dropdown leads with the domestic group, international #}
-        {#    categories follow as the secondary group. #}
+        {# 3. Tours mega-menu #}
         <div class="relative" x-data="{ open: false }" @mouseenter="open=true" @mouseleave="open=false">
-          <a href="{% url 'ichki-turlar-list' %}" class="nav-link flex items-center gap-1 text-white">
+          <a href="{% url 'tours:list' %}" class="nav-link flex items-center gap-1 text-white">
             {% trans "Tours" %} <i class="ti ti-chevron-down text-base"></i>
           </a>
           <div x-show="open" x-transition:enter="transition ease-out duration-150"
                x-transition:enter-start="opacity-0 translate-y-1" x-transition:enter-end="opacity-100 translate-y-0"
                class="absolute left-0 top-full mt-2 w-64 bg-white rounded-xl shadow-xl border border-gray-100 p-4 z-50">
 
-            {# Group 1 — Across Uzbekistan #}
-            <p class="text-xs font-semibold text-gray-500 uppercase tracking-wide mb-2">{% trans "Across Uzbekistan" %}</p>
-            <a href="{% url 'ichki-turlar-list' %}"
-               class="flex items-center gap-2 px-3 py-2 rounded-lg text-gray-700 hover:bg-accent hover:text-primary text-sm font-medium">
-              <i class="ti ti-route text-secondary"></i> {% trans "Domestic Tours" %}
-            </a>
-            <a href="{% url 'hotels:list' %}"
+            {% for cat in nav_tour_categories %}
+            <a href="{% url 'tours:list' %}?category={{ cat.slug }}"
                class="flex items-center gap-2 px-3 py-2 rounded-lg text-gray-700 hover:bg-accent hover:text-primary text-sm">
-              <i class="ti ti-building text-secondary"></i> {% trans "Hotels" %}
+              <i class="ti ti-{{ cat.icon }} text-secondary"></i> {{ cat.name }}
             </a>
-
-            {# Group 2 — International categories #}
-            <div class="border-t mt-3 pt-3">
-              <p class="text-xs font-semibold text-gray-500 uppercase tracking-wide mb-2">{% trans "International Tours" %}</p>
-              {% for cat in nav_tour_categories %}
-              <a href="{% url 'tours:list' %}?category={{ cat.slug }}"
-                 class="flex items-center gap-2 px-3 py-2 rounded-lg text-gray-700 hover:bg-accent hover:text-primary text-sm">
-                <i class="ti ti-{{ cat.icon }} text-secondary"></i> {{ cat.name }}
-              </a>
-              {% endfor %}
-            </div>
+            {% endfor %}
 
             <div class="border-t mt-3 pt-3">
-              <a href="{% url 'tours:list' %}" class="text-primary font-medium text-sm hover:underline">{% trans "View all international tours" %} →</a>
+              <a href="{% url 'tours:list' %}" class="text-primary font-medium text-sm hover:underline">{% trans "View all tours" %} →</a>
             </div>
           </div>
         </div>
@@ -157,19 +140,11 @@
       <a href="{% url 'destinations:list' %}" @click="mobileOpen=false" class="flex items-center gap-3 px-3 py-2.5 rounded-xl text-gray-700 hover:bg-accent hover:text-primary font-medium transition-colors">
         <i class="ti ti-map-2 text-lg text-secondary w-5 text-center"></i>{% trans "Destinations" %}
       </a>
-      <a href="{% url 'ichki-turlar-list' %}" @click="mobileOpen=false" class="flex items-center gap-3 px-3 py-2.5 rounded-xl text-gray-700 hover:bg-accent hover:text-primary font-medium transition-colors">
+      <a href="{% url 'tours:list' %}" @click="mobileOpen=false" class="flex items-center gap-3 px-3 py-2.5 rounded-xl text-gray-700 hover:bg-accent hover:text-primary font-medium transition-colors">
         <i class="ti ti-compass text-lg text-secondary w-5 text-center"></i>{% trans "Tours" %}
       </a>
-      {# Tours submenu — same two groups as the desktop mega-menu #}
+      {# Tours submenu #}
       <div class="ml-6 pl-3 border-l-2 border-accent space-y-1">
-        <p class="px-3 pt-1 text-[0.65rem] font-semibold text-gray-400 uppercase tracking-wide">{% trans "Across Uzbekistan" %}</p>
-        <a href="{% url 'ichki-turlar-list' %}" @click="mobileOpen=false" class="flex items-center gap-3 px-3 py-2 rounded-xl text-sm text-gray-500 hover:bg-accent hover:text-primary transition-colors">
-          <i class="ti ti-route w-5 text-center"></i>{% trans "Domestic Tours" %}
-        </a>
-        <a href="{% url 'hotels:list' %}" @click="mobileOpen=false" class="flex items-center gap-3 px-3 py-2 rounded-xl text-sm text-gray-500 hover:bg-accent hover:text-primary transition-colors">
-          <i class="ti ti-building w-5 text-center"></i>{% trans "Hotels" %}
-        </a>
-        <p class="px-3 pt-2 text-[0.65rem] font-semibold text-gray-400 uppercase tracking-wide">{% trans "International Tours" %}</p>
         {% for cat in nav_tour_categories %}
         <a href="{% url 'tours:list' %}?category={{ cat.slug }}" @click="mobileOpen=false" class="flex items-center gap-3 px-3 py-2 rounded-xl text-sm text-gray-500 hover:bg-accent hover:text-primary transition-colors">
           <i class="ti ti-{{ cat.icon }} w-5 text-center"></i>{{ cat.name }}

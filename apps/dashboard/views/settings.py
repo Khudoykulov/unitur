@@ -16,13 +16,10 @@ class SiteSettingsEditView(StaffRequiredMixin, UpdateView):
     model = SiteSettings
     template_name = "dashboard/settings/edit.html"
     fields = [
-        "site_name", "site_tagline", "site_logo", "site_favicon",
         "phone", "phone_secondary", "email", "email_secondary",
         "address", "working_hours", "latitude", "longitude",
         "facebook_url", "instagram_url", "telegram_url", "youtube_url",
         "twitter_url", "linkedin_url", "whatsapp_number",
-        "google_analytics_id", "facebook_pixel_id", "meta_keywords",
-        "footer_text", "copyright_text"
     ]
     success_url = reverse_lazy("dashboard:settings_edit")
 

@@ -4,172 +4,718 @@
 {% block title %}{% trans "Site Settings" %}{% endblock %}
 {% block breadcrumb %}<span class="text-gray-400">/</span> <span class="text-gray-700">{% trans "Site Settings" %}</span>{% endblock %}
 
-{% block content %}
-<div class="max-w-4xl mx-auto">
-
-  {# Header #}
-  <div class="mb-6">
-    <h1 class="text-2xl font-bold text-gray-800">{% trans "Site Settings" %}</h1>
-    <p class="text-gray-500 mt-1">{% trans "Manage your site information, contact details, and social media links" %}</p>
-  </div>
-
-  {# Form #}
-  <form method="post" enctype="multipart/form-data" class="space-y-6">
-    {% csrf_token %}
-
-    {# Site Information #}
-    <div class="bg-white rounded-xl border border-gray-200 p-6">
-      <h2 class="text-lg font-semibold text-gray-800 mb-4 pb-3 border-b border-gray-200">
-        <i class="ti ti-info-circle text-emerald-700 mr-2"></i>{% trans "Site Information" %}
-      </h2>
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-        {% for field in form %}
-          {% if field.name in "site_name,site_tagline,site_logo,site_favicon" %}
-          <div class="{% if field.name in 'site_tagline' %}md:col-span-2{% endif %}">
-            <label class="block text-sm font-medium text-gray-700 mb-1">{{ field.label }}</label>
-            {{ field }}
-            {% if field.errors %}
-              <p class="text-red-600 text-xs mt-1">{{ field.errors.0 }}</p>
-            {% endif %}
-            {% if field.help_text %}
-              <p class="text-gray-500 text-xs mt-1">{{ field.help_text }}</p>
-            {% endif %}
-          </div>
-          {% endif %}
-        {% endfor %}
-      </div>
-    </div>
-
-    {# Contact Information #}
-    <div class="bg-white rounded-xl border border-gray-200 p-6">
-      <h2 class="text-lg font-semibold text-gray-800 mb-4 pb-3 border-b border-gray-200">
-        <i class="ti ti-phone text-emerald-700 mr-2"></i>{% trans "Contact Information" %}
-      </h2>
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-        {% for field in form %}
-          {% if field.name in "phone,phone_secondary,email,email_secondary,address,working_hours" %}
-          <div class="{% if field.name in 'address,working_hours' %}md:col-span-2{% endif %}">
-            <label class="block text-sm font-medium text-gray-700 mb-1">{{ field.label }}</label>
-            {{ field }}
-            {% if field.errors %}
-              <p class="text-red-600 text-xs mt-1">{{ field.errors.0 }}</p>
-            {% endif %}
-          </div>
-          {% endif %}
-        {% endfor %}
-      </div>
-    </div>
-
-    {# Location #}
-    <div class="bg-white rounded-xl border border-gray-200 p-6">
-      <h2 class="text-lg font-semibold text-gray-800 mb-4 pb-3 border-b border-gray-200">
-        <i class="ti ti-map-pin text-emerald-700 mr-2"></i>{% trans "Location" %}
-      </h2>
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-        {% for field in form %}
-          {% if field.name in "latitude,longitude" %}
-          <div>
-            <label class="block text-sm font-medium text-gray-700 mb-1">{{ field.label }}</label>
-            {{ field }}
-            {% if field.errors %}
-              <p class="text-red-600 text-xs mt-1">{{ field.errors.0 }}</p>
-            {% endif %}
-          </div>
-          {% endif %}
-        {% endfor %}
-      </div>
-    </div>
-
-    {# Social Media Links #}
-    <div class="bg-white rounded-xl border border-gray-200 p-6">
-      <h2 class="text-lg font-semibold text-gray-800 mb-4 pb-3 border-b border-gray-200">
-        <i class="ti ti-brand-facebook text-emerald-700 mr-2"></i>{% trans "Social Media Links" %}
-      </h2>
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-        {% for field in form %}
-          {% if field.name in "facebook_url,instagram_url,telegram_url,youtube_url,twitter_url,linkedin_url,whatsapp_number" %}
-          <div>
-            <label class="block text-sm font-medium text-gray-700 mb-1">
-              <i class="ti ti-brand-{{ field.name|slice:":field.name|length - 4" }} mr-1"></i>{{ field.label }}
-            </label>
-            {{ field }}
-            {% if field.errors %}
-              <p class="text-red-600 text-xs mt-1">{{ field.errors.0 }}</p>
-            {% endif %}
-            {% if field.help_text %}
-              <p class="text-gray-500 text-xs mt-1">{{ field.help_text }}</p>
-            {% endif %}
-          </div>
-          {% endif %}
-        {% endfor %}
-      </div>
-    </div>
-
-    {# SEO & Analytics #}
-    <div class="bg-white rounded-xl border border-gray-200 p-6">
-      <h2 class="text-lg font-semibold text-gray-800 mb-4 pb-3 border-b border-gray-200">
-        <i class="ti ti-chart-line text-emerald-700 mr-2"></i>{% trans "SEO & Analytics" %}
-      </h2>
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-        {% for field in form %}
-          {% if field.name in "google_analytics_id,facebook_pixel_id,meta_keywords" %}
-          <div class="{% if field.name == 'meta_keywords' %}md:col-span-2{% endif %}">
-            <label class="block text-sm font-medium text-gray-700 mb-1">{{ field.label }}</label>
-            {{ field }}
-            {% if field.errors %}
-              <p class="text-red-600 text-xs mt-1">{{ field.errors.0 }}</p>
-            {% endif %}
-            {% if field.help_text %}
-              <p class="text-gray-500 text-xs mt-1">{{ field.help_text }}</p>
-            {% endif %}
-          </div>
-          {% endif %}
-        {% endfor %}
-      </div>
-    </div>
-
-    {# Footer #}
-    <div class="bg-white rounded-xl border border-gray-200 p-6">
-      <h2 class="text-lg font-semibold text-gray-800 mb-4 pb-3 border-b border-gray-200">
-        <i class="ti ti-layout-footer text-emerald-700 mr-2"></i>{% trans "Footer" %}
-      </h2>
-      <div class="space-y-4">
-        {% for field in form %}
-          {% if field.name in "footer_text,copyright_text" %}
-          <div>
-            <label class="block text-sm font-medium text-gray-700 mb-1">{{ field.label }}</label>
-            {{ field }}
-            {% if field.errors %}
-              <p class="text-red-600 text-xs mt-1">{{ field.errors.0 }}</p>
-            {% endif %}
-          </div>
-          {% endif %}
-        {% endfor %}
-      </div>
-    </div>
-
-    {# Submit Button #}
-    <div class="flex items-center justify-end gap-3 pt-4">
-      <a href="{% url 'dashboard:home' %}" class="px-6 py-2.5 border border-gray-300 text-gray-700 rounded-lg hover:bg-gray-50 transition">
-        {% trans "Cancel" %}
-      </a>
-      <button type="submit" class="px-6 py-2.5 bg-emerald-700 hover:bg-emerald-800 text-white rounded-lg transition">
-        <i class="ti ti-device-floppy mr-2"></i>{% trans "Save Settings" %}
-      </button>
-    </div>
-  </form>
-
-</div>
-
+{% block extra_head %}
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"/>
 <style>
-  input[type="text"], input[type="email"], input[type="url"], input[type="number"], textarea, select {
-    @apply w-full px-3 py-2 border border-gray-300 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-emerald-300 focus:border-emerald-500;
+  /* ── Custom input styles ── */
+  .settings-input {
+    width: 100%;
+    padding: 0.625rem 0.875rem;
+    border: 1.5px solid #e2e8f0;
+    border-radius: 0.625rem;
+    font-size: 0.875rem;
+    color: #1e293b;
+    background: #f8fafc;
+    transition: all 0.2s ease;
+    outline: none;
   }
-  textarea {
-    @apply min-h-20;
+  .settings-input:focus {
+    border-color: #059669;
+    background: #ffffff;
+    box-shadow: 0 0 0 3px rgba(5, 150, 105, 0.1);
   }
-  input[type="file"] {
-    @apply text-sm;
+  .settings-input::placeholder { color: #94a3b8; }
+
+  textarea.settings-input { min-height: 90px; resize: vertical; }
+
+  /* Input wrapper with icon */
+  .input-group { position: relative; }
+  .input-group .input-icon {
+    position: absolute;
+    left: 0.75rem;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #94a3b8;
+    font-size: 1rem;
+    pointer-events: none;
+  }
+  .input-group .settings-input { padding-left: 2.4rem; }
+
+  /* Section card */
+  .settings-card {
+    background: #ffffff;
+    border-radius: 1rem;
+    border: 1px solid #e2e8f0;
+    overflow: hidden;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.04), 0 1px 2px rgba(0,0,0,0.04);
+    transition: box-shadow 0.2s;
+  }
+  .settings-card:hover { box-shadow: 0 4px 16px rgba(0,0,0,0.07); }
+
+  .card-header {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 1.125rem 1.5rem;
+    border-bottom: 1px solid #f1f5f9;
+    background: linear-gradient(to right, #f8fafc, #ffffff);
+  }
+  .card-header-icon {
+    width: 2.25rem;
+    height: 2.25rem;
+    border-radius: 0.625rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.1rem;
+    flex-shrink: 0;
+  }
+  .card-body { padding: 1.5rem; }
+
+  /* Label */
+  .field-label {
+    display: block;
+    font-size: 0.8125rem;
+    font-weight: 600;
+    color: #374151;
+    margin-bottom: 0.375rem;
+    letter-spacing: 0.01em;
+  }
+
+  /* Sticky save bar */
+  .save-bar {
+    position: sticky;
+    bottom: 0;
+    background: rgba(255,255,255,0.95);
+    backdrop-filter: blur(12px);
+    border-top: 1px solid #e2e8f0;
+    padding: 0.875rem 1.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    z-index: 20;
+    margin: 0 -1.5rem;
+    border-radius: 0 0 1rem 1rem;
+  }
+
+  /* Buttons */
+  .btn-cancel {
+    padding: 0.5rem 1.25rem;
+    border: 1.5px solid #e2e8f0;
+    color: #64748b;
+    border-radius: 0.625rem;
+    font-size: 0.875rem;
+    font-weight: 500;
+    transition: all 0.15s;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+  .btn-cancel:hover { background: #f8fafc; border-color: #cbd5e1; color: #374151; }
+
+  .btn-save {
+    padding: 0.5rem 1.5rem;
+    background: linear-gradient(135deg, #059669, #047857);
+    color: #ffffff;
+    border: none;
+    border-radius: 0.625rem;
+    font-size: 0.875rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    box-shadow: 0 2px 8px rgba(5,150,105,0.3);
+  }
+  .btn-save:hover {
+    background: linear-gradient(135deg, #047857, #065f46);
+    box-shadow: 0 4px 16px rgba(5,150,105,0.4);
+    transform: translateY(-1px);
+  }
+  .btn-save:active { transform: translateY(0); }
+
+  /* Error / help text */
+  .field-error { color: #ef4444; font-size: 0.75rem; margin-top: 0.25rem; display: flex; align-items: center; gap: 0.25rem; }
+  .field-help  { color: #94a3b8; font-size: 0.75rem; margin-top: 0.25rem; }
+
+  /* Social media badge colors */
+  .icon-facebook  { background: #e8f0fe; color: #1877f2; }
+  .icon-instagram { background: #fce7f3; color: #e1306c; }
+  .icon-telegram  { background: #e0f2fe; color: #0088cc; }
+  .icon-youtube   { background: #fee2e2; color: #ff0000; }
+  .icon-twitter   { background: #e0f2fe; color: #1da1f2; }
+  .icon-linkedin  { background: #e0f4ff; color: #0077b5; }
+  .icon-whatsapp  { background: #dcfce7; color: #25d366; }
+  .icon-phone     { background: #f0fdf4; color: #16a34a; }
+  .icon-email     { background: #eff6ff; color: #2563eb; }
+  .icon-location  { background: #fef9c3; color: #ca8a04; }
+  .icon-map       { background: #fdf4ff; color: #9333ea; }
+  .icon-clock     { background: #fff7ed; color: #ea580c; }
+
+  /* ── Map picker ── */
+  #location-map {
+    height: 320px;
+    border-radius: 0.75rem;
+    border: 1.5px solid #e2e8f0;
+    overflow: hidden;
+    margin-top: 0.75rem;
+    position: relative;
+    z-index: 0;
+  }
+  .map-search-wrap {
+    position: relative;
+    margin-bottom: 0.75rem;
+  }
+  .map-search-icon {
+    position: absolute;
+    left: 0.75rem;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #94a3b8;
+    font-size: 1rem;
+    pointer-events: none;
+    z-index: 1;
+  }
+  .map-search-input { padding-left: 2.4rem !important; }
+  .map-search-results {
+    position: absolute;
+    top: calc(100% + 4px);
+    left: 0; right: 0;
+    background: #fff;
+    border: 1.5px solid #e2e8f0;
+    border-radius: 0.625rem;
+    box-shadow: 0 8px 24px rgba(0,0,0,0.1);
+    z-index: 9999;
+    max-height: 220px;
+    overflow-y: auto;
+    display: none;
+  }
+  .map-search-results.open { display: block; }
+  .map-result-item {
+    padding: 0.6rem 1rem;
+    font-size: 0.8125rem;
+    color: #374151;
+    cursor: pointer;
+    display: flex;
+    align-items: flex-start;
+    gap: 0.5rem;
+    border-bottom: 1px solid #f1f5f9;
+    transition: background 0.1s;
+  }
+  .map-result-item:last-child { border-bottom: none; }
+  .map-result-item:hover { background: #f0fdf4; color: #059669; }
+  .map-result-item i { margin-top: 2px; flex-shrink: 0; color: #94a3b8; }
+  .map-result-item:hover i { color: #059669; }
+
+  /* Coord row */
+  .coord-row {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    background: #f8fafc;
+    border: 1.5px solid #e2e8f0;
+    border-radius: 0.625rem;
+    padding: 0.625rem 1rem;
+    margin-bottom: 0.5rem;
+  }
+  .coord-box { display: flex; flex-direction: column; flex: 1; min-width: 0; }
+  .coord-label { font-size: 0.7rem; font-weight: 600; color: #94a3b8; text-transform: uppercase; letter-spacing: 0.05em; }
+  .coord-value { font-size: 0.9rem; font-weight: 700; color: #1e293b; font-variant-numeric: tabular-nums; }
+  .coord-divider { width: 1px; height: 2rem; background: #e2e8f0; }
+  .my-location-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.375rem;
+    padding: 0.375rem 0.875rem;
+    background: #fff;
+    border: 1.5px solid #059669;
+    color: #059669;
+    border-radius: 0.5rem;
+    font-size: 0.8rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.15s;
+    white-space: nowrap;
+    flex-shrink: 0;
+  }
+  .my-location-btn:hover { background: #059669; color: #fff; }
+
+  /* Custom Leaflet marker pulse */
+  .map-pin-pulse {
+    width: 14px; height: 14px;
+    border-radius: 50%;
+    background: #059669;
+    border: 3px solid #fff;
+    box-shadow: 0 0 0 3px rgba(5,150,105,0.3);
+    animation: pin-pulse 2s infinite;
+  }
+  @keyframes pin-pulse {
+    0%   { box-shadow: 0 0 0 0   rgba(5,150,105,0.4); }
+    70%  { box-shadow: 0 0 0 10px rgba(5,150,105,0); }
+    100% { box-shadow: 0 0 0 0   rgba(5,150,105,0); }
   }
 </style>
 {% endblock %}
+
+{% block content %}
+<div class="max-w-3xl mx-auto pb-8">
+
+  {# ── Page Header ── #}
+  <div class="mb-8 flex items-start justify-between">
+    <div>
+      <h1 class="text-2xl font-bold text-gray-900 flex items-center gap-2">
+        <span class="w-8 h-8 rounded-lg bg-emerald-100 text-emerald-700 flex items-center justify-center text-lg">
+          <i class="ti ti-settings"></i>
+        </span>
+        {% trans "Site Settings" %}
+      </h1>
+      <p class="text-gray-500 text-sm mt-1">{% trans "Manage your contact details, location, and social media links" %}</p>
+    </div>
+    <span class="text-xs text-gray-400 bg-gray-100 px-3 py-1 rounded-full mt-1">{% trans "Last saved auto-syncs" %}</span>
+  </div>
+
+  {# ── Form ── #}
+  <form method="post" enctype="multipart/form-data" class="space-y-5">
+    {% csrf_token %}
+
+    {# ── Contact Information ── #}
+    <div class="settings-card">
+      <div class="card-header">
+        <span class="card-header-icon icon-phone">
+          <i class="ti ti-phone"></i>
+        </span>
+        <div>
+          <h2 class="text-sm font-semibold text-gray-800">{% trans "Contact Information" %}</h2>
+          <p class="text-xs text-gray-500">{% trans "Phone numbers and email addresses" %}</p>
+        </div>
+      </div>
+      <div class="card-body">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+          {% for field in form %}
+            {% if field.name == "phone" %}
+            <div>
+              <label class="field-label">{{ field.label }}</label>
+              <div class="input-group">
+                <i class="ti ti-phone input-icon"></i>
+                {{ field }}
+              </div>
+              {% if field.errors %}<p class="field-error"><i class="ti ti-alert-circle"></i> {{ field.errors.0 }}</p>{% endif %}
+            </div>
+            {% elif field.name == "phone_secondary" %}
+            <div>
+              <label class="field-label">{{ field.label }}</label>
+              <div class="input-group">
+                <i class="ti ti-phone-plus input-icon"></i>
+                {{ field }}
+              </div>
+              {% if field.errors %}<p class="field-error"><i class="ti ti-alert-circle"></i> {{ field.errors.0 }}</p>{% endif %}
+            </div>
+            {% elif field.name == "email" %}
+            <div>
+              <label class="field-label">{{ field.label }}</label>
+              <div class="input-group">
+                <i class="ti ti-mail input-icon"></i>
+                {{ field }}
+              </div>
+              {% if field.errors %}<p class="field-error"><i class="ti ti-alert-circle"></i> {{ field.errors.0 }}</p>{% endif %}
+            </div>
+            {% elif field.name == "email_secondary" %}
+            <div>
+              <label class="field-label">{{ field.label }}</label>
+              <div class="input-group">
+                <i class="ti ti-mail-forward input-icon"></i>
+                {{ field }}
+              </div>
+              {% if field.errors %}<p class="field-error"><i class="ti ti-alert-circle"></i> {{ field.errors.0 }}</p>{% endif %}
+            </div>
+            {% elif field.name == "address" %}
+            <div class="md:col-span-2">
+              <label class="field-label">{{ field.label }}</label>
+              <div class="input-group">
+                <i class="ti ti-map-pin input-icon" style="top:1rem;transform:none;"></i>
+                {{ field }}
+              </div>
+              {% if field.errors %}<p class="field-error"><i class="ti ti-alert-circle"></i> {{ field.errors.0 }}</p>{% endif %}
+            </div>
+            {% elif field.name == "working_hours" %}
+            <div class="md:col-span-2">
+              <label class="field-label">{{ field.label }}</label>
+              <div class="input-group">
+                <i class="ti ti-clock input-icon"></i>
+                {{ field }}
+              </div>
+              {% if field.errors %}<p class="field-error"><i class="ti ti-alert-circle"></i> {{ field.errors.0 }}</p>{% endif %}
+            </div>
+            {% endif %}
+          {% endfor %}
+        </div>
+      </div>
+    </div>
+
+    {# ── Location ── #}
+    <div class="settings-card">
+      <div class="card-header">
+        <span class="card-header-icon icon-map">
+          <i class="ti ti-map-2"></i>
+        </span>
+        <div>
+          <h2 class="text-sm font-semibold text-gray-800">{% trans "Location" %}</h2>
+          <p class="text-xs text-gray-500">{% trans "GPS coordinates for the map widget" %}</p>
+        </div>
+      </div>
+      <div class="card-body">
+
+        {# Hidden lat/lng fields from Django form #}
+        {% for field in form %}
+          {% if field.name == "latitude" or field.name == "longitude" %}
+            <div style="display:none;">{{ field }}</div>
+          {% endif %}
+        {% endfor %}
+
+        {# Search box #}
+        <div class="map-search-wrap">
+          <i class="ti ti-search map-search-icon"></i>
+          <input type="text" id="map-search-input" class="settings-input map-search-input"
+                 placeholder="{% trans 'Search city or address...' %}" autocomplete="off">
+          <div id="map-search-results" class="map-search-results"></div>
+        </div>
+
+        {# Coordinates display row #}
+        <div class="coord-row">
+          <div class="coord-box">
+            <span class="coord-label">{% trans "Latitude" %}</span>
+            <span id="coord-lat-display" class="coord-value">—</span>
+          </div>
+          <div class="coord-divider"></div>
+          <div class="coord-box">
+            <span class="coord-label">{% trans "Longitude" %}</span>
+            <span id="coord-lng-display" class="coord-value">—</span>
+          </div>
+          <button type="button" id="my-location-btn" class="my-location-btn" title="{% trans 'Use my location' %}">
+            <i class="ti ti-current-location"></i>
+            <span>{% trans "My location" %}</span>
+          </button>
+        </div>
+
+        {# Leaflet map #}
+        <div id="location-map"></div>
+
+        <p class="text-xs text-gray-400 mt-3 flex items-center gap-1">
+          <i class="ti ti-info-circle"></i>
+          {% trans "Click or drag the marker on the map to set the location." %}
+        </p>
+      </div>
+    </div>
+
+    {# ── Social Media Links ── #}
+    <div class="settings-card">
+      <div class="card-header">
+        <span class="card-header-icon" style="background:#f0fdf4;color:#059669;">
+          <i class="ti ti-share"></i>
+        </span>
+        <div>
+          <h2 class="text-sm font-semibold text-gray-800">{% trans "Social Media Links" %}</h2>
+          <p class="text-xs text-gray-500">{% trans "Links shown in the footer and contact page" %}</p>
+        </div>
+      </div>
+      <div class="card-body">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+
+          {% for field in form %}
+            {% if field.name == "facebook_url" %}
+            <div>
+              <label class="field-label flex items-center gap-1.5">
+                <span class="w-4 h-4 rounded flex items-center justify-center icon-facebook" style="width:1.1rem;height:1.1rem;border-radius:3px;">
+                  <i class="ti ti-brand-facebook" style="font-size:0.75rem;"></i>
+                </span>
+                {{ field.label }}
+              </label>
+              <div class="input-group">
+                <i class="ti ti-link input-icon"></i>
+                {{ field }}
+              </div>
+              {% if field.errors %}<p class="field-error"><i class="ti ti-alert-circle"></i> {{ field.errors.0 }}</p>{% endif %}
+            </div>
+
+            {% elif field.name == "instagram_url" %}
+            <div>
+              <label class="field-label flex items-center gap-1.5">
+                <span style="width:1.1rem;height:1.1rem;border-radius:3px;display:inline-flex;align-items:center;justify-content:center;background:#fce7f3;color:#e1306c;">
+                  <i class="ti ti-brand-instagram" style="font-size:0.75rem;"></i>
+                </span>
+                {{ field.label }}
+              </label>
+              <div class="input-group">
+                <i class="ti ti-link input-icon"></i>
+                {{ field }}
+              </div>
+              {% if field.errors %}<p class="field-error"><i class="ti ti-alert-circle"></i> {{ field.errors.0 }}</p>{% endif %}
+            </div>
+
+            {% elif field.name == "telegram_url" %}
+            <div>
+              <label class="field-label flex items-center gap-1.5">
+                <span style="width:1.1rem;height:1.1rem;border-radius:3px;display:inline-flex;align-items:center;justify-content:center;background:#e0f2fe;color:#0088cc;">
+                  <i class="ti ti-brand-telegram" style="font-size:0.75rem;"></i>
+                </span>
+                {{ field.label }}
+              </label>
+              <div class="input-group">
+                <i class="ti ti-link input-icon"></i>
+                {{ field }}
+              </div>
+              {% if field.errors %}<p class="field-error"><i class="ti ti-alert-circle"></i> {{ field.errors.0 }}</p>{% endif %}
+            </div>
+
+            {% elif field.name == "youtube_url" %}
+            <div>
+              <label class="field-label flex items-center gap-1.5">
+                <span style="width:1.1rem;height:1.1rem;border-radius:3px;display:inline-flex;align-items:center;justify-content:center;background:#fee2e2;color:#ff0000;">
+                  <i class="ti ti-brand-youtube" style="font-size:0.75rem;"></i>
+                </span>
+                {{ field.label }}
+              </label>
+              <div class="input-group">
+                <i class="ti ti-link input-icon"></i>
+                {{ field }}
+              </div>
+              {% if field.errors %}<p class="field-error"><i class="ti ti-alert-circle"></i> {{ field.errors.0 }}</p>{% endif %}
+            </div>
+
+            {% elif field.name == "twitter_url" %}
+            <div>
+              <label class="field-label flex items-center gap-1.5">
+                <span style="width:1.1rem;height:1.1rem;border-radius:3px;display:inline-flex;align-items:center;justify-content:center;background:#e0f2fe;color:#1da1f2;">
+                  <i class="ti ti-brand-twitter" style="font-size:0.75rem;"></i>
+                </span>
+                {{ field.label }}
+              </label>
+              <div class="input-group">
+                <i class="ti ti-link input-icon"></i>
+                {{ field }}
+              </div>
+              {% if field.errors %}<p class="field-error"><i class="ti ti-alert-circle"></i> {{ field.errors.0 }}</p>{% endif %}
+            </div>
+
+            {% elif field.name == "linkedin_url" %}
+            <div>
+              <label class="field-label flex items-center gap-1.5">
+                <span style="width:1.1rem;height:1.1rem;border-radius:3px;display:inline-flex;align-items:center;justify-content:center;background:#e0f4ff;color:#0077b5;">
+                  <i class="ti ti-brand-linkedin" style="font-size:0.75rem;"></i>
+                </span>
+                {{ field.label }}
+              </label>
+              <div class="input-group">
+                <i class="ti ti-link input-icon"></i>
+                {{ field }}
+              </div>
+              {% if field.errors %}<p class="field-error"><i class="ti ti-alert-circle"></i> {{ field.errors.0 }}</p>{% endif %}
+            </div>
+
+            {% elif field.name == "whatsapp_number" %}
+            <div>
+              <label class="field-label flex items-center gap-1.5">
+                <span style="width:1.1rem;height:1.1rem;border-radius:3px;display:inline-flex;align-items:center;justify-content:center;background:#dcfce7;color:#25d366;">
+                  <i class="ti ti-brand-whatsapp" style="font-size:0.75rem;"></i>
+                </span>
+                {{ field.label }}
+              </label>
+              <div class="input-group">
+                <i class="ti ti-phone input-icon"></i>
+                {{ field }}
+              </div>
+              {% if field.errors %}<p class="field-error"><i class="ti ti-alert-circle"></i> {{ field.errors.0 }}</p>{% endif %}
+            </div>
+            {% endif %}
+          {% endfor %}
+
+        </div>
+      </div>
+    </div>
+
+    {# ── Sticky Save Bar ── #}
+    <div class="settings-card">
+      <div class="save-bar" style="position:relative;margin:0;border-radius:1rem;border-top:none;border:none;padding:1.25rem 1.5rem;">
+        <div class="flex items-center gap-2 text-sm text-gray-500">
+          <i class="ti ti-info-circle text-emerald-600"></i>
+          {% trans "Changes are saved immediately after clicking Save." %}
+        </div>
+        <div class="flex items-center gap-3">
+          <a href="{% url 'dashboard:home' %}" class="btn-cancel">
+            <i class="ti ti-x"></i> {% trans "Cancel" %}
+          </a>
+          <button type="submit" class="btn-save">
+            <i class="ti ti-device-floppy"></i> {% trans "Save Settings" %}
+          </button>
+        </div>
+      </div>
+    </div>
+
+  </form>
+</div>
+
+{# ── Apply settings-input class to all Django form inputs ── #}
+<script>
+  document.querySelectorAll(
+    '.settings-card input[type="text"],' +
+    '.settings-card input[type="email"],' +
+    '.settings-card input[type="url"],' +
+    '.settings-card input[type="number"],' +
+    '.settings-card input[type="tel"],' +
+    '.settings-card textarea,' +
+    '.settings-card select'
+  ).forEach(el => el.classList.add('settings-input'));
+</script>
+
+{# ── Leaflet Map Picker ── #}
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+<script>
+(function () {
+  const latInput = document.getElementById('id_latitude');
+  const lngInput = document.getElementById('id_longitude');
+  const latDisplay = document.getElementById('coord-lat-display');
+  const lngDisplay = document.getElementById('coord-lng-display');
+
+  if (!latInput || !lngInput) return;
+
+  const defaultLat = parseFloat(latInput.value) || 40.0844;
+  const defaultLng = parseFloat(lngInput.value) || 65.3792;
+
+  // ── Init map ──
+  const map = L.map('location-map', { zoomControl: true }).setView([defaultLat, defaultLng], 13);
+
+  L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+    attribution: '© <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>',
+    maxZoom: 19,
+  }).addTo(map);
+
+  // ── Custom marker icon (teardrop shape) ──
+  const markerIcon = L.divIcon({
+    className: '',
+    html: `<div style="
+      width:36px;height:36px;border-radius:50% 50% 50% 0;
+      background:linear-gradient(135deg,#059669,#047857);
+      transform:rotate(-45deg);
+      border:3px solid #fff;
+      box-shadow:0 4px 12px rgba(5,150,105,0.5);
+    "></div>
+    <div style="
+      position:absolute;top:10px;left:10px;
+      width:16px;height:16px;border-radius:50%;
+      background:#fff;opacity:0.9;
+    "></div>`,
+    iconSize: [36, 36],
+    iconAnchor: [18, 36],
+  });
+
+  const marker = L.marker([defaultLat, defaultLng], {
+    icon: markerIcon,
+    draggable: true,
+  }).addTo(map);
+
+  // ── Update hidden fields + display ──
+  function setCoords(lat, lng) {
+    const la = parseFloat(lat).toFixed(6);
+    const ln = parseFloat(lng).toFixed(6);
+    latInput.value = la;
+    lngInput.value = ln;
+    latDisplay.textContent = la;
+    lngDisplay.textContent = ln;
+  }
+  setCoords(defaultLat, defaultLng);
+
+  // Click anywhere on map
+  map.on('click', function (e) {
+    marker.setLatLng(e.latlng);
+    setCoords(e.latlng.lat, e.latlng.lng);
+  });
+
+  // Drag marker
+  marker.on('dragend', function () {
+    const pos = marker.getLatLng();
+    setCoords(pos.lat, pos.lng);
+  });
+
+  // ── My Location button ──
+  document.getElementById('my-location-btn').addEventListener('click', function () {
+    if (!navigator.geolocation) { alert('Geolocation not supported'); return; }
+    const btn = this;
+    btn.innerHTML = '<i class="ti ti-loader" style="animation:spin 1s linear infinite;display:inline-block;"></i>';
+    navigator.geolocation.getCurrentPosition(
+      function (pos) {
+        const lat = pos.coords.latitude;
+        const lng = pos.coords.longitude;
+        map.setView([lat, lng], 15);
+        marker.setLatLng([lat, lng]);
+        setCoords(lat, lng);
+        btn.innerHTML = '<i class="ti ti-current-location"></i> <span>My location</span>';
+      },
+      function () {
+        alert('Could not get your location.');
+        btn.innerHTML = '<i class="ti ti-current-location"></i> <span>My location</span>';
+      }
+    );
+  });
+
+  // ── Search via Nominatim (OpenStreetMap) ──
+  const searchInput = document.getElementById('map-search-input');
+  const searchResults = document.getElementById('map-search-results');
+  let searchTimer = null;
+
+  searchInput.addEventListener('input', function () {
+    clearTimeout(searchTimer);
+    const q = this.value.trim();
+    if (q.length < 3) { searchResults.classList.remove('open'); return; }
+
+    searchTimer = setTimeout(() => {
+      fetch(`https://nominatim.openstreetmap.org/search?format=json&q=${encodeURIComponent(q)}&limit=6`, {
+        headers: { 'Accept-Language': 'uz,ru,en' }
+      })
+      .then(r => r.json())
+      .then(data => {
+        searchResults.innerHTML = '';
+        if (!data.length) {
+          searchResults.innerHTML = '<div class="map-result-item" style="color:#94a3b8;cursor:default;">Natija topilmadi</div>';
+        } else {
+          data.forEach(item => {
+            const div = document.createElement('div');
+            div.className = 'map-result-item';
+            div.innerHTML = `<i class="ti ti-map-pin"></i><span>${item.display_name}</span>`;
+            div.addEventListener('click', function () {
+              const lat = parseFloat(item.lat);
+              const lng = parseFloat(item.lon);
+              map.setView([lat, lng], 15);
+              marker.setLatLng([lat, lng]);
+              setCoords(lat, lng);
+              searchInput.value = item.display_name.split(',')[0];
+              searchResults.classList.remove('open');
+            });
+            searchResults.appendChild(div);
+          });
+        }
+        searchResults.classList.add('open');
+      })
+      .catch(() => {});
+    }, 450);
+  });
+
+  // Close results on outside click
+  document.addEventListener('click', function (e) {
+    if (!e.target.closest('.map-search-wrap')) {
+      searchResults.classList.remove('open');
+    }
+  });
+
+  // Fix map size after layout renders
+  setTimeout(() => map.invalidateSize(), 250);
+})();
+</script>
+
+<style>
+  @keyframes spin { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
+</style>
+{% endblock %}
+

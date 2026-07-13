@@ -1,5 +1,5 @@
 {% extends "base.html" %}
-{% load i18n static %}
+{% load i18n static l10n %}
 
 {% block title %}{% trans "Contact Us" %} | {{ SITE_NAME }}{% endblock %}
 
@@ -68,7 +68,7 @@
             </div>
             <div>
               <p class="font-semibold text-dark text-base mb-1">{% trans "Office Address" %}</p>
-              <p class="text-gray-500 text-sm">{{ SITE_ADDRESS }}</p>
+              <p class="text-gray-500 text-sm">{{ SITE_ADDRESS|linebreaksbr }}</p>
             </div>
           </a>
           {% endif %}
@@ -106,22 +106,47 @@
 
 {% block extra_head %}
 <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
-<style>#contact-map { position: relative; z-index: 0; }</style>
+<style>
+  #contact-map {
+    position: relative;
+    z-index: 0;
+    height: 16rem;
+    border-radius: 0.75rem;
+    overflow: hidden;
+  }
+  .leaflet-container { z-index: 0 !important; }
+</style>
 {% endblock %}
 
 {% block extra_js %}
 {% if SITE_LATITUDE and SITE_LONGITUDE %}
 <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
 <script>
-const map = L.map('contact-map').setView([{{ SITE_LATITUDE }}, {{ SITE_LONGITUDE }}], 15);
-L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-  attribution: '© OpenStreetMap contributors'
-}).addTo(map);
-L.marker([{{ SITE_LATITUDE }}, {{ SITE_LONGITUDE }}]).addTo(map)
-  .bindPopup('{{ SITE_NAME }}');
-// Ensure Leaflet measures the container after layout — prevents grey tiles /
-// controls spilling outside the box.
-setTimeout(function () { map.invalidateSize(); }, 100);
+(function() {
+  var lat = {{ SITE_LATITUDE|unlocalize }};
+  var lng = {{ SITE_LONGITUDE|unlocalize }};
+  var map = L.map('contact-map', { scrollWheelZoom: false }).setView([lat, lng], 15);
+
+  L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+    attribution: '(c) <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>',
+    maxZoom: 19,
+  }).addTo(map);
+
+  var icon = L.divIcon({
+    className: '',
+    html: '<div style="width:36px;height:36px;border-radius:50% 50% 50% 0;background:linear-gradient(135deg,#1a6b52,#0d4a38);transform:rotate(-45deg);border:3px solid #fff;box-shadow:0 4px 12px rgba(0,0,0,0.3);"></div><div style="position:absolute;top:10px;left:10px;width:16px;height:16px;border-radius:50%;background:#fff;opacity:0.9;"></div>',
+    iconSize: [36, 36],
+    iconAnchor: [18, 36],
+  });
+
+  L.marker([lat, lng], { icon: icon }).addTo(map)
+    .bindPopup('<b>{{ SITE_NAME }}</b>').openPopup();
+
+  // Multiple invalidateSize calls to ensure tiles load properly
+  setTimeout(function() { map.invalidateSize(); }, 100);
+  setTimeout(function() { map.invalidateSize(); }, 500);
+  setTimeout(function() { map.invalidateSize(); }, 1000);
+})();
 </script>
 {% endif %}
 {% endblock %}
