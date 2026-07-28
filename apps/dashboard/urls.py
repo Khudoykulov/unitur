@@ -76,6 +76,18 @@ from apps.dashboard.views.settings import (
     FAQEditView,
     FAQDeleteView,
 )
+from apps.dashboard.views.guide_categories import (
+    GuideCategoryListView,
+    GuideCategoryCreateView,
+    GuideCategoryEditView,
+    GuideCategoryDeleteView,
+)
+from apps.dashboard.views.tags import (
+    TagListView,
+    TagCreateView,
+    TagEditView,
+    TagDeleteView,
+)
 
 app_name = "dashboard"
 
@@ -164,4 +176,16 @@ urlpatterns = [
     path("faq/create/", FAQCreateView.as_view(), name="faq_create"),
     path("faq/<int:pk>/edit/", FAQEditView.as_view(), name="faq_edit"),
     path("faq/<int:pk>/delete/", FAQDeleteView.as_view(), name="faq_delete"),
+
+    # Guide Categories
+    path("guide-categories/", GuideCategoryListView.as_view(), name="guide_categories_list"),
+    path("guide-categories/create/", GuideCategoryCreateView.as_view(), name="guide_categories_create"),
+    path("guide-categories/<int:pk>/edit/", GuideCategoryEditView.as_view(), name="guide_categories_edit"),
+    path("guide-categories/<int:pk>/delete/", GuideCategoryDeleteView.as_view(), name="guide_categories_delete"),
+
+    # Tags
+    path("tags/", TagListView.as_view(), name="tags_list"),
+    path("tags/create/", TagCreateView.as_view(), name="tags_create"),
+    path("tags/<int:pk>/edit/", TagEditView.as_view(), name="tags_edit"),
+    path("tags/<int:pk>/delete/", TagDeleteView.as_view(), name="tags_delete"),
 ]

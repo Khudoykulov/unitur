@@ -45,6 +45,18 @@ class DomesticCityCreateView(AuditMixin, ManagerRequiredMixin, CreateView):
     success_url = reverse_lazy("dashboard:cities_list")
 
     def form_valid(self, form):
+        # Attach Uzbekistan before the instance is written to the DB so the
+        # NOT NULL constraint on country_id is never violated.
+        from apps.destinations.models import Country as _Country
+        if form.instance.country_id is None:
+            uzbekistan = _Country.objects.filter(
+                name_en__icontains=DOMESTIC_COUNTRY
+            ).first()
+            if uzbekistan:
+                form.instance.country = uzbekistan
+            else:
+                messages.error(self.request, gettext("Uzbekistan country not found in database."))
+                return self.form_invalid(form)
         response = super().form_valid(form)
         autofill_translations(self.object)
         self.log_action("CREATE", "DomesticCity", self.object.pk)

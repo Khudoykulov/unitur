@@ -59,8 +59,6 @@ THIRD_PARTY_APPS = [
     "cloudinary_storage",
     "cloudinary",
     "whitenoise.runserver_nostatic",
-    "django_celery_results",
-    "django_celery_beat",
     "import_export",
 ]
 

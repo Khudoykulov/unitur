@@ -84,6 +84,12 @@
     <a href="{% url 'dashboard:articles_list' %}" class="sidebar-link {% if 'dashboard/articles' in request.path %}active{% endif %}">
       <i class="ti ti-article text-lg"></i> {% trans "Articles" %}
     </a>
+    <a href="{% url 'dashboard:guide_categories_list' %}" class="sidebar-link pl-9 text-xs {% if 'dashboard/guide-categories' in request.path %}active{% endif %}">
+      <i class="ti ti-category text-base"></i> {% trans "Guide Categories" %}
+    </a>
+    <a href="{% url 'dashboard:tags_list' %}" class="sidebar-link pl-9 text-xs {% if 'dashboard/tags' in request.path %}active{% endif %}">
+      <i class="ti ti-tag text-base"></i> {% trans "Tags" %}
+    </a>
     <a href="{% url 'dashboard:hero_list' %}" class="sidebar-link {% if 'dashboard/hero' in request.path %}active{% endif %}">
       <i class="ti ti-photo text-lg"></i> {% trans "Hero Images" %}
     </a>

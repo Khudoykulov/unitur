@@ -7,7 +7,7 @@ from django.views.generic import CreateView, DeleteView, ListView, UpdateView
 
 from apps.dashboard.autotranslate import autofill_translations
 from apps.dashboard.mixins import AuditMixin, ManagerRequiredMixin
-from apps.guides.models import Article, GuideCategory
+from apps.guides.models import Article, GuideCategory, Tag
 
 
 class ArticleListView(ManagerRequiredMixin, ListView):
@@ -17,7 +17,13 @@ class ArticleListView(ManagerRequiredMixin, ListView):
     paginate_by = 20
 
     def get_queryset(self):
-        qs = Article.objects.select_related("category", "author").order_by("-created_at")
+        sort = self.request.GET.get("sort", "")
+        if sort == "views":
+            qs = Article.objects.select_related("category", "author").order_by("-views_count")
+        elif sort == "views_asc":
+            qs = Article.objects.select_related("category", "author").order_by("views_count")
+        else:
+            qs = Article.objects.select_related("category", "author").order_by("-created_at")
         q = self.request.GET.get("q", "").strip()
         if q:
             qs = qs.filter(title__icontains=q)
@@ -36,6 +42,12 @@ class ArticleListView(ManagerRequiredMixin, ListView):
         ctx["categories"] = GuideCategory.objects.all()
         ctx["q"] = self.request.GET.get("q", "")
         ctx["selected_category"] = self.request.GET.get("category", "")
+        ctx["selected_sort"] = self.request.GET.get("sort", "")
+        ctx["top_articles"] = (
+            Article.objects.filter(is_published=True)
+            .order_by("-views_count")
+            .select_related("category")[:5]
+        )
         return ctx
 
 
@@ -46,7 +58,7 @@ class ArticleCreateView(AuditMixin, ManagerRequiredMixin, CreateView):
     fields = [
         "title", "category", "author", "cover_image",
         "excerpt", "content", "tags",
-        "reading_time_minutes", "is_published",
+        "reading_time_minutes", "is_published", "is_active", "is_featured",
     ]
 
     def form_valid(self, form):
@@ -59,6 +71,8 @@ class ArticleCreateView(AuditMixin, ManagerRequiredMixin, CreateView):
     def get_context_data(self, **kwargs):
         ctx = super().get_context_data(**kwargs)
         ctx["page_title"] = _("Create Article")
+        ctx["all_tags"] = Tag.objects.order_by("name")
+        ctx["selected_tag_ids"] = []
         return ctx
 
 
@@ -69,7 +83,7 @@ class ArticleEditView(AuditMixin, ManagerRequiredMixin, UpdateView):
     fields = [
         "title", "category", "author", "cover_image",
         "excerpt", "content", "tags",
-        "reading_time_minutes", "is_published",
+        "reading_time_minutes", "is_published", "is_active", "is_featured",
     ]
 
     def form_valid(self, form):
@@ -82,6 +96,8 @@ class ArticleEditView(AuditMixin, ManagerRequiredMixin, UpdateView):
     def get_context_data(self, **kwargs):
         ctx = super().get_context_data(**kwargs)
         ctx["page_title"] = gettext("Edit: %(title)s") % {"title": self.object.title}
+        ctx["all_tags"] = Tag.objects.order_by("name")
+        ctx["selected_tag_ids"] = list(self.object.tags.values_list("id", flat=True))
         return ctx
 
 

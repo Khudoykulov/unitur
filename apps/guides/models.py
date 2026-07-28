@@ -96,6 +96,8 @@ class Article(TimeStampedModel, SEOMixin, PublishableMixin):
     views_count = models.PositiveIntegerField(_("Views count"), default=0, editable=False)
     is_published = models.BooleanField(_("Published"), default=False, db_index=True)
     published_at = models.DateTimeField(_("Published at"), null=True, blank=True)
+    is_active = models.BooleanField(_("Active"), default=True, help_text=_("Inactive articles are hidden from the site"))
+    is_featured = models.BooleanField(_("Featured"), default=False, help_text=_("Featured article appears at the top"))
 
     class Meta:
         verbose_name = _("Article")

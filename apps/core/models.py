@@ -59,6 +59,7 @@ class HeroSlide(TimeStampedModel, OrderedMixin):
         ("destinations", _("Destinations")),
         ("hotels", _("Hotels")),
         ("guides", _("Guides")),
+        ("faq", _("FAQ")),
     ]
 
     page = models.CharField(

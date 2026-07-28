@@ -2,6 +2,7 @@
 
 import json
 
+from django.db import models
 from django.http import JsonResponse
 from django.utils import timezone
 from django.views.generic import TemplateView
@@ -9,6 +10,7 @@ from django.views.generic import TemplateView
 from apps.bookings.models import Inquiry
 from apps.dashboard.mixins import StaffRequiredMixin
 from apps.dashboard.models import DashboardNotification
+from apps.guides.models import Article
 from apps.reviews.models import Review
 from apps.tours.models import Tour
 from apps.hotels.models import Hotel
@@ -30,6 +32,9 @@ class DashboardHomeView(StaffRequiredMixin, TemplateView):
                 "pending_reviews": Review.objects.filter(status="pending").count(),
                 "monthly_bookings": Inquiry.objects.filter(created_at__gte=month_start).count(),
                 "confirmed_bookings": Inquiry.objects.filter(status="confirmed").count(),
+                "total_article_views": Article.objects.aggregate(
+                    total=models.Sum("views_count")
+                )["total"] or 0,
                 "recent_bookings": (
                     Inquiry.objects.select_related("tour", "hotel")
                     .order_by("-created_at")[:10]

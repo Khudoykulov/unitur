@@ -192,6 +192,7 @@ class DomesticCityForm(forms.ModelForm):
     """Create/edit a domestic (Uzbek) city used to build Ichki Tur routes.
 
     New cities are always attached to Uzbekistan, so the country isn't shown.
+    The country assignment is handled by DomesticCityCreateView.form_valid().
     """
 
     class Meta:
@@ -200,16 +201,6 @@ class DomesticCityForm(forms.ModelForm):
         # effect for cities (listed alphabetically), and visibility is toggled
         # from the city list, not this form.
         fields = ["name", "cover_image", "overview"]
-
-    def save(self, commit=True):
-        city = super().save(commit=False)
-        if city.country_id is None:
-            city.country = Country.objects.filter(
-                name_en__icontains=DOMESTIC_COUNTRY
-            ).first()
-        if commit:
-            city.save()
-        return city
 
 
 class TourCategoryForm(forms.ModelForm):
@@ -238,13 +229,12 @@ class ContinentForm(forms.ModelForm):
 
 
 class HeroSlideForm(forms.ModelForm):
-    """Upload a rotating hero background image for a page.
-
-    Kept deliberately minimal — just the page and the image. ``alt`` is unused
-    (slides render as CSS background-images, not <img> tags); ``is_active`` and
-    ``order`` stay at their model defaults (active, creation order).
-    """
+    """Upload a rotating hero background image for a page."""
 
     class Meta:
         model = HeroSlide
-        fields = ["page", "image"]
+        fields = ["page", "image", "alt", "order", "is_active"]
+        widgets = {
+            "alt": forms.TextInput(attrs={"placeholder": "Image description (optional)"}),
+            "order": forms.NumberInput(attrs={"min": 0}),
+        }

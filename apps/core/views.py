@@ -108,6 +108,12 @@ class FAQView(TemplateView):
         ctx["faq_by_category"] = faq_by_category
         ctx["total_faqs"] = faqs.count()
 
+        # Hero slides for FAQ page
+        from apps.core.models import HeroSlide
+        ctx["hero_slides"] = HeroSlide.objects.filter(
+            page="faq", is_active=True
+        ).order_by("order")
+
         return ctx
 
 

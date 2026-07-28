@@ -5,16 +5,51 @@
 
 {% block content %}
 <div class="pt-20 lg:pt-28 bg-pattern-subtle-blue">
-  {# Hero Section #}
-  <div class="relative py-24 text-center overflow-hidden bg-pattern-hero">
-    <div class="relative z-10 max-w-3xl mx-auto px-4">
-      <p class="hero-eyebrow text-sm font-semibold uppercase tracking-widest mb-3">{% trans "Help Center" %}</p>
-      <h1 class="text-5xl font-serif font-bold mb-4">{% trans "Frequently Asked Questions" %}</h1>
-      <p class="hero-subtitle max-w-2xl mx-auto text-lg">
+  {# ── Page header — rotating background slideshow (cross-fade) ── #}
+  <div id="faq-hero" class="relative h-[420px] flex items-center justify-center text-center overflow-hidden">
+    <div class="absolute inset-0">
+      {% if hero_slides %}
+        {% for s in hero_slides %}
+        <div class="faq-slide {% if forloop.first %}is-active{% endif %}" style="background-image:url('{{ s.image.url }}')"></div>
+        {% endfor %}
+      {% else %}
+        {# Fallback pattern when no slides uploaded yet #}
+        <div class="faq-slide is-active bg-pattern-hero"></div>
+      {% endif %}
+    </div>
+    {# Dark overlay so the white text stays readable over any image #}
+    <div class="absolute inset-0 bg-gradient-to-b from-black/50 via-black/40 to-black/65"></div>
+    <div class="relative z-10 px-4">
+      <p class="text-sm font-semibold uppercase tracking-widest mb-3 text-white/90 drop-shadow">{% trans "Help Center" %}</p>
+      <h1 class="text-4xl md:text-5xl font-serif font-bold mb-4 text-white drop-shadow">{% trans "Frequently Asked Questions" %}</h1>
+      <p class="max-w-2xl mx-auto text-lg text-white/90 drop-shadow">
         {% trans "Find answers to common questions about our tours, booking process, and travel services." %}
       </p>
     </div>
   </div>
+
+  <style>
+    #faq-hero .faq-slide {
+      position: absolute; inset: 0;
+      background-size: cover; background-position: center;
+      opacity: 0; transform: scale(1.06);
+      transition: opacity 1.5s ease-in-out, transform 6s ease-in-out;
+      will-change: opacity, transform;
+    }
+    #faq-hero .faq-slide.is-active { opacity: 1; transform: scale(1); }
+  </style>
+  <script>
+    (function () {
+      var slides = document.querySelectorAll('#faq-hero .faq-slide');
+      if (slides.length < 2) return;
+      var i = 0;
+      setInterval(function () {
+        slides[i].classList.remove('is-active');
+        i = (i + 1) % slides.length;
+        slides[i].classList.add('is-active');
+      }, 5000);
+    })();
+  </script>
 
   {# FAQ Content #}
   <section class="py-20 bg-white">
