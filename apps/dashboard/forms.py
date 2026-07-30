@@ -217,11 +217,21 @@ TourStopFormSet = inlineformset_factory(
 class TourDayForm(forms.ModelForm):
     """A single day of the day-by-day itinerary (mirrors TourStopForm)."""
 
+    attractions = forms.ModelMultipleChoiceField(
+        queryset=Attraction.objects.select_related("city", "city__country").order_by("city__name", "name"),
+        widget=forms.SelectMultiple(attrs={
+            "class": "select2-attractions border border-gray-300 rounded-lg p-2 w-full text-sm",
+            "style": "min-height: 90px;",
+        }),
+        required=False,
+        label=_("Attractions (Diqqatga sazovor joylar)"),
+        help_text=_("Hold Ctrl to select multiple attractions for this day"),
+    )
+
     class Meta:
         model = TourDay
         fields = [
-            "day_number", "title", "description",
-            "meals_included", "accommodation", "transport", "image",
+            "day_number", "title", "description", "attractions",
         ]
 
 
@@ -232,7 +242,7 @@ TourDayFormSet = inlineformset_factory(
     Tour,
     TourDay,
     form=TourDayForm,
-    extra=1,
+    extra=0,
     can_delete=True,
 )
 

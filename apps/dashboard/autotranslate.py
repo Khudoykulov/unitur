@@ -87,8 +87,8 @@ def autofill_translations(instance, source_lang=None, overwrite=True, force=Fals
     if instance is None or not getattr(instance, "pk", None):
         return 0
 
-    if force:
-        _do_autofill(instance.pk, type(instance), source_lang, overwrite, force=True)
+    if force or getattr(settings, "TESTING", False):
+        _do_autofill(instance.pk, type(instance), source_lang, overwrite, force=force)
         return 1
 
     thread = threading.Thread(

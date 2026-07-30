@@ -79,6 +79,13 @@ class _StopsFormMixin:
             stops.save()
             days.instance = self.object
             days.save()
+            # Re-sequence day numbers sequentially for remaining active days
+            active_days = self.object.days.all().order_by("day_number", "id")
+            for idx, d in enumerate(active_days, start=1):
+                if d.day_number != idx:
+                    d.day_number = idx
+                    d.save(update_fields=["day_number"])
+
         autofill_translations(self.object)
         self.log_action(self.audit_action, "IchkiTur", self.object.pk)
         messages.success(self.request, self.success_message)

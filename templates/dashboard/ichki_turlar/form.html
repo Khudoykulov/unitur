@@ -119,85 +119,70 @@
 
       <div id="days-body" class="space-y-3">
         {% for dform in days %}
-        <div class="day-row grid grid-cols-12 gap-3 border border-gray-100 rounded-lg p-3 bg-gray-50/50">
+        <div class="day-row border border-gray-100 rounded-lg p-3 bg-gray-50/50 space-y-3">
           {% for hidden in dform.hidden_fields %}{{ hidden }}{% endfor %}
-          <div class="col-span-4 sm:col-span-2">
-            <label class="block text-xs font-medium text-gray-600 mb-1">{{ dform.day_number.label }}</label>
-            {{ dform.day_number }}
+          <div class="grid grid-cols-12 gap-3">
+            <div class="col-span-4 sm:col-span-2">
+              <label class="block text-xs font-medium text-gray-600 mb-1">{{ dform.day_number.label }}</label>
+              {{ dform.day_number }}
+            </div>
+            <div class="col-span-8 sm:col-span-10">
+              <label class="block text-xs font-medium text-gray-600 mb-1">{{ dform.title.label }}</label>
+              {{ dform.title }}
+            </div>
           </div>
-          <div class="col-span-8 sm:col-span-6">
-            <label class="block text-xs font-medium text-gray-600 mb-1">{{ dform.title.label }}</label>
-            {{ dform.title }}
-          </div>
-          <div class="col-span-12 sm:col-span-4">
-            <label class="block text-xs font-medium text-gray-600 mb-1">{{ dform.meals_included.label }}</label>
-            {{ dform.meals_included }}
-          </div>
-          <div class="col-span-12">
+          <div>
             <label class="block text-xs font-medium text-gray-600 mb-1">{{ dform.description.label }}</label>
             {{ dform.description }}
           </div>
-          <div class="col-span-12 sm:col-span-4">
-            <label class="block text-xs font-medium text-gray-600 mb-1">{{ dform.accommodation.label }}</label>
-            {{ dform.accommodation }}
+          <div class="pt-2 border-t border-gray-200/60">
+            <label class="block text-xs font-bold text-emerald-800 mb-1 flex items-center gap-1">
+              <i class="ti ti-map-pin text-emerald-600"></i> {% trans "Ushbu kunda boriladigan diqqatga sazovor joylar (Attractions):" %}
+            </label>
+            {{ dform.attractions }}
           </div>
-          <div class="col-span-12 sm:col-span-4">
-            <label class="block text-xs font-medium text-gray-600 mb-1">{{ dform.transport.label }}</label>
-            {{ dform.transport }}
-          </div>
-          <div class="col-span-12 sm:col-span-4">
-            <label class="block text-xs font-medium text-gray-600 mb-1">{{ dform.image.label }}</label>
-            {{ dform.image }}
-          </div>
-          <div class="col-span-12 flex items-center justify-end pt-1">
+          <div class="flex items-center justify-end pt-1">
             {% if dform.instance.pk %}
-              <label class="text-xs text-red-500 flex items-center gap-1" title="{% trans 'Delete this day' %}">
-                {{ dform.DELETE }} {% trans "Delete this day" %}
-              </label>
+              <div class="hidden">{{ dform.DELETE }}</div>
+              <button type="button" class="delete-day-btn text-xs font-semibold text-red-600 bg-red-50 hover:bg-red-100 px-3 py-1.5 rounded-lg border border-red-200 flex items-center gap-1 cursor-pointer transition" title="{% trans 'Delete this day' %}">
+                <i class="ti ti-trash"></i> {% trans "Ushbu kunni o'chirish" %}
+              </button>
             {% else %}
-              <button type="button" class="remove-day text-red-400 hover:text-red-600 text-xs flex items-center gap-1" title="{% trans 'Remove' %}">
-                <i class="ti ti-x"></i> {% trans "Remove" %}
+              <button type="button" class="remove-day text-xs font-semibold text-red-600 bg-red-50 hover:bg-red-100 px-3 py-1.5 rounded-lg border border-red-200 flex items-center gap-1 cursor-pointer transition">
+                <i class="ti ti-trash"></i> {% trans "Remove day" %}
               </button>
             {% endif %}
           </div>
-          {% if dform.errors %}<div class="col-span-12 text-xs text-red-600">{{ dform.errors }}</div>{% endif %}
+          {% if dform.errors %}<div class="text-xs text-red-600">{{ dform.errors }}</div>{% endif %}
         </div>
         {% endfor %}
       </div>
 
       {# Hidden template for new day rows #}
       <template id="empty-day-form">
-        <div class="day-row grid grid-cols-12 gap-3 border border-gray-100 rounded-lg p-3 bg-gray-50/50">
-          <div class="col-span-4 sm:col-span-2">
-            <label class="block text-xs font-medium text-gray-600 mb-1">{{ days.empty_form.day_number.label }}</label>
-            {{ days.empty_form.day_number }}
+        <div class="day-row border border-gray-100 rounded-lg p-3 bg-gray-50/50 space-y-3">
+          <div class="grid grid-cols-12 gap-3">
+            <div class="col-span-4 sm:col-span-2">
+              <label class="block text-xs font-medium text-gray-600 mb-1">{{ days.empty_form.day_number.label }}</label>
+              {{ days.empty_form.day_number }}
+            </div>
+            <div class="col-span-8 sm:col-span-10">
+              <label class="block text-xs font-medium text-gray-600 mb-1">{{ days.empty_form.title.label }}</label>
+              {{ days.empty_form.title }}
+            </div>
           </div>
-          <div class="col-span-8 sm:col-span-6">
-            <label class="block text-xs font-medium text-gray-600 mb-1">{{ days.empty_form.title.label }}</label>
-            {{ days.empty_form.title }}
-          </div>
-          <div class="col-span-12 sm:col-span-4">
-            <label class="block text-xs font-medium text-gray-600 mb-1">{{ days.empty_form.meals_included.label }}</label>
-            {{ days.empty_form.meals_included }}
-          </div>
-          <div class="col-span-12">
+          <div>
             <label class="block text-xs font-medium text-gray-600 mb-1">{{ days.empty_form.description.label }}</label>
             {{ days.empty_form.description }}
           </div>
-          <div class="col-span-12 sm:col-span-4">
-            <label class="block text-xs font-medium text-gray-600 mb-1">{{ days.empty_form.accommodation.label }}</label>
-            {{ days.empty_form.accommodation }}
+          <div class="pt-2 border-t border-gray-200/60">
+            <label class="block text-xs font-bold text-emerald-800 mb-1 flex items-center gap-1">
+              <i class="ti ti-map-pin text-emerald-600"></i> {% trans "Ushbu kunda boriladigan diqqatga sazovor joylar (Attractions):" %}
+            </label>
+            {{ days.empty_form.attractions }}
           </div>
-          <div class="col-span-12 sm:col-span-4">
-            <label class="block text-xs font-medium text-gray-600 mb-1">{{ days.empty_form.transport.label }}</label>
-            {{ days.empty_form.transport }}
-          </div>
-          <div class="col-span-12 sm:col-span-4">
-            <label class="block text-xs font-medium text-gray-600 mb-1">{{ days.empty_form.image.label }}</label>
-            {{ days.empty_form.image }}
-          </div>
-          <div class="col-span-12 flex items-center justify-end pt-1">
-            <button type="button" class="remove-day text-red-400 hover:text-red-600 text-xs flex items-center gap-1" title="{% trans 'Remove' %}">
+          <div class="flex items-center justify-end pt-1">
+            <button type="button" class="remove-day text-red-400 hover:text-red-600 text-xs flex items-center gap-1 cursor-pointer" title="{% trans 'Remove' %}">
               <i class="ti ti-x"></i> {% trans "Remove" %}
             </button>
           </div>
@@ -284,10 +269,22 @@
   });
 
   body.addEventListener("click", function (e) {
-    const btn = e.target.closest(".remove-day");
-    if (!btn) return;
-    const row = btn.closest(".day-row");
-    if (row) row.remove();
+    const delBtn = e.target.closest(".delete-day-btn");
+    if (delBtn) {
+      const row = delBtn.closest(".day-row");
+      if (row) {
+        const chk = row.querySelector("input[name$='-DELETE']");
+        if (chk) chk.checked = true;
+        row.style.display = "none";
+      }
+      return;
+    }
+
+    const removeBtn = e.target.closest(".remove-day");
+    if (removeBtn) {
+      const row = removeBtn.closest(".day-row");
+      if (row) row.remove();
+    }
   });
 })();
 </script>

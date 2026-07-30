@@ -49,6 +49,7 @@
             <th class="px-4 py-3 text-xs text-gray-500 font-semibold uppercase tracking-wide">{% trans "Category" %}</th>
             <th class="px-4 py-3 text-xs text-gray-500 font-semibold uppercase tracking-wide">{% trans "Duration" %}</th>
             <th class="px-4 py-3 text-xs text-gray-500 font-semibold uppercase tracking-wide">{% trans "Price" %}</th>
+            <th class="px-4 py-3 text-xs text-gray-500 font-semibold uppercase tracking-wide">{% trans "Featured (Asosiy sahifa)" %}</th>
             <th class="px-4 py-3 text-xs text-gray-500 font-semibold uppercase tracking-wide">{% trans "Status" %}</th>
             <th class="px-4 py-3 text-xs text-gray-500 font-semibold uppercase tracking-wide">{% trans "Actions" %}</th>
           </tr>
@@ -75,6 +76,16 @@
             <td class="px-4 py-3 text-gray-600">{{ tour.duration_days }} {% trans "days" %}</td>
             <td class="px-4 py-3 font-semibold text-gray-800">${{ tour.price_per_person|floatformat:0 }}</td>
             <td class="px-4 py-3">
+              <form method="post" action="{% url 'dashboard:toggle_featured' 'tour' tour.pk %}">
+                {% csrf_token %}
+                <button type="submit" class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-semibold transition cursor-pointer {% if tour.is_featured %}bg-amber-100 text-amber-800 border border-amber-300 hover:bg-amber-200{% else %}bg-gray-100 text-gray-500 border border-gray-200 hover:bg-amber-50 hover:text-amber-700{% endif %}"
+                        title="{% trans 'Asosiy sahifada ko\'rsatish / yashirish uchun bosing' %}">
+                  <i class="ti {% if tour.is_featured %}ti-star-filled text-amber-500{% else %}ti-star text-gray-400{% endif %}"></i>
+                  <span>{% if tour.is_featured %}{% trans "Tanlangan" %}{% else %}{% trans "Tanlash" %}{% endif %}</span>
+                </button>
+              </form>
+            </td>
+            <td class="px-4 py-3">
               {% if tour.is_active %}<span class="inline-flex items-center px-2 py-0.5 rounded-full text-xs font-medium bg-green-100 text-green-700">{% trans "Active" %}</span>
               {% else %}<span class="inline-flex items-center px-2 py-0.5 rounded-full text-xs font-medium bg-gray-100 text-gray-600">{% trans "Inactive" %}</span>{% endif %}
             </td>
@@ -98,7 +109,7 @@
             </td>
           </tr>
           {% empty %}
-          <tr><td colspan="6" class="px-4 py-10 text-center text-gray-400">{% trans "No tours found." %}</td></tr>
+          <tr><td colspan="7" class="px-4 py-10 text-center text-gray-400">{% trans "No tours found." %}</td></tr>
           {% endfor %}
         </tbody>
       </table>

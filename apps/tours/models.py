@@ -218,12 +218,17 @@ class TourDay(OrderedMixin):
     accommodation = models.CharField(_("Accommodation"), max_length=200, blank=True)
     transport = models.CharField(_("Transport"), max_length=200, blank=True)
     image = models.ImageField(_("Image"), upload_to="tours/days/", blank=True, null=True)
+    attractions = models.ManyToManyField(
+        "destinations.Attraction",
+        related_name="tour_days",
+        verbose_name=_("Attractions"),
+        blank=True,
+    )
 
     class Meta:
         verbose_name = _("Tour day")
         verbose_name_plural = _("Tour days")
         ordering = ["day_number"]
-        unique_together = [("tour", "day_number")]
 
     def __str__(self) -> str:
         return f"Day {self.day_number}: {self.title}"

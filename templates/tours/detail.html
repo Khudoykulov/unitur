@@ -109,41 +109,73 @@
         </div>
         {% endif %}
 
-        {# Day-by-day itinerary accordion #}
+        {# Day-by-day itinerary accordion (Advantour style) #}
         {% if tour.days.exists %}
-        <div class="mb-10 bg-white rounded-2xl p-6 sm:p-8 shadow-sm">
-          <h2 class="font-serif text-2xl font-bold text-dark mb-6">{% trans "Day-by-Day Itinerary" %}</h2>
-          <div class="space-y-3">
-            {% for day in tour.days.all %}
-            <div x-data="{ open: {{ forloop.first|yesno:'true,false' }} }"
-                 class="border border-gray-200 rounded-xl overflow-hidden">
-              <button @click="open = !open"
-                      class="w-full flex items-center justify-between px-6 py-4 text-left hover:bg-accent transition">
-                <div class="flex items-center gap-3">
-                  <span class="w-8 h-8 rounded-full bg-primary text-white text-sm font-bold flex items-center justify-center flex-shrink-0">{{ day.day_number }}</span>
-                  <span class="font-semibold text-dark">{{ day.title }}</span>
-                </div>
-                <i class="ti" :class="open ? 'ti-chevron-up' : 'ti-chevron-down'" class="text-gray-400"></i>
+        <div class="mb-10 bg-white rounded-2xl p-6 sm:p-8 shadow-sm" x-data="{ openDays: [1] }">
+          <div class="flex items-center justify-between mb-6 pb-4 border-b border-gray-100">
+            <h2 class="font-serif text-2xl font-bold text-dark flex items-center gap-2">
+              <i class="ti ti-map-2 text-primary"></i> {% trans "Tour itinerary:" %}
+            </h2>
+            <div class="flex items-center gap-3 text-xs sm:text-sm font-medium">
+              <button type="button" @click="openDays = [{% for day in tour.days.all %}{{ day.day_number }}{% if not forloop.last %},{% endif %}{% endfor %}]"
+                      class="text-primary hover:underline flex items-center gap-1">
+                <i class="ti ti-arrows-maximize text-xs"></i> {% trans "Expand All" %}
               </button>
-              <div x-show="open" x-transition class="px-6 pb-5">
-                <p class="text-gray-600 text-sm leading-relaxed mb-3">{{ day.description }}</p>
-                <div class="flex flex-wrap gap-3 text-xs text-gray-500">
-                  {% if day.meals_included != 'none' %}
-                  <span class="flex items-center gap-1 bg-amber-50 text-amber-700 px-2 py-1 rounded-full">
-                    <i class="ti ti-utensils"></i> {{ day.get_meals_included_display }}
-                  </span>
-                  {% endif %}
-                  {% if day.accommodation %}
-                  <span class="flex items-center gap-1 bg-blue-50 text-blue-700 px-2 py-1 rounded-full">
-                    <i class="ti ti-bed"></i> {{ day.accommodation }}
-                  </span>
-                  {% endif %}
-                  {% if day.transport %}
-                  <span class="flex items-center gap-1 bg-purple-50 text-purple-700 px-2 py-1 rounded-full">
-                    <i class="ti ti-bus"></i> {{ day.transport }}
-                  </span>
-                  {% endif %}
+              <span class="text-gray-300">|</span>
+              <button type="button" @click="openDays = []"
+                      class="text-gray-500 hover:underline flex items-center gap-1">
+                <i class="ti ti-arrows-minimize text-xs"></i> {% trans "Collapse All" %}
+              </button>
+            </div>
+          </div>
+
+          <div class="space-y-4">
+            {% for day in tour.days.all %}
+            <div class="border border-gray-200 rounded-2xl overflow-hidden transition-all shadow-sm hover:border-gray-300">
+              <button @click="openDays.includes({{ day.day_number }}) ? openDays = openDays.filter(id => id !== {{ day.day_number }}) : openDays.push({{ day.day_number }})"
+                      class="w-full flex items-center justify-between px-5 sm:px-6 py-4 text-left bg-gray-50/70 hover:bg-gray-100/80 transition">
+                <div class="flex items-center gap-3">
+                  <span class="font-semibold text-primary text-base sm:text-lg">{% trans "Day" %} {{ day.day_number }}:</span>
+                  <span class="font-bold text-dark text-base sm:text-lg">{{ day.title }}</span>
                 </div>
+                <div class="flex items-center gap-2 text-gray-400">
+                  <i class="ti text-lg transition-transform duration-200" :class="openDays.includes({{ day.day_number }}) ? 'ti-chevron-up' : 'ti-chevron-down'"></i>
+                </div>
+              </button>
+
+              <div x-show="openDays.includes({{ day.day_number }})" x-transition class="px-5 sm:px-6 py-5 bg-white border-t border-gray-100 space-y-4">
+                <p class="text-gray-700 text-sm sm:text-base leading-relaxed whitespace-pre-line">{{ day.description }}</p>
+
+                {# Diqqatga sazovor joylar (Attractions visited on this day) #}
+                {% if day.attractions.exists %}
+                <div class="mt-4 pt-4 border-t border-gray-100">
+                  <h4 class="text-xs font-bold uppercase tracking-wider text-emerald-800 mb-3 flex items-center gap-1.5">
+                    <i class="ti ti-map-pin text-primary text-sm"></i> {% trans "Diqqatga sazovor joylar (Attractions):" %}
+                  </h4>
+                  <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-3">
+                    {% for attraction in day.attractions.all %}
+                    <a href="{{ attraction.get_absolute_url }}"
+                       class="group flex items-center gap-3 p-2.5 rounded-xl border border-gray-200 bg-gray-50/50 hover:bg-emerald-50/60 hover:border-emerald-300 transition shadow-2xs">
+                      {% if attraction.image %}
+                      <img src="{{ attraction.image.url }}" alt="{{ attraction.name }}" class="w-12 h-12 rounded-lg object-cover flex-shrink-0 group-hover:scale-105 transition-transform">
+                      {% else %}
+                      <div class="w-12 h-12 rounded-lg bg-emerald-100 text-emerald-700 flex items-center justify-center flex-shrink-0 font-bold text-base">
+                        <i class="ti ti-building-monument"></i>
+                      </div>
+                      {% endif %}
+                      <div class="min-w-0 flex-1">
+                        <p class="text-xs font-bold text-gray-800 group-hover:text-primary truncate">{{ attraction.name }}</p>
+                        <p class="text-[11px] text-gray-500 truncate flex items-center gap-1">
+                          <i class="ti ti-building-monument text-xs text-gray-400"></i> {{ attraction.city.name }}
+                        </p>
+                      </div>
+                      <i class="ti ti-chevron-right text-gray-400 group-hover:text-primary transition-transform group-hover:translate-x-0.5"></i>
+                    </a>
+                    {% endfor %}
+                  </div>
+                </div>
+                {% endif %}
+
               </div>
             </div>
             {% endfor %}

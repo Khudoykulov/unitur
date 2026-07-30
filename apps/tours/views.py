@@ -33,6 +33,7 @@ class TourListView(ListView):
     def get_queryset(self):
         qs = (
             Tour.objects.filter(is_active=True)
+            .exclude(stops__order__gte=2)
             .select_related("category")
             .prefetch_related("destinations")
             .annotate(
@@ -137,7 +138,7 @@ class TourDetailView(DetailView):
             .prefetch_related(
                 "destinations",
                 "hotels__city",
-                "days",
+                "days__attractions__city",
                 "images",
                 "departures",
                 "reviews",

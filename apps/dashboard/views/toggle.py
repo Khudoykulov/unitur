@@ -58,3 +58,30 @@ class ToggleActiveView(AuditMixin, ManagerRequiredMixin, View):
             messages.success(request, gettext("'%(name)s' is now hidden from the site.") % {"name": label})
 
         return redirect(request.META.get("HTTP_REFERER") or list_url)
+
+
+class ToggleFeaturedView(AuditMixin, ManagerRequiredMixin, View):
+    """Flip ``is_featured`` for a single record (POST only)."""
+
+    def post(self, request, model, pk):
+        entry = TOGGLEABLE.get(model)
+        if entry is None:
+            raise Http404("Unknown model")
+        model_cls, list_url = entry
+
+        obj = get_object_or_404(model_cls, pk=pk)
+        if hasattr(obj, "is_featured"):
+            obj.is_featured = not obj.is_featured
+            obj.save(update_fields=["is_featured"])
+            is_feat = obj.is_featured
+        else:
+            is_feat = False
+
+        self.log_action("TOGGLE_FEATURED", model_cls.__name__, obj.pk)
+        label = str(obj)
+        if is_feat:
+            messages.success(request, gettext("'%(name)s' is now featured on the main page.") % {"name": label})
+        else:
+            messages.success(request, gettext("'%(name)s' is no longer featured on the main page.") % {"name": label})
+
+        return redirect(request.META.get("HTTP_REFERER") or list_url)

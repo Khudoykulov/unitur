@@ -41,7 +41,13 @@ class TourListView(ManagerRequiredMixin, ListView):
         return ctx
 
 
-class TourCreateView(AuditMixin, ManagerRequiredMixin, CreateView):
+from django.db import transaction
+from apps.dashboard.forms import TourDayFormSet
+
+
+class _TourFormMixin:
+    """Shared formset handling for Tour create and edit views."""
+
     model = Tour
     template_name = "dashboard/tours/form.html"
     success_url = reverse_lazy("dashboard:tours_list")
@@ -50,46 +56,59 @@ class TourCreateView(AuditMixin, ManagerRequiredMixin, CreateView):
         "group_size_min", "group_size_max", "difficulty",
         "price_per_person", "price_currency", "discount_percent",
         "cover_image", "overview", "includes", "excludes",
-        "important_notes",
+        "important_notes", "is_featured",
     ]
 
+    def get_context_data(self, **kwargs):
+        ctx = super().get_context_data(**kwargs)
+        if self.request.method == "POST":
+            ctx["days"] = TourDayFormSet(
+                self.request.POST, self.request.FILES, instance=self.object
+            )
+        else:
+            ctx["days"] = TourDayFormSet(instance=self.object)
+        ctx["categories"] = TourCategory.objects.all()
+        return ctx
+
     def form_valid(self, form):
-        response = super().form_valid(form)
+        ctx = self.get_context_data()
+        days = ctx["days"]
+        if not days.is_valid():
+            return self.render_to_response(ctx)
+        with transaction.atomic():
+            self.object = form.save()
+            days.instance = self.object
+            days.save()
+            # Re-sequence day numbers sequentially for remaining active days
+            active_days = self.object.days.all().order_by("day_number", "id")
+            for idx, d in enumerate(active_days, start=1):
+                if d.day_number != idx:
+                    d.day_number = idx
+                    d.save(update_fields=["day_number"])
+
         autofill_translations(self.object)
-        self.log_action("CREATE", "Tour", self.object.pk)
-        messages.success(self.request, gettext("Tour '%(title)s' created.") % {"title": self.object.title})
-        return response
+        self.log_action(getattr(self, "audit_action", "SAVE"), "Tour", self.object.pk)
+        messages.success(self.request, getattr(self, "success_message", gettext("Tour saved.")))
+        return redirect(self.success_url)
+
+
+class TourCreateView(_TourFormMixin, AuditMixin, ManagerRequiredMixin, CreateView):
+    audit_action = "CREATE"
+    success_message = _("Tour created.")
 
     def get_context_data(self, **kwargs):
         ctx = super().get_context_data(**kwargs)
         ctx["page_title"] = _("Create Tour")
-        ctx["categories"] = TourCategory.objects.all()
         return ctx
 
 
-class TourEditView(AuditMixin, ManagerRequiredMixin, UpdateView):
-    model = Tour
-    template_name = "dashboard/tours/form.html"
-    success_url = reverse_lazy("dashboard:tours_list")
-    fields = [
-        "title", "category", "destinations", "duration_days",
-        "group_size_min", "group_size_max", "difficulty",
-        "price_per_person", "price_currency", "discount_percent",
-        "cover_image", "overview", "includes", "excludes",
-        "important_notes",
-    ]
-
-    def form_valid(self, form):
-        response = super().form_valid(form)
-        autofill_translations(self.object)
-        self.log_action("UPDATE", "Tour", self.object.pk)
-        messages.success(self.request, gettext("Tour '%(title)s' updated.") % {"title": self.object.title})
-        return response
+class TourEditView(_TourFormMixin, AuditMixin, ManagerRequiredMixin, UpdateView):
+    audit_action = "UPDATE"
+    success_message = _("Tour updated.")
 
     def get_context_data(self, **kwargs):
         ctx = super().get_context_data(**kwargs)
         ctx["page_title"] = gettext("Edit: %(title)s") % {"title": self.object.title}
-        ctx["categories"] = TourCategory.objects.all()
         return ctx
 
 

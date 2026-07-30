@@ -183,11 +183,11 @@ class TestTourDay:
         )
         assert str(day) == "Day 3: Mountain Hike"
 
-    def test_unique_day_number_per_tour(self):
+    def test_tour_days_ordering(self):
         tour = f.make_tour()
-        TourDay.objects.create(tour=tour, day_number=1, title="A", description="x")
-        with pytest.raises(IntegrityError):
-            TourDay.objects.create(tour=tour, day_number=1, title="B", description="y")
+        d2 = TourDay.objects.create(tour=tour, day_number=2, title="B", description="y")
+        d1 = TourDay.objects.create(tour=tour, day_number=1, title="A", description="x")
+        assert list(tour.days.all()) == [d1, d2]
 
 
 class TestTourDeparture:
