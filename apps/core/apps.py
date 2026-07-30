@@ -10,19 +10,18 @@ class CoreConfig(AppConfig):
 
     def _patch_rosetta(self):
         try:
-            import rosetta.views as rosetta_views
-            original_home = rosetta_views.home
+            from rosetta.views import TranslationFormView
+            original_post = TranslationFormView.post
 
-            def patched_home(request, *args, **kwargs):
-                response = original_home(request, *args, **kwargs)
-                # POST so'rov bo'lsa (save bosilsa) — compile qilamiz
-                if request.method == 'POST':
-                    _compile_messages()
+            def patched_post(self, request, *args, **kwargs):
+                response = original_post(self, request, *args, **kwargs)
+                _compile_messages()
                 return response
 
-            rosetta_views.home = patched_home
-        except Exception:
-            pass
+            TranslationFormView.post = patched_post
+        except Exception as e:
+            import logging
+            logging.getLogger(__name__).error(f"Rosetta patch xatosi: {e}")
 
 
 def _compile_messages():
