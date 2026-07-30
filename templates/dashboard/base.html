@@ -176,14 +176,16 @@
           <span class="hidden sm:block">{{ request.user.get_full_name|default:request.user.email|truncatechars:20 }}</span>
         </button>
         <div x-show="open" x-transition
-             class="absolute right-0 mt-1 w-44 bg-white rounded-xl border border-gray-200 shadow-lg py-1 z-50">
-          <a href="{% url 'accounts:profile' %}" class="flex items-center gap-2 px-4 py-2 text-sm text-gray-700 hover:bg-gray-50">
-            <i class="ti ti-user"></i> {% trans "My Profile" %}
-          </a>
-          <div class="border-t my-1"></div>
-          <a href="{% url 'account_logout' %}" class="flex items-center gap-2 px-4 py-2 text-sm text-red-600 hover:bg-red-50">
-            <i class="ti ti-logout"></i> {% trans "Sign Out" %}
-          </a>
+             class="absolute right-0 top-full pt-1 z-50">
+          <div class="w-44 bg-white rounded-xl border border-gray-200 shadow-lg py-1">
+            <a href="{% url 'accounts:profile' %}" class="flex items-center gap-2 px-4 py-2 text-sm text-gray-700 hover:bg-gray-50">
+              <i class="ti ti-user"></i> {% trans "My Profile" %}
+            </a>
+            <div class="border-t my-1"></div>
+            <a href="{% url 'account_logout' %}" class="flex items-center gap-2 px-4 py-2 text-sm text-red-600 hover:bg-red-50">
+              <i class="ti ti-logout"></i> {% trans "Sign Out" %}
+            </a>
+          </div>
         </div>
       </div>
     </div>
