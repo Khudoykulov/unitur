@@ -225,3 +225,21 @@ class TestTourDeparture:
     def test_is_bookable_false_when_full(self):
         dep = f.make_departure(status="open", available_seats=10, booked_seats=10)
         assert dep.is_bookable() is False
+
+
+class TestTourDetailPostReview:
+    def test_post_tour_review_success(self, client):
+        tour = f.make_tour(slug="samarqand-safari")
+        url = reverse("tours:detail", kwargs={"slug": tour.slug})
+        resp = client.post(url, {
+            "guest_name": "Diyorbek",
+            "rating": "5",
+            "body": "Ajoyib sayohat bo'ldi!",
+        })
+        assert resp.status_code == 302
+        assert resp.url == tour.get_absolute_url() + "#reviews-section"
+        review = tour.reviews.first()
+        assert review is not None
+        assert review.guest_name == "Diyorbek"
+        assert review.rating == 5
+        assert review.body == "Ajoyib sayohat bo'ldi!"

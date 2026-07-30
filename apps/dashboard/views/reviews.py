@@ -9,6 +9,16 @@ from apps.dashboard.mixins import AuditMixin, StaffRequiredMixin
 from apps.reviews.models import Review
 
 
+from django.contrib import messages
+from django.shortcuts import get_object_or_404, redirect
+from django.utils import timezone
+from django.utils.translation import gettext
+from django.views.generic import ListView
+
+from apps.dashboard.mixins import AuditMixin, StaffRequiredMixin
+from apps.reviews.models import Review
+
+
 class ReviewListView(AuditMixin, StaffRequiredMixin, ListView):
     model = Review
     template_name = "dashboard/reviews/list.html"
@@ -16,18 +26,18 @@ class ReviewListView(AuditMixin, StaffRequiredMixin, ListView):
     paginate_by = 25
 
     def get_queryset(self):
-        qs = Review.objects.select_related("tour", "hotel", "user").order_by("-created_at")
-        status = self.request.GET.get("status", "pending")
+        qs = Review.objects.select_related("tour", "hotel", "user").prefetch_related("images").order_by("-created_at")
+        status = self.request.GET.get("status", "")
         if status:
             qs = qs.filter(status=status)
         q = self.request.GET.get("q", "").strip()
         if q:
-            qs = qs.filter(title__icontains=q) | qs.filter(guest_name__icontains=q)
+            qs = qs.filter(title__icontains=q) | qs.filter(guest_name__icontains=q) | qs.filter(body__icontains=q)
         return qs
 
     def get_context_data(self, **kwargs):
         ctx = super().get_context_data(**kwargs)
-        ctx["selected_status"] = self.request.GET.get("status", "pending")
+        ctx["selected_status"] = self.request.GET.get("status", "")
         ctx["q"] = self.request.GET.get("q", "")
         ctx["pending_count"] = Review.objects.filter(status="pending").count()
         return ctx
@@ -44,8 +54,15 @@ class ReviewListView(AuditMixin, StaffRequiredMixin, ListView):
             review.reject()
             self.log_action("REJECT", "Review", pk)
             messages.success(request, gettext("Review rejected."))
+        elif action == "reply":
+            reply_text = request.POST.get("admin_reply", "").strip()
+            review.admin_reply = reply_text
+            review.admin_replied_at = timezone.now() if reply_text else None
+            review.save(update_fields=["admin_reply", "admin_replied_at"])
+            self.log_action("REPLY", "Review", pk)
+            messages.success(request, gettext("Admin reply saved."))
         elif action == "delete":
             review.delete()
             self.log_action("DELETE", "Review", pk)
             messages.success(request, gettext("Review deleted."))
-        return redirect(request.path + "?" + request.GET.urlencode())
+        return redirect(request.META.get("HTTP_REFERER") or request.path)

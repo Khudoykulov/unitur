@@ -31,7 +31,7 @@
           <h3 class="text-lg font-semibold mb-4 flex items-center gap-2">
             <i class="ti ti-pencil text-primary"></i> {% trans "Write a Review" %}
           </h3>
-          <form method="post" action="{% url 'reviews:create' %}" class="space-y-3">
+          <form method="post" action="{% url 'reviews:create' %}" enctype="multipart/form-data" class="space-y-3">
             {% csrf_token %}
             {% if form.non_field_errors %}
             <div class="rounded-lg bg-red-50 border border-red-200 px-3 py-2 text-xs text-red-700">
@@ -57,41 +57,22 @@
 
       {# ── Main column: filters + reviews ─────────────────────── #}
       <div class="order-1 lg:order-none">
-        {# Filters #}
-        <div class="inline-flex flex-wrap items-center gap-3 mb-4 bg-white rounded-xl px-4 py-3 shadow-sm">
-          <a href="?{% if request.GET.rating %}rating={{ request.GET.rating }}{% endif %}"
-             class="px-4 py-2 rounded-full text-sm font-medium transition {% if not current_type %}bg-primary text-white{% else %}bg-white border border-gray-200 text-gray-700{% endif %}">
-            {% trans "All" %}
-          </a>
-          {% for val, label in review_types %}
-          <a href="?type={{ val }}{% if request.GET.rating %}&rating={{ request.GET.rating }}{% endif %}"
-             class="px-4 py-2 rounded-full text-sm font-medium transition {% if current_type == val %}bg-primary text-white{% else %}bg-white border border-gray-200 text-gray-700{% endif %}">
-            {{ label }}
-          </a>
-          {% endfor %}
-        </div>
-
         {# Rating filter #}
-        <div class="inline-flex flex-wrap gap-2 mb-8 bg-white rounded-xl px-4 py-3 shadow-sm">
+        <div class="inline-flex flex-wrap items-center gap-2 mb-8 bg-white rounded-xl px-4 py-3 shadow-sm">
+          <span class="text-xs font-bold text-slate-500 mr-1">{% trans "Reyting bo'yicha filter" %}:</span>
+          <a href="?"
+             class="px-3 py-1.5 rounded-full text-sm font-medium transition {% if not current_rating %}bg-primary text-white{% else %}bg-white border border-gray-200 text-gray-700 hover:bg-slate-50{% endif %}">
+            {% trans "Barchasi" %}
+          </a>
           {% for i in "54321" %}
-          <a href="?{% if current_type %}type={{ current_type }}&{% endif %}rating={{ i }}"
-             class="px-3 py-1.5 rounded-full text-sm border transition {% if current_rating == i %}bg-secondary text-white border-secondary{% else %}bg-white border-gray-200 text-gray-700{% endif %}">
+          <a href="?rating={{ i }}"
+             class="px-3 py-1.5 rounded-full text-sm font-medium border transition {% if current_rating == i %}bg-secondary text-white border-secondary{% else %}bg-white border-gray-200 text-gray-700 hover:bg-slate-50{% endif %}">
             {{ i }}★
           </a>
           {% endfor %}
         </div>
 
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-          {# Inline "Write a Review" prompt — sits right among the review cards #}
-          <a href="#write-review"
-             class="flex flex-col items-center justify-center text-center gap-2 rounded-2xl border-2 border-dashed border-primary/40 bg-primary/5 p-6 hover:bg-primary/10 hover:border-primary/60 transition min-h-[200px]">
-            <span class="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center">
-              <i class="ti ti-pencil-plus text-primary text-2xl"></i>
-            </span>
-            <span class="font-semibold text-brand-ink">{% trans "Share your experience" %}</span>
-            <span class="text-sm text-gray-500">{% trans "Write a review and help other travelers" %}</span>
-            <span class="btn-accent mt-1 text-sm px-4 py-1.5">{% trans "Write a Review" %}</span>
-          </a>
+        <div class="space-y-5">
           {% for review in reviews %}
             {% include "components/review_card.html" with review=review %}
           {% empty %}

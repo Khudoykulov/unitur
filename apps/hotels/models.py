@@ -44,6 +44,15 @@ class HotelAmenity(OrderedMixin):
     def __str__(self) -> str:
         return self.name
 
+    @property
+    def icon_class(self) -> str:
+        ic = (self.icon or "check").strip()
+        if ic.startswith("ti ti-") or ic.startswith("fa-") or ic.startswith("bi-"):
+            return ic
+        if ic.startswith("ti-"):
+            return f"ti {ic}"
+        return f"ti ti-{ic}"
+
 
 class Hotel(TimeStampedModel, SEOMixin, PublishableMixin, OrderedMixin):
     """A hotel or accommodation property."""

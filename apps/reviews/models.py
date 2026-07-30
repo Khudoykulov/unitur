@@ -78,12 +78,17 @@ class Review(TimeStampedModel):
     body = models.TextField(_("Review body"))
     travel_date = models.DateField(_("Travel date"), null=True, blank=True)
 
-    # Moderation
+    # Moderation & Replies
     status = models.CharField(_("Status"), max_length=10, choices=STATUS_CHOICES, default="pending")
+    is_featured = models.BooleanField(
+        _("Is featured on home page"), default=False, help_text=_("Display in home page testimonials")
+    )
     is_verified = models.BooleanField(
         _("Verified purchase"), default=False, help_text=_("Set by staff for confirmed bookings")
     )
     helpful_count = models.PositiveIntegerField(_("Helpful votes"), default=0)
+    admin_reply = models.TextField(_("Admin reply"), blank=True)
+    admin_replied_at = models.DateTimeField(_("Admin replied at"), null=True, blank=True)
 
     class Meta:
         verbose_name = _("Review")
@@ -115,3 +120,22 @@ class Review(TimeStampedModel):
     def reject(self) -> None:
         self.status = "rejected"
         self.save(update_fields=["status"])
+
+
+class ReviewImage(TimeStampedModel):
+    """Customer uploaded photo attached to a tour/hotel review."""
+
+    review = models.ForeignKey(
+        Review,
+        on_delete=models.CASCADE,
+        related_name="images",
+        verbose_name=_("Review"),
+    )
+    image = models.ImageField(_("Photo"), upload_to="reviews/photos/")
+
+    class Meta:
+        verbose_name = _("Review image")
+        verbose_name_plural = _("Review images")
+
+    def __str__(self) -> str:
+        return f"Photo #{self.pk} for Review #{self.review_id}"

@@ -38,6 +38,7 @@
           <tr class="bg-gray-50 text-left border-b border-gray-200">
             <th class="px-4 py-3 text-xs text-gray-500 font-semibold uppercase tracking-wide">#</th>
             <th class="px-4 py-3 text-xs text-gray-500 font-semibold uppercase tracking-wide">{% trans "Customer" %}</th>
+            <th class="px-4 py-3 text-xs text-gray-500 font-semibold uppercase tracking-wide">{% trans "Category" %}</th>
             <th class="px-4 py-3 text-xs text-gray-500 font-semibold uppercase tracking-wide">{% trans "Type" %}</th>
             <th class="px-4 py-3 text-xs text-gray-500 font-semibold uppercase tracking-wide">{% trans "Tour/Hotel" %}</th>
             <th class="px-4 py-3 text-xs text-gray-500 font-semibold uppercase tracking-wide">{% trans "Travelers" %}</th>
@@ -54,6 +55,11 @@
               <p class="font-medium text-gray-800">{{ b.full_name }}</p>
               <p class="text-xs text-gray-400">{{ b.email }}</p>
             </td>
+            <td class="px-4 py-3">
+              <span class="inline-flex items-center px-2 py-0.5 rounded text-xs font-semibold bg-emerald-50 text-emerald-800 border border-emerald-200">
+                {{ b.category_display }}
+              </span>
+            </td>
             <td class="px-4 py-3 text-gray-600 text-xs">{{ b.get_inquiry_type_display }}</td>
             <td class="px-4 py-3 text-gray-600 text-xs">{% if b.tour %}{{ b.tour.title|truncatechars:30 }}{% elif b.hotel %}{{ b.hotel.name|truncatechars:30 }}{% else %}—{% endif %}</td>
             <td class="px-4 py-3 text-gray-600">{{ b.total_travelers }}</td>
@@ -64,7 +70,7 @@
             </td>
           </tr>
           {% empty %}
-          <tr><td colspan="8" class="px-4 py-10 text-center text-gray-400">{% trans "No bookings found." %}</td></tr>
+          <tr><td colspan="9" class="px-4 py-10 text-center text-gray-400">{% trans "No bookings found." %}</td></tr>
           {% endfor %}
         </tbody>
       </table>

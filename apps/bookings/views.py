@@ -59,6 +59,8 @@ class BookingFormView(FormView):
             try:
                 tour = Tour.objects.get(slug=tour_slug, is_active=True)
                 initial["tour"] = tour.pk
+                if tour.category:
+                    initial["category"] = tour.category.pk
             except Tour.DoesNotExist:
                 pass
         return initial
@@ -81,6 +83,11 @@ class BookingFormView(FormView):
         inquiry.inquiry_type = "tour"
         inquiry.source = "web"
         inquiry.created_ip = self._get_client_ip()
+
+        # Automatically assign tour's category if available
+        if inquiry.tour and inquiry.tour.category:
+            inquiry.category = inquiry.tour.category
+
         inquiry.save()
 
         # Notify admin about the new booking (best-effort, never blocks the user).

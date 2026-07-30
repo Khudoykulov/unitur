@@ -56,11 +56,20 @@ class HomeView(TemplateView):
             .select_related("category", "author")
             .order_by("-published_at")[:3]
         )
-        ctx["testimonials"] = (
-            Review.objects.filter(status="approved")
+        featured_reviews = (
+            Review.objects.filter(status="approved", is_featured=True)
             .select_related("user", "tour", "hotel")
-            .order_by("-helpful_count", "-created_at")[:6]
+            .prefetch_related("images")
+            .order_by("-created_at")[:6]
         )
+        if not featured_reviews.exists():
+            featured_reviews = (
+                Review.objects.filter(status="approved")
+                .select_related("user", "tour", "hotel")
+                .prefetch_related("images")
+                .order_by("-helpful_count", "-created_at")[:6]
+            )
+        ctx["testimonials"] = featured_reviews
         # Empty form powering the inline "Write a Review" panel on the home page.
         ctx["review_form"] = ReviewCreateForm()
 

@@ -57,9 +57,10 @@
             </div>
             <div id="amenities_container" class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-2.5 max-h-72 overflow-y-auto pr-1">
               {% for amenity in all_amenities %}
-              <label class="amenity-card">
+              <label class="amenity-card flex items-center gap-2">
                 <input type="checkbox" name="amenities" value="{{ amenity.pk }}"
                        {% if selected_amenity_ids and amenity.pk in selected_amenity_ids %}checked{% endif %}>
+                <i class="{{ amenity.icon_class }} text-blue-600"></i>
                 <span>{{ amenity.name }}</span>
               </label>
               {% empty %}

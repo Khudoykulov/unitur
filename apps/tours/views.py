@@ -5,7 +5,7 @@ Tour views: list (with filtering/sorting), detail, and booking entry.
 import json
 
 from django.db.models import Avg, Count, Q
-from django.shortcuts import get_object_or_404
+from django.shortcuts import get_object_or_404, redirect
 from django.utils.decorators import method_decorator
 from django.views.decorators.cache import cache_page
 from django.views.generic import DetailView, ListView
@@ -118,12 +118,15 @@ class IchkiTurlarListView(ListView):
         return ctx
 
 
+from django.contrib import messages
+from apps.reviews.models import Review, ReviewImage
+
 class TourDetailView(DetailView):
     """
     Full tour detail page.
 
-    Increments view counter, adds structured data, shows departures
-    and related tours.
+    Increments view counter, adds structured data, shows departures,
+    reviews with photos, and handles review submission.
     """
 
     model = Tour
@@ -141,7 +144,8 @@ class TourDetailView(DetailView):
                 "days__attractions__city",
                 "images",
                 "departures",
-                "reviews",
+                "reviews__images",
+                "reviews__user",
                 "stops__city",
             )
         )
@@ -151,6 +155,41 @@ class TourDetailView(DetailView):
         obj.increment_views()
         return obj
 
+    def post(self, request, *args, **kwargs):
+        self.object = self.get_object()
+        guest_name = request.POST.get("guest_name", "").strip()
+        if request.user.is_authenticated:
+            guest_name = request.user.get_full_name() or request.user.username
+        rating = request.POST.get("rating", "5")
+        try:
+            rating = min(max(int(rating), 1), 5)
+        except ValueError:
+            rating = 5
+
+        body = request.POST.get("body", "").strip()
+        title = request.POST.get("title", "").strip() or body[:50] or f"{self.object.title} sharhi"
+
+        if body:
+            review = Review.objects.create(
+                review_type="tour",
+                tour=self.object,
+                user=request.user if request.user.is_authenticated else None,
+                guest_name=guest_name or "Mehmon",
+                rating=rating,
+                title=title,
+                body=body,
+                status="approved",
+            )
+            # Process multiple uploaded photos
+            images = request.FILES.getlist("images")
+            for img in images:
+                ReviewImage.objects.create(review=review, image=img)
+
+            messages.success(request, "Sharhingiz saqlandi. Rahmat!")
+            return redirect(self.object.get_absolute_url() + "#reviews-section")
+
+        return redirect(self.object.get_absolute_url() + "#reviews-section")
+
     def get_context_data(self, **kwargs):
         ctx = super().get_context_data(**kwargs)
         tour = self.object
@@ -159,7 +198,7 @@ class TourDetailView(DetailView):
             status="open"
         ).order_by("departure_date")
 
-        ctx["approved_reviews"] = tour.reviews.filter(status="approved").order_by("-created_at")
+        ctx["approved_reviews"] = tour.reviews.filter(status="approved").prefetch_related("images").order_by("-created_at")
         ctx["avg_rating"] = tour.average_rating
         ctx["review_count"] = ctx["approved_reviews"].count()
 

@@ -166,7 +166,7 @@
           <div class="grid grid-cols-2 sm:grid-cols-3 gap-4">
             {% for amenity in hotel.amenities.all %}
             <div class="flex items-center gap-3 p-3 bg-gray-50 rounded-xl" style="background-color: #f8fafc; border-radius: 0.75rem; padding: 0.75rem;">
-              <i class="{{ amenity.icon|default:'ti ti-check' }} text-xl text-primary" style="color: #2563eb;"></i>
+              <i class="{{ amenity.icon_class }} text-xl text-primary" style="color: #2563eb;"></i>
               <span class="text-sm font-medium text-dark">{{ amenity.name }}</span>
             </div>
             {% endfor %}

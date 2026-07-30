@@ -15,6 +15,7 @@ from django.views import View
 from apps.dashboard.mixins import AuditMixin, ManagerRequiredMixin
 from apps.destinations.models import Attraction, City, Country
 from apps.hotels.models import Hotel
+from apps.reviews.models import Review
 from apps.tours.models import Tour
 
 # Which models can be toggled, keyed by the slug used in the URL. Each entry
@@ -26,6 +27,7 @@ TOGGLEABLE = {
     "hotel": (Hotel, "dashboard:hotels_list"),
     "country": (Country, "dashboard:destinations_list"),
     "attraction": (Attraction, "dashboard:attractions_list"),
+    "review": (Review, "dashboard:reviews_list"),
 }
 
 

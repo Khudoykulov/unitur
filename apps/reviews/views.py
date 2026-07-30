@@ -28,7 +28,7 @@ class ReviewListView(ListView):
     model = Review
     template_name = "reviews/list.html"
     context_object_name = "reviews"
-    paginate_by = 12
+    paginate_by = 5
 
     def get_queryset(self):
         qs = (
@@ -68,7 +68,7 @@ class ReviewCreateView(CreateView):
     success_url = reverse_lazy("reviews:list")
 
     def form_valid(self, form):
-        review = form.instance
+        review = form.save(commit=False)
         review.status = "pending"
         if self.request.user.is_authenticated:
             review.user = self.request.user
@@ -76,11 +76,20 @@ class ReviewCreateView(CreateView):
         review.review_type = "tour" if review.tour else "general"
         review.title = Truncator(review.body).chars(60, truncate="…") or _("Review")
         review.travel_date = timezone.localdate()
+        review.save()
+        self.object = review
+
+        images = self.request.FILES.getlist("images")
+        from .models import ReviewImage
+        for img in images:
+            ReviewImage.objects.create(review=review, image=img)
+
         messages.success(
             self.request,
-            _("Thank you! Your review will appear after moderation."),
+            _("Thank you! Your review has been saved."),
         )
-        return super().form_valid(form)
+        from django.shortcuts import redirect
+        return redirect(self.get_success_url())
 
     def form_invalid(self, form):
         # Re-render the list page with the bound (error-carrying) form.

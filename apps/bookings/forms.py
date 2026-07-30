@@ -12,9 +12,8 @@ class BookingForm(forms.ModelForm):
     """
     Tour booking form (maps to Inquiry model).
 
-    Collects only the essentials: first name, last name, phone (required)
-    and email (optional). The selected tour/departure are passed as hidden
-    fields from the tour page.
+    Collects essentials: first name, last name, phone, email.
+    The tour's category is automatically captured from the selected tour.
     """
 
     class Meta:
@@ -27,10 +26,8 @@ class BookingForm(forms.ModelForm):
 
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
-        # tour/departure come from the page, not the user
         self.fields["tour"].required = False
         self.fields["departure"].required = False
-        # Contact fields
         self.fields["first_name"].required = True
         self.fields["last_name"].required = True
         self.fields["phone"].required = True
@@ -60,24 +57,53 @@ class BookingForm(forms.ModelForm):
 class InquiryForm(forms.ModelForm):
     """Generic inquiry / contact form."""
 
+    category_choice = forms.ChoiceField(
+        label=_("Tur kategoriyasi (Category)"),
+        required=False,
+    )
+    custom_category = forms.CharField(
+        label=_("Boshqa kategoriya (Custom category)"),
+        required=False,
+        widget=forms.TextInput(attrs={"placeholder": _("Kategoriya nomini kiriting..."), "class": "form-control"}),
+    )
+
     class Meta:
         model = Inquiry
         fields = [
-            "inquiry_type", "first_name", "last_name",
+            "inquiry_type", "category", "custom_category", "first_name", "last_name",
             "email", "phone", "country_of_origin",
             "travel_date", "num_adults", "num_children",
             "budget_range", "special_requests",
         ]
         widgets = {
             "travel_date": forms.DateInput(attrs={"type": "date"}),
-            "special_requests": forms.Textarea(attrs={"rows": 5}),
+            "special_requests": forms.Textarea(attrs={"rows": 4}),
         }
 
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
+        from apps.tours.models import TourCategory
+        categories = TourCategory.objects.all()
+        choices = [("", _("-- Tur kategoriyasini tanlang --"))]
+        for cat in categories:
+            choices.append((str(cat.pk), cat.name))
+        choices.append(("other", _("Boshqa (Kategoriyani o'zim kiritaman)")))
+        self.fields["category_choice"].choices = choices
+
+        if self.initial.get("category"):
+            self.fields["category_choice"].initial = str(self.initial["category"])
+        elif self.initial.get("custom_category"):
+            self.fields["category_choice"].initial = "other"
+
         self.helper = FormHelper()
         self.helper.layout = Layout(
-            "inquiry_type",
+            Row(
+                Column("inquiry_type", css_class="col-md-6"),
+                Column("category_choice", css_class="col-md-6"),
+            ),
+            Row(
+                Column("custom_category", css_class="col-md-12", id="custom_category_col"),
+            ),
             Row(
                 Column("first_name", css_class="col-md-6"),
                 Column("last_name", css_class="col-md-6"),
@@ -98,3 +124,20 @@ class InquiryForm(forms.ModelForm):
             "special_requests",
             Submit("submit", _("Send Inquiry"), css_class="btn-primary"),
         )
+
+    def clean(self):
+        cleaned_data = super().clean()
+        cat_choice = cleaned_data.get("category_choice")
+        cust_cat = cleaned_data.get("custom_category", "").strip()
+
+        if cat_choice and cat_choice != "other":
+            try:
+                from apps.tours.models import TourCategory
+                cleaned_data["category"] = TourCategory.objects.get(pk=cat_choice)
+                cleaned_data["custom_category"] = ""
+            except (ValueError, TourCategory.DoesNotExist):
+                cleaned_data["category"] = None
+        elif cat_choice == "other":
+            cleaned_data["category"] = None
+            cleaned_data["custom_category"] = cust_cat
+        return cleaned_data

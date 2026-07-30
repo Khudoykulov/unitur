@@ -1,4 +1,6 @@
-"""Root URL configuration for Travel Pro."""
+"""
+URL configuration for UNITUR travel agency project.
+"""
 
 from django.conf import settings
 from django.conf.urls.static import static

@@ -30,6 +30,7 @@
         <h3 class="font-semibold text-gray-800 mb-4 pb-2 border-b border-gray-100">{% trans "Customer Information" %}</h3>
         <dl class="grid grid-cols-2 gap-3 text-sm">
           <div><dt class="text-gray-500">{% trans "Name" %}</dt><dd class="font-medium text-gray-800">{{ booking.full_name }}</dd></div>
+          <div><dt class="text-gray-500">{% trans "Category" %}</dt><dd class="font-semibold text-emerald-800">{{ booking.category_display }}</dd></div>
           <div><dt class="text-gray-500">{% trans "Email" %}</dt><dd class="text-gray-800">{{ booking.email }}</dd></div>
           <div><dt class="text-gray-500">{% trans "Phone" %}</dt><dd class="text-gray-800">{{ booking.phone|default:"—" }}</dd></div>
           <div><dt class="text-gray-500">{% trans "Country" %}</dt><dd class="text-gray-800">{{ booking.country_of_origin|default:"—" }}</dd></div>

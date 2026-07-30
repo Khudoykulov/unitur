@@ -81,6 +81,17 @@ class Inquiry(TimeStampedModel):
         related_name="inquiries",
         verbose_name=_("Tour"),
     )
+    category = models.ForeignKey(
+        "tours.TourCategory",
+        on_delete=models.SET_NULL,
+        null=True,
+        blank=True,
+        related_name="inquiries",
+        verbose_name=_("Tour category"),
+    )
+    custom_category = models.CharField(
+        _("Custom category"), max_length=100, blank=True
+    )
     hotel = models.ForeignKey(
         "hotels.Hotel",
         on_delete=models.SET_NULL,
@@ -145,6 +156,16 @@ class Inquiry(TimeStampedModel):
     @property
     def full_name(self) -> str:
         return f"{self.first_name} {self.last_name}".strip()
+
+    @property
+    def category_display(self) -> str:
+        if self.category:
+            return self.category.name
+        if self.custom_category:
+            return self.custom_category
+        if self.tour and self.tour.category:
+            return self.tour.category.name
+        return "—"
 
     @property
     def total_travelers(self) -> int:

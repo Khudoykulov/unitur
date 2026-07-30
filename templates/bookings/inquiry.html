@@ -23,4 +23,24 @@
     </div>
   </div>
 </div>
+
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+  const catSel = document.querySelector("select[name='category_choice']");
+  const custInput = document.querySelector("input[name='custom_category']");
+  if (!catSel || !custInput) return;
+  const custCol = custInput.closest("#custom_category_col") || custInput.parentElement;
+
+  function toggleCustom() {
+    if (catSel.value === "other") {
+      if (custCol) custCol.style.display = "block";
+    } else {
+      if (custCol) custCol.style.display = "none";
+      custInput.value = "";
+    }
+  }
+  catSel.addEventListener("change", toggleCustom);
+  toggleCustom();
+});
+</script>
 {% endblock %}

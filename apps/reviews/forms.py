@@ -6,6 +6,15 @@ from django.utils.translation import gettext_lazy as _
 from .models import Review
 
 
+class MultipleFileInput(forms.FileInput):
+    allow_multiple_selected = True
+
+    def value_from_datadict(self, data, files, name):
+        if hasattr(files, "getlist"):
+            return files.getlist(name)
+        return files.get(name)
+
+
 class ReviewCreateForm(forms.ModelForm):
     """Let visitors submit a review from the public reviews page.
 
@@ -15,6 +24,12 @@ class ReviewCreateForm(forms.ModelForm):
     ``tour`` is optional — pick one to tie the review to a specific trip.
     """
 
+    images = forms.FileField(
+        widget=MultipleFileInput(attrs={"multiple": True, "accept": "image/*"}),
+        required=False,
+        label=_("Rasmlar (Photos)"),
+    )
+
     class Meta:
         model = Review
         fields = [
@@ -22,16 +37,14 @@ class ReviewCreateForm(forms.ModelForm):
             "rating",
             "body",
             "guest_name",
-            "guest_country",
         ]
         widgets = {
-            "rating": forms.Select(choices=[(i, f"{i} ★") for i in range(5, 0, -1)]),
+            "rating": forms.Select(choices=[(i, f"{'★' * i} ({i})") for i in range(5, 0, -1)]),
             "body": forms.Textarea(attrs={"rows": 4}),
         }
         labels = {
             "tour": _("Tour (optional)"),
             "guest_name": _("Your name"),
-            "guest_country": _("Country"),
             "body": _("Your review"),
         }
 

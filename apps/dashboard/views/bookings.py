@@ -22,7 +22,7 @@ class BookingListView(StaffRequiredMixin, ListView):
     paginate_by = 25
 
     def get_queryset(self):
-        qs = Inquiry.objects.select_related("tour", "hotel", "assigned_to").order_by("-created_at")
+        qs = Inquiry.objects.select_related("tour", "category", "hotel", "assigned_to").order_by("-created_at")
         q = self.request.GET.get("q", "").strip()
         if q:
             qs = qs.filter(first_name__icontains=q) | qs.filter(
