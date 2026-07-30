@@ -76,6 +76,12 @@ from apps.dashboard.views.settings import (
     FAQEditView,
     FAQDeleteView,
 )
+from apps.dashboard.views.faq_categories import (
+    FAQCategoryListView,
+    FAQCategoryCreateView,
+    FAQCategoryEditView,
+    FAQCategoryDeleteView,
+)
 from apps.dashboard.views.guide_categories import (
     GuideCategoryListView,
     GuideCategoryCreateView,
@@ -88,6 +94,7 @@ from apps.dashboard.views.tags import (
     TagEditView,
     TagDeleteView,
 )
+from apps.dashboard.views.amenities import create_amenity_api
 
 app_name = "dashboard"
 
@@ -177,6 +184,12 @@ urlpatterns = [
     path("faq/<int:pk>/edit/", FAQEditView.as_view(), name="faq_edit"),
     path("faq/<int:pk>/delete/", FAQDeleteView.as_view(), name="faq_delete"),
 
+    # FAQ Categories
+    path("faq-categories/", FAQCategoryListView.as_view(), name="faq_categories_list"),
+    path("faq-categories/create/", FAQCategoryCreateView.as_view(), name="faq_categories_create"),
+    path("faq-categories/<int:pk>/edit/", FAQCategoryEditView.as_view(), name="faq_categories_edit"),
+    path("faq-categories/<int:pk>/delete/", FAQCategoryDeleteView.as_view(), name="faq_categories_delete"),
+
     # Guide Categories
     path("guide-categories/", GuideCategoryListView.as_view(), name="guide_categories_list"),
     path("guide-categories/create/", GuideCategoryCreateView.as_view(), name="guide_categories_create"),
@@ -188,4 +201,7 @@ urlpatterns = [
     path("tags/create/", TagCreateView.as_view(), name="tags_create"),
     path("tags/<int:pk>/edit/", TagEditView.as_view(), name="tags_edit"),
     path("tags/<int:pk>/delete/", TagDeleteView.as_view(), name="tags_delete"),
+
+    # API endpoints
+    path("api/amenities/create/", create_amenity_api, name="api_amenities_create"),
 ]

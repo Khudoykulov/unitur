@@ -113,13 +113,17 @@
     </a>
     {% endif %}
 
-    <p class="sidebar-section">{% trans "Settings" %}</p>
+    <p class="sidebar-section">{% trans "Settings & FAQ" %}</p>
     <a href="{% url 'dashboard:settings_edit' %}" class="sidebar-link {% if 'dashboard/settings' in request.path %}active{% endif %}">
       <i class="ti ti-settings text-lg"></i> {% trans "Site Settings" %}
     </a>
-    <a href="{% url 'dashboard:faq_list' %}" class="sidebar-link {% if 'dashboard/faq' in request.path %}active{% endif %}">
+    <a href="{% url 'dashboard:faq_list' %}" class="sidebar-link {% if 'dashboard/faq' in request.path and 'dashboard/faq-categories' not in request.path %}active{% endif %}">
       <i class="ti ti-help text-lg"></i> {% trans "FAQ Management" %}
     </a>
+    <a href="{% url 'dashboard:faq_categories_list' %}" class="sidebar-link pl-9 text-xs {% if 'dashboard/faq-categories' in request.path %}active{% endif %}">
+      <i class="ti ti-category text-base"></i> {% trans "FAQ Categories" %}
+    </a>
+
 
     <p class="sidebar-section">{% trans "Site" %}</p>
     <a href="{% url 'home' %}" target="_blank" class="sidebar-link">

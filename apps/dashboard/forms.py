@@ -6,7 +6,7 @@ from django.contrib.auth.password_validation import validate_password
 from django.forms import inlineformset_factory
 from django.utils.translation import gettext_lazy as _
 
-from apps.core.models import HeroSlide
+from apps.core.models import HeroSlide, FAQCategory, FAQ
 from apps.destinations.models import City, Continent, Country
 from apps.tours.models import Tour, TourCategory, TourDay, TourStop
 
@@ -210,9 +210,8 @@ class TourCategoryForm(forms.ModelForm):
         model = TourCategory
         # ``order`` is omitted — it stays at the model default (creation order);
         # visibility isn't a concept for categories, so no is_active either.
-        fields = ["name", "slug", "icon", "description", "image"]
+        fields = ["name", "icon", "description", "image"]
         help_texts = {
-            "slug": _("Leave blank to generate from the name."),
             "icon": _("Tabler icon name, e.g. compass, building, beach, chef-hat, paw."),
         }
 
@@ -222,9 +221,36 @@ class ContinentForm(forms.ModelForm):
 
     class Meta:
         model = Continent
-        fields = ["name", "slug", "image"]
+        fields = ["name", "image"]
+
+
+class FAQCategoryForm(forms.ModelForm):
+    """Create/edit a category for FAQs."""
+
+    class Meta:
+        model = FAQCategory
+        fields = ["name", "icon", "description", "order", "is_active"]
         help_texts = {
-            "slug": _("Leave blank to generate from the name."),
+            "icon": _("Tabler icon name, e.g. help, credit-card, map-pin, passport, info-circle."),
+        }
+        widgets = {
+            "name": forms.TextInput(attrs={"placeholder": "e.g. Booking & Payment"}),
+            "icon": forms.TextInput(attrs={"placeholder": "e.g. credit-card"}),
+            "description": forms.Textarea(attrs={"rows": 3, "placeholder": "Category description (optional)"}),
+            "order": forms.NumberInput(attrs={"min": 0}),
+        }
+
+
+class FAQForm(forms.ModelForm):
+    """Create/edit a FAQ item."""
+
+    class Meta:
+        model = FAQ
+        fields = ["category", "question", "answer", "order", "is_active"]
+        widgets = {
+            "question": forms.TextInput(attrs={"placeholder": "e.g. How do I book a tour?"}),
+            "answer": forms.Textarea(attrs={"rows": 5, "placeholder": "Detailed answer..."}),
+            "order": forms.NumberInput(attrs={"min": 0}),
         }
 
 
@@ -238,3 +264,10 @@ class HeroSlideForm(forms.ModelForm):
             "alt": forms.TextInput(attrs={"placeholder": "Image description (optional)"}),
             "order": forms.NumberInput(attrs={"min": 0}),
         }
+
+    def __init__(self, *args, **kwargs):
+        super().__init__(*args, **kwargs)
+        self.fields["order"].required = False
+        if self.instance and self.instance.pk:
+            self.fields["image"].required = False
+

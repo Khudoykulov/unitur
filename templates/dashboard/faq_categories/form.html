@@ -1,0 +1,107 @@
+{% extends "dashboard/base.html" %}
+{% load dashboard_tags i18n %}
+
+{% block title %}{% if object %}{% trans "Edit FAQ Category" %}{% else %}{% trans "New FAQ Category" %}{% endif %}{% endblock %}
+{% block breadcrumb %}
+<span class="text-gray-400">/</span> <a href="{% url 'dashboard:faq_list' %}" class="text-gray-700">{% trans "FAQ" %}</a>
+<span class="text-gray-400">/</span> <a href="{% url 'dashboard:faq_categories_list' %}" class="text-gray-700">{% trans "Categories" %}</a>
+<span class="text-gray-400">/</span> <span class="text-gray-700">{% if object %}{% trans "Edit" %}{% else %}{% trans "New" %}{% endif %}</span>
+{% endblock %}
+
+{% block content %}
+<div class="max-w-3xl mx-auto">
+  <div class="flex items-center justify-between mb-6">
+    <div>
+      <h1 class="text-xl font-bold text-gray-800">
+        {% if object %}{% trans "Edit Category" %}: {{ object.name }}{% else %}{% trans "Add New Category" %}{% endif %}
+      </h1>
+      <p class="text-sm text-gray-500 mt-0.5">{% trans "Configure category details and icon display." %}</p>
+    </div>
+    <a href="{% url 'dashboard:faq_categories_list' %}" class="inline-flex items-center gap-1.5 bg-gray-100 hover:bg-gray-200 text-gray-700 text-sm font-medium px-3.5 py-2 rounded-lg transition">
+      <i class="ti ti-arrow-left"></i> {% trans "Back" %}
+    </a>
+  </div>
+
+  <div class="bg-white rounded-xl border border-gray-200 shadow-sm overflow-hidden p-6 sm:p-8">
+    <form method="post" class="space-y-6">
+      {% csrf_token %}
+
+      {% if form.non_field_errors %}
+      <div class="p-4 rounded-lg bg-red-50 border border-red-200 text-red-700 text-sm">
+        {{ form.non_field_errors }}
+      </div>
+      {% endif %}
+
+      <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+        {# Category Name #}
+        <div class="sm:col-span-2">
+          <label for="{{ form.name.id_for_label }}" class="block text-sm font-medium text-gray-700 mb-1">
+            {% trans "Category Name" %} <span class="text-red-500">*</span>
+          </label>
+          <input type="text" name="{{ form.name.name }}" id="{{ form.name.id_for_label }}"
+                 value="{{ form.name.value|default:'' }}" required
+                 placeholder="e.g. Booking & Payment"
+                 class="w-full rounded-lg border border-gray-300 px-3.5 py-2.5 text-sm focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500 transition">
+          {% if form.name.errors %}<p class="text-xs text-red-600 mt-1">{{ form.name.errors.0 }}</p>{% endif %}
+        </div>
+
+        {# Icon #}
+        <div>
+          <label for="{{ form.icon.id_for_label }}" class="block text-sm font-medium text-gray-700 mb-1">
+            {% trans "Tabler Icon Name" %}
+          </label>
+          <div class="relative">
+            <input type="text" name="{{ form.icon.name }}" id="{{ form.icon.id_for_label }}"
+                   value="{{ form.icon.value|default:'help' }}"
+                   placeholder="help, credit-card, map-pin, passport..."
+                   class="w-full rounded-lg border border-gray-300 px-3.5 py-2.5 text-sm focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500 transition">
+          </div>
+          <p class="text-xs text-gray-400 mt-1">{% trans "Examples: help, credit-card, map-pin, passport, info-circle, plane" %}</p>
+          {% if form.icon.errors %}<p class="text-xs text-red-600 mt-1">{{ form.icon.errors.0 }}</p>{% endif %}
+        </div>
+
+        {# Display Order #}
+        <div>
+          <label for="{{ form.order.id_for_label }}" class="block text-sm font-medium text-gray-700 mb-1">
+            {% trans "Display Order" %}
+          </label>
+          <input type="number" name="{{ form.order.name }}" id="{{ form.order.id_for_label }}"
+                 value="{{ form.order.value|default:0 }}" min="0"
+                 class="w-full rounded-lg border border-gray-300 px-3.5 py-2.5 text-sm focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500 transition">
+          {% if form.order.errors %}<p class="text-xs text-red-600 mt-1">{{ form.order.errors.0 }}</p>{% endif %}
+        </div>
+
+        {# Active status #}
+        <div class="flex items-center pt-6">
+          <label class="relative inline-flex items-center cursor-pointer">
+            <input type="checkbox" name="{{ form.is_active.name }}" id="{{ form.is_active.id_for_label }}"
+                   {% if form.is_active.value or form.is_active.value is None %}checked{% endif %} class="sr-only peer">
+            <div class="w-11 h-6 bg-gray-200 peer-focus:outline-none peer-focus:ring-2 peer-focus:ring-emerald-500 rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-emerald-600"></div>
+            <span class="ml-3 text-sm font-medium text-gray-700">{% trans "Active (Visible on site)" %}</span>
+          </label>
+        </div>
+
+        {# Description #}
+        <div class="sm:col-span-2">
+          <label for="{{ form.description.id_for_label }}" class="block text-sm font-medium text-gray-700 mb-1">
+            {% trans "Description" %}
+          </label>
+          <textarea name="{{ form.description.name }}" id="{{ form.description.id_for_label }}" rows="3"
+                    placeholder="Brief description of questions in this category..."
+                    class="w-full rounded-lg border border-gray-300 px-3.5 py-2.5 text-sm focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500 transition">{{ form.description.value|default:'' }}</textarea>
+          {% if form.description.errors %}<p class="text-xs text-red-600 mt-1">{{ form.description.errors.0 }}</p>{% endif %}
+        </div>
+      </div>
+
+      <div class="flex items-center justify-end gap-3 pt-6 border-t border-gray-100">
+        <a href="{% url 'dashboard:faq_categories_list' %}" class="px-4 py-2.5 rounded-lg border border-gray-300 text-gray-700 text-sm font-medium hover:bg-gray-50 transition">
+          {% trans "Cancel" %}
+        </a>
+        <button type="submit" class="inline-flex items-center gap-1.5 bg-emerald-700 hover:bg-emerald-800 text-white text-sm font-medium px-5 py-2.5 rounded-lg transition shadow-sm">
+          <i class="ti ti-check"></i> {% trans "Save Category" %}
+        </button>
+      </div>
+    </form>
+  </div>
+</div>
+{% endblock %}

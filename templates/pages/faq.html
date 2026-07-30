@@ -55,7 +55,7 @@
   <section class="py-20 bg-white">
     <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
 
-      {% if not faq_by_category %}
+      {% if not total_faqs %}
         {# Empty State #}
         <div class="text-center py-16">
           <div class="w-24 h-24 rounded-full bg-brand-blueLight/30 flex items-center justify-center mx-auto mb-6">
@@ -68,33 +68,71 @@
           </a>
         </div>
       {% else %}
-        {# FAQ Categories #}
-        {% for category, faqs in faq_by_category.items %}
-        <div class="mb-12">
-          <h2 class="text-2xl font-serif font-bold text-dark mb-6 pb-3 border-b-2 border-primary">
-            {{ category }}
-          </h2>
 
+        {# FAQ Categories Loop #}
+        {% for cat in categories %}
+          {% if cat.faqs.all %}
+          <div class="mb-12">
+            <h2 class="text-2xl font-serif font-bold text-dark mb-6 pb-3 border-b-2 border-primary flex items-center gap-3">
+              <i class="ti ti-{{ cat.icon|default:'help' }} text-primary"></i>
+              <span>{{ cat.name|default:cat.name_uz|default:cat.name_en }}</span>
+            </h2>
+
+            {% if cat.description %}
+            <p class="text-gray-500 text-sm mb-4">{{ cat.description|default:cat.description_uz|default:cat.description_en }}</p>
+            {% endif %}
+
+            <div class="space-y-4">
+              {% for faq in cat.faqs.all %}
+              <div class="faq-item bg-white rounded-xl shadow-soft border border-brand-blueLight/30 overflow-hidden hover:shadow-card transition-all duration-300">
+                <button class="faq-question w-full text-left px-6 py-5 flex items-center justify-between gap-4 focus:outline-none focus:ring-2 focus:ring-primary focus:ring-opacity-50 rounded-xl"
+                        data-faq-id="faq-{{ cat.pk }}-{{ forloop.counter }}">
+                  <span class="font-semibold text-dark text-lg pr-4">{{ faq.question|default:faq.question_uz|default:faq.question_en }}</span>
+                  <div class="faq-icon flex-shrink-0 w-8 h-8 rounded-full bg-primary/10 flex items-center justify-center transition-transform duration-300">
+                    <i class="ti ti-plus text-primary text-xl"></i>
+                  </div>
+                </button>
+                <div class="faq-answer hidden px-6 pb-5 pt-2">
+                  <div class="text-gray-700 leading-relaxed prose prose-sm max-w-none">
+                    {{ faq.answer|default:faq.answer_uz|default:faq.answer_en|linebreaks }}
+                  </div>
+                </div>
+              </div>
+              {% endfor %}
+            </div>
+          </div>
+          {% endif %}
+        {% endfor %}
+
+        {# Uncategorized FAQs #}
+        {% if uncategorized_faqs %}
+        <div class="mb-12">
+          <h2 class="text-2xl font-serif font-bold text-dark mb-6 pb-3 border-b-2 border-primary flex items-center gap-3">
+            <i class="ti ti-help-circle text-primary"></i>
+            <span>{% trans "General Questions" %}</span>
+          </h2>
           <div class="space-y-4">
-            {% for faq in faqs %}
+            {% for faq in uncategorized_faqs %}
             <div class="faq-item bg-white rounded-xl shadow-soft border border-brand-blueLight/30 overflow-hidden hover:shadow-card transition-all duration-300">
               <button class="faq-question w-full text-left px-6 py-5 flex items-center justify-between gap-4 focus:outline-none focus:ring-2 focus:ring-primary focus:ring-opacity-50 rounded-xl"
-                      data-faq-id="faq-{{ forloop.parentloop.counter }}-{{ forloop.counter }}">
-                <span class="font-semibold text-dark text-lg pr-4">{{ faq.question }}</span>
+                      data-faq-id="faq-uncat-{{ forloop.counter }}">
+                <span class="font-semibold text-dark text-lg pr-4">{{ faq.question|default:faq.question_uz|default:faq.question_en }}</span>
                 <div class="faq-icon flex-shrink-0 w-8 h-8 rounded-full bg-primary/10 flex items-center justify-center transition-transform duration-300">
                   <i class="ti ti-plus text-primary text-xl"></i>
                 </div>
               </button>
               <div class="faq-answer hidden px-6 pb-5 pt-2">
                 <div class="text-gray-700 leading-relaxed prose prose-sm max-w-none">
-                  {{ faq.answer|linebreaks }}
+                  {{ faq.answer|default:faq.answer_uz|default:faq.answer_en|linebreaks }}
                 </div>
               </div>
             </div>
             {% endfor %}
           </div>
         </div>
-        {% endfor %}
+        {% endif %}
+
+
       {% endif %}
 
     </div>
@@ -142,7 +180,6 @@ document.addEventListener('DOMContentLoaded', function() {
     question.addEventListener('click', function() {
       const isOpen = !answer.classList.contains('hidden');
 
-      // Close all other FAQs (optional - remove these lines for multiple open FAQs)
       document.querySelectorAll('.faq-answer').forEach(a => a.classList.add('hidden'));
       document.querySelectorAll('.faq-icon i').forEach(i => {
         i.classList.remove('ti-minus', 'rotate-180');
@@ -151,19 +188,16 @@ document.addEventListener('DOMContentLoaded', function() {
       document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('ring-2', 'ring-primary', 'ring-opacity-30'));
 
       if (isOpen) {
-        // Close this FAQ
         answer.classList.add('hidden');
         icon.classList.remove('ti-minus', 'rotate-180');
         icon.classList.add('ti-plus');
         item.classList.remove('ring-2', 'ring-primary', 'ring-opacity-30');
       } else {
-        // Open this FAQ
         answer.classList.remove('hidden');
         icon.classList.remove('ti-plus');
         icon.classList.add('ti-minus', 'rotate-180');
         item.classList.add('ring-2', 'ring-primary', 'ring-opacity-30');
 
-        // Smooth scroll to question if it's not in view
         setTimeout(() => {
           question.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
         }, 300);
@@ -174,43 +208,16 @@ document.addEventListener('DOMContentLoaded', function() {
 </script>
 
 <style>
-/* Additional FAQ Styles */
-.faq-item {
-  transition: all 0.3s ease;
-}
+.faq-item { transition: all 0.3s ease; }
+.faq-question:hover { background-color: rgba(59, 130, 246, 0.03); }
+.faq-icon { transition: all 0.3s ease; }
+.faq-answer { transition: max-height 0.3s ease, opacity 0.3s ease; max-height: 0; opacity: 0; }
+.faq-answer:not(.hidden) { max-height: 1000px; opacity: 1; }
 
-.faq-question:hover {
-  background-color: rgba(59, 130, 246, 0.03);
-}
-
-.faq-icon {
-  transition: all 0.3s ease;
-}
-
-.faq-answer {
-  transition: max-height 0.3s ease, opacity 0.3s ease;
-  max-height: 0;
-  opacity: 0;
-}
-
-.faq-answer:not(.hidden) {
-  max-height: 1000px;
-  opacity: 1;
-}
-
-/* Mobile Responsiveness */
 @media (max-width: 640px) {
-  .faq-question {
-    padding: 1rem;
-  }
-
-  .faq-question span {
-    font-size: 1rem;
-  }
-
-  .faq-answer {
-    padding: 0 1rem 1rem;
-  }
+  .faq-question { padding: 1rem; }
+  .faq-question span { font-size: 1rem; }
+  .faq-answer { padding: 0 1rem 1rem; }
 }
 </style>
 {% endblock %}

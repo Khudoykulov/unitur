@@ -1,122 +1,114 @@
 {% extends "dashboard/base.html" %}
-{% load i18n %}
+{% load dashboard_tags i18n %}
 
 {% block title %}{% if object %}{% trans "Edit FAQ" %}{% else %}{% trans "New FAQ" %}{% endif %}{% endblock %}
 {% block breadcrumb %}
-  <span class="text-gray-400">/</span>
-  <a href="{% url 'dashboard:faq_list' %}" class="text-gray-700 hover:underline">{% trans "FAQ" %}</a>
-  <span class="text-gray-400">/</span>
-  <span class="text-gray-700">{% if object %}{% trans "Edit" %}{% else %}{% trans "New" %}{% endif %}</span>
+<span class="text-gray-400">/</span> <a href="{% url 'dashboard:faq_list' %}" class="text-gray-700">{% trans "FAQ" %}</a>
+<span class="text-gray-400">/</span> <span class="text-gray-700">{% if object %}{% trans "Edit" %}{% else %}{% trans "New" %}{% endif %}</span>
 {% endblock %}
 
 {% block content %}
 <div class="max-w-3xl mx-auto">
-
-  {# Header #}
-  <div class="mb-6">
-    <h1 class="text-2xl font-bold text-gray-800">
-      {% if object %}{% trans "Edit FAQ" %}{% else %}{% trans "Create New FAQ" %}{% endif %}
-    </h1>
-    <p class="text-gray-500 mt-1">{% trans "Add frequently asked questions to help your customers" %}</p>
+  <div class="flex items-center justify-between mb-6">
+    <div>
+      <h1 class="text-xl font-bold text-gray-800">
+        {% if object %}{% trans "Edit Question" %}{% else %}{% trans "Add New Question" %}{% endif %}
+      </h1>
+      <p class="text-sm text-gray-500 mt-0.5">{% trans "Write clear questions and helpful answers for your visitors." %}</p>
+    </div>
+    <a href="{% url 'dashboard:faq_list' %}" class="inline-flex items-center gap-1.5 bg-gray-100 hover:bg-gray-200 text-gray-700 text-sm font-medium px-3.5 py-2 rounded-lg transition">
+      <i class="ti ti-arrow-left"></i> {% trans "Back" %}
+    </a>
   </div>
 
-  {# Form #}
-  <form method="post" class="space-y-6">
-    {% csrf_token %}
+  <div class="bg-white rounded-xl border border-gray-200 shadow-sm overflow-hidden p-6 sm:p-8">
+    <form method="post" class="space-y-6">
+      {% csrf_token %}
 
-    <div class="bg-white rounded-xl border border-gray-200 p-6">
-
-      {# Category #}
-      <div class="mb-4">
-        <label for="{{ form.category.id_for_label }}" class="block text-sm font-medium text-gray-700 mb-1">
-          {{ form.category.label }}
-        </label>
-        {{ form.category }}
-        {% if form.category.errors %}
-          <p class="text-red-600 text-xs mt-1">{{ form.category.errors.0 }}</p>
-        {% endif %}
-        <p class="text-gray-500 text-xs mt-1">{% trans "Group similar questions together" %}</p>
+      {% if form.non_field_errors %}
+      <div class="p-4 rounded-lg bg-red-50 border border-red-200 text-red-700 text-sm">
+        {{ form.non_field_errors }}
       </div>
+      {% endif %}
 
-      {# Question #}
-      <div class="mb-4">
-        <label for="{{ form.question.id_for_label }}" class="block text-sm font-medium text-gray-700 mb-1">
-          {{ form.question.label }} <span class="text-red-500">*</span>
-        </label>
-        {{ form.question }}
-        {% if form.question.errors %}
-          <p class="text-red-600 text-xs mt-1">{{ form.question.errors.0 }}</p>
-        {% endif %}
-        <p class="text-gray-500 text-xs mt-1">{% trans "Write the question customers frequently ask" %}</p>
-      </div>
-
-      {# Answer #}
-      <div class="mb-4">
-        <label for="{{ form.answer.id_for_label }}" class="block text-sm font-medium text-gray-700 mb-1">
-          {{ form.answer.label }} <span class="text-red-500">*</span>
-        </label>
-        {{ form.answer }}
-        {% if form.answer.errors %}
-          <p class="text-red-600 text-xs mt-1">{{ form.answer.errors.0 }}</p>
-        {% endif %}
-        <p class="text-gray-500 text-xs mt-1">{% trans "Provide a clear and helpful answer" %}</p>
-      </div>
-
-      <div class="grid grid-cols-2 gap-4">
-        {# Active Status #}
-        <div>
-          <label for="{{ form.is_active.id_for_label }}" class="block text-sm font-medium text-gray-700 mb-1">
-            {{ form.is_active.label }}
-          </label>
-          <div class="flex items-center mt-2">
-            {{ form.is_active }}
-            <label for="{{ form.is_active.id_for_label }}" class="ml-2 text-sm text-gray-600">
-              {% trans "Show this FAQ on the public page" %}
+      <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+        {# Category #}
+        <div class="sm:col-span-2">
+          <div class="flex items-center justify-between mb-1">
+            <label for="{{ form.category.id_for_label }}" class="block text-sm font-medium text-gray-700">
+              {% trans "Category" %}
             </label>
+            <a href="{% url 'dashboard:faq_categories_create' %}" target="_blank" class="text-xs text-emerald-700 hover:underline flex items-center gap-1">
+              <i class="ti ti-plus"></i> {% trans "Create new category" %}
+            </a>
           </div>
-          {% if form.is_active.errors %}
-            <p class="text-red-600 text-xs mt-1">{{ form.is_active.errors.0 }}</p>
-          {% endif %}
+          <select name="{{ form.category.name }}" id="{{ form.category.id_for_label }}"
+                  class="w-full rounded-lg border border-gray-300 px-3.5 py-2.5 text-sm focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500 transition">
+            <option value="">{% trans "-- Select Category --" %}</option>
+            {% for choice_val, choice_label in form.category.field.choices %}
+              {% if choice_val %}
+              <option value="{{ choice_val }}" {% if form.category.value|stringformat:"s" == choice_val|stringformat:"s" %}selected{% endif %}>{{ choice_label }}</option>
+              {% endif %}
+            {% endfor %}
+          </select>
+          {% if form.category.errors %}<p class="text-xs text-red-600 mt-1">{{ form.category.errors.0 }}</p>{% endif %}
         </div>
 
-        {# Order #}
+        {# Question #}
+        <div class="sm:col-span-2">
+          <label for="{{ form.question.id_for_label }}" class="block text-sm font-medium text-gray-700 mb-1">
+            {% trans "Question" %} <span class="text-red-500">*</span>
+          </label>
+          <input type="text" name="{{ form.question.name }}" id="{{ form.question.id_for_label }}"
+                 value="{{ form.question.value|default:'' }}" required
+                 placeholder="e.g. How do I book a tour or request a quote?"
+                 class="w-full rounded-lg border border-gray-300 px-3.5 py-2.5 text-sm focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500 transition">
+          {% if form.question.errors %}<p class="text-xs text-red-600 mt-1">{{ form.question.errors.0 }}</p>{% endif %}
+        </div>
+
+        {# Answer #}
+        <div class="sm:col-span-2">
+          <label for="{{ form.answer.id_for_label }}" class="block text-sm font-medium text-gray-700 mb-1">
+            {% trans "Answer" %} <span class="text-red-500">*</span>
+          </label>
+          <textarea name="{{ form.answer.name }}" id="{{ form.answer.id_for_label }}" rows="5" required
+                    placeholder="Provide a detailed and friendly answer for your customers..."
+                    class="w-full rounded-lg border border-gray-300 px-3.5 py-2.5 text-sm focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500 transition">{{ form.answer.value|default:'' }}</textarea>
+          {% if form.answer.errors %}<p class="text-xs text-red-600 mt-1">{{ form.answer.errors.0 }}</p>{% endif %}
+        </div>
+
+        {# Display Order #}
         <div>
           <label for="{{ form.order.id_for_label }}" class="block text-sm font-medium text-gray-700 mb-1">
-            {{ form.order.label }}
+            {% trans "Display Order" %}
           </label>
-          {{ form.order }}
-          {% if form.order.errors %}
-            <p class="text-red-600 text-xs mt-1">{{ form.order.errors.0 }}</p>
-          {% endif %}
-          <p class="text-gray-500 text-xs mt-1">{% trans "Lower numbers appear first" %}</p>
+          <input type="number" name="{{ form.order.name }}" id="{{ form.order.id_for_label }}"
+                 value="{{ form.order.value|default:0 }}" min="0"
+                 class="w-full rounded-lg border border-gray-300 px-3.5 py-2.5 text-sm focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500 transition">
+          <p class="text-xs text-gray-400 mt-1">{% trans "Lower numbers appear first within the category." %}</p>
+          {% if form.order.errors %}<p class="text-xs text-red-600 mt-1">{{ form.order.errors.0 }}</p>{% endif %}
+        </div>
+
+        {# Active status #}
+        <div class="flex items-center pt-6">
+          <label class="relative inline-flex items-center cursor-pointer">
+            <input type="checkbox" name="{{ form.is_active.name }}" id="{{ form.is_active.id_for_label }}"
+                   {% if form.is_active.value or form.is_active.value is None %}checked{% endif %} class="sr-only peer">
+            <div class="w-11 h-6 bg-gray-200 peer-focus:outline-none peer-focus:ring-2 peer-focus:ring-emerald-500 rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-emerald-600"></div>
+            <span class="ml-3 text-sm font-medium text-gray-700">{% trans "Active (Visible on public FAQ page)" %}</span>
+          </label>
         </div>
       </div>
 
-    </div>
-
-    {# Buttons #}
-    <div class="flex items-center justify-end gap-3">
-      <a href="{% url 'dashboard:faq_list' %}" class="px-6 py-2.5 border border-gray-300 text-gray-700 rounded-lg hover:bg-gray-50 transition">
-        {% trans "Cancel" %}
-      </a>
-      <button type="submit" class="px-6 py-2.5 bg-emerald-700 hover:bg-emerald-800 text-white rounded-lg transition">
-        <i class="ti ti-device-floppy mr-2"></i>
-        {% if object %}{% trans "Update FAQ" %}{% else %}{% trans "Create FAQ" %}{% endif %}
-      </button>
-    </div>
-  </form>
-
+      <div class="flex items-center justify-end gap-3 pt-6 border-t border-gray-100">
+        <a href="{% url 'dashboard:faq_list' %}" class="px-4 py-2.5 rounded-lg border border-gray-300 text-gray-700 text-sm font-medium hover:bg-gray-50 transition">
+          {% trans "Cancel" %}
+        </a>
+        <button type="submit" class="inline-flex items-center gap-1.5 bg-emerald-700 hover:bg-emerald-800 text-white text-sm font-medium px-5 py-2.5 rounded-lg transition shadow-sm">
+          <i class="ti ti-check"></i> {% trans "Save Question" %}
+        </button>
+      </div>
+    </form>
+  </div>
 </div>
-
-<style>
-  input[type="text"], input[type="number"], textarea, select {
-    @apply w-full px-3 py-2 border border-gray-300 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-emerald-300 focus:border-emerald-500;
-  }
-  textarea {
-    @apply min-h-32;
-  }
-  input[type="checkbox"] {
-    @apply w-4 h-4 text-emerald-700 border-gray-300 rounded focus:ring-emerald-500;
-  }
-</style>
 {% endblock %}

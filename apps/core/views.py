@@ -93,28 +93,26 @@ class FAQView(TemplateView):
 
     def get_context_data(self, **kwargs):
         ctx = super().get_context_data(**kwargs)
+        from django.db.models import Prefetch
+        from apps.core.models import FAQCategory, HeroSlide
 
-        # Get all active FAQs grouped by category
-        faqs = FAQ.objects.filter(is_active=True).order_by("category", "order")
+        categories = FAQCategory.objects.filter(is_active=True).prefetch_related(
+            Prefetch("faqs", queryset=FAQ.objects.filter(is_active=True).order_by("order"))
+        ).order_by("order", "name")
 
-        # Group FAQs by category
-        faq_by_category = {}
-        for faq in faqs:
-            category = faq.get_category_display()
-            if category not in faq_by_category:
-                faq_by_category[category] = []
-            faq_by_category[category].append(faq)
+        uncategorized_faqs = FAQ.objects.filter(is_active=True, category__isnull=True).order_by("order")
 
-        ctx["faq_by_category"] = faq_by_category
-        ctx["total_faqs"] = faqs.count()
+        ctx["categories"] = categories
+        ctx["uncategorized_faqs"] = uncategorized_faqs
+        ctx["total_faqs"] = FAQ.objects.filter(is_active=True).count()
 
         # Hero slides for FAQ page
-        from apps.core.models import HeroSlide
         ctx["hero_slides"] = HeroSlide.objects.filter(
             page="faq", is_active=True
         ).order_by("order")
 
         return ctx
+
 
 
 class RobotsTxtView(View):

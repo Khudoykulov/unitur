@@ -1,6 +1,7 @@
 """Core abstract base models shared across all apps."""
 
 from django.db import models
+from django.utils.text import slugify
 from django.utils.translation import gettext_lazy as _
 
 
@@ -150,6 +151,29 @@ class SiteSettings(TimeStampedModel):
         return obj
 
 
+class FAQCategory(OrderedMixin):
+    """Category for FAQ grouping (e.g., General, Booking, Tours, Visa)."""
+
+    name = models.CharField(_("Name"), max_length=100)
+    slug = models.SlugField(_("Slug"), max_length=120, unique=True, blank=True)
+    icon = models.CharField(_("Tabler icon name"), max_length=60, default="help", blank=True)
+    description = models.TextField(_("Description"), blank=True)
+    is_active = models.BooleanField(_("Active"), default=True, db_index=True)
+
+    class Meta(OrderedMixin.Meta):
+        verbose_name = _("FAQ category")
+        verbose_name_plural = _("FAQ categories")
+        ordering = ["order", "name"]
+
+    def __str__(self) -> str:
+        return self.name
+
+    def save(self, *args, **kwargs) -> None:
+        if not self.slug:
+            self.slug = slugify(self.name)
+        super().save(*args, **kwargs)
+
+
 class FAQ(TimeStampedModel, OrderedMixin):
     """
     Frequently Asked Questions.
@@ -157,19 +181,13 @@ class FAQ(TimeStampedModel, OrderedMixin):
     Displayed on the FAQ page with expandable accordion interface.
     """
 
-    CATEGORY_CHOICES = [
-        ("general", _("General")),
-        ("booking", _("Booking & Payment")),
-        ("tours", _("Tours & Travel")),
-        ("visa", _("Visa & Documents")),
-        ("other", _("Other")),
-    ]
-
-    category = models.CharField(
-        _("Category"),
-        max_length=20,
-        choices=CATEGORY_CHOICES,
-        default="general",
+    category = models.ForeignKey(
+        FAQCategory,
+        on_delete=models.SET_NULL,
+        null=True,
+        blank=True,
+        related_name="faqs",
+        verbose_name=_("Category"),
         help_text=_("Group similar questions together")
     )
     question = models.CharField(_("Question"), max_length=500)
@@ -183,3 +201,4 @@ class FAQ(TimeStampedModel, OrderedMixin):
 
     def __str__(self) -> str:
         return self.question
+

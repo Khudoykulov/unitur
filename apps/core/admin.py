@@ -8,7 +8,7 @@ from django.http import HttpResponse
 from django.utils.translation import gettext_lazy as _
 from modeltranslation.admin import TranslationAdmin
 
-from .models import HeroSlide, SiteSettings, FAQ
+from .models import HeroSlide, SiteSettings, FAQ, FAQCategory
 
 
 class TravelProAdminSite(AdminSite):
@@ -88,6 +88,34 @@ class SiteSettingsAdmin(TranslationAdmin):
     def has_delete_permission(self, request, obj=None):
         # Prevent deletion of site settings
         return False
+
+
+class FAQInline(admin.StackedInline):
+    """Inline FAQ editing inside FAQCategory admin."""
+
+    model = FAQ
+    extra = 1
+    fields = ("question", "answer", "is_active", "order")
+    ordering = ("order",)
+
+
+@admin.register(FAQCategory)
+class FAQCategoryAdmin(TranslationAdmin):
+    list_display = ("name", "icon", "is_active", "order", "faq_count")
+    list_filter = ("is_active",)
+    list_editable = ("is_active", "order")
+    search_fields = ("name", "description")
+    prepopulated_fields = {"slug": ("name",)}
+    inlines = [FAQInline]
+
+    fieldsets = (
+        (None, {"fields": ("name", "slug", "icon", "description", "is_active", "order")}),
+    )
+
+    def faq_count(self, obj):
+        return obj.faqs.count()
+
+    faq_count.short_description = _("FAQs")
 
 
 @admin.register(FAQ)
