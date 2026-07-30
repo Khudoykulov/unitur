@@ -1,11 +1,36 @@
 from django.apps import AppConfig
-from django.utils.translation import gettext_lazy as _
 
 
 class CoreConfig(AppConfig):
-    default_auto_field = "django.db.models.BigAutoField"
-    name = "apps.core"
-    verbose_name = _("Core")
+    name = 'apps.core'
+    default_auto_field = 'django.db.models.BigAutoField'
 
     def ready(self):
-        pass  # signal receivers can be imported here
+        self._patch_rosetta()
+
+    def _patch_rosetta(self):
+        try:
+            import rosetta.views as rosetta_views
+            original_home = rosetta_views.home
+
+            def patched_home(request, *args, **kwargs):
+                response = original_home(request, *args, **kwargs)
+                # POST so'rov bo'lsa (save bosilsa) — compile qilamiz
+                if request.method == 'POST':
+                    _compile_messages()
+                return response
+
+            rosetta_views.home = patched_home
+        except Exception:
+            pass
+
+
+def _compile_messages():
+    import subprocess
+    from django.conf import settings
+    subprocess.Popen(
+        ['python', 'manage.py', 'compilemessages'],
+        cwd=str(settings.BASE_DIR),
+        stdout=subprocess.DEVNULL,
+        stderr=subprocess.DEVNULL,
+    )
