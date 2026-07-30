@@ -46,7 +46,6 @@ class Inquiry(TimeStampedModel):
 
     INQUIRY_TYPE_CHOICES = [
         ("tour", _("Tour Booking")),
-        ("hotel", _("Hotel Booking")),
         ("corporate", _("Corporate / MICE")),
         ("custom", _("Custom Trip")),
     ]
