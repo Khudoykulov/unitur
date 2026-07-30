@@ -19,7 +19,7 @@ from decouple import Csv, config
 from django.utils.translation import gettext_lazy as _
 
 BASE_DIR = Path(__file__).resolve().parent.parent
-
+ROSETTA_AUTO_COMPILE = True
 DEBUG: bool = config("DEBUG", cast=bool, default=True)
 TESTING: bool = "pytest" in sys.modules
 
