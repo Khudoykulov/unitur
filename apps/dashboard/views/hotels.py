@@ -6,8 +6,9 @@ from django.utils.translation import gettext, gettext_lazy as _
 from django.views.generic import CreateView, DeleteView, ListView, UpdateView
 
 from apps.dashboard.autotranslate import autofill_translations
+from apps.dashboard.forms import HotelForm
 from apps.dashboard.mixins import AuditMixin, ManagerRequiredMixin
-from apps.hotels.models import Hotel
+from apps.hotels.models import Hotel, HotelAmenity, HotelImage
 
 
 class HotelListView(ManagerRequiredMixin, ListView):
@@ -31,18 +32,19 @@ class HotelListView(ManagerRequiredMixin, ListView):
 
 class HotelCreateView(AuditMixin, ManagerRequiredMixin, CreateView):
     model = Hotel
+    form_class = HotelForm
     template_name = "dashboard/hotels/form.html"
     success_url = reverse_lazy("dashboard:hotels_list")
-    fields = [
-        "name", "city", "category", "stars", "cover_image",
-        "address", "latitude", "longitude", "phone", "email",
-        "website", "description", "amenities",
-        "check_in_time", "check_out_time", "price_from",
-    ]
 
     def form_valid(self, form):
         response = super().form_valid(form)
         autofill_translations(self.object)
+
+        # Handle multiple uploaded gallery images
+        gallery_files = self.request.FILES.getlist("gallery_images")
+        for f in gallery_files:
+            HotelImage.objects.create(hotel=self.object, image=f)
+
         self.log_action("CREATE", "Hotel", self.object.pk)
         messages.success(self.request, gettext("Hotel '%(name)s' created.") % {"name": self.object.name})
         return response
@@ -50,23 +52,30 @@ class HotelCreateView(AuditMixin, ManagerRequiredMixin, CreateView):
     def get_context_data(self, **kwargs):
         ctx = super().get_context_data(**kwargs)
         ctx["page_title"] = _("Create Hotel")
+        ctx["all_amenities"] = HotelAmenity.objects.all().order_by("name")
         return ctx
 
 
 class HotelEditView(AuditMixin, ManagerRequiredMixin, UpdateView):
     model = Hotel
+    form_class = HotelForm
     template_name = "dashboard/hotels/form.html"
     success_url = reverse_lazy("dashboard:hotels_list")
-    fields = [
-        "name", "city", "category", "stars", "cover_image",
-        "address", "latitude", "longitude", "phone", "email",
-        "website", "description", "amenities",
-        "check_in_time", "check_out_time", "price_from",
-    ]
 
     def form_valid(self, form):
         response = super().form_valid(form)
         autofill_translations(self.object)
+
+        # Delete selected gallery images
+        delete_ids = self.request.POST.getlist("delete_image_ids")
+        if delete_ids:
+            HotelImage.objects.filter(hotel=self.object, pk__in=delete_ids).delete()
+
+        # Handle multiple uploaded gallery images
+        gallery_files = self.request.FILES.getlist("gallery_images")
+        for f in gallery_files:
+            HotelImage.objects.create(hotel=self.object, image=f)
+
         self.log_action("UPDATE", "Hotel", self.object.pk)
         messages.success(self.request, gettext("Hotel '%(name)s' updated.") % {"name": self.object.name})
         return response
@@ -74,6 +83,10 @@ class HotelEditView(AuditMixin, ManagerRequiredMixin, UpdateView):
     def get_context_data(self, **kwargs):
         ctx = super().get_context_data(**kwargs)
         ctx["page_title"] = gettext("Edit: %(name)s") % {"name": self.object.name}
+        ctx["all_amenities"] = HotelAmenity.objects.all().order_by("name")
+        if self.object:
+            ctx["selected_amenity_ids"] = set(self.object.amenities.values_list("id", flat=True))
+            ctx["gallery_images"] = self.object.gallery.all()
         return ctx
 
 

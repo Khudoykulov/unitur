@@ -6,8 +6,57 @@ from django.contrib.auth.password_validation import validate_password
 from django.forms import inlineformset_factory
 from django.utils.translation import gettext_lazy as _
 
-from apps.core.models import HeroSlide, FAQCategory, FAQ
-from apps.destinations.models import City, Continent, Country
+from apps.core.models import FAQ, FAQCategory, HeroSlide
+from apps.destinations.models import Attraction, City, Continent, Country
+from apps.hotels.models import Hotel, HotelCategory
+from apps.tours.models import Tour, TourCategory, TourDay, TourStop
+
+
+class AttractionForm(forms.ModelForm):
+    """Form for creating and editing attractions (Diqqatga sazovor joylar)."""
+
+    class Meta:
+        model = Attraction
+        fields = [
+            "name", "city", "category", "image", "description",
+            "entrance_fee", "opening_hours", "google_maps_url", "is_active",
+        ]
+
+
+class HotelForm(forms.ModelForm):
+    """Form for creating and editing hotels with dynamic category choices."""
+
+    class Meta:
+        model = Hotel
+        fields = [
+            "name", "city", "category", "stars", "cover_image",
+            "address", "latitude", "longitude", "phone", "email",
+            "website", "description", "amenities",
+            "check_in_time", "check_out_time", "price_from",
+        ]
+        widgets = {
+            "amenities": forms.CheckboxSelectMultiple,
+        }
+
+    def __init__(self, *args, **kwargs):
+        super().__init__(*args, **kwargs)
+        choices = list(Hotel.CATEGORY_CHOICES)
+        existing_keys = {c[0] for c in choices}
+
+        for cat in HotelCategory.objects.all():
+            key = cat.slug or cat.name.lower().replace(" ", "_")
+            if key not in existing_keys:
+                choices.append((key, cat.name))
+                existing_keys.add(key)
+
+        used_cats = Hotel.objects.values_list("category", flat=True).distinct()
+        for c in used_cats:
+            if c and c not in existing_keys:
+                choices.append((c, c.title()))
+                existing_keys.add(c)
+
+        self.fields["category"].widget = forms.Select(choices=choices)
+from apps.hotels.models import Hotel, HotelCategory
 from apps.tours.models import Tour, TourCategory, TourDay, TourStop
 
 User = get_user_model()
@@ -270,4 +319,40 @@ class HeroSlideForm(forms.ModelForm):
         self.fields["order"].required = False
         if self.instance and self.instance.pk:
             self.fields["image"].required = False
+
+
+class HotelForm(forms.ModelForm):
+    """Form for creating and editing hotels with dynamic category choices."""
+
+    class Meta:
+        model = Hotel
+        fields = [
+            "name", "city", "category", "stars", "cover_image",
+            "address", "latitude", "longitude", "phone", "email",
+            "website", "description", "amenities",
+            "check_in_time", "check_out_time", "price_from",
+        ]
+        widgets = {
+            "amenities": forms.CheckboxSelectMultiple,
+        }
+
+    def __init__(self, *args, **kwargs):
+        super().__init__(*args, **kwargs)
+        choices = list(Hotel.CATEGORY_CHOICES)
+        existing_keys = {c[0] for c in choices}
+
+        for cat in HotelCategory.objects.all():
+            key = cat.slug or cat.name.lower().replace(" ", "_")
+            if key not in existing_keys:
+                choices.append((key, cat.name))
+                existing_keys.add(key)
+
+        used_cats = Hotel.objects.values_list("category", flat=True).distinct()
+        for c in used_cats:
+            if c and c not in existing_keys:
+                choices.append((c, c.title()))
+                existing_keys.add(c)
+
+        self.fields["category"].widget = forms.Select(choices=choices)
+
 

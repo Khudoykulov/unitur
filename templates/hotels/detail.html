@@ -4,79 +4,195 @@
 {% block title %}{{ hotel.seo_title|default:hotel.name }} | {{ SITE_NAME }}{% endblock %}
 
 {% block content %}
-<div class="pt-20 lg:pt-28 bg-pattern-subtle-blue">
-  {# Hero #}
-  <div class="relative min-h-[320px] h-[50vh] md:min-h-[520px] md:h-[60vh] md:max-h-[700px] overflow-hidden">
-    {% if hotel.cover_image %}
-    <img src="{{ hotel.cover_image.url }}" alt="{{ hotel.name }}" class="w-full h-full object-cover">
-    {% endif %}
-    <div class="absolute inset-0 bg-gradient-to-b from-[rgba(30,45,65,0.05)] to-[rgba(30,45,65,0.55)]"></div>
-    <div class="absolute bottom-6 left-6 sm:bottom-8 sm:left-10 right-6">
-      <p class="text-secondary text-sm mb-1 drop-shadow">{{ hotel.star_display }}</p>
-      <h1 class="text-white font-serif text-4xl md:text-5xl lg:text-6xl font-bold drop-shadow-[0_2px_8px_rgba(0,0,0,0.3)]">{{ hotel.name }}</h1>
-      <p class="text-white/80 flex items-center gap-1 mt-1 drop-shadow-[0_1px_4px_rgba(0,0,0,0.25)]"><i class="ti ti-map-pin"></i>{{ hotel.city.name }}, {{ hotel.city.country.name }}</p>
+<div class="pt-20 lg:pt-28 bg-slate-50 min-h-screen">
+
+  {# Clean Page Header #}
+  <div class="unitur-page-header">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <nav class="unitur-breadcrumb">
+        <a href="{% url 'hotels:list' %}">{% trans "Mehmonxonalar" %}</a>
+        <span>/</span>
+        <a href="{{ hotel.city.get_absolute_url }}">{{ hotel.city.name }}</a>
+        <span>/</span>
+        <span style="color: #1e293b; font-weight: 600;">{{ hotel.name }}</span>
+      </nav>
+
+      <div style="display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 0.75rem;">
+        <div>
+          <div style="display: flex; align-items: center; gap: 0.75rem; margin-bottom: 0.25rem;">
+            <span class="unitur-badge-star">{{ hotel.star_display }}</span>
+            <span style="font-size: 0.75rem; background-color: #f1f5f9; color: #334155; padding: 0.25rem 0.625rem; border-radius: 9999px; display: inline-flex; align-items: center; gap: 0.25rem; border: 1px solid #e2e8f0;">
+              <i class="ti ti-eye"></i> {{ hotel.views_count }} {% trans "views" %}
+            </span>
+          </div>
+          <h1 class="unitur-title-main">{{ hotel.name }}</h1>
+          <p class="unitur-sub-location">
+            <i class="ti ti-map-pin" style="color: #f59e0b; font-size: 1rem;"></i> {{ hotel.city.name }}, {{ hotel.city.country.name }}
+          </p>
+        </div>
+      </div>
     </div>
   </div>
 
-  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-10">
     <div class="grid grid-cols-1 lg:grid-cols-3 gap-10">
       <div class="lg:col-span-2">
 
-        {# Gallery #}
-        {% if gallery %}
-        <div x-data="{ active: null }" class="grid grid-cols-3 gap-2 mb-10">
-          {% for img in gallery %}
-          <div @click="active='{{ img.image.url }}'" class="cursor-pointer rounded-xl overflow-hidden aspect-video hover:opacity-90 transition">
-            <img src="{{ img.image.url }}" loading="lazy" class="w-full h-full object-cover">
+        {# Dedicated Image Gallery Slider Box #}
+        <div class="unitur-slider-box" id="hotelSliderContainer">
+          
+          {# Active Slide #}
+          <div class="unitur-slider-display">
+            {% if hotel.cover_image %}
+            <img id="hotelActiveSlideImg" src="{{ hotel.cover_image.url }}" alt="{{ hotel.name }}"
+                 class="unitur-slider-img"
+                 onclick="openHotelSliderLightbox()">
+            {% elif gallery %}
+            <img id="hotelActiveSlideImg" src="{{ gallery.0.image.url }}" alt="{{ hotel.name }}"
+                 class="unitur-slider-img"
+                 onclick="openHotelSliderLightbox()">
+            {% else %}
+            <div style="width: 100%; height: 100%; display: flex; align-items: center; justify-content: center; color: #64748b;">
+              <i class="ti ti-photo" style="font-size: 3rem;"></i>
+            </div>
+            {% endif %}
+
+            <div style="position: absolute; inset: 0; background: linear-gradient(to top, rgba(0,0,0,0.6), transparent, rgba(0,0,0,0.2)); pointer-events: none;"></div>
+
+            {# Counter Badge #}
+            <div class="unitur-slider-counter">
+              <span id="hotelCurrentSlideNum">1</span> / <span id="hotelTotalSlideNum">1</span>
+            </div>
+
+            {# Previous Button #}
+            <button type="button" onclick="prevHotelSlide()" class="unitur-slider-arrow unitur-slider-arrow-left">
+              <i class="ti ti-chevron-left" style="font-size: 1.5rem;"></i>
+            </button>
+
+            {# Next Button #}
+            <button type="button" onclick="nextHotelSlide()" class="unitur-slider-arrow unitur-slider-arrow-right">
+              <i class="ti ti-chevron-right" style="font-size: 1.5rem;"></i>
+            </button>
           </div>
-          {% endfor %}
-          <div x-show="active" @click="active=null" class="fixed inset-0 bg-black/90 z-50 flex items-center justify-center p-4">
-            <img :src="active" class="max-h-full max-w-full rounded-xl" @click.stop>
+
+          {# Thumbnails Strip #}
+          <div class="unitur-slider-thumbs" id="hotelThumbnailsContainer">
           </div>
         </div>
-        {% endif %}
+
+        {# Lightbox #}
+        <div id="hotelSliderLightbox" class="hidden fixed inset-0 z-50 bg-black/90 backdrop-blur-sm p-4 flex flex-col items-center justify-center">
+          <button onclick="closeHotelSliderLightbox()" class="absolute top-5 right-5 text-white text-3xl font-bold hover:text-amber-400 transition">&times;</button>
+          <img id="hotelSliderLightboxImg" src="" alt="" class="max-h-[85vh] max-w-full rounded-2xl shadow-2xl object-contain">
+        </div>
+
+        <script>
+        (function() {
+          const images = [
+            {% if hotel.cover_image %}"{{ hotel.cover_image.url }}",{% endif %}
+            {% for img in gallery %}"{{ img.image.url }}",{% endfor %}
+          ];
+          const uniqueImages = [...new Set(images.filter(Boolean))];
+          if (uniqueImages.length === 0) return;
+
+          let currentIndex = 0;
+          const slideImg = document.getElementById("hotelActiveSlideImg");
+          const currentNum = document.getElementById("hotelCurrentSlideNum");
+          const totalNum = document.getElementById("hotelTotalSlideNum");
+          const thumbBox = document.getElementById("hotelThumbnailsContainer");
+
+          if (totalNum) totalNum.textContent = uniqueImages.length;
+
+          function renderThumbnails() {
+            if (!thumbBox) return;
+            thumbBox.innerHTML = "";
+            uniqueImages.forEach((url, i) => {
+              const btn = document.createElement("button");
+              btn.type = "button";
+              btn.className = `unitur-thumb-btn ${i === currentIndex ? 'active' : ''}`;
+              btn.innerHTML = `<img src="${url}">`;
+              btn.onclick = () => goToSlide(i);
+              thumbBox.appendChild(btn);
+            });
+          }
+
+          function goToSlide(index) {
+            currentIndex = (index + uniqueImages.length) % uniqueImages.length;
+            if (slideImg) slideImg.src = uniqueImages[currentIndex];
+            if (currentNum) currentNum.textContent = currentIndex + 1;
+            renderThumbnails();
+          }
+
+          window.prevHotelSlide = function() { goToSlide(currentIndex - 1); };
+          window.nextHotelSlide = function() { goToSlide(currentIndex + 1); };
+          window.openHotelSliderLightbox = function() {
+            if (uniqueImages.length === 0) return;
+            const lb = document.getElementById("hotelSliderLightbox");
+            const lbImg = document.getElementById("hotelSliderLightboxImg");
+            if (lb && lbImg) {
+              lbImg.src = uniqueImages[currentIndex];
+              lb.classList.remove("hidden");
+              document.body.style.overflow = "hidden";
+            }
+          };
+          window.closeHotelSliderLightbox = function() {
+            const lb = document.getElementById("hotelSliderLightbox");
+            if (lb) {
+              lb.classList.add("hidden");
+              document.body.style.overflow = "";
+            }
+          };
+
+          renderThumbnails();
+        })();
+        </script>
 
         {# Description #}
         {% if hotel.description %}
-        <div class="content-card prose prose-lg max-w-none">
-          <h2 class="font-serif text-2xl font-bold text-dark mb-4">{% trans "About the Hotel" %}</h2>
+        <div class="content-card prose prose-lg max-w-none mb-10" style="background-color: #fff; border: 1px solid #e2e8f0; border-radius: 1rem; padding: 1.5rem;">
+          <h2 style="font-family: 'Fraunces', serif; font-size: 1.5rem; font-weight: 700; color: #0f172a; margin-bottom: 1rem;">
+            {% trans "About This Hotel" %}
+          </h2>
           {{ hotel.description|linebreaks }}
         </div>
         {% endif %}
 
         {# Amenities #}
         {% if hotel.amenities.exists %}
-        <div class="mb-10">
-          <h2 class="font-serif text-xl font-bold text-dark mb-4">{% trans "Amenities" %}</h2>
-          <div class="grid grid-cols-2 sm:grid-cols-3 gap-3">
+        <div class="content-card mb-10" style="background-color: #fff; border: 1px solid #e2e8f0; border-radius: 1rem; padding: 1.5rem;">
+          <h2 style="font-family: 'Fraunces', serif; font-size: 1.5rem; font-weight: 700; color: #0f172a; margin-bottom: 1rem;">
+            {% trans "Amenities" %}
+          </h2>
+          <div class="grid grid-cols-2 sm:grid-cols-3 gap-4">
             {% for amenity in hotel.amenities.all %}
-            <div class="flex items-center gap-2 text-sm text-gray-700 bg-accent rounded-lg px-3 py-2">
-              <i class="ti ti-{{ amenity.icon }} text-secondary"></i>
-              {{ amenity.name }}
+            <div class="flex items-center gap-3 p-3 bg-gray-50 rounded-xl" style="background-color: #f8fafc; border-radius: 0.75rem; padding: 0.75rem;">
+              <i class="{{ amenity.icon|default:'ti ti-check' }} text-xl text-primary" style="color: #2563eb;"></i>
+              <span class="text-sm font-medium text-dark">{{ amenity.name }}</span>
             </div>
             {% endfor %}
           </div>
         </div>
         {% endif %}
 
-        {# Room types #}
-        {% if rooms %}
+        {# Rooms #}
+        {% if hotel.rooms.exists %}
         <div class="mb-10">
-          <h2 class="font-serif text-xl font-bold text-dark mb-4">{% trans "Room Types" %}</h2>
-          <div class="space-y-3">
-            {% for room in rooms %}
-            <div class="bg-white border border-gray-200 rounded-xl p-4 flex gap-4">
-              {% if room.image %}
-              <img src="{{ room.image.url }}" class="w-24 h-20 rounded-lg object-cover flex-shrink-0">
-              {% endif %}
-              <div class="flex-1">
-                <h3 class="font-semibold">{{ room.get_room_type_display }}</h3>
-                <p class="text-xs text-gray-500 mb-1">{% trans "Capacity" %}: {{ room.capacity }} {% trans "persons" %}</p>
-                {% if room.description %}<p class="text-sm text-gray-600">{{ room.description }}</p>{% endif %}
+          <h2 style="font-family: 'Fraunces', serif; font-size: 1.5rem; font-weight: 700; color: #0f172a; margin-bottom: 1rem;">
+            {% trans "Available Rooms" %}
+          </h2>
+          <div class="space-y-4">
+            {% for room in hotel.rooms.all %}
+            <div class="content-card flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4" style="background-color: #fff; border: 1px solid #e2e8f0; border-radius: 1rem; padding: 1.25rem;">
+              <div>
+                <h3 style="font-family: 'Fraunces', serif; font-weight: 700; color: #0f172a; font-size: 1.125rem;">{{ room.name }}</h3>
+                <p style="font-size: 0.875rem; color: #64748b; margin-top: 0.25rem;">{{ room.description|truncatewords:20 }}</p>
+                <div style="display: flex; gap: 1rem; margin-top: 0.5rem; font-size: 0.75rem; color: #64748b;">
+                  {% if room.capacity %}<span><i class="ti ti-user"></i> {{ room.capacity }} {% trans "guests" %}</span>{% endif %}
+                  {% if room.bed_type %}<span><i class="ti ti-bed"></i> {{ room.bed_type }}</span>{% endif %}
+                </div>
               </div>
-              <div class="text-right">
-                <p class="text-xl font-bold text-primary">${{ room.price_per_night|floatformat:0 }}</p>
-                <p class="text-xs text-gray-400">{% trans "/ night" %}</p>
+              <div style="text-align: right; flex-shrink: 0;">
+                <p style="font-size: 1.25rem; font-weight: 700; color: #2563eb;">${{ room.price_per_night|floatformat:0 }} <span style="font-size: 0.75rem; color: #94a3b8;">/ {% trans "night" %}</span></p>
               </div>
             </div>
             {% endfor %}
@@ -84,78 +200,94 @@
         </div>
         {% endif %}
 
-        {# Map #}
-        {% if hotel.latitude and hotel.longitude %}
-        <div class="mb-10">
-          <h2 class="font-serif text-xl font-bold text-dark mb-4">{% trans "Location" %}</h2>
-          <div id="hotel-map" class="h-64 rounded-xl overflow-hidden border"></div>
-        </div>
-        {% endif %}
-
-        {# Reviews #}
-        {% if approved_reviews %}
-        <div>
-          <h2 class="font-serif text-xl font-bold text-dark mb-4">{% trans "Guest Reviews" %}</h2>
-          <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-            {% for review in approved_reviews %}
-              {% include "components/review_card.html" with review=review %}
-            {% endfor %}
-          </div>
-        </div>
-        {% endif %}
       </div>
 
-      {# Sidebar #}
-      <aside>
-        <div class="bg-white rounded-2xl shadow-lg p-6 sticky top-24 border border-gray-100">
-          <p class="text-3xl font-bold text-primary mb-1">${{ hotel.price_from|floatformat:0 }}</p>
-          <p class="text-gray-400 text-sm mb-5">{% trans "per night from" %}</p>
-          <a href="{% url 'bookings:inquiry' %}?hotel={{ hotel.pk }}" class="btn-primary w-full text-center py-3.5 block mb-3">
+      {# Right Sidebar Column #}
+      <div class="space-y-6">
+        <div style="background-color: #fff; border: 1px solid #e2e8f0; border-radius: 1rem; padding: 1.5rem; box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);">
+          <div style="display: flex; align-items: baseline; justify-content: space-between; margin-bottom: 1rem; padding-bottom: 0.75rem; border-bottom: 1px solid #f1f5f9;">
+            <span style="font-size: 0.875rem; color: #64748b;">{% trans "Starting from" %}</span>
+            <span style="font-size: 1.75rem; font-weight: 700; color: #2563eb;">${{ hotel.price_from|floatformat:0 }} <span style="font-size: 0.875rem; color: #94a3b8; font-weight: 400;">/ {% trans "night" %}</span></span>
+          </div>
+
+          <a href="#booking-section"
+             style="width: 100%; display: inline-flex; align-items: center; justify-content: center; padding: 0.875rem 1.25rem; background-color: #2563eb; color: #ffffff; border-radius: 0.75rem; font-weight: 700; font-size: 0.875rem; text-decoration: none; box-shadow: 0 4px 6px -1px rgba(37, 99, 235, 0.2); transition: background-color 0.2s;">
             {% trans "Check Availability" %}
           </a>
-          <div class="space-y-3 text-sm text-gray-600 border-t pt-4 mt-4">
+
+          <div style="margin-top: 1.25rem; padding-top: 1rem; border-top: 1px solid #f1f5f9; font-size: 0.875rem; color: #475569;" class="space-y-2">
             {% if hotel.check_in_time %}
-            <div class="flex justify-between">
-              <span class="flex items-center gap-1"><i class="ti ti-door-enter text-secondary"></i>{% trans "Check-in" %}</span>
-              <span>{{ hotel.check_in_time|time:"H:i" }}</span>
+            <div style="display: flex; justify-content: space-between;">
+              <span><i class="ti ti-login" style="color: #f59e0b;"></i> {% trans "Check-in" %}</span>
+              <strong>{{ hotel.check_in_time }}</strong>
             </div>
             {% endif %}
             {% if hotel.check_out_time %}
-            <div class="flex justify-between">
-              <span class="flex items-center gap-1"><i class="ti ti-door-exit text-secondary"></i>{% trans "Check-out" %}</span>
-              <span>{{ hotel.check_out_time|time:"H:i" }}</span>
+            <div style="display: flex; justify-content: space-between;">
+              <span><i class="ti ti-logout" style="color: #f59e0b;"></i> {% trans "Check-out" %}</span>
+              <strong>{{ hotel.check_out_time }}</strong>
             </div>
             {% endif %}
-            {% if hotel.address %}
-            <div class="flex gap-2 pt-2 border-t">
-              <i class="ti ti-map-pin text-secondary mt-0.5 flex-shrink-0"></i>
-              <span class="text-xs">{{ hotel.address }}</span>
+            {% if hotel.phone %}
+            <div style="display: flex; justify-content: space-between;">
+              <span><i class="ti ti-phone" style="color: #f59e0b;"></i> {% trans "Phone" %}</span>
+              <a href="tel:{{ hotel.phone }}" style="color: #2563eb; text-decoration: none;">{{ hotel.phone }}</a>
+            </div>
+            {% endif %}
+            {% if hotel.email %}
+            <div style="display: flex; justify-content: space-between;">
+              <span><i class="ti ti-mail" style="color: #f59e0b;"></i> {% trans "Email" %}</span>
+              <a href="mailto:{{ hotel.email }}" style="color: #2563eb; text-decoration: none;">{{ hotel.email }}</a>
+            </div>
+            {% endif %}
+            {% if hotel.website %}
+            <div style="display: flex; justify-content: space-between;">
+              <span><i class="ti ti-world" style="color: #f59e0b;"></i> {% trans "Website" %}</span>
+              <a href="{{ hotel.website }}" target="_blank" rel="noopener" style="color: #2563eb; text-decoration: none;">{% trans "Visit Website" %} &UpperRightArrow;</a>
             </div>
             {% endif %}
           </div>
         </div>
-      </aside>
+
+        {# Location & Google Maps #}
+        <div style="background-color: #fff; border: 1px solid #e2e8f0; border-radius: 1rem; padding: 1.5rem; box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);">
+          <h3 style="font-family: 'Fraunces', serif; font-size: 1.25rem; font-weight: 700; color: #0f172a; margin-bottom: 1rem; display: flex; align-items: center; gap: 0.5rem;">
+            <i class="ti ti-map-pin" style="color: #2563eb;"></i> {% trans "Joylashuv va Xarita" %}
+          </h3>
+
+          <div style="padding: 0.875rem; background-color: #f8fafc; border-radius: 0.75rem; border: 1px solid #e2e8f0; margin-bottom: 1rem; font-size: 0.875rem; color: #334155;">
+            <div style="display: flex; align-items: center; gap: 0.5rem; margin-bottom: 0.375rem;">
+              <i class="ti ti-building" style="color: #94a3b8;"></i>
+              <span><strong>{% trans "Shahar" %}:</strong> {{ hotel.city.name }}</span>
+            </div>
+            {% if hotel.address %}
+            <div style="display: flex; align-items: flex-start; gap: 0.5rem;">
+              <i class="ti ti-map-pin" style="color: #94a3b8; margin-top: 0.125rem;"></i>
+              <span><strong>{% trans "Manzil" %}:</strong> {{ hotel.address }}</span>
+            </div>
+            {% endif %}
+          </div>
+
+          {# Embedded Google Map Iframe #}
+          <div style="height: 14rem; border-radius: 0.75rem; overflow: hidden; border: 1px solid #e2e8f0; margin-bottom: 1rem; background-color: #f1f5f9;">
+            <iframe
+              width="100%"
+              height="100%"
+              style="border:0;"
+              loading="lazy"
+              allowfullscreen
+              src="https://maps.google.com/maps?q={% if hotel.latitude and hotel.longitude %}{{ hotel.latitude }},{{ hotel.longitude }}{% else %}{{ hotel.name|urlencode }},{{ hotel.city.name|urlencode }}{% endif %}&t=&z=15&ie=UTF8&iwloc=&output=embed">
+            </iframe>
+          </div>
+
+          <a href="https://www.google.com/maps/search/?api=1&query={% if hotel.latitude and hotel.longitude %}{{ hotel.latitude }},{{ hotel.longitude }}{% else %}{{ hotel.name|urlencode }}+{{ hotel.city.name|urlencode }}{% endif %}"
+             target="_blank" rel="noopener"
+             style="width: 100%; display: inline-flex; align-items: center; justify-content: center; gap: 0.5rem; padding: 0.875rem 1.25rem; background-color: #2563eb; color: #ffffff; border-radius: 0.75rem; font-weight: 700; font-size: 0.875rem; text-decoration: none; box-shadow: 0 4px 6px -1px rgba(37, 99, 235, 0.2); transition: background-color 0.2s;">
+            <i class="ti ti-map-pin" style="font-size: 1.125rem;"></i> {% trans "Google Xaritalarda ko'rish" %}
+          </a>
+        </div>
+      </div>
     </div>
   </div>
 </div>
-{% endblock %}
-
-{% block extra_head %}
-{% if hotel.latitude and hotel.longitude %}
-<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
-{% endif %}
-{% endblock %}
-
-{% block extra_js %}
-{% if hotel.latitude and hotel.longitude %}
-<style>#hotel-map { position: relative; z-index: 0; }</style>
-<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
-<script>
-const map = L.map('hotel-map').setView([{{ hotel.latitude|unlocalize }}, {{ hotel.longitude|unlocalize }}], 15);
-L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png').addTo(map);
-L.marker([{{ hotel.latitude|unlocalize }}, {{ hotel.longitude|unlocalize }}]).addTo(map)
-  .bindPopup('<strong>{{ hotel.name|escapejs }}</strong>');
-setTimeout(function () { map.invalidateSize(); }, 100);
-</script>
-{% endif %}
 {% endblock %}

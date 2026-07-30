@@ -27,7 +27,23 @@ class HotelFilter(django_filters.FilterSet):
         label=_("Stars"),
     )
     max_price = django_filters.NumberFilter(field_name="price_from", lookup_expr="lte", label=_("Max price/night"))
+    ordering = django_filters.ChoiceFilter(
+        label=_("Sort By"),
+        choices=[
+            ("-views_count", _("Most Viewed")),
+            ("price_from", _("Price: Low to High")),
+            ("-price_from", _("Price: High to Low")),
+            ("-stars", _("Highest Rated")),
+            ("-created_at", _("Newest")),
+        ],
+        method="filter_ordering",
+    )
 
     class Meta:
         model = Hotel
-        fields = ["country", "city", "stars", "category"]
+        fields = ["country", "city", "stars", "category", "ordering"]
+
+    def filter_ordering(self, queryset, name, value):
+        if value:
+            return queryset.order_by(value)
+        return queryset

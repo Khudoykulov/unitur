@@ -5,7 +5,7 @@ from django.utils.translation import gettext_lazy as _
 from import_export.admin import ImportExportModelAdmin
 from modeltranslation.admin import TranslationAdmin, TranslationStackedInline
 
-from .models import Hotel, HotelAmenity, HotelImage, HotelRoom
+from .models import Hotel, HotelAmenity, HotelCategory, HotelImage, HotelRoom
 
 
 class HotelImageInline(admin.TabularInline):
@@ -18,6 +18,13 @@ class HotelRoomInline(TranslationStackedInline):
     model = HotelRoom
     extra = 0
     fields = ("room_type", "description", "capacity", "price_per_night", "is_available", "image")
+
+
+@admin.register(HotelCategory)
+class HotelCategoryAdmin(TranslationAdmin):
+    list_display = ("name", "slug", "order")
+    list_editable = ("order",)
+    prepopulated_fields = {"slug": ("name",)}
 
 
 @admin.register(HotelAmenity)

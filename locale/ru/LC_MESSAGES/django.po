@@ -3,8 +3,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: travel_pro 1.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-07-08 20:31+0000\n"
-"PO-Revision-Date: 2026-07-08 20:31+0000\n"
+"POT-Creation-Date: 2026-07-30 12:37+0000\n"
+"PO-Revision-Date: 2026-07-30 12:37+0000\n"
 "Last-Translator: Travel Pro Team\n"
 "Language-Team: ru\n"
 "Language: ru\n"
@@ -2152,3 +2152,51 @@ msgstr ""
 
 msgid "Which page's hero slideshow this image belongs to."
 msgstr "К слайд-шоу какой страницы относится это изображение."
+
+msgid "Ko'rishlar soni"
+msgstr "Просмотры"
+
+msgid "Bron qilganlar"
+msgstr "Забронировано"
+
+msgid "Bron qilganlar soni"
+msgstr "Количество бронирований"
+
+msgid "bron"
+msgstr "брон."
+
+msgid "Ushbu turni ulashish"
+msgstr "Поделиться этим туром"
+
+msgid "Nusxalash"
+msgstr "Копировать"
+
+msgid "Nusxalandi!"
+msgstr "Скопировано!"
+
+msgid "Fotosuratlar galereyasi"
+msgstr "Галерея фотографий"
+
+msgid "Kirish narxi"
+msgstr "Входная плата"
+
+msgid "Ish vaqti"
+msgstr "Часы работы"
+
+msgid "Ushbu joy haqida"
+msgstr "Об этом месте"
+
+msgid "Joylashuv va Xarita"
+msgstr "Расположение и карта"
+
+msgid "Google Xaritalarda ko'rish"
+msgstr "Смотреть на Google Картах"
+
+msgid "Shaharning boshqa joylariga qaytish"
+msgstr "Вернуться к местам города"
+
+msgid "Shuningdek ko'rishingiz mumkin"
+msgstr "Вам также может понравиться"
+
+msgid "Ko'rish"
+msgstr "Смотреть"

@@ -30,6 +30,7 @@
             <th class="px-4 py-3 text-xs text-gray-500 font-semibold uppercase tracking-wide">{% trans "Stars" %}</th>
             <th class="px-4 py-3 text-xs text-gray-500 font-semibold uppercase tracking-wide">{% trans "Category" %}</th>
             <th class="px-4 py-3 text-xs text-gray-500 font-semibold uppercase tracking-wide">{% trans "Price/Night" %}</th>
+            <th class="px-4 py-3 text-xs text-gray-500 font-semibold uppercase tracking-wide">{% trans "Views" %}</th>
             <th class="px-4 py-3 text-xs text-gray-500 font-semibold uppercase tracking-wide">{% trans "Status" %}</th>
             <th class="px-4 py-3 text-xs text-gray-500 font-semibold uppercase tracking-wide">{% trans "Actions" %}</th>
           </tr>
@@ -53,6 +54,7 @@
             <td class="px-4 py-3 text-yellow-400">{{ hotel.star_display }}</td>
             <td class="px-4 py-3 text-gray-600">{{ hotel.get_category_display }}</td>
             <td class="px-4 py-3 font-semibold text-gray-800">${{ hotel.price_from|floatformat:0 }}</td>
+            <td class="px-4 py-3 text-gray-600 font-medium"><i class="ti ti-eye text-gray-400 mr-1"></i>{{ hotel.views_count }}</td>
             <td class="px-4 py-3">
               {% if hotel.is_active %}<span class="inline-flex items-center px-2 py-0.5 rounded-full text-xs font-medium bg-green-100 text-green-700">{% trans "Active" %}</span>
               {% else %}<span class="inline-flex items-center px-2 py-0.5 rounded-full text-xs font-medium bg-gray-100 text-gray-600">{% trans "Inactive" %}</span>{% endif %}

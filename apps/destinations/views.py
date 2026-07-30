@@ -6,9 +6,10 @@ from django.shortcuts import get_object_or_404
 from django.views import View
 from django.views.generic import DetailView, ListView
 
+from apps.hotels.models import Hotel
 from apps.tours.models import Tour
 
-from .models import City, Continent, Country
+from .models import Attraction, City, Continent, Country
 
 
 class DestinationListView(ListView):
@@ -64,7 +65,7 @@ class CountryDetailView(DetailView):
 
 
 class CityDetailView(DetailView):
-    """City page with attractions, hotels, and local tours."""
+    """City page showing overview, attractions, hotels, and tours."""
 
     model = City
     template_name = "destinations/city.html"
@@ -86,7 +87,16 @@ class CityDetailView(DetailView):
         ctx = super().get_context_data(**kwargs)
         city = self.object
         ctx["attractions"] = city.attractions.filter(is_active=True)
-        ctx["hotels"] = city.hotels.filter(is_active=True).order_by("order")[:6]
+        ctx["hotels"] = city.hotels.filter(is_active=True).order_by("order", "-views_count")
+        ctx["tours"] = (
+            Tour.objects.filter(
+                Q(stops__city=city) | Q(destinations=city.country),
+                is_active=True,
+            )
+            .select_related("category")
+            .distinct()
+            .order_by("order", "-created_at")[:6]
+        )
         return ctx
 
 
@@ -127,3 +137,37 @@ class CityInfoAPIView(View):
                 "attractions": attractions,
             }
         )
+
+
+class AttractionDetailView(DetailView):
+    """Dedicated detail page for an attraction showing gallery, maps, details, and nearby attractions."""
+
+    model = Attraction
+    template_name = "destinations/attraction_detail.html"
+    context_object_name = "attraction"
+
+    def get_object(self, queryset=None):
+        country_slug = self.kwargs["country_slug"]
+        city_slug = self.kwargs["city_slug"]
+        attraction_slug = self.kwargs["slug"]
+        return get_object_or_404(
+            Attraction.objects.select_related("city", "city__country").prefetch_related("gallery"),
+            slug=attraction_slug,
+            city__slug=city_slug,
+            city__country__slug=country_slug,
+            is_active=True,
+        )
+
+    def get_context_data(self, **kwargs):
+        ctx = super().get_context_data(**kwargs)
+        attraction = self.object
+        city = attraction.city
+        ctx["city"] = city
+        ctx["country"] = city.country
+        ctx["gallery"] = attraction.gallery.all()
+        ctx["nearby_attractions"] = (
+            city.attractions.filter(is_active=True)
+            .exclude(pk=attraction.pk)
+            .order_by("-created_at", "name")[:6]
+        )
+        return ctx

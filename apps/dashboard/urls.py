@@ -13,6 +13,12 @@ from apps.dashboard.views.bookings import (
     BookingListView,
     booking_export_csv,
 )
+from apps.dashboard.views.attractions import (
+    AttractionCreateView,
+    AttractionDeleteView,
+    AttractionEditView,
+    AttractionListView,
+)
 from apps.dashboard.views.destinations import (
     ContinentCreateView,
     ContinentDeleteView,
@@ -95,6 +101,7 @@ from apps.dashboard.views.tags import (
     TagDeleteView,
 )
 from apps.dashboard.views.amenities import create_amenity_api
+from apps.dashboard.views.hotel_categories import create_hotel_category_api
 
 app_name = "dashboard"
 
@@ -138,6 +145,12 @@ urlpatterns = [
     path("hotels/create/", HotelCreateView.as_view(), name="hotels_create"),
     path("hotels/<int:pk>/edit/", HotelEditView.as_view(), name="hotels_edit"),
     path("hotels/<int:pk>/delete/", HotelDeleteView.as_view(), name="hotels_delete"),
+
+    # Attractions (Diqqatga sazovor joylar)
+    path("attractions/", AttractionListView.as_view(), name="attractions_list"),
+    path("attractions/create/", AttractionCreateView.as_view(), name="attractions_create"),
+    path("attractions/<int:pk>/edit/", AttractionEditView.as_view(), name="attractions_edit"),
+    path("attractions/<int:pk>/delete/", AttractionDeleteView.as_view(), name="attractions_delete"),
 
     # Destinations
     path("destinations/", DestinationListView.as_view(), name="destinations_list"),
@@ -204,4 +217,5 @@ urlpatterns = [
 
     # API endpoints
     path("api/amenities/create/", create_amenity_api, name="api_amenities_create"),
+    path("api/hotel-categories/create/", create_hotel_category_api, name="api_hotel_categories_create"),
 ]

@@ -2,7 +2,7 @@
 
 from modeltranslation.translator import TranslationOptions, register
 
-from .models import Attraction, City, CityImage, Continent, Country
+from .models import Attraction, AttractionImage, City, CityImage, Continent, Country
 
 
 @register(Continent)
@@ -28,3 +28,8 @@ class AttractionTranslationOptions(TranslationOptions):
 @register(CityImage)
 class CityImageTranslationOptions(TranslationOptions):
     fields = ("caption", "description")
+
+
+@register(AttractionImage)
+class AttractionImageTranslationOptions(TranslationOptions):
+    fields = ("caption",)

@@ -1,0 +1,95 @@
+{% extends "dashboard/base.html" %}
+{% load dashboard_tags i18n %}
+
+{% block title %}{% trans "Diqqatga sazovor joylar" %}{% endblock %}
+{% block breadcrumb %}<span class="text-gray-400">/</span> <span class="text-gray-700">{% trans "Diqqatga sazovor joylar" %}</span>{% endblock %}
+
+{% block content %}
+<div class="max-w-7xl mx-auto">
+  <div class="flex items-center justify-between mb-5">
+    <h1 class="text-xl font-bold text-gray-800">{% trans "Diqqatga sazovor joylar" %} <span class="text-gray-400 font-normal text-base">({{ page_obj.paginator.count }})</span></h1>
+    <a href="{% url 'dashboard:attractions_create' %}" class="inline-flex items-center gap-1.5 bg-blue-600 hover:bg-blue-700 text-white text-sm font-medium px-4 py-2 rounded-lg transition shadow-sm">
+      <i class="ti ti-plus"></i> {% trans "Yangi Joy Qo'shish" %}
+    </a>
+  </div>
+
+  <form method="get" class="flex gap-2 mb-5">
+    <input type="text" name="q" value="{{ q }}" placeholder="{% trans 'Joy nomini qidirish…' %}"
+           class="border border-gray-300 rounded-lg px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-blue-300 w-64 bg-white">
+    <button type="submit" class="bg-gray-800 text-white text-sm px-4 py-2 rounded-lg hover:bg-gray-700 transition">{% trans "Filter" %}</button>
+    {% if q %}<a href="{% url 'dashboard:attractions_list' %}" class="bg-gray-100 text-gray-600 text-sm px-4 py-2 rounded-lg hover:bg-gray-200 transition">{% trans "Clear" %}</a>{% endif %}
+  </form>
+
+  <div class="bg-white rounded-xl border border-gray-200 overflow-hidden shadow-sm">
+    <div class="overflow-x-auto">
+      <table class="w-full text-sm">
+        <thead>
+          <tr class="bg-gray-50 text-left border-b border-gray-200">
+            <th class="px-4 py-3 text-xs text-gray-500 font-semibold uppercase tracking-wide">{% trans "Joy Nomi" %}</th>
+            <th class="px-4 py-3 text-xs text-gray-500 font-semibold uppercase tracking-wide">{% trans "Shahar / Davlat" %}</th>
+            <th class="px-4 py-3 text-xs text-gray-500 font-semibold uppercase tracking-wide">{% trans "Toifa" %}</th>
+            <th class="px-4 py-3 text-xs text-gray-500 font-semibold uppercase tracking-wide">{% trans "Kirish narxi" %}</th>
+            <th class="px-4 py-3 text-xs text-gray-500 font-semibold uppercase tracking-wide">{% trans "Holat" %}</th>
+            <th class="px-4 py-3 text-xs text-gray-500 font-semibold uppercase tracking-wide">{% trans "Amallar" %}</th>
+          </tr>
+        </thead>
+        <tbody class="divide-y divide-gray-100">
+          {% for attr in attractions %}
+          <tr class="hover:bg-gray-50 transition">
+            <td class="px-4 py-3">
+              <div class="flex items-center gap-3">
+                {% if attr.image %}
+                <img src="{{ attr.image.url }}" alt="" class="w-10 h-10 rounded-lg object-cover flex-shrink-0">
+                {% else %}
+                <div class="w-10 h-10 rounded-lg bg-slate-100 flex items-center justify-center flex-shrink-0">
+                  <i class="ti ti-map-pin text-slate-400"></i>
+                </div>
+                {% endif %}
+                <div>
+                  <p class="font-semibold text-gray-800">{{ attr.name }}</p>
+                  {% if attr.opening_hours %}<p class="text-xs text-gray-400"><i class="ti ti-clock mr-0.5"></i>{{ attr.opening_hours }}</p>{% endif %}
+                </div>
+              </div>
+            </td>
+            <td class="px-4 py-3 text-gray-600 font-medium">{{ attr.city.name }}, {{ attr.city.country.name }}</td>
+            <td class="px-4 py-3">
+              <span class="inline-block px-2.5 py-0.5 rounded-md text-xs font-semibold bg-blue-50 text-blue-700 border border-blue-100">
+                {{ attr.get_category_display }}
+              </span>
+            </td>
+            <td class="px-4 py-3 text-gray-700 font-medium">{{ attr.entrance_fee|default:"—" }}</td>
+            <td class="px-4 py-3">
+              {% if attr.is_active %}<span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-green-100 text-green-700">{% trans "Active" %}</span>
+              {% else %}<span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-gray-100 text-gray-600">{% trans "Inactive" %}</span>{% endif %}
+            </td>
+            <td class="px-4 py-3">
+              <div class="flex items-center gap-2.5">
+                {% if attr.google_maps_url %}
+                <a href="{{ attr.google_maps_url }}" target="_blank" class="text-gray-400 hover:text-blue-600" title="{% trans 'Xaritada ko`rish' %}"><i class="ti ti-map-pin"></i></a>
+                {% endif %}
+                <a href="{% url 'dashboard:attractions_edit' attr.pk %}" class="text-blue-500 hover:text-blue-700" title="{% trans 'Edit' %}"><i class="ti ti-pencil"></i></a>
+                <form method="post" action="{% url 'dashboard:toggle_active' 'attraction' attr.pk %}">
+                  {% csrf_token %}
+                  {% if attr.is_active %}
+                  <button type="submit" class="text-gray-400 hover:text-amber-600" title="{% trans 'Hide from site' %}"><i class="ti ti-eye-off"></i></button>
+                  {% else %}
+                  <button type="submit" class="text-gray-400 hover:text-green-600" title="{% trans 'Show on site' %}"><i class="ti ti-eye"></i></button>
+                  {% endif %}
+                </form>
+                <form method="post" action="{% url 'dashboard:attractions_delete' attr.pk %}" onsubmit="return confirm('{% trans 'Delete this item?' %}')">
+                  {% csrf_token %}
+                  <button type="submit" class="text-red-400 hover:text-red-600" title="{% trans 'Delete' %}"><i class="ti ti-trash"></i></button>
+                </form>
+              </div>
+            </td>
+          </tr>
+          {% empty %}
+          <tr><td colspan="6" class="px-4 py-10 text-center text-gray-400">{% trans "Hozircha diqqatga sazovor joylar yo'q." %}</td></tr>
+          {% endfor %}
+        </tbody>
+      </table>
+    </div>
+    {% include "dashboard/components/pagination.html" %}
+  </div>
+</div>
+{% endblock %}

@@ -1,0 +1,277 @@
+{% extends "base.html" %}
+{% load i18n %}
+
+{% block title %}{{ attraction.name }} — {{ city.name }}, {{ country.name }} | {{ SITE_NAME }}{% endblock %}
+
+{% block content %}
+<div class="pt-20 lg:pt-28 bg-slate-50 min-h-screen pb-16">
+
+  {# Clean Page Header #}
+  <div class="unitur-page-header">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <nav class="unitur-breadcrumb">
+        <a href="{% url 'destinations:list' %}">{% trans "Destinations" %}</a>
+        <span>/</span>
+        <a href="{{ country.get_absolute_url }}">{{ country.name }}</a>
+        <span>/</span>
+        <a href="{{ city.get_absolute_url }}">{{ city.name }}</a>
+        <span>/</span>
+        <span style="color: #1e293b; font-weight: 600;">{{ attraction.name }}</span>
+      </nav>
+
+      <div style="margin-top: 0.5rem; margin-bottom: 0.25rem;">
+        <span class="unitur-badge-category">
+          {{ attraction.get_category_display }}
+        </span>
+      </div>
+
+      <h1 class="unitur-title-main">{{ attraction.name }}</h1>
+      <p class="unitur-sub-location">
+        <i class="ti ti-map-pin" style="color: #f59e0b; font-size: 1rem;"></i> {{ city.name }}, {{ country.name }}
+      </p>
+    </div>
+  </div>
+
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-10">
+
+    {# ── Details Grid & Info ── #}
+    <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 mb-16">
+      
+      {# Left Main Column: Slider + Specs + Description #}
+      <div class="lg:col-span-2 space-y-8">
+        
+        {# ── Dedicated Image Gallery Slider Box ── #}
+        <div class="unitur-slider-box" id="attrGalleryBox">
+          
+          {# Active Image Display #}
+          <div class="unitur-slider-display">
+            {% if attraction.image %}
+            <img id="attrSlideImg" src="{{ attraction.image.url }}" alt="{{ attraction.name }}"
+                 class="unitur-slider-img"
+                 onclick="openAttrLightbox()">
+            {% elif gallery %}
+            <img id="attrSlideImg" src="{{ gallery.0.image.url }}" alt="{{ attraction.name }}"
+                 class="unitur-slider-img"
+                 onclick="openAttrLightbox()">
+            {% else %}
+            <div style="width: 100%; height: 100%; display: flex; align-items: center; justify-content: center; color: #64748b;">
+              <i class="ti ti-photo" style="font-size: 3rem;"></i>
+            </div>
+            {% endif %}
+
+            <div style="position: absolute; inset: 0; background: linear-gradient(to top, rgba(0,0,0,0.6), transparent, rgba(0,0,0,0.2)); pointer-events: none;"></div>
+
+            {# Counter Badge #}
+            <div class="unitur-slider-counter">
+              <span id="attrCurrentIndex">1</span> / <span id="attrTotalCount">1</span>
+            </div>
+
+            {# Previous Button #}
+            <button type="button" onclick="prevAttrSlide()" class="unitur-slider-arrow unitur-slider-arrow-left">
+              <i class="ti ti-chevron-left" style="font-size: 1.5rem;"></i>
+            </button>
+
+            {# Next Button #}
+            <button type="button" onclick="nextAttrSlide()" class="unitur-slider-arrow unitur-slider-arrow-right">
+              <i class="ti ti-chevron-right" style="font-size: 1.5rem;"></i>
+            </button>
+          </div>
+
+          {# Thumbnails Strip #}
+          <div class="unitur-slider-thumbs" id="attrThumbsContainer">
+          </div>
+        </div>
+
+        {# Lightbox Modal #}
+        <div id="attrLightbox" class="hidden fixed inset-0 z-50 bg-black/90 backdrop-blur-sm p-4 flex flex-col items-center justify-center">
+          <button onclick="closeAttrLightbox()" class="absolute top-5 right-5 text-white text-3xl font-bold hover:text-amber-400 transition">&times;</button>
+          <img id="attrLightboxImg" src="" alt="" class="max-h-[85vh] max-w-full rounded-2xl shadow-2xl object-contain">
+        </div>
+
+        <script>
+        (function() {
+          const images = [
+            {% if attraction.image %}"{{ attraction.image.url }}",{% endif %}
+            {% for img in gallery %}"{{ img.image.url }}",{% endfor %}
+          ];
+          const uniqueImages = [...new Set(images.filter(Boolean))];
+          if (uniqueImages.length === 0) return;
+
+          let currentIndex = 0;
+          const slideImg = document.getElementById("attrSlideImg");
+          const currentNum = document.getElementById("attrCurrentIndex");
+          const totalNum = document.getElementById("attrTotalCount");
+          const thumbBox = document.getElementById("attrThumbsContainer");
+
+          if (totalNum) totalNum.textContent = uniqueImages.length;
+
+          function renderThumbnails() {
+            if (!thumbBox) return;
+            thumbBox.innerHTML = "";
+            uniqueImages.forEach((url, i) => {
+              const btn = document.createElement("button");
+              btn.type = "button";
+              btn.className = `unitur-thumb-btn ${i === currentIndex ? 'active' : ''}`;
+              btn.innerHTML = `<img src="${url}">`;
+              btn.onclick = () => goToSlide(i);
+              thumbBox.appendChild(btn);
+            });
+          }
+
+          function goToSlide(index) {
+            currentIndex = (index + uniqueImages.length) % uniqueImages.length;
+            if (slideImg) slideImg.src = uniqueImages[currentIndex];
+            if (currentNum) currentNum.textContent = currentIndex + 1;
+            renderThumbnails();
+          }
+
+          window.prevAttrSlide = function() { goToSlide(currentIndex - 1); };
+          window.nextAttrSlide = function() { goToSlide(currentIndex + 1); };
+          window.openAttrLightbox = function() {
+            if (uniqueImages.length === 0) return;
+            const lb = document.getElementById("attrLightbox");
+            const lbImg = document.getElementById("attrLightboxImg");
+            if (lb && lbImg) {
+              lbImg.src = uniqueImages[currentIndex];
+              lb.classList.remove("hidden");
+              document.body.style.overflow = "hidden";
+            }
+          };
+          window.closeAttrLightbox = function() {
+            const lb = document.getElementById("attrLightbox");
+            if (lb) {
+              lb.classList.add("hidden");
+              document.body.style.overflow = "";
+            }
+          };
+
+          renderThumbnails();
+        })();
+        </script>
+
+        {# Key Specs Cards #}
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+          <div class="bg-white p-5 rounded-2xl border border-slate-200 shadow-sm flex items-center gap-4" style="background-color: #fff; border: 1px solid #e2e8f0; border-radius: 1rem; padding: 1.25rem;">
+            <div style="width: 3rem; height: 3rem; border-radius: 0.75rem; background-color: #eff6ff; color: #2563eb; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+              <i class="ti ti-ticket" style="font-size: 1.5rem;"></i>
+            </div>
+            <div>
+              <span style="font-size: 0.75rem; color: #64748b; text-transform: uppercase; font-weight: 600;">{% trans "Kirish narxi" %}</span>
+              <p style="font-size: 1rem; font-weight: 700; color: #0f172a; margin-top: 0.125rem;">
+                {% if attraction.entrance_fee %}{{ attraction.entrance_fee }}{% else %}{% trans "Ma'lumot berilmagan" %}{% endif %}
+              </p>
+            </div>
+          </div>
+
+          <div class="bg-white p-5 rounded-2xl border border-slate-200 shadow-sm flex items-center gap-4" style="background-color: #fff; border: 1px solid #e2e8f0; border-radius: 1rem; padding: 1.25rem;">
+            <div style="width: 3rem; height: 3rem; border-radius: 0.75rem; background-color: #fef3c7; color: #d97706; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+              <i class="ti ti-clock" style="font-size: 1.5rem;"></i>
+            </div>
+            <div>
+              <span style="font-size: 0.75rem; color: #64748b; text-transform: uppercase; font-weight: 600;">{% trans "Ish vaqti" %}</span>
+              <p style="font-size: 1rem; font-weight: 700; color: #0f172a; margin-top: 0.125rem;">
+                {% if attraction.opening_hours %}{{ attraction.opening_hours }}{% else %}{% trans "24/7 ochiq" %}{% endif %}
+              </p>
+            </div>
+          </div>
+        </div>
+
+        {# Description #}
+        <div class="bg-white p-6 sm:p-8 rounded-2xl border border-slate-200 shadow-sm prose max-w-none text-slate-700 leading-relaxed" style="background-color: #fff; border: 1px solid #e2e8f0; border-radius: 1rem; padding: 1.5rem;">
+          <h2 style="font-family: 'Fraunces', serif; font-size: 1.5rem; font-weight: 700; color: #0f172a; margin-bottom: 1rem; display: flex; align-items: center; gap: 0.5rem;">
+            <i class="ti ti-info-circle" style="color: #2563eb;"></i> {% trans "Ushbu joy haqida" %}
+          </h2>
+          {% if attraction.description %}
+          {{ attraction.description|linebreaks }}
+          {% else %}
+          <p style="color: #94a3b8; font-style: italic;">{% trans "Tavsif kiritilmagan." %}</p>
+          {% endif %}
+        </div>
+
+      </div>
+
+      {# Right Sidebar Column: Location & Google Maps #}
+      <div class="space-y-6">
+        <div class="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm" style="background-color: #fff; border: 1px solid #e2e8f0; border-radius: 1rem; padding: 1.5rem;">
+          <h3 style="font-family: 'Fraunces', serif; font-size: 1.25rem; font-weight: 700; color: #0f172a; margin-bottom: 1rem; display: flex; align-items: center; gap: 0.5rem;">
+            <i class="ti ti-map-pin" style="color: #2563eb;"></i> {% trans "Joylashuv va Xarita" %}
+          </h3>
+
+          <div style="padding: 1rem; background-color: #f8fafc; border-radius: 0.75rem; border: 1px solid #e2e8f0; margin-bottom: 1.25rem; font-size: 0.875rem; color: #334155;">
+            <div style="display: flex; align-items: center; gap: 0.5rem; margin-bottom: 0.5rem;">
+              <i class="ti ti-building" style="color: #94a3b8;"></i>
+              <span><strong>{% trans "Shahar" %}:</strong> {{ city.name }}</span>
+            </div>
+            <div style="display: flex; align-items: center; gap: 0.5rem;">
+              <i class="ti ti-world" style="color: #94a3b8;"></i>
+              <span><strong>{% trans "Mamlakat" %}:</strong> {{ country.name }}</span>
+            </div>
+          </div>
+
+          {% if attraction.google_maps_url %}
+          <a href="{{ attraction.google_maps_url }}" target="_blank" rel="noopener"
+             style="width: 100%; display: inline-flex; align-items: center; justify-content: center; gap: 0.5rem; padding: 0.875rem 1.25rem; background-color: #2563eb; color: #ffffff; border-radius: 0.75rem; font-weight: 700; font-size: 0.875rem; text-decoration: none; box-shadow: 0 4px 6px -1px rgba(37, 99, 235, 0.2); transition: background-color 0.2s;">
+            <i class="ti ti-map-pin" style="font-size: 1.125rem;"></i> {% trans "Google Xaritalarda ko'rish" %}
+          </a>
+          {% else %}
+          <div style="padding: 1rem; background-color: #fffbeb; color: #92400e; border-radius: 0.75rem; font-size: 0.75rem; text-align: center; border: 1px solid #fef3c7;">
+            <i class="ti ti-info-circle" style="font-size: 1rem; display: block; margin-bottom: 0.25rem;"></i>
+            {% trans "Xarita havolasi biriktirilmagan." %}
+          </div>
+          {% endif %}
+        </div>
+
+        {# Quick Back Button #}
+        <a href="{{ city.get_absolute_url }}#attractions"
+           style="width: 100%; display: inline-flex; align-items: center; justify-content: center; gap: 0.5rem; padding: 0.75rem 1.25rem; background-color: #e2e8f0; color: #334155; border-radius: 0.75rem; font-weight: 700; font-size: 0.75rem; text-decoration: none; transition: background-color 0.2s;">
+          <i class="ti ti-arrow-left"></i> {% trans "Shaharning boshqa joylariga qaytish" %}
+        </a>
+      </div>
+
+    </div>
+
+    {# ── Nearby Attractions in the same city ── #}
+    {% if nearby_attractions %}
+    <section style="margin-top: 3.5rem; padding-top: 2.5rem; border-top: 1px solid #e2e8f0;">
+      <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 1.5rem;">
+        <h2 style="font-family: 'Fraunces', serif; font-size: 1.5rem; font-weight: 700; color: #0f172a; display: flex; align-items: center; gap: 0.5rem;">
+          <i class="ti ti-map-pins" style="color: #2563eb;"></i> {% trans "Shuningdek ko'rishingiz mumkin" %} ({{ city.name }})
+        </h2>
+        <a href="{{ city.get_absolute_url }}#attractions" style="font-size: 0.75rem; font-weight: 700; color: #2563eb; text-decoration: none;">
+          {% trans "Barchasi" %} &rarr;
+        </a>
+      </div>
+
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        {% for item in nearby_attractions %}
+        <a href="{{ item.get_absolute_url }}" class="unitur-card" style="text-decoration: none; display: flex; flex-direction: column;">
+          <div style="height: 11rem; width: 100%; overflow: hidden; background-color: #f1f5f9; position: relative;">
+            {% if item.image %}
+            <img src="{{ item.image.url }}" alt="{{ item.name }}" style="width: 100%; height: 100%; object-fit: cover;">
+            {% else %}
+            <div style="width: 100%; height: 100%; display: flex; align-items: center; justify-content: center;">
+              <i class="ti ti-photo" style="font-size: 2rem; color: #cbd5e1;"></i>
+            </div>
+            {% endif %}
+            <span style="position: absolute; top: 0.75rem; left: 0.75rem; font-size: 0.625rem; font-weight: 700; color: #1d4ed8; text-transform: uppercase; background-color: rgba(255,255,255,0.9); padding: 0.25rem 0.625rem; border-radius: 0.375rem; border: 1px solid #dbeafe;">
+              {{ item.get_category_display }}
+            </span>
+          </div>
+
+          <div style="padding: 1rem; flex: 1; display: flex; flex-direction: column; justify-content: space-between;">
+            <h3 style="font-family: 'Fraunces', serif; font-weight: 700; color: #0f172a; font-size: 1rem;">
+              {{ item.name }}
+            </h3>
+            <div style="margin-top: 0.75rem; text-align: right;">
+              <span class="btn-outline text-xs px-3 py-2">{% trans "Ko'rish" %}</span>
+            </div>
+          </div>
+        </a>
+        {% endfor %}
+      </div>
+    </section>
+    {% endif %}
+
+  </div>
+</div>
+{% endblock %}

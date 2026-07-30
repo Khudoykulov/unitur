@@ -13,7 +13,7 @@ from django.utils.translation import gettext
 from django.views import View
 
 from apps.dashboard.mixins import AuditMixin, ManagerRequiredMixin
-from apps.destinations.models import City, Country
+from apps.destinations.models import Attraction, City, Country
 from apps.hotels.models import Hotel
 from apps.tours.models import Tour
 
@@ -25,11 +25,12 @@ TOGGLEABLE = {
     "city": (City, "dashboard:cities_list"),
     "hotel": (Hotel, "dashboard:hotels_list"),
     "country": (Country, "dashboard:destinations_list"),
+    "attraction": (Attraction, "dashboard:attractions_list"),
 }
 
 
 class ToggleActiveView(AuditMixin, ManagerRequiredMixin, View):
-    """Flip ``is_active`` for a single record (POST only)."""
+    """Flip ``is_active`` or ``is_published`` for a single record (POST only)."""
 
     def post(self, request, model, pk):
         entry = TOGGLEABLE.get(model)
@@ -38,12 +39,20 @@ class ToggleActiveView(AuditMixin, ManagerRequiredMixin, View):
         model_cls, list_url = entry
 
         obj = get_object_or_404(model_cls, pk=pk)
-        obj.is_active = not obj.is_active
-        obj.save(update_fields=["is_active"])
+        if hasattr(obj, "is_active"):
+            obj.is_active = not obj.is_active
+            obj.save(update_fields=["is_active"])
+            is_vis = obj.is_active
+        elif hasattr(obj, "is_published"):
+            obj.is_published = not obj.is_published
+            obj.save(update_fields=["is_published"])
+            is_vis = obj.is_published
+        else:
+            is_vis = True
 
         self.log_action("TOGGLE_ACTIVE", model_cls.__name__, obj.pk)
         label = str(obj)
-        if obj.is_active:
+        if is_vis:
             messages.success(request, gettext("'%(name)s' is now visible on the site.") % {"name": label})
         else:
             messages.success(request, gettext("'%(name)s' is now hidden from the site.") % {"name": label})

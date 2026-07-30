@@ -75,6 +75,9 @@
     <a href="{% url 'dashboard:hotels_list' %}" class="sidebar-link {% if 'dashboard/hotels' in request.path %}active{% endif %}">
       <i class="ti ti-building text-lg"></i> {% trans "Hotels" %}
     </a>
+    <a href="{% url 'dashboard:attractions_list' %}" class="sidebar-link {% if 'dashboard/attractions' in request.path %}active{% endif %}">
+      <i class="ti ti-map-pin text-lg"></i> {% trans "Diqqatga sazovor joylar" %}
+    </a>
     <a href="{% url 'dashboard:destinations_list' %}" class="sidebar-link {% if 'dashboard/destinations' in request.path %}active{% endif %}">
       <i class="ti ti-world text-lg"></i> {% trans "Destinations" %}
     </a>

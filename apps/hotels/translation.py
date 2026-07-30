@@ -2,7 +2,12 @@
 
 from modeltranslation.translator import TranslationOptions, register
 
-from .models import Hotel, HotelAmenity, HotelRoom
+from .models import Hotel, HotelAmenity, HotelCategory, HotelRoom
+
+
+@register(HotelCategory)
+class HotelCategoryTranslationOptions(TranslationOptions):
+    fields = ("name",)
 
 
 @register(HotelAmenity)

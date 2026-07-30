@@ -123,6 +123,16 @@ class Attraction(TimeStampedModel, PublishableMixin):
             self.slug = slugify(self.name)
         super().save(*args, **kwargs)
 
+    def get_absolute_url(self) -> str:
+        return reverse(
+            "destinations:attraction_detail",
+            kwargs={
+                "country_slug": self.city.country.slug,
+                "city_slug": self.city.slug,
+                "slug": self.slug,
+            },
+        )
+
 
 class City(TimeStampedModel, SEOMixin, PublishableMixin, OrderedMixin):
     """A city within a country, containing attractions and hotels."""
@@ -180,3 +190,22 @@ class CityImage(models.Model):
 
     def __str__(self) -> str:
         return f"{self.city.name} – image {self.order}"
+
+
+class AttractionImage(models.Model):
+    """A gallery photo for an attraction (shown on attraction detail page)."""
+
+    attraction = models.ForeignKey(
+        Attraction, on_delete=models.CASCADE, related_name="gallery", verbose_name=_("Attraction")
+    )
+    image = models.ImageField(_("Image"), upload_to="attractions/gallery/")
+    caption = models.CharField(_("Caption"), max_length=200, blank=True)
+    order = models.PositiveSmallIntegerField(_("Order"), default=0)
+
+    class Meta:
+        verbose_name = _("Attraction image")
+        verbose_name_plural = _("Attraction images")
+        ordering = ["order"]
+
+    def __str__(self) -> str:
+        return f"{self.attraction.name} – image {self.order}"

@@ -3,8 +3,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: travel_pro 1.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-07-08 20:31+0000\n"
-"PO-Revision-Date: 2026-07-08 20:31+0000\n"
+"POT-Creation-Date: 2026-07-30 12:37+0000\n"
+"PO-Revision-Date: 2026-07-30 12:37+0000\n"
 "Last-Translator: Travel Pro Team\n"
 "Language-Team: ja\n"
 "Language: ja\n"
@@ -2112,3 +2112,51 @@ msgstr "ヒーロー画像はまだありません。ページに数枚追加し
 
 msgid "Which page's hero slideshow this image belongs to."
 msgstr "この画像がどのページのヒーロースライドに属するか。"
+
+msgid "Ko'rishlar soni"
+msgstr "閲覧数"
+
+msgid "Bron qilganlar"
+msgstr "予約数"
+
+msgid "Bron qilganlar soni"
+msgstr "予約件数"
+
+msgid "bron"
+msgstr "件"
+
+msgid "Ushbu turni ulashish"
+msgstr "このツアーを共有"
+
+msgid "Nusxalash"
+msgstr "リンクをコピー"
+
+msgid "Nusxalandi!"
+msgstr "コピーしました！"
+
+msgid "Fotosuratlar galereyasi"
+msgstr "フォトギャラリー"
+
+msgid "Kirish narxi"
+msgstr "入場料"
+
+msgid "Ish vaqti"
+msgstr "営業時間"
+
+msgid "Ushbu joy haqida"
+msgstr "この場所について"
+
+msgid "Joylashuv va Xarita"
+msgstr "場所と地図"
+
+msgid "Google Xaritalarda ko'rish"
+msgstr "Googleマップで見る"
+
+msgid "Shaharning boshqa joylariga qaytish"
+msgstr "街の観光スポットに戻る"
+
+msgid "Shuningdek ko'rishingiz mumkin"
+msgstr "おすすめのスポット"
+
+msgid "Ko'rish"
+msgstr "見る"

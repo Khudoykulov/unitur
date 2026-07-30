@@ -21,7 +21,9 @@ class HotelListView(ListView):
             .prefetch_related("amenities")
         )
         self.filterset = HotelFilter(self.request.GET, queryset=qs)
-        return self.filterset.qs.order_by("order", "name")
+        if self.request.GET.get("ordering"):
+            return self.filterset.qs
+        return self.filterset.qs.order_by("order", "-created_at")
 
     def get_context_data(self, **kwargs):
         ctx = super().get_context_data(**kwargs)
@@ -43,6 +45,11 @@ class HotelDetailView(DetailView):
             .select_related("city__country")
             .prefetch_related("amenities", "rooms", "gallery", "reviews")
         )
+
+    def get_object(self, queryset=None):
+        obj = super().get_object(queryset)
+        obj.increment_views()
+        return obj
 
     def get_context_data(self, **kwargs):
         ctx = super().get_context_data(**kwargs)

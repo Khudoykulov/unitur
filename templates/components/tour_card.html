@@ -16,17 +16,25 @@
 
     {# Category badge #}
     {% if tour.category %}
-    <span class="absolute top-3 left-3 bg-white/90 backdrop-blur-sm text-primary text-xs font-semibold px-3 py-1 rounded-full">
+    <span class="absolute top-3 left-3 bg-white/90 backdrop-blur-sm text-primary text-xs font-semibold px-3 py-1 rounded-full z-10 shadow">
       {{ tour.category.name }}
     </span>
     {% endif %}
 
-    {# Discount badge #}
-    {% if tour.discount_percent %}
-    <span class="absolute top-3 right-3 bg-secondary text-white text-xs font-bold px-2 py-1 rounded-full">
-      -{{ tour.discount_percent }}%
-    </span>
-    {% endif %}
+    {# Stats Badges (Views & Bookings) #}
+    <div class="absolute top-3 right-3 flex items-center gap-1.5 z-10">
+      {% if tour.discount_percent %}
+      <span class="bg-amber-500 text-white text-xs font-bold px-2 py-0.5 rounded-full shadow">
+        -{{ tour.discount_percent }}%
+      </span>
+      {% endif %}
+      <span class="bg-black/60 backdrop-blur-md text-white text-[11px] font-semibold px-2 py-0.5 rounded-full flex items-center gap-1 shadow">
+        <i class="ti ti-eye text-xs"></i> {{ tour.views_count }}
+      </span>
+      <span class="bg-emerald-600/90 backdrop-blur-md text-white text-[11px] font-semibold px-2 py-0.5 rounded-full flex items-center gap-1 shadow">
+        <i class="ti ti-user-check text-xs"></i> {{ tour.inquiries.count }}
+      </span>
+    </div>
   </div>
 
   {# Content #}
@@ -36,13 +44,19 @@
     </h3>
 
     {# Meta row #}
-    <div class="flex flex-wrap gap-3 text-gray-500 text-xs mb-3">
+    <div class="flex flex-wrap items-center gap-3 text-gray-500 text-xs mb-3">
       <span class="flex items-center gap-1">
         <i class="ti ti-calendar text-secondary"></i> {{ tour.duration_days }} {% trans "days" %}
       </span>
       <span class="flex items-center gap-1">
         <i class="ti ti-users text-secondary"></i>
         {% blocktrans with min=tour.group_size_min max=tour.group_size_max %}{{ min }}–{{ max }} pax{% endblocktrans %}
+      </span>
+      <span class="flex items-center gap-1 text-slate-500" title="{% trans "Views count" %}">
+        <i class="ti ti-eye text-blue-500"></i> {{ tour.views_count }}
+      </span>
+      <span class="flex items-center gap-1 text-emerald-600 font-medium" title="{% trans 'Bookings count' %}">
+        <i class="ti ti-user-check text-emerald-500"></i> {{ tour.inquiries.count }} {% trans "booked" %}
       </span>
     </div>
 

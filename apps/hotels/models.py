@@ -12,6 +12,25 @@ from django.utils.translation import gettext_lazy as _
 from apps.core.models import OrderedMixin, PublishableMixin, SEOMixin, TimeStampedModel
 
 
+class HotelCategory(OrderedMixin):
+    """A category for hotels (e.g. Resort, Boutique, Glamping, Villa)."""
+
+    name = models.CharField(_("Name"), max_length=100)
+    slug = models.SlugField(_("Slug"), max_length=120, unique=True, blank=True)
+
+    class Meta(OrderedMixin.Meta):
+        verbose_name = _("Hotel category")
+        verbose_name_plural = _("Hotel categories")
+
+    def __str__(self) -> str:
+        return self.name
+
+    def save(self, *args, **kwargs) -> None:
+        if not self.slug:
+            self.slug = slugify(self.name)
+        super().save(*args, **kwargs)
+
+
 class HotelAmenity(OrderedMixin):
     """An amenity offered by hotels (e.g. WiFi, Pool, Gym)."""
 
@@ -65,6 +84,7 @@ class Hotel(TimeStampedModel, SEOMixin, PublishableMixin, OrderedMixin):
     check_in_time = models.TimeField(_("Check-in time"), null=True, blank=True)
     check_out_time = models.TimeField(_("Check-out time"), null=True, blank=True)
     price_from = models.DecimalField(_("Price from (per night)"), max_digits=10, decimal_places=2, default=0)
+    views_count = models.PositiveIntegerField(_("Views count"), default=0, editable=False)
 
     class Meta(OrderedMixin.Meta):
         verbose_name = _("Hotel")
@@ -81,9 +101,22 @@ class Hotel(TimeStampedModel, SEOMixin, PublishableMixin, OrderedMixin):
     def get_absolute_url(self) -> str:
         return reverse("hotels:detail", kwargs={"slug": self.slug})
 
+    def increment_views(self) -> None:
+        """Increment views_count without updating updated_at timestamp."""
+        Hotel.objects.filter(pk=self.pk).update(views_count=models.F("views_count") + 1)
+
     @property
     def star_display(self) -> str:
         return "★" * self.stars + "☆" * (5 - self.stars)
+
+    @property
+    def website_url(self) -> str:
+        if not self.website:
+            return ""
+        url = self.website.strip()
+        if not (url.startswith("http://") or url.startswith("https://")):
+            return f"https://{url}"
+        return url
 
 
 class HotelImage(models.Model):

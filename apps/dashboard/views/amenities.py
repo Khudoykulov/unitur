@@ -7,6 +7,7 @@ from django.http import JsonResponse
 from django.utils.translation import gettext as _
 from django.views.decorators.http import require_POST
 
+from apps.dashboard.autotranslate import autofill_translations
 from apps.hotels.models import HotelAmenity
 
 
@@ -33,6 +34,10 @@ def create_amenity_api(request):
 
         # Create new amenity
         amenity = HotelAmenity.objects.create(name=name, icon=icon)
+        try:
+            autofill_translations(amenity)
+        except Exception:
+            pass
 
         return JsonResponse({
             'success': True,

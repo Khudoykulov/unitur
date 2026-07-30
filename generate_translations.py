@@ -1027,6 +1027,23 @@ DASHBOARD_T = {
     "Rotating background images for page heroes. Add several images to the same page and they cross-fade automatically.": {"uz": "Sahifa hero qismi uchun almashib turadigan fon rasmlari. Bitta sahifaga bir nechta rasm qo'shsangiz, ular avtomatik almashadi.", "ru": "Сменяющиеся фоновые изображения для hero-блоков страниц. Добавьте несколько изображений одной странице — они будут плавно чередоваться.", "it": "Immagini di sfondo rotanti per gli hero delle pagine. Aggiungi più immagini alla stessa pagina e si alterneranno automaticamente.", "es": "Imágenes de fondo rotativas para los hero de las páginas. Añade varias imágenes a la misma página y se alternarán automáticamente.", "ja": "ページのヒーロー用の切り替わる背景画像。同じページに複数追加すると自動でクロスフェードします。"},
     "No hero images yet. Add a few to a page to start the slideshow.": {"uz": "Hozircha fon rasmlari yo'q. Slayd-shou uchun sahifaga bir nechta rasm qo'shing.", "ru": "Пока нет фоновых изображений. Добавьте несколько на страницу, чтобы запустить слайд-шоу.", "it": "Ancora nessuna immagine hero. Aggiungine alcune a una pagina per avviare lo slideshow.", "es": "Aún no hay imágenes hero. Añade varias a una página para iniciar el pase de diapositivas.", "ja": "ヒーロー画像はまだありません。ページに数枚追加してスライドショーを開始しましょう。"},
     "Which page's hero slideshow this image belongs to.": {"uz": "Bu rasm qaysi sahifaning hero slayderiga tegishli.", "ru": "К слайд-шоу какой страницы относится это изображение.", "it": "A quale slideshow hero di pagina appartiene questa immagine.", "es": "A qué slideshow hero de página pertenece esta imagen.", "ja": "この画像がどのページのヒーロースライドに属するか。"},
+    # ── New UI components & Stats ──
+    "Ko'rishlar soni": {"uz": "Ko'rishlar soni", "ru": "Просмотры", "it": "Visualizzazioni", "es": "Visualizaciones", "ja": "閲覧数"},
+    "Bron qilganlar": {"uz": "Bron qilganlar", "ru": "Забронировано", "it": "Prenotato", "es": "Reservado", "ja": "予約数"},
+    "Bron qilganlar soni": {"uz": "Bron qilganlar soni", "ru": "Количество бронирований", "it": "Numero di prenotazioni", "es": "Número de reservas", "ja": "予約件数"},
+    "bron": {"uz": "bron", "ru": "брон.", "it": "prenotazioni", "es": "reservas", "ja": "件"},
+    "Ushbu turni ulashish": {"uz": "Ushbu turni ulashish", "ru": "Поделиться этим туром", "it": "Condividi questo tour", "es": "Compartir este tour", "ja": "このツアーを共有"},
+    "Nusxalash": {"uz": "Nusxalash", "ru": "Копировать", "it": "Copia link", "es": "Copiar enlace", "ja": "リンクをコピー"},
+    "Nusxalandi!": {"uz": "Nusxalandi!", "ru": "Скопировано!", "it": "Copiato!", "es": "¡Copiado!", "ja": "コピーしました！"},
+    "Fotosuratlar galereyasi": {"uz": "Fotosuratlar galereyasi", "ru": "Галерея фотографий", "it": "Galleria fotografica", "es": "Galería de fotos", "ja": "フォトギャラリー"},
+    "Kirish narxi": {"uz": "Kirish narxi", "ru": "Входная плата", "it": "Prezzo d'ingresso", "es": "Precio de entrada", "ja": "入場料"},
+    "Ish vaqti": {"uz": "Ish vaqti", "ru": "Часы работы", "it": "Orari di apertura", "es": "Horario de apertura", "ja": "営業時間"},
+    "Ushbu joy haqida": {"uz": "Ushbu joy haqida", "ru": "Об этом месте", "it": "Informazioni su questo luogo", "es": "Sobre este lugar", "ja": "この場所について"},
+    "Joylashuv va Xarita": {"uz": "Joylashuv va Xarita", "ru": "Расположение и карта", "it": "Posizione e mappa", "es": "Ubicación y mapa", "ja": "場所と地図"},
+    "Google Xaritalarda ko'rish": {"uz": "Google Xaritalarda ko'rish", "ru": "Смотреть на Google Картах", "it": "Vedi su Google Maps", "es": "Ver en Google Maps", "ja": "Googleマップで見る"},
+    "Shaharning boshqa joylariga qaytish": {"uz": "Shaharning boshqa joylariga qaytish", "ru": "Вернуться к местам города", "it": "Torna alle attrazioni della città", "es": "Volver a las atracciones de la ciudad", "ja": "街の観光スポットに戻る"},
+    "Shuningdek ko'rishingiz mumkin": {"uz": "Shuningdek ko'rishingiz mumkin", "ru": "Вам также может понравиться", "it": "Potrebbe piacerti anche", "es": "También te puede interesar", "ja": "おすすめのスポット"},
+    "Ko'rish": {"uz": "Ko'rish", "ru": "Смотреть", "it": "Vedi", "es": "Ver", "ja": "見る"},
 }
 
 for _k, _v in DASHBOARD_T.items():
