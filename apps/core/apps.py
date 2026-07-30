@@ -26,9 +26,10 @@ class CoreConfig(AppConfig):
 
 def _compile_messages():
     import subprocess
+    import sys
     from django.conf import settings
     subprocess.Popen(
-        ['python', 'manage.py', 'compilemessages'],
+        [sys.executable, 'manage.py', 'compilemessages'],
         cwd=str(settings.BASE_DIR),
         stdout=subprocess.DEVNULL,
         stderr=subprocess.DEVNULL,
