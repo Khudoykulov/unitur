@@ -38,7 +38,7 @@ urlpatterns = [
     path("i18n/", include("django.conf.urls.i18n")),
     path("jsi18n/", JavaScriptCatalog.as_view(), name="javascript-catalog"),
     # Rosetta translations (dev)
-    path("rosetta/", include("rosetta.urls")),
+    path("rosetta/", include("config.rosetta_urls")),
     # CKEditor
     path("ckeditor/", include("ckeditor_uploader.urls")),
     # django-allauth
