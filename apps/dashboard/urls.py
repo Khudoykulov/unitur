@@ -100,7 +100,7 @@ from apps.dashboard.views.tags import (
     TagEditView,
     TagDeleteView,
 )
-from apps.dashboard.views.amenities import create_amenity_api
+from apps.dashboard.views.amenities import create_amenity_api, update_amenity_api, delete_amenity_api
 from apps.dashboard.views.hotel_categories import create_hotel_category_api
 
 app_name = "dashboard"
@@ -218,5 +218,7 @@ urlpatterns = [
 
     # API endpoints
     path("api/amenities/create/", create_amenity_api, name="api_amenities_create"),
+    path("api/amenities/<int:pk>/update/", update_amenity_api, name="api_amenities_update"),
+    path("api/amenities/<int:pk>/delete/", delete_amenity_api, name="api_amenities_delete"),
     path("api/hotel-categories/create/", create_hotel_category_api, name="api_hotel_categories_create"),
 ]

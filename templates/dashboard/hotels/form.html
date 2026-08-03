@@ -57,12 +57,24 @@
             </div>
             <div id="amenities_container" class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-2.5 max-h-72 overflow-y-auto pr-1">
               {% for amenity in all_amenities %}
-              <label class="amenity-card flex items-center gap-2">
-                <input type="checkbox" name="amenities" value="{{ amenity.pk }}"
-                       {% if selected_amenity_ids and amenity.pk in selected_amenity_ids %}checked{% endif %}>
-                <i class="{{ amenity.icon_class }} text-blue-600"></i>
-                <span>{{ amenity.name }}</span>
-              </label>
+              <div id="amenity_card_{{ amenity.pk }}" class="amenity-card group relative flex items-center justify-between gap-1 p-2 bg-white border border-slate-200 rounded-xl hover:border-emerald-500 transition">
+                <label class="flex items-center gap-2 cursor-pointer flex-1 min-w-0">
+                  <input type="checkbox" name="amenities" value="{{ amenity.pk }}"
+                         {% if selected_amenity_ids and amenity.pk in selected_amenity_ids %}checked{% endif %}>
+                  <i class="{{ amenity.icon_class }} text-blue-600 amenity-icon"></i>
+                  <span class="amenity-name truncate">{{ amenity.name }}</span>
+                </label>
+                <div class="flex items-center gap-0.5 opacity-70 group-hover:opacity-100 transition shrink-0">
+                  <button type="button" onclick="openEditAmenityModal({{ amenity.pk }}, '{{ amenity.name|escapejs }}', '{{ amenity.icon|escapejs }}')"
+                          title="{% trans 'Tahrirlash' %}" class="text-slate-400 hover:text-blue-600 p-1 transition rounded hover:bg-slate-100">
+                    <i class="ti ti-pencil text-xs"></i>
+                  </button>
+                  <button type="button" onclick="deleteAmenity({{ amenity.pk }}, '{{ amenity.name|escapejs }}')"
+                          title="{% trans 'O\'chirish' %}" class="text-slate-400 hover:text-red-600 p-1 transition rounded hover:bg-slate-100">
+                    <i class="ti ti-trash text-xs"></i>
+                  </button>
+                </div>
+              </div>
               {% empty %}
               <p class="text-xs text-slate-400 col-span-full py-2">{% trans "Hozircha qulayliklar yo'q. 'Yangi Qulaylik Qo'shish' tugmasini bosing." %}</p>
               {% endfor %}
@@ -192,6 +204,45 @@
   </div>
 </div>
 
+<!-- Modal: Edit Amenity -->
+<div id="editAmenityModal" class="hidden fixed inset-0 bg-slate-900/60 backdrop-blur-sm z-50 flex items-center justify-center p-4">
+  <div class="bg-white rounded-2xl shadow-2xl max-w-md w-full border border-slate-100 overflow-hidden">
+    <div class="flex items-center justify-between p-5 border-b border-slate-100 bg-slate-50/50">
+      <h3 class="text-base font-bold text-slate-800 flex items-center gap-2">
+        <i class="ti ti-pencil text-blue-600"></i> {% trans "Qulaylikni Tahrirlash" %}
+      </h3>
+      <button type="button" onclick="closeEditAmenityModal()" class="text-slate-400 hover:text-slate-600 transition">
+        <i class="ti ti-x text-xl"></i>
+      </button>
+    </div>
+    <div class="p-5">
+      <form id="editAmenityForm" class="space-y-4">
+        {% csrf_token %}
+        <input type="hidden" id="edit_amenity_id">
+        <div>
+          <label class="block text-sm font-semibold text-slate-700 mb-1.5">{% trans "Qulaylik nomi" %} <span class="text-red-500">*</span></label>
+          <input type="text" id="edit_amenity_name" required placeholder="masalan: WiFi, Basseyn, Sauna..."
+                 class="w-full rounded-xl border border-slate-300 px-3.5 py-2.5 text-sm focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none">
+        </div>
+        <div>
+          <label class="block text-sm font-semibold text-slate-700 mb-1.5">{% trans "Ikonka nomi (ixtiyoriy)" %}</label>
+          <input type="text" id="edit_amenity_icon" placeholder="wifi, swimming, dumbbell, check..."
+                 class="w-full rounded-xl border border-slate-300 px-3.5 py-2.5 text-sm focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none">
+          <p class="text-xs text-slate-400 mt-1">{% trans "Tabler ikonka nomi (masalan: wifi, swimming, bar)" %}</p>
+        </div>
+        <div class="flex gap-3 justify-end pt-3 border-t border-slate-100">
+          <button type="button" onclick="closeEditAmenityModal()" class="modal-btn-cancel">
+            {% trans "Bekor qilish" %}
+          </button>
+          <button type="submit" class="modal-btn-submit-blue">
+            <i class="ti ti-check"></i> {% trans "Saqlash" %}
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+
 <style>
   form select, form input[type="text"], form input[type="number"], form input[type="url"],
   form input[type="email"], form input[type="file"], form input[type="time"], form textarea {
@@ -213,16 +264,15 @@
   .amenity-card {
     display: flex;
     align-items: center;
-    gap: 0.5rem;
-    padding: 0.625rem 0.875rem;
+    justify-content: space-between;
+    gap: 0.25rem;
+    padding: 0.5rem 0.625rem;
     background-color: #ffffff;
     border: 1.5px solid #E2E8F0;
     border-radius: 0.625rem;
     font-size: 0.8125rem;
     font-weight: 500;
     color: #334155;
-    cursor: pointer;
-    user-select: none;
     transition: all 0.2s ease;
     box-shadow: 0 1px 2px rgba(0, 0, 0, 0.03);
   }
@@ -405,7 +455,7 @@ document.getElementById('categoryForm').addEventListener('submit', async functio
   }
 });
 
-// Amenity Modal Logic
+// Amenity Create Modal Logic
 function openAmenityModal() {
   document.getElementById('amenityModal').classList.remove('hidden');
   document.getElementById('amenity_name').focus();
@@ -445,17 +495,36 @@ document.getElementById('amenityForm').addEventListener('submit', async function
     if (data.success) {
       const container = document.getElementById('amenities_container');
       if (container) {
-        let existingInput = container.querySelector(`input[value="${data.amenity.id}"]`);
-        if (existingInput) {
-          existingInput.checked = true;
+        let existingCard = document.getElementById(`amenity_card_${data.amenity.id}`);
+        if (existingCard) {
+          const chk = existingCard.querySelector('input[type="checkbox"]');
+          if (chk) chk.checked = true;
         } else {
           const emptyMsg = container.querySelector('p');
           if (emptyMsg) emptyMsg.remove();
 
-          const newLabel = document.createElement('label');
-          newLabel.className = 'amenity-card';
-          newLabel.innerHTML = `<input type="checkbox" name="amenities" value="${data.amenity.id}" checked> <span>${data.amenity.name}</span>`;
-          container.appendChild(newLabel);
+          const iconClass = data.amenity.icon ? `ti ti-${data.amenity.icon}` : 'ti ti-check';
+          const newDiv = document.createElement('div');
+          newDiv.id = `amenity_card_${data.amenity.id}`;
+          newDiv.className = 'amenity-card group relative flex items-center justify-between gap-1 p-2 bg-white border border-slate-200 rounded-xl hover:border-emerald-500 transition';
+          newDiv.innerHTML = `
+            <label class="flex items-center gap-2 cursor-pointer flex-1 min-w-0">
+              <input type="checkbox" name="amenities" value="${data.amenity.id}" checked>
+              <i class="${iconClass} text-blue-600 amenity-icon"></i>
+              <span class="amenity-name truncate">${data.amenity.name}</span>
+            </label>
+            <div class="flex items-center gap-0.5 opacity-70 group-hover:opacity-100 transition shrink-0">
+              <button type="button" onclick="openEditAmenityModal(${data.amenity.id}, '${data.amenity.name.replace(/'/g, "\\'")}', '${(data.amenity.icon || 'check').replace(/'/g, "\\'")}')"
+                      title="Tahrirlash" class="text-slate-400 hover:text-blue-600 p-1 transition rounded hover:bg-slate-100">
+                <i class="ti ti-pencil text-xs"></i>
+              </button>
+              <button type="button" onclick="deleteAmenity(${data.amenity.id}, '${data.amenity.name.replace(/'/g, "\\'")}')"
+                      title="O'chirish" class="text-slate-400 hover:text-red-600 p-1 transition rounded hover:bg-slate-100">
+                <i class="ti ti-trash text-xs"></i>
+              </button>
+            </div>
+          `;
+          container.appendChild(newDiv);
         }
       }
 
@@ -468,5 +537,90 @@ document.getElementById('amenityForm').addEventListener('submit', async function
     showToast('Xatolik: ' + error.message, false);
   }
 });
+
+// Amenity Edit Modal Logic
+function openEditAmenityModal(id, name, icon) {
+  document.getElementById('edit_amenity_id').value = id;
+  document.getElementById('edit_amenity_name').value = name;
+  document.getElementById('edit_amenity_icon').value = icon || 'check';
+  document.getElementById('editAmenityModal').classList.remove('hidden');
+  document.getElementById('edit_amenity_name').focus();
+}
+
+function closeEditAmenityModal() {
+  document.getElementById('editAmenityModal').classList.add('hidden');
+  document.getElementById('editAmenityForm').reset();
+}
+
+document.getElementById('editAmenityForm').addEventListener('submit', async function(e) {
+  e.preventDefault();
+  const id = document.getElementById('edit_amenity_id').value;
+  const name = document.getElementById('edit_amenity_name').value.trim();
+  const icon = document.getElementById('edit_amenity_icon').value.trim() || 'check';
+
+  if (!id || !name) return;
+
+  try {
+    const response = await fetch(`/dashboard/api/amenities/${id}/update/`, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        'X-CSRFToken': document.querySelector('[name=csrfmiddlewaretoken]').value
+      },
+      body: JSON.stringify({ name, icon })
+    });
+
+    const data = await response.json();
+
+    if (data.success) {
+      const card = document.getElementById(`amenity_card_${id}`);
+      if (card) {
+        const nameSpan = card.querySelector('.amenity-name');
+        if (nameSpan) nameSpan.textContent = data.amenity.name;
+        const iconEl = card.querySelector('.amenity-icon');
+        if (iconEl) iconEl.className = `${data.amenity.icon ? 'ti ti-' + data.amenity.icon : 'ti ti-check'} text-blue-600 amenity-icon`;
+        const editBtn = card.querySelector('button[onclick*="openEditAmenityModal"]');
+        if (editBtn) {
+          const safeName = data.amenity.name.replace(/'/g, "\\'");
+          const safeIcon = (data.amenity.icon || 'check').replace(/'/g, "\\'");
+          editBtn.setAttribute('onclick', `openEditAmenityModal(${data.amenity.id}, '${safeName}', '${safeIcon}')`);
+        }
+      }
+      showToast(data.message, true);
+      closeEditAmenityModal();
+    } else {
+      showToast(data.message || 'Xatolik yuz berdi', false);
+    }
+  } catch (error) {
+    showToast('Xatolik: ' + error.message, false);
+  }
+});
+
+// Amenity Delete Handler
+async function deleteAmenity(id, name) {
+  if (!confirm(`"${name}" qulayligini chindan ham o'chirmoqchimisiz?`)) return;
+
+  try {
+    const response = await fetch(`/dashboard/api/amenities/${id}/delete/`, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        'X-CSRFToken': document.querySelector('[name=csrfmiddlewaretoken]').value
+      }
+    });
+
+    const data = await response.json();
+
+    if (data.success) {
+      const card = document.getElementById(`amenity_card_${id}`);
+      if (card) card.remove();
+      showToast(data.message, true);
+    } else {
+      showToast(data.message || 'Xatolik yuz berdi', false);
+    }
+  } catch (error) {
+    showToast('Xatolik: ' + error.message, false);
+  }
+}
 </script>
 {% endblock %}

@@ -43,7 +43,7 @@ def _do_autofill(instance_pk, model_class, source_lang=None, overwrite=True, for
     if not fields:
         return
 
-    src = (source_lang or get_language() or settings.LANGUAGE_CODE).split("-")[0]
+    src = str(source_lang or get_language() or settings.LANGUAGE_CODE).split("-")[0]
     targets = [code for code, _ in settings.LANGUAGES if code != src]
     if not targets:
         return
