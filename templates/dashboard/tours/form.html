@@ -180,6 +180,16 @@
 
   if (!totalForms || !body || !tpl || !addBtn) return;
 
+  function reindexDayNumbers() {
+    const visibleRows = body.querySelectorAll(".day-row:not([style*='display: none'])");
+    visibleRows.forEach((row, idx) => {
+      const dayInput = row.querySelector("input[name$='-day_number']");
+      if (dayInput) {
+        dayInput.value = idx + 1;
+      }
+    });
+  }
+
   addBtn.addEventListener("click", function () {
     const index = parseInt(totalForms.value, 10);
     const html = tpl.innerHTML.replace(/__prefix__/g, index);
@@ -187,15 +197,9 @@
     wrap.innerHTML = html.trim();
     const row = wrap.firstChild;
     
-    // Auto-increment day number based on visible rows
-    const visibleRows = body.querySelectorAll(".day-row:not([style*='display: none'])");
-    const dayInput = row.querySelector("input[name$='-day_number']");
-    if (dayInput) {
-      dayInput.value = visibleRows.length + 1;
-    }
-    
     body.appendChild(row);
     totalForms.value = index + 1;
+    reindexDayNumbers();
   });
 
   body.addEventListener("click", function (e) {
@@ -206,6 +210,7 @@
         const chk = row.querySelector("input[name$='-DELETE']");
         if (chk) chk.checked = true;
         row.style.display = "none";
+        reindexDayNumbers();
       }
       return;
     }
@@ -213,7 +218,10 @@
     const removeBtn = e.target.closest(".remove-day");
     if (removeBtn) {
       const row = removeBtn.closest(".day-row");
-      if (row) row.remove();
+      if (row) {
+        row.remove();
+        reindexDayNumbers();
+      }
     }
   });
 })();

@@ -71,14 +71,21 @@ class _TourFormMixin:
         return ctx
 
     def form_valid(self, form):
-        ctx = self.get_context_data()
+        ctx = self.get_context_data(form=form)
         days = ctx["days"]
         if not days.is_valid():
             return self.render_to_response(ctx)
         with transaction.atomic():
             self.object = form.save()
             days.instance = self.object
-            days.save()
+            saved_days = days.save(commit=False)
+            for day in saved_days:
+                if day.title and day.title.strip():
+                    day.save()
+            days.save_m2m()
+            for obj_to_delete in days.deleted_objects:
+                obj_to_delete.delete()
+
             # Re-sequence day numbers sequentially for remaining active days
             active_days = self.object.days.all().order_by("day_number", "id")
             for idx, d in enumerate(active_days, start=1):

@@ -234,6 +234,29 @@ class TourDayForm(forms.ModelForm):
             "day_number", "title", "description", "attractions",
         ]
 
+    def __init__(self, *args, **kwargs):
+        super().__init__(*args, **kwargs)
+        self.fields["title"].required = False
+        self.fields["description"].required = False
+        self.fields["day_number"].required = False
+
+    def clean(self):
+        cleaned_data = super().clean()
+        title = (cleaned_data.get("title") or "").strip()
+        description = (cleaned_data.get("description") or "").strip()
+
+        if cleaned_data.get("DELETE"):
+            return cleaned_data
+
+        is_existing = bool(self.instance and self.instance.pk)
+        has_content = bool(title or description or cleaned_data.get("attractions"))
+
+        # For existing days or new days with content, title is required.
+        if (is_existing or has_content) and not title:
+            self.add_error("title", _("This field is required."))
+
+        return cleaned_data
+
 
 # The day-by-day itinerary is optional supplementary content (the tour detail
 # page renders it only when days exist), so no minimum is enforced — unlike
