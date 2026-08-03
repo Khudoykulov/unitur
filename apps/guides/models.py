@@ -109,12 +109,14 @@ class Article(TimeStampedModel, SEOMixin, PublishableMixin):
 
     def save(self, *args, **kwargs) -> None:
         if not self.slug:
-            self.slug = slugify(self.title)
+            self.slug = slugify(self.title) or f"article-{self.pk or 'new'}"
         if self.is_published and not self.published_at:
             self.published_at = timezone.now()
         super().save(*args, **kwargs)
 
     def get_absolute_url(self) -> str:
+        if not self.slug:
+            return reverse("guides:list")
         return reverse("guides:detail", kwargs={"slug": self.slug})
 
     def publish(self) -> None:

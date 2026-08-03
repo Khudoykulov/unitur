@@ -67,10 +67,12 @@ class Country(TimeStampedModel, SEOMixin, PublishableMixin, OrderedMixin):
 
     def save(self, *args, **kwargs) -> None:
         if not self.slug:
-            self.slug = slugify(self.name)
+            self.slug = slugify(self.name) or f"country-{self.pk or 'new'}"
         super().save(*args, **kwargs)
 
     def get_absolute_url(self) -> str:
+        if not self.slug:
+            return reverse("destinations:list")
         return reverse("destinations:country", kwargs={"slug": self.slug})
 
     @property
@@ -80,7 +82,12 @@ class Country(TimeStampedModel, SEOMixin, PublishableMixin, OrderedMixin):
 
 
 class Attraction(TimeStampedModel, PublishableMixin):
-    """A point of interest within a city."""
+    """
+    A specific attraction / sight within a city (e.g. Registan in Samarkand).
+
+    Belongs to a City (which belongs to a Country). Has its own detail page
+    with rich info, photos, entrance fee, and map link.
+    """
 
     CATEGORY_CHOICES = [
         ("nature", _("Nature")),
@@ -120,10 +127,12 @@ class Attraction(TimeStampedModel, PublishableMixin):
 
     def save(self, *args, **kwargs) -> None:
         if not self.slug:
-            self.slug = slugify(self.name)
+            self.slug = slugify(self.name) or f"attraction-{self.pk or 'new'}"
         super().save(*args, **kwargs)
 
     def get_absolute_url(self) -> str:
+        if not self.slug or not self.city or not self.city.country or not self.city.country.slug:
+            return reverse("destinations:list")
         return reverse(
             "destinations:attraction_detail",
             kwargs={

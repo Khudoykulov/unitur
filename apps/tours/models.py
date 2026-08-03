@@ -120,10 +120,12 @@ class Tour(TimeStampedModel, SEOMixin, PublishableMixin, OrderedMixin):
 
     def save(self, *args, **kwargs) -> None:
         if not self.slug:
-            self.slug = slugify(self.title)
+            self.slug = slugify(self.title) or f"tour-{self.pk or 'new'}"
         super().save(*args, **kwargs)
 
     def get_absolute_url(self) -> str:
+        if not self.slug:
+            return reverse("tours:list")
         return reverse("tours:detail", kwargs={"slug": self.slug})
 
     @property
