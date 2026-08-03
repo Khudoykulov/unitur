@@ -2158,3 +2158,24 @@ msgstr "Shuningdek ko'rishingiz mumkin"
 
 msgid "Ko'rish"
 msgstr "Ko'rish"
+
+msgid "Starting from"
+msgstr "Starting from"
+
+msgid "night"
+msgstr "night"
+
+msgid "Location & Map"
+msgstr "Location & Map"
+
+msgid "views"
+msgstr "views"
+
+msgid "Available Rooms"
+msgstr "Available Rooms"
+
+msgid "guests"
+msgstr "guests"
+
+msgid "Visit Website"
+msgstr "Visit Website"

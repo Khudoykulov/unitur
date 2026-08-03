@@ -10,7 +10,7 @@
   <div class="unitur-page-header">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <nav class="unitur-breadcrumb">
-        <a href="{% url 'hotels:list' %}">{% trans "Mehmonxonalar" %}</a>
+        <a href="{% url 'hotels:list' %}">{% trans "Hotels" %}</a>
         <span>/</span>
         <a href="{{ hotel.city.get_absolute_url }}">{{ hotel.city.name }}</a>
         <span>/</span>
@@ -252,7 +252,7 @@
         {# Location & Google Maps #}
         <div style="background-color: #fff; border: 1px solid #e2e8f0; border-radius: 1rem; padding: 1.5rem; box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);">
           <h3 style="font-family: 'Fraunces', serif; font-size: 1.25rem; font-weight: 700; color: #0f172a; margin-bottom: 1rem; display: flex; align-items: center; gap: 0.5rem;">
-            <i class="ti ti-map-pin" style="color: #2563eb;"></i> {% trans "Joylashuv va Xarita" %}
+            <i class="ti ti-map-pin" style="color: #2563eb;"></i> {% trans "Location & Map" %}
           </h3>
 
           <div style="padding: 0.875rem; background-color: #f8fafc; border-radius: 0.75rem; border: 1px solid #e2e8f0; margin-bottom: 1rem; font-size: 0.875rem; color: #334155;">

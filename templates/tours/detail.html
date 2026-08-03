@@ -62,42 +62,6 @@
           <p class="text-gray-700 leading-relaxed">{{ tour.overview }}</p>
         </div>
 
-        {# Includes / Excludes #}
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-10">
-          {% if tour.includes %}
-          <div class="bg-green-50 rounded-2xl p-6">
-            <h3 class="font-semibold text-green-800 text-lg mb-4 flex items-center gap-2">
-              <i class="ti ti-circle-check text-green-600"></i> {% trans "What's Included" %}
-            </h3>
-            <ul class="space-y-2">
-              {% for line in tour.includes.splitlines %}
-              {% if line.strip %}
-              <li class="flex items-start gap-2 text-green-700 text-sm">
-                <i class="ti ti-check mt-0.5 flex-shrink-0"></i> {{ line.strip }}
-              </li>
-              {% endif %}
-              {% endfor %}
-            </ul>
-          </div>
-          {% endif %}
-          {% if tour.excludes %}
-          <div class="bg-red-50 rounded-2xl p-6">
-            <h3 class="font-semibold text-red-800 text-lg mb-4 flex items-center gap-2">
-              <i class="ti ti-circle-x text-red-600"></i> {% trans "Not Included" %}
-            </h3>
-            <ul class="space-y-2">
-              {% for line in tour.excludes.splitlines %}
-              {% if line.strip %}
-              <li class="flex items-start gap-2 text-red-700 text-sm">
-                <i class="ti ti-x mt-0.5 flex-shrink-0"></i> {{ line.strip }}
-              </li>
-              {% endif %}
-              {% endfor %}
-            </ul>
-          </div>
-          {% endif %}
-        </div>
-
         {# Multi-city route line (Ichki Turlar) — shown only for multi-stop tours #}
         {% if tour.is_multi_city %}
         <div class="mb-6 bg-white rounded-2xl p-6 sm:p-8 shadow-sm">
@@ -182,6 +146,42 @@
           </div>
         </div>
         {% endif %}
+
+        {# Includes / Excludes #}
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-10">
+          {% if tour.includes %}
+          <div class="bg-green-50 rounded-2xl p-6">
+            <h3 class="font-semibold text-green-800 text-lg mb-4 flex items-center gap-2">
+              <i class="ti ti-circle-check text-green-600"></i> {% trans "What's Included" %}
+            </h3>
+            <ul class="space-y-2">
+              {% for line in tour.includes.splitlines %}
+              {% if line.strip %}
+              <li class="flex items-start gap-2 text-green-700 text-sm">
+                <i class="ti ti-check mt-0.5 flex-shrink-0"></i> {{ line.strip }}
+              </li>
+              {% endif %}
+              {% endfor %}
+            </ul>
+          </div>
+          {% endif %}
+          {% if tour.excludes %}
+          <div class="bg-red-50 rounded-2xl p-6">
+            <h3 class="font-semibold text-red-800 text-lg mb-4 flex items-center gap-2">
+              <i class="ti ti-circle-x text-red-600"></i> {% trans "Not Included" %}
+            </h3>
+            <ul class="space-y-2">
+              {% for line in tour.excludes.splitlines %}
+              {% if line.strip %}
+              <li class="flex items-start gap-2 text-red-700 text-sm">
+                <i class="ti ti-x mt-0.5 flex-shrink-0"></i> {{ line.strip }}
+              </li>
+              {% endif %}
+              {% endfor %}
+            </ul>
+          </div>
+          {% endif %}
+        </div>
 
         {# Available Departures #}
         {% if departures %}

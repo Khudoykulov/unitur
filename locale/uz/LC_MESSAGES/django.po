@@ -2217,3 +2217,24 @@ msgstr "Shuningdek ko'rishingiz mumkin"
 
 msgid "Ko'rish"
 msgstr "Ko'rish"
+
+msgid "Starting from"
+msgstr "Boshlang'ich narx"
+
+msgid "night"
+msgstr "kecha"
+
+msgid "Location & Map"
+msgstr "Joylashuv va Xarita"
+
+msgid "views"
+msgstr "ko'rishlar"
+
+msgid "Available Rooms"
+msgstr "Mavjud xonalar"
+
+msgid "guests"
+msgstr "mehmonlar"
+
+msgid "Visit Website"
+msgstr "Saytga o'tish"

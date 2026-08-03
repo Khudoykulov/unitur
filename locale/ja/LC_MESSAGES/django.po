@@ -2160,3 +2160,24 @@ msgstr "おすすめのスポット"
 
 msgid "Ko'rish"
 msgstr "見る"
+
+msgid "Starting from"
+msgstr "〜から"
+
+msgid "night"
+msgstr "泊"
+
+msgid "Location & Map"
+msgstr "位置情報と地図"
+
+msgid "views"
+msgstr "閲覧数"
+
+msgid "Available Rooms"
+msgstr "利用可能な客室"
+
+msgid "guests"
+msgstr "名様"
+
+msgid "Visit Website"
+msgstr "ウェブサイトを見る"

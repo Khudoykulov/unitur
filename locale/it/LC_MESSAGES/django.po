@@ -2209,3 +2209,24 @@ msgstr "Potrebbe piacerti anche"
 
 msgid "Ko'rish"
 msgstr "Vedi"
+
+msgid "Starting from"
+msgstr "A partire da"
+
+msgid "night"
+msgstr "notte"
+
+msgid "Location & Map"
+msgstr "Posizione e Mappa"
+
+msgid "views"
+msgstr "visualizzazioni"
+
+msgid "Available Rooms"
+msgstr "Camere disponibili"
+
+msgid "guests"
+msgstr "ospiti"
+
+msgid "Visit Website"
+msgstr "Visita il sito"

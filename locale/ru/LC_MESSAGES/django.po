@@ -2200,3 +2200,24 @@ msgstr "Вам также может понравиться"
 
 msgid "Ko'rish"
 msgstr "Смотреть"
+
+msgid "Starting from"
+msgstr "От"
+
+msgid "night"
+msgstr "ночь"
+
+msgid "Location & Map"
+msgstr "Расположение и карта"
+
+msgid "views"
+msgstr "просмотров"
+
+msgid "Available Rooms"
+msgstr "Доступные номера"
+
+msgid "guests"
+msgstr "гостей"
+
+msgid "Visit Website"
+msgstr "Перейти на сайт"
