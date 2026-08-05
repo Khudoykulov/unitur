@@ -9,7 +9,7 @@
           <img src="{% static 'images/logo-unitur-ondark.png' %}" alt="{{ SITE_NAME }}"
                class="h-16 sm:h-20 w-auto drop-shadow-[0_2px_10px_rgba(0,0,0,0.25)]">
         </div>
-        <p class="text-sm leading-relaxed mb-4">{{ SITE_TAGLINE }}.</p>
+        <p class="text-sm leading-relaxed mb-4">{% trans SITE_TAGLINE %}.</p>
         <div class="flex gap-3">
           {% if SOCIAL_LINKS.facebook %}
           <a href="{{ SOCIAL_LINKS.facebook }}" target="_blank" rel="noopener" class="w-9 h-9 rounded-full bg-white/10 flex items-center justify-center hover:bg-brand-ctaLine transition">

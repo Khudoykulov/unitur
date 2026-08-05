@@ -341,7 +341,7 @@ MODELTRANSLATION_FALLBACK_LANGUAGES = ("en",)
 # Auto-translation: when content is saved from the dashboard, machine-translate
 # the entered text into the other languages (deep-translator / Google).
 # Always off during tests — never hit the network from the test suite.
-AUTO_TRANSLATE = False if TESTING else config("AUTO_TRANSLATE", cast=bool, default=True)
+AUTO_TRANSLATE = False if TESTING else config("AUTO_TRANSLATE", cast=bool, default=False)
 
 # ---------------------------------------------------------------------------
 # Rate limiting (django-ratelimit) — module is django_ratelimit
