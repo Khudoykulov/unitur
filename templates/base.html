@@ -99,9 +99,9 @@
     <form id="admin-access-form" class="admin-access-form" method="post" action="{% url 'accounts:staff-login' %}">
       {% csrf_token %}
       <button type="button" class="admin-access-close" aria-label="Close">&times;</button>
-      <h2>Staff Login</h2>
-      <input type="text" name="username" placeholder="Username" autocomplete="off" autocapitalize="off" spellcheck="false" required>
-      <input type="password" name="password" placeholder="Password" autocomplete="off" required>
+      <h2>{% trans "Staff Login" %}</h2>
+      <input type="text" name="username" placeholder="{% trans 'Username' %}" autocomplete="off" autocapitalize="off" spellcheck="false" required>
+      <input type="password" name="password" placeholder="{% trans 'Password' %}" autocomplete="off" required>
       <button type="submit">{% trans "Log in" %}</button>
       <p class="admin-access-error" hidden>{% trans "Invalid username or password." %}</p>
     </form>

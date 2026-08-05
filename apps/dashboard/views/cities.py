@@ -58,7 +58,8 @@ class DomesticCityCreateView(AuditMixin, ManagerRequiredMixin, CreateView):
                 messages.error(self.request, gettext("Uzbekistan country not found in database."))
                 return self.form_invalid(form)
         response = super().form_valid(form)
-        autofill_translations(self.object)
+        lang = getattr(self.request, "LANGUAGE_CODE", None) or get_language()
+        autofill_translations(self.object, source_lang=lang, overwrite=False)
         self.log_action("CREATE", "DomesticCity", self.object.pk)
         messages.success(self.request, gettext("City '%(name)s' created.") % {"name": self.object.name})
         return response
@@ -80,7 +81,8 @@ class DomesticCityEditView(AuditMixin, ManagerRequiredMixin, UpdateView):
 
     def form_valid(self, form):
         response = super().form_valid(form)
-        autofill_translations(self.object)
+        lang = getattr(self.request, "LANGUAGE_CODE", None) or get_language()
+        autofill_translations(self.object, source_lang=lang, overwrite=False)
         self.log_action("UPDATE", "DomesticCity", self.object.pk)
         messages.success(self.request, gettext("City '%(name)s' updated.") % {"name": self.object.name})
         return response

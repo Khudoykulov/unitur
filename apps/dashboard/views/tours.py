@@ -93,7 +93,8 @@ class _TourFormMixin:
                     d.day_number = idx
                     d.save(update_fields=["day_number"])
 
-        autofill_translations(self.object)
+        lang = getattr(self.request, "LANGUAGE_CODE", None) or get_language()
+        autofill_translations(self.object, source_lang=lang, overwrite=False)
         self.log_action(getattr(self, "audit_action", "SAVE"), "Tour", self.object.pk)
         messages.success(self.request, getattr(self, "success_message", gettext("Tour saved.")))
         return redirect(self.success_url)

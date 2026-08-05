@@ -46,7 +46,7 @@
     {% if review.admin_reply %}
     <div class="mt-4 p-4 bg-blue-50/90 border-l-4 border-blue-600 rounded-r-2xl text-xs sm:text-sm">
       <div class="flex items-center justify-between text-blue-900 font-bold mb-1">
-        <span class="flex items-center gap-1.5"><i class="ti ti-corner-down-right text-blue-600 text-base"></i> UNITUR Admin Javobi:</span>
+        <span class="flex items-center gap-1.5"><i class="ti ti-corner-down-right text-blue-600 text-base"></i> {% trans "UNITUR Admin Javobi:" %}</span>
         {% if review.admin_replied_at %}<span class="text-xs text-blue-500 font-normal">{{ review.admin_replied_at|date:"M j, Y H:i" }}</span>{% endif %}
       </div>
       <p class="text-slate-700 leading-relaxed">{{ review.admin_reply }}</p>

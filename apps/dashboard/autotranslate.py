@@ -43,7 +43,7 @@ def _do_autofill(instance_pk, model_class, source_lang=None, overwrite=True, for
     if not fields:
         return
 
-    src = str(source_lang or get_language() or settings.LANGUAGE_CODE).split("-")[0]
+    src = str(source_lang or settings.LANGUAGE_CODE).split("-")[0]
     targets = [code for code, _ in settings.LANGUAGES if code != src]
     if not targets:
         return
@@ -59,12 +59,13 @@ def _do_autofill(instance_pk, model_class, source_lang=None, overwrite=True, for
         source_value = getattr(instance, f"{field}_{src}", None) or getattr(instance, field, None)
         if not source_value:
             continue
-        source_value = str(source_value)
-        if len(source_value) > _MAX_LEN:
+        source_value = str(source_value).strip()
+        if not source_value or len(source_value) > _MAX_LEN:
             continue
         for lang in targets:
             attr = f"{field}_{lang}"
-            if not overwrite and getattr(instance, attr, None):
+            existing_val = getattr(instance, attr, None)
+            if not overwrite and existing_val and str(existing_val).strip():
                 continue
             try:
                 result = GoogleTranslator(source="auto", target=lang).translate(source_value)
@@ -87,6 +88,12 @@ def autofill_translations(instance, source_lang=None, overwrite=True, force=Fals
     if instance is None or not getattr(instance, "pk", None):
         return 0
 
+    if source_lang is None:
+        try:
+            source_lang = str(get_language() or settings.LANGUAGE_CODE).split("-")[0]
+        except Exception:
+            source_lang = settings.LANGUAGE_CODE
+
     if force or getattr(settings, "TESTING", False):
         _do_autofill(instance.pk, type(instance), source_lang, overwrite, force=force)
         return 1
@@ -108,5 +115,6 @@ class AutoTranslateMixin:
     def form_valid(self, form):
         response = super().form_valid(form)
         if getattr(self, "object", None) is not None:
-            autofill_translations(self.object)
+            lang = getattr(self.request, "LANGUAGE_CODE", None) or get_language()
+            autofill_translations(self.object, source_lang=lang, overwrite=False)
         return response

@@ -41,7 +41,8 @@ class CountryCreateView(AuditMixin, ManagerRequiredMixin, CreateView):
 
     def form_valid(self, form):
         response = super().form_valid(form)
-        autofill_translations(self.object)
+        lang = getattr(self.request, "LANGUAGE_CODE", None) or get_language()
+        autofill_translations(self.object, source_lang=lang, overwrite=False)
         self.log_action("CREATE", "Country", self.object.pk)
         messages.success(self.request, gettext("Country '%(name)s' created.") % {"name": self.object.name})
         return response
@@ -60,7 +61,8 @@ class CountryEditView(AuditMixin, ManagerRequiredMixin, UpdateView):
 
     def form_valid(self, form):
         response = super().form_valid(form)
-        autofill_translations(self.object)
+        lang = getattr(self.request, "LANGUAGE_CODE", None) or get_language()
+        autofill_translations(self.object, source_lang=lang, overwrite=False)
         self.log_action("UPDATE", "Country", self.object.pk)
         messages.success(self.request, gettext("Country '%(name)s' updated.") % {"name": self.object.name})
         return response
@@ -104,7 +106,8 @@ class ContinentCreateView(AuditMixin, ManagerRequiredMixin, CreateView):
 
     def form_valid(self, form):
         response = super().form_valid(form)
-        autofill_translations(self.object)
+        lang = getattr(self.request, "LANGUAGE_CODE", None) or get_language()
+        autofill_translations(self.object, source_lang=lang, overwrite=False)
         self.log_action("CREATE", "Continent", self.object.pk)
         messages.success(self.request, gettext("Continent '%(name)s' created.") % {"name": self.object.name})
         return response
@@ -123,7 +126,8 @@ class ContinentEditView(AuditMixin, ManagerRequiredMixin, UpdateView):
 
     def form_valid(self, form):
         response = super().form_valid(form)
-        autofill_translations(self.object)
+        lang = getattr(self.request, "LANGUAGE_CODE", None) or get_language()
+        autofill_translations(self.object, source_lang=lang, overwrite=False)
         self.log_action("UPDATE", "Continent", self.object.pk)
         messages.success(self.request, gettext("Continent '%(name)s' updated.") % {"name": self.object.name})
         return response

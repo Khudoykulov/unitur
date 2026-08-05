@@ -38,7 +38,8 @@ class HotelCreateView(AuditMixin, ManagerRequiredMixin, CreateView):
 
     def form_valid(self, form):
         response = super().form_valid(form)
-        autofill_translations(self.object)
+        lang = getattr(self.request, "LANGUAGE_CODE", None) or get_language()
+        autofill_translations(self.object, source_lang=lang, overwrite=False)
 
         # Handle multiple uploaded gallery images
         gallery_files = self.request.FILES.getlist("gallery_images")
@@ -64,7 +65,8 @@ class HotelEditView(AuditMixin, ManagerRequiredMixin, UpdateView):
 
     def form_valid(self, form):
         response = super().form_valid(form)
-        autofill_translations(self.object)
+        lang = getattr(self.request, "LANGUAGE_CODE", None) or get_language()
+        autofill_translations(self.object, source_lang=lang, overwrite=False)
 
         # Delete selected gallery images
         delete_ids = self.request.POST.getlist("delete_image_ids")

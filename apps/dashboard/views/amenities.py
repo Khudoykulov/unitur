@@ -42,7 +42,7 @@ def create_amenity_api(request):
         amenity.save()
 
         try:
-            autofill_translations(amenity, source_lang=request.LANGUAGE_CODE, overwrite=True)
+            autofill_translations(amenity, source_lang=getattr(request, 'LANGUAGE_CODE', None) or get_language(), overwrite=False)
         except Exception:
             pass
 
@@ -81,7 +81,7 @@ def update_amenity_api(request, pk):
         amenity.save()
 
         try:
-            autofill_translations(amenity, source_lang=request.LANGUAGE_CODE, overwrite=True)
+            autofill_translations(amenity, source_lang=getattr(request, 'LANGUAGE_CODE', None) or get_language(), overwrite=False)
         except Exception:
             pass
 

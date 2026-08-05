@@ -3,8 +3,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: travel_pro 1.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-07-30 12:37+0000\n"
-"PO-Revision-Date: 2026-07-30 12:37+0000\n"
+"POT-Creation-Date: 2026-08-05 16:07+0000\n"
+"PO-Revision-Date: 2026-08-05 16:07+0000\n"
 "Last-Translator: Travel Pro Team\n"
 "Language-Team: it\n"
 "Language: it\n"
@@ -2210,23 +2210,1334 @@ msgstr "Potrebbe piacerti anche"
 msgid "Ko'rish"
 msgstr "Vedi"
 
-msgid "Starting from"
-msgstr "A partire da"
+msgid "-- Select Category --"
+msgstr "-- Seleziona la categoria --"
 
-msgid "night"
-msgstr "notte"
+msgid "+ Kun qo'shish (Add Day)"
+msgstr "+ Kun qo'shish (Add Day)"
 
-msgid "Location & Map"
-msgstr "Posizione e Mappa"
+msgid "-- Tur kategoriyasini tanlang --"
+msgstr "-- Tur kategoriyasini tanlang --"
 
-msgid "views"
-msgstr "visualizzazioni"
+msgid "Add New Category"
+msgstr ""
+"Error 500 (Server Error)!!1500.That’s an error.There was an error. Please "
+"try again later.That’s all we know."
+
+msgid "All Categories"
+msgstr "Tutte le categorie"
+
+msgid "Add First Category"
+msgstr ""
+"Error 500 (Server Error)!!1500.That’s an error.There was an error. Please "
+"try again later.That’s all we know."
+
+msgid "About This Hotel"
+msgstr "Informazioni su questo hotel"
+
+msgid "24/7 ochiq"
+msgstr "Aperto 24 ore su 24, 7 giorni su 7"
+
+msgid "Admin reply"
+msgstr ""
+"Error 500 (Server Error)!!1500.That’s an error.There was an error. Please "
+"try again later.That’s all we know."
+
+msgid "About UNITUR"
+msgstr "A proposito di UNITUR"
+
+msgid "Add"
+msgstr "Aggiungere"
+
+msgid ""
+"Add itinerary days, titles, descriptions and link visited attractions "
+"(Diqqatga sazovor joylar) for each day."
+msgstr ""
+"Aggiungi giorni dell'itinerario, titoli, descrizioni e link alle attrazioni "
+"visitate (Diqqatga sazovor joylar) per ogni giorno."
+
+msgid "Add Tag"
+msgstr ""
+"Error 500 (Server Error)!!1500.That’s an error.There was an error. Please "
+"try again later.That’s all we know."
+
+msgid "Active (Visible on site)"
+msgstr "Attivo (Visibile sul sito)"
+
+msgid "Admin replied at"
+msgstr "L'amministratore ha risposto a"
+
+msgid "Add Guide Category"
+msgstr "Aggiungi categoria guida"
+
+msgid "Add New Question"
+msgstr "Aggiungi nuova domanda"
+
+msgid "Add Attraction"
+msgstr "Aggiungi attrazione"
+
+msgid "Active (Visible on public FAQ page)"
+msgstr "Attivo (visibile nella pagina pubblica delle FAQ)"
+
+msgid "Add email address"
+msgstr "Aggiungi indirizzo email"
+
+msgid "All rights reserved."
+msgstr "Tutti i diritti riservati."
+
+msgid "Amallar"
+msgstr "Azioni"
+
+msgid "All FAQs"
+msgstr "Tutte le domande frequenti"
+
+msgid "Answer"
+msgstr "Risposta"
+
+msgid "Amenity created successfully!"
+msgstr "Servizi creati con successo!"
+
+msgid "Alt Text"
+msgstr "Testo alternativo"
+
+msgid "Amenity already exists"
+msgstr "I servizi esistono già"
+
+msgid "All countries"
+msgstr "Tutti i paesi"
+
+msgid "All cities"
+msgstr "Tutte le città"
+
+msgid "Any difficulty"
+msgstr "Qualsiasi difficoltà"
+
+msgid "Amenity deleted successfully!"
+msgstr "Servizi eliminati con successo!"
+
+msgid "Amenity updated successfully!"
+msgstr "Servizi aggiornati con successo!"
+
+msgid "Asosiy sahifada ko'rsatish / yashirish"
+msgstr "Mostra/nascondi nella pagina principale"
+
+msgid "Any stars"
+msgstr "Qualsiasi stella"
+
+msgid "Are you sure you want to delete this category?"
+msgstr "Sei sicuro di voler eliminare questa categoria?"
+
+msgid "Are you sure you want to sign out of your account?"
+msgstr "Sei sicuro di voler uscire dal tuo account?"
+
+msgid "Approve selected reviews"
+msgstr "Approva le recensioni selezionate"
+
+msgid "Article Views"
+msgstr "Visualizzazioni degli articoli"
+
+msgid "Are you sure you want to delete this FAQ?"
+msgstr "Sei sicuro di voler eliminare queste domande frequenti?"
+
+msgid "Baho"
+msgstr "Grado"
+
+msgid "Attraction image"
+msgstr "Immagine di attrazione"
+
+msgid "Asosiy sahifada ✓"
+msgstr "Nella pagina principale ✓"
 
 msgid "Available Rooms"
 msgstr "Camere disponibili"
 
+msgid "Asosiy sahifada ko'rsatish / yashirish uchun bosing"
+msgstr "Fare clic per mostrare/nascondere nella pagina principale"
+
+msgid "Back to Tags"
+msgstr "Torna ai tag"
+
+msgid "Barchasi"
+msgstr "Qualunque cosa"
+
+msgid "Back to Profile"
+msgstr "Torna al profilo"
+
+msgid "Attractions (Diqqatga sazovor joylar)"
+msgstr "Attrazioni"
+
+msgid "Attraction images"
+msgstr "Immagini di attrazione"
+
+msgid "Baho bering"
+msgstr "Valutalo"
+
+msgid "Back to Sign In"
+msgstr "Torna a Accedi"
+
+msgid "Barcha mehmonxonalar va filtr"
+msgstr "Tutti gli hotel e filtra"
+
+msgid "Bekor qilish"
+msgstr "Cancellazione"
+
+msgid "Book Your Tour"
+msgstr "Prenota il tuo tour"
+
+msgid "Barcha turlar"
+msgstr "Tutte le specie"
+
+msgid "Booking Confirmed"
+msgstr ""
+"Error 500 (Server Error)!!1500.That’s an error.There was an error. Please "
+"try again later.That’s all we know."
+
+msgid ""
+"Borgan joylaringizdan rasmlar yuklang (Bir nechta rasm tanlashingiz mumkin)"
+msgstr "Carica le foto dei luoghi in cui sei stato (puoi scegliere più foto)"
+
+msgid "Booking Reference"
+msgstr "Riferimento della prenotazione"
+
+msgid "Bookings count"
+msgstr "Contano le prenotazioni"
+
+msgid "Call Us"
+msgstr "Chiamaci"
+
+msgid "Change Password"
+msgstr "Cambiare la password"
+
+msgid "Boshqa (Kategoriyani o'zim kiritaman)"
+msgstr "Altro (entro io stesso nella categoria)"
+
+msgid ""
+"Browse icon names at tabler.io/icons — use the name without the 'ti ti-' "
+"prefix."
+msgstr ""
+"Sfoglia i nomi delle icone su tabler.io/icons: utilizza il nome senza il "
+"prefisso \"ti ti-\"."
+
+msgid "Category Name"
+msgstr "Nome della categoria"
+
+msgid "Boshqa kategoriya (Custom category)"
+msgstr "Altra categoria (Categoria personalizzata)"
+
+msgid "Cancel — go back"
+msgstr "Annulla: torna indietro"
+
+msgid ""
+"Categories organize travel guide articles (e.g. Visa Tips, Food, Safety)."
+msgstr ""
+"Le categorie organizzano articoli di guide di viaggio (ad esempio Consigli "
+"sui visti, Cibo, Sicurezza)."
+
+msgid "Category name is required"
+msgstr "Il nome della categoria è obbligatorio"
+
+msgid ""
+"Can't find the answer you're looking for? Our friendly team is here to help."
+msgstr ""
+"Non trovi la risposta che cerchi? Il nostro team amichevole è qui per "
+"aiutarti."
+
+msgid "Changes are saved immediately after clicking Save."
+msgstr ""
+"Le modifiche vengono salvate immediatamente dopo aver fatto clic su Salva."
+
+msgid "Check Your Email"
+msgstr "Controlla la tua e-mail"
+
+msgid "Category created successfully!"
+msgstr "Categoria creata con successo!"
+
+msgid "Confirm Email"
+msgstr "Conferma email"
+
+msgid "Category already exists"
+msgstr "La categoria esiste già"
+
+msgid "Click or drag the marker on the map to set the location."
+msgstr ""
+"Fare clic o trascinare l'indicatore sulla mappa per impostare la posizione."
+
+msgid "Confirm Email Address"
+msgstr "Conferma l'indirizzo e-mail"
+
+msgid "Click tags to select / deselect. Multiple tags allowed."
+msgstr ""
+"Fare clic sui tag per selezionare/deselezionare. Sono consentiti più tag."
+
+msgid "Collapse All"
+msgstr "Comprimi tutto"
+
+msgid "Confirmation"
+msgstr "Conferma"
+
+msgid "Confirm new password"
+msgstr "Conferma la nuova password"
+
+msgid "Copied!"
+msgstr "Copiato!"
+
+msgid "Configure category details and icon display."
+msgstr ""
+"Configura i dettagli della categoria e la visualizzazione delle icone."
+
+msgid "Comma-separated keywords"
+msgstr "Parole chiave separate da virgole"
+
+msgid "Copy link"
+msgstr "Copia collegamento"
+
+msgid "Current password"
+msgstr ""
+"Error 500 (Server Error)!!1500.That’s an error.There was an error. Please "
+"try again later.That’s all we know."
+
+msgid "Danger"
+msgstr "Pericolo"
+
+msgid "Create new category"
+msgstr "Crea nuova categoria"
+
+msgid "Day"
+msgstr ""
+"Error 500 (Server Error)!!1500.That’s an error.There was an error. Please "
+"try again later.That’s all we know."
+
+msgid "Create First FAQ"
+msgstr "Crea le prime domande frequenti"
+
+msgid "Create tags"
+msgstr "Crea tag"
+
+msgid "Current Image"
+msgstr "Immagine corrente"
+
+msgid "Copyright text"
+msgstr "Testo sul diritto d'autore"
+
+msgid "Create your first FAQ question to help customers find answers quickly."
+msgstr ""
+"Crea la tua prima domanda FAQ per aiutare i clienti a trovare rapidamente le"
+" risposte."
+
+msgid "Create your first FAQ category to organize your questions neatly."
+msgstr ""
+"Crea la tua prima categoria FAQ per organizzare le tue domande in modo "
+"ordinato."
+
+msgid "Delete FAQ"
+msgstr "Elimina le domande frequenti"
+
+msgid "Diqqatga sazovor joylar (Attractions):"
+msgstr "Attrazioni:"
+
+msgid "Custom category"
+msgstr "Categoria personalizzata"
+
+msgid "Diqqatga sazovor joylar"
+msgstr "Luoghi di interesse"
+
+msgid "Edit Category"
+msgstr "Modifica categoria"
+
+msgid "Delete this category?"
+msgstr "Eliminare questa categoria?"
+
+msgid "Display Order"
+msgstr "Visualizza ordine"
+
+msgid "Day-by-Day Itinerary (Marshrut / Kunlar)"
+msgstr "Itinerario giorno per giorno (percorso/giorni)"
+
+msgid "Delete this tag?"
+msgstr "Eliminare questo tag?"
+
+msgid "Email Verification Required"
+msgstr "Verifica e-mail obbligatoria"
+
+msgid "Display in home page testimonials"
+msgstr "Visualizza nelle testimonianze della home page"
+
+msgid "Edit FAQ"
+msgstr "Modifica le domande frequenti"
+
+msgid "Email Addresses"
+msgstr "Indirizzi e-mail"
+
+msgid "Edit Question"
+msgstr "Modifica domanda"
+
+msgid "Enter a valid phone number (7–20 digits, +, spaces, - or () allowed)."
+msgstr ""
+"Inserisci un numero di telefono valido (sono consentiti 7–20 cifre, +, "
+"spazi, - o ())."
+
+msgid "Eng mashhur diqqatga sazovor joylar"
+msgstr "Le attrazioni più popolari"
+
+msgid "Explore now"
+msgstr "Esplora ora"
+
+msgid "FAQ"
+msgstr "Domande frequenti"
+
+msgid "Edit FAQ Category"
+msgstr "Modifica la categoria delle domande frequenti"
+
+msgid "Email Sent!"
+msgstr "E-mail inviata!"
+
+msgid "Enter and confirm your new password below"
+msgstr "Inserisci e conferma la tua nuova password qui sotto"
+
+msgid "Expand All"
+msgstr "Espandi tutto"
+
+msgid "Enter your email and we'll send you a reset link"
+msgstr ""
+"Inserisci la tua email e ti invieremo un collegamento per il ripristino"
+
+msgid "Examples: help, credit-card, map-pin, passport, info-circle, plane"
+msgstr ""
+"Esempi: aiuto, carta di credito, mappa-pin, passaporto, info-circle, aereo"
+
+msgid "Export selected to CSV"
+msgstr "Esporta selezionato in CSV"
+
+msgid "FAQ category"
+msgstr "Categoria Domande frequenti"
+
+msgid "FAQ Categories"
+msgstr "Categorie di domande frequenti"
+
+msgid "FAQ categories"
+msgstr "Categorie di domande frequenti"
+
+msgid "FAQ Management"
+msgstr "Gestione delle domande frequenti"
+
+msgid "FAQ Questions"
+msgstr "Domande frequenti"
+
+msgid "FAQ category created successfully!"
+msgstr "Categoria FAQ creata con successo!"
+
+msgid "FAQ category updated successfully!"
+msgstr "Categoria FAQ aggiornata con successo!"
+
+msgid "FAQ deleted successfully!"
+msgstr "Domande frequenti eliminate con successo!"
+
+msgid "FAQs"
+msgstr "Domande frequenti"
+
+msgid "FAQ created successfully!"
+msgstr "FAQ create con successo!"
+
+msgid "FAQ category deleted successfully!"
+msgstr "Categoria FAQ eliminata con successo!"
+
+msgid "Facebook URL"
+msgstr ""
+"Error 500 (Server Error)!!1500.That’s an error.There was an error. Please "
+"try again later.That’s all we know."
+
+msgid "Filter"
+msgstr "Filtro"
+
+msgid "Favicon"
+msgstr "Favicon"
+
+msgid "FAQ updated successfully!"
+msgstr "FAQ aggiornate con successo!"
+
+msgid "Facebook Pixel ID"
+msgstr "ID pixel di Facebook"
+
+msgid "Fayl oynasidan bir nechta rasmni `Ctrl` yoki `Shift` bosib belgilang."
+msgstr ""
+"Seleziona più immagini dalla finestra del file premendo \"Ctrl\" o "
+"\"Maiusc\"."
+
+msgid "Featured (Asosiy sahifa)"
+msgstr "In primo piano (Pagina principale)"
+
+msgid "FAQs Count"
+msgstr "Le domande frequenti contano"
+
+msgid "Featured article appears at the top"
+msgstr "L'articolo in primo piano appare in alto"
+
+msgid ""
+"Find answers to common questions about our tours, booking process, and "
+"travel services."
+msgstr ""
+"Trova le risposte alle domande più comuni sui nostri tour, sul processo di "
+"prenotazione e sui servizi di viaggio."
+
+msgid "Frequently Asked Questions"
+msgstr "Domande frequenti"
+
+msgid "Footer"
+msgstr "Piè di pagina"
+
+msgid "Fotosuratlar galereyasi (Ko'p rasm yuklash)"
+msgstr "Galleria fotografica (caricamento di più foto)"
+
+msgid "Footer text"
+msgstr "Testo del piè di pagina"
+
+msgid "GPS coordinates for the map widget"
+msgstr "Coordinate GPS per il widget della mappa"
+
+msgid "Format: +998901234567"
+msgstr "Formato: +998901234567"
+
+msgid "Google Analytics ID"
+msgstr "ID di Google Analytics"
+
+msgid "Gallery image"
+msgstr "Immagine della galleria"
+
+msgid "Get a Quote"
+msgstr ""
+"Error 500 (Server Error)!!1500.That’s an error.There was an error. Please "
+"try again later.That’s all we know."
+
+msgid "Holat"
+msgstr "Stato"
+
+msgid "Highest Rated"
+msgstr "Voto più alto"
+
+msgid "General Questions"
+msgstr "Domande generali"
+
+msgid "Gallery images"
+msgstr "Immagini della galleria"
+
+msgid "Go to Sign In"
+msgstr "Vai su Accedi"
+
+msgid "Help Center"
+msgstr "Centro assistenza"
+
+msgid "Group similar questions together"
+msgstr "Raggruppa insieme domande simili"
+
+msgid "Guide Categories"
+msgstr "Categorie della guida"
+
+msgid "Havolani nusxalash"
+msgstr "Copia il collegamento"
+
+msgid "Hold Ctrl to select multiple attractions for this day"
+msgstr "Tieni premuto Ctrl per selezionare più attrazioni per questo giorno"
+
+msgid "Hero slides"
+msgstr "Diapositive degli eroi"
+
+msgid "Hero slide"
+msgstr "Scivolo dell'eroe"
+
+msgid "Hozircha diqqatga sazovor joylar yo'q."
+msgstr "Non ci sono ancora punti salienti."
+
+msgid "Hotel categories"
+msgstr "Categorie di hotel"
+
+msgid "Hotel category"
+msgstr "Categoria dell'hotel"
+
+msgid "Hozircha qulayliklar yo'q. 'Yangi Qulaylik Qo'shish' tugmasini bosing."
+msgstr ""
+"Nessun servizio ancora. Fare clic sul pulsante \"Aggiungi nuova "
+"funzionalità\"."
+
+msgid ""
+"Hozircha ushbu turga sharhlar yo'q. Birinchi bo'lib taassurotingizni yozib "
+"qoldiring!"
+msgstr ""
+"Non ci sono ancora commenti per questo tipo. Sii il primo a scrivere la tua "
+"impressione!"
+
+msgid "Hozircha mehmonxonalar kiritilmagan."
+msgstr "Gli hotel non sono ancora inclusi."
+
+msgid "Hozircha diqqatga sazovor joylar kiritilmagan."
+msgstr "Nessuna attrazione è stata ancora aggiunta."
+
+msgid "Ikonka nomi (ixtiyoriy)"
+msgstr "Nome dell'icona (facoltativo)"
+
+msgid "Iltimos, shakldagi xatoliklarni to'g'rilang."
+msgstr "Si prega di correggere gli errori nel modulo."
+
+msgid "Info"
+msgstr "Informazioni"
+
+msgid "Internal"
+msgstr "Interno"
+
+msgid "Inactive articles are hidden from the site"
+msgstr "Gli articoli inattivi vengono nascosti dal sito"
+
+msgid "Icon & Category Name"
+msgstr "Icona e nome della categoria"
+
+msgid "Instagram URL"
+msgstr "URL di Instagram"
+
+msgid "Ismingiz / Username"
+msgstr "Il tuo nome/nome utente"
+
+msgid "Invalid JSON"
+msgstr "JSON non valido"
+
+msgid "Is featured on home page"
+msgstr "È presente nella home page"
+
+msgid "Joy ma'lumotlari"
+msgstr "Informazioni sulla posizione"
+
+msgid "Joylar"
+msgstr "Luoghi"
+
+msgid "Invalid Link"
+msgstr "Collegamento non valido"
+
+msgid "Joy Nomi"
+msgstr "Nome del luogo"
+
+msgid "Javob saqlash"
+msgstr "Salva risposta"
+
+msgid "Kategoriya nomini kiriting..."
+msgstr "Inserisci il nome di una categoria..."
+
+msgid "Kun №"
+msgstr "Quando №"
+
+msgid "Joy nomini qidirish…"
+msgstr "Cerca il nome di un luogo..."
+
+msgid ""
+"Joy uchun bir nechta (5-6+ ta) rasm tanlab bir vaqtda yuklashingiz mumkin."
+msgstr "Puoi caricare più (5-6+) immagini per una posizione alla volta."
+
+msgid "Keyingi 10 ta"
+msgstr "Avanti 10"
+
+msgid "Kunning tavsifi (Description)"
+msgstr "Descrizione della giornata (Descrizione)"
+
+msgid "Kun sarlavhasi (Title)"
+msgstr "Titolo della giornata"
+
+msgid "Links shown in the footer and contact page"
+msgstr "Link mostrati nel footer e nella pagina dei contatti"
+
+msgid "Link"
+msgstr "Collegamento"
+
+msgid "Level"
+msgstr "Livello"
+
+msgid "Lower numbers appear first within the category."
+msgstr ""
+"I numeri più bassi vengono visualizzati per primi all'interno della "
+"categoria."
+
+msgid "Lower numbers appear first."
+msgstr "I numeri più bassi vengono visualizzati per primi."
+
+msgid "Last saved auto-syncs"
+msgstr "Ultime sincronizzazioni automatiche salvate"
+
+msgid "Logo"
+msgstr "Logo"
+
+msgid "LinkedIn URL"
+msgstr "URL di LinkedIn"
+
+msgid "Linked Items"
+msgstr "Elementi collegati"
+
+msgid "Manage Categories"
+msgstr "Gestisci categorie"
+
+msgid "Location & Map"
+msgstr "Posizione e mappa"
+
+msgid "Mamlakat"
+msgstr "Paese"
+
+msgid "Manage Email"
+msgstr "Gestisci e-mail"
+
+msgid "Make primary"
+msgstr "Rendi primario"
+
+msgid "Ma'lumot berilmagan"
+msgstr "Nessuna informazione fornita"
+
+msgid "Manzil"
+msgstr "Indirizzo"
+
+msgid "Manage questions and answers displayed on the public FAQ page."
+msgstr ""
+"Gestisci le domande e le risposte visualizzate nella pagina pubblica delle "
+"FAQ."
+
+msgid "Mark selected as Cancelled"
+msgstr "Contrassegna selezionato come annullato"
+
+msgid "Mark selected as Confirmed"
+msgstr "Contrassegna selezionato come confermato"
+
+msgid "Mark selected as Completed"
+msgstr "Contrassegna selezionato come completato"
+
+msgid "Manage your contact details, location, and social media links"
+msgstr ""
+"Gestisci i tuoi dettagli di contatto, la posizione e i collegamenti ai "
+"social media"
+
+msgid "Mehmonxonalar"
+msgstr "Alberghi"
+
+msgid "Mavjud galereya rasmlari"
+msgstr "Immagini della galleria disponibili"
+
+msgid "Max price"
+msgstr "Prezzo massimo"
+
+msgid "Muallif"
+msgstr "L'autore"
+
+msgid ""
+"Mehmonxona uchun bir nechta (5-6+ ta) rasm tanlab bir vaqtda yuklashingiz "
+"mumkin."
+msgstr "Puoi caricare più (5-6+) foto dell'hotel contemporaneamente."
+
+msgid "Max price/night"
+msgstr "Prezzo massimo/notte"
+
+msgid "Max days"
+msgstr "Giorni massimi"
+
+msgid "Min price"
+msgstr "Prezzo minimo"
+
+msgid "Meta keywords"
+msgstr "Meta parole chiave"
+
+msgid "Most Viewed"
+msgstr "I più visti"
+
+msgid "Min days"
+msgstr "Giorni minimi"
+
+msgid "Most Viewed Articles"
+msgstr "Articoli più visti"
+
+msgid "New"
+msgstr "Nuovo"
+
+msgid "My location"
+msgstr "La mia posizione"
+
+msgid "Name is required"
+msgstr "Il nome è obbligatorio"
+
+msgid "New Tag"
+msgstr "Nuova etichetta"
+
+msgid "Next"
+msgstr "Prossimo"
+
+msgid "New FAQ"
+msgstr "Nuove domande frequenti"
+
+msgid "New FAQ Category"
+msgstr "Nuova categoria FAQ"
+
+msgid "O'chirish"
+msgstr "Spegnere"
+
+msgid "No FAQs Yet"
+msgstr "Nessuna domanda frequente ancora"
+
+msgid "No FAQs Available Yet"
+msgstr "Nessuna domanda frequente ancora disponibile"
+
+msgid "Nights spent in this city"
+msgstr "Notti trascorse in questa città"
+
+msgid "No tags yet."
+msgstr "Nessun tag ancora."
+
+msgid "No Categories Found"
+msgstr "Nessuna categoria trovata"
+
+msgid "No alt text"
+msgstr "Nessun testo alternativo"
+
+msgid "No tags found."
+msgstr "Nessun tag trovato."
+
+msgid "Null = broadcast to all staff"
+msgstr "Null = trasmesso a tutto lo staff"
+
+msgid "Oldingi"
+msgstr "Precedente"
+
+msgid "Optional"
+msgstr "Opzionale"
+
+msgid "Orqaga"
+msgstr "Indietro"
+
+msgid "Prev"
+msgstr "Prec"
+
+msgid "Organize FAQ questions into dynamic categories for your customers."
+msgstr "Organizza le domande FAQ in categorie dinamiche per i tuoi clienti."
+
+msgid "Photo"
+msgstr "Foto"
+
+msgid "Primary"
+msgstr "Primario"
+
+msgid "Phone numbers and email addresses"
+msgstr "Numeri di telefono e indirizzi email"
+
+msgid "Pricing"
+msgstr "Prezzi"
+
+msgid "Password Changed"
+msgstr "Password modificata"
+
+msgid "Question"
+msgstr "Domanda"
+
+msgid "Password Updated!"
+msgstr "Password aggiornata!"
+
+msgid "Publish selected articles"
+msgstr "Pubblica articoli selezionati"
+
+msgid ""
+"Please verify your email address before accessing this page. Check your "
+"inbox for a verification link."
+msgstr ""
+"Verifica il tuo indirizzo email prima di accedere a questa pagina. Controlla"
+" la tua casella di posta per un collegamento di verifica."
+
+msgid "Qulaylik Qo'shish"
+msgstr "Aggiungi comodità"
+
+msgid "Publishing"
+msgstr "Editoria"
+
+msgid "Rasmlar"
+msgstr "Immagini"
+
+msgid "Qulayliklarni Tanlang (✓)"
+msgstr "Seleziona servizi ( ✓)"
+
+msgid "Read"
+msgstr "Leggere"
+
+msgid "Question & Answer"
+msgstr "Domanda e risposta"
+
+msgid "Rad etish"
+msgstr "Rifiuto"
+
+msgid "Rasmlar (Photos)"
+msgstr "Foto"
+
+msgid "Qulaylikni Tahrirlash"
+msgstr "Modifica Convenienza"
+
+msgid "Reset Password"
+msgstr "Reimposta password"
+
+msgid "Recipient"
+msgstr "Destinatario"
+
+msgid "Resend"
+msgstr "Invia nuovamente"
+
+msgid "Qulaylik nomi"
+msgstr "Il nome della struttura"
+
+msgid "Request a New Link"
+msgstr "Richiedi un nuovo collegamento"
+
+msgid "Remove day"
+msgstr "Rimuovi il giorno"
+
+msgid "Reviewer"
+msgstr "Recensore"
+
+msgid "Reject selected reviews"
+msgstr "Rifiuta le recensioni selezionate"
+
+msgid "Saqlash"
+msgstr "Salva"
+
+msgid "SEO"
+msgstr "SEO"
+
+msgid "Resend Verification Email"
+msgstr "Invia nuovamente l'e-mail di verifica"
+
+msgid "Reset Your Password"
+msgstr "Reimposta la tua password"
+
+msgid "Review images"
+msgstr "Esamina le immagini"
+
+msgid "Review image"
+msgstr "Rivedi l'immagine"
+
+msgid "Reyting bo'yicha filter"
+msgstr "Filtra per valutazione"
+
+msgid "Save New Password"
+msgstr "Salva nuova password"
+
+msgid "SEO & Analytics"
+msgstr "SEO e analisi"
+
+msgid "Save Settings"
+msgstr ""
+"Error 500 (Server Error)!!1500.That’s an error.There was an error. Please "
+"try again later.That’s all we know."
+
+msgid "Search tags…"
+msgstr "Cerca tag..."
+
+msgid "Sayt Tarjimalari (Rosetta)"
+msgstr "Traduzioni di siti (Rosetta)"
+
+msgid "Save Tag"
+msgstr "Salva etichetta"
+
+msgid "Secondary email"
+msgstr ""
+"Error 500 (Server Error)!!1500.That’s an error.There was an error. Please "
+"try again later.That’s all we know."
+
+msgid "Search city or address..."
+msgstr "Cerca città o indirizzo..."
+
+msgid "Send Reset Link"
+msgstr "Invia collegamento di reimpostazione"
+
+msgid "Secondary phone"
+msgstr "Telefono secondario"
+
+msgid "Save Question"
+msgstr "Salva domanda"
+
+msgid "Set New Password"
+msgstr "Imposta nuova password"
+
+msgid "Seats left"
+msgstr "Posti rimasti"
+
+msgid "Sequence in the itinerary: 1, 2, 3…"
+msgstr "Sequenza nell'itinerario: 1, 2, 3…"
+
+msgid "Sharhga javob yozish..."
+msgstr "Rispondi al commento..."
+
+msgid "Sharhlar va Taassurotlar"
+msgstr "Recensioni e impressioni"
+
+msgid "Shahar"
+msgstr "Città"
+
+msgid "Site Settings"
+msgstr "Impostazioni del sito"
+
+msgid "Settings & FAQ"
+msgstr "Impostazioni e domande frequenti"
+
+msgid "Shahar / Davlat"
+msgstr "Città/Stato"
+
+msgid "Site name"
+msgstr "Nome del sito"
+
+msgid "Sharhni saqlash"
+msgstr "Salva un commento"
+
+msgid "Sign Out?"
+msgstr ""
+"Error 500 (Server Error)!!1500.That’s an error.There was an error. Please "
+"try again later.That’s all we know."
+
+msgid "Site Information"
+msgstr "Informazioni sul sito"
+
+msgid "Site settings updated successfully!"
+msgstr ""
+"Error 500 (Server Error)!!1500.That’s an error.There was an error. Please "
+"try again later.That’s all we know."
+
+msgid "Sitemap"
+msgstr "Mappa del sito"
+
+msgid "Sort By"
+msgstr ""
+"Error 500 (Server Error)!!1500.That’s an error.There was an error. Please "
+"try again later.That’s all we know."
+
+msgid "Slug will be auto-generated from the tag name."
+msgstr "Lo slug verrà generato automaticamente dal nome del tag."
+
+msgid "Site settings"
+msgstr ""
+"Error 500 (Server Error)!!1500.That’s an error.There was an error. Please "
+"try again later.That’s all we know."
+
+msgid "Slide Details"
+msgstr ""
+"Error 500 (Server Error)!!1500.That’s an error.There was an error. Please "
+"try again later.That’s all we know."
+
+msgid "Shown as tooltip or used by screen readers."
+msgstr ""
+"Visualizzato come descrizione comando o utilizzato dagli screen reader."
+
+msgid "Social Media Links"
+msgstr ""
+"Error 500 (Server Error)!!1500.That’s an error.There was an error. Please "
+"try again later.That’s all we know."
+
+msgid "Stats"
+msgstr "Statistiche"
+
+msgid "Success"
+msgstr ""
+"Error 500 (Server Error)!!1500.That’s an error.There was an error. Please "
+"try again later.That’s all we know."
+
+msgid "Sort: Newest"
+msgstr "Ordina: Più recente"
+
+msgid "Staff Login"
+msgstr "Accesso al personale"
+
+msgid "Sort: Least Viewed ↑"
+msgstr "Ordina: Meno visti ↑"
+
+msgid "Tanlangan"
+msgstr "Selezionato"
+
+msgid "Sort: Most Viewed ↓"
+msgstr "Ordina: I più visti ↓"
+
+msgid "Starting from"
+msgstr "A partire da"
+
+msgid "Tahrirlash"
+msgstr "Modifica"
+
+msgid "Status & Visibility"
+msgstr "Stato e visibilità"
+
+msgid "Taassurotlaringiz va fikrlaringiz"
+msgstr "Le tue impressioni e pensieri"
+
+msgid "Still Have Questions?"
+msgstr ""
+"Error 500 (Server Error)!!1500.That’s an error.There was an error. Please "
+"try again later.That’s all we know."
+
+msgid "Tanlash"
+msgstr "Scegliere"
+
+msgid "Tabler ikonka nomi (masalan: wifi, swimming, bar)"
+msgstr "Nome icona tabella (es: wifi, nuoto, bar)"
+
+msgid "Tabler Icon Name"
+msgstr "Nome dell'icona della tabella"
+
+msgid ""
+"Tabler icon name, e.g. help, credit-card, map-pin, passport, info-circle."
+msgstr ""
+"Nome dell'icona della tabella, ad es. aiuto, carta di credito, map-pin, "
+"passaporto, info-circle."
+
+msgid "Tagline"
+msgstr ""
+"Error 500 (Server Error)!!1500.That’s an error.There was an error. Please "
+"try again later.That’s all we know."
+
+msgid "Tanlanmagan"
+msgstr "Non selezionato"
+
+msgid "Tashrif buyurgan joylaringizdan olgan rasmlarni bir vaqtda tanlang."
+msgstr ""
+"Seleziona le foto che hai scattato dai luoghi che hai visitato nello stesso "
+"momento."
+
+msgid "Tasdiqlangan"
+msgstr "Confermato"
+
+msgid "Tashrif sanasi"
+msgstr "Data della visita"
+
+msgid ""
+"Thank you for booking with UNITUR travel agency. A confirmation email has "
+"been sent to"
+msgstr ""
+"Thank you for booking with UNITUR travel agency. A confirmation email has "
+"been sent to"
+
+msgid "Tasdiqlash"
+msgstr ""
+"Error 500 (Server Error)!!1500.That’s an error.There was an error. Please "
+"try again later.That’s all we know."
+
+msgid "Tavsif kiritilmagan."
+msgstr "Nessuna descrizione inclusa."
+
+msgid "This field is required."
+msgstr "Questo campo è obbligatorio."
+
+msgid "Thank you! Your review has been saved."
+msgstr "Grazie! La tua recensione è stata salvata."
+
+msgid "Telegram URL"
+msgstr "URL di Telegramma"
+
+msgid "This password reset link is invalid or has expired."
+msgstr ""
+"Questo collegamento per la reimpostazione della password non è valido o è "
+"scaduto."
+
+msgid ""
+"Thank you for booking with UNITUR travel agency. Our team will contact you "
+"shortly on"
+msgstr ""
+"Grazie per aver prenotato con l'agenzia di viaggi UNITUR. Il nostro team ti "
+"contatterà a breve"
+
+msgid "Terms of Service"
+msgstr "Termini di servizio"
+
+msgid "Toifa"
+msgstr "Categoria"
+
+msgid "Thank you! We'll be in touch within 24 hours."
+msgstr "Grazie! Ti contatteremo entro 24 ore."
+
+msgid "This confirmation link is invalid or has expired."
+msgstr "Questo collegamento di conferma non è valido o è scaduto."
+
+msgid ""
+"This FAQ will be permanently deleted and will no longer appear on your "
+"website."
+msgstr ""
+"Queste domande frequenti verranno eliminate definitivamente e non verranno "
+"più visualizzate sul tuo sito web."
+
+msgid "Toifa Qo'shish"
+msgstr "Aggiungi categoria"
+
+msgid "Timestamps"
+msgstr "Timestamp"
+
+msgid "Tour Details"
+msgstr "Dettagli del tour"
+
+msgid "This action cannot be undone"
+msgstr "Questa azione non può essere annullata"
+
+msgid "Toifa nomi"
+msgstr "Nome della categoria"
+
+msgid "Tour updated."
+msgstr "Giro aggiornato."
+
+msgid "Tour itinerary:"
+msgstr "Itinerario del tour:"
+
+msgid "Travel Guides"
+msgstr "Guide di viaggio"
+
+msgid "Travel Info"
+msgstr "Informazioni di viaggio"
+
+msgid "Tur kategoriyasi (Category)"
+msgstr "Categoria tipo (Categoria)"
+
+msgid "Turlar"
+msgstr "Tipi"
+
+msgid "Tour created."
+msgstr "Tour creato."
+
+msgid "Tours in"
+msgstr "Tour dentro"
+
+msgid "UNITUR Admin Javobi:"
+msgstr "Risposta dell'amministratore di UNITUR:"
+
+msgid "Travel Details"
+msgstr "Dettagli di viaggio"
+
+msgid ""
+"Tugmani bossangiz bir nechta joylarni tanlash mumkin (Ctrl tugmasini bosib "
+"turing)"
+msgstr "È possibile selezionare più aree tenendo premuto il tasto Ctrl"
+
+msgid "User agent"
+msgstr "Agente utente"
+
+msgid "Unverified"
+msgstr "Non verificato"
+
+msgid "Update Password"
+msgstr "Aggiorna password"
+
+msgid "Users"
+msgstr "Utenti"
+
+msgid "Ushbu tur haqida taassurotingiz va rasmlaringizni ulashing"
+msgstr "Condividi le tue impressioni e foto su questo tour"
+
+msgid "Ushbu kunda boriladigan diqqatga sazovor joylar (Attractions):"
+msgstr "Attrazioni da visitare in questo giorno:"
+
+msgid "Verified"
+msgstr "Verificato"
+
+msgid "Use my location"
+msgstr "Usa la mia posizione"
+
+msgid "Twitter URL"
+msgstr "URL di Twitter"
+
+msgid "Username"
+msgstr "Nome utente"
+
+msgid "Uncategorized"
+msgstr "Senza categoria"
+
+msgid "Verify Your Email"
+msgstr "Verifica la tua email"
+
+msgid "Ushbu kunni o'chirish"
+msgstr "Elimina questo giorno"
+
+msgid "Unpublish selected articles"
+msgstr "Annulla la pubblicazione degli articoli selezionati"
+
+msgid "Views"
+msgstr "Viste"
+
+msgid "Warning"
+msgstr "Avvertimento"
+
+msgid "WhatsApp number"
+msgstr "Numero WhatsApp"
+
+msgid "Visibility"
+msgstr "Visibilità"
+
+msgid "Yana ko'proq ko'rsatish"
+msgstr "Mostra di più"
+
+msgid "We're working on adding helpful information. Please check back soon!"
+msgstr ""
+"Stiamo lavorando per aggiungere informazioni utili. Ti invitiamo a "
+"ricontrollare presto!"
+
+msgid "Yangi Joy Qo'shish"
+msgstr "Aggiungi nuova posizione"
+
+msgid "Yangi Qulaylik Qo'shish"
+msgstr "Aggiungi nuova funzionalità"
+
+msgid "Visit Website"
+msgstr "Visita il sito web"
+
+msgid ""
+"We've sent a password reset link to your email address. Check your inbox and"
+" follow the instructions."
+msgstr ""
+"Abbiamo inviato un collegamento per la reimpostazione della password al tuo "
+"indirizzo email. Controlla la tua casella di posta e segui le istruzioni."
+
+msgid "Yangi Toifa Qo'shish"
+msgstr "Aggiungi nuova categoria"
+
+msgid "YouTube URL"
+msgstr "URL di YouTube"
+
+msgid "Yangi rasmlar yuklash (Ko'p fayl tanlang)"
+msgstr "Carica nuove immagini (seleziona più file)"
+
+msgid "Yes, Sign Out"
+msgstr "Sì, esci"
+
+msgid "Write clear questions and helpful answers for your visitors."
+msgstr "Scrivi domande chiare e risposte utili per i tuoi visitatori."
+
+msgid "Xaritada ko`rish"
+msgstr "Visualizza sulla mappa"
+
+msgid "Yangi Toifa"
+msgstr "Nuova categoria"
+
+msgid "Xarita havolasi biriktirilmagan."
+msgstr "Nessun collegamento alla mappa allegato."
+
+msgid "booked"
+msgstr "prenotato"
+
+msgid "Yes, Delete FAQ"
+msgstr "Sì, elimina le domande frequenti"
+
+msgid "people"
+msgstr "persone"
+
+msgid "leave empty to keep current"
+msgstr "lasciare vuoto per rimanere aggiornato"
+
+msgid ""
+"Your password has been changed successfully. You can now sign in with your "
+"new password."
+msgstr ""
+"La tua password è stata modificata con successo. Ora puoi accedere con la "
+"tua nuova password."
+
+msgid "Your Info"
+msgstr "Le tue informazioni"
+
+msgid "Your email addresses"
+msgstr "I tuoi indirizzi email"
+
+msgid "night"
+msgstr "notte"
+
+msgid "total reads"
+msgstr "letture totali"
+
 msgid "guests"
 msgstr "ospiti"
 
-msgid "Visit Website"
-msgstr "Visita il sito"
+msgid "views"
+msgstr "viste"

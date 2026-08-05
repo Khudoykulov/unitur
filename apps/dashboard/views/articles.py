@@ -63,7 +63,8 @@ class ArticleCreateView(AuditMixin, ManagerRequiredMixin, CreateView):
 
     def form_valid(self, form):
         response = super().form_valid(form)
-        autofill_translations(self.object)
+        lang = getattr(self.request, "LANGUAGE_CODE", None) or get_language()
+        autofill_translations(self.object, source_lang=lang, overwrite=False)
         self.log_action("CREATE", "Article", self.object.pk)
         messages.success(self.request, gettext("Article '%(title)s' created.") % {"title": self.object.title})
         return response
@@ -88,7 +89,8 @@ class ArticleEditView(AuditMixin, ManagerRequiredMixin, UpdateView):
 
     def form_valid(self, form):
         response = super().form_valid(form)
-        autofill_translations(self.object)
+        lang = getattr(self.request, "LANGUAGE_CODE", None) or get_language()
+        autofill_translations(self.object, source_lang=lang, overwrite=False)
         self.log_action("UPDATE", "Article", self.object.pk)
         messages.success(self.request, gettext("Article '%(title)s' updated.") % {"title": self.object.title})
         return response
