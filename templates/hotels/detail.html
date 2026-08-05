@@ -1,5 +1,5 @@
 {% extends "base.html" %}
-{% load i18n l10n %}
+{% load i18n l10n static core_tags %}
 
 {% block title %}{{ hotel.seo_title|default:hotel.name }} | {{ SITE_NAME }}{% endblock %}
 
@@ -153,8 +153,8 @@
           <h2 style="font-family: 'Fraunces', serif; font-size: 1.5rem; font-weight: 700; color: #0f172a; margin-bottom: 1rem;">
             {% trans "About This Hotel" %}
           </h2>
-          <div class="text-gray-700 leading-relaxed text-base whitespace-pre-line space-y-3">
-            {{ hotel.description|safe }}
+          <div class="text-gray-700 leading-relaxed text-base space-y-3">
+            {{ hotel.description|format_content }}
           </div>
         </div>
         {% endif %}

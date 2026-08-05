@@ -1,5 +1,5 @@
 {% extends "base.html" %}
-{% load i18n %}
+{% load i18n static core_tags %}
 
 {% block title %}{{ country.seo_title|default:country.name }} | {{ SITE_NAME }}{% endblock %}
 {% block meta_description %}{{ country.seo_description|default:country.overview|truncatechars:160 }}{% endblock %}
@@ -32,8 +32,8 @@
         {% if country.overview %}
         <div class="content-card prose prose-lg max-w-none">
           <h2 class="font-serif text-2xl font-bold text-dark mb-4">{% trans "About" %} {{ country.name }}</h2>
-          <div class="text-gray-700 leading-relaxed text-base whitespace-pre-line space-y-3">
-            {{ country.overview|safe }}
+          <div class="text-gray-700 leading-relaxed text-base space-y-3">
+            {{ country.overview|format_content }}
           </div>
         </div>
         {% endif %}

@@ -1,5 +1,5 @@
 {% extends "base.html" %}
-{% load i18n %}
+{% load i18n static core_tags %}
 
 {% block title %}{{ city.name }}, {{ city.country.name }} | {{ SITE_NAME }}{% endblock %}
 
@@ -59,8 +59,8 @@
       <h2 class="font-serif text-xl sm:text-2xl font-bold text-slate-900 mb-3 flex items-center gap-2">
         <i class="ti ti-info-circle text-blue-600"></i> {% trans "Overview" %} — {{ city.name }}
       </h2>
-      <div class="text-gray-700 leading-relaxed text-base whitespace-pre-line space-y-3">
-        {{ city.overview|safe }}
+      <div class="text-gray-700 leading-relaxed text-base space-y-3">
+        {{ city.overview|format_content }}
       </div>
     </div>
     {% endif %}
