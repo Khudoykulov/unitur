@@ -59,7 +59,7 @@
         {# Overview #}
         <div class="prose prose-lg max-w-none mb-6 bg-white rounded-2xl p-6 sm:p-8 shadow-sm">
           <div class="text-gray-700 leading-relaxed text-base space-y-3 [&>p]:mb-3 [&>p]:last:mb-0 [&>p]:border-l-3 [&>p]:border-emerald-500/50 [&>p]:pl-4 [&>p]:py-2 [&>p]:bg-slate-50/60 [&>p]:rounded-r-xl">
-            {{ tour.overview|linebreaks }}
+            {{ tour.overview|linebreaks|safe }}
           </div>
         </div>
 
@@ -110,7 +110,7 @@
 
               <div x-show="openDays.includes({{ day.day_number }})" x-transition class="px-5 sm:px-6 py-5 bg-white border-t border-gray-100 space-y-4">
                 <div class="text-gray-700 text-sm sm:text-base leading-relaxed space-y-3 [&>p]:mb-3 [&>p]:last:mb-0 [&>p]:border-l-3 [&>p]:border-emerald-500/50 [&>p]:pl-4 [&>p]:py-2 [&>p]:bg-slate-50/60 [&>p]:rounded-r-xl">
-                  {{ day.description|linebreaks }}
+                  {{ day.description|linebreaks|safe }}
                 </div>
 
                 {# Diqqatga sazovor joylar (Attractions visited on this day) #}
