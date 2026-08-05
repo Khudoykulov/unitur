@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: travel_pro 1.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-08-05 16:30+0000\n"
-"PO-Revision-Date: 2026-08-05 16:30+0000\n"
+"POT-Creation-Date: 2026-08-05 16:37+0000\n"
+"PO-Revision-Date: 2026-08-05 16:37+0000\n"
 "Last-Translator: Travel Pro Team\n"
 "Language-Team: uz\n"
 "Language: uz\n"
@@ -2217,38 +2217,53 @@ msgstr "Shuningdek ko'rishingiz mumkin"
 msgid "Ko'rish"
 msgstr "Ko'rish"
 
-msgid "-- Select Category --"
-msgstr "-- Select Category --"
-
 msgid "+ Kun qo'shish (Add Day)"
 msgstr "+ Kun qo'shish (Add Day)"
+
+msgid "-- Select Category --"
+msgstr "-- Turkum tanlash --"
 
 msgid "-- Tur kategoriyasini tanlang --"
 msgstr "-- Tur kategoriyasini tanlang --"
 
-msgid "Add New Category"
-msgstr "Yangi toifa qo'shing"
-
-msgid "All Categories"
-msgstr "Barcha toifalar"
-
-msgid "Add First Category"
-msgstr "Add First Category"
+msgid "24/7 ochiq"
+msgstr "24/7 ochiq"
 
 msgid "About This Hotel"
 msgstr "Bu mehmonxona haqida"
 
-msgid "24/7 ochiq"
-msgstr "24/7 ochiq"
-
-msgid "Admin reply"
-msgstr "Admin javob"
-
 msgid "About UNITUR"
 msgstr "About UNITUR"
 
+msgid "Active (Visible on public FAQ page)"
+msgstr "Faol (umumiy tez-tez so'raladigan savollar sahifasida ko'rinadi)"
+
+msgid "Active (Visible on site)"
+msgstr "Faol (saytda ko'rinadi)"
+
 msgid "Add"
 msgstr "Qo'shish"
+
+msgid "Add Attraction"
+msgstr "Joziba qo'shing"
+
+msgid "Add First Category"
+msgstr "Birinchi toifani qo'shing"
+
+msgid "Add Guide Category"
+msgstr "Qo‘llanma toifasini qo‘shing"
+
+msgid "Add New Category"
+msgstr "Yangi toifa qo'shing"
+
+msgid "Add New Question"
+msgstr "Yangi savol qo'shing"
+
+msgid "Add Tag"
+msgstr "Teg qo'shish"
+
+msgid "Add email address"
+msgstr "Elektron pochta manzilini qo'shing"
 
 msgid ""
 "Add itinerary days, titles, descriptions and link visited attractions "
@@ -2258,59 +2273,40 @@ msgstr ""
 "buyurilgan diqqatga sazovor joylarga havola qo'shing (Diqqatga diqqatga "
 "sazovor joylar)."
 
-msgid "Add Tag"
-msgstr "Teg qo'shish"
-
-msgid "Active (Visible on site)"
-msgstr "Faol (saytda ko'rinadi)"
-
 msgid "Admin replied at"
 msgstr "Admin javob berdi"
 
-msgid "Add Guide Category"
-msgstr "Qo‘llanma toifasini qo‘shing"
+msgid "Admin reply"
+msgstr "Admin javob"
 
-msgid "Add New Question"
-msgstr "Yangi savol qo'shing"
-
-msgid "Add Attraction"
-msgstr "Joziba qo'shing"
-
-msgid "Active (Visible on public FAQ page)"
-msgstr "Faol (umumiy tez-tez so'raladigan savollar sahifasida ko'rinadi)"
-
-msgid "Add email address"
-msgstr "Elektron pochta manzilini qo'shing"
-
-msgid "All rights reserved."
-msgstr "All rights reserved."
-
-msgid "Amallar"
-msgstr "Amallar"
+msgid "All Categories"
+msgstr "Barcha toifalar"
 
 msgid "All FAQs"
-msgstr "Barcha tez-tez so'raladigan savollar"
-
-msgid "Answer"
-msgstr "Javob"
-
-msgid "Amenity created successfully!"
-msgstr "Muvaffaqiyatli qulaylik yaratildi!"
-
-msgid "Alt Text"
-msgstr "Muqobil matn"
-
-msgid "Amenity already exists"
-msgstr "Qulaylik allaqachon mavjud"
-
-msgid "All countries"
-msgstr "Barcha mamlakatlar"
+msgstr ""
+"Error 500 (Server Error)!!1500.That’s an error.There was an error. Please "
+"try again later.That’s all we know."
 
 msgid "All cities"
 msgstr "Barcha shaharlar"
 
-msgid "Any difficulty"
-msgstr "Har qanday qiyinchilik"
+msgid "All countries"
+msgstr "Barcha mamlakatlar"
+
+msgid "All rights reserved."
+msgstr "Barcha huquqlar himoyalangan."
+
+msgid "Alt Text"
+msgstr "Muqobil matn"
+
+msgid "Amallar"
+msgstr "Amallar"
+
+msgid "Amenity already exists"
+msgstr "Qulaylik allaqachon mavjud"
+
+msgid "Amenity created successfully!"
+msgstr "Muvaffaqiyatli qulaylik yaratildi!"
 
 msgid "Amenity deleted successfully!"
 msgstr "Imkoniyatlar muvaffaqiyatli oʻchirildi!"
@@ -2318,11 +2314,20 @@ msgstr "Imkoniyatlar muvaffaqiyatli oʻchirildi!"
 msgid "Amenity updated successfully!"
 msgstr "Qulaylik muvaffaqiyatli yangilandi!"
 
-msgid "Asosiy sahifada ko'rsatish / yashirish"
-msgstr "Asosiy sahifada ko'rsatish / yashirish"
+msgid "Answer"
+msgstr "Javob"
+
+msgid "Any difficulty"
+msgstr "Har qanday qiyinchilik"
 
 msgid "Any stars"
 msgstr "Har qanday yulduz"
+
+msgid "Approve selected reviews"
+msgstr "Tanlangan sharhlarni tasdiqlang"
+
+msgid "Are you sure you want to delete this FAQ?"
+msgstr "Haqiqatan ham bu savol-javobni oʻchirib tashlamoqchimisiz?"
 
 msgid "Are you sure you want to delete this category?"
 msgstr "Haqiqatan ham ushbu turkumni oʻchirib tashlamoqchimisiz?"
@@ -2330,53 +2335,55 @@ msgstr "Haqiqatan ham ushbu turkumni oʻchirib tashlamoqchimisiz?"
 msgid "Are you sure you want to sign out of your account?"
 msgstr "Haqiqatan ham hisobingizdan chiqmoqchimisiz?"
 
-msgid "Approve selected reviews"
-msgstr "Tanlangan sharhlarni tasdiqlang"
-
 msgid "Article Views"
 msgstr "Maqolani ko'rish"
 
-msgid "Are you sure you want to delete this FAQ?"
-msgstr "Haqiqatan ham bu savol-javobni oʻchirib tashlamoqchimisiz?"
-
-msgid "Baho"
-msgstr "Baho"
-
-msgid "Attraction image"
-msgstr "Jozibali tasvir"
-
-msgid "Asosiy sahifada ✓"
-msgstr "Asosiy sahifada ✓"
-
-msgid "Available Rooms"
-msgstr "Available Rooms"
+msgid "Asosiy sahifada ko'rsatish / yashirish"
+msgstr "Asosiy sahifada ko'rsatish / yashirish"
 
 msgid "Asosiy sahifada ko'rsatish / yashirish uchun bosing"
 msgstr "Asosiy sahifada ko'rsatish / yashirish uchun bosing"
 
-msgid "Back to Tags"
-msgstr "Teglar sahifasiga qaytish"
+msgid "Asosiy sahifada ✓"
+msgstr "Asosiy sahifada ✓"
 
-msgid "Barchasi"
-msgstr "Barchasi"
-
-msgid "Back to Profile"
-msgstr "Profil sahifasiga qaytish"
-
-msgid "Attractions (Diqqatga sazovor joylar)"
-msgstr "Attractions (Diqqatga sazovor joylar)"
+msgid "Attraction image"
+msgstr "Jozibali tasvir"
 
 msgid "Attraction images"
 msgstr "Diqqatga sazovor rasmlar"
 
-msgid "Baho bering"
-msgstr "Baho bering"
+msgid "Attractions (Diqqatga sazovor joylar)"
+msgstr "Attractions (Diqqatga sazovor joylar)"
+
+msgid "Available Rooms"
+msgstr "Available Rooms"
+
+msgid "Back to Profile"
+msgstr ""
+"Error 500 (Server Error)!!1500.That’s an error.There was an error. Please "
+"try again later.That’s all we know."
 
 msgid "Back to Sign In"
 msgstr "Kirish sahifasiga qaytish"
 
+msgid "Back to Tags"
+msgstr "Teglar sahifasiga qaytish"
+
+msgid "Baho"
+msgstr "Baho"
+
+msgid "Baho bering"
+msgstr "Baho bering"
+
 msgid "Barcha mehmonxonalar va filtr"
 msgstr "Barcha mehmonxonalar va filtr"
+
+msgid "Barcha turlar"
+msgstr "Barcha turlar"
+
+msgid "Barchasi"
+msgstr "Barchasi"
 
 msgid "Bekor qilish"
 msgstr "Bekor qilish"
@@ -2384,16 +2391,8 @@ msgstr "Bekor qilish"
 msgid "Book Your Tour"
 msgstr "Turingizni bron qiling"
 
-msgid "Barcha turlar"
-msgstr "Barcha turlar"
-
 msgid "Booking Confirmed"
 msgstr "Rezervasyon tasdiqlandi"
-
-msgid ""
-"Borgan joylaringizdan rasmlar yuklang (Bir nechta rasm tanlashingiz mumkin)"
-msgstr ""
-"Borgan joylaringizdan rasmlar yuklang (Bir nechta rasm tanlashingiz mumkin)"
 
 msgid "Booking Reference"
 msgstr "Rezervasyon uchun ma'lumotnoma"
@@ -2401,14 +2400,16 @@ msgstr "Rezervasyon uchun ma'lumotnoma"
 msgid "Bookings count"
 msgstr "Rezervasyonlar hisobga olinadi"
 
-msgid "Call Us"
-msgstr "Bizga qo'ng'iroq qiling"
-
-msgid "Change Password"
-msgstr "Parolni o'zgartirish"
+msgid ""
+"Borgan joylaringizdan rasmlar yuklang (Bir nechta rasm tanlashingiz mumkin)"
+msgstr ""
+"Borgan joylaringizdan rasmlar yuklang (Bir nechta rasm tanlashingiz mumkin)"
 
 msgid "Boshqa (Kategoriyani o'zim kiritaman)"
 msgstr "Boshqa (Kategoriyani o'zim kiritaman)"
+
+msgid "Boshqa kategoriya (Custom category)"
+msgstr "Boshqa kategoriya (Custom category)"
 
 msgid ""
 "Browse icon names at tabler.io/icons — use the name without the 'ti ti-' "
@@ -2417,11 +2418,14 @@ msgstr ""
 "Tabler.io/icons saytida piktogramma nomlarini ko‘rib chiqing — nomdan “ti "
 "ti-” prefiksisiz foydalaning."
 
-msgid "Category Name"
-msgstr "Kategoriya nomi"
+msgid "Call Us"
+msgstr "Bizga qo'ng'iroq qiling"
 
-msgid "Boshqa kategoriya (Custom category)"
-msgstr "Boshqa kategoriya (Custom category)"
+msgid ""
+"Can't find the answer you're looking for? Our friendly team is here to help."
+msgstr ""
+"Siz izlayotgan javobni topa olmayapsizmi? Bizning do'stona jamoamiz yordam "
+"berish uchun shu yerda."
 
 msgid "Cancel — go back"
 msgstr "Bekor qilish - orqaga qaytish"
@@ -2432,14 +2436,20 @@ msgstr ""
 "Turkumlar sayohatga oid qoʻllanma maqolalarini tashkil qiladi (masalan, Visa"
 " maslahatlari, Oziq-ovqat, xavfsizlik)."
 
+msgid "Category Name"
+msgstr "Kategoriya nomi"
+
+msgid "Category already exists"
+msgstr "Turkum allaqachon mavjud"
+
+msgid "Category created successfully!"
+msgstr "Turkum muvaffaqiyatli yaratildi!"
+
 msgid "Category name is required"
 msgstr "Kategoriya nomi talab qilinadi"
 
-msgid ""
-"Can't find the answer you're looking for? Our friendly team is here to help."
-msgstr ""
-"Siz izlayotgan javobni topa olmayapsizmi? Bizning do'stona jamoamiz yordam "
-"berish uchun shu yerda."
+msgid "Change Password"
+msgstr "Parolni o'zgartirish"
 
 msgid "Changes are saved immediately after clicking Save."
 msgstr "O'zgarishlar \"Saqlash\" tugmasini bosgandan so'ng darhol saqlanadi."
@@ -2447,145 +2457,135 @@ msgstr "O'zgarishlar \"Saqlash\" tugmasini bosgandan so'ng darhol saqlanadi."
 msgid "Check Your Email"
 msgstr "Elektron pochtangizni tekshiring"
 
-msgid "Category created successfully!"
-msgstr "Turkum muvaffaqiyatli yaratildi!"
-
-msgid "Confirm Email"
-msgstr "E-pochta manzilini tasdiqlash"
-
-msgid "Category already exists"
-msgstr "Turkum allaqachon mavjud"
-
 msgid "Click or drag the marker on the map to set the location."
 msgstr "Joylashuvni belgilash uchun xaritadagi markerni bosing yoki torting."
 
-msgid "Confirm Email Address"
-msgstr "E-pochta manzilini tasdiqlash"
-
 msgid "Click tags to select / deselect. Multiple tags allowed."
 msgstr ""
-"Tanlash / bekor qilish uchun teglarni bosing. Bir nechta teglarga ruxsat "
-"berilgan."
+"Error 500 (Server Error)!!1500.That’s an error.There was an error. Please "
+"try again later.That’s all we know."
 
 msgid "Collapse All"
 msgstr "Hammasini yig'ish"
 
-msgid "Confirmation"
-msgstr "Tasdiqlash"
-
-msgid "Confirm new password"
-msgstr "Yangi parolni tasdiqlang"
-
-msgid "Copied!"
-msgstr "Ko‘chirildi!"
+msgid "Comma-separated keywords"
+msgstr "Vergul bilan ajratilgan kalit so'zlar"
 
 msgid "Configure category details and icon display."
 msgstr "Kategoriya tafsilotlari va piktogramma ekranini sozlang."
 
-msgid "Comma-separated keywords"
-msgstr "Vergul bilan ajratilgan kalit so'zlar"
+msgid "Confirm Email"
+msgstr "E-pochta manzilini tasdiqlash"
+
+msgid "Confirm Email Address"
+msgstr "E-pochta manzilini tasdiqlash"
+
+msgid "Confirm new password"
+msgstr "Yangi parolni tasdiqlang"
+
+msgid "Confirmation"
+msgstr "Tasdiqlash"
+
+msgid "Copied!"
+msgstr "Ko‘chirildi!"
 
 msgid "Copy link"
 msgstr "Havolani nusxalash"
 
-msgid "Current password"
-msgstr "Joriy parol"
-
-msgid "Danger"
-msgstr "Xavfli"
-
-msgid "Create new category"
-msgstr "Yangi turkum yarating"
-
-msgid "Day"
-msgstr "kun"
+msgid "Copyright text"
+msgstr "Mualliflik huquqi matni"
 
 msgid "Create First FAQ"
 msgstr "Birinchi FAQ yaratish"
 
+msgid "Create new category"
+msgstr "Yangi turkum yarating"
+
 msgid "Create tags"
 msgstr "Teglar yarating"
-
-msgid "Current Image"
-msgstr "Joriy rasm"
-
-msgid "Copyright text"
-msgstr "Mualliflik huquqi matni"
-
-msgid "Create your first FAQ question to help customers find answers quickly."
-msgstr ""
-"Create your first FAQ question to help customers find answers quickly."
 
 msgid "Create your first FAQ category to organize your questions neatly."
 msgstr ""
 "Savollaringizni aniq tartibga solish uchun birinchi tez-tez so'raladigan "
 "savollar toifasini yarating."
 
-msgid "Delete FAQ"
-msgstr "Tez-tez soʻraladigan savollarni oʻchirish"
+msgid "Create your first FAQ question to help customers find answers quickly."
+msgstr ""
+"Mijozlarga tezda javob topishga yordam berish uchun birinchi tez-tez "
+"so'raladigan savollarni yarating."
 
-msgid "Diqqatga sazovor joylar (Attractions):"
-msgstr "Diqqatga sazovor joylar (Attractions):"
+msgid "Current Image"
+msgstr "Joriy rasm"
+
+msgid "Current password"
+msgstr "Joriy parol"
 
 msgid "Custom category"
 msgstr "Maxsus kategoriya"
 
-msgid "Diqqatga sazovor joylar"
-msgstr "Diqqatga sazovor joylar"
+msgid "Danger"
+msgstr "Xavfli"
 
-msgid "Edit Category"
-msgstr "Kategoriyani tahrirlash"
-
-msgid "Delete this category?"
-msgstr "Bu turkum oʻchirilsinmi?"
-
-msgid "Display Order"
-msgstr "Buyurtmani ko'rsatish"
+msgid "Day"
+msgstr "kun"
 
 msgid "Day-by-Day Itinerary (Marshrut / Kunlar)"
 msgstr "Day-by-Day Itinerary (Marshrut / Kunlar)"
 
-msgid "Delete this tag?"
-msgstr "Bu teg oʻchirilsinmi?"
+msgid "Delete FAQ"
+msgstr "Tez-tez soʻraladigan savollarni oʻchirish"
 
-msgid "Email Verification Required"
-msgstr "Email Verification Required"
+msgid "Delete this category?"
+msgstr "Bu turkum oʻchirilsinmi?"
+
+msgid "Delete this tag?"
+msgstr ""
+"Error 500 (Server Error)!!1500.That’s an error.There was an error. Please "
+"try again later.That’s all we know."
+
+msgid "Diqqatga sazovor joylar"
+msgstr "Diqqatga sazovor joylar"
+
+msgid "Diqqatga sazovor joylar (Attractions):"
+msgstr "Diqqatga sazovor joylar (Attractions):"
+
+msgid "Display Order"
+msgstr "Buyurtmani ko'rsatish"
 
 msgid "Display in home page testimonials"
 msgstr "Bosh sahifa sharhlarida ko'rsatish"
 
+msgid "Edit Category"
+msgstr "Kategoriyani tahrirlash"
+
 msgid "Edit FAQ"
 msgstr "Tez-tez so‘raladigan savollarni tahrirlash"
-
-msgid "Email Addresses"
-msgstr "Elektron pochta manzillari"
-
-msgid "Edit Question"
-msgstr "Savolni tahrirlash"
-
-msgid "Enter a valid phone number (7–20 digits, +, spaces, - or () allowed)."
-msgstr "Enter a valid phone number (7–20 digits, +, spaces, - or () allowed)."
-
-msgid "Eng mashhur diqqatga sazovor joylar"
-msgstr "Eng mashhur diqqatga sazovor joylar"
-
-msgid "Explore now"
-msgstr "Hozir oʻrganing"
-
-msgid "FAQ"
-msgstr "TSS"
 
 msgid "Edit FAQ Category"
 msgstr "Tez-tez so'raladigan savollar turkumini tahrirlash"
 
+msgid "Edit Question"
+msgstr ""
+"Error 500 (Server Error)!!1500.That’s an error.There was an error. Please "
+"try again later.That’s all we know."
+
+msgid "Email Addresses"
+msgstr "Elektron pochta manzillari"
+
 msgid "Email Sent!"
 msgstr "Email yuborildi!"
 
+msgid "Email Verification Required"
+msgstr "Elektron pochtani tasdiqlash talab qilinadi"
+
+msgid "Eng mashhur diqqatga sazovor joylar"
+msgstr "Eng mashhur diqqatga sazovor joylar"
+
+msgid "Enter a valid phone number (7–20 digits, +, spaces, - or () allowed)."
+msgstr "Enter a valid phone number (7–20 digits, +, spaces, - or () allowed)."
+
 msgid "Enter and confirm your new password below"
 msgstr "Quyida yangi parolingizni kiriting va tasdiqlang"
-
-msgid "Expand All"
-msgstr "Hammasini yoyish"
 
 msgid "Enter your email and we'll send you a reset link"
 msgstr ""
@@ -2597,16 +2597,19 @@ msgstr ""
 "Misollar: yordam, kredit karta, xarita-pin, pasport, ma'lumot doirasi, "
 "samolyot"
 
+msgid "Expand All"
+msgstr "Hammasini yoyish"
+
+msgid "Explore now"
+msgstr "Hozir oʻrganing"
+
 msgid "Export selected to CSV"
 msgstr "CSV ga eksport qilish tanlangan"
 
-msgid "FAQ category"
-msgstr "FAQ category"
+msgid "FAQ"
+msgstr "TSS"
 
 msgid "FAQ Categories"
-msgstr "Tez-tez so'raladigan savollar toifalari"
-
-msgid "FAQ categories"
 msgstr "Tez-tez so'raladigan savollar toifalari"
 
 msgid "FAQ Management"
@@ -2615,39 +2618,44 @@ msgstr "FAQ boshqaruvi"
 msgid "FAQ Questions"
 msgstr "Tez-tez so'raladigan savollar"
 
+msgid "FAQ categories"
+msgstr "Tez-tez so'raladigan savollar toifalari"
+
+msgid "FAQ category"
+msgstr "Tez-tez so'raladigan savollar toifasi"
+
 msgid "FAQ category created successfully!"
 msgstr "Tez-tez so'raladigan savollar toifasi yaratildi!"
+
+msgid "FAQ category deleted successfully!"
+msgstr "Tez-tez so'raladigan savollar toifasi o'chirib tashlandi!"
 
 msgid "FAQ category updated successfully!"
 msgstr "Tez-tez so‘raladigan savollar turkumi muvaffaqiyatli yangilandi!"
 
-msgid "FAQ deleted successfully!"
-msgstr "Tez-tez soʻraladigan savollar muvaffaqiyatli oʻchirib tashlandi!"
-
-msgid "FAQs"
-msgstr "Tez-tez so'raladigan savollar"
-
 msgid "FAQ created successfully!"
 msgstr "Tez-tez so'raladigan savollar muvaffaqiyatli yaratildi!"
 
-msgid "FAQ category deleted successfully!"
-msgstr ""
-"Tez-tez so‘raladigan savollar turkumi muvaffaqiyatli o‘chirib tashlandi!"
-
-msgid "Facebook URL"
-msgstr "Facebook URL"
-
-msgid "Filter"
-msgstr "Filtr"
-
-msgid "Favicon"
-msgstr "Favicon"
+msgid "FAQ deleted successfully!"
+msgstr "Tez-tez soʻraladigan savollar muvaffaqiyatli oʻchirib tashlandi!"
 
 msgid "FAQ updated successfully!"
 msgstr "Tez-tez so‘raladigan savollar muvaffaqiyatli yangilandi!"
 
+msgid "FAQs"
+msgstr "Tez-tez so'raladigan savollar"
+
+msgid "FAQs Count"
+msgstr "Tez-tez so'raladigan savollar soni"
+
 msgid "Facebook Pixel ID"
 msgstr "Facebook Pixel ID"
+
+msgid "Facebook URL"
+msgstr "Facebook URL"
+
+msgid "Favicon"
+msgstr "Favikon"
 
 msgid "Fayl oynasidan bir nechta rasmni `Ctrl` yoki `Shift` bosib belgilang."
 msgstr "Fayl oynasidan bir nechta rasmni `Ctrl` yoki `Shift` bosib belgilang."
@@ -2655,11 +2663,11 @@ msgstr "Fayl oynasidan bir nechta rasmni `Ctrl` yoki `Shift` bosib belgilang."
 msgid "Featured (Asosiy sahifa)"
 msgstr "Featured (Asosiy sahifa)"
 
-msgid "FAQs Count"
-msgstr "Tez-tez so'raladigan savollar soni"
-
 msgid "Featured article appears at the top"
 msgstr "Featured article appears at the top"
+
+msgid "Filter"
+msgstr "Filtr"
 
 msgid ""
 "Find answers to common questions about our tours, booking process, and "
@@ -2668,50 +2676,41 @@ msgstr ""
 "Turlarimiz, bron qilish jarayoni va sayohat xizmatlari haqida umumiy "
 "savollarga javob toping."
 
-msgid "Frequently Asked Questions"
-msgstr "Tez-tez so'raladigan savollar"
-
 msgid "Footer"
 msgstr "Altbilgi"
-
-msgid "Fotosuratlar galereyasi (Ko'p rasm yuklash)"
-msgstr "Fotosuratlar galereyasi (Ko'p rasm yuklash)"
 
 msgid "Footer text"
 msgstr "Altbilgi matni"
 
-msgid "GPS coordinates for the map widget"
-msgstr "GPS coordinates for the map widget"
-
 msgid "Format: +998901234567"
 msgstr "Format: +998901234567"
 
-msgid "Google Analytics ID"
-msgstr "Google Analytics ID"
+msgid "Fotosuratlar galereyasi (Ko'p rasm yuklash)"
+msgstr "Fotosuratlar galereyasi (Ko'p rasm yuklash)"
+
+msgid "Frequently Asked Questions"
+msgstr "Tez-tez so'raladigan savollar"
+
+msgid "GPS coordinates for the map widget"
+msgstr "Xarita vidjeti uchun GPS koordinatalari"
 
 msgid "Gallery image"
 msgstr "Galereya tasviri"
 
-msgid "Get a Quote"
-msgstr "Iqtibos olish"
-
-msgid "Holat"
-msgstr "Holat"
-
-msgid "Highest Rated"
-msgstr "Eng yuqori baholangan"
+msgid "Gallery images"
+msgstr "Galereya rasmlari"
 
 msgid "General Questions"
 msgstr "Umumiy savollar"
 
-msgid "Gallery images"
-msgstr "Galereya rasmlari"
+msgid "Get a Quote"
+msgstr "Iqtibos olish"
 
 msgid "Go to Sign In"
 msgstr "Kirish-ga o'ting"
 
-msgid "Help Center"
-msgstr "Yordam markazi"
+msgid "Google Analytics ID"
+msgstr "Google Analytics ID"
 
 msgid "Group similar questions together"
 msgstr "Shu kabi savollarni birgalikda guruhlang"
@@ -2722,25 +2721,40 @@ msgstr "Qo'llanma toifalari"
 msgid "Havolani nusxalash"
 msgstr "Havolani nusxalash"
 
-msgid "Hold Ctrl to select multiple attractions for this day"
-msgstr ""
-"Bu kun uchun bir nechta diqqatga sazovor joylarni tanlash uchun Ctrl "
-"tugmasini bosib turing"
-
-msgid "Hero slides"
-msgstr "Qahramon slaydlar"
+msgid "Help Center"
+msgstr "Yordam markazi"
 
 msgid "Hero slide"
 msgstr "Qahramon slayd"
 
-msgid "Hozircha diqqatga sazovor joylar yo'q."
-msgstr "Hozircha diqqatga sazovor joylar yo'q."
+msgid "Hero slides"
+msgstr "Qahramon slaydlar"
+
+msgid "Highest Rated"
+msgstr "Eng yuqori baholangan"
+
+msgid "Holat"
+msgstr "Holat"
+
+msgid "Hold Ctrl to select multiple attractions for this day"
+msgstr ""
+"Bu kun uchun bir nechta diqqatga sazovor joylarni tanlash uchun Ctrl "
+"tugmasini bosib turing"
 
 msgid "Hotel categories"
 msgstr "Mehmonxona toifalari"
 
 msgid "Hotel category"
 msgstr "Mehmonxona toifasi"
+
+msgid "Hozircha diqqatga sazovor joylar kiritilmagan."
+msgstr "Hozircha diqqatga sazovor joylar kiritilmagan."
+
+msgid "Hozircha diqqatga sazovor joylar yo'q."
+msgstr "Hozircha diqqatga sazovor joylar yo'q."
+
+msgid "Hozircha mehmonxonalar kiritilmagan."
+msgstr "Hozircha mehmonxonalar kiritilmagan."
 
 msgid "Hozircha qulayliklar yo'q. 'Yangi Qulaylik Qo'shish' tugmasini bosing."
 msgstr ""
@@ -2753,11 +2767,8 @@ msgstr ""
 "Hozircha ushbu turga sharhlar yo'q. Birinchi bo'lib taassurotingizni yozib "
 "qoldiring!"
 
-msgid "Hozircha mehmonxonalar kiritilmagan."
-msgstr "Hozircha mehmonxonalar kiritilmagan."
-
-msgid "Hozircha diqqatga sazovor joylar kiritilmagan."
-msgstr "Hozircha diqqatga sazovor joylar kiritilmagan."
+msgid "Icon & Category Name"
+msgstr "Belgi va turkum nomi"
 
 msgid "Ikonka nomi (ixtiyoriy)"
 msgstr "Ikonka nomi (ixtiyoriy)"
@@ -2765,50 +2776,38 @@ msgstr "Ikonka nomi (ixtiyoriy)"
 msgid "Iltimos, shakldagi xatoliklarni to'g'rilang."
 msgstr "Iltimos, shakldagi xatoliklarni to'g'rilang."
 
-msgid "Info"
-msgstr "Ma'lumot"
-
-msgid "Internal"
-msgstr "Ichki"
-
 msgid "Inactive articles are hidden from the site"
 msgstr "Nofaol maqolalar saytdan berkitiladi"
 
-msgid "Icon & Category Name"
-msgstr "Belgi va turkum nomi"
+msgid "Info"
+msgstr "Ma'lumot"
 
 msgid "Instagram URL"
 msgstr "Instagram URL"
 
-msgid "Ismingiz / Username"
-msgstr "Ismingiz / Username"
+msgid "Internal"
+msgstr "Ichki"
 
 msgid "Invalid JSON"
 msgstr "Invalid JSON"
 
-msgid "Is featured on home page"
-msgstr "Is featured on home page"
-
-msgid "Joy ma'lumotlari"
-msgstr "Joy ma'lumotlari"
-
-msgid "Joylar"
-msgstr "Joylar"
-
 msgid "Invalid Link"
 msgstr "Invalid Link"
 
-msgid "Joy Nomi"
-msgstr "Joy Nomi"
+msgid "Is featured on home page"
+msgstr "Is featured on home page"
+
+msgid "Ismingiz / Username"
+msgstr "Ismingiz / Username"
 
 msgid "Javob saqlash"
 msgstr "Javob saqlash"
 
-msgid "Kategoriya nomini kiriting..."
-msgstr "Kategoriya nomini kiriting..."
+msgid "Joy Nomi"
+msgstr "Joy Nomi"
 
-msgid "Kun №"
-msgstr "Qachon №"
+msgid "Joy ma'lumotlari"
+msgstr "Joy ma'lumotlari"
 
 msgid "Joy nomini qidirish…"
 msgstr "Joy nomini qidirish…"
@@ -2818,23 +2817,47 @@ msgid ""
 msgstr ""
 "Joy uchun bir nechta (5-6+ ta) rasm tanlab bir vaqtda yuklashingiz mumkin."
 
+msgid "Joylar"
+msgstr "Joylar"
+
+msgid "Kategoriya nomini kiriting..."
+msgstr "Kategoriya nomini kiriting..."
+
 msgid "Keyingi 10 ta"
 msgstr "Keyingi 10 ta"
-
-msgid "Kunning tavsifi (Description)"
-msgstr "Kunning tavsifi (Description)"
 
 msgid "Kun sarlavhasi (Title)"
 msgstr "Kun sarlavhasi (Title)"
 
-msgid "Links shown in the footer and contact page"
-msgstr "Altbilgi va aloqa sahifasida ko'rsatilgan havolalar"
+msgid "Kun №"
+msgstr "Qachon №"
+
+msgid "Kunning tavsifi (Description)"
+msgstr "Kunning tavsifi (Description)"
+
+msgid "Last saved auto-syncs"
+msgstr "Oxirgi saqlangan avtomatik sinxronlashlar"
+
+msgid "Level"
+msgstr "Daraja"
 
 msgid "Link"
 msgstr "Havola"
 
-msgid "Level"
-msgstr "Daraja"
+msgid "Linked Items"
+msgstr "Bog'langan elementlar"
+
+msgid "LinkedIn URL"
+msgstr "LinkedIn URL"
+
+msgid "Links shown in the footer and contact page"
+msgstr "Altbilgi va aloqa sahifasida ko'rsatilgan havolalar"
+
+msgid "Location & Map"
+msgstr "Joylashuv va Xarita"
+
+msgid "Logo"
+msgstr "Logotip"
 
 msgid "Lower numbers appear first within the category."
 msgstr "Pastki raqamlar turkumda birinchi bo'lib ko'rinadi."
@@ -2842,69 +2865,54 @@ msgstr "Pastki raqamlar turkumda birinchi bo'lib ko'rinadi."
 msgid "Lower numbers appear first."
 msgstr "Avval pastroq raqamlar paydo bo'ladi."
 
-msgid "Last saved auto-syncs"
-msgstr "Oxirgi saqlangan avtomatik sinxronlashlar"
-
-msgid "Logo"
-msgstr "Logotip"
-
-msgid "LinkedIn URL"
-msgstr "LinkedIn URL"
-
-msgid "Linked Items"
-msgstr "Bog'langan elementlar"
-
-msgid "Manage Categories"
-msgstr "Kategoriyalarni boshqarish"
-
-msgid "Location & Map"
-msgstr "Joylashuv va Xarita"
-
-msgid "Mamlakat"
-msgstr "Mamlakat"
-
-msgid "Manage Email"
-msgstr "Elektron pochtani boshqarish"
+msgid "Ma'lumot berilmagan"
+msgstr "Ma'lumot berilmagan"
 
 msgid "Make primary"
 msgstr "Asosiy qiling"
 
-msgid "Ma'lumot berilmagan"
-msgstr "Ma'lumot berilmagan"
+msgid "Mamlakat"
+msgstr "Mamlakat"
 
-msgid "Manzil"
-msgstr "Manzil"
+msgid "Manage Categories"
+msgstr "Kategoriyalarni boshqarish"
+
+msgid "Manage Email"
+msgstr "Elektron pochtani boshqarish"
 
 msgid "Manage questions and answers displayed on the public FAQ page."
 msgstr ""
 "Umumiy tez-tez so'raladigan savollar sahifasida ko'rsatilgan savollar va "
 "javoblarni boshqaring."
 
-msgid "Mark selected as Cancelled"
-msgstr "Tanlanganni Bekor qilingan deb belgilang"
-
-msgid "Mark selected as Confirmed"
-msgstr "Tanlanganni \"Tasdiqlangan\" deb belgilang"
-
-msgid "Mark selected as Completed"
-msgstr "Tanlanganni tugallangan deb belgilang"
-
 msgid "Manage your contact details, location, and social media links"
 msgstr ""
 "Kontakt ma'lumotlaringizni, joylashuvingizni va ijtimoiy media "
 "havolalaringizni boshqaring"
 
-msgid "Mehmonxonalar"
-msgstr "Mehmonxonalar"
+msgid "Manzil"
+msgstr "Manzil"
+
+msgid "Mark selected as Cancelled"
+msgstr "Tanlanganni Bekor qilingan deb belgilang"
+
+msgid "Mark selected as Completed"
+msgstr "Tanlanganni tugallangan deb belgilang"
+
+msgid "Mark selected as Confirmed"
+msgstr "Tanlanganni \"Tasdiqlangan\" deb belgilang"
 
 msgid "Mavjud galereya rasmlari"
 msgstr "Mavjud galereya rasmlari"
 
+msgid "Max days"
+msgstr "Maksimal kunlar"
+
 msgid "Max price"
 msgstr "Maksimal narx"
 
-msgid "Muallif"
-msgstr "Muallif"
+msgid "Max price/night"
+msgstr "Maksimal narx/kecha"
 
 msgid ""
 "Mehmonxona uchun bir nechta (5-6+ ta) rasm tanlab bir vaqtda yuklashingiz "
@@ -2913,29 +2921,30 @@ msgstr ""
 "Mehmonxona uchun bir nechta (5-6+ ta) rasm tanlab bir vaqtda yuklashingiz "
 "mumkin."
 
-msgid "Max price/night"
-msgstr "Maksimal narx/kecha"
-
-msgid "Max days"
-msgstr "Maksimal kunlar"
-
-msgid "Min price"
-msgstr "Minimal narx"
+msgid "Mehmonxonalar"
+msgstr "Mehmonxonalar"
 
 msgid "Meta keywords"
 msgstr "Meta kalit so'zlar"
 
-msgid "Most Viewed"
-msgstr "Eng ko'p ko'rilgan"
-
 msgid "Min days"
 msgstr "Min kunlar"
 
-msgid "Most Viewed Articles"
-msgstr "Eng ko'p ko'rilgan maqolalar"
+msgid "Min price"
+msgstr "Minimal narx"
 
-msgid "New"
-msgstr "Yangi"
+msgid "Most Viewed"
+msgstr ""
+"Error 500 (Server Error)!!1500.That’s an error.There was an error. Please "
+"try again later.That’s all we know."
+
+msgid "Most Viewed Articles"
+msgstr ""
+"Error 500 (Server Error)!!1500.That’s an error.There was an error. Please "
+"try again later.That’s all we know."
+
+msgid "Muallif"
+msgstr "Muallif"
 
 msgid "My location"
 msgstr "Mening joylashuvim"
@@ -2943,35 +2952,34 @@ msgstr "Mening joylashuvim"
 msgid "Name is required"
 msgstr "Ism talab qilinadi"
 
+msgid "New"
+msgstr "Yangi"
+
+msgid "New FAQ"
+msgstr ""
+"Error 500 (Server Error)!!1500.That’s an error.There was an error. Please "
+"try again later.That’s all we know."
+
+msgid "New FAQ Category"
+msgstr "Yangi FAQ toifasi"
+
 msgid "New Tag"
 msgstr "Yangi teg"
 
 msgid "Next"
 msgstr "Keyingisi"
 
-msgid "New FAQ"
-msgstr "Yangi tez-tez so'raladigan savollar"
+msgid "Nights spent in this city"
+msgstr "Tunlarni shu shaharda o'tkazdi"
 
-msgid "New FAQ Category"
-msgstr "Yangi FAQ toifasi"
-
-msgid "O'chirish"
-msgstr "O'chirish"
-
-msgid "No FAQs Yet"
-msgstr "Hali tez-tez so'raladigan savollar yo'q"
+msgid "No Categories Found"
+msgstr "Hech qanday toifa topilmadi"
 
 msgid "No FAQs Available Yet"
 msgstr "No FAQs Available Yet"
 
-msgid "Nights spent in this city"
-msgstr "Tunlarni shu shaharda o'tkazdi"
-
-msgid "No tags yet."
-msgstr "Hali teglar yo'q."
-
-msgid "No Categories Found"
-msgstr "Kategoriyalar topilmadi"
+msgid "No FAQs Yet"
+msgstr "Hali tez-tez so'raladigan savollar yo'q"
 
 msgid "No alt text"
 msgstr "Muqobil matn yo'q"
@@ -2979,8 +2987,14 @@ msgstr "Muqobil matn yo'q"
 msgid "No tags found."
 msgstr "Hech qanday teg topilmadi."
 
+msgid "No tags yet."
+msgstr "Hali teglar yo'q."
+
 msgid "Null = broadcast to all staff"
 msgstr "Null = barcha xodimlarga efirga uzatiladi"
+
+msgid "O'chirish"
+msgstr "O'chirish"
 
 msgid "Oldingi"
 msgstr "Oldingi"
@@ -2988,40 +3002,27 @@ msgstr "Oldingi"
 msgid "Optional"
 msgstr "Ixtiyoriy"
 
-msgid "Orqaga"
-msgstr "Orqaga"
-
-msgid "Prev"
-msgstr "Oldingi"
-
 msgid "Organize FAQ questions into dynamic categories for your customers."
 msgstr ""
 "Mijozlaringiz uchun tez-tez so'raladigan savollarni dinamik toifalarga "
 "ajrating."
 
-msgid "Photo"
-msgstr "Surat"
-
-msgid "Primary"
-msgstr "Asosiy"
-
-msgid "Phone numbers and email addresses"
-msgstr "Telefon raqamlari va elektron pochta manzillari"
-
-msgid "Pricing"
-msgstr "Narxlash"
+msgid "Orqaga"
+msgstr "Orqaga"
 
 msgid "Password Changed"
 msgstr "Parol o'zgartirildi"
 
-msgid "Question"
-msgstr "Savol"
-
 msgid "Password Updated!"
 msgstr "Parol yangilandi!"
 
-msgid "Publish selected articles"
-msgstr "Tanlangan maqolalarni nashr qilish"
+msgid "Phone numbers and email addresses"
+msgstr ""
+"Error 500 (Server Error)!!1500.That’s an error.There was an error. Please "
+"try again later.That’s all we know."
+
+msgid "Photo"
+msgstr "Surat"
 
 msgid ""
 "Please verify your email address before accessing this page. Check your "
@@ -3030,119 +3031,143 @@ msgstr ""
 "Iltimos, ushbu sahifaga kirishdan oldin elektron pochta manzilingizni "
 "tasdiqlang. Tasdiqlash havolasi uchun pochta qutingizni tekshiring."
 
-msgid "Qulaylik Qo'shish"
-msgstr "Qulaylik Qo'shish"
+msgid "Prev"
+msgstr "Oldingi"
+
+msgid "Pricing"
+msgstr "Narxlash"
+
+msgid "Primary"
+msgstr "Asosiy"
+
+msgid "Publish selected articles"
+msgstr "Tanlangan maqolalarni nashr qilish"
 
 msgid "Publishing"
 msgstr "Nashriyot"
 
-msgid "Rasmlar"
-msgstr "Rasmlar"
-
-msgid "Qulayliklarni Tanlang (✓)"
-msgstr "Qulayliklarni Tanlang (✓)"
-
-msgid "Read"
-msgstr "O'qing"
+msgid "Question"
+msgstr "Savol"
 
 msgid "Question & Answer"
 msgstr "Savol-javob"
 
-msgid "Rad etish"
-msgstr "Rad etish"
-
-msgid "Rasmlar (Photos)"
-msgstr "Rasmlar (Photos)"
-
-msgid "Qulaylikni Tahrirlash"
-msgstr "Qulaylikni Tahrirlash"
-
-msgid "Reset Password"
-msgstr "Parolni tiklash"
-
-msgid "Recipient"
-msgstr "Qabul qiluvchi"
-
-msgid "Resend"
-msgstr "Qayta yuborish"
+msgid "Qulaylik Qo'shish"
+msgstr "Qulaylik Qo'shish"
 
 msgid "Qulaylik nomi"
 msgstr "Qulaylik nomi"
 
-msgid "Request a New Link"
-msgstr "Yangi havolani talab qiling"
+msgid "Qulayliklarni Tanlang (✓)"
+msgstr "Qulayliklarni Tanlang (✓)"
 
-msgid "Remove day"
-msgstr "Kunni olib tashlang"
+msgid "Qulaylikni Tahrirlash"
+msgstr "Qulaylikni Tahrirlash"
 
-msgid "Reviewer"
-msgstr "Sharhlovchi"
+msgid "Rad etish"
+msgstr "Rad etish"
+
+msgid "Rasmlar"
+msgstr "Rasmlar"
+
+msgid "Rasmlar (Photos)"
+msgstr "Rasmlar (Photos)"
+
+msgid "Read"
+msgstr "O'qing"
+
+msgid "Recipient"
+msgstr "Qabul qiluvchi"
 
 msgid "Reject selected reviews"
 msgstr "Tanlangan sharhlarni rad qilish"
 
-msgid "Saqlash"
-msgstr "Saqlash"
+msgid "Remove day"
+msgstr "Kunni olib tashlang"
 
-msgid "SEO"
-msgstr "SEO"
+msgid "Request a New Link"
+msgstr "Yangi havolani talab qiling"
+
+msgid "Resend"
+msgstr "Qayta yuborish"
 
 msgid "Resend Verification Email"
 msgstr "Tasdiqlash xatini qayta yuborish"
 
+msgid "Reset Password"
+msgstr "Parolni tiklash"
+
 msgid "Reset Your Password"
 msgstr "Parolingizni qayta o'rnating"
-
-msgid "Review images"
-msgstr "Rasmlarni ko'rib chiqish"
 
 msgid "Review image"
 msgstr "Rasmni ko'rib chiqish"
 
+msgid "Review images"
+msgstr "Rasmlarni ko'rib chiqish"
+
+msgid "Reviewer"
+msgstr "Sharhlovchi"
+
 msgid "Reyting bo'yicha filter"
 msgstr "Reyting bo'yicha filter"
 
-msgid "Save New Password"
-msgstr "Yangi parolni saqlang"
+msgid "SEO"
+msgstr "SEO"
 
 msgid "SEO & Analytics"
 msgstr "SEO va tahlil"
 
-msgid "Save Settings"
-msgstr "Sozlamalarni saqlash"
+msgid "Saqlash"
+msgstr "Saqlash"
 
-msgid "Search tags…"
-msgstr "Teglarni qidirish…"
-
-msgid "Sayt Tarjimalari (Rosetta)"
-msgstr "Sayt Tarjimalari (Rosetta)"
-
-msgid "Save Tag"
-msgstr "Tegni saqlang"
-
-msgid "Secondary email"
-msgstr "Ikkilamchi elektron pochta"
-
-msgid "Search city or address..."
-msgstr "Shahar yoki manzilni qidiring..."
-
-msgid "Send Reset Link"
-msgstr "Qayta tiklash havolasini yuboring"
-
-msgid "Secondary phone"
-msgstr "Ikkilamchi telefon"
+msgid "Save New Password"
+msgstr "Yangi parolni saqlang"
 
 msgid "Save Question"
 msgstr "Savolni saqlash"
 
-msgid "Set New Password"
-msgstr "Yangi parol o'rnating"
+msgid "Save Settings"
+msgstr "Sozlamalarni saqlash"
+
+msgid "Save Tag"
+msgstr "Tegni saqlang"
+
+msgid "Sayt Tarjimalari (Rosetta)"
+msgstr "Sayt Tarjimalari (Rosetta)"
+
+msgid "Search city or address..."
+msgstr "Shahar yoki manzilni qidiring..."
+
+msgid "Search tags…"
+msgstr "Teglarni qidirish…"
 
 msgid "Seats left"
 msgstr "O‘rindiqlar qoldi"
 
+msgid "Secondary email"
+msgstr "Ikkilamchi elektron pochta"
+
+msgid "Secondary phone"
+msgstr "Ikkilamchi telefon"
+
+msgid "Send Reset Link"
+msgstr "Qayta tiklash havolasini yuboring"
+
 msgid "Sequence in the itinerary: 1, 2, 3…"
 msgstr "Marshrutdagi ketma-ketlik: 1, 2, 3…"
+
+msgid "Set New Password"
+msgstr "Yangi parol o'rnating"
+
+msgid "Settings & FAQ"
+msgstr "Sozlamalar va tez-tez so'raladigan savollar"
+
+msgid "Shahar"
+msgstr "Shahar"
+
+msgid "Shahar / Davlat"
+msgstr "Shahar / Davlat"
 
 msgid "Sharhga javob yozish..."
 msgstr "Sharhga javob yozish..."
@@ -3150,23 +3175,13 @@ msgstr "Sharhga javob yozish..."
 msgid "Sharhlar va Taassurotlar"
 msgstr "Sharhlar va Taassurotlar"
 
-msgid "Shahar"
-msgstr "Shahar"
-
-msgid "Site Settings"
-msgstr "Sayt sozlamalari"
-
-msgid "Settings & FAQ"
-msgstr "Sozlamalar va tez-tez so'raladigan savollar"
-
-msgid "Shahar / Davlat"
-msgstr "Shahar / Davlat"
-
-msgid "Site name"
-msgstr "Sayt nomi"
-
 msgid "Sharhni saqlash"
 msgstr "Sharhni saqlash"
+
+msgid "Shown as tooltip or used by screen readers."
+msgstr ""
+"Maslahat sifatida ko'rsatilgan yoki ekranni o'qiydiganlar tomonidan "
+"foydalaniladi."
 
 msgid "Sign Out?"
 msgstr "Tizimdan chiqish?"
@@ -3174,73 +3189,59 @@ msgstr "Tizimdan chiqish?"
 msgid "Site Information"
 msgstr "Sayt haqida ma'lumot"
 
-msgid "Site settings updated successfully!"
-msgstr "Sayt sozlamalari muvaffaqiyatli yangilandi!"
+msgid "Site Settings"
+msgstr "Sayt sozlamalari"
 
-msgid "Sitemap"
-msgstr "Sitemap"
-
-msgid "Sort By"
-msgstr "Sort By"
-
-msgid "Slug will be auto-generated from the tag name."
-msgstr "Slug teg nomidan avtomatik ravishda yaratiladi."
+msgid "Site name"
+msgstr "Sayt nomi"
 
 msgid "Site settings"
 msgstr "Sayt sozlamalari"
 
+msgid "Site settings updated successfully!"
+msgstr "Sayt sozlamalari muvaffaqiyatli yangilandi!"
+
+msgid "Sitemap"
+msgstr "Sayt xaritasi"
+
 msgid "Slide Details"
 msgstr "Slayd tafsilotlari"
 
-msgid "Shown as tooltip or used by screen readers."
-msgstr ""
-"Maslahat sifatida ko'rsatilgan yoki ekranni o'qiydiganlar tomonidan "
-"foydalaniladi."
+msgid "Slug will be auto-generated from the tag name."
+msgstr "Slug teg nomidan avtomatik ravishda yaratiladi."
 
 msgid "Social Media Links"
 msgstr "Ijtimoiy tarmoqlarga havolalar"
 
-msgid "Stats"
-msgstr "Statistika"
-
-msgid "Success"
-msgstr "Success"
-
-msgid "Sort: Newest"
-msgstr "Sort: Newest"
-
-msgid "Staff Login"
-msgstr "Staff Login"
+msgid "Sort By"
+msgstr "Saralash turi"
 
 msgid "Sort: Least Viewed ↑"
 msgstr "Saralash: Eng kam koʻrilgan ↑"
 
-msgid "Tanlangan"
-msgstr "Tanlangan"
-
 msgid "Sort: Most Viewed ↓"
 msgstr "Saralash: Eng koʻp koʻrilgan ↓"
 
-msgid "Starting from"
-msgstr "Starting from"
+msgid "Sort: Newest"
+msgstr "Saralash: eng yangi"
 
-msgid "Tahrirlash"
-msgstr "Tahrirlash"
+msgid "Starting from"
+msgstr "dan boshlab"
+
+msgid "Stats"
+msgstr "Statistika"
 
 msgid "Status & Visibility"
 msgstr "Holat va koʻrinish"
 
+msgid "Still Have Questions?"
+msgstr "Hali ham savollaringiz bormi?"
+
+msgid "Success"
+msgstr "Muvaffaqiyat"
+
 msgid "Taassurotlaringiz va fikrlaringiz"
 msgstr "Taassurotlaringiz va fikrlaringiz"
-
-msgid "Still Have Questions?"
-msgstr "Still Have Questions?"
-
-msgid "Tanlash"
-msgstr "Tanlash"
-
-msgid "Tabler ikonka nomi (masalan: wifi, swimming, bar)"
-msgstr "Tabler ikonka nomi (masalan: wifi, swimming, bar)"
 
 msgid "Tabler Icon Name"
 msgstr "Jadval belgisi nomi"
@@ -3248,47 +3249,54 @@ msgstr "Jadval belgisi nomi"
 msgid ""
 "Tabler icon name, e.g. help, credit-card, map-pin, passport, info-circle."
 msgstr ""
-"Tabler icon name, e.g. help, credit-card, map-pin, passport, info-circle."
+"Jadval belgisining nomi, masalan. yordam, kredit karta, xarita-pin, pasport,"
+" ma'lumot doirasi."
+
+msgid "Tabler ikonka nomi (masalan: wifi, swimming, bar)"
+msgstr "Tabler ikonka nomi (masalan: wifi, swimming, bar)"
 
 msgid "Tagline"
 msgstr "Taglik"
 
+msgid "Tahrirlash"
+msgstr "Tahrirlash"
+
+msgid "Tanlangan"
+msgstr "Tanlangan"
+
 msgid "Tanlanmagan"
 msgstr "Tanlanmagan"
 
-msgid "Tashrif buyurgan joylaringizdan olgan rasmlarni bir vaqtda tanlang."
-msgstr "Tashrif buyurgan joylaringizdan olgan rasmlarni bir vaqtda tanlang."
+msgid "Tanlash"
+msgstr "Tanlash"
 
 msgid "Tasdiqlangan"
 msgstr "Tasdiqlangan"
 
-msgid "Tashrif sanasi"
-msgstr "Tashrif sanasi"
-
-msgid ""
-"Thank you for booking with UNITUR travel agency. A confirmation email has "
-"been sent to"
-msgstr ""
-"Thank you for booking with UNITUR travel agency. A confirmation email has "
-"been sent to"
-
 msgid "Tasdiqlash"
 msgstr "Tasdiqlash"
+
+msgid "Tashrif buyurgan joylaringizdan olgan rasmlarni bir vaqtda tanlang."
+msgstr "Tashrif buyurgan joylaringizdan olgan rasmlarni bir vaqtda tanlang."
+
+msgid "Tashrif sanasi"
+msgstr "Tashrif sanasi"
 
 msgid "Tavsif kiritilmagan."
 msgstr "Tavsif kiritilmagan."
 
-msgid "This field is required."
-msgstr "Ushbu qator to'ldirilishi shart."
-
-msgid "Thank you! Your review has been saved."
-msgstr "Rahmat! Sharhingiz saqlandi."
-
 msgid "Telegram URL"
 msgstr "Telegram URL"
 
-msgid "This password reset link is invalid or has expired."
-msgstr "This password reset link is invalid or has expired."
+msgid "Terms of Service"
+msgstr "Xizmat shartlari"
+
+msgid ""
+"Thank you for booking with UNITUR travel agency. A confirmation email has "
+"been sent to"
+msgstr ""
+"Thank you for booking with UNITUR travel agency. A confirmation email has "
+"been sent to"
 
 msgid ""
 "Thank you for booking with UNITUR travel agency. Our team will contact you "
@@ -3297,17 +3305,11 @@ msgstr ""
 "Thank you for booking with UNITUR travel agency. Our team will contact you "
 "shortly on"
 
-msgid "Terms of Service"
-msgstr "Xizmat shartlari"
-
-msgid "Toifa"
-msgstr "Toifa"
-
 msgid "Thank you! We'll be in touch within 24 hours."
-msgstr "Thank you! We'll be in touch within 24 hours."
+msgstr "Rahmat! Biz 24 soat ichida bog'lanamiz."
 
-msgid "This confirmation link is invalid or has expired."
-msgstr "This confirmation link is invalid or has expired."
+msgid "Thank you! Your review has been saved."
+msgstr "Rahmat! Sharhingiz saqlandi."
 
 msgid ""
 "This FAQ will be permanently deleted and will no longer appear on your "
@@ -3316,26 +3318,47 @@ msgstr ""
 "Bu tez-tez so'raladigan savollar butunlay o'chiriladi va veb-saytingizda "
 "endi ko'rinmaydi."
 
-msgid "Toifa Qo'shish"
-msgstr "Toifa Qo'shish"
-
-msgid "Timestamps"
-msgstr "Timestamps"
-
-msgid "Tour Details"
-msgstr "Tour Details"
-
 msgid "This action cannot be undone"
 msgstr "Bu amalni ortga qaytarib bo‘lmaydi"
+
+msgid "This confirmation link is invalid or has expired."
+msgstr "This confirmation link is invalid or has expired."
+
+msgid "This field is required."
+msgstr "Ushbu qator to'ldirilishi shart."
+
+msgid "This password reset link is invalid or has expired."
+msgstr "This password reset link is invalid or has expired."
+
+msgid "Timestamps"
+msgstr "Vaqt belgilari"
+
+msgid "Toifa"
+msgstr "Toifa"
+
+msgid "Toifa Qo'shish"
+msgstr "Toifa Qo'shish"
 
 msgid "Toifa nomi"
 msgstr "Toifa nomi"
 
-msgid "Tour updated."
-msgstr "Tur yangilandi."
+msgid "Tour Details"
+msgstr "Ekskursiya tafsilotlari"
+
+msgid "Tour created."
+msgstr "Ekskursiya yaratildi."
 
 msgid "Tour itinerary:"
 msgstr "Ekskursiya marshruti:"
+
+msgid "Tour updated."
+msgstr "Tur yangilandi."
+
+msgid "Tours in"
+msgstr "Ekskursiyalar"
+
+msgid "Travel Details"
+msgstr "Sayohat tafsilotlari"
 
 msgid "Travel Guides"
 msgstr "Sayohat bo'yicha qo'llanmalar"
@@ -3343,24 +3366,6 @@ msgstr "Sayohat bo'yicha qo'llanmalar"
 msgid "Travel Info"
 msgstr "Sayohat haqida ma'lumot"
 
-msgid "Tur kategoriyasi (Category)"
-msgstr "Tur kategoriyasi (Category)"
-
-msgid "Turlar"
-msgstr "Turlar"
-
-msgid "Tour created."
-msgstr "Ekskursiya yaratildi."
-
-msgid "Tours in"
-msgstr "Ekskursiyalar"
-
-msgid "UNITUR Admin Javobi:"
-msgstr "UNITUR Admin Javobi:"
-
-msgid "Travel Details"
-msgstr "Sayohat tafsilotlari"
-
 msgid ""
 "Tugmani bossangiz bir nechta joylarni tanlash mumkin (Ctrl tugmasini bosib "
 "turing)"
@@ -3368,8 +3373,20 @@ msgstr ""
 "Tugmani bossangiz bir nechta joylarni tanlash mumkin (Ctrl tugmasini bosib "
 "turing)"
 
-msgid "User agent"
-msgstr "Foydalanuvchi agenti"
+msgid "Tur kategoriyasi (Category)"
+msgstr "Tur kategoriyasi (Category)"
+
+msgid "Turlar"
+msgstr "Turlar"
+
+msgid "Twitter URL"
+msgstr "Twitter URL"
+
+msgid "Uncategorized"
+msgstr "Kategoriyasiz"
+
+msgid "Unpublish selected articles"
+msgstr "Tanlangan maqolalarni nashrdan olib tashlash"
 
 msgid "Unverified"
 msgstr "Tasdiqlanmagan"
@@ -3377,58 +3394,69 @@ msgstr "Tasdiqlanmagan"
 msgid "Update Password"
 msgstr "Parolni yangilash"
 
+msgid "Use my location"
+msgstr "Mening joylashuvimdan foydalaning"
+
+msgid "User agent"
+msgstr "Foydalanuvchi agenti"
+
 msgid "Users"
 msgstr "Foydalanuvchilar"
-
-msgid "Ushbu tur haqida taassurotingiz va rasmlaringizni ulashing"
-msgstr "Ushbu tur haqida taassurotingiz va rasmlaringizni ulashing"
 
 msgid "Ushbu kunda boriladigan diqqatga sazovor joylar (Attractions):"
 msgstr "Ushbu kunda boriladigan diqqatga sazovor joylar (Attractions):"
 
+msgid "Ushbu kunni o'chirish"
+msgstr "Ushbu kunni o'chirish"
+
+msgid "Ushbu tur haqida taassurotingiz va rasmlaringizni ulashing"
+msgstr "Ushbu tur haqida taassurotingiz va rasmlaringizni ulashing"
+
 msgid "Verified"
 msgstr "Tasdiqlangan"
-
-msgid "Use my location"
-msgstr "Mening joylashuvimdan foydalaning"
-
-msgid "Twitter URL"
-msgstr "Twitter URL"
-
-msgid "Username"
-msgstr "Foydalanuvchi nomi"
-
-msgid "Uncategorized"
-msgstr "Kategoriyasiz"
 
 msgid "Verify Your Email"
 msgstr "Elektron pochtangizni tasdiqlang"
 
-msgid "Ushbu kunni o'chirish"
-msgstr "Ushbu kunni o'chirish"
-
-msgid "Unpublish selected articles"
-msgstr "Tanlangan maqolalarni nashrdan olib tashlash"
-
 msgid "Views"
 msgstr "Koʻrishlar"
-
-msgid "Warning"
-msgstr "Ogohlantirish"
-
-msgid "WhatsApp number"
-msgstr "WhatsApp raqami"
 
 msgid "Visibility"
 msgstr "Ko'rinish"
 
-msgid "Yana ko'proq ko'rsatish"
-msgstr "Yana ko'proq ko'rsatish"
+msgid "Visit Website"
+msgstr "Veb-saytga tashrif buyuring"
+
+msgid "Warning"
+msgstr "Ogohlantirish"
 
 msgid "We're working on adding helpful information. Please check back soon!"
 msgstr ""
-"Biz foydali ma'lumotlarni qo'shish ustida ishlamoqdamiz. Iltimos, tez orada "
+"Biz foydali maʼlumotlarni qoʻshish ustida ishlayapmiz. Iltimos, tez orada "
 "tekshiring!"
+
+msgid ""
+"We've sent a password reset link to your email address. Check your inbox and"
+" follow the instructions."
+msgstr ""
+"Email manzilingizga parolni tiklash havolasini yubordik. Kirish qutingizni "
+"tekshiring va ko'rsatmalarga rioya qiling."
+
+msgid "WhatsApp number"
+msgstr "WhatsApp raqami"
+
+msgid "Write clear questions and helpful answers for your visitors."
+msgstr ""
+"Tashrif buyuruvchilaringiz uchun aniq savollar va foydali javoblar yozing."
+
+msgid "Xarita havolasi biriktirilmagan."
+msgstr "Xarita havolasi biriktirilmagan."
+
+msgid "Xaritada ko`rish"
+msgstr "Xaritada ko`rish"
+
+msgid "Yana ko'proq ko'rsatish"
+msgstr "Yana ko'proq ko'rsatish"
 
 msgid "Yangi Joy Qo'shish"
 msgstr "Yangi Joy Qo'shish"
@@ -3436,52 +3464,29 @@ msgstr "Yangi Joy Qo'shish"
 msgid "Yangi Qulaylik Qo'shish"
 msgstr "Yangi Qulaylik Qo'shish"
 
-msgid "Visit Website"
-msgstr "Veb-saytga tashrif buyuring"
-
-msgid ""
-"We've sent a password reset link to your email address. Check your inbox and"
-" follow the instructions."
-msgstr ""
-"Email manzilingizga parolni tiklash havolasini yubordik. Kirish qutingizni "
-"tekshiring va ko'rsatmalarga amal qiling."
+msgid "Yangi Toifa"
+msgstr "Yangi Toifa"
 
 msgid "Yangi Toifa Qo'shish"
 msgstr "Yangi Toifa Qo'shish"
 
-msgid "YouTube URL"
-msgstr "YouTube URL"
-
 msgid "Yangi rasmlar yuklash (Ko'p fayl tanlang)"
 msgstr "Yangi rasmlar yuklash (Ko'p fayl tanlang)"
-
-msgid "Yes, Sign Out"
-msgstr "Ha, Chiqish"
-
-msgid "Write clear questions and helpful answers for your visitors."
-msgstr ""
-"Tashrif buyuruvchilaringiz uchun aniq savollar va foydali javoblar yozing."
-
-msgid "Xaritada ko`rish"
-msgstr "Xaritada ko`rish"
-
-msgid "Yangi Toifa"
-msgstr "Yangi Toifa"
-
-msgid "Xarita havolasi biriktirilmagan."
-msgstr "Xarita havolasi biriktirilmagan."
-
-msgid "booked"
-msgstr "band qilingan"
 
 msgid "Yes, Delete FAQ"
 msgstr "Ha, tez-tez so'raladigan savollarni o'chirish"
 
-msgid "people"
-msgstr "odamlar"
+msgid "Yes, Sign Out"
+msgstr "Ha, Chiqish"
 
-msgid "leave empty to keep current"
-msgstr "joriy saqlash uchun bo'sh qoldiring"
+msgid "YouTube URL"
+msgstr "YouTube URL"
+
+msgid "Your Info"
+msgstr "Sizning ma'lumotlaringiz"
+
+msgid "Your email addresses"
+msgstr "Sizning elektron pochta manzillaringiz"
 
 msgid ""
 "Your password has been changed successfully. You can now sign in with your "
@@ -3490,26 +3495,23 @@ msgstr ""
 "Parolingiz muvaffaqiyatli o'zgartirildi. Endi siz yangi parolingiz bilan "
 "tizimga kirishingiz mumkin."
 
-msgid "Your Info"
-msgstr "Sizning ma'lumotlaringiz"
-
-msgid "Your email addresses"
-msgstr "Sizning elektron pochta manzillaringiz"
-
-msgid "night"
-msgstr "tun"
-
-msgid "total reads"
-msgstr "jami o'qishlar"
+msgid "booked"
+msgstr "band qilingan"
 
 msgid "guests"
 msgstr "mehmonlar"
 
+msgid "leave empty to keep current"
+msgstr "joriy saqlash uchun bo'sh qoldiring"
+
+msgid "night"
+msgstr "tun"
+
+msgid "people"
+msgstr "odamlar"
+
+msgid "total reads"
+msgstr "jami o'qishlar"
+
 msgid "views"
 msgstr "ko'rishlar"
-
-msgid "Dunyoning eng go'zal joylarini kashf eting"
-msgstr "Dunyoning eng go'zal joylarini kashf eting"
-
-msgid "Dunyoning eng go'zal joylarini kashf eting."
-msgstr "Dunyoning eng go'zal joylarini kashf eting."

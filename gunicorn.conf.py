@@ -27,8 +27,8 @@ proc_name = "unitur"
 # Server mechanics
 daemon = False
 pidfile = "/run/unitur/gunicorn.pid"
-user = "unitur"
-group = "unitur"
+# user = "unitur"
+# group = "unitur"
 umask = 0o007
 
 # Graceful restart

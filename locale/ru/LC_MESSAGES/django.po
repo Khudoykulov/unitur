@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: travel_pro 1.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-08-05 16:30+0000\n"
-"PO-Revision-Date: 2026-08-05 16:30+0000\n"
+"POT-Creation-Date: 2026-08-05 16:37+0000\n"
+"PO-Revision-Date: 2026-08-05 16:37+0000\n"
 "Last-Translator: Travel Pro Team\n"
 "Language-Team: ru\n"
 "Language: ru\n"
@@ -2200,38 +2200,55 @@ msgstr "Вам также может понравиться"
 msgid "Ko'rish"
 msgstr "Смотреть"
 
-msgid "-- Select Category --"
-msgstr "-- Select Category --"
-
 msgid "+ Kun qo'shish (Add Day)"
 msgstr "+ Добавить день (Добавить день)"
+
+msgid "-- Select Category --"
+msgstr "-- Выберите категорию --"
 
 msgid "-- Tur kategoriyasini tanlang --"
 msgstr "-- Выберите категорию тура --"
 
-msgid "Add New Category"
-msgstr "Добавить новую категорию"
-
-msgid "All Categories"
-msgstr "Все категории"
-
-msgid "Add First Category"
-msgstr "Добавить первую категорию"
+msgid "24/7 ochiq"
+msgstr ""
+"Error 500 (Server Error)!!1500.That’s an error.There was an error. Please "
+"try again later.That’s all we know."
 
 msgid "About This Hotel"
-msgstr "About This Hotel"
-
-msgid "24/7 ochiq"
-msgstr "Открыто 24/7"
-
-msgid "Admin reply"
-msgstr "Ответ администратора"
+msgstr "Об этом отеле"
 
 msgid "About UNITUR"
 msgstr "О УНИТУР"
 
+msgid "Active (Visible on public FAQ page)"
+msgstr "Активен (виден на общедоступной странице часто задаваемых вопросов)"
+
+msgid "Active (Visible on site)"
+msgstr "Активный (Видно на сайте)"
+
 msgid "Add"
 msgstr "Добавлять"
+
+msgid "Add Attraction"
+msgstr "Добавить достопримечательность"
+
+msgid "Add First Category"
+msgstr "Добавить первую категорию"
+
+msgid "Add Guide Category"
+msgstr "Добавить категорию руководства"
+
+msgid "Add New Category"
+msgstr "Добавить новую категорию"
+
+msgid "Add New Question"
+msgstr "Добавить новый вопрос"
+
+msgid "Add Tag"
+msgstr "Добавить тег"
+
+msgid "Add email address"
+msgstr "Добавить адрес электронной почты"
 
 msgid ""
 "Add itinerary days, titles, descriptions and link visited attractions "
@@ -2240,59 +2257,38 @@ msgstr ""
 "Добавьте дни маршрута, названия, описания и ссылки на посещенные "
 "достопримечательности (Diqqatga sazovor joylar) для каждого дня."
 
-msgid "Add Tag"
-msgstr "Добавить тег"
-
-msgid "Active (Visible on site)"
-msgstr "Активный (Видно на сайте)"
-
 msgid "Admin replied at"
 msgstr "Админ ответил в"
 
-msgid "Add Guide Category"
-msgstr "Добавить категорию руководства"
+msgid "Admin reply"
+msgstr "Ответ администратора"
 
-msgid "Add New Question"
-msgstr "Добавить новый вопрос"
-
-msgid "Add Attraction"
-msgstr "Добавить достопримечательность"
-
-msgid "Active (Visible on public FAQ page)"
-msgstr "Активен (виден на общедоступной странице часто задаваемых вопросов)"
-
-msgid "Add email address"
-msgstr "Добавить адрес электронной почты"
-
-msgid "All rights reserved."
-msgstr "Все права защищены."
-
-msgid "Amallar"
-msgstr "Amallar"
+msgid "All Categories"
+msgstr "Все категории"
 
 msgid "All FAQs"
 msgstr "Все часто задаваемые вопросы"
 
-msgid "Answer"
-msgstr "Отвечать"
-
-msgid "Amenity created successfully!"
-msgstr "Удобство создано успешно!"
-
-msgid "Alt Text"
-msgstr "Альтернативный текст"
-
-msgid "Amenity already exists"
-msgstr "Amenity already exists"
+msgid "All cities"
+msgstr "Все города"
 
 msgid "All countries"
 msgstr "Все страны"
 
-msgid "All cities"
-msgstr "Все города"
+msgid "All rights reserved."
+msgstr "Все права защищены."
 
-msgid "Any difficulty"
-msgstr "Любая сложность"
+msgid "Alt Text"
+msgstr "Альтернативный текст"
+
+msgid "Amallar"
+msgstr "Действия"
+
+msgid "Amenity already exists"
+msgstr "Удобства уже есть"
+
+msgid "Amenity created successfully!"
+msgstr "Удобство создано успешно!"
 
 msgid "Amenity deleted successfully!"
 msgstr "Удобства успешно удалены!"
@@ -2300,11 +2296,20 @@ msgstr "Удобства успешно удалены!"
 msgid "Amenity updated successfully!"
 msgstr "Удобства успешно обновлены!"
 
-msgid "Asosiy sahifada ko'rsatish / yashirish"
-msgstr "Показать/скрыть на главной странице"
+msgid "Answer"
+msgstr "Отвечать"
+
+msgid "Any difficulty"
+msgstr "Любая сложность"
 
 msgid "Any stars"
 msgstr "Любые звезды"
+
+msgid "Approve selected reviews"
+msgstr "Одобрить выбранные отзывы"
+
+msgid "Are you sure you want to delete this FAQ?"
+msgstr "Вы уверены, что хотите удалить этот FAQ?"
 
 msgid "Are you sure you want to delete this category?"
 msgstr "Вы уверены, что хотите удалить эту категорию?"
@@ -2312,53 +2317,53 @@ msgstr "Вы уверены, что хотите удалить эту кате�
 msgid "Are you sure you want to sign out of your account?"
 msgstr "Вы уверены, что хотите выйти из своей учетной записи?"
 
-msgid "Approve selected reviews"
-msgstr "Одобрить выбранные отзывы"
-
 msgid "Article Views"
 msgstr "Просмотры статей"
 
-msgid "Are you sure you want to delete this FAQ?"
-msgstr "Вы уверены, что хотите удалить этот FAQ?"
-
-msgid "Baho"
-msgstr "Оценка"
-
-msgid "Attraction image"
-msgstr "Изображение достопримечательности"
-
-msgid "Asosiy sahifada ✓"
-msgstr "На главной странице ✓"
-
-msgid "Available Rooms"
-msgstr "Доступные номера"
+msgid "Asosiy sahifada ko'rsatish / yashirish"
+msgstr "Показать/скрыть на главной странице"
 
 msgid "Asosiy sahifada ko'rsatish / yashirish uchun bosing"
 msgstr "Нажмите, чтобы показать/скрыть на главной странице"
 
-msgid "Back to Tags"
-msgstr "Вернуться к тегам"
+msgid "Asosiy sahifada ✓"
+msgstr "На главной странице ✓"
 
-msgid "Barchasi"
-msgstr "Все"
-
-msgid "Back to Profile"
-msgstr "Вернуться в профиль"
-
-msgid "Attractions (Diqqatga sazovor joylar)"
-msgstr "Достопримечательности"
+msgid "Attraction image"
+msgstr "Изображение достопримечательности"
 
 msgid "Attraction images"
 msgstr "Изображения достопримечательностей"
 
-msgid "Baho bering"
-msgstr "Оцените это"
+msgid "Attractions (Diqqatga sazovor joylar)"
+msgstr "Достопримечательности"
+
+msgid "Available Rooms"
+msgstr "Доступные номера"
+
+msgid "Back to Profile"
+msgstr "Вернуться в профиль"
 
 msgid "Back to Sign In"
 msgstr "Вернуться к входу"
 
+msgid "Back to Tags"
+msgstr "Вернуться к тегам"
+
+msgid "Baho"
+msgstr "Оценка"
+
+msgid "Baho bering"
+msgstr "Baho bering"
+
 msgid "Barcha mehmonxonalar va filtr"
 msgstr "Все отели и фильтр"
+
+msgid "Barcha turlar"
+msgstr "Все виды"
+
+msgid "Barchasi"
+msgstr "Все"
 
 msgid "Bekor qilish"
 msgstr "Отмена"
@@ -2366,17 +2371,8 @@ msgstr "Отмена"
 msgid "Book Your Tour"
 msgstr "Забронируйте тур"
 
-msgid "Barcha turlar"
-msgstr "Все виды"
-
 msgid "Booking Confirmed"
 msgstr "Бронирование подтверждено"
-
-msgid ""
-"Borgan joylaringizdan rasmlar yuklang (Bir nechta rasm tanlashingiz mumkin)"
-msgstr ""
-"Загрузите фотографии мест, где вы были (вы можете выбрать несколько "
-"фотографий)"
 
 msgid "Booking Reference"
 msgstr "Номер бронирования"
@@ -2384,14 +2380,17 @@ msgstr "Номер бронирования"
 msgid "Bookings count"
 msgstr "Количество заказов"
 
-msgid "Call Us"
-msgstr "Позвоните нам"
-
-msgid "Change Password"
-msgstr "Изменить пароль"
+msgid ""
+"Borgan joylaringizdan rasmlar yuklang (Bir nechta rasm tanlashingiz mumkin)"
+msgstr ""
+"Загрузите фотографии мест, где вы были (вы можете выбрать несколько "
+"фотографий)"
 
 msgid "Boshqa (Kategoriyani o'zim kiritaman)"
 msgstr "Другое (сам вхожу в категорию)"
+
+msgid "Boshqa kategoriya (Custom category)"
+msgstr "Другая категория (Пользовательская категория)"
 
 msgid ""
 "Browse icon names at tabler.io/icons — use the name without the 'ti ti-' "
@@ -2400,11 +2399,14 @@ msgstr ""
 "Просмотрите имена значков на tabler.io/icons — используйте имя без префикса "
 "«ti ti-»."
 
-msgid "Category Name"
-msgstr "Название категории"
+msgid "Call Us"
+msgstr "Позвоните нам"
 
-msgid "Boshqa kategoriya (Custom category)"
-msgstr "Другая категория (Пользовательская категория)"
+msgid ""
+"Can't find the answer you're looking for? Our friendly team is here to help."
+msgstr ""
+"Не можете найти ответ, который ищете? Наша дружная команда всегда готова "
+"помочь."
 
 msgid "Cancel — go back"
 msgstr "Отменить — вернуться назад"
@@ -2415,14 +2417,20 @@ msgstr ""
 "В категориях организованы статьи-путеводители (например, «Советы по визе», "
 "«Еда», «Безопасность»)."
 
+msgid "Category Name"
+msgstr "Название категории"
+
+msgid "Category already exists"
+msgstr "Категория уже существует"
+
+msgid "Category created successfully!"
+msgstr "Категория успешно создана!"
+
 msgid "Category name is required"
 msgstr "Укажите название категории."
 
-msgid ""
-"Can't find the answer you're looking for? Our friendly team is here to help."
-msgstr ""
-"Не можете найти ответ, который ищете? Наша дружная команда всегда готова "
-"помочь."
+msgid "Change Password"
+msgstr "Изменить пароль"
 
 msgid "Changes are saved immediately after clicking Save."
 msgstr "Изменения сохраняются сразу после нажатия кнопки «Сохранить»."
@@ -2430,20 +2438,8 @@ msgstr "Изменения сохраняются сразу после нажа
 msgid "Check Your Email"
 msgstr "Проверьте свою электронную почту"
 
-msgid "Category created successfully!"
-msgstr "Категория успешно создана!"
-
-msgid "Confirm Email"
-msgstr "Подтвердите адрес электронной почты"
-
-msgid "Category already exists"
-msgstr "Категория уже существует"
-
 msgid "Click or drag the marker on the map to set the location."
 msgstr "Нажмите или перетащите маркер на карте, чтобы указать местоположение."
-
-msgid "Confirm Email Address"
-msgstr "Подтвердите адрес электронной почты"
 
 msgid "Click tags to select / deselect. Multiple tags allowed."
 msgstr ""
@@ -2453,142 +2449,148 @@ msgstr ""
 msgid "Collapse All"
 msgstr "Свернуть все"
 
-msgid "Confirmation"
-msgstr "Подтверждение"
-
-msgid "Confirm new password"
-msgstr "Подтвердите новый пароль"
-
-msgid "Copied!"
-msgstr "Скопировано!"
+msgid "Comma-separated keywords"
+msgstr "Ключевые слова, разделенные запятыми"
 
 msgid "Configure category details and icon display."
 msgstr "Настройте детали категории и отображение значков."
 
-msgid "Comma-separated keywords"
-msgstr "Ключевые слова, разделенные запятыми"
+msgid "Confirm Email"
+msgstr "Подтвердите адрес электронной почты"
+
+msgid "Confirm Email Address"
+msgstr "Подтвердите адрес электронной почты"
+
+msgid "Confirm new password"
+msgstr "Подтвердите новый пароль"
+
+msgid "Confirmation"
+msgstr "Подтверждение"
+
+msgid "Copied!"
+msgstr "Скопировано!"
 
 msgid "Copy link"
 msgstr "Копировать ссылку"
 
-msgid "Current password"
-msgstr "Текущий пароль"
-
-msgid "Danger"
-msgstr "Опасность"
-
-msgid "Create new category"
-msgstr "Создать новую категорию"
-
-msgid "Day"
-msgstr "День"
+msgid "Copyright text"
+msgstr "Авторский текст"
 
 msgid "Create First FAQ"
 msgstr "Создать первый FAQ"
 
+msgid "Create new category"
+msgstr "Создать новую категорию"
+
 msgid "Create tags"
 msgstr "Создание тегов"
-
-msgid "Current Image"
-msgstr "Текущее изображение"
-
-msgid "Copyright text"
-msgstr "Авторский текст"
-
-msgid "Create your first FAQ question to help customers find answers quickly."
-msgstr ""
-"Создайте свой первый вопрос часто задаваемых вопросов, чтобы помочь клиентам"
-" быстро найти ответы."
 
 msgid "Create your first FAQ category to organize your questions neatly."
 msgstr ""
 "Создайте свою первую категорию часто задаваемых вопросов, чтобы аккуратно "
 "упорядочить свои вопросы."
 
-msgid "Delete FAQ"
-msgstr "Удалить FAQ"
+msgid "Create your first FAQ question to help customers find answers quickly."
+msgstr ""
+"Создайте свой первый вопрос часто задаваемых вопросов, чтобы помочь клиентам"
+" быстро найти ответы."
 
-msgid "Diqqatga sazovor joylar (Attractions):"
-msgstr "Diqqatga sazovor joylar (Attractions):"
+msgid "Current Image"
+msgstr "Текущее изображение"
+
+msgid "Current password"
+msgstr "Текущий пароль"
 
 msgid "Custom category"
 msgstr "Пользовательская категория"
 
-msgid "Diqqatga sazovor joylar"
-msgstr "Достопримечательности"
+msgid "Danger"
+msgstr "Опасность"
 
-msgid "Edit Category"
-msgstr "Изменить категорию"
-
-msgid "Delete this category?"
-msgstr "Удалить эту категорию?"
-
-msgid "Display Order"
-msgstr "Порядок отображения"
+msgid "Day"
+msgstr "День"
 
 msgid "Day-by-Day Itinerary (Marshrut / Kunlar)"
 msgstr "Маршрут по дням (маршрут/дни)"
 
+msgid "Delete FAQ"
+msgstr "Удалить FAQ"
+
+msgid "Delete this category?"
+msgstr "Удалить эту категорию?"
+
 msgid "Delete this tag?"
 msgstr "Удалить этот тег?"
 
-msgid "Email Verification Required"
-msgstr "Требуется подтверждение электронной почты"
+msgid "Diqqatga sazovor joylar"
+msgstr "Достопримечательности"
+
+msgid "Diqqatga sazovor joylar (Attractions):"
+msgstr ""
+"Error 500 (Server Error)!!1500.That’s an error.There was an error. Please "
+"try again later.That’s all we know."
+
+msgid "Display Order"
+msgstr "Порядок отображения"
 
 msgid "Display in home page testimonials"
-msgstr "Отображение отзывов на главной странице"
+msgstr ""
+"Error 500 (Server Error)!!1500.That’s an error.There was an error. Please "
+"try again later.That’s all we know."
+
+msgid "Edit Category"
+msgstr "Изменить категорию"
 
 msgid "Edit FAQ"
 msgstr "Редактировать часто задаваемые вопросы"
 
-msgid "Email Addresses"
-msgstr "Адреса электронной почты"
+msgid "Edit FAQ Category"
+msgstr "Изменить категорию часто задаваемых вопросов"
 
 msgid "Edit Question"
 msgstr "Редактировать вопрос"
+
+msgid "Email Addresses"
+msgstr "Адреса электронной почты"
+
+msgid "Email Sent!"
+msgstr "Письмо отправлено!"
+
+msgid "Email Verification Required"
+msgstr "Требуется подтверждение электронной почты"
+
+msgid "Eng mashhur diqqatga sazovor joylar"
+msgstr "Самые популярные достопримечательности"
 
 msgid "Enter a valid phone number (7–20 digits, +, spaces, - or () allowed)."
 msgstr ""
 "Введите действительный номер телефона (допускается 7–20 цифр, +, пробелы, - "
 "или ()."
 
-msgid "Eng mashhur diqqatga sazovor joylar"
-msgstr "Самые популярные достопримечательности"
-
-msgid "Explore now"
-msgstr "Исследуйте сейчас"
-
-msgid "FAQ"
-msgstr "Часто задаваемые вопросы"
-
-msgid "Edit FAQ Category"
-msgstr "Изменить категорию часто задаваемых вопросов"
-
-msgid "Email Sent!"
-msgstr "Письмо отправлено!"
-
 msgid "Enter and confirm your new password below"
 msgstr "Введите и подтвердите свой новый пароль ниже"
-
-msgid "Expand All"
-msgstr "Развернуть все"
 
 msgid "Enter your email and we'll send you a reset link"
 msgstr "Введите адрес электронной почты, и мы вышлем вам ссылку для сброса"
 
 msgid "Examples: help, credit-card, map-pin, passport, info-circle, plane"
-msgstr "Examples: help, credit-card, map-pin, passport, info-circle, plane"
+msgstr ""
+"Примеры: помощь, кредитная карта, булавка, паспорт, информационный круг, "
+"самолет."
+
+msgid "Expand All"
+msgstr "Развернуть все"
+
+msgid "Explore now"
+msgstr "Исследуйте сейчас"
 
 msgid "Export selected to CSV"
 msgstr "Экспортировать выбранное в CSV"
 
-msgid "FAQ category"
-msgstr "Категория часто задаваемых вопросов"
+msgid "FAQ"
+msgstr "Часто задаваемые вопросы"
 
 msgid "FAQ Categories"
-msgstr "Категории часто задаваемых вопросов"
-
-msgid "FAQ categories"
 msgstr "Категории часто задаваемых вопросов"
 
 msgid "FAQ Management"
@@ -2597,38 +2599,44 @@ msgstr "FAQ Управление"
 msgid "FAQ Questions"
 msgstr "Часто задаваемые вопросы Вопросы"
 
+msgid "FAQ categories"
+msgstr "Категории часто задаваемых вопросов"
+
+msgid "FAQ category"
+msgstr "Категория часто задаваемых вопросов"
+
 msgid "FAQ category created successfully!"
 msgstr "Категория часто задаваемых вопросов успешно создана!"
-
-msgid "FAQ category updated successfully!"
-msgstr "Категория FAQ успешно обновлена!"
-
-msgid "FAQ deleted successfully!"
-msgstr "FAQ успешно удален!"
-
-msgid "FAQs"
-msgstr "Часто задаваемые вопросы"
-
-msgid "FAQ created successfully!"
-msgstr "FAQ успешно создан!"
 
 msgid "FAQ category deleted successfully!"
 msgstr "Категория FAQ успешно удалена!"
 
-msgid "Facebook URL"
-msgstr "URL-адрес Facebook"
+msgid "FAQ category updated successfully!"
+msgstr "Категория FAQ успешно обновлена!"
 
-msgid "Filter"
-msgstr "Filter"
+msgid "FAQ created successfully!"
+msgstr "FAQ успешно создан!"
 
-msgid "Favicon"
-msgstr "Фавикон"
+msgid "FAQ deleted successfully!"
+msgstr "FAQ успешно удален!"
 
 msgid "FAQ updated successfully!"
 msgstr "FAQ успешно обновлен!"
 
+msgid "FAQs"
+msgstr "Часто задаваемые вопросы"
+
+msgid "FAQs Count"
+msgstr "Часто задаваемые вопросы"
+
 msgid "Facebook Pixel ID"
 msgstr "Идентификатор пикселя Facebook"
+
+msgid "Facebook URL"
+msgstr "URL-адрес Facebook"
+
+msgid "Favicon"
+msgstr "Фавикон"
 
 msgid "Fayl oynasidan bir nechta rasmni `Ctrl` yoki `Shift` bosib belgilang."
 msgstr ""
@@ -2637,11 +2645,11 @@ msgstr ""
 msgid "Featured (Asosiy sahifa)"
 msgstr "Рекомендуемые (Главная страница)"
 
-msgid "FAQs Count"
-msgstr "Часто задаваемые вопросы"
-
 msgid "Featured article appears at the top"
 msgstr "Избранная статья появляется вверху"
+
+msgid "Filter"
+msgstr "Фильтр"
 
 msgid ""
 "Find answers to common questions about our tours, booking process, and "
@@ -2650,50 +2658,45 @@ msgstr ""
 "Найдите ответы на распространенные вопросы о наших турах, процессе "
 "бронирования и туристических услугах."
 
-msgid "Frequently Asked Questions"
-msgstr "Часто задаваемые вопросы"
-
 msgid "Footer"
 msgstr "Нижний колонтитул"
 
-msgid "Fotosuratlar galereyasi (Ko'p rasm yuklash)"
-msgstr "Фотогалерея (загрузка нескольких фотографий)"
-
 msgid "Footer text"
-msgstr "Текст нижнего колонтитула"
-
-msgid "GPS coordinates for the map widget"
-msgstr "GPS coordinates for the map widget"
+msgstr ""
+"Error 500 (Server Error)!!1500.That’s an error.There was an error. Please "
+"try again later.That’s all we know."
 
 msgid "Format: +998901234567"
 msgstr "Формат: +998901234567"
 
-msgid "Google Analytics ID"
-msgstr "Идентификатор Google Аналитики"
+msgid "Fotosuratlar galereyasi (Ko'p rasm yuklash)"
+msgstr "Фотогалерея (загрузка нескольких фотографий)"
+
+msgid "Frequently Asked Questions"
+msgstr "Часто задаваемые вопросы"
+
+msgid "GPS coordinates for the map widget"
+msgstr ""
+"Error 500 (Server Error)!!1500.That’s an error.There was an error. Please "
+"try again later.That’s all we know."
 
 msgid "Gallery image"
 msgstr "Изображение галереи"
 
-msgid "Get a Quote"
-msgstr "Получить предложение"
-
-msgid "Holat"
-msgstr "Статус"
-
-msgid "Highest Rated"
-msgstr "Самый высокий рейтинг"
+msgid "Gallery images"
+msgstr "Галерея изображений"
 
 msgid "General Questions"
 msgstr "Общие вопросы"
 
-msgid "Gallery images"
-msgstr "Галерея изображений"
+msgid "Get a Quote"
+msgstr "Получить предложение"
 
 msgid "Go to Sign In"
 msgstr "Перейти к входу"
 
-msgid "Help Center"
-msgstr "Справочный центр"
+msgid "Google Analytics ID"
+msgstr "Идентификатор Google Аналитики"
 
 msgid "Group similar questions together"
 msgstr "Сгруппируйте похожие вопросы вместе"
@@ -2704,25 +2707,40 @@ msgstr "Категории гидов"
 msgid "Havolani nusxalash"
 msgstr "Скопируйте ссылку"
 
-msgid "Hold Ctrl to select multiple attractions for this day"
-msgstr ""
-"Удерживайте Ctrl, чтобы выбрать несколько достопримечательностей на этот "
-"день."
-
-msgid "Hero slides"
-msgstr "Героические слайды"
+msgid "Help Center"
+msgstr "Справочный центр"
 
 msgid "Hero slide"
 msgstr "Герой слайд"
 
-msgid "Hozircha diqqatga sazovor joylar yo'q."
-msgstr "Пока нет ярких моментов."
+msgid "Hero slides"
+msgstr "Героические слайды"
+
+msgid "Highest Rated"
+msgstr "Самый высокий рейтинг"
+
+msgid "Holat"
+msgstr "Статус"
+
+msgid "Hold Ctrl to select multiple attractions for this day"
+msgstr ""
+"Удерживайте Ctrl, чтобы выбрать несколько достопримечательностей на этот "
+"день."
 
 msgid "Hotel categories"
 msgstr "Категории отелей"
 
 msgid "Hotel category"
 msgstr "Категория отеля"
+
+msgid "Hozircha diqqatga sazovor joylar kiritilmagan."
+msgstr "Достопримечательности пока не добавлены."
+
+msgid "Hozircha diqqatga sazovor joylar yo'q."
+msgstr "Пока нет ярких моментов."
+
+msgid "Hozircha mehmonxonalar kiritilmagan."
+msgstr "Отели еще не включены."
 
 msgid "Hozircha qulayliklar yo'q. 'Yangi Qulaylik Qo'shish' tugmasini bosing."
 msgstr "Никаких удобств пока нет. Нажмите кнопку «Добавить новую функцию»."
@@ -2734,11 +2752,8 @@ msgstr ""
 "Комментариев к этому типу пока нет. Будьте первым, кто напишет свое "
 "впечатление!"
 
-msgid "Hozircha mehmonxonalar kiritilmagan."
-msgstr "Отели еще не включены."
-
-msgid "Hozircha diqqatga sazovor joylar kiritilmagan."
-msgstr "Достопримечательности пока не добавлены."
+msgid "Icon & Category Name"
+msgstr "Значок и название категории"
 
 msgid "Ikonka nomi (ixtiyoriy)"
 msgstr "Название значка (необязательно)"
@@ -2746,50 +2761,42 @@ msgstr "Название значка (необязательно)"
 msgid "Iltimos, shakldagi xatoliklarni to'g'rilang."
 msgstr "Пожалуйста, исправьте ошибки в форме."
 
-msgid "Info"
-msgstr "Информация"
-
-msgid "Internal"
-msgstr "Внутренний"
-
 msgid "Inactive articles are hidden from the site"
 msgstr "Неактивные статьи скрыты с сайта."
 
-msgid "Icon & Category Name"
-msgstr "Значок и название категории"
+msgid "Info"
+msgstr ""
+"Error 500 (Server Error)!!1500.That’s an error.There was an error. Please "
+"try again later.That’s all we know."
 
 msgid "Instagram URL"
 msgstr "URL-адрес Instagram"
 
-msgid "Ismingiz / Username"
-msgstr "Ваше имя / Имя пользователя"
+msgid "Internal"
+msgstr "Внутренний"
 
 msgid "Invalid JSON"
 msgstr "Неверный JSON"
 
-msgid "Is featured on home page"
-msgstr "Размещен на главной странице"
-
-msgid "Joy ma'lumotlari"
-msgstr "Информация о местоположении"
-
-msgid "Joylar"
-msgstr "Места"
-
 msgid "Invalid Link"
 msgstr "Неверная ссылка"
 
-msgid "Joy Nomi"
-msgstr "Название места"
+msgid "Is featured on home page"
+msgstr "Is featured on home page"
+
+msgid "Ismingiz / Username"
+msgstr "Ваше имя / Имя пользователя"
 
 msgid "Javob saqlash"
 msgstr "Сохранить ответ"
 
-msgid "Kategoriya nomini kiriting..."
-msgstr "Введите название категории..."
+msgid "Joy Nomi"
+msgstr "Название места"
 
-msgid "Kun №"
-msgstr "Когда №"
+msgid "Joy ma'lumotlari"
+msgstr ""
+"Error 500 (Server Error)!!1500.That’s an error.There was an error. Please "
+"try again later.That’s all we know."
 
 msgid "Joy nomini qidirish…"
 msgstr "Поиск по названию места…"
@@ -2800,23 +2807,47 @@ msgstr ""
 "Вы можете выбрать несколько (5–6+) изображений для локации и загрузить их "
 "одновременно."
 
+msgid "Joylar"
+msgstr "Места"
+
+msgid "Kategoriya nomini kiriting..."
+msgstr "Введите название категории..."
+
 msgid "Keyingi 10 ta"
 msgstr "Следующие 10"
-
-msgid "Kunning tavsifi (Description)"
-msgstr "Описание дня (Описание)"
 
 msgid "Kun sarlavhasi (Title)"
 msgstr "Название дня"
 
-msgid "Links shown in the footer and contact page"
-msgstr "Ссылки показаны в нижнем колонтитуле и на странице контактов."
+msgid "Kun №"
+msgstr "Когда №"
+
+msgid "Kunning tavsifi (Description)"
+msgstr "Описание дня (Описание)"
+
+msgid "Last saved auto-syncs"
+msgstr "Последняя сохраненная автосинхронизация"
+
+msgid "Level"
+msgstr "Уровень"
 
 msgid "Link"
 msgstr "Связь"
 
-msgid "Level"
-msgstr "Уровень"
+msgid "Linked Items"
+msgstr "Связанные элементы"
+
+msgid "LinkedIn URL"
+msgstr "URL-адрес LinkedIn"
+
+msgid "Links shown in the footer and contact page"
+msgstr "Ссылки показаны в нижнем колонтитуле и на странице контактов."
+
+msgid "Location & Map"
+msgstr "Местоположение и карта"
+
+msgid "Logo"
+msgstr "Логотип"
 
 msgid "Lower numbers appear first within the category."
 msgstr "Меньшие числа появляются первыми в категории."
@@ -2824,98 +2855,84 @@ msgstr "Меньшие числа появляются первыми в кат�
 msgid "Lower numbers appear first."
 msgstr "Меньшие числа появляются первыми."
 
-msgid "Last saved auto-syncs"
-msgstr "Последняя сохраненная автосинхронизация"
-
-msgid "Logo"
-msgstr "Логотип"
-
-msgid "LinkedIn URL"
-msgstr "URL-адрес LinkedIn"
-
-msgid "Linked Items"
-msgstr "Связанные элементы"
-
-msgid "Manage Categories"
-msgstr "Управление категориями"
-
-msgid "Location & Map"
-msgstr "Местоположение и карта"
-
-msgid "Mamlakat"
-msgstr "Страна"
-
-msgid "Manage Email"
-msgstr "Управление электронной почтой"
+msgid "Ma'lumot berilmagan"
+msgstr "Информация не предоставлена"
 
 msgid "Make primary"
 msgstr "Сделать основным"
 
-msgid "Ma'lumot berilmagan"
-msgstr "Информация не предоставлена"
+msgid "Mamlakat"
+msgstr "Страна"
 
-msgid "Manzil"
-msgstr "Адрес"
+msgid "Manage Categories"
+msgstr "Управление категориями"
+
+msgid "Manage Email"
+msgstr "Управление электронной почтой"
 
 msgid "Manage questions and answers displayed on the public FAQ page."
 msgstr ""
 "Управляйте вопросами и ответами, отображаемыми на общедоступной странице "
 "часто задаваемых вопросов."
 
-msgid "Mark selected as Cancelled"
-msgstr "Отметить выбранное как отмененное"
-
-msgid "Mark selected as Confirmed"
-msgstr "Отметить выбранное как подтвержденное"
-
-msgid "Mark selected as Completed"
-msgstr "Отметить выбранное как завершенное"
-
 msgid "Manage your contact details, location, and social media links"
 msgstr ""
 "Управляйте своими контактными данными, местоположением и ссылками на "
 "социальные сети."
 
-msgid "Mehmonxonalar"
-msgstr "Отели"
+msgid "Manzil"
+msgstr "Адрес"
+
+msgid "Mark selected as Cancelled"
+msgstr "Отметить выбранное как отмененное"
+
+msgid "Mark selected as Completed"
+msgstr "Отметить выбранное как завершенное"
+
+msgid "Mark selected as Confirmed"
+msgstr "Отметить выбранное как подтвержденное"
 
 msgid "Mavjud galereya rasmlari"
 msgstr "Доступные изображения галереи"
 
+msgid "Max days"
+msgstr "Макс. дней"
+
 msgid "Max price"
 msgstr "Максимальная цена"
-
-msgid "Muallif"
-msgstr "Автор"
-
-msgid ""
-"Mehmonxona uchun bir nechta (5-6+ ta) rasm tanlab bir vaqtda yuklashingiz "
-"mumkin."
-msgstr "Вы можете загрузить несколько (5-6+) фотографий отеля одновременно."
 
 msgid "Max price/night"
 msgstr "Максимальная цена/ночь"
 
-msgid "Max days"
-msgstr "Макс. дней"
+msgid ""
+"Mehmonxona uchun bir nechta (5-6+ ta) rasm tanlab bir vaqtda yuklashingiz "
+"mumkin."
+msgstr ""
+"Вы можете выбрать несколько (5-6+) изображений для отеля и загрузить их "
+"одновременно."
 
-msgid "Min price"
-msgstr "Минимальная цена"
+msgid "Mehmonxonalar"
+msgstr "Отели"
 
 msgid "Meta keywords"
 msgstr "Мета-ключевые слова"
 
-msgid "Most Viewed"
-msgstr "Самые просматриваемые"
-
 msgid "Min days"
 msgstr "Мин дней"
+
+msgid "Min price"
+msgstr "Минимальная цена"
+
+msgid "Most Viewed"
+msgstr "Самые просматриваемые"
 
 msgid "Most Viewed Articles"
 msgstr "Самые просматриваемые статьи"
 
-msgid "New"
-msgstr "Новый"
+msgid "Muallif"
+msgstr ""
+"Error 500 (Server Error)!!1500.That’s an error.There was an error. Please "
+"try again later.That’s all we know."
 
 msgid "My location"
 msgstr "Мое местоположение"
@@ -2923,35 +2940,36 @@ msgstr "Мое местоположение"
 msgid "Name is required"
 msgstr "Требуется имя"
 
+msgid "New"
+msgstr "Новый"
+
+msgid "New FAQ"
+msgstr ""
+"Error 500 (Server Error)!!1500.That’s an error.There was an error. Please "
+"try again later.That’s all we know."
+
+msgid "New FAQ Category"
+msgstr "Новая категория часто задаваемых вопросов"
+
 msgid "New Tag"
 msgstr "Новый тег"
 
 msgid "Next"
 msgstr "Следующий"
 
-msgid "New FAQ"
-msgstr "Новый FAQ"
+msgid "Nights spent in this city"
+msgstr "Ночи, проведенные в этом городе"
 
-msgid "New FAQ Category"
-msgstr "Новая категория часто задаваемых вопросов"
-
-msgid "O'chirish"
-msgstr "Выключать"
-
-msgid "No FAQs Yet"
-msgstr "Пока нет часто задаваемых вопросов"
+msgid "No Categories Found"
+msgstr "Категории не найдены"
 
 msgid "No FAQs Available Yet"
 msgstr "Часто задаваемых вопросов пока нет"
 
-msgid "Nights spent in this city"
-msgstr "Ночи, проведенные в этом городе"
-
-msgid "No tags yet."
-msgstr "Тегов пока нет."
-
-msgid "No Categories Found"
-msgstr "Категории не найдены"
+msgid "No FAQs Yet"
+msgstr ""
+"Error 500 (Server Error)!!1500.That’s an error.There was an error. Please "
+"try again later.That’s all we know."
 
 msgid "No alt text"
 msgstr "Нет альтернативного текста"
@@ -2959,8 +2977,14 @@ msgstr "Нет альтернативного текста"
 msgid "No tags found."
 msgstr "Теги не найдены."
 
+msgid "No tags yet."
+msgstr "Тегов пока нет."
+
 msgid "Null = broadcast to all staff"
 msgstr "Null = трансляция всем сотрудникам"
+
+msgid "O'chirish"
+msgstr "Выключать"
 
 msgid "Oldingi"
 msgstr "Предыдущий"
@@ -2968,40 +2992,27 @@ msgstr "Предыдущий"
 msgid "Optional"
 msgstr "Необязательный"
 
-msgid "Orqaga"
-msgstr "Назад"
-
-msgid "Prev"
-msgstr "Предыдущий"
-
 msgid "Organize FAQ questions into dynamic categories for your customers."
 msgstr ""
 "Организуйте часто задаваемые вопросы в динамические категории для ваших "
 "клиентов."
 
-msgid "Photo"
-msgstr "Фото"
-
-msgid "Primary"
-msgstr "Начальный"
-
-msgid "Phone numbers and email addresses"
-msgstr "Номера телефонов и адреса электронной почты"
-
-msgid "Pricing"
-msgstr "Цены"
+msgid "Orqaga"
+msgstr "Назад"
 
 msgid "Password Changed"
 msgstr "Пароль изменен"
 
-msgid "Question"
-msgstr "Вопрос"
-
 msgid "Password Updated!"
 msgstr "Пароль обновлен!"
 
-msgid "Publish selected articles"
-msgstr "Опубликовать избранные статьи"
+msgid "Phone numbers and email addresses"
+msgstr ""
+"Error 500 (Server Error)!!1500.That’s an error.There was an error. Please "
+"try again later.That’s all we know."
+
+msgid "Photo"
+msgstr "Фото"
 
 msgid ""
 "Please verify your email address before accessing this page. Check your "
@@ -3010,119 +3021,143 @@ msgstr ""
 "Пожалуйста, подтвердите свой адрес электронной почты перед доступом к этой "
 "странице. Проверьте свой почтовый ящик на наличие ссылки для подтверждения."
 
-msgid "Qulaylik Qo'shish"
-msgstr "Добавить удобство"
+msgid "Prev"
+msgstr "Предыдущий"
+
+msgid "Pricing"
+msgstr "Цены"
+
+msgid "Primary"
+msgstr "Начальный"
+
+msgid "Publish selected articles"
+msgstr "Опубликовать избранные статьи"
 
 msgid "Publishing"
 msgstr "Издательский"
 
-msgid "Rasmlar"
-msgstr "Картинки"
-
-msgid "Qulayliklarni Tanlang (✓)"
-msgstr "Выберите удобства (✓)"
-
-msgid "Read"
-msgstr "Читать"
+msgid "Question"
+msgstr "Вопрос"
 
 msgid "Question & Answer"
 msgstr "Вопрос и ответ"
 
-msgid "Rad etish"
-msgstr "Отказ"
-
-msgid "Rasmlar (Photos)"
-msgstr "Фотографии"
-
-msgid "Qulaylikni Tahrirlash"
-msgstr "Изменить удобство"
-
-msgid "Reset Password"
-msgstr "Сбросить пароль"
-
-msgid "Recipient"
-msgstr "Получатель"
-
-msgid "Resend"
-msgstr "Отправить повторно"
+msgid "Qulaylik Qo'shish"
+msgstr "Добавить удобство"
 
 msgid "Qulaylik nomi"
 msgstr "Название объекта"
 
-msgid "Request a New Link"
-msgstr "Запросить новую ссылку"
+msgid "Qulayliklarni Tanlang (✓)"
+msgstr "Выберите удобства (✓)"
 
-msgid "Remove day"
-msgstr "Удалить день"
+msgid "Qulaylikni Tahrirlash"
+msgstr "Изменить удобство"
 
-msgid "Reviewer"
-msgstr "Рецензент"
+msgid "Rad etish"
+msgstr "Отказ"
+
+msgid "Rasmlar"
+msgstr "Картинки"
+
+msgid "Rasmlar (Photos)"
+msgstr "Фотографии"
+
+msgid "Read"
+msgstr "Читать"
+
+msgid "Recipient"
+msgstr "Получатель"
 
 msgid "Reject selected reviews"
 msgstr "Отклонить выбранные отзывы"
 
-msgid "Saqlash"
-msgstr "Сохранять"
+msgid "Remove day"
+msgstr "Удалить день"
 
-msgid "SEO"
-msgstr "SEO"
+msgid "Request a New Link"
+msgstr "Запросить новую ссылку"
+
+msgid "Resend"
+msgstr "Отправить повторно"
 
 msgid "Resend Verification Email"
 msgstr "Повторно отправить письмо с подтверждением"
 
-msgid "Reset Your Password"
+msgid "Reset Password"
 msgstr "Сбросить пароль"
 
-msgid "Review images"
-msgstr "Просмотр изображений"
+msgid "Reset Your Password"
+msgstr "Сбросить пароль"
 
 msgid "Review image"
 msgstr "Обзор изображения"
 
+msgid "Review images"
+msgstr "Просмотр изображений"
+
+msgid "Reviewer"
+msgstr "Рецензент"
+
 msgid "Reyting bo'yicha filter"
 msgstr "Фильтровать по рейтингу"
 
-msgid "Save New Password"
-msgstr "Сохранить новый пароль"
+msgid "SEO"
+msgstr "SEO"
 
 msgid "SEO & Analytics"
 msgstr "SEO и аналитика"
 
-msgid "Save Settings"
-msgstr "Сохранить настройки"
+msgid "Saqlash"
+msgstr "Сохранять"
 
-msgid "Search tags…"
-msgstr "Поиск по тегам…"
-
-msgid "Sayt Tarjimalari (Rosetta)"
-msgstr "Переводы сайтов (Розетта)"
-
-msgid "Save Tag"
-msgstr "Сохранить тег"
-
-msgid "Secondary email"
-msgstr "Дополнительный адрес электронной почты"
-
-msgid "Search city or address..."
-msgstr "Поиск города или адреса..."
-
-msgid "Send Reset Link"
-msgstr "Отправить ссылку для сброса"
-
-msgid "Secondary phone"
-msgstr "Дополнительный телефон"
+msgid "Save New Password"
+msgstr "Сохранить новый пароль"
 
 msgid "Save Question"
 msgstr "Сохранить вопрос"
 
-msgid "Set New Password"
-msgstr "Установить новый пароль"
+msgid "Save Settings"
+msgstr "Сохранить настройки"
+
+msgid "Save Tag"
+msgstr "Сохранить тег"
+
+msgid "Sayt Tarjimalari (Rosetta)"
+msgstr "Переводы сайтов (Розетта)"
+
+msgid "Search city or address..."
+msgstr "Поиск города или адреса..."
+
+msgid "Search tags…"
+msgstr "Поиск по тегам…"
 
 msgid "Seats left"
 msgstr "Осталось мест"
 
+msgid "Secondary email"
+msgstr "Дополнительный адрес электронной почты"
+
+msgid "Secondary phone"
+msgstr "Дополнительный телефон"
+
+msgid "Send Reset Link"
+msgstr "Отправить ссылку для сброса"
+
 msgid "Sequence in the itinerary: 1, 2, 3…"
 msgstr "Последовательность в маршруте: 1, 2, 3…"
+
+msgid "Set New Password"
+msgstr "Установить новый пароль"
+
+msgid "Settings & FAQ"
+msgstr "Настройки и часто задаваемые вопросы"
+
+msgid "Shahar"
+msgstr "Город"
+
+msgid "Shahar / Davlat"
+msgstr "Город/штат"
 
 msgid "Sharhga javob yozish..."
 msgstr "Ответ на комментарий..."
@@ -3130,23 +3165,13 @@ msgstr "Ответ на комментарий..."
 msgid "Sharhlar va Taassurotlar"
 msgstr "Отзывы и впечатления"
 
-msgid "Shahar"
-msgstr "Город"
-
-msgid "Site Settings"
-msgstr "Site Settings"
-
-msgid "Settings & FAQ"
-msgstr "Настройки и часто задаваемые вопросы"
-
-msgid "Shahar / Davlat"
-msgstr "Shahar / Davlat"
-
-msgid "Site name"
-msgstr "Название сайта"
-
 msgid "Sharhni saqlash"
 msgstr "Сохранить комментарий"
+
+msgid "Shown as tooltip or used by screen readers."
+msgstr ""
+"Отображается как всплывающая подсказка или используется программами чтения с"
+" экрана."
 
 msgid "Sign Out?"
 msgstr "Выход?"
@@ -3154,76 +3179,62 @@ msgstr "Выход?"
 msgid "Site Information"
 msgstr "Информация о сайте"
 
+msgid "Site Settings"
+msgstr "Настройки сайта"
+
+msgid "Site name"
+msgstr "Название сайта"
+
+msgid "Site settings"
+msgstr "Настройки сайта"
+
 msgid "Site settings updated successfully!"
 msgstr "Настройки сайта успешно обновлены!"
 
 msgid "Sitemap"
 msgstr "Карта сайта"
 
-msgid "Sort By"
-msgstr "Сортировать по"
+msgid "Slide Details"
+msgstr "Подробности слайда"
 
 msgid "Slug will be auto-generated from the tag name."
 msgstr "Слаг будет автоматически создан на основе имени тега."
 
-msgid "Site settings"
-msgstr "Настройки сайта"
-
-msgid "Slide Details"
-msgstr "Подробности слайда"
-
-msgid "Shown as tooltip or used by screen readers."
-msgstr ""
-"Отображается как всплывающая подсказка или используется программами чтения с"
-" экрана."
-
 msgid "Social Media Links"
 msgstr "Ссылки на социальные сети"
 
-msgid "Stats"
-msgstr "Статистика"
-
-msgid "Success"
-msgstr "Success"
-
-msgid "Sort: Newest"
-msgstr "Sort: Newest"
-
-msgid "Staff Login"
-msgstr "Вход для сотрудников"
+msgid "Sort By"
+msgstr "Сортировать по"
 
 msgid "Sort: Least Viewed ↑"
-msgstr "Sort: Least Viewed ↑"
-
-msgid "Tanlangan"
-msgstr "Tanlangan"
+msgstr "Сортировать: наименее просматриваемые ↑"
 
 msgid "Sort: Most Viewed ↓"
 msgstr "Сортировать: Самые просматриваемые ↓"
 
+msgid "Sort: Newest"
+msgstr "Сортировать: Самый новый"
+
 msgid "Starting from"
 msgstr "Начиная с"
 
-msgid "Tahrirlash"
-msgstr "Редактирование"
+msgid "Stats"
+msgstr "Статистика"
 
 msgid "Status & Visibility"
 msgstr "Статус и видимость"
 
-msgid "Taassurotlaringiz va fikrlaringiz"
-msgstr "Taassurotlaringiz va fikrlaringiz"
-
 msgid "Still Have Questions?"
-msgstr "Still Have Questions?"
+msgstr "Все еще есть вопросы?"
 
-msgid "Tanlash"
-msgstr "Выбирать"
+msgid "Success"
+msgstr "Успех"
 
-msgid "Tabler ikonka nomi (masalan: wifi, swimming, bar)"
-msgstr "Название значка таблицы (например: Wi-Fi, плавание, бар)"
+msgid "Taassurotlaringiz va fikrlaringiz"
+msgstr "Ваши впечатления и мысли"
 
 msgid "Tabler Icon Name"
-msgstr "Tabler Icon Name"
+msgstr "Имя значка таблицы"
 
 msgid ""
 "Tabler icon name, e.g. help, credit-card, map-pin, passport, info-circle."
@@ -3231,22 +3242,46 @@ msgstr ""
 "Имя значка таблицы, например. помощь, кредитная карта, карта-булавка, "
 "паспорт, информационный круг."
 
+msgid "Tabler ikonka nomi (masalan: wifi, swimming, bar)"
+msgstr "Название значка таблицы (например: Wi-Fi, плавание, бар)"
+
 msgid "Tagline"
 msgstr "Слоган"
 
+msgid "Tahrirlash"
+msgstr "Редактирование"
+
+msgid "Tanlangan"
+msgstr "Выбрано"
+
 msgid "Tanlanmagan"
 msgstr "Не выбрано"
+
+msgid "Tanlash"
+msgstr "Выбирать"
+
+msgid "Tasdiqlangan"
+msgstr "Подтвержденный"
+
+msgid "Tasdiqlash"
+msgstr "Подтверждение"
 
 msgid "Tashrif buyurgan joylaringizdan olgan rasmlarni bir vaqtda tanlang."
 msgstr ""
 "Выберите фотографии, сделанные вами в местах, которые вы посетили в то же "
 "время."
 
-msgid "Tasdiqlangan"
-msgstr "Tasdiqlangan"
-
 msgid "Tashrif sanasi"
 msgstr "Дата посещения"
+
+msgid "Tavsif kiritilmagan."
+msgstr "Описание не включено."
+
+msgid "Telegram URL"
+msgstr "URL-адрес телеграммы"
+
+msgid "Terms of Service"
+msgstr "Условия использования"
 
 msgid ""
 "Thank you for booking with UNITUR travel agency. A confirmation email has "
@@ -3255,24 +3290,6 @@ msgstr ""
 "Благодарим вас за бронирование в туристическом агентстве UNITUR. Письмо с "
 "подтверждением было отправлено на адрес"
 
-msgid "Tasdiqlash"
-msgstr "Подтверждение"
-
-msgid "Tavsif kiritilmagan."
-msgstr "Описание не включено."
-
-msgid "This field is required."
-msgstr "Это поле обязательно к заполнению."
-
-msgid "Thank you! Your review has been saved."
-msgstr "Thank you! Your review has been saved."
-
-msgid "Telegram URL"
-msgstr "URL-адрес телеграммы"
-
-msgid "This password reset link is invalid or has expired."
-msgstr "This password reset link is invalid or has expired."
-
 msgid ""
 "Thank you for booking with UNITUR travel agency. Our team will contact you "
 "shortly on"
@@ -3280,17 +3297,11 @@ msgstr ""
 "Благодарим вас за бронирование в туристическом агентстве UNITUR. Наша "
 "команда свяжется с вами в ближайшее время"
 
-msgid "Terms of Service"
-msgstr "Условия использования"
-
-msgid "Toifa"
-msgstr "Категория"
-
 msgid "Thank you! We'll be in touch within 24 hours."
 msgstr "Спасибо! Мы свяжемся с вами в течение 24 часов."
 
-msgid "This confirmation link is invalid or has expired."
-msgstr "This confirmation link is invalid or has expired."
+msgid "Thank you! Your review has been saved."
+msgstr "Спасибо! Ваш отзыв сохранен."
 
 msgid ""
 "This FAQ will be permanently deleted and will no longer appear on your "
@@ -3299,26 +3310,49 @@ msgstr ""
 "Этот FAQ будет удален без возможности восстановления и больше не появится на"
 " вашем сайте."
 
-msgid "Toifa Qo'shish"
-msgstr "Toifa Qo'shish"
+msgid "This action cannot be undone"
+msgstr "Это действие нельзя отменить."
+
+msgid "This confirmation link is invalid or has expired."
+msgstr ""
+"Эта ссылка для подтверждения недействительна или срок ее действия истек."
+
+msgid "This field is required."
+msgstr "Это поле обязательно к заполнению."
+
+msgid "This password reset link is invalid or has expired."
+msgstr ""
+"Эта ссылка для сброса пароля недействительна или срок ее действия истек."
 
 msgid "Timestamps"
 msgstr "Временные метки"
 
+msgid "Toifa"
+msgstr "Категория"
+
+msgid "Toifa Qo'shish"
+msgstr "Добавить категорию"
+
+msgid "Toifa nomi"
+msgstr "Название категории"
+
 msgid "Tour Details"
 msgstr "Детали тура"
 
-msgid "This action cannot be undone"
-msgstr "Это действие нельзя отменить."
+msgid "Tour created."
+msgstr "Тур создан."
 
-msgid "Toifa nomi"
-msgstr "Toifa nomi"
+msgid "Tour itinerary:"
+msgstr "Маршрут тура:"
 
 msgid "Tour updated."
 msgstr "Тур обновлен."
 
-msgid "Tour itinerary:"
-msgstr "Маршрут тура:"
+msgid "Tours in"
+msgstr "Туры в"
+
+msgid "Travel Details"
+msgstr "Детали путешествия"
 
 msgid "Travel Guides"
 msgstr "Путеводители"
@@ -3326,31 +3360,25 @@ msgstr "Путеводители"
 msgid "Travel Info"
 msgstr "Информация о путешествии"
 
+msgid ""
+"Tugmani bossangiz bir nechta joylarni tanlash mumkin (Ctrl tugmasini bosib "
+"turing)"
+msgstr "Несколько областей можно выбрать, удерживая клавишу Ctrl."
+
 msgid "Tur kategoriyasi (Category)"
 msgstr "Тип категории (Категория)"
 
 msgid "Turlar"
 msgstr "Типы"
 
-msgid "Tour created."
-msgstr "Тур создан."
+msgid "Twitter URL"
+msgstr "URL-адрес Твиттера"
 
-msgid "Tours in"
-msgstr "Туры в"
+msgid "Uncategorized"
+msgstr "Без категории"
 
-msgid "UNITUR Admin Javobi:"
-msgstr "Ответ администратора UNITUR:"
-
-msgid "Travel Details"
-msgstr "Детали путешествия"
-
-msgid ""
-"Tugmani bossangiz bir nechta joylarni tanlash mumkin (Ctrl tugmasini bosib "
-"turing)"
-msgstr "Несколько областей можно выбрать, удерживая клавишу Ctrl."
-
-msgid "User agent"
-msgstr "Пользовательский агент"
+msgid "Unpublish selected articles"
+msgstr "Отменить публикацию выбранных статей"
 
 msgid "Unverified"
 msgstr "Непроверенный"
@@ -3358,66 +3386,47 @@ msgstr "Непроверенный"
 msgid "Update Password"
 msgstr "Обновить пароль"
 
+msgid "Use my location"
+msgstr ""
+"Error 500 (Server Error)!!1500.That’s an error.There was an error. Please "
+"try again later.That’s all we know."
+
+msgid "User agent"
+msgstr "Пользовательский агент"
+
 msgid "Users"
 msgstr "Пользователи"
-
-msgid "Ushbu tur haqida taassurotingiz va rasmlaringizni ulashing"
-msgstr "Поделитесь своими впечатлениями и фотографиями об этом туре."
 
 msgid "Ushbu kunda boriladigan diqqatga sazovor joylar (Attractions):"
 msgstr "Достопримечательности, которые стоит посетить в этот день:"
 
+msgid "Ushbu kunni o'chirish"
+msgstr "Удалить этот день"
+
+msgid "Ushbu tur haqida taassurotingiz va rasmlaringizni ulashing"
+msgstr "Поделитесь своими впечатлениями и фотографиями об этом туре."
+
 msgid "Verified"
 msgstr "Проверено"
-
-msgid "Use my location"
-msgstr "Использовать мое местоположение"
-
-msgid "Twitter URL"
-msgstr "URL-адрес Твиттера"
-
-msgid "Username"
-msgstr "Имя пользователя"
-
-msgid "Uncategorized"
-msgstr "Без категории"
 
 msgid "Verify Your Email"
 msgstr "Подтвердите свой адрес электронной почты"
 
-msgid "Ushbu kunni o'chirish"
-msgstr "Удалить этот день"
-
-msgid "Unpublish selected articles"
-msgstr "Отменить публикацию выбранных статей"
-
 msgid "Views"
 msgstr "Просмотры"
-
-msgid "Warning"
-msgstr "Предупреждение"
-
-msgid "WhatsApp number"
-msgstr "номер WhatsApp"
 
 msgid "Visibility"
 msgstr "Видимость"
 
-msgid "Yana ko'proq ko'rsatish"
-msgstr "Показать больше"
+msgid "Visit Website"
+msgstr "Посетите веб-сайт"
+
+msgid "Warning"
+msgstr "Предупреждение"
 
 msgid "We're working on adding helpful information. Please check back soon!"
 msgstr ""
 "Мы работаем над добавлением полезной информации. Пожалуйста, зайдите позже!"
-
-msgid "Yangi Joy Qo'shish"
-msgstr "Добавить новое местоположение"
-
-msgid "Yangi Qulaylik Qo'shish"
-msgstr "Добавить новую функцию"
-
-msgid "Visit Website"
-msgstr "Посетите веб-сайт"
 
 msgid ""
 "We've sent a password reset link to your email address. Check your inbox and"
@@ -3426,41 +3435,52 @@ msgstr ""
 "Мы отправили ссылку для сброса пароля на ваш адрес электронной почты. "
 "Проверьте свой почтовый ящик и следуйте инструкциям."
 
-msgid "Yangi Toifa Qo'shish"
-msgstr "Добавить новую категорию"
-
-msgid "YouTube URL"
-msgstr "URL-адрес YouTube"
-
-msgid "Yangi rasmlar yuklash (Ko'p fayl tanlang)"
-msgstr "Загрузить новые изображения (выбрать несколько файлов)"
-
-msgid "Yes, Sign Out"
-msgstr "Да, выйти"
+msgid "WhatsApp number"
+msgstr "номер WhatsApp"
 
 msgid "Write clear questions and helpful answers for your visitors."
 msgstr "Пишите четкие вопросы и полезные ответы для посетителей."
 
+msgid "Xarita havolasi biriktirilmagan."
+msgstr "Ссылка на карту не прикреплена."
+
 msgid "Xaritada ko`rish"
 msgstr "Посмотреть на карте"
+
+msgid "Yana ko'proq ko'rsatish"
+msgstr ""
+"Error 500 (Server Error)!!1500.That’s an error.There was an error. Please "
+"try again later.That’s all we know."
+
+msgid "Yangi Joy Qo'shish"
+msgstr "Добавить новое местоположение"
+
+msgid "Yangi Qulaylik Qo'shish"
+msgstr "Добавить новую функцию"
 
 msgid "Yangi Toifa"
 msgstr "Новая категория"
 
-msgid "Xarita havolasi biriktirilmagan."
-msgstr "Ссылка на карту не прикреплена."
+msgid "Yangi Toifa Qo'shish"
+msgstr "Добавить новую категорию"
 
-msgid "booked"
-msgstr "забронировано"
+msgid "Yangi rasmlar yuklash (Ko'p fayl tanlang)"
+msgstr "Загрузить новые изображения (выбрать несколько файлов)"
 
 msgid "Yes, Delete FAQ"
 msgstr "Да, удалить FAQ"
 
-msgid "people"
-msgstr "люди"
+msgid "Yes, Sign Out"
+msgstr "Да, выйти"
 
-msgid "leave empty to keep current"
-msgstr "оставьте пустым, чтобы быть в курсе"
+msgid "YouTube URL"
+msgstr "URL-адрес YouTube"
+
+msgid "Your Info"
+msgstr "Ваша информация"
+
+msgid "Your email addresses"
+msgstr "Ваши адреса электронной почты"
 
 msgid ""
 "Your password has been changed successfully. You can now sign in with your "
@@ -3469,26 +3489,23 @@ msgstr ""
 "Ваш пароль был успешно изменен. Теперь вы можете войти в систему с новым "
 "паролем."
 
-msgid "Your Info"
-msgstr "Ваша информация"
-
-msgid "Your email addresses"
-msgstr "Ваши адреса электронной почты"
-
-msgid "night"
-msgstr "ночь"
-
-msgid "total reads"
-msgstr "общее количество прочтений"
+msgid "booked"
+msgstr "забронировано"
 
 msgid "guests"
 msgstr "гости"
 
+msgid "leave empty to keep current"
+msgstr "оставьте пустым, чтобы быть в курсе"
+
+msgid "night"
+msgstr "ночь"
+
+msgid "people"
+msgstr "люди"
+
+msgid "total reads"
+msgstr "общее количество прочтений"
+
 msgid "views"
 msgstr "просмотры"
-
-msgid "Dunyoning eng go'zal joylarini kashf eting"
-msgstr "Откройте для себя самые красивые места мира"
-
-msgid "Dunyoning eng go'zal joylarini kashf eting."
-msgstr "Откройте для себя самые красивые места мира."

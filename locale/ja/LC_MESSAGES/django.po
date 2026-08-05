@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: travel_pro 1.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-08-05 16:30+0000\n"
-"PO-Revision-Date: 2026-08-05 16:30+0000\n"
+"POT-Creation-Date: 2026-08-05 16:37+0000\n"
+"PO-Revision-Date: 2026-08-05 16:37+0000\n"
 "Last-Translator: Travel Pro Team\n"
 "Language-Team: ja\n"
 "Language: ja\n"
@@ -2160,97 +2160,95 @@ msgstr "おすすめのスポット"
 msgid "Ko'rish"
 msgstr "見る"
 
+msgid "+ Kun qo'shish (Add Day)"
+msgstr "+ Kun qo'shish (Add Day)"
+
 msgid "-- Select Category --"
 msgstr "-- カテゴリを選択 --"
-
-msgid "+ Kun qo'shish (Add Day)"
-msgstr "+ 日を追加 (日を追加)"
 
 msgid "-- Tur kategoriyasini tanlang --"
 msgstr "-- ツアーカテゴリーを選択してください --"
 
-msgid "Add New Category"
-msgstr "Add New Category"
-
-msgid "All Categories"
-msgstr "すべてのカテゴリ"
-
-msgid "Add First Category"
-msgstr "最初のカテゴリを追加"
+msgid "24/7 ochiq"
+msgstr "24時間365日営業"
 
 msgid "About This Hotel"
-msgstr "このホテルについて"
-
-msgid "24/7 ochiq"
-msgstr "24/7 ochiq"
-
-msgid "Admin reply"
-msgstr "管理者の返信"
+msgstr ""
+"Error 500 (Server Error)!!1500.That’s an error.There was an error. Please "
+"try again later.That’s all we know."
 
 msgid "About UNITUR"
 msgstr "UNITURについて"
 
+msgid "Active (Visible on public FAQ page)"
+msgstr "アクティブ (公開 FAQ ページに表示されます)"
+
+msgid "Active (Visible on site)"
+msgstr "アクティブ (サイト上で確認可能)"
+
 msgid "Add"
-msgstr "Add"
+msgstr "追加"
+
+msgid "Add Attraction"
+msgstr "魅力を追加"
+
+msgid "Add First Category"
+msgstr "最初のカテゴリを追加"
+
+msgid "Add Guide Category"
+msgstr "ガイドカテゴリを追加"
+
+msgid "Add New Category"
+msgstr "新しいカテゴリを追加"
+
+msgid "Add New Question"
+msgstr "新しい質問を追加"
+
+msgid "Add Tag"
+msgstr "タグの追加"
+
+msgid "Add email address"
+msgstr "メールアドレスを追加"
 
 msgid ""
 "Add itinerary days, titles, descriptions and link visited attractions "
 "(Diqqatga sazovor joylar) for each day."
 msgstr "旅程の日数、タイトル、説明を追加し、訪問した観光スポット (Diqqatga sazovor jylar) を毎日リンクします。"
 
-msgid "Add Tag"
-msgstr "タグの追加"
-
-msgid "Active (Visible on site)"
-msgstr "アクティブ (サイト上で確認可能)"
-
 msgid "Admin replied at"
 msgstr "管理者は次のアドレスに返信しました"
 
-msgid "Add Guide Category"
-msgstr "ガイドカテゴリを追加"
+msgid "Admin reply"
+msgstr "管理者の返信"
 
-msgid "Add New Question"
-msgstr "新しい質問を追加"
-
-msgid "Add Attraction"
-msgstr "魅力を追加"
-
-msgid "Active (Visible on public FAQ page)"
-msgstr "アクティブ (公開 FAQ ページに表示されます)"
-
-msgid "Add email address"
-msgstr "メールアドレスを追加"
-
-msgid "All rights reserved."
-msgstr "無断転載を禁じます。"
-
-msgid "Amallar"
-msgstr "アクション"
+msgid "All Categories"
+msgstr "すべてのカテゴリ"
 
 msgid "All FAQs"
-msgstr "すべてのよくある質問"
-
-msgid "Answer"
-msgstr "答え"
-
-msgid "Amenity created successfully!"
-msgstr "アメニティが正常に作成されました。"
-
-msgid "Alt Text"
-msgstr "代替テキスト"
-
-msgid "Amenity already exists"
-msgstr "アメニティはすでにあります"
-
-msgid "All countries"
-msgstr "すべての国"
+msgstr ""
+"Error 500 (Server Error)!!1500.That’s an error.There was an error. Please "
+"try again later.That’s all we know."
 
 msgid "All cities"
 msgstr "すべての都市"
 
-msgid "Any difficulty"
-msgstr "どんな困難でも"
+msgid "All countries"
+msgstr "すべての国"
+
+msgid "All rights reserved."
+msgstr "無断転載を禁じます。"
+
+msgid "Alt Text"
+msgstr "代替テキスト"
+
+msgid "Amallar"
+msgstr "アクション"
+
+msgid "Amenity already exists"
+msgstr "アメニティはすでにあります"
+
+msgid "Amenity created successfully!"
+msgstr "アメニティが正常に作成されました。"
 
 msgid "Amenity deleted successfully!"
 msgstr "アメニティが正常に削除されました。"
@@ -2258,11 +2256,20 @@ msgstr "アメニティが正常に削除されました。"
 msgid "Amenity updated successfully!"
 msgstr "アメニティが無事更新されました！"
 
-msgid "Asosiy sahifada ko'rsatish / yashirish"
-msgstr "メインページの表示/非表示"
+msgid "Answer"
+msgstr "答え"
+
+msgid "Any difficulty"
+msgstr "どんな困難でも"
 
 msgid "Any stars"
 msgstr "どの星でも"
+
+msgid "Approve selected reviews"
+msgstr "選択したレビューを承認する"
+
+msgid "Are you sure you want to delete this FAQ?"
+msgstr "この FAQ を削除してもよろしいですか?"
 
 msgid "Are you sure you want to delete this category?"
 msgstr "このカテゴリを削除してもよろしいですか?"
@@ -2270,69 +2277,68 @@ msgstr "このカテゴリを削除してもよろしいですか?"
 msgid "Are you sure you want to sign out of your account?"
 msgstr "アカウントからサインアウトしてもよろしいですか?"
 
-msgid "Approve selected reviews"
-msgstr "選択したレビューを承認する"
-
 msgid "Article Views"
 msgstr "記事の閲覧数"
 
-msgid "Are you sure you want to delete this FAQ?"
-msgstr "この FAQ を削除してもよろしいですか?"
-
-msgid "Baho"
-msgstr "学年"
-
-msgid "Attraction image"
-msgstr "アトラクションイメージ"
-
-msgid "Asosiy sahifada ✓"
-msgstr "メインページで ✓"
-
-msgid "Available Rooms"
-msgstr "空室あり"
+msgid "Asosiy sahifada ko'rsatish / yashirish"
+msgstr "メインページの表示/非表示"
 
 msgid "Asosiy sahifada ko'rsatish / yashirish uchun bosing"
 msgstr "クリックしてメインページの表示/非表示を切り替えます"
 
-msgid "Back to Tags"
-msgstr "タグに戻る"
+msgid "Asosiy sahifada ✓"
+msgstr "メインページで ✓"
 
-msgid "Barchasi"
-msgstr "すべて"
-
-msgid "Back to Profile"
-msgstr "プロフィールに戻る"
-
-msgid "Attractions (Diqqatga sazovor joylar)"
-msgstr "アトラクション"
+msgid "Attraction image"
+msgstr "アトラクションイメージ"
 
 msgid "Attraction images"
 msgstr "アトラクション画像"
 
-msgid "Baho bering"
-msgstr "評価してください"
+msgid "Attractions (Diqqatga sazovor joylar)"
+msgstr "アトラクション"
+
+msgid "Available Rooms"
+msgstr "空室あり"
+
+msgid "Back to Profile"
+msgstr "プロフィールに戻る"
 
 msgid "Back to Sign In"
 msgstr "サインインに戻る"
 
+msgid "Back to Tags"
+msgstr ""
+"Error 500 (Server Error)!!1500.That’s an error.There was an error. Please "
+"try again later.That’s all we know."
+
+msgid "Baho"
+msgstr "学年"
+
+msgid "Baho bering"
+msgstr "評価してください"
+
 msgid "Barcha mehmonxonalar va filtr"
 msgstr "すべてのホテルとフィルター"
 
+msgid "Barcha turlar"
+msgstr "Barcha turlar"
+
+msgid "Barchasi"
+msgstr "すべて"
+
 msgid "Bekor qilish"
-msgstr "キャンセル"
+msgstr ""
+"Error 500 (Server Error)!!1500.That’s an error.There was an error. Please "
+"try again later.That’s all we know."
 
 msgid "Book Your Tour"
-msgstr "ツアーを予約する"
-
-msgid "Barcha turlar"
-msgstr "全種"
+msgstr ""
+"Error 500 (Server Error)!!1500.That’s an error.There was an error. Please "
+"try again later.That’s all we know."
 
 msgid "Booking Confirmed"
 msgstr "予約確認済み"
-
-msgid ""
-"Borgan joylaringizdan rasmlar yuklang (Bir nechta rasm tanlashingiz mumkin)"
-msgstr "行ったことのある場所の写真をアップロードします (複数の写真を選択できます)"
 
 msgid "Booking Reference"
 msgstr "予約番号"
@@ -2340,25 +2346,27 @@ msgstr "予約番号"
 msgid "Bookings count"
 msgstr "予約数"
 
-msgid "Call Us"
-msgstr "お電話ください"
-
-msgid "Change Password"
-msgstr "パスワードを変更する"
+msgid ""
+"Borgan joylaringizdan rasmlar yuklang (Bir nechta rasm tanlashingiz mumkin)"
+msgstr "行ったことのある場所の写真をアップロードします (複数の写真を選択できます)"
 
 msgid "Boshqa (Kategoriyani o'zim kiritaman)"
 msgstr "その他（自分でカテゴリーに入ります）"
+
+msgid "Boshqa kategoriya (Custom category)"
+msgstr "その他のカテゴリ（カスタムカテゴリ）"
 
 msgid ""
 "Browse icon names at tabler.io/icons — use the name without the 'ti ti-' "
 "prefix."
 msgstr "tabler.io/icons でアイコン名を参照します。「ti ti-」接頭辞のない名前を使用してください。"
 
-msgid "Category Name"
-msgstr "カテゴリ名"
+msgid "Call Us"
+msgstr "お電話ください"
 
-msgid "Boshqa kategoriya (Custom category)"
-msgstr "その他のカテゴリ（カスタムカテゴリ）"
+msgid ""
+"Can't find the answer you're looking for? Our friendly team is here to help."
+msgstr "探している答えが見つかりませんか?私たちのフレンドリーなチームがお手伝いします。"
 
 msgid "Cancel — go back"
 msgstr "キャンセル — 戻る"
@@ -2367,12 +2375,20 @@ msgid ""
 "Categories organize travel guide articles (e.g. Visa Tips, Food, Safety)."
 msgstr "旅行ガイド記事をカテゴリ別に整理します (ビザのヒント、食品、安全など)。"
 
+msgid "Category Name"
+msgstr "カテゴリ名"
+
+msgid "Category already exists"
+msgstr "カテゴリはすでに存在します"
+
+msgid "Category created successfully!"
+msgstr "カテゴリが正常に作成されました。"
+
 msgid "Category name is required"
 msgstr "カテゴリ名は必須です"
 
-msgid ""
-"Can't find the answer you're looking for? Our friendly team is here to help."
-msgstr "探している答えが見つかりませんか?私たちのフレンドリーなチームがお手伝いします。"
+msgid "Change Password"
+msgstr "パスワードを変更する"
 
 msgid "Changes are saved immediately after clicking Save."
 msgstr "「保存」をクリックすると、変更がすぐに保存されます。"
@@ -2380,140 +2396,131 @@ msgstr "「保存」をクリックすると、変更がすぐに保存されま
 msgid "Check Your Email"
 msgstr "メールを確認してください"
 
-msgid "Category created successfully!"
-msgstr "カテゴリが正常に作成されました。"
-
-msgid "Confirm Email"
-msgstr "Eメール確認"
-
-msgid "Category already exists"
-msgstr "カテゴリはすでに存在します"
-
 msgid "Click or drag the marker on the map to set the location."
 msgstr "地図上のマーカーをクリックまたはドラッグして、場所を設定します。"
 
-msgid "Confirm Email Address"
-msgstr "メールアドレスを確認"
-
 msgid "Click tags to select / deselect. Multiple tags allowed."
-msgstr "Click tags to select / deselect. Multiple tags allowed."
+msgstr "タグをクリックして選択/選択解除します。複数のタグが許可されます。"
 
 msgid "Collapse All"
 msgstr "すべて折りたたむ"
 
-msgid "Confirmation"
-msgstr "確認"
-
-msgid "Confirm new password"
-msgstr "新しいパスワードを確認します"
-
-msgid "Copied!"
-msgstr "コピーしました！"
+msgid "Comma-separated keywords"
+msgstr "カンマ区切りのキーワード"
 
 msgid "Configure category details and icon display."
 msgstr "カテゴリの詳細やアイコンの表示を設定します。"
 
-msgid "Comma-separated keywords"
-msgstr "カンマ区切りのキーワード"
+msgid "Confirm Email"
+msgstr "Eメール確認"
+
+msgid "Confirm Email Address"
+msgstr "メールアドレスを確認"
+
+msgid "Confirm new password"
+msgstr "新しいパスワードを確認します"
+
+msgid "Confirmation"
+msgstr "確認"
+
+msgid "Copied!"
+msgstr "コピーしました！"
 
 msgid "Copy link"
 msgstr "リンクをコピー"
 
-msgid "Current password"
-msgstr "現在のパスワード"
-
-msgid "Danger"
-msgstr "危険"
-
-msgid "Create new category"
-msgstr "新しいカテゴリを作成する"
-
-msgid "Day"
-msgstr "日"
+msgid "Copyright text"
+msgstr "著作権テキスト"
 
 msgid "Create First FAQ"
 msgstr "最初の FAQ を作成する"
 
+msgid "Create new category"
+msgstr "新しいカテゴリを作成する"
+
 msgid "Create tags"
 msgstr "タグの作成"
-
-msgid "Current Image"
-msgstr "現在のイメージ"
-
-msgid "Copyright text"
-msgstr "著作権テキスト"
-
-msgid "Create your first FAQ question to help customers find answers quickly."
-msgstr "最初の FAQ 質問を作成して、顧客がすぐに答えを見つけられるようにします。"
 
 msgid "Create your first FAQ category to organize your questions neatly."
 msgstr "最初の FAQ カテゴリを作成して、質問をきちんと整理します。"
 
-msgid "Delete FAQ"
-msgstr "削除に関するよくある質問"
+msgid "Create your first FAQ question to help customers find answers quickly."
+msgstr "最初の FAQ 質問を作成して、顧客がすぐに答えを見つけられるようにします。"
 
-msgid "Diqqatga sazovor joylar (Attractions):"
-msgstr "アトラクション:"
+msgid "Current Image"
+msgstr "現在のイメージ"
+
+msgid "Current password"
+msgstr "現在のパスワード"
 
 msgid "Custom category"
 msgstr "カスタムカテゴリ"
 
-msgid "Diqqatga sazovor joylar"
-msgstr "興味のある場所"
+msgid "Danger"
+msgstr "危険"
 
-msgid "Edit Category"
-msgstr "カテゴリの編集"
-
-msgid "Delete this category?"
-msgstr "このカテゴリを削除しますか?"
-
-msgid "Display Order"
-msgstr "表示順序"
+msgid "Day"
+msgstr "日"
 
 msgid "Day-by-Day Itinerary (Marshrut / Kunlar)"
 msgstr "一日の旅程（ルート・日数）"
 
+msgid "Delete FAQ"
+msgstr "削除に関するよくある質問"
+
+msgid "Delete this category?"
+msgstr ""
+"Error 500 (Server Error)!!1500.That’s an error.There was an error. Please "
+"try again later.That’s all we know."
+
 msgid "Delete this tag?"
 msgstr "このタグを削除しますか?"
 
-msgid "Email Verification Required"
-msgstr "メール認証が必要です"
+msgid "Diqqatga sazovor joylar"
+msgstr "興味のある場所"
+
+msgid "Diqqatga sazovor joylar (Attractions):"
+msgstr "アトラクション:"
+
+msgid "Display Order"
+msgstr "表示順序"
 
 msgid "Display in home page testimonials"
-msgstr "ホームページの紹介文に表示する"
+msgstr ""
+"Error 500 (Server Error)!!1500.That’s an error.There was an error. Please "
+"try again later.That’s all we know."
+
+msgid "Edit Category"
+msgstr "カテゴリの編集"
 
 msgid "Edit FAQ"
-msgstr "よくある質問を編集する"
-
-msgid "Email Addresses"
-msgstr "メールアドレス"
-
-msgid "Edit Question"
-msgstr "質問を編集"
-
-msgid "Enter a valid phone number (7–20 digits, +, spaces, - or () allowed)."
-msgstr "有効な電話番号を入力します (7 ～ 20 桁、+、スペース、- または () を使用できます)。"
-
-msgid "Eng mashhur diqqatga sazovor joylar"
-msgstr "最も人気のあるアトラクション"
-
-msgid "Explore now"
-msgstr "今すぐ探索してください"
-
-msgid "FAQ"
-msgstr "よくある質問"
+msgstr ""
+"Error 500 (Server Error)!!1500.That’s an error.There was an error. Please "
+"try again later.That’s all we know."
 
 msgid "Edit FAQ Category"
 msgstr "よくある質問のカテゴリを編集する"
 
+msgid "Edit Question"
+msgstr "質問を編集"
+
+msgid "Email Addresses"
+msgstr "メールアドレス"
+
 msgid "Email Sent!"
 msgstr "メールを送信しました!"
 
+msgid "Email Verification Required"
+msgstr "メール認証が必要です"
+
+msgid "Eng mashhur diqqatga sazovor joylar"
+msgstr "最も人気のあるアトラクション"
+
+msgid "Enter a valid phone number (7–20 digits, +, spaces, - or () allowed)."
+msgstr "有効な電話番号を入力します (7 ～ 20 桁、+、スペース、- または () を使用できます)。"
+
 msgid "Enter and confirm your new password below"
 msgstr "以下に新しいパスワードを入力して確認します"
-
-msgid "Expand All"
-msgstr "すべて展開"
 
 msgid "Enter your email and we'll send you a reset link"
 msgstr "メールアドレスを入力してください。リセット用のリンクが送信されます"
@@ -2521,16 +2528,19 @@ msgstr "メールアドレスを入力してください。リセット用のリ
 msgid "Examples: help, credit-card, map-pin, passport, info-circle, plane"
 msgstr "例: ヘルプ、クレジット カード、マップピン、パスポート、情報サークル、飛行機"
 
+msgid "Expand All"
+msgstr "すべて展開"
+
+msgid "Explore now"
+msgstr "今すぐ探索してください"
+
 msgid "Export selected to CSV"
 msgstr "選択した内容をCSVにエクスポート"
 
-msgid "FAQ category"
-msgstr "よくある質問のカテゴリ"
+msgid "FAQ"
+msgstr "よくある質問"
 
 msgid "FAQ Categories"
-msgstr "よくある質問のカテゴリ"
-
-msgid "FAQ categories"
 msgstr "よくある質問のカテゴリ"
 
 msgid "FAQ Management"
@@ -2539,38 +2549,44 @@ msgstr "よくある質問の管理"
 msgid "FAQ Questions"
 msgstr "よくある質問"
 
+msgid "FAQ categories"
+msgstr "よくある質問のカテゴリ"
+
+msgid "FAQ category"
+msgstr "よくある質問のカテゴリ"
+
 msgid "FAQ category created successfully!"
 msgstr "FAQ カテゴリが正常に作成されました。"
-
-msgid "FAQ category updated successfully!"
-msgstr "よくある質問のカテゴリが正常に更新されました。"
-
-msgid "FAQ deleted successfully!"
-msgstr "よくある質問は正常に削除されました。"
-
-msgid "FAQs"
-msgstr "よくある質問"
-
-msgid "FAQ created successfully!"
-msgstr "よくある質問が正常に作成されました。"
 
 msgid "FAQ category deleted successfully!"
 msgstr "FAQ カテゴリが正常に削除されました。"
 
-msgid "Facebook URL"
-msgstr "フェイスブックのURL"
+msgid "FAQ category updated successfully!"
+msgstr "よくある質問のカテゴリが正常に更新されました。"
 
-msgid "Filter"
-msgstr "フィルター"
+msgid "FAQ created successfully!"
+msgstr "よくある質問が正常に作成されました。"
 
-msgid "Favicon"
-msgstr "ファビコン"
+msgid "FAQ deleted successfully!"
+msgstr "よくある質問は正常に削除されました。"
 
 msgid "FAQ updated successfully!"
-msgstr "FAQ updated successfully!"
+msgstr "よくある質問が正常に更新されました。"
+
+msgid "FAQs"
+msgstr "よくある質問"
+
+msgid "FAQs Count"
+msgstr "FAQ数"
 
 msgid "Facebook Pixel ID"
 msgstr "Facebook ピクセル ID"
+
+msgid "Facebook URL"
+msgstr "フェイスブックのURL"
+
+msgid "Favicon"
+msgstr "ファビコン"
 
 msgid "Fayl oynasidan bir nechta rasmni `Ctrl` yoki `Shift` bosib belgilang."
 msgstr "Ctrl キーまたは Shift キーを押して、ファイル ウィンドウから複数の画像を選択します。"
@@ -2578,61 +2594,52 @@ msgstr "Ctrl キーまたは Shift キーを押して、ファイル ウィン�
 msgid "Featured (Asosiy sahifa)"
 msgstr "特集 (メインページ)"
 
-msgid "FAQs Count"
-msgstr "FAQ数"
-
 msgid "Featured article appears at the top"
 msgstr "注目の記事が上部に表示されます"
+
+msgid "Filter"
+msgstr "フィルター"
 
 msgid ""
 "Find answers to common questions about our tours, booking process, and "
 "travel services."
 msgstr "ツアー、予約プロセス、旅行サービスに関するよくある質問への回答をご覧ください。"
 
-msgid "Frequently Asked Questions"
-msgstr "よくある質問"
-
 msgid "Footer"
 msgstr "フッター"
-
-msgid "Fotosuratlar galereyasi (Ko'p rasm yuklash)"
-msgstr "フォトギャラリー (複数の写真のアップロード)"
 
 msgid "Footer text"
 msgstr "フッターテキスト"
 
-msgid "GPS coordinates for the map widget"
-msgstr "地図ウィジェットの GPS 座標"
-
 msgid "Format: +998901234567"
 msgstr "形式: +998901234567"
 
-msgid "Google Analytics ID"
-msgstr "GoogleアナリティクスID"
+msgid "Fotosuratlar galereyasi (Ko'p rasm yuklash)"
+msgstr "フォトギャラリー (複数の写真のアップロード)"
+
+msgid "Frequently Asked Questions"
+msgstr "よくある質問"
+
+msgid "GPS coordinates for the map widget"
+msgstr "地図ウィジェットの GPS 座標"
 
 msgid "Gallery image"
 msgstr "ギャラリー画像"
 
-msgid "Get a Quote"
-msgstr "見積もりを取得する"
-
-msgid "Holat"
-msgstr "状態"
-
-msgid "Highest Rated"
-msgstr "最高評価"
+msgid "Gallery images"
+msgstr "ギャラリー画像"
 
 msgid "General Questions"
 msgstr "一般的な質問"
 
-msgid "Gallery images"
-msgstr "ギャラリー画像"
+msgid "Get a Quote"
+msgstr "見積もりを取得する"
 
 msgid "Go to Sign In"
 msgstr "サインインに移動"
 
-msgid "Help Center"
-msgstr "ヘルプセンター"
+msgid "Google Analytics ID"
+msgstr "GoogleアナリティクスID"
 
 msgid "Group similar questions together"
 msgstr "似たような質問をグループ化する"
@@ -2643,23 +2650,38 @@ msgstr "ガイドのカテゴリー"
 msgid "Havolani nusxalash"
 msgstr "リンクをコピーする"
 
-msgid "Hold Ctrl to select multiple attractions for this day"
-msgstr "Ctrl キーを押したままにすると、その日の複数のアトラクションを選択できます"
-
-msgid "Hero slides"
-msgstr "ヒーロースライド"
+msgid "Help Center"
+msgstr "ヘルプセンター"
 
 msgid "Hero slide"
 msgstr "ヒーロースライド"
 
-msgid "Hozircha diqqatga sazovor joylar yo'q."
-msgstr "ハイライトはまだありません。"
+msgid "Hero slides"
+msgstr "ヒーロースライド"
+
+msgid "Highest Rated"
+msgstr "最高評価"
+
+msgid "Holat"
+msgstr "状態"
+
+msgid "Hold Ctrl to select multiple attractions for this day"
+msgstr "Ctrl キーを押したままにすると、その日の複数のアトラクションを選択できます"
 
 msgid "Hotel categories"
 msgstr "ホテルのカテゴリー"
 
 msgid "Hotel category"
 msgstr "ホテルカテゴリー"
+
+msgid "Hozircha diqqatga sazovor joylar kiritilmagan."
+msgstr "アトラクションはまだ追加されていません。"
+
+msgid "Hozircha diqqatga sazovor joylar yo'q."
+msgstr "ハイライトはまだありません。"
+
+msgid "Hozircha mehmonxonalar kiritilmagan."
+msgstr "ホテルはまだ含まれていません。"
 
 msgid "Hozircha qulayliklar yo'q. 'Yangi Qulaylik Qo'shish' tugmasini bosing."
 msgstr "アメニティはまだありません。 「新しい機能を追加」ボタンをクリックします。"
@@ -2669,87 +2691,104 @@ msgid ""
 "qoldiring!"
 msgstr "このタイプにはまだコメントがありません。まずは感想を書いてみましょう！"
 
-msgid "Hozircha mehmonxonalar kiritilmagan."
-msgstr "ホテルはまだ含まれていません。"
-
-msgid "Hozircha diqqatga sazovor joylar kiritilmagan."
-msgstr "アトラクションはまだ追加されていません。"
+msgid "Icon & Category Name"
+msgstr "アイコンとカテゴリ名"
 
 msgid "Ikonka nomi (ixtiyoriy)"
-msgstr "アイコン名（任意）"
+msgstr ""
+"Error 500 (Server Error)!!1500.That’s an error.There was an error. Please "
+"try again later.That’s all we know."
 
 msgid "Iltimos, shakldagi xatoliklarni to'g'rilang."
 msgstr "フォーム内のエラーを修正してください。"
 
-msgid "Info"
-msgstr "情報"
-
-msgid "Internal"
-msgstr "内部"
-
 msgid "Inactive articles are hidden from the site"
 msgstr "非アクティブな記事はサイトから非表示になります"
 
-msgid "Icon & Category Name"
-msgstr "アイコンとカテゴリ名"
+msgid "Info"
+msgstr "情報"
 
 msgid "Instagram URL"
 msgstr "インスタグラムのURL"
 
-msgid "Ismingiz / Username"
-msgstr "あなたの名前 / ユーザー名"
+msgid "Internal"
+msgstr ""
+"Error 500 (Server Error)!!1500.That’s an error.There was an error. Please "
+"try again later.That’s all we know."
 
 msgid "Invalid JSON"
 msgstr "無効な JSON"
 
-msgid "Is featured on home page"
-msgstr "ホームページに掲載されています"
-
-msgid "Joy ma'lumotlari"
-msgstr "位置情報"
-
-msgid "Joylar"
-msgstr "場所"
-
 msgid "Invalid Link"
 msgstr "無効なリンク"
 
-msgid "Joy Nomi"
-msgstr "地名"
+msgid "Is featured on home page"
+msgstr "Is featured on home page"
+
+msgid "Ismingiz / Username"
+msgstr "あなたの名前 / ユーザー名"
 
 msgid "Javob saqlash"
 msgstr "回答を保存する"
 
-msgid "Kategoriya nomini kiriting..."
-msgstr "カテゴリ名を入力してください..."
+msgid "Joy Nomi"
+msgstr "地名"
 
-msgid "Kun №"
-msgstr "№のとき"
+msgid "Joy ma'lumotlari"
+msgstr "位置情報"
 
 msgid "Joy nomini qidirish…"
-msgstr "地名を検索して…"
+msgstr ""
+"Error 500 (Server Error)!!1500.That’s an error.There was an error. Please "
+"try again later.That’s all we know."
 
 msgid ""
 "Joy uchun bir nechta (5-6+ ta) rasm tanlab bir vaqtda yuklashingiz mumkin."
 msgstr "1 つの場所に対して複数（5 ～ 6 枚以上）の画像を選択し、一度にアップロードできます。"
 
+msgid "Joylar"
+msgstr "場所"
+
+msgid "Kategoriya nomini kiriting..."
+msgstr "カテゴリ名を入力してください..."
+
 msgid "Keyingi 10 ta"
 msgstr "次の10"
-
-msgid "Kunning tavsifi (Description)"
-msgstr "当日の説明（説明）"
 
 msgid "Kun sarlavhasi (Title)"
 msgstr "今日のタイトル"
 
-msgid "Links shown in the footer and contact page"
-msgstr "フッターと連絡先ページに表示されるリンク"
+msgid "Kun №"
+msgstr "№のとき"
+
+msgid "Kunning tavsifi (Description)"
+msgstr "当日の説明（説明）"
+
+msgid "Last saved auto-syncs"
+msgstr ""
+"Error 500 (Server Error)!!1500.That’s an error.There was an error. Please "
+"try again later.That’s all we know."
+
+msgid "Level"
+msgstr "レベル"
 
 msgid "Link"
 msgstr "リンク"
 
-msgid "Level"
-msgstr "レベル"
+msgid "Linked Items"
+msgstr "リンクされたアイテム"
+
+msgid "LinkedIn URL"
+msgstr "LinkedIn の URL"
+
+msgid "Links shown in the footer and contact page"
+msgstr "フッターと連絡先ページに表示されるリンク"
+
+msgid "Location & Map"
+msgstr "場所と地図"
+
+msgid "Logo"
+msgstr "ロゴ"
 
 msgid "Lower numbers appear first within the category."
 msgstr "カテゴリ内では、小さい番号が最初に表示されます。"
@@ -2757,106 +2796,91 @@ msgstr "カテゴリ内では、小さい番号が最初に表示されます。
 msgid "Lower numbers appear first."
 msgstr "小さい数字が最初に表示されます。"
 
-msgid "Last saved auto-syncs"
-msgstr "最後に保存された自動同期"
-
-msgid "Logo"
-msgstr "ロゴ"
-
-msgid "LinkedIn URL"
-msgstr "LinkedIn の URL"
-
-msgid "Linked Items"
-msgstr "リンクされたアイテム"
-
-msgid "Manage Categories"
-msgstr "カテゴリの管理"
-
-msgid "Location & Map"
-msgstr "場所と地図"
-
-msgid "Mamlakat"
-msgstr "国"
-
-msgid "Manage Email"
-msgstr "電子メールの管理"
+msgid "Ma'lumot berilmagan"
+msgstr "情報は提供されていません"
 
 msgid "Make primary"
 msgstr "プライマリにする"
 
-msgid "Ma'lumot berilmagan"
-msgstr "情報は提供されていません"
+msgid "Mamlakat"
+msgstr "国"
 
-msgid "Manzil"
-msgstr "住所"
+msgid "Manage Categories"
+msgstr "カテゴリの管理"
+
+msgid "Manage Email"
+msgstr "電子メールの管理"
 
 msgid "Manage questions and answers displayed on the public FAQ page."
 msgstr "公開 FAQ ページに表示される質問と回答を管理します。"
 
+msgid "Manage your contact details, location, and social media links"
+msgstr "連絡先の詳細、場所、ソーシャルメディアリンクを管理します"
+
+msgid "Manzil"
+msgstr "住所"
+
 msgid "Mark selected as Cancelled"
 msgstr "選択済みとしてマークを付ける"
-
-msgid "Mark selected as Confirmed"
-msgstr "選択したものを確認済みとしてマークします"
 
 msgid "Mark selected as Completed"
 msgstr "選択したものを完了としてマークします"
 
-msgid "Manage your contact details, location, and social media links"
-msgstr "連絡先の詳細、場所、ソーシャルメディアリンクを管理します"
-
-msgid "Mehmonxonalar"
-msgstr "ホテル"
+msgid "Mark selected as Confirmed"
+msgstr "選択したものを確認済みとしてマークします"
 
 msgid "Mavjud galereya rasmlari"
-msgstr "利用可能なギャラリー画像"
-
-msgid "Max price"
-msgstr "最高価格"
-
-msgid "Muallif"
-msgstr "著者"
-
-msgid ""
-"Mehmonxona uchun bir nechta (5-6+ ta) rasm tanlab bir vaqtda yuklashingiz "
-"mumkin."
-msgstr "ホテルの複数（5 ～ 6 枚以上）の写真を同時にアップロードできます。"
-
-msgid "Max price/night"
-msgstr "1泊あたりの最大料金"
+msgstr "Mavjud galereya rasmlari"
 
 msgid "Max days"
 msgstr "最大日数"
 
-msgid "Min price"
-msgstr "最低価格"
+msgid "Max price"
+msgstr "最高価格"
+
+msgid "Max price/night"
+msgstr "1泊あたりの最大料金"
+
+msgid ""
+"Mehmonxona uchun bir nechta (5-6+ ta) rasm tanlab bir vaqtda yuklashingiz "
+"mumkin."
+msgstr "ホテルの複数 (5 ～ 6 枚以上) の画像を選択し、一度にアップロードできます。"
+
+msgid "Mehmonxonalar"
+msgstr "ホテル"
 
 msgid "Meta keywords"
 msgstr "メタキーワード"
 
-msgid "Most Viewed"
-msgstr "最も閲覧された"
-
 msgid "Min days"
 msgstr "最小日数"
 
+msgid "Min price"
+msgstr "最低価格"
+
+msgid "Most Viewed"
+msgstr "最も閲覧された"
+
 msgid "Most Viewed Articles"
-msgstr "最も閲覧された記事"
+msgstr ""
+"Error 500 (Server Error)!!1500.That’s an error.There was an error. Please "
+"try again later.That’s all we know."
+
+msgid "Muallif"
+msgstr "著者"
+
+msgid "My location"
+msgstr ""
+"Error 500 (Server Error)!!1500.That’s an error.There was an error. Please "
+"try again later.That’s all we know."
+
+msgid "Name is required"
+msgstr ""
+"Error 500 (Server Error)!!1500.That’s an error.There was an error. Please "
+"try again later.That’s all we know."
 
 msgid "New"
 msgstr "新しい"
-
-msgid "My location"
-msgstr "私の場所"
-
-msgid "Name is required"
-msgstr "名前は必須です"
-
-msgid "New Tag"
-msgstr "新しいタグ"
-
-msgid "Next"
-msgstr "次"
 
 msgid "New FAQ"
 msgstr "新しい FAQ"
@@ -2864,23 +2888,23 @@ msgstr "新しい FAQ"
 msgid "New FAQ Category"
 msgstr "新しい FAQ カテゴリ"
 
-msgid "O'chirish"
-msgstr "消す"
+msgid "New Tag"
+msgstr "新しいタグ"
 
-msgid "No FAQs Yet"
-msgstr "FAQはまだありません"
-
-msgid "No FAQs Available Yet"
-msgstr "FAQはまだありません"
+msgid "Next"
+msgstr "次"
 
 msgid "Nights spent in this city"
 msgstr "この街で過ごした夜"
 
-msgid "No tags yet."
-msgstr "まだタグがありません。"
-
 msgid "No Categories Found"
 msgstr "カテゴリが見つかりませんでした"
+
+msgid "No FAQs Available Yet"
+msgstr "FAQはまだありません"
+
+msgid "No FAQs Yet"
+msgstr "FAQはまだありません"
 
 msgid "No alt text"
 msgstr "代替テキストなし"
@@ -2888,8 +2912,14 @@ msgstr "代替テキストなし"
 msgid "No tags found."
 msgstr "タグが見つかりませんでした。"
 
+msgid "No tags yet."
+msgstr "まだタグがありません。"
+
 msgid "Null = broadcast to all staff"
 msgstr "Null = すべてのスタッフにブロードキャスト"
+
+msgid "O'chirish"
+msgstr "消す"
 
 msgid "Oldingi"
 msgstr "前の"
@@ -2897,157 +2927,174 @@ msgstr "前の"
 msgid "Optional"
 msgstr "オプション"
 
-msgid "Orqaga"
-msgstr "戻る"
-
-msgid "Prev"
-msgstr "前へ"
-
 msgid "Organize FAQ questions into dynamic categories for your customers."
 msgstr "FAQ の質問を顧客向けに動的なカテゴリに整理します。"
 
-msgid "Photo"
-msgstr "写真"
-
-msgid "Primary"
-msgstr "主要な"
-
-msgid "Phone numbers and email addresses"
-msgstr "電話番号とメールアドレス"
-
-msgid "Pricing"
-msgstr "価格設定"
+msgid "Orqaga"
+msgstr ""
+"Error 500 (Server Error)!!1500.That’s an error.There was an error. Please "
+"try again later.That’s all we know."
 
 msgid "Password Changed"
 msgstr "パスワードが変更されました"
 
-msgid "Question"
-msgstr "質問"
-
 msgid "Password Updated!"
 msgstr "パスワードが更新されました!"
 
-msgid "Publish selected articles"
-msgstr "選択した記事を公開する"
+msgid "Phone numbers and email addresses"
+msgstr "電話番号とメールアドレス"
+
+msgid "Photo"
+msgstr ""
+"Error 500 (Server Error)!!1500.That’s an error.There was an error. Please "
+"try again later.That’s all we know."
 
 msgid ""
 "Please verify your email address before accessing this page. Check your "
 "inbox for a verification link."
 msgstr "このページにアクセスする前に、メール アドレスを確認してください。受信箱に確認リンクがあるかどうかを確認してください。"
 
-msgid "Qulaylik Qo'shish"
-msgstr "利便性を追加"
+msgid "Prev"
+msgstr "前へ"
+
+msgid "Pricing"
+msgstr "価格設定"
+
+msgid "Primary"
+msgstr ""
+"Error 500 (Server Error)!!1500.That’s an error.There was an error. Please "
+"try again later.That’s all we know."
+
+msgid "Publish selected articles"
+msgstr ""
+"Error 500 (Server Error)!!1500.That’s an error.There was an error. Please "
+"try again later.That’s all we know."
 
 msgid "Publishing"
 msgstr "出版"
 
-msgid "Rasmlar"
-msgstr "写真"
-
-msgid "Qulayliklarni Tanlang (✓)"
-msgstr "アメニティを選択 (✓)"
-
-msgid "Read"
-msgstr "読む"
+msgid "Question"
+msgstr "質問"
 
 msgid "Question & Answer"
 msgstr "質疑応答"
 
-msgid "Rad etish"
-msgstr "拒否"
-
-msgid "Rasmlar (Photos)"
-msgstr "写真"
-
-msgid "Qulaylikni Tahrirlash"
-msgstr "編集の利便性"
-
-msgid "Reset Password"
-msgstr "パスワードのリセット"
-
-msgid "Recipient"
-msgstr "受信者"
-
-msgid "Resend"
-msgstr "再送信"
+msgid "Qulaylik Qo'shish"
+msgstr "利便性を追加"
 
 msgid "Qulaylik nomi"
 msgstr "施設名"
 
-msgid "Request a New Link"
-msgstr "新しいリンクをリクエストする"
+msgid "Qulayliklarni Tanlang (✓)"
+msgstr "アメニティを選択 (✓)"
 
-msgid "Remove day"
-msgstr "日を削除する"
+msgid "Qulaylikni Tahrirlash"
+msgstr "編集の利便性"
 
-msgid "Reviewer"
-msgstr "査読者"
+msgid "Rad etish"
+msgstr "拒否"
+
+msgid "Rasmlar"
+msgstr "写真"
+
+msgid "Rasmlar (Photos)"
+msgstr "写真"
+
+msgid "Read"
+msgstr "読む"
+
+msgid "Recipient"
+msgstr "受信者"
 
 msgid "Reject selected reviews"
 msgstr "選択したレビューを拒否する"
 
-msgid "Saqlash"
-msgstr "Saqlash"
+msgid "Remove day"
+msgstr "日を削除"
 
-msgid "SEO"
-msgstr "SEO"
+msgid "Request a New Link"
+msgstr "新しいリンクをリクエストする"
+
+msgid "Resend"
+msgstr "再送信"
 
 msgid "Resend Verification Email"
 msgstr "確認メールを再送信する"
 
-msgid "Reset Your Password"
-msgstr "Reset Your Password"
+msgid "Reset Password"
+msgstr "パスワードのリセット"
 
-msgid "Review images"
-msgstr "画像をレビューする"
+msgid "Reset Your Password"
+msgstr "パスワードをリセットする"
 
 msgid "Review image"
 msgstr "レビュー画像"
 
-msgid "Reyting bo'yicha filter"
-msgstr "Reyting bo'yicha filter"
+msgid "Review images"
+msgstr "画像をレビューする"
 
-msgid "Save New Password"
-msgstr "新しいパスワードを保存する"
+msgid "Reviewer"
+msgstr "査読者"
+
+msgid "Reyting bo'yicha filter"
+msgstr "評価でフィルタリングする"
+
+msgid "SEO"
+msgstr "SEO"
 
 msgid "SEO & Analytics"
 msgstr "SEOと分析"
 
-msgid "Save Settings"
-msgstr "設定の保存"
+msgid "Saqlash"
+msgstr "保存"
 
-msgid "Search tags…"
-msgstr "タグを検索…"
-
-msgid "Sayt Tarjimalari (Rosetta)"
-msgstr "サイト翻訳 (Rosetta)"
-
-msgid "Save Tag"
-msgstr "タグの保存"
-
-msgid "Secondary email"
-msgstr "二次メール"
-
-msgid "Search city or address..."
-msgstr "都市または住所を検索..."
-
-msgid "Send Reset Link"
-msgstr "リセットリンクを送信する"
-
-msgid "Secondary phone"
-msgstr "二次電話"
+msgid "Save New Password"
+msgstr "新しいパスワードを保存する"
 
 msgid "Save Question"
 msgstr "質問を保存"
 
-msgid "Set New Password"
-msgstr "新しいパスワードを設定する"
+msgid "Save Settings"
+msgstr "設定の保存"
+
+msgid "Save Tag"
+msgstr "タグの保存"
+
+msgid "Sayt Tarjimalari (Rosetta)"
+msgstr "サイト翻訳 (Rosetta)"
+
+msgid "Search city or address..."
+msgstr "都市または住所を検索..."
+
+msgid "Search tags…"
+msgstr "タグを検索…"
 
 msgid "Seats left"
 msgstr "残席あり"
 
+msgid "Secondary email"
+msgstr "二次メール"
+
+msgid "Secondary phone"
+msgstr "二次電話"
+
+msgid "Send Reset Link"
+msgstr "リセットリンクを送信する"
+
 msgid "Sequence in the itinerary: 1, 2, 3…"
 msgstr "旅程の順序: 1、2、3…"
+
+msgid "Set New Password"
+msgstr "新しいパスワードを設定する"
+
+msgid "Settings & FAQ"
+msgstr "設定とよくある質問"
+
+msgid "Shahar"
+msgstr "市"
+
+msgid "Shahar / Davlat"
+msgstr "市/州"
 
 msgid "Sharhga javob yozish..."
 msgstr "コメントに返信..."
@@ -3055,184 +3102,180 @@ msgstr "コメントに返信..."
 msgid "Sharhlar va Taassurotlar"
 msgstr "レビューと感想"
 
-msgid "Shahar"
-msgstr "市"
+msgid "Sharhni saqlash"
+msgstr "コメントを保存する"
+
+msgid "Shown as tooltip or used by screen readers."
+msgstr "ツールチップとして表示されるか、スクリーン リーダーによって使用されます。"
+
+msgid "Sign Out?"
+msgstr "サインアウト？"
+
+msgid "Site Information"
+msgstr "サイト情報"
 
 msgid "Site Settings"
-msgstr "Site Settings"
-
-msgid "Settings & FAQ"
-msgstr "設定とよくある質問"
-
-msgid "Shahar / Davlat"
-msgstr "Shahar / Davlat"
+msgstr "サイト設定"
 
 msgid "Site name"
 msgstr "サイト名"
 
-msgid "Sharhni saqlash"
-msgstr "コメントを保存する"
-
-msgid "Sign Out?"
-msgstr "Sign Out?"
-
-msgid "Site Information"
-msgstr "Site Information"
+msgid "Site settings"
+msgstr "サイト設定"
 
 msgid "Site settings updated successfully!"
 msgstr "サイト設定が正常に更新されました。"
 
 msgid "Sitemap"
-msgstr "Sitemap"
-
-msgid "Sort By"
-msgstr "並べ替え"
-
-msgid "Slug will be auto-generated from the tag name."
-msgstr "スラッグはタグ名から自動生成されます。"
-
-msgid "Site settings"
-msgstr "サイト設定"
+msgstr "サイトマップ"
 
 msgid "Slide Details"
 msgstr "スライドの詳細"
 
-msgid "Shown as tooltip or used by screen readers."
-msgstr "ツールチップとして表示されるか、スクリーン リーダーによって使用されます。"
+msgid "Slug will be auto-generated from the tag name."
+msgstr "スラッグはタグ名から自動生成されます。"
 
 msgid "Social Media Links"
 msgstr "ソーシャルメディアリンク"
 
-msgid "Stats"
-msgstr "統計"
-
-msgid "Success"
-msgstr "Success"
-
-msgid "Sort: Newest"
-msgstr "並べ替え: 新しい順"
-
-msgid "Staff Login"
-msgstr "スタッフログイン"
+msgid "Sort By"
+msgstr "並べ替え"
 
 msgid "Sort: Least Viewed ↑"
 msgstr "並べ替え: 最も閲覧されていない ↑"
 
-msgid "Tanlangan"
-msgstr "選択済み"
-
 msgid "Sort: Most Viewed ↓"
 msgstr "並べ替え: 最も閲覧されている ↓"
+
+msgid "Sort: Newest"
+msgstr "並べ替え: 新しい順"
 
 msgid "Starting from"
 msgstr "から始まる"
 
-msgid "Tahrirlash"
-msgstr "編集"
+msgid "Stats"
+msgstr "統計"
 
 msgid "Status & Visibility"
-msgstr "Status & Visibility"
-
-msgid "Taassurotlaringiz va fikrlaringiz"
-msgstr "皆様のご感想やご感想は"
+msgstr "ステータスと可視性"
 
 msgid "Still Have Questions?"
 msgstr "まだご質問がありますか?"
 
-msgid "Tanlash"
-msgstr "選ぶ"
+msgid "Success"
+msgstr "成功"
 
-msgid "Tabler ikonka nomi (masalan: wifi, swimming, bar)"
-msgstr "テーブルアイコン名 (例: Wi-Fi、スイミング、バー)"
+msgid "Taassurotlaringiz va fikrlaringiz"
+msgstr "皆様のご感想やご感想は"
 
 msgid "Tabler Icon Name"
 msgstr "テーブルラーのアイコン名"
 
 msgid ""
 "Tabler icon name, e.g. help, credit-card, map-pin, passport, info-circle."
-msgstr ""
-"Tabler icon name, e.g. help, credit-card, map-pin, passport, info-circle."
+msgstr "Tabler アイコン名、例:ヘルプ、クレジット カード、マップ ピン、パスポート、情報サークル。"
+
+msgid "Tabler ikonka nomi (masalan: wifi, swimming, bar)"
+msgstr "テーブルアイコン名 (例: Wi-Fi、スイミング、バー)"
 
 msgid "Tagline"
-msgstr "Tagline"
+msgstr "キャッチフレーズ"
+
+msgid "Tahrirlash"
+msgstr "編集"
+
+msgid "Tanlangan"
+msgstr "選択済み"
 
 msgid "Tanlanmagan"
 msgstr "未選択"
 
-msgid "Tashrif buyurgan joylaringizdan olgan rasmlarni bir vaqtda tanlang."
-msgstr "同時に訪れた場所から撮影した写真を選択します。"
+msgid "Tanlash"
+msgstr "選ぶ"
 
 msgid "Tasdiqlangan"
 msgstr "確認済み"
 
+msgid "Tasdiqlash"
+msgstr "確認"
+
+msgid "Tashrif buyurgan joylaringizdan olgan rasmlarni bir vaqtda tanlang."
+msgstr "同時に訪れた場所から撮影した写真を選択します。"
+
 msgid "Tashrif sanasi"
 msgstr "訪問日"
+
+msgid "Tavsif kiritilmagan."
+msgstr "説明は含まれていません。"
+
+msgid "Telegram URL"
+msgstr "電報URL"
+
+msgid "Terms of Service"
+msgstr "利用規約"
 
 msgid ""
 "Thank you for booking with UNITUR travel agency. A confirmation email has "
 "been sent to"
 msgstr "UNITUR旅行社にご予約いただきありがとうございます。確認メールが送信されました"
 
-msgid "Tasdiqlash"
-msgstr "確認"
-
-msgid "Tavsif kiritilmagan."
-msgstr "説明は含まれていません。"
-
-msgid "This field is required."
-msgstr "This field is required."
-
-msgid "Thank you! Your review has been saved."
-msgstr "ありがとう！レビューが保存されました。"
-
-msgid "Telegram URL"
-msgstr "電報URL"
-
-msgid "This password reset link is invalid or has expired."
-msgstr "このパスワード リセット リンクは無効であるか、有効期限が切れています。"
-
 msgid ""
 "Thank you for booking with UNITUR travel agency. Our team will contact you "
 "shortly on"
 msgstr "UNITUR旅行社にご予約いただきありがとうございます。私たちのチームがすぐにご連絡いたします"
 
-msgid "Terms of Service"
-msgstr "利用規約"
-
-msgid "Toifa"
-msgstr "カテゴリ"
-
 msgid "Thank you! We'll be in touch within 24 hours."
 msgstr "ありがとう！ 24時間以内にご連絡させていただきます。"
 
-msgid "This confirmation link is invalid or has expired."
-msgstr "この確認リンクは無効であるか、有効期限が切れています。"
+msgid "Thank you! Your review has been saved."
+msgstr "ありがとう！レビューが保存されました。"
 
 msgid ""
 "This FAQ will be permanently deleted and will no longer appear on your "
 "website."
 msgstr "この FAQ は完全に削除され、Web サイトに表示されなくなります。"
 
-msgid "Toifa Qo'shish"
-msgstr "カテゴリを追加"
+msgid "This action cannot be undone"
+msgstr "この操作は元に戻せません"
+
+msgid "This confirmation link is invalid or has expired."
+msgstr "この確認リンクは無効であるか、有効期限が切れています。"
+
+msgid "This field is required."
+msgstr "この項目は必須です。"
+
+msgid "This password reset link is invalid or has expired."
+msgstr "このパスワード リセット リンクは無効であるか、有効期限が切れています。"
 
 msgid "Timestamps"
 msgstr "タイムスタンプ"
 
-msgid "Tour Details"
-msgstr "ツアー詳細"
+msgid "Toifa"
+msgstr "カテゴリ"
 
-msgid "This action cannot be undone"
-msgstr "この操作は元に戻せません"
+msgid "Toifa Qo'shish"
+msgstr "カテゴリを追加"
 
 msgid "Toifa nomi"
 msgstr "カテゴリ名"
 
-msgid "Tour updated."
-msgstr "ツアーを更新しました。"
+msgid "Tour Details"
+msgstr "ツアー詳細"
+
+msgid "Tour created."
+msgstr "ツアーが作成されました。"
 
 msgid "Tour itinerary:"
 msgstr "ツアー旅程:"
+
+msgid "Tour updated."
+msgstr "ツアーを更新しました。"
+
+msgid "Tours in"
+msgstr "のツアー"
+
+msgid "Travel Details"
+msgstr "旅行の詳細"
 
 msgid "Travel Guides"
 msgstr "旅行ガイド"
@@ -3240,31 +3283,27 @@ msgstr "旅行ガイド"
 msgid "Travel Info"
 msgstr "旅行情報"
 
+msgid ""
+"Tugmani bossangiz bir nechta joylarni tanlash mumkin (Ctrl tugmasini bosib "
+"turing)"
+msgstr "Ctrlキーを押しながら複数の領域を選択できます"
+
 msgid "Tur kategoriyasi (Category)"
 msgstr "タイプカテゴリ (Category)"
 
 msgid "Turlar"
 msgstr "種類"
 
-msgid "Tour created."
-msgstr "ツアーが作成されました。"
+msgid "Twitter URL"
+msgstr ""
+"Error 500 (Server Error)!!1500.That’s an error.There was an error. Please "
+"try again later.That’s all we know."
 
-msgid "Tours in"
-msgstr "のツアー"
+msgid "Uncategorized"
+msgstr "未分類"
 
-msgid "UNITUR Admin Javobi:"
-msgstr "UNITUR 管理者の回答:"
-
-msgid "Travel Details"
-msgstr "旅行の詳細"
-
-msgid ""
-"Tugmani bossangiz bir nechta joylarni tanlash mumkin (Ctrl tugmasini bosib "
-"turing)"
-msgstr "Ctrlキーを押しながら複数の領域を選択できます"
-
-msgid "User agent"
-msgstr "ユーザーエージェント"
+msgid "Unpublish selected articles"
+msgstr "選択した記事の公開を取り消します"
 
 msgid "Unverified"
 msgstr "未検証"
@@ -3272,56 +3311,64 @@ msgstr "未検証"
 msgid "Update Password"
 msgstr "パスワードを更新する"
 
+msgid "Use my location"
+msgstr "私の位置情報を使用する"
+
+msgid "User agent"
+msgstr "ユーザーエージェント"
+
 msgid "Users"
 msgstr "ユーザー"
-
-msgid "Ushbu tur haqida taassurotingiz va rasmlaringizni ulashing"
-msgstr "このツアーの感想や写真をシェアしてください"
 
 msgid "Ushbu kunda boriladigan diqqatga sazovor joylar (Attractions):"
 msgstr "この日に訪れる観光スポット："
 
+msgid "Ushbu kunni o'chirish"
+msgstr "この日を削除"
+
+msgid "Ushbu tur haqida taassurotingiz va rasmlaringizni ulashing"
+msgstr "このツアーの感想や写真をシェアしてください"
+
 msgid "Verified"
 msgstr "確認済み"
-
-msgid "Use my location"
-msgstr "私の位置情報を使用する"
-
-msgid "Twitter URL"
-msgstr "ツイッターのURL"
-
-msgid "Username"
-msgstr "ユーザー名"
-
-msgid "Uncategorized"
-msgstr "未分類"
 
 msgid "Verify Your Email"
 msgstr "メールアドレスを確認してください"
 
-msgid "Ushbu kunni o'chirish"
-msgstr "この日を削除"
-
-msgid "Unpublish selected articles"
-msgstr "選択した記事の公開を取り消します"
-
 msgid "Views"
 msgstr "ビュー"
-
-msgid "Warning"
-msgstr "警告"
-
-msgid "WhatsApp number"
-msgstr "WhatsApp番号"
 
 msgid "Visibility"
 msgstr "可視性"
 
-msgid "Yana ko'proq ko'rsatish"
-msgstr "もっと見る"
+msgid "Visit Website"
+msgstr "ウェブサイトにアクセス"
+
+msgid "Warning"
+msgstr "警告"
 
 msgid "We're working on adding helpful information. Please check back soon!"
 msgstr "役立つ情報の追加に取り組んでいます。すぐにもう一度チェックしてください。"
+
+msgid ""
+"We've sent a password reset link to your email address. Check your inbox and"
+" follow the instructions."
+msgstr "パスワード リセットのリンクをあなたのメール アドレスに送信しました。受信箱を確認し、指示に従ってください。"
+
+msgid "WhatsApp number"
+msgstr "WhatsApp番号"
+
+msgid "Write clear questions and helpful answers for your visitors."
+msgstr "訪問者にとって明確な質問と役立つ回答を書きます。"
+
+msgid "Xarita havolasi biriktirilmagan."
+msgstr "地図リンクは貼られていません。"
+
+msgid "Xaritada ko`rish"
+msgstr "地図で見る"
+
+msgid "Yana ko'proq ko'rsatish"
+msgstr "もっと見る"
 
 msgid "Yangi Joy Qo'shish"
 msgstr "新しい場所を追加"
@@ -3329,54 +3376,23 @@ msgstr "新しい場所を追加"
 msgid "Yangi Qulaylik Qo'shish"
 msgstr "新しい機能を追加"
 
-msgid "Visit Website"
-msgstr "ウェブサイトにアクセス"
-
-msgid ""
-"We've sent a password reset link to your email address. Check your inbox and"
-" follow the instructions."
-msgstr "パスワード リセットのリンクをあなたのメール アドレスに送信しました。受信箱を確認し、指示に従ってください。"
+msgid "Yangi Toifa"
+msgstr "新しいカテゴリー"
 
 msgid "Yangi Toifa Qo'shish"
 msgstr "新しいカテゴリを追加"
 
-msgid "YouTube URL"
-msgstr "YouTubeのURL"
-
 msgid "Yangi rasmlar yuklash (Ko'p fayl tanlang)"
 msgstr "新しい画像をアップロード（複数のファイルを選択）"
-
-msgid "Yes, Sign Out"
-msgstr "はい、サインアウトします"
-
-msgid "Write clear questions and helpful answers for your visitors."
-msgstr "訪問者にとって明確な質問と役立つ回答を書きます。"
-
-msgid "Xaritada ko`rish"
-msgstr "地図で見る"
-
-msgid "Yangi Toifa"
-msgstr "新しいカテゴリー"
-
-msgid "Xarita havolasi biriktirilmagan."
-msgstr "地図リンクは貼られていません。"
-
-msgid "booked"
-msgstr "予約済み"
 
 msgid "Yes, Delete FAQ"
 msgstr "はい、FAQ を削除します"
 
-msgid "people"
-msgstr "人々"
+msgid "Yes, Sign Out"
+msgstr "はい、サインアウトします"
 
-msgid "leave empty to keep current"
-msgstr "最新の状態を維持するには空のままにしておきます"
-
-msgid ""
-"Your password has been changed successfully. You can now sign in with your "
-"new password."
-msgstr "パスワードは正常に変更されました。新しいパスワードを使用してサインインできるようになりました。"
+msgid "YouTube URL"
+msgstr "YouTubeのURL"
 
 msgid "Your Info"
 msgstr "あなたの情報"
@@ -3384,20 +3400,28 @@ msgstr "あなたの情報"
 msgid "Your email addresses"
 msgstr "あなたのメールアドレス"
 
-msgid "night"
-msgstr "夜"
+msgid ""
+"Your password has been changed successfully. You can now sign in with your "
+"new password."
+msgstr "パスワードは正常に変更されました。新しいパスワードを使用してサインインできるようになりました。"
 
-msgid "total reads"
-msgstr "合計読み取り数"
+msgid "booked"
+msgstr "予約済み"
 
 msgid "guests"
 msgstr "ゲスト"
 
+msgid "leave empty to keep current"
+msgstr "最新の状態を維持するには空のままにしておきます"
+
+msgid "night"
+msgstr "夜"
+
+msgid "people"
+msgstr "人々"
+
+msgid "total reads"
+msgstr "合計読み取り数"
+
 msgid "views"
 msgstr "ビュー"
-
-msgid "Dunyoning eng go'zal joylarini kashf eting"
-msgstr "世界で最も美しい場所を発見する"
-
-msgid "Dunyoning eng go'zal joylarini kashf eting."
-msgstr "世界で最も美しい場所を発見する。"
