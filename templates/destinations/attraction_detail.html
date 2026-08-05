@@ -181,8 +181,8 @@
           <h2 style="font-family: 'Fraunces', serif; font-size: 1.5rem; font-weight: 700; color: #0f172a; margin-bottom: 1rem; display: flex; align-items: center; gap: 0.5rem;">
             <i class="ti ti-info-circle" style="color: #2563eb;"></i> {% trans "Ushbu joy haqida" %}
           </h2>
-          <div class="text-gray-700 leading-relaxed text-base space-y-3 [&>p]:mb-3 [&>p]:last:mb-0 [&>p]:border-l-3 [&>p]:border-emerald-500/50 [&>p]:pl-4 [&>p]:py-2 [&>p]:bg-slate-50/60 [&>p]:rounded-r-xl">
-            {{ attraction.description|linebreaks|safe }}
+          <div class="text-gray-700 leading-relaxed text-base whitespace-pre-line space-y-3">
+            {{ attraction.description|safe }}
           </div>
           {% else %}
           <p style="color: #94a3b8; font-style: italic;">{% trans "Tavsif kiritilmagan." %}</p>

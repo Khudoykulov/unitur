@@ -32,8 +32,8 @@
         {% if country.overview %}
         <div class="content-card prose prose-lg max-w-none">
           <h2 class="font-serif text-2xl font-bold text-dark mb-4">{% trans "About" %} {{ country.name }}</h2>
-          <div class="text-gray-700 leading-relaxed text-base space-y-3 [&>p]:mb-3 [&>p]:last:mb-0 [&>p]:border-l-3 [&>p]:border-emerald-500/50 [&>p]:pl-4 [&>p]:py-2 [&>p]:bg-slate-50/60 [&>p]:rounded-r-xl">
-            {{ country.overview|linebreaks|safe }}
+          <div class="text-gray-700 leading-relaxed text-base whitespace-pre-line space-y-3">
+            {{ country.overview|safe }}
           </div>
         </div>
         {% endif %}
