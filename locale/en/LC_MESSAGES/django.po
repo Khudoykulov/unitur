@@ -2,11 +2,11 @@ msgid ""
 msgstr ""
 "Project-Id-Version: travel_pro 1.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-07-30 12:37+0000\n"
-"PO-Revision-Date: 2026-07-30 12:37+0000\n"
+"POT-Creation-Date: 2026-08-05 16:44+0000\n"
+"PO-Revision-Date: 2026-08-05 16:44+0000\n"
 "Last-Translator: Travel Pro Team\n"
-"Language-Team: uz\n"
-"Language: uz\n"
+"Language-Team: en\n"
+"Language: en\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -70,6 +70,8 @@ msgid ""
 "Multi-city tours across Uzbekistan — discover several cities in a single "
 "journey."
 msgstr ""
+"Multi-city tours across Uzbekistan — discover several cities in a single "
+"journey."
 
 msgid "%(count)s multi-city tours"
 msgstr "%(count)s multi-city tours"
@@ -330,6 +332,8 @@ msgid ""
 "We use cookies to enhance your browsing experience and analyse traffic. By "
 "clicking 'Accept', you consent to our use of cookies."
 msgstr ""
+"We use cookies to enhance your browsing experience and analyse traffic. By "
+"clicking 'Accept', you consent to our use of cookies."
 
 msgid "Learn more"
 msgstr "Learn more"
@@ -344,6 +348,8 @@ msgid ""
 "Authentic tours across Uzbekistan and Eurasia. Unmatched service, "
 "unforgettable memories."
 msgstr ""
+"Authentic tours across Uzbekistan and Eurasia. Unmatched service, "
+"unforgettable memories."
 
 msgid "Destination"
 msgstr "Destination"
@@ -440,7 +446,8 @@ msgstr "Ready for Your Next Adventure?"
 
 msgid ""
 "Get a personalised itinerary from our travel experts — completely free."
-msgstr "Sayohat mutaxassislarimizdan shaxsiy marshrut oling — mutlaqo bepul."
+msgstr ""
+"Get a personalised itinerary from our travel experts — completely free."
 
 msgid "Plan My Trip"
 msgstr "Plan My Trip"
@@ -541,6 +548,7 @@ msgstr "Please correct the errors below."
 msgid ""
 "Your information is secure and will never be shared with third parties."
 msgstr ""
+"Your information is secure and will never be shared with third parties."
 
 msgid "Up to 1 week"
 msgstr "Up to 1 week"
@@ -660,6 +668,8 @@ msgid ""
 "From international conferences to team-building retreats — we handle every "
 "detail."
 msgstr ""
+"From international conferences to team-building retreats — we handle every "
+"detail."
 
 msgid "Request a Quote"
 msgstr "Request a Quote"
@@ -691,6 +701,7 @@ msgstr "Booking Confirmed!"
 msgid ""
 "Thank you for booking with Travel Pro. A confirmation email has been sent to"
 msgstr ""
+"Thank you for booking with Travel Pro. A confirmation email has been sent to"
 
 msgid "Confirmation Number"
 msgstr "Confirmation Number"
@@ -750,6 +761,8 @@ msgid ""
 "For over 15 years, we've been connecting passionate travelers with "
 "extraordinary destinations across the globe."
 msgstr ""
+"For over 15 years, we've been connecting passionate travelers with "
+"extraordinary destinations across the globe."
 
 msgid "Our Mission"
 msgstr "Our Mission"
@@ -759,6 +772,9 @@ msgid ""
 " and communities through expertly crafted travel experiences — with a "
 "commitment to sustainability, authenticity, and excellence."
 msgstr ""
+"To inspire and enable people to experience the world's cultures, landscapes,"
+" and communities through expertly crafted travel experiences — with a "
+"commitment to sustainability, authenticity, and excellence."
 
 msgid "Tour Packages"
 msgstr "Tour Packages"
@@ -772,6 +788,7 @@ msgstr "Sustainability"
 msgid ""
 "We partner with eco-conscious operators and promote responsible tourism."
 msgstr ""
+"We partner with eco-conscious operators and promote responsible tourism."
 
 msgid "Authenticity"
 msgstr "Authenticity"
@@ -1530,6 +1547,8 @@ msgid ""
 "Are you sure you want to delete <strong>%(name)s</strong>? This action "
 "cannot be undone."
 msgstr ""
+"Are you sure you want to delete <strong>%(name)s</strong>? This action "
+"cannot be undone."
 
 msgid "Showing %(start)s–%(end)s of %(total)s"
 msgstr "Showing %(start)s–%(end)s of %(total)s"
@@ -1631,6 +1650,8 @@ msgid ""
 "Multi-city domestic tours (2 or more itinerary stops). These appear on the "
 "site's Domestic Tours page."
 msgstr ""
+"Multi-city domestic tours (2 or more itinerary stops). These appear on the "
+"site's Domestic Tours page."
 
 msgid "Itinerary (Route)"
 msgstr "Itinerary (Route)"
@@ -1638,6 +1659,7 @@ msgstr "Itinerary (Route)"
 msgid ""
 "Add the cities visited, in order. A domestic tour needs at least 2 stops."
 msgstr ""
+"Add the cities visited, in order. A domestic tour needs at least 2 stops."
 
 msgid "Del"
 msgstr "Del"
@@ -1712,11 +1734,15 @@ msgid ""
 "These power the “Category” filter on the public tours page and the Tours "
 "mega-menu."
 msgstr ""
+"These power the “Category” filter on the public tours page and the Tours "
+"mega-menu."
 
 msgid ""
 "Browse icon names at tabler.io/icons — use the name without the “ti ti-” "
 "prefix."
 msgstr ""
+"Browse icon names at tabler.io/icons — use the name without the “ti ti-” "
+"prefix."
 
 msgid "Tabler icon name, e.g. compass, building, beach, chef-hat, paw."
 msgstr "Tabler icon name, e.g. compass, building, beach, chef-hat, paw."
@@ -1761,6 +1787,8 @@ msgid ""
 "Optionally describe each day of the tour. It appears on the tour page when "
 "provided."
 msgstr ""
+"Optionally describe each day of the tour. It appears on the tour page when "
+"provided."
 
 msgid "Domestic tour created."
 msgstr "Domestic tour created."
@@ -2063,6 +2091,8 @@ msgid ""
 "Domestic (Uzbek) cities. These are the stops you can pick when building a "
 "domestic tour route."
 msgstr ""
+"Domestic (Uzbek) cities. These are the stops you can pick when building a "
+"domestic tour route."
 
 msgid "No cities yet. Add one to build domestic tour routes."
 msgstr "No cities yet. Add one to build domestic tour routes."
@@ -2071,6 +2101,8 @@ msgid ""
 "The city is added under Uzbekistan and becomes selectable in domestic tour "
 "routes."
 msgstr ""
+"The city is added under Uzbekistan and becomes selectable in domestic tour "
+"routes."
 
 msgid "Hero Images"
 msgstr "Hero Images"
@@ -2103,6 +2135,8 @@ msgid ""
 "Rotating background images for page heroes. Add several images to the same "
 "page and they cross-fade automatically."
 msgstr ""
+"Rotating background images for page heroes. Add several images to the same "
+"page and they cross-fade automatically."
 
 msgid "No hero images yet. Add a few to a page to start the slideshow."
 msgstr "No hero images yet. Add a few to a page to start the slideshow."
@@ -2158,23 +2192,1265 @@ msgstr "Shuningdek ko'rishingiz mumkin"
 msgid "Ko'rish"
 msgstr "Ko'rish"
 
-msgid "Starting from"
-msgstr "Starting from"
+msgid "+ Kun qo'shish (Add Day)"
+msgstr "+ Kun qo'shish (Add Day)"
 
-msgid "night"
-msgstr "night"
+msgid "-- Select Category --"
+msgstr "-- Select Category --"
 
-msgid "Location & Map"
-msgstr "Location & Map"
+msgid "-- Tur kategoriyasini tanlang --"
+msgstr "-- Tur kategoriyasini tanlang --"
 
-msgid "views"
-msgstr "views"
+msgid "24/7 ochiq"
+msgstr "24/7 ochiq"
+
+msgid "About This Hotel"
+msgstr "About This Hotel"
+
+msgid "About UNITUR"
+msgstr "About UNITUR"
+
+msgid "Active (Visible on public FAQ page)"
+msgstr "Active (Visible on public FAQ page)"
+
+msgid "Active (Visible on site)"
+msgstr "Active (Visible on site)"
+
+msgid "Add"
+msgstr "Add"
+
+msgid "Add Attraction"
+msgstr "Add Attraction"
+
+msgid "Add First Category"
+msgstr "Add First Category"
+
+msgid "Add Guide Category"
+msgstr "Add Guide Category"
+
+msgid "Add New Category"
+msgstr "Add New Category"
+
+msgid "Add New Question"
+msgstr "Add New Question"
+
+msgid "Add Tag"
+msgstr "Add Tag"
+
+msgid "Add email address"
+msgstr "Add email address"
+
+msgid ""
+"Add itinerary days, titles, descriptions and link visited attractions "
+"(Diqqatga sazovor joylar) for each day."
+msgstr ""
+"Add itinerary days, titles, descriptions and link visited attractions "
+"(Diqqatga sazovor joylar) for each day."
+
+msgid "Admin replied at"
+msgstr "Admin replied at"
+
+msgid "Admin reply"
+msgstr "Admin reply"
+
+msgid "All Categories"
+msgstr "All Categories"
+
+msgid "All FAQs"
+msgstr "All FAQs"
+
+msgid "All cities"
+msgstr "All cities"
+
+msgid "All countries"
+msgstr "All countries"
+
+msgid "All rights reserved."
+msgstr "All rights reserved."
+
+msgid "Alt Text"
+msgstr "Alt Text"
+
+msgid "Amallar"
+msgstr "Amallar"
+
+msgid "Amenity already exists"
+msgstr "Amenity already exists"
+
+msgid "Amenity created successfully!"
+msgstr "Amenity created successfully!"
+
+msgid "Amenity deleted successfully!"
+msgstr "Amenity deleted successfully!"
+
+msgid "Amenity updated successfully!"
+msgstr "Amenity updated successfully!"
+
+msgid "Answer"
+msgstr "Answer"
+
+msgid "Any difficulty"
+msgstr "Any difficulty"
+
+msgid "Any stars"
+msgstr "Any stars"
+
+msgid "Approve selected reviews"
+msgstr "Approve selected reviews"
+
+msgid "Are you sure you want to delete this FAQ?"
+msgstr "Are you sure you want to delete this FAQ?"
+
+msgid "Are you sure you want to delete this category?"
+msgstr "Are you sure you want to delete this category?"
+
+msgid "Are you sure you want to sign out of your account?"
+msgstr "Are you sure you want to sign out of your account?"
+
+msgid "Article Views"
+msgstr "Article Views"
+
+msgid "Asosiy sahifada ko'rsatish / yashirish"
+msgstr "Asosiy sahifada ko'rsatish / yashirish"
+
+msgid "Asosiy sahifada ko'rsatish / yashirish uchun bosing"
+msgstr "Asosiy sahifada ko'rsatish / yashirish uchun bosing"
+
+msgid "Asosiy sahifada ✓"
+msgstr "Asosiy sahifada ✓"
+
+msgid "Attraction image"
+msgstr "Attraction image"
+
+msgid "Attraction images"
+msgstr "Attraction images"
+
+msgid "Attractions (Diqqatga sazovor joylar)"
+msgstr "Attractions (Diqqatga sazovor joylar)"
 
 msgid "Available Rooms"
 msgstr "Available Rooms"
 
-msgid "guests"
-msgstr "guests"
+msgid "Back to Profile"
+msgstr "Back to Profile"
+
+msgid "Back to Sign In"
+msgstr "Back to Sign In"
+
+msgid "Back to Tags"
+msgstr "Back to Tags"
+
+msgid "Baho"
+msgstr "Baho"
+
+msgid "Baho bering"
+msgstr "Baho bering"
+
+msgid "Barcha mehmonxonalar va filtr"
+msgstr "Barcha mehmonxonalar va filtr"
+
+msgid "Barcha turlar"
+msgstr "Barcha turlar"
+
+msgid "Barchasi"
+msgstr "Barchasi"
+
+msgid "Bekor qilish"
+msgstr "Bekor qilish"
+
+msgid "Book Your Tour"
+msgstr "Book Your Tour"
+
+msgid "Booking Confirmed"
+msgstr "Booking Confirmed"
+
+msgid "Booking Reference"
+msgstr "Booking Reference"
+
+msgid "Bookings count"
+msgstr "Bookings count"
+
+msgid ""
+"Borgan joylaringizdan rasmlar yuklang (Bir nechta rasm tanlashingiz mumkin)"
+msgstr ""
+"Borgan joylaringizdan rasmlar yuklang (Bir nechta rasm tanlashingiz mumkin)"
+
+msgid "Boshqa (Kategoriyani o'zim kiritaman)"
+msgstr "Boshqa (Kategoriyani o'zim kiritaman)"
+
+msgid "Boshqa kategoriya (Custom category)"
+msgstr "Boshqa kategoriya (Custom category)"
+
+msgid ""
+"Browse icon names at tabler.io/icons — use the name without the 'ti ti-' "
+"prefix."
+msgstr ""
+"Browse icon names at tabler.io/icons — use the name without the 'ti ti-' "
+"prefix."
+
+msgid "Call Us"
+msgstr "Call Us"
+
+msgid ""
+"Can't find the answer you're looking for? Our friendly team is here to help."
+msgstr ""
+"Can't find the answer you're looking for? Our friendly team is here to help."
+
+msgid "Cancel — go back"
+msgstr "Cancel — go back"
+
+msgid ""
+"Categories organize travel guide articles (e.g. Visa Tips, Food, Safety)."
+msgstr ""
+"Categories organize travel guide articles (e.g. Visa Tips, Food, Safety)."
+
+msgid "Category Name"
+msgstr "Category Name"
+
+msgid "Category already exists"
+msgstr "Category already exists"
+
+msgid "Category created successfully!"
+msgstr "Category created successfully!"
+
+msgid "Category name is required"
+msgstr "Category name is required"
+
+msgid "Change Password"
+msgstr "Change Password"
+
+msgid "Changes are saved immediately after clicking Save."
+msgstr "Changes are saved immediately after clicking Save."
+
+msgid "Check Your Email"
+msgstr "Check Your Email"
+
+msgid "Click or drag the marker on the map to set the location."
+msgstr "Click or drag the marker on the map to set the location."
+
+msgid "Click tags to select / deselect. Multiple tags allowed."
+msgstr "Click tags to select / deselect. Multiple tags allowed."
+
+msgid "Collapse All"
+msgstr "Collapse All"
+
+msgid "Comma-separated keywords"
+msgstr "Comma-separated keywords"
+
+msgid "Configure category details and icon display."
+msgstr "Configure category details and icon display."
+
+msgid "Confirm Email"
+msgstr "Confirm Email"
+
+msgid "Confirm Email Address"
+msgstr "Confirm Email Address"
+
+msgid "Confirm new password"
+msgstr "Confirm new password"
+
+msgid "Confirmation"
+msgstr "Confirmation"
+
+msgid "Copied!"
+msgstr "Copied!"
+
+msgid "Copy link"
+msgstr "Copy link"
+
+msgid "Copyright text"
+msgstr "Copyright text"
+
+msgid "Create First FAQ"
+msgstr "Create First FAQ"
+
+msgid "Create new category"
+msgstr "Create new category"
+
+msgid "Create tags"
+msgstr "Create tags"
+
+msgid "Create your first FAQ category to organize your questions neatly."
+msgstr "Create your first FAQ category to organize your questions neatly."
+
+msgid "Create your first FAQ question to help customers find answers quickly."
+msgstr ""
+"Create your first FAQ question to help customers find answers quickly."
+
+msgid "Current Image"
+msgstr "Current Image"
+
+msgid "Current password"
+msgstr "Current password"
+
+msgid "Custom category"
+msgstr "Custom category"
+
+msgid "Danger"
+msgstr "Danger"
+
+msgid "Day"
+msgstr "Day"
+
+msgid "Day-by-Day Itinerary (Marshrut / Kunlar)"
+msgstr "Day-by-Day Itinerary (Marshrut / Kunlar)"
+
+msgid "Delete FAQ"
+msgstr "Delete FAQ"
+
+msgid "Delete this category?"
+msgstr "Delete this category?"
+
+msgid "Delete this tag?"
+msgstr "Delete this tag?"
+
+msgid "Diqqatga sazovor joylar"
+msgstr "Diqqatga sazovor joylar"
+
+msgid "Diqqatga sazovor joylar (Attractions):"
+msgstr "Diqqatga sazovor joylar (Attractions):"
+
+msgid "Display Order"
+msgstr "Display Order"
+
+msgid "Display in home page testimonials"
+msgstr "Display in home page testimonials"
+
+msgid "Edit Category"
+msgstr "Edit Category"
+
+msgid "Edit FAQ"
+msgstr "Edit FAQ"
+
+msgid "Edit FAQ Category"
+msgstr "Edit FAQ Category"
+
+msgid "Edit Question"
+msgstr "Edit Question"
+
+msgid "Email Addresses"
+msgstr "Email Addresses"
+
+msgid "Email Sent!"
+msgstr "Email Sent!"
+
+msgid "Email Verification Required"
+msgstr "Email Verification Required"
+
+msgid "Eng mashhur diqqatga sazovor joylar"
+msgstr "Eng mashhur diqqatga sazovor joylar"
+
+msgid "Enter a valid phone number (7–20 digits, +, spaces, - or () allowed)."
+msgstr "Enter a valid phone number (7–20 digits, +, spaces, - or () allowed)."
+
+msgid "Enter and confirm your new password below"
+msgstr "Enter and confirm your new password below"
+
+msgid "Enter your email and we'll send you a reset link"
+msgstr "Enter your email and we'll send you a reset link"
+
+msgid "Examples: help, credit-card, map-pin, passport, info-circle, plane"
+msgstr "Examples: help, credit-card, map-pin, passport, info-circle, plane"
+
+msgid "Expand All"
+msgstr "Expand All"
+
+msgid "Explore now"
+msgstr "Explore now"
+
+msgid "Export selected to CSV"
+msgstr "Export selected to CSV"
+
+msgid "FAQ"
+msgstr "FAQ"
+
+msgid "FAQ Categories"
+msgstr "FAQ Categories"
+
+msgid "FAQ Management"
+msgstr "FAQ Management"
+
+msgid "FAQ Questions"
+msgstr "FAQ Questions"
+
+msgid "FAQ categories"
+msgstr "FAQ categories"
+
+msgid "FAQ category"
+msgstr "FAQ category"
+
+msgid "FAQ category created successfully!"
+msgstr "FAQ category created successfully!"
+
+msgid "FAQ category deleted successfully!"
+msgstr "FAQ category deleted successfully!"
+
+msgid "FAQ category updated successfully!"
+msgstr "FAQ category updated successfully!"
+
+msgid "FAQ created successfully!"
+msgstr "FAQ created successfully!"
+
+msgid "FAQ deleted successfully!"
+msgstr "FAQ deleted successfully!"
+
+msgid "FAQ updated successfully!"
+msgstr "FAQ updated successfully!"
+
+msgid "FAQs"
+msgstr "FAQs"
+
+msgid "FAQs Count"
+msgstr "FAQs Count"
+
+msgid "Facebook Pixel ID"
+msgstr "Facebook Pixel ID"
+
+msgid "Facebook URL"
+msgstr "Facebook URL"
+
+msgid "Favicon"
+msgstr "Favicon"
+
+msgid "Fayl oynasidan bir nechta rasmni `Ctrl` yoki `Shift` bosib belgilang."
+msgstr "Fayl oynasidan bir nechta rasmni `Ctrl` yoki `Shift` bosib belgilang."
+
+msgid "Featured (Asosiy sahifa)"
+msgstr "Featured (Asosiy sahifa)"
+
+msgid "Featured article appears at the top"
+msgstr "Featured article appears at the top"
+
+msgid "Filter"
+msgstr "Filter"
+
+msgid ""
+"Find answers to common questions about our tours, booking process, and "
+"travel services."
+msgstr ""
+"Find answers to common questions about our tours, booking process, and "
+"travel services."
+
+msgid "Footer"
+msgstr "Footer"
+
+msgid "Footer text"
+msgstr "Footer text"
+
+msgid "Format: +998901234567"
+msgstr "Format: +998901234567"
+
+msgid "Fotosuratlar galereyasi (Ko'p rasm yuklash)"
+msgstr "Fotosuratlar galereyasi (Ko'p rasm yuklash)"
+
+msgid "Frequently Asked Questions"
+msgstr "Frequently Asked Questions"
+
+msgid "GPS coordinates for the map widget"
+msgstr "GPS coordinates for the map widget"
+
+msgid "Gallery image"
+msgstr "Gallery image"
+
+msgid "Gallery images"
+msgstr "Gallery images"
+
+msgid "General Questions"
+msgstr "General Questions"
+
+msgid "Get a Quote"
+msgstr "Get a Quote"
+
+msgid "Go to Sign In"
+msgstr "Go to Sign In"
+
+msgid "Google Analytics ID"
+msgstr "Google Analytics ID"
+
+msgid "Group similar questions together"
+msgstr "Group similar questions together"
+
+msgid "Guide Categories"
+msgstr "Guide Categories"
+
+msgid "Havolani nusxalash"
+msgstr "Havolani nusxalash"
+
+msgid "Help Center"
+msgstr "Help Center"
+
+msgid "Hero slide"
+msgstr "Hero slide"
+
+msgid "Hero slides"
+msgstr "Hero slides"
+
+msgid "Highest Rated"
+msgstr "Highest Rated"
+
+msgid "Holat"
+msgstr "Holat"
+
+msgid "Hold Ctrl to select multiple attractions for this day"
+msgstr "Hold Ctrl to select multiple attractions for this day"
+
+msgid "Hotel categories"
+msgstr "Hotel categories"
+
+msgid "Hotel category"
+msgstr "Hotel category"
+
+msgid "Hozircha diqqatga sazovor joylar kiritilmagan."
+msgstr "Hozircha diqqatga sazovor joylar kiritilmagan."
+
+msgid "Hozircha diqqatga sazovor joylar yo'q."
+msgstr "Hozircha diqqatga sazovor joylar yo'q."
+
+msgid "Hozircha mehmonxonalar kiritilmagan."
+msgstr "Hozircha mehmonxonalar kiritilmagan."
+
+msgid "Hozircha qulayliklar yo'q. 'Yangi Qulaylik Qo'shish' tugmasini bosing."
+msgstr ""
+"Hozircha qulayliklar yo'q. 'Yangi Qulaylik Qo'shish' tugmasini bosing."
+
+msgid ""
+"Hozircha ushbu turga sharhlar yo'q. Birinchi bo'lib taassurotingizni yozib "
+"qoldiring!"
+msgstr ""
+"Hozircha ushbu turga sharhlar yo'q. Birinchi bo'lib taassurotingizni yozib "
+"qoldiring!"
+
+msgid "Icon & Category Name"
+msgstr "Icon & Category Name"
+
+msgid "Ikonka nomi (ixtiyoriy)"
+msgstr "Ikonka nomi (ixtiyoriy)"
+
+msgid "Iltimos, shakldagi xatoliklarni to'g'rilang."
+msgstr "Iltimos, shakldagi xatoliklarni to'g'rilang."
+
+msgid "Inactive articles are hidden from the site"
+msgstr "Inactive articles are hidden from the site"
+
+msgid "Info"
+msgstr "Info"
+
+msgid "Instagram URL"
+msgstr "Instagram URL"
+
+msgid "Internal"
+msgstr "Internal"
+
+msgid "Invalid JSON"
+msgstr "Invalid JSON"
+
+msgid "Invalid Link"
+msgstr "Invalid Link"
+
+msgid "Is featured on home page"
+msgstr "Is featured on home page"
+
+msgid "Ismingiz / Username"
+msgstr "Ismingiz / Username"
+
+msgid "Javob saqlash"
+msgstr "Javob saqlash"
+
+msgid "Joy Nomi"
+msgstr "Joy Nomi"
+
+msgid "Joy ma'lumotlari"
+msgstr "Joy ma'lumotlari"
+
+msgid "Joy nomini qidirish…"
+msgstr "Joy nomini qidirish…"
+
+msgid ""
+"Joy uchun bir nechta (5-6+ ta) rasm tanlab bir vaqtda yuklashingiz mumkin."
+msgstr ""
+"Joy uchun bir nechta (5-6+ ta) rasm tanlab bir vaqtda yuklashingiz mumkin."
+
+msgid "Joylar"
+msgstr "Joylar"
+
+msgid "Kategoriya nomini kiriting..."
+msgstr "Kategoriya nomini kiriting..."
+
+msgid "Keyingi 10 ta"
+msgstr "Keyingi 10 ta"
+
+msgid "Kun sarlavhasi (Title)"
+msgstr "Kun sarlavhasi (Title)"
+
+msgid "Kun №"
+msgstr "Kun №"
+
+msgid "Kunning tavsifi (Description)"
+msgstr "Kunning tavsifi (Description)"
+
+msgid "Last saved auto-syncs"
+msgstr "Last saved auto-syncs"
+
+msgid "Level"
+msgstr "Level"
+
+msgid "Link"
+msgstr "Link"
+
+msgid "Linked Items"
+msgstr "Linked Items"
+
+msgid "LinkedIn URL"
+msgstr "LinkedIn URL"
+
+msgid "Links shown in the footer and contact page"
+msgstr "Links shown in the footer and contact page"
+
+msgid "Location & Map"
+msgstr "Location & Map"
+
+msgid "Logo"
+msgstr "Logo"
+
+msgid "Lower numbers appear first within the category."
+msgstr "Lower numbers appear first within the category."
+
+msgid "Lower numbers appear first."
+msgstr "Lower numbers appear first."
+
+msgid "Ma'lumot berilmagan"
+msgstr "Ma'lumot berilmagan"
+
+msgid "Make primary"
+msgstr "Make primary"
+
+msgid "Mamlakat"
+msgstr "Mamlakat"
+
+msgid "Manage Categories"
+msgstr "Manage Categories"
+
+msgid "Manage Email"
+msgstr "Manage Email"
+
+msgid "Manage questions and answers displayed on the public FAQ page."
+msgstr "Manage questions and answers displayed on the public FAQ page."
+
+msgid "Manage your contact details, location, and social media links"
+msgstr "Manage your contact details, location, and social media links"
+
+msgid "Manzil"
+msgstr "Manzil"
+
+msgid "Mark selected as Cancelled"
+msgstr "Mark selected as Cancelled"
+
+msgid "Mark selected as Completed"
+msgstr "Mark selected as Completed"
+
+msgid "Mark selected as Confirmed"
+msgstr "Mark selected as Confirmed"
+
+msgid "Mavjud galereya rasmlari"
+msgstr "Mavjud galereya rasmlari"
+
+msgid "Max days"
+msgstr "Max days"
+
+msgid "Max price"
+msgstr "Max price"
+
+msgid "Max price/night"
+msgstr "Max price/night"
+
+msgid ""
+"Mehmonxona uchun bir nechta (5-6+ ta) rasm tanlab bir vaqtda yuklashingiz "
+"mumkin."
+msgstr ""
+"Mehmonxona uchun bir nechta (5-6+ ta) rasm tanlab bir vaqtda yuklashingiz "
+"mumkin."
+
+msgid "Mehmonxonalar"
+msgstr "Mehmonxonalar"
+
+msgid "Meta keywords"
+msgstr "Meta keywords"
+
+msgid "Min days"
+msgstr "Min days"
+
+msgid "Min price"
+msgstr "Min price"
+
+msgid "Most Viewed"
+msgstr "Most Viewed"
+
+msgid "Most Viewed Articles"
+msgstr "Most Viewed Articles"
+
+msgid "Muallif"
+msgstr "Muallif"
+
+msgid "My location"
+msgstr "My location"
+
+msgid "Name is required"
+msgstr "Name is required"
+
+msgid "New"
+msgstr "New"
+
+msgid "New FAQ"
+msgstr "New FAQ"
+
+msgid "New FAQ Category"
+msgstr "New FAQ Category"
+
+msgid "New Tag"
+msgstr "New Tag"
+
+msgid "Next"
+msgstr "Next"
+
+msgid "Nights spent in this city"
+msgstr "Nights spent in this city"
+
+msgid "No Categories Found"
+msgstr "No Categories Found"
+
+msgid "No FAQs Available Yet"
+msgstr "No FAQs Available Yet"
+
+msgid "No FAQs Yet"
+msgstr "No FAQs Yet"
+
+msgid "No alt text"
+msgstr "No alt text"
+
+msgid "No tags found."
+msgstr "No tags found."
+
+msgid "No tags yet."
+msgstr "No tags yet."
+
+msgid "Null = broadcast to all staff"
+msgstr "Null = broadcast to all staff"
+
+msgid "O'chirish"
+msgstr "O'chirish"
+
+msgid "Oldingi"
+msgstr "Oldingi"
+
+msgid "Optional"
+msgstr "Optional"
+
+msgid "Organize FAQ questions into dynamic categories for your customers."
+msgstr "Organize FAQ questions into dynamic categories for your customers."
+
+msgid "Orqaga"
+msgstr "Orqaga"
+
+msgid "Password Changed"
+msgstr "Password Changed"
+
+msgid "Password Updated!"
+msgstr "Password Updated!"
+
+msgid "Phone numbers and email addresses"
+msgstr "Phone numbers and email addresses"
+
+msgid "Photo"
+msgstr "Photo"
+
+msgid ""
+"Please verify your email address before accessing this page. Check your "
+"inbox for a verification link."
+msgstr ""
+"Please verify your email address before accessing this page. Check your "
+"inbox for a verification link."
+
+msgid "Prev"
+msgstr "Prev"
+
+msgid "Pricing"
+msgstr "Pricing"
+
+msgid "Primary"
+msgstr "Primary"
+
+msgid "Publish selected articles"
+msgstr "Publish selected articles"
+
+msgid "Publishing"
+msgstr "Publishing"
+
+msgid "Question"
+msgstr "Question"
+
+msgid "Question & Answer"
+msgstr "Question & Answer"
+
+msgid "Qulaylik Qo'shish"
+msgstr "Qulaylik Qo'shish"
+
+msgid "Qulaylik nomi"
+msgstr "Qulaylik nomi"
+
+msgid "Qulayliklarni Tanlang (✓)"
+msgstr "Qulayliklarni Tanlang (✓)"
+
+msgid "Qulaylikni Tahrirlash"
+msgstr "Qulaylikni Tahrirlash"
+
+msgid "Rad etish"
+msgstr "Rad etish"
+
+msgid "Rasmlar"
+msgstr "Rasmlar"
+
+msgid "Rasmlar (Photos)"
+msgstr "Rasmlar (Photos)"
+
+msgid "Read"
+msgstr "Read"
+
+msgid "Recipient"
+msgstr "Recipient"
+
+msgid "Reject selected reviews"
+msgstr "Reject selected reviews"
+
+msgid "Remove day"
+msgstr "Remove day"
+
+msgid "Request a New Link"
+msgstr "Request a New Link"
+
+msgid "Resend"
+msgstr "Resend"
+
+msgid "Resend Verification Email"
+msgstr "Resend Verification Email"
+
+msgid "Reset Password"
+msgstr "Reset Password"
+
+msgid "Reset Your Password"
+msgstr "Reset Your Password"
+
+msgid "Review image"
+msgstr "Review image"
+
+msgid "Review images"
+msgstr "Review images"
+
+msgid "Reviewer"
+msgstr "Reviewer"
+
+msgid "Reyting bo'yicha filter"
+msgstr "Reyting bo'yicha filter"
+
+msgid "SEO"
+msgstr "SEO"
+
+msgid "SEO & Analytics"
+msgstr "SEO & Analytics"
+
+msgid "Saqlash"
+msgstr "Saqlash"
+
+msgid "Save New Password"
+msgstr "Save New Password"
+
+msgid "Save Question"
+msgstr "Save Question"
+
+msgid "Save Settings"
+msgstr "Save Settings"
+
+msgid "Save Tag"
+msgstr "Save Tag"
+
+msgid "Sayt Tarjimalari (Rosetta)"
+msgstr "Sayt Tarjimalari (Rosetta)"
+
+msgid "Search city or address..."
+msgstr "Search city or address..."
+
+msgid "Search tags…"
+msgstr "Search tags…"
+
+msgid "Seats left"
+msgstr "Seats left"
+
+msgid "Secondary email"
+msgstr "Secondary email"
+
+msgid "Secondary phone"
+msgstr "Secondary phone"
+
+msgid "Send Reset Link"
+msgstr "Send Reset Link"
+
+msgid "Sequence in the itinerary: 1, 2, 3…"
+msgstr "Sequence in the itinerary: 1, 2, 3…"
+
+msgid "Set New Password"
+msgstr "Set New Password"
+
+msgid "Settings & FAQ"
+msgstr "Settings & FAQ"
+
+msgid "Shahar"
+msgstr "Shahar"
+
+msgid "Shahar / Davlat"
+msgstr "Shahar / Davlat"
+
+msgid "Sharhga javob yozish..."
+msgstr "Sharhga javob yozish..."
+
+msgid "Sharhlar va Taassurotlar"
+msgstr "Sharhlar va Taassurotlar"
+
+msgid "Sharhni saqlash"
+msgstr "Sharhni saqlash"
+
+msgid "Shown as tooltip or used by screen readers."
+msgstr "Shown as tooltip or used by screen readers."
+
+msgid "Sign Out?"
+msgstr "Sign Out?"
+
+msgid "Site Information"
+msgstr "Site Information"
+
+msgid "Site Settings"
+msgstr "Site Settings"
+
+msgid "Site name"
+msgstr "Site name"
+
+msgid "Site settings"
+msgstr "Site settings"
+
+msgid "Site settings updated successfully!"
+msgstr "Site settings updated successfully!"
+
+msgid "Sitemap"
+msgstr "Sitemap"
+
+msgid "Slide Details"
+msgstr "Slide Details"
+
+msgid "Slug will be auto-generated from the tag name."
+msgstr "Slug will be auto-generated from the tag name."
+
+msgid "Social Media Links"
+msgstr "Social Media Links"
+
+msgid "Sort By"
+msgstr "Sort By"
+
+msgid "Sort: Least Viewed ↑"
+msgstr "Sort: Least Viewed ↑"
+
+msgid "Sort: Most Viewed ↓"
+msgstr "Sort: Most Viewed ↓"
+
+msgid "Sort: Newest"
+msgstr "Sort: Newest"
+
+msgid "Starting from"
+msgstr "Starting from"
+
+msgid "Stats"
+msgstr "Stats"
+
+msgid "Status & Visibility"
+msgstr "Status & Visibility"
+
+msgid "Still Have Questions?"
+msgstr "Still Have Questions?"
+
+msgid "Success"
+msgstr "Success"
+
+msgid "Taassurotlaringiz va fikrlaringiz"
+msgstr "Taassurotlaringiz va fikrlaringiz"
+
+msgid "Tabler Icon Name"
+msgstr "Tabler Icon Name"
+
+msgid ""
+"Tabler icon name, e.g. help, credit-card, map-pin, passport, info-circle."
+msgstr ""
+"Tabler icon name, e.g. help, credit-card, map-pin, passport, info-circle."
+
+msgid "Tabler ikonka nomi (masalan: wifi, swimming, bar)"
+msgstr "Tabler ikonka nomi (masalan: wifi, swimming, bar)"
+
+msgid "Tagline"
+msgstr "Tagline"
+
+msgid "Tahrirlash"
+msgstr "Tahrirlash"
+
+msgid "Tanlangan"
+msgstr "Tanlangan"
+
+msgid "Tanlanmagan"
+msgstr "Tanlanmagan"
+
+msgid "Tanlash"
+msgstr "Tanlash"
+
+msgid "Tasdiqlangan"
+msgstr "Tasdiqlangan"
+
+msgid "Tasdiqlash"
+msgstr "Tasdiqlash"
+
+msgid "Tashrif buyurgan joylaringizdan olgan rasmlarni bir vaqtda tanlang."
+msgstr "Tashrif buyurgan joylaringizdan olgan rasmlarni bir vaqtda tanlang."
+
+msgid "Tashrif sanasi"
+msgstr "Tashrif sanasi"
+
+msgid "Tavsif kiritilmagan."
+msgstr "Tavsif kiritilmagan."
+
+msgid "Telegram URL"
+msgstr "Telegram URL"
+
+msgid "Terms of Service"
+msgstr "Terms of Service"
+
+msgid ""
+"Thank you for booking with UNITUR travel agency. A confirmation email has "
+"been sent to"
+msgstr ""
+"Thank you for booking with UNITUR travel agency. A confirmation email has "
+"been sent to"
+
+msgid ""
+"Thank you for booking with UNITUR travel agency. Our team will contact you "
+"shortly on"
+msgstr ""
+"Thank you for booking with UNITUR travel agency. Our team will contact you "
+"shortly on"
+
+msgid "Thank you! We'll be in touch within 24 hours."
+msgstr "Thank you! We'll be in touch within 24 hours."
+
+msgid "Thank you! Your review has been saved."
+msgstr "Thank you! Your review has been saved."
+
+msgid ""
+"This FAQ will be permanently deleted and will no longer appear on your "
+"website."
+msgstr ""
+"This FAQ will be permanently deleted and will no longer appear on your "
+"website."
+
+msgid "This action cannot be undone"
+msgstr "This action cannot be undone"
+
+msgid "This confirmation link is invalid or has expired."
+msgstr "This confirmation link is invalid or has expired."
+
+msgid "This field is required."
+msgstr "This field is required."
+
+msgid "This password reset link is invalid or has expired."
+msgstr "This password reset link is invalid or has expired."
+
+msgid "Timestamps"
+msgstr "Timestamps"
+
+msgid "Toifa"
+msgstr "Toifa"
+
+msgid "Toifa Qo'shish"
+msgstr "Toifa Qo'shish"
+
+msgid "Toifa nomi"
+msgstr "Toifa nomi"
+
+msgid "Tour Details"
+msgstr "Tour Details"
+
+msgid "Tour created."
+msgstr "Tour created."
+
+msgid "Tour itinerary:"
+msgstr "Tour itinerary:"
+
+msgid "Tour updated."
+msgstr "Tour updated."
+
+msgid "Tours in"
+msgstr "Tours in"
+
+msgid "Travel Details"
+msgstr "Travel Details"
+
+msgid "Travel Guides"
+msgstr "Travel Guides"
+
+msgid "Travel Info"
+msgstr "Travel Info"
+
+msgid ""
+"Tugmani bossangiz bir nechta joylarni tanlash mumkin (Ctrl tugmasini bosib "
+"turing)"
+msgstr ""
+"Tugmani bossangiz bir nechta joylarni tanlash mumkin (Ctrl tugmasini bosib "
+"turing)"
+
+msgid "Tur kategoriyasi (Category)"
+msgstr "Tur kategoriyasi (Category)"
+
+msgid "Turlar"
+msgstr "Turlar"
+
+msgid "Twitter URL"
+msgstr "Twitter URL"
+
+msgid "Uncategorized"
+msgstr "Uncategorized"
+
+msgid "Unpublish selected articles"
+msgstr "Unpublish selected articles"
+
+msgid "Unverified"
+msgstr "Unverified"
+
+msgid "Update Password"
+msgstr "Update Password"
+
+msgid "Use my location"
+msgstr "Use my location"
+
+msgid "User agent"
+msgstr "User agent"
+
+msgid "Users"
+msgstr "Users"
+
+msgid "Ushbu kunda boriladigan diqqatga sazovor joylar (Attractions):"
+msgstr "Ushbu kunda boriladigan diqqatga sazovor joylar (Attractions):"
+
+msgid "Ushbu kunni o'chirish"
+msgstr "Ushbu kunni o'chirish"
+
+msgid "Ushbu tur haqida taassurotingiz va rasmlaringizni ulashing"
+msgstr "Ushbu tur haqida taassurotingiz va rasmlaringizni ulashing"
+
+msgid "Verified"
+msgstr "Verified"
+
+msgid "Verify Your Email"
+msgstr "Verify Your Email"
+
+msgid "Views"
+msgstr "Views"
+
+msgid "Visibility"
+msgstr "Visibility"
 
 msgid "Visit Website"
 msgstr "Visit Website"
+
+msgid "Warning"
+msgstr "Warning"
+
+msgid "We're working on adding helpful information. Please check back soon!"
+msgstr "We're working on adding helpful information. Please check back soon!"
+
+msgid ""
+"We've sent a password reset link to your email address. Check your inbox and"
+" follow the instructions."
+msgstr ""
+"We've sent a password reset link to your email address. Check your inbox and"
+" follow the instructions."
+
+msgid "WhatsApp number"
+msgstr "WhatsApp number"
+
+msgid "Write clear questions and helpful answers for your visitors."
+msgstr "Write clear questions and helpful answers for your visitors."
+
+msgid "Xarita havolasi biriktirilmagan."
+msgstr "Xarita havolasi biriktirilmagan."
+
+msgid "Xaritada ko`rish"
+msgstr "Xaritada ko`rish"
+
+msgid "Yana ko'proq ko'rsatish"
+msgstr "Yana ko'proq ko'rsatish"
+
+msgid "Yangi Joy Qo'shish"
+msgstr "Yangi Joy Qo'shish"
+
+msgid "Yangi Qulaylik Qo'shish"
+msgstr "Yangi Qulaylik Qo'shish"
+
+msgid "Yangi Toifa"
+msgstr "Yangi Toifa"
+
+msgid "Yangi Toifa Qo'shish"
+msgstr "Yangi Toifa Qo'shish"
+
+msgid "Yangi rasmlar yuklash (Ko'p fayl tanlang)"
+msgstr "Yangi rasmlar yuklash (Ko'p fayl tanlang)"
+
+msgid "Yes, Delete FAQ"
+msgstr "Yes, Delete FAQ"
+
+msgid "Yes, Sign Out"
+msgstr "Yes, Sign Out"
+
+msgid "YouTube URL"
+msgstr "YouTube URL"
+
+msgid "Your Info"
+msgstr "Your Info"
+
+msgid "Your email addresses"
+msgstr "Your email addresses"
+
+msgid ""
+"Your password has been changed successfully. You can now sign in with your "
+"new password."
+msgstr ""
+"Your password has been changed successfully. You can now sign in with your "
+"new password."
+
+msgid "booked"
+msgstr "booked"
+
+msgid "guests"
+msgstr "guests"
+
+msgid "leave empty to keep current"
+msgstr "leave empty to keep current"
+
+msgid "night"
+msgstr "night"
+
+msgid "people"
+msgstr "people"
+
+msgid "total reads"
+msgstr "total reads"
+
+msgid "views"
+msgstr "views"
+
+msgid "Dunyoning eng go'zal joylarini kashf eting"
+msgstr "Discover the world's most beautiful places"
+
+msgid "Dunyoning eng go'zal joylarini kashf eting."
+msgstr "Discover the world's most beautiful places."
